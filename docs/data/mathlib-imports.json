@@ -1,0 +1,2829 @@
+{
+  "description": "For each node, direct Mathlib.* imports appearing in the node's recursive Tablet.* import closure. Mathlib's own transitive imports are not expanded.",
+  "generated_at": "2026-10-08T12:36:10.306378+00:00",
+  "kind": "tablet_recursive_mathlib_imports",
+  "nodes": {
+    "BernoulliChernoffRateLowerBound": [
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "BoundedSquaresInterval": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "CanonicalResidualEmbedding": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ChromaticIndexAtMost": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ChromaticIndexAtMostReal": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ExtremalBParameterSaturation": [
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ExtremalBParameterSaturationThreeSimple": [
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteAveragedCoordinateSubgaussian": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Probability.Moments.SubGaussian",
+      "Mathlib.Tactic"
+    ],
+    "FiniteBipartiteIncidenceTableRowBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteBipartiteIntersectionEdgeCount": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteEvenTypePairing": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteGraphGreedyColoring": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteHypergraphClassRelabeling": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteIndependentBernoulliCountTail": [
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.Moments.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteIndependentBoundedDifferences": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.Pi",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.Moments.SubGaussian",
+      "Mathlib.Tactic"
+    ],
+    "FiniteIndicatorCountExpectation": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.Tactic"
+    ],
+    "FiniteNonnegativeWeightCutoff": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteProbabilityMass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteRealFunctionAttainsMaximum": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteRegularGraphRadiusTwo": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteSimpleRegularCompletion": [
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteSortedPaddedSlots": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Fin.Tuple.Sort",
+      "Mathlib.Data.Finset.Option",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "FiniteUnorderedPairProductSum": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "GeneralColoringIterationGreedyFinish": [
+      "Mathlib.Algebra.Order.Floor.Ring",
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Pi",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.Moments.Basic",
+      "Mathlib.Probability.Moments.SubGaussian",
+      "Mathlib.Tactic"
+    ],
+    "GeneralColoringRoundedSchedule": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "GeneralColoringScheduledNibbleIteration": [
+      "Mathlib.Algebra.Order.Floor.Ring",
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Pi",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.Moments.Basic",
+      "Mathlib.Probability.Moments.SubGaussian",
+      "Mathlib.Tactic"
+    ],
+    "GeneralColoringTheorem": [
+      "Mathlib.Algebra.Order.Floor.Ring",
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Pi",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.Moments.Basic",
+      "Mathlib.Probability.Moments.SubGaussian",
+      "Mathlib.Tactic"
+    ],
+    "HypergraphClass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "HypergraphDegree": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "IndependentPairComplementLowerBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "IndependentPairCount": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "IndependentPairCountLeChooseNeighborCard": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "IndependentSetSamplingBound": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "IndependentTripleCount": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteEdgeCountByPartPairs": [
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteFixedThreePartProductEstimate": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteFixedVertexCauchyEstimate": [
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteFixedVertexReducedEstimate": [
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteFixedVertexTotalEstimate": [
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteIncidentTotalBounds": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteIncidentWeightDoubleCount": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteOrderedTriangleDoubleCount": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartitePairProductCauchyBound": [
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteTriangleCoefficientIdentity": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteTriangleCount": [
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteTriangleDistinctParts": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteTriangleFibreBridge": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteTrianglePartTripleProductSumBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteVertexTriangleDoubleCount": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KPartiteWeightedTriangleInequality": [
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformDoubleIntersectionNeighborCountUpperBound": [
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformFreshEdgeHypergraph": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformFreshEdgeIndependentPairUpperBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformFreshEdgeIndependentTripleLowerBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformFreshEdgeLineGraphNeighborCount": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformFreshEdgePreservesClass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimpleBParameterEstimate": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimpleBParameterRealEstimate": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimpleBoundedLocalPattern": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimpleBoundedLocalPatternAttainsMaximum": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimpleBoundedLocalPatternLift": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimpleChromaticIndexBound": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Algebra.Order.Floor.Ring",
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Pi",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.Moments.Basic",
+      "Mathlib.Probability.Moments.SubGaussian",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimpleExtremalSaturation": [
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimpleLocalPatternExtremalReduction": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimpleLocalPatternTransportToBounded": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimpleLocalTruncationPreservesBParameter": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformKSimplePairLowerBound": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformNeighborClassWithinPairs": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformNeighborOneIntersectionFromSaturation": [
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformSaturatedOneIntersectionNeighborCount": [
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformSplitEdgeHypergraph": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformSplitEdgeIndependentPairUpperBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformSplitEdgeIndependentTripleLowerBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformSplitEdgeLineGraphNeighborCount": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformSplitEdgePreservesClass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformSplitEdgeUniformity": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "LineGraphOfHypergraph": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "LocalBParameter": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "LocalBParameterNeighborhoodEmbeddingTransport": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "LocalBParameterReal": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "LocalBParameterRealAntitone": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "LocalBParameterRealFloorTransfer": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "LocalBParameterRealNatCast": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "LocalBParameterStrictIncrease": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "MaxDegreeAtMost": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "MultiHypergraph": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NeighborhoodComplementEdgeCountLeIndependentPairCount": [
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NeighborhoodComplementTriangleCountEqualsIndependentTripleCount": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleBadEvent": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleCeilingPowerEstimate": [
+      "Mathlib.Algebra.Order.Floor.Ring",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleCompletedDependencyBound": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "NibbleCompletedSelection": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleCompletionData": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleConcentrationBounds": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.Pi",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.Moments.Basic",
+      "Mathlib.Probability.Moments.SubGaussian",
+      "Mathlib.Tactic"
+    ],
+    "NibbleDeletedColors": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleDeterministicExtraction": [
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleExpectationBounds": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "NibbleFiniteLocalLemma": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleInducedBParameterComparison": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleNumericalThresholds": [
+      "Mathlib.Algebra.Order.Floor.Ring",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleProductMeasure": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.Tactic"
+    ],
+    "NibbleProductSamplingLaw": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "NibbleRegularCompletionsExist": [
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleResidualDegree": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleResidualDegreeBoundedDifference": [
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleSelectedEdges": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NibbleSelectedSetProductLaw": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Tactic"
+    ],
+    "OneNibblePartialColoring": [
+      "Mathlib.Algebra.Order.Floor.Ring",
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Pi",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.Moments.Basic",
+      "Mathlib.Probability.Moments.SubGaussian",
+      "Mathlib.Tactic"
+    ],
+    "OneUniformNonemptyIntersectionCard": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "OrderThreeAffineGeometry": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.Tactic"
+    ],
+    "OrderThreeAffineIndependentPairs": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.Tactic"
+    ],
+    "OrderThreeAffineIndependentTriples": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.Tactic"
+    ],
+    "OrderThreeAffineMultihypergraph": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.Tactic"
+    ],
+    "PartialEdgeColoringGreedyFinish": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "Preamble": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ProperEdgeColoring": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "RandomIndependentSetSampling": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "RandomIndependentSetSamplingGammaLeDelta": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "RealDegreeFloorBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingAbstractLowerRectangleChamberBound": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingActivationENNRealWeightedSumConversion": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingActivationPriorityPushForwardSupport": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingActivationRectangleMeasureUniqueness": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingBernoulliActivationMass": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingBernoulliActivationTraceMass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingBernoulliPrioritySubsetSum": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingBernoulliUniformSurvivorFiberLaw": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.Tactic"
+    ],
+    "SamplingCandidateSetReplacementSurvivalComparison": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingCleanPairEllPositivity": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingCoordinateDecodeMeasurable": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingCopiedCommonTags": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingDisjointCoordinateOutsideSliceVolumeBound": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteBonferroniUnionBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteBooleanAtomPartition": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteCellEndpointSumDecomposition": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteConditionalReplacementIteration": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteCoordinateCellExtensionMass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteCoordinateMarginalCellLaw": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteFiberFullCubeRestrictionBound": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteMassSubcellNormalization": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFinitePriorityCutProductFormula": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFinitePriorityOneCoordinateIntervalMass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteProductCandidateReplacementStep": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteProductContextSlicing": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteProductCylinderProjection": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteProductLowerOrthantEqualityMeasurable": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteProductMatchedCoordinateExtensionMass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteProductMatchedCoordinateExtensionTransport": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteProductPointwiseLower": [
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteProductPriorityCoordinateExtensionLaw": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteProductPriorityLawExists": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteProductThreeCoordinateSliceIntegralBound": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteSetActivationPartition": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFiniteSetPushForwardEvent": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFirstMomentNeighborSetBound": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFixedIndependentTripleSurvivalBound": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingFixedPairChamberSurvival": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingIndependentPairsHalfDegreeSquare": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingInducedNeighborhoodLocalBParameter": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingInjectiveCoordinateDecodeLaws": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.Tactic"
+    ],
+    "SamplingIntegratedCandidatePriorityReplacementStep": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingIntervalLIntegralOfRealConversion": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingMeasurePreservingTripleSliceIntegralBound": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonadjacentPairActivationAvoidanceProduct": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonadjacentPairChamberIntegral": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonadjacentPairChamberIntegrandNonnegative": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonadjacentPairNeighborClassProduct": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonadjacentPairOrderedChamberBoundaryNull": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonadjacentPairOrderedChamberDiagonalNull": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonadjacentPairOrderedChamberMass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonadjacentPairOrderedChamberProductLaw": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonadjacentPairOrderedPriorityAffineIntegral": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonadjacentPairSurvivalChamberLaw": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingNonemptyPushForwardEvent": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneBlockerProductInequality": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneCoordinateChamberFiberVolume": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneCoordinateChamberVolume": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneCoordinateComplementMeasurePreserving": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexActivationDecisionProduct": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexActivationIntegralSum": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexAnalyticEstimate": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexChangeVariables": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexComparisonPartition": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexEstimate": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexFixedThresholdProduct": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexNeighborRectangle": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexOutputMembership": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexPriorityRectangle": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexPrioritySlice": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexPrioritySliceExact": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingOneVertexPushForwardEvent": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairBonferroniPairLowerBound": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairBonferroniParameterSelection": [
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairExposureEstimate": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairHighOverlapExponentialWindowMargin": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairHighOverlapFiniteProductWindowLower": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairHighOverlapWindowLower": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairKernelSplitLowerBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairLowOverlapExponentialWindowMargin": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairLowOverlapWindowLower": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairOutputMembership": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairPushForwardEvent": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPairTripleBonferroniCore": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingPriorityPositiveUnitSupport": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingRandomIndependentSetMatchedCoordinateExtensionLaw": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingRegularEnlargementReduction": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingRegularGraphSamplingLawExists": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSimplexENNRealIteratedIntegralBound": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSimplexIndicatorLIntegralRestriction": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSimplexPartialIntegralRegularity": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualAdjacentSharedContextProducer": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualCompleteStageMassLaw": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualCompleteStageTwoPieceDecomposition": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualCoordinatePackage": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualCurrentAdjacentPieceMass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualCurrentFiberIntegrals": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualFirstWitnessResidualPieces": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualHybridWitnessAssembly": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualMixedStageMassNormalization": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualOneStepMixedProductComparison": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualPairedSurfaceAdjacentMonotonicity": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualPairedSurfaceEndpoints": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualProductAdjacentIntegral": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualSameSurfaceInputConstruction": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualSameSurfaceInputData": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualSourceEndpointFromCoupling": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerActualTargetEndpointFromCoupling": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerAdjacentValueChainAssembly": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerAtomwiseRestrictedMarginalCoupling": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerBooleanAtomMassSupplier": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerCopiedCommonProductCouplingMarginals": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerCurrentTagSeparation": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerEndpointBoundaryCellReduction": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerEventMonotonicity": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerFirstWitnessCellRefinement": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerFirstWitnessFiniteRefinement": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerHybridRefinedAtomMassLaw": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerHybridRepresentation": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerMarginalPreservingCouplingConstruction": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerMarginalPreservingCouplingData": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerMeasuredStageCellRefinement": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerMixedContextProjectionSubsets": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerMixedStageCompleteDecomposition": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerMixedStageEndpointIdentities": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerOutsideBkResidualLabelPartition": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerOutsideBkResidualLabelStructure": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerOutsideBkResidualSurfaceIncludesGlobalBoundary": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerPairedCandidateEvent": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerPairedCandidateEventMeasurable": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerPairedContextCurrentInvariant": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerPairedMixedMeasureSurface": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerPrescribedCommonAtomMassSupport": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerPrescribedCommonRefinedCellPackage": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerProductAtomContextInvariant": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerProductDecode": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerProductRealization": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerRefinedAtomSupportedProductCell": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerSameWitnessAdjacentEvents": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerSourceDisplayedEndpointMeasurable": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerStageCellCommonRefinement": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerTargetDisplayedEndpointMeasurable": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerTargetEndpointEquivalence": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerTrueHybridStageSurface": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingSplitOutsideBlockerUnchangedCandidateUnionProjection": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.Tactic"
+    ],
+    "SamplingThreeCoordinateComplementMeasurePreserving": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingThreeSetPairSumNormalizer": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleActivationChamberCover": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleActivationChamberSum": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleActivationSummedSixChamberBound": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleBonferroniEstimate": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleChamberAffineIntegralIdentity": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleCorrectionReindexing": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleCubeChamberIntegralFromLowerRectangles": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleExpectationByIndependentTriples": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleExposureEstimate": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleFixedActivationSixChamberAssembly": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleFullChamberIntegralEstimate": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleFullWeightPairingNormalizer": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleOrderedExponentNormalizer": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTriplePairedChamberParameterNormalizer": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTriplePatternCountingBridge": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTriplePriorityChamberSurvival": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleProductChamberIntegral": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleProductChamberIntegralFiniteFiber": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleRealChamberEstimate": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleSingleChamberIntegralEstimate": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTripleSummedChamberPairBound": [
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTwoCoordinateChamberFiberVolume": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTwoCoordinateChamberVolume": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTwoCoordinateComplementMeasurePreserving": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTwoCoordinateFiberBoxVolume": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SamplingTwoCoordinateOutsideSliceVolumeBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.Tactic"
+    ],
+    "SamplingUnitCubeChamberVolumeIntegral": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.Tactic"
+    ],
+    "SamplingUnitCubeLowerRectangleChamberBound": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SamplingUnitCubeLowerRectangleChamberDomination": [
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
+    "SaturatedEdgeStructure": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SaturatedLineGraphEdgeCount": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SaturatedLineGraphPairBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SaturatedNeighborClassPartition": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SubhypergraphInheritance": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "SubhypergraphOf": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "T2DegreeSquareAssembly": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "TSimpleHypergraph": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "TableColumnPairSquareBound": [
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "TablePairBound": [
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "TablePairFillingBound": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "TablePairStability": [
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "TableSquareSumFillingBound": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeByNMatrixBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.LinearAlgebra.Matrix.Permanent",
+      "Mathlib.Tactic"
+    ],
+    "ThreeByThreeCenteredColumnBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.LinearAlgebra.Matrix.Permanent",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformIndependentTripleRootLabeling": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformIndependentTriplesThroughEdgeBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformSaturatedEdgeStructure": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformSelectedTriplePermutationBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformT2AmbientCherryBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Combinatorics.SimpleGraph.Triangle.Basic",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformT2ExceptionalDegreeBounds": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformT2OrientedIncidenceBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleBParameterEstimate": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Combinatorics.SimpleGraph.Triangle.Basic",
+      "Mathlib.Data.Fin.Tuple.Sort",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Finset.Option",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.LinearAlgebra.Matrix.Permanent",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleBalancedBigDegree": [
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleBigPartSize": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleChromaticIndexBound": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Algebra.Order.Floor.Ring",
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Combinatorics.SimpleGraph.Triangle.Basic",
+      "Mathlib.Data.Fin.Tuple.Sort",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Finset.Option",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.LinearAlgebra.Matrix.Permanent",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Pi",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.Moments.Basic",
+      "Mathlib.Probability.Moments.SubGaussian",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleCutoffScalarEstimate": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleExtremalExample": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleLocalSetup": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleNeighborhoodComplementBounds": [
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimplePairLowerBound": [
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimplePairUpperCutoff": [
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleSetupConstruction": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleSmallXs": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleT1IncidenceBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleT2TriangleBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Combinatorics.SimpleGraph.Triangle.Basic",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformThreeSimpleT2UniformEstimate": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Combinatorics.SimpleGraph.Triangle.Basic",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.ZMod.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleBParameterEstimate": [
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Fin.Tuple.Sort",
+      "Mathlib.Data.Finset.Option",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.LinearAlgebra.Matrix.Permanent",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleBoundedRepresentative": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleChromaticIndexBound": [
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.Order.Floor.Ring",
+      "Mathlib.Analysis.Complex.Exponential",
+      "Mathlib.Analysis.SpecialFunctions.Exp",
+      "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Real",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Clique",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Fin.Tuple.Sort",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Data.Finset.Option",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Nat.Choose.Cast",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Data.Set.Lattice",
+      "Mathlib.LinearAlgebra.Matrix.Permanent",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Order",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Constructions.Pi",
+      "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+      "Mathlib.MeasureTheory.Integral.Bochner.Set",
+      "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic",
+      "Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus",
+      "Mathlib.MeasureTheory.Integral.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Integral.Pi",
+      "Mathlib.MeasureTheory.Integral.Prod",
+      "Mathlib.MeasureTheory.Measure.AEDisjoint",
+      "Mathlib.MeasureTheory.Measure.FiniteMeasurePi",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar",
+      "Mathlib.MeasureTheory.Measure.MeasureSpace",
+      "Mathlib.MeasureTheory.Measure.Prod",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Probability.Independence.Basic",
+      "Mathlib.Probability.Moments.Basic",
+      "Mathlib.Probability.Moments.SubGaussian",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleDegreeToBigBound": [
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleEventualNumericalError": [
+      "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleFiniteExtremalAttainment": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleFreshEdgePreservesClass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleMatrixRescaling": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleNeighborPartition": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleSaturatedMatrixCertificate": [
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Fin.Tuple.Sort",
+      "Mathlib.Data.Finset.Option",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.LinearAlgebra.Matrix.Permanent",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleSmallPairsBound": [
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleSplitEdgePreservesClass": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "ThreeUniformTwoSimpleTripleBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Finset.Option",
+      "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "TriangleCountPartite": [
+      "Mathlib.Algebra.Order.Chebyshev",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "TriangleCountTripartiteCherries": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Combinatorics.SimpleGraph.Triangle.Basic",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "UniformHypergraph": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "UniformHypergraphGreedyColoring": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "UniformHypergraphLineDegreeBound": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ]
+  },
+  "schema_version": 1,
+  "source_repo": "/tmp/alon-kim-public-viewer.CW0eMG/formalization"
+}

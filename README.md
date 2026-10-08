@@ -42,12 +42,23 @@ The project used no project-approved extra axioms:
 As with any formalization, identifying the Lean statements and definitions
 with the intended mathematics still requires a human correspondence audit.
 
+## Formalization viewer
+
+The public [formalization viewer](https://tkelly36.github.io/alon-kim-chromatic-index-formalization/#GeneralColoringTheorem)
+is the side-by-side TeX/Lean interface for reading and auditing the completed
+development. It includes all four paper targets, their Lean semantic closures,
+the full dependency outline, searchable proof nodes, Mathlib links, source
+links, and reproducible build metadata.
+
+The viewer is generated into `docs/` and deployed with GitHub Pages.
+
 ## Repository layout
 
 - `formalization/` is the complete buildable Lean artifact.
 - `formalization/Tablet/` contains paired `.lean` and `.tex` proof nodes.
 - `formalization/Tablet/INDEX.md` records the node dependency graph.
 - `formalization/Tablet.lean` is the generated root import surface.
+- `docs/` is the generated public formalization viewer.
 - `paper/README.md` records the frozen manuscript provenance and target labels.
 
 The frozen manuscript source, Trellis runtime state, and supervisor history
