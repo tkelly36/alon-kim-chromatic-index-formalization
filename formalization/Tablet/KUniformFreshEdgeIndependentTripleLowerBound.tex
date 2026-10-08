@@ -1,0 +1,37 @@
+\begin{helper}
+Let $\mathcal F$ be a finite multi-hypergraph, let $f$ be an edge of
+$\mathcal F$, and form the fresh-edge hypergraph
+\(\mathcal F_1=\noderef{KUniformFreshEdgeHypergraph}(k,\mathcal F,v)\).
+In the line graphs, the independent-triple count in the neighborhood of the
+old edge copy does not decrease:
+\[
+T_{L(\mathcal F)}(f)
+\le
+T_{L(\mathcal F_1)}(\operatorname{inl} f).
+\]
+\end{helper}
+\begin{proof}
+By \noderef{IndependentTripleCount}, the left side counts three-element
+subsets of the line-graph neighborhood of $f$ whose three members are
+pairwise nonadjacent in \(L(\mathcal F)\).  Define a map from such old
+triples to subsets of the new edge-label set by sending every old edge label
+$e$ to its old-edge copy \(\operatorname{inl} e\).
+
+This map preserves cardinality three, because the old-edge-copy map is
+injective.  It also sends neighbors of $f$ to neighbors of
+\(\operatorname{inl} f\): by \noderef{LineGraphOfHypergraph}, old labels
+$f$ and $e$ are adjacent exactly when they are distinct and their hyperedges
+intersect, and \noderef{KUniformFreshEdgeHypergraph} says old hyperedges in
+\(\mathcal F_1\) are precisely the images of the old hyperedges under the
+injective vertex map \(x\mapsto \operatorname{inl} x\).  Therefore the
+intersection is nonempty before the construction if and only if the
+corresponding old-edge-copy intersection is nonempty afterward.
+
+Finally, pairwise nonadjacency inside the triple is preserved for the same
+reason: for old labels $e$ and $g$, the copied edges \(\operatorname{inl} e\)
+and \(\operatorname{inl} g\) are adjacent in \(L(\mathcal F_1)\) exactly when
+$e$ and $g$ are adjacent in \(L(\mathcal F)\).  Thus every old independent
+triple maps to a new independent triple.  The map is injective on triples
+because \(e\mapsto\operatorname{inl} e\) is injective, so the new counted set
+has cardinality at least the old counted set.
+\end{proof}

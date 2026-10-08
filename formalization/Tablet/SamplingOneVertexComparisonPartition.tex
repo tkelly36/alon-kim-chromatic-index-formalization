@@ -1,0 +1,64 @@
+\begin{helper}
+Let $G$ be a finite graph, let $\nu$ be a probability measure on
+activation--priority pairs $(A,\pi)$, and fix a vertex $v$.  Assume first
+that each activation atom has full measure on its priority cube:
+\[
+\nu\{(A,\pi): A=A_0,\ \pi(u)\in[0,1]\hbox{ for every }u\in A_0\}
+=\nu\{(A,\pi):A=A_0\}
+\]
+for every activation set $A_0$.  Assume also that, whenever $v\in A_0$,
+\[
+\begin{aligned}
+&\nu\{(A,\pi):A=A_0,\ \pi(u)\in[0,1]\hbox{ for every }u\in A_0,\\
+&\hspace{4.5cm}
+\pi(u)<\pi(v)\hbox{ for every }u\in A_0\cap N_G(v)\}\\
+&=\nu\{(A,\pi):A=A_0\}\,
+\operatorname{ofReal}\!\left(\int_0^1
+a^{|\{u:u\in A_0,\ u\sim_G v\}|}\,da\right).
+\end{aligned}
+\]
+Then the raw event that $v$ survives the priority comparison has measure
+\[
+\sum_{A_0}
+{\bf 1}_{v\in A_0}\,
+\nu\{(A,\pi):A=A_0\}\,
+\operatorname{ofReal}\!\left(\int_0^1
+a^{|\{u:u\in A_0,\ u\sim_G v\}|}\,da\right).
+\]
+\end{helper}
+\begin{proof}
+Let
+\[
+R_{A_0}=\{(A,\pi):A=A_0,\ \pi(u)<\pi(v)
+\text{ for every }u\in A_0\cap N_G(v)\}
+\]
+and let $C_{A_0}$ be the same event with the additional requirement that
+$\pi(u)\in[0,1]$ for every $u\in A_0$.  The event that $v$ belongs to the
+algorithmic output
+\[
+\{u\in A:\pi(w)<\pi(u)\text{ for every }w\in A\cap N_G(u)\}
+\]
+is exactly the finite disjoint union of the events $R_{A_0}$ over all
+activation sets $A_0$ containing $v$.  This is just unpacking membership in
+the output set, using \noderef{SamplingOneVertexOutputMembership}: $v$ is
+output precisely when $v\in A_0$ and the displayed priority inequalities
+hold.  Distinct activation sets give disjoint events because the first
+coordinate cannot equal two different finite sets at once.
+
+It remains to replace $R_{A_0}$ by $C_{A_0}$ in measure.  The inclusion
+$C_{A_0}\subseteq R_{A_0}$ is immediate.  The difference
+$R_{A_0}\setminus C_{A_0}$ is contained in the part of the activation atom
+$\{A=A_0\}$ lying outside the priority cube.  Since $\nu$ is a probability
+measure, the activation atom has finite measure.  The full-cube hypothesis
+therefore implies, by the usual finite-measure subtraction identity, that
+this outside-cube part has measure zero.  Hence
+\[
+\nu(R_{A_0})=\nu(C_{A_0}).
+\]
+For each $A_0$ containing $v$, the comparison hypothesis evaluates
+$\nu(C_{A_0})$ as the activation-atom measure times the integral of
+$a^{|\{u:u\in A_0,\ u\sim_G v\}|}$ over $[0,1]$.  Summing these values over
+the finite, disjoint partition by activation set gives exactly the asserted
+formula, with the indicator ${\bf 1}_{v\in A_0}$ expressing the restriction
+to activation sets containing $v$.
+\end{proof}

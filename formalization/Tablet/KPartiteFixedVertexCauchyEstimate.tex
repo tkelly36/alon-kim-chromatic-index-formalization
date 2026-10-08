@@ -1,0 +1,40 @@
+\begin{helper}
+Let $k$ be a natural number, fix a vertex $i\in\{1,\ldots,k\}$, and let
+$w_{ab}\ge 0$ be a nonnegative real weight assigned to each ordered pair of
+indices.  Let $S_i$ be the set of pairs $\{j,\ell\}$ with $j<\ell$ and
+$j,\ell\ne i$.  Then
+\[
+\sum_{\{j,\ell\}\in S_i}\sqrt{w_{ij}w_{i\ell}w_{j\ell}}
+\le
+\left(\sum_{\{j,\ell\}\in S_i}w_{ij}w_{i\ell}\right)^{1/2}
+\left(\sum_{\{j,\ell\}\in S_i}w_{j\ell}\right)^{1/2}.
+\]
+\end{helper}
+\begin{proof}
+For each pair $\{j,\ell\}\in S_i$, set
+\[
+f_{j\ell}=w_{ij}w_{i\ell}
+\qquad\text{and}\qquad
+g_{j\ell}=w_{j\ell}.
+\]
+The assumed nonnegativity of the weights gives $f_{j\ell}\ge 0$ and
+$g_{j\ell}\ge 0$ for every such pair.  Therefore
+\[
+\sqrt{w_{ij}w_{i\ell}w_{j\ell}}
+=
+\sqrt{f_{j\ell}g_{j\ell}}
+=
+\sqrt{f_{j\ell}}\sqrt{g_{j\ell}}.
+\]
+Applying the finite Cauchy--Schwarz inequality to the two nonnegative
+families $(\sqrt{f_{j\ell}})_{\{j,\ell\}\in S_i}$ and
+$(\sqrt{g_{j\ell}})_{\{j,\ell\}\in S_i}$ yields
+\[
+\sum_{\{j,\ell\}\in S_i}\sqrt{f_{j\ell}}\sqrt{g_{j\ell}}
+\le
+\left(\sum_{\{j,\ell\}\in S_i}f_{j\ell}\right)^{1/2}
+\left(\sum_{\{j,\ell\}\in S_i}g_{j\ell}\right)^{1/2}.
+\]
+Substituting the definitions of $f_{j\ell}$ and $g_{j\ell}$ is exactly the
+claimed inequality.
+\end{proof}

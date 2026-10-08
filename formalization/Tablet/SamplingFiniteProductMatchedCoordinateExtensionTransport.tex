@@ -1,0 +1,39 @@
+\begin{helper}
+Let two one-sided finite-coordinate extensions be computed from the same base
+cell weight \(w_0\) under the same Bernoulli activation parameter \(p\).  On
+the source side the extension factor is
+\[
+  p^{|A_D|}(1-p)^{|D|-|A_D|}
+  \prod_v \begin{cases}t_v,&v\in K,\\1,&v\notin K,\end{cases}
+\]
+and on the target side the extension factor is the analogous expression with
+primed finite data.  If the Bernoulli activation factors are equal and the
+priority lower-cut products are equal, then the two normalized extension
+weights are equal.
+\end{helper}
+\begin{proof}
+The source extension law expresses the source normalized extension weight as
+\[
+  w_0\cdot a\cdot q,
+\]
+where
+\[
+  a=p^{|A_D|}(1-p)^{|D|-|A_D|}
+  \quad\text{and}\quad
+  q=\prod_v \begin{cases}t_v,&v\in K,\\1,&v\notin K.\end{cases}
+\]
+The target extension law expresses the target normalized extension weight as
+\[
+  w_0\cdot a'\cdot q',
+\]
+with the corresponding primed activation factor \(a'\) and priority factor
+\(q'\).  The hypotheses say exactly that \(a=a'\) and \(q=q'\).  Substituting
+these two equalities into the two displayed formulas gives
+\[
+  w_0\cdot a\cdot q=w_0\cdot a'\cdot q',
+\]
+so the source and target normalized extension weights are equal.  This is the
+pure finite-product algebraic transport step used after the actual source and
+target one-sided extension formulas have been supplied by other registered
+finite-product mass laws.
+\end{proof}

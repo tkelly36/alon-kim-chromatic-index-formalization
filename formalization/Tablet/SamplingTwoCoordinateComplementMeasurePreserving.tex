@@ -1,0 +1,23 @@
+\begin{helper}
+Let \(V\) be finite and let \(u\ne v\) be two distinguished coordinates.
+The map
+\[
+q\longmapsto \bigl(q(u),q(v),(q(w))_{w\in V\setminus\{u,v\}}\bigr)
+\]
+from \(\mathbb R^V\) to
+\(\mathbb R\times\mathbb R\times\mathbb R^{V\setminus\{u,v\}}\) preserves
+Lebesgue product measure.
+\end{helper}
+\begin{proof}
+Choose the index equivalence which lists the two distinguished coordinates
+first and then lists the complementary subtype
+\(W=\{w\in V:w\ne u,\ w\ne v\}\).  The displayed map is the composition of
+this coordinate permutation with the standard finite-product splitting
+\(\mathbb R^{\{0,1\}\sqcup W}\cong\mathbb R^{\{0,1\}}\times\mathbb R^W\),
+the standard identification \(\mathbb R^{\{0,1\}}\cong\mathbb R\times
+\mathbb R\), and product associativity.  Each of these maps is one of the
+standard measurable equivalences for finite products and preserves product
+Lebesgue measure.  Their composition therefore preserves product Lebesgue
+measure, and it is exactly the displayed coordinate-splitting map.
+\end{proof}
+

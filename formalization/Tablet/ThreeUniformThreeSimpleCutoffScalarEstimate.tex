@@ -1,0 +1,28 @@
+\begin{helper}
+Let $d,p,t$ be real numbers with $d\ge900000$,
+$1.031-9/d<p\le9/2$, and $t^2\le p^3/27$. Then
+\[
+-1/d+1-p/9+t/27<0.89291.
+\]
+\end{helper}
+\begin{proof}
+Put $a=103099/100000$ and $u=p-a$. Since $9/d\le1/100000$,
+we have $p>a$, so $0\le u\le7/2$. In particular
+$u^3\le(7/2)u^2$. Put $c=2015/10000$. Expanding gives
+\[
+(c+u/2)^2-(a+u)^3/27
+=c^2-a^3/27+(c-a^2/9)u+(1/4-a/9)u^2-u^3/27.
+\]
+Each of $c^2-a^3/27$, $c-a^2/9$, and
+$1/4-a/9-7/54$ is positive, as direct rational arithmetic verifies.
+Consequently the displayed expression is nonnegative. Thus
+$t^2\le p^3/27\le(c+u/2)^2$; since $c+u/2\ge0$, this implies
+$t\le c+u/2$, also when $t$ is negative. Therefore
+\[
+-1/d+1-p/9+t/27
+\le1-a/9+c/27-5u/54
+\le1-a/9+c/27
+=2410853/2700000<89291/100000.
+\]
+This proves the numerical estimate used in the cutoff argument.
+\end{proof}

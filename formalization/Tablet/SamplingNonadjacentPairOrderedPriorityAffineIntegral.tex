@@ -1,0 +1,43 @@
+\begin{helper}
+Let \(0<\gamma\), let \(S\) and \(T\) be two finite blocker classes, and put
+\(p=\gamma/\Delta\).  On the ordered priority chamber \(0\le b\le a\le1\),
+the affine change of variables
+\[
+x=\gamma(1-a),\qquad y=\gamma(1-b)
+\]
+sends the chamber to \(0\le x\le y\le\gamma\) and gives
+\[
+\int_0^1\int_0^a
+p^2 a^{|S|}b^{|T|}\,db\,da
+=
+\int_0^\gamma\int_x^\gamma
+\frac1{\gamma^2}p^2
+\left(1-\frac{x}{\gamma}\right)^{|S|}
+\left(1-\frac{y}{\gamma}\right)^{|T|}\,dy\,dx .
+\]
+\end{helper}
+\begin{proof}
+The substitution \(b=1-y/\gamma\) carries the interval \(0\le b\le a\) to
+\(\gamma\ge y\ge \gamma(1-a)\), with differential \(dy=\gamma\,db\).  Thus,
+for each fixed \(a\),
+\[
+\int_{\gamma(1-a)}^\gamma
+\left(1-\frac{y}{\gamma}\right)^{|T|}\,dy
+=
+\gamma\int_0^a b^{|T|}\,db .
+\]
+Next substitute \(a=1-x/\gamma\).  The interval \(0\le a\le1\) becomes
+\(\gamma\ge x\ge0\), again with differential \(dx=\gamma\,da\).  Applying the
+two substitutions successively gives
+\[
+\int_0^\gamma\int_x^\gamma
+p^2\left(1-\frac{x}{\gamma}\right)^{|S|}
+\left(1-\frac{y}{\gamma}\right)^{|T|}\,dy\,dx
+=
+\gamma^2\int_0^1\int_0^a p^2a^{|S|}b^{|T|}\,db\,da .
+\]
+Dividing by \(\gamma^2\), which is legitimate because \(0<\gamma\), proves the
+displayed identity.  This is exactly the Jacobian factor for passing from the
+two actual priority coordinates on an ordered chamber to the paper's
+\((x,y)\)-coordinates.
+\end{proof}

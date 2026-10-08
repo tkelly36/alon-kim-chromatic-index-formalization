@@ -1,0 +1,31 @@
+\begin{helper}
+Let $\mathcal F$ be a finite multi-hypergraph, let $f$ be an edge, and let
+$v\in f$.  In the fresh-edge hypergraph
+$\operatorname{FreshEdge}_k(\mathcal F,v)$ of
+\noderef{KUniformFreshEdgeHypergraph}, write $\operatorname{inl}(f)$ for the
+old-edge copy of $f$ and write $\operatorname{inr}(*)$ for the unique fresh
+edge label.  Then the number of line-graph neighbors of $\operatorname{inl}(f)$
+in $L(\operatorname{FreshEdge}_k(\mathcal F,v))$ is the number of line-graph
+neighbors of $f$ in $L(\mathcal F)$ plus one.
+\end{helper}
+\begin{proof}
+By \noderef{LineGraphOfHypergraph}, an edge is adjacent to $f$ in the line
+graph exactly when it is different from $f$ and its hyperedge has nonempty
+intersection with the hyperedge of $f$.
+
+Consider first an old edge $g$ of $\mathcal F$.  In
+\noderef{KUniformFreshEdgeHypergraph}, the copy of $g$ has edge set
+$g$ with every vertex sent by the old-vertex inclusion.  Therefore the copy
+of $g$ meets the copy of $f$ exactly when $g$ met $f$ before.  Also the old
+edge labels remain distinct under the old-edge inclusion.  Hence the old
+neighbors of $f$ are in bijection with the old-edge copies that neighbor the
+copy of $f$ in the fresh-edge hypergraph.
+
+There is exactly one non-old edge label in the fresh-edge construction.  Its
+edge contains the old vertex $v$ and the fresh vertices.  Since $v\in f$, this
+new edge has nonempty intersection with the copy of $f$, and it is plainly not
+the old label $f$.  Thus it contributes one additional line-graph neighbor.
+No old-edge copy is equal to this new edge label, so the old-neighbor image
+and the singleton consisting of the new edge label are disjoint.  Taking
+finite cardinalities gives the asserted increase by one.
+\end{proof}

@@ -1,0 +1,145 @@
+\begin{helper}
+Fix the actual split-outside-blocker replacement surface for one step.  Thus
+we have finite graphs \(G,G'\), activation--priority product measures
+\(\nu,\nu'\) with the same parameter \(p=\gamma/\Delta\in[0,1]\), an
+injective local embedding \(\phi:V\to V'\), a root \(r\), a finite candidate
+set \(X\subseteq N_G(r)\), and a private-blocker map
+\[
+\beta:\{(x,z):x\in X,\ z\notin X\cup\{r\},\ xz\in E(G)\}\to V'
+\]
+with the usual replacement properties: \(\beta\) is injective, its values
+avoid \(\phi(X\cup\{r\})\), \(\beta(x,z)\) is adjacent to \(\phi(x)\), no
+other \(\phi(y)\) with \(y\in X\) is adjacent to it, \(\phi(r)\) is not
+adjacent to it, and every \(G'\)-neighbor of \(\phi(x)\) is either an
+embedded local neighbor or one of these private blockers.
+
+Let \(z_0,\ldots,z_{n-1}\) be an injective list of outside blockers, and set
+\[
+  B_i=\{x\in X:xz_i\in E(G)\}.
+\]
+Assume each \(B_i\) is nonempty, each \(z_i\) lies in the source extension
+coordinate layer, the source common and extension layers are disjoint and
+contain \(X\cup\{r\}\) on the common side, and the target common layer is
+\(\phi\) of the source common layer with a disjoint target extension layer
+containing all private coordinates \(\beta(x,z_i)\) for \(x\in B_i\).  Let
+\(C_\omega,C'_\omega\) be paired cells with common nonnegative weight
+\(w(\omega)\), so
+\[
+  \operatorname{ofReal}(w(\omega))=\nu(C_\omega)
+  =\nu'(C'_\omega).
+\]
+
+Now fix \(k<n\) and a cell index \(\omega\).  The source context
+\(M^-_{k,\omega}\) is definitionally the fixed noncurrent source context
+\[
+\begin{aligned}
+M^-_{k,\omega}=\{(A,\pi):&\ \exists x\in X,\ x\in A,\ 
+   \pi(y)<\pi(x)\text{ for every }y\in (X\cup\{r\})\cap A
+   \text{ with }xy\in E(G),\\
+&\text{and for every }i>k\text{ with }x\in B_i,\ 
+   z_i\text{ does not kill }x\}.
+\end{aligned}
+\]
+Thus the only retained common blocker from the \(k\)-th handoff not included
+in \(M^-_{k,\omega}\) is the current blocker \(z_k\).  The target context
+\(M^+_{k,\omega}\) is definitionally its transported target analogue
+\[
+\begin{aligned}
+M^+_{k,\omega}=\{(A',\pi'):&\ \exists x\in X,\ \phi(x)\in A',\
+   \pi'(\phi(y))<\pi'(\phi(x))\text{ for every }y\in X\cup\{r\}
+   \text{ with }\phi(y)\in A'\\
+&\text{and }xy\in E(G),\text{ and for every }i<k\text{ with }x\in B_i,\ 
+   \beta(x,z_i)\text{ does not kill }\phi(x)\}.
+\end{aligned}
+\]
+The adjacent source event \(L_{k,\omega}\) is definitionally the event that
+some \(x\in B_k\) is not killed by the single current common blocker \(z_k\).
+The adjacent target event \(R_{k,\omega}\) is definitionally the event that
+some \(x\in B_k\) is not killed by its independent private blocker
+\(\beta(x,z_k)\).  These are statement-level definitions of the four displayed
+sets, not proof-only interpretations.
+
+Assume that \(B_k\) is represented by a nonempty finite label type
+\(\alpha\), through a surjection \(a\mapsto x_a\) onto \(B_k\), and let
+\(\pi_a\in[0,1]\) be the fixed priority of \(x_a\) after the noncurrent
+context has been frozen.  Assume the current blocker coordinate, conditional
+on the fixed source context, has a one-coordinate Bernoulli--uniform law
+\(\eta\):
+\[
+\eta(\Omega)=1,\qquad
+\eta\{a=1,\ q\in[0,1]\}=\operatorname{ofReal}(p),
+\]
+and
+\[
+\eta\{a=1,\ 0\le q\le t\}=\operatorname{ofReal}(pt)
+\quad(0\le t\le1).
+\]
+Assume the target private blocker coordinates, conditional on the fixed
+target context, have the independent product law \(\theta\): for every
+activation set \(A\subseteq\alpha\) and every threshold vector
+\(t_a\in[0,1]\) on \(A\),
+\[
+\theta\{a_b={\bf 1}_{b\in A}\ \forall b,\ 
+        0\le q_b\le t_b\ \forall b\in A\}
+=\operatorname{ofReal}\!\left(
+  p^{|A|}(1-p)^{|\alpha|-|A|}\prod_{b\in A}t_b\right).
+\]
+Finally let \(P^-_{k,\omega},P^+_{k,\omega}\ge0\) be the normalized adjacent
+source and target masses satisfying
+\[
+\operatorname{ofReal}(P^-_{k,\omega})
+=\eta\{\neg(a=1,\ q\in[0,1],\ \pi_b<q\text{ for all }b\in\alpha)\},
+\]
+\[
+\operatorname{ofReal}(P^+_{k,\omega})
+=\theta\{\exists b\in\alpha:
+  \neg(a_b=1,\ q_b\in[0,1],\ \pi_b<q_b)\},
+\]
+and whose unnormalized masses are the actual adjacent pieces on the same
+cell surface,
+\[
+\operatorname{ofReal}(w(\omega)P^-_{k,\omega})
+=\nu(L_{k,\omega}\cap M^-_{k,\omega}\cap C_\omega),
+\]
+\[
+\operatorname{ofReal}(w(\omega)P^+_{k,\omega})
+=\nu'(R_{k,\omega}\cap M^+_{k,\omega}\cap C'_\omega).
+\]
+Then
+\[
+  P^-_{k,\omega}\le P^+_{k,\omega}.
+\]
+
+This is a fixed-\(k\), fixed-\(\omega\), aggregate product-measure
+comparison.  It treats all candidates of \(B_k\) at once and does not assert
+residual equality, same-index source--target stage equality, paired
+outside-\(B_k\) primitive atom equality, or a singleton reduction of \(B_k\).
+\end{helper}
+\begin{proof}
+Apply \(\noderef{SamplingFiniteProductCandidateReplacementStep}\) to the
+finite label type \(\alpha\), the parameter \(p=\gamma/\Delta\), the priority
+function \(a\mapsto\pi_a\), the one-current-blocker law \(\eta\), and the
+independent private-blocker law \(\theta\).  The hypotheses of the cited
+finite product theorem are exactly the displayed one-coordinate and
+independent-cylinder identities above, together with \(0\le p\le1\) and
+\(0\le\pi_a\le1\).  Its conclusion gives
+\[
+\eta\{\neg(a=1,\ q\in[0,1],\ \pi_b<q\text{ for all }b)\}
+\le
+\theta\{\exists b:
+  \neg(a_b=1,\ q_b\in[0,1],\ \pi_b<q_b)\}.
+\]
+The two displayed normalization identities identify these two probabilities
+with \(\operatorname{ofReal}(P^-_{k,\omega})\) and
+\(\operatorname{ofReal}(P^+_{k,\omega})\).  Since
+\(P^-_{k,\omega}\) and \(P^+_{k,\omega}\) are nonnegative,
+monotonicity and injectivity of \(\operatorname{ofReal}\) on nonnegative
+real numbers give \(P^-_{k,\omega}\le P^+_{k,\omega}\).
+
+The remaining displayed mass identities record that these normalized
+probabilities are the actual adjacent source and target pieces below the
+same fixed noncurrent contexts and paired cells.  They are not used as
+independent equality assumptions between residual pieces; they are the
+factorization interface which connects the finite product calculation to the
+actual replacement step.
+\end{proof}

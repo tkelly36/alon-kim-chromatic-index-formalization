@@ -1,0 +1,212 @@
+\begin{lemma}
+For every $\eta>0$ there are $\Delta_0$ and $\gamma_0$ such that the
+following holds.  Let $G$ be a $\Delta$-regular graph with
+$\Delta\ge\Delta_0$, let $\gamma\ge\gamma_0$, and let $I$ be sampled by
+\noderef{RandomIndependentSetSampling}.  Fix $r$ and
+$X\subseteq N_G(r)$, and assume that no two distinct vertices of $X$ have a
+common neighbor outside $N_G[r]$.  If $\mathcal J_2$ and $\mathcal J_3$ are
+the independent pairs and independent triples in $X$, then
+\[
+\mathbb E\binom{|I\cap X|}{2}
+-\mathbb E\binom{|I\cap X|}{3}
+\ge
+\frac{|\mathcal J_2|}{\Delta^2}
+-\frac{|\mathcal J_3|}{\Delta^3}
+-\eta .
+\]
+\end{lemma}
+\begin{proof}
+Write $\overline P_X=\binom{|I\cap X|}{2}$ and
+$\overline T_X=\binom{|I\cap X|}{3}$.  For an independent pair
+$uv\in\mathcal J_2$, put
+$c_{uv}=|N_G(u)\cap N_G(v)|$ and
+$\lambda_{uv}=1-c_{uv}/\Delta$.  The clean-neighborhood hypothesis gives
+$0<\lambda_{uv}\le1$, because every common neighbor of $u$ and $v$ lies in
+$N_G[r]\setminus\{u,v\}$ and so $c_{uv}\le\Delta-1$.
+
+The exact pair identity \noderef{SamplingPairExposureEstimate} gives
+\[
+\mathbb E\overline P_X
+=\sum_{uv\in\mathcal J_2}
+\frac{2}{\Delta^2}
+\int_{0\le x\le y\le\gamma}
+\left(1-\frac{x}{\Delta}\right)^{\lambda_{uv}\Delta}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx .
+\]
+The sampling law in \noderef{RandomIndependentSetSampling} also gives
+$0<\gamma$ and, in every non-vacuous case, $\gamma/\Delta\le1$, hence
+$\gamma\le\Delta$.  We shall use only the sub-box
+$0\le x\le y\le\gamma_0$, so after increasing $\Delta_0$ we may assume this
+sub-box lies in $[0,\Delta]^2$.
+
+We need a uniform lower bound for the displayed finite pair integral.  Choose
+a fixed number $L$ so large that
+\[
+2\int_{0\le x\le y\le L} e^{-y}\,dy\,dx
+=2\int_0^L y e^{-y}\,dy
+> \frac53 .
+\]
+Then choose a small number $\alpha>0$ so that
+$\alpha\le\min\{1,\eta/9\}$,
+\[
+e^{-\alpha L}\cdot
+2\int_0^L y e^{-y}\,dy
+> \frac53+4\alpha ,
+\qquad
+(1-\alpha)^2 e^{-\alpha L}\cdot
+2\int_0^L y e^{-y}\,dy
+> \frac53+2\alpha .
+\]
+This is possible because both left sides tend to the first displayed number
+as $\alpha\downarrow0$.
+
+The low-overlap regime requires a different fixed window.  After $\alpha$
+has been chosen, choose $\gamma_0\ge L$ so large that, uniformly for every
+$\lambda\in[\alpha,1]$,
+\[
+2\int_{0\le x\le y\le\gamma_0} e^{-\lambda x}e^{-y}\,dy\,dx
+\ge
+\frac{2}{1+\lambda}-\alpha .
+\]
+Indeed the corresponding integral over the infinite chamber is
+\[
+2\int_{0\le x\le y<\infty} e^{-\lambda x}e^{-y}\,dy\,dx
+=\frac{2}{1+\lambda},
+\]
+and the tails converge to zero uniformly on the compact parameter interval
+$[\alpha,1]$.
+
+Finally choose $\Delta_0$ so large that $\gamma_0\le\Delta$ and the following
+finite-product estimates hold for all $\Delta\ge\Delta_0$.  First, uniformly
+for $0\le t\le\gamma_0$ and $\lambda\in[\alpha,1]$,
+\[
+\left(1-\frac t\Delta\right)^{\lambda\Delta}
+\ge (1-\alpha)e^{-\lambda t}
+\quad\text{and}\quad
+\left(1-\frac t\Delta\right)^\Delta\ge(1-\alpha)e^{-t}.
+\]
+Second, uniformly for $0\le t\le L$ and $0\le\lambda\le\alpha$,
+\[
+\left(1-\frac t\Delta\right)^{\lambda\Delta}
+\ge (1-\alpha)e^{-\lambda t}
+\ge (1-\alpha)e^{-\alpha L},
+\qquad
+\left(1-\frac t\Delta\right)^\Delta\ge(1-\alpha)e^{-t}.
+\]
+These are standard uniform convergence statements on fixed compact
+rectangles, together with $e^{-\lambda t}\ge e^{-\alpha L}$ on
+$[0,L]\times[0,\alpha]$.
+
+If $\lambda_{uv}\ge\alpha$, the preceding estimates on
+$[0,\gamma_0]$ and the choice of $\gamma_0$ imply that the pair contribution
+is at least
+\[
+\frac1{\Delta^2}(1-\alpha)^2
+\left(\frac{2}{1+\lambda_{uv}}-\alpha\right).
+\]
+Put $A=2/(1+\lambda_{uv})$.  Since $0<\lambda_{uv}\le1$, we have
+$1\le A\le2$.  Also $0<\alpha\le1$, and hence
+\[
+A-(1-\alpha)^2(A-\alpha)
+=A(2\alpha-\alpha^2)+\alpha(1-\alpha)^2
+\le 2\cdot 2\alpha+\alpha=5\alpha\le6\alpha .
+\]
+Thus in the case $\lambda_{uv}\ge\alpha$ the pair contribution is at least
+\[
+\frac1{\Delta^2}
+\left(\frac{2}{1+\lambda_{uv}}-6\alpha\right).
+\]
+If instead $\lambda_{uv}<\alpha$, we use only the
+subtriangle $0\le x\le y\le L$.  On this subtriangle the finite product is at
+least
+\[
+(1-\alpha)^2 e^{-\alpha L}e^{-y}.
+\]
+Therefore the pair contribution is at least
+\[
+\frac1{\Delta^2}(1-\alpha)^2 e^{-\alpha L}
+2\int_0^L y e^{-y}\,dy
+\ge \frac1{\Delta^2}\left(\frac53+2\alpha\right),
+\]
+by the initial choice of $\alpha$.  In both regimes, after this initial
+choice of $\alpha$ and the final enlargement of $\Delta_0$, we have the
+uniform per-pair bound
+\[
+\Pr[u,v\in I]\ge
+\frac1{\Delta^2}
+\left[
+1+\frac13\lambda_{uv}
+\left(\frac{2}{\lambda_{uv}(1+\lambda_{uv})}-1\right)
+\right]
+-\frac{6\alpha}{\Delta^2}.
+\]
+For $\lambda_{uv}\ge\alpha$, this follows from
+\[
+\frac{2}{1+\lambda}
+-\left(1+\frac13\lambda\left(\frac{2}{\lambda(1+\lambda)}-1\right)\right)
+=\frac{(1-\lambda)^2}{3(1+\lambda)}\ge0.
+\]
+For $\lambda_{uv}<\alpha$, the bracketed target is at most $5/3$, while the
+fixed-window high-overlap lower bound is at least
+$(5/3+2\alpha)/\Delta^2$, which is certainly at least the bracketed target
+minus $6\alpha$, divided by $\Delta^2$.
+Finally, $|\mathcal J_2|\le\binom{|X|}{2}\le\Delta^2/2$, because
+$X\subseteq N_G(r)$ and $G$ is $\Delta$-regular.  Therefore the summed loss
+from the terms $6\alpha/\Delta^2$ is at most $3\alpha\le\eta/3$.
+
+Summing over all pairs gives
+\[
+\mathbb E\overline P_X\ge
+\frac{|\mathcal J_2|}{\Delta^2}
++\frac1{3\Delta^2}\sum_{uv\in\mathcal J_2}
+\lambda_{uv}
+\left(\frac{2}{\lambda_{uv}(1+\lambda_{uv})}-1\right)
+-\eta/3 .
+\]
+
+Now apply \noderef{SamplingTripleExposureEstimate} with error budget
+$\eta/3$.  It gives
+\[
+\mathbb E\overline T_X\le
+\frac{|\mathcal J_3|}{\Delta^3}
++\frac1{3\Delta^3}
+\sum_{uvw\in\mathcal J_3}\sum_{ab\in\{uv,uw,vw\}}
+\left(\frac{2}{\lambda_{ab}(1+\lambda_{ab})}-1\right)
++\eta/3 .
+\]
+For a fixed independent pair $uv$, any vertex $w$ for which $uvw$ is an
+independent triple lies in $X\subseteq N_G(r)$ and is not a common neighbor
+of $u$ and $v$, because it is adjacent to neither $u$ nor $v$.  Therefore
+there are at most
+$\Delta-c_{uv}=\lambda_{uv}\Delta$ possible third vertices for this fixed
+pair.  Re-indexing the double sum by its distinguished pair gives
+\[
+\sum_{uvw\in\mathcal J_3}\sum_{ab\in\{uv,uw,vw\}}
+\left(\frac{2}{\lambda_{ab}(1+\lambda_{ab})}-1\right)
+\le
+\sum_{uv\in\mathcal J_2}\lambda_{uv}\Delta
+\left(\frac{2}{\lambda_{uv}(1+\lambda_{uv})}-1\right).
+\]
+Consequently
+\[
+\mathbb E\overline T_X\le
+\frac{|\mathcal J_3|}{\Delta^3}
++\frac1{3\Delta^2}\sum_{uv\in\mathcal J_2}
+\lambda_{uv}
+\left(\frac{2}{\lambda_{uv}(1+\lambda_{uv})}-1\right)
++\eta/3 .
+\]
+
+Subtracting this upper bound from the preceding lower bound for
+$\mathbb E\overline P_X$ cancels the whole overlap-dependent correction and
+leaves
+\[
+\mathbb E\overline P_X-\mathbb E\overline T_X
+\ge
+\frac{|\mathcal J_2|}{\Delta^2}
+-\frac{|\mathcal J_3|}{\Delta^3}
+-2\eta/3 .
+\]
+Since $\eta>0$, this implies the stated inequality with final error
+$\eta$.
+\end{proof}

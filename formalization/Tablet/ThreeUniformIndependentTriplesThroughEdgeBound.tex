@@ -1,0 +1,19 @@
+\begin{lemma}
+Let $H$ be a hypergraph with finitely many edge indices, let $f$ be an
+edge whose vertices are covered by $v_0,v_1,v_2$, and suppose each
+$v_i$ has degree $D$. Let $T$ be a finite family of three-element sets
+of edge indices meeting $f$, with distinct members of each set
+nonadjacent in the line graph. If $g$ contains $v_i$, then at most
+$D^2$ members of $T$ contain $g$.
+\end{lemma}
+\begin{proof}
+Apply \noderef{ThreeUniformIndependentTripleRootLabeling} to each
+member $S$ of $T$ containing $g$. Its root-labelled tuple $q_S$ has
+image $S$, and its $i$th entry is $g$ by the uniqueness clause.
+For each of the other two indices $j$, its entry belongs to the
+degree fiber of $v_j$, which has cardinality $D$ by
+\noderef{HypergraphDegree}. The tuples therefore lie in a product of
+one singleton and two sets of size $D$, of cardinality $D^2$.
+The assignment is injective because the image of each tuple recovers
+$S$. The asserted bound follows.
+\end{proof}

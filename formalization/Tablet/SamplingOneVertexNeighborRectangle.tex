@@ -1,0 +1,43 @@
+\begin{helper}
+Fix an activation set $A$ and a vertex $v$ in the sampling space of
+\noderef{RandomIndependentSetSampling}.  Let $\nu$ be any measure satisfying
+the rectangular priority clause from that definition.  If $0\le a\le 1$, then
+the $\nu$-measure of the rectangle in which the activation set is exactly
+$A$, every priority coordinate lies in $[0,1]$, and each activated neighbor
+of $v$ has priority at most $a$ is
+\[
+\nu[\omega_1=A]\,
+a^{|\{u\in V(G):u\in A\text{ and }u\sim_G v\}|}.
+\]
+\end{helper}
+\begin{proof}
+Define a threshold function $t$ on vertices by
+\[
+t(u)=
+\begin{cases}
+a, & u\in A\text{ and }u\sim_G v,\\
+1, & \text{otherwise}.
+\end{cases}
+\]
+Because $0\le a\le 1$, every value of $t$ lies in $[0,1]$.  Applying the
+rectangular priority clause of \noderef{RandomIndependentSetSampling} to
+this threshold function gives
+\[
+\nu\{\omega:\omega_1=A\text{ and }0\le \omega_2(u)\le t(u)
+\text{ for every }u\}
+=
+\nu[\omega_1=A]\prod_{u\in V(G)}t(u).
+\]
+The event on the left is exactly the event in the statement: the coordinates
+with $u\in A$ and $u\sim_G v$ are bounded above by $a$, while all other
+coordinates are only bounded above by $1$.
+
+It remains only to simplify the finite product.  Each factor is $a$ precisely
+for vertices in the finite set
+\[
+\{u\in V(G):u\in A\text{ and }u\sim_G v\},
+\]
+and each remaining factor is $1$.  Hence the product is
+$a^{|\{u\in V(G):u\in A\text{ and }u\sim_G v\}|}$, which is the claimed
+formula.
+\end{proof}

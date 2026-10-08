@@ -1,0 +1,31 @@
+\begin{helper}
+Let $Q$ be a three-element finite set of vertices, and let $F$ be any
+real-valued function on finite vertex sets.  Then there are distinct
+vertices $a,b,c\in Q$ such that $Q=\{a,b,c\}$, the two-element subsets of
+$Q$ are exactly
+\[
+\{a,b\},\qquad \{a,c\},\qquad \{b,c\},
+\]
+and
+\[
+\sum_P \mathbf{1}_{\{|P|=2,\ P\subseteq Q\}} F(P)
+=F(\{a,b\})+F(\{a,c\})+F(\{b,c\}).
+\]
+\end{helper}
+\begin{proof}
+Since $|Q|=3$, choose an enumeration $Q=\{a,b,c\}$ with
+$a,b,c$ pairwise distinct.  Plainly $a,b,c\in Q$.
+
+Let $P\subseteq Q$ have size two.  Write $P=\{x,y\}$ with $x\ne y$.
+Because $x,y\in Q=\{a,b,c\}$, each of $x$ and $y$ is one of $a,b,c$.
+The case $x=y$ is impossible, and the remaining ordered possibilities give
+exactly the unordered sets $\{a,b\}$, $\{a,c\}$, and $\{b,c\}$.  Conversely,
+each of these three displayed sets has size two, by pairwise distinctness,
+and is contained in $Q$.  Hence they are precisely the complete collection
+of two-element subsets of $Q$.
+
+The indicated sum has a nonzero summand exactly on this complete collection
+of three subsets and is zero on every other finite set $P$.  Therefore it
+reduces to the three displayed terms
+$F(\{a,b\})+F(\{a,c\})+F(\{b,c\})$.
+\end{proof}

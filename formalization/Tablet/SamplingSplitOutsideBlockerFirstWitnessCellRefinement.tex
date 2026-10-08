@@ -1,0 +1,53 @@
+\begin{helper}
+Fix a measure \(\nu\), a finite linearly ordered index type, witness events
+\((W_i)_i\), a set \(U\), and a cell \(C\).  Assume
+\[
+  U=\bigcup_i W_i,
+\]
+assume that every witness event \(W_i\) is null-measurable with respect to
+\(\nu\), and assume that \(C\) is null-measurable with respect to \(\nu\).
+Then there are first-witness pieces \((P_i)_i\) such that, for every \(i\),
+\[
+  P_i=\{a:a\in W_i\hbox{ and }a\notin W_j\hbox{ for every }j<i\},
+\]
+such that the cell-restricted union identity
+\[
+  U\cap C=\bigcup_i(P_i\cap C)
+\]
+holds, such that the family \((P_i\cap C)_i\) is pairwise almost-disjoint
+with respect to \(\nu\), and such that every restricted first-witness piece
+\(P_i\cap C\) is null-measurable with respect to \(\nu\).
+\end{helper}
+\begin{proof}
+Under the stated hypotheses, apply
+\(\noderef{SamplingSplitOutsideBlockerFirstWitnessFiniteRefinement}\) to the
+finite union \(U=\bigcup_i W_i\).  It supplies pieces
+\[
+  P_i=\{a:a\in W_i\hbox{ and }a\notin W_j\hbox{ for all }j<i\},
+\]
+proves \(U=\bigcup_iP_i\), and proves that the family \(P_i\) is pairwise
+disjoint.
+
+Intersect the equality \(U=\bigcup_iP_i\) with the fixed cell \(C\).  Set
+intersection distributes over arbitrary unions, so
+\[
+  U\cap C=(\bigcup_iP_i)\cap C=\bigcup_i(P_i\cap C).
+\]
+If \(i\ne j\), then \(P_i\cap P_j=\emptyset\) by the cited refinement node.
+Hence
+\[
+  (P_i\cap C)\cap(P_j\cap C)\subseteq P_i\cap P_j=\emptyset.
+\]
+Thus the restricted pieces are pairwise disjoint.  A pairwise disjoint
+family is pairwise almost-disjoint for any measure, because every
+intersection of two distinct pieces is empty and therefore has measure zero.
+
+It remains only to check null-measurability.  For a fixed \(i\), the piece
+\(P_i\) is the intersection of \(W_i\) with the complements of the finitely
+many earlier witness events \(W_j\), \(j<i\).  Since each \(W_j\) is
+null-measurable, complements of these \(W_j\)'s are null-measurable, and a
+finite intersection of null-measurable sets is null-measurable.  Therefore
+\(P_i\) is null-measurable.  Intersecting with the null-measurable cell
+\(C\) preserves null-measurability, so \(P_i\cap C\) is null-measurable for
+every \(i\).
+\end{proof}

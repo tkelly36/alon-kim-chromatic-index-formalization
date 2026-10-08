@@ -1,0 +1,69 @@
+\begin{lemma}
+Suppose $k,D\ge1$, $H$ is $k$-uniform with maximum degree at most $D$,
+the colors are $[AD]$, and $Q$ is a completion datum for $\Delta=kD$.
+For any real thresholds $d,z$, the bad events indexed by $W\sqcup E$
+are Borel. They admit determining coordinate sets $S_j$ such that
+\[
+|S_j|\le2AD^2\Delta^2,\qquad
+|\{j:t\in S_j\}|\le2(k+1)\Delta^2.
+\]
+Consequently each $S_j$ intersects at most
+$4A(k+1)k^4D^6$ other determining sets.
+\end{lemma}
+\begin{proof}
+Work in the completed graphs of \noderef{NibbleCompletionData}. Let
+$R_a(v)$ be the vertices at distance at most two from $v$ in $Q_a$.
+There are at most $1+\Delta+\Delta(\Delta-1)=1+\Delta^2\le2\Delta^2$
+such vertices: each neighbor has only $\Delta-1$ neighbors other than
+$v$, and overcounting vertices only increases this upper bound.
+The relation $u\in R_a(v)$ is symmetric, since reversing a walk preserves
+its length.
+
+For a list event at $e$, put into $S_e$ all coordinates $(a,v)$ with
+$a\in M(e)$ and $v\in R_a(j_a(e))$.
+For a degree event at $x$, put into $S_x$ all $(a,v)$ for which there is
+an edge $e$ containing $x$, with $a\in M(e)$ and
+$v\in R_a(j_a(e))$.
+By \noderef{NibbleCompletedSelection}, selection of an old vertex needs
+only its closed radius-one neighborhood in the completion.
+The formula in \noderef{NibbleDeletedColors} writes the list statistic as
+the sum, over $a\in M(e)$, of indicators that some selected neighbor of
+$e$ has color $a$. By the pullback in \noderef{NibbleSelectedEdges} and
+the induced embedding in \noderef{NibbleCompletionData}, every such
+selected neighbor is an old neighbor of
+its root in the completion, so its closed radius-one neighborhood lies
+in the root's radius-two ball. The formula in \noderef{NibbleResidualDegree}
+writes the degree statistic as the sum, over incident edge indices, of
+indicators that no color selects the edge. By \noderef{NibbleSelectedEdges},
+only colors in that edge's retained list can select it. Thus a degree event
+needs exactly these incident-edge selection tests; our enlarged radius-two
+balls contain all their needed coordinates.
+Thus these sets determine exactly the events in \noderef{NibbleBadEvent}.
+Membership of an old vertex in a selection is a finite Boolean combination
+of Borel coordinate comparisons, as in \noderef{NibbleSelectedEdges}.
+The finite formulas in \noderef{NibbleResidualDegree} and
+\noderef{NibbleDeletedColors} use only finite intersections, unions, and
+sums of these indicators. They therefore give Borel statistics and hence
+the Borel threshold events of \noderef{NibbleBadEvent}, proving measurability
+without any probability or threshold restriction.
+
+There are at most $AD$ colors. For a degree event, for each color there
+are at most $D$ relevant incident edge indices by \noderef{HypergraphDegree}
+and \noderef{MaxDegreeAtMost},
+so its determining set has size at most $AD\cdot D\cdot2\Delta^2$.
+For a list event the sharper bound $AD\cdot2\Delta^2$ suffices, and is
+at most the stated bound because $D\ge1$.
+
+Fix a coordinate $(a,v)$. A list event using it has root image in
+$R_a(v)$. The embedding is injective, so there are at most $2\Delta^2$
+such roots. A degree event using it has an incident old edge whose image
+is in $R_a(v)$; there are at most $2\Delta^2$ choices of that edge, and
+each contains exactly $k$ vertices by \noderef{UniformHypergraph}.
+There are therefore at most $2k\Delta^2$ degree events using the coordinate.
+This proves the second bound, counting only vertices in $W$.
+Every event whose determining set intersects $S_j$ is counted by at least
+one coordinate in $S_j$. Multiplying the two bounds gives
+$4A(k+1)D^2\Delta^4=4A(k+1)k^4D^6$, even if $j$ itself is included in
+that count. Removing $j$ preserves the upper bound. No distance bound in
+the uncompleted graph has been used.
+\end{proof}

@@ -1,0 +1,39 @@
+\begin{lemma}
+Let $V,V'$ be finite, $\phi:V\to V'$, $S\subseteq V$, $S'=\phi(S)$,
+and let $s:V\to T$, $t:V'\to T$ satisfy
+$s(v)=t(v')\iff v\in S\text{ and }\phi(v)=v'$.
+Suppose source and target cells $C,C'$ have equivalent membership whenever
+their common activation traces and common priorities agree. Define $D=D_{s,t}$
+by \noderef{SamplingSplitOutsideBlockerProductDecode}, and define
+$\widehat C$ to be the set of synchronized pairs in $C\times C'$.
+Then $D(q)\in\widehat C$ if and only if $D(q)_1\in C$ for every $q$.
+Furthermore, if $q(s(v))=\widetilde q(s(v))$ for every $v\in S$, then
+\[
+D(q)\in\widehat C\quad\Longleftrightarrow\quad
+D(\widetilde q)\in\widehat C.
+\]
+Thus the inverse paired cell is invariant under arbitrary changes of all
+noncommon tags, without support restrictions or exceptional null sets.
+\end{lemma}
+\begin{proof}
+The decoding definition in
+\noderef{SamplingSplitOutsideBlockerProductDecode} reads activation and
+priority at the assigned tag. For $v\in S$, the overlap hypothesis gives
+$s(v)=t(\phi(v))$. Consequently every decoded pair is synchronized. More
+generally the source state of $D(q)$ and the target state of
+$D(\widetilde q)$ are synchronized when the two inputs agree at common tags:
+their common priorities are equal by the tag equality, and membership of
+$\phi(v)$ in the target activation trace is equivalent to
+$q(s(v))_1=1$, which is source activation membership of $v$.
+Every target common vertex is some $\phi(v)$ with $v\in S$, giving equality
+of the two traces as sets.
+
+For $q=\widetilde q$, synchronized membership transport gives
+$D(q)_1\in C\iff D(q)_2\in C'$. All other clauses of $\widehat C$ already
+hold, so its inverse image has exactly the claimed source membership.
+For general agreeing inputs apply transport to the mixed pair
+$(D(q)_1,D(\widetilde q)_2)$, then to the pair $D(\widetilde q)$.
+This gives $D(q)_1\in C\iff D(\widetilde q)_2\in C'
+\iff D(\widetilde q)_1\in C$. The first conclusion converts both sides
+to inverse paired-cell membership. No probability assertion is used.
+\end{proof}

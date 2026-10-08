@@ -1,0 +1,89 @@
+\begin{helper}
+Let \(V\) be finite and let \(\nu\) be an activation--priority law on
+\((A,\pi)\in\mathcal P(V)\times \mathbb R^V\).  Fix \(p\in[0,1]\).  Suppose
+that every activation atom has Bernoulli product mass
+\[
+\nu\{A=A_0\}=\operatorname{ofReal}\bigl(p^{|A_0|}(1-p)^{|V|-|A_0|}\bigr)
+\]
+and that, conditional on each activation atom, the priority coordinates have
+the lower-rectangle product law
+\[
+\nu\{A=A_0,\ 0\le \pi(v)\le s_v\hbox{ for all }v\in V\}
+=\nu\{A=A_0\}\operatorname{ofReal}\!\left(\prod_{v\in V}s_v\right)
+\]
+for every threshold vector \(s\in[0,1]^V\).  Let \(C\subseteq V\) be a finite
+coordinate set, let \(A_C\subseteq C\) be a prescribed activation pattern on
+\(C\), let \(L,U\subseteq C\) be disjoint priority-cut coordinate sets, and
+let \(t_v\in[0,1]\) for \(v\in L\cup U\).  Then the cell
+\[
+E=\{A\cap C=A_C,\ \pi(v)\le t_v\hbox{ for }v\in L,\ 
+       t_v<\pi(v)\hbox{ for }v\in U\}
+\]
+has a nonnegative real mass \(w\), with \(\operatorname{ofReal}(w)=\nu(E)\),
+and
+\[
+w=p^{|A_C|}(1-p)^{|C|-|A_C|}
+  \prod_{v\in L}t_v\prod_{v\in U}(1-t_v).
+\]
+\end{helper}
+\begin{proof}
+Partition \(E\) by the activation choices on the irrelevant coordinates
+\(V\setminus C\).  For each \(R\subseteq V\setminus C\), put
+\(A_R=A_C\cup R\).  The events
+\[
+E_R=\{A=A_R,\ \pi(v)\le t_v\hbox{ for }v\in L,\ 
+       t_v<\pi(v)\hbox{ for }v\in U\}
+\]
+are pairwise disjoint and their union is \(E\).  The sets are finite in number
+because \(V\) is finite.
+
+We next justify that, on each activation atom \(A_R\), no mass is lost by
+intersecting with the global priority cube
+\[
+Q=\{0\le \pi(v)\le 1\hbox{ for every }v\in V\}.
+\]
+Apply the lower-rectangle hypothesis to the threshold vector \(s_v=1\) for
+all \(v\).  This vector lies in \([0,1]^V\), so
+\[
+\nu\{A=A_R,\ Q\}
+=\nu\{A=A_R\}\operatorname{ofReal}\!\left(\prod_{v\in V}1\right)
+=\nu\{A=A_R\}.
+\]
+The set \(\{A=A_R,\ Q\}\) is contained in the activation atom
+\(\{A=A_R\}\).  Hence the complementary part
+\(\{A=A_R\}\setminus Q\) has measure zero: indeed, the activation atom is the
+disjoint union of \(\{A=A_R,\ Q\}\) and \(\{A=A_R\}\setminus Q\), and the first
+piece already has the whole atom mass.  Since \(E_R\setminus Q\) is contained
+in this zero-mass complementary part, \(\nu(E_R)=\nu(E_R\cap Q)\).
+
+Now apply \(\noderef{SamplingFinitePriorityCutProductFormula}\) to
+\(E_R\cap Q\), with activation atom \(A_R\), lower set \(L\), strict set
+\(U\), and the same thresholds \(t\).  The hypotheses of that node are exactly
+the activation-atom formula, the lower-rectangle product law, \(0\le p\le1\),
+the disjointness of \(L\) and \(U\), and the bounds \(0\le t_v\le1\).  It gives
+\[
+\nu(E_R)=\operatorname{ofReal}\!\left(
+p^{|A_R|}(1-p)^{|V|-|A_R|}
+\prod_{v\in L}t_v\prod_{v\in U}(1-t_v)\right).
+\]
+All displayed real factors are nonnegative.
+
+Finite additivity over the disjoint union of the \(E_R\)'s therefore gives
+\[
+\nu(E)=\operatorname{ofReal}\!\left(
+\sum_{R\subseteq V\setminus C}
+p^{|A_C|+|R|}(1-p)^{|V|-|A_C|-|R|}
+\prod_{v\in L}t_v\prod_{v\in U}(1-t_v)\right).
+\]
+The priority-cut factor is independent of \(R\), so it factors out.  The
+remaining sum is
+\[
+p^{|A_C|}(1-p)^{|C|-|A_C|}
+\sum_{R\subseteq V\setminus C}p^{|R|}(1-p)^{|V\setminus C|-|R|}.
+\]
+By the finite binomial theorem, the last sum is
+\((p+(1-p))^{|V\setminus C|}=1\).  Thus \(\nu(E)\) is the
+\(\operatorname{ofReal}\) of exactly the real number \(w\) displayed in the
+statement.  Since \(0\le p\le1\) and \(0\le t_v\le1\), each factor in \(w\)
+is nonnegative, so \(w\ge0\).
+\end{proof}

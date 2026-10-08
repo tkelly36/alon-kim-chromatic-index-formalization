@@ -1,0 +1,69 @@
+\begin{lemma}
+In a $3$-uniform $3$-simple local extremal setup at scale $D$, let $T_2$ be
+the number of triangles in $\overline G$ whose vertices all lie in $V_2$.  If
+$0<\varepsilon\le1/2$ and, for every $g\in V_2$,
+\[
+\sum_{x\in g\setminus f}\sum_{v\in f\setminus g}
+\deg_{\mathcal F}(v,x)=\left(\frac43\pm\varepsilon\right)D,
+\]
+then
+\[
+T_2\le
+\frac1{12}\left(
+\frac{\frac83(P(f)+w(X_s))+(4+2\varepsilon)Y}{D^2}
+-\frac43+3\varepsilon^2
+\right)D^3+\frac43D^2 .
+\]
+\end{lemma}
+\begin{proof}
+Let $N$ be the neighbor index set of $f$, and use the following actual
+counts on that same index set:
+\[
+q(g)=|\{h\in N:g\cap h=\varnothing\}|,\qquad
+y(g)=|\{h\in N:h\cap f\ne g\cap f,\ |g\cap h\cap X_b|=2\}|.
+\]
+By \noderef{ThreeUniformT2AmbientCherryBound},
+$T_2\le\frac1{12}\sum_{g\in V_2}q(g)^2$.
+By \noderef{ThreeUniformT2ExceptionalDegreeBounds},
+$0\le q(g)\le2D$, $q(g)\le2D-\sigma(g)+y(g)$,
+$y(g)\ge0$, and $\sum_{g\in V_2}y(g)\le2Y$.
+By \noderef{ThreeUniformT2OrientedIncidenceBound},
+$\sum_{g\in V_2}\sigma(g)\ge2w(X_b)-D|V_1|$.
+All these results use precisely the displayed counts; no new graph or
+exceptional-count witnesses are chosen.
+
+Apply \noderef{T2DegreeSquareAssembly} with index type $V_2$,
+$c(g)=\sigma(g)$, $m=|V_1|$, and $B=w(X_b)$. Its cross-degree hypothesis
+is the hypothesis of the present lemma, and all its other inequalities
+were just supplied. It gives
+\[
+\sum_{g\in V_2}q(g)^2\le
+(20/9+\varepsilon^2)|V_2|D^2-\tfrac83Dw(X_b)
++\tfrac43|V_1|D^2+(16/3+2\varepsilon)DY.
+\]
+The disjoint neighbor partition and saturation in
+\noderef{ThreeUniformThreeSimpleLocalSetup} give
+$|V_1|+|V_2|=3(D-1)\le3D$.
+Since $20/9+\varepsilon^2\ge4/3$, the two cardinality terms in this
+display total at most $(20/3+3\varepsilon^2)D^3$.
+The same setup's pair identity and weight split imply
+\[
+w(X_b)=3D^2-6D+3-P(f)-w(X_s)+Y.
+\]
+Substitute this into the negative weight term. Expansion bounds the
+sum of squares by
+\[
+(-4/3+3\varepsilon^2)D^3+16D^2-8D
++\tfrac83D(P(f)+w(X_s))+(8/3+2\varepsilon)DY.
+\]
+Discard $-8D\le0$ and increase the last coefficient from
+$8/3+2\varepsilon$ to $4+2\varepsilon$, using $D,Y\ge0$.
+Since the setup has $D\ge100$, we may divide by $D^2$ and rewrite the result as
+\[
+\sum_{g\in V_2}q(g)^2\le
+\left(\frac{\frac83(P(f)+w(X_s))+(4+2\varepsilon)Y}{D^2}
+-\frac43+3\varepsilon^2\right)D^3+16D^2.
+\]
+Combining this with the cherry estimate and dividing by $12$ gives
+the conclusion, including $16D^2/12=4D^2/3$.
+\end{proof}

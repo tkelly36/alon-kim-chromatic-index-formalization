@@ -1,0 +1,60 @@
+\begin{lemma}
+Let $\mathcal H$ be a $3$-uniform hypergraph of maximum degree at most $D$,
+let $e\in E(\mathcal H)$ intersect exactly $3(D-1)$ other edges, and let $G$
+be the subgraph of $L(\mathcal H)$ induced on $N_{L(\mathcal H)}(e)$.  With
+$X=X(e,\mathcal H)$ and
+\[
+w_{\mathcal H,e}(X)=
+\sum_{x\in X}\sum_{v<v'\in e}
+\deg_{\mathcal H}(v,x)\deg_{\mathcal H}(v',x),
+\]
+the number $P(e)$ of independent pairs in $N_{L(\mathcal H)}(e)$ satisfies
+\[
+P(e)\ge 3D^2-6D+3-w_{\mathcal H,e}(X).
+\]
+\end{lemma}
+\begin{proof}
+By \noderef{LineGraphOfHypergraph}, the vertices of the line graph are the
+edge indices of $\mathcal H$, and the neighborhood $N_{L(\mathcal H)}(e)$ is
+exactly the set of edge indices $h\ne e$ whose hyperedges meet $e$.  The
+hypothesis says that this set has cardinality $3(D-1)=3D-3$.  Therefore the
+total number of unordered two-element subsets of the neighborhood is
+\[
+\binom{3D-3}{2}.
+\]
+By \noderef{IndependentPairCount}, $P(e)$ counts exactly the two-element
+subsets of $N_{L(\mathcal H)}(e)$ whose two vertices are not adjacent in the
+line graph.  Since $G$ is the subgraph induced on the same neighborhood, the
+edges of $G$ are exactly the adjacent two-element subsets of this
+neighborhood.  The adjacent and non-adjacent two-element subsets partition
+all two-element subsets, so
+\[
+P(e)=\binom{3D-3}{2}-|E(G)|.
+\]
+
+The edge-count identity \noderef{SaturatedLineGraphEdgeCount}, applied to
+this $3$-uniform hypergraph of maximum degree at most $D$ and to the edge
+$e$ that meets exactly $3(D-1)$ other edges, gives
+\[
+|E(G)|=3\binom{D-1}{2}+w_{\mathcal H,e}(X)-Y_{\mathcal H}(e),
+\]
+and the same cited statement gives $Y_{\mathcal H}(e)\ge0$.  Substituting
+this identity into the previous display gives
+\[
+P(e)=
+\binom{3D-3}{2}
+-3\binom{D-1}{2}
+-w_{\mathcal H,e}(X)+Y_{\mathcal H}(e).
+\]
+Since $Y_{\mathcal H}(e)\ge0$, discarding it can only decrease the
+right-hand side, and hence
+\[
+P(e)\ge
+\binom{3D-3}{2}-3\binom{D-1}{2}-w_{\mathcal H,e}(X).
+\]
+The elementary binomial calculation
+\[
+\binom{3D-3}{2}-3\binom{D-1}{2}=3D^2-6D+3
+\]
+then gives the asserted lower bound.
+\end{proof}

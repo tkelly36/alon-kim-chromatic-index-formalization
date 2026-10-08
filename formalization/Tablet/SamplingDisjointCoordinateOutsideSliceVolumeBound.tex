@@ -1,0 +1,29 @@
+\begin{helper}
+Let \(V\) be finite.  Let \(a,b,c\in V\) be pairwise distinct, and let
+\(S_x,S_y,S_z\subseteq V\) be pairwise disjoint and disjoint from
+\(\{a,b,c\}\).  If \(0\le x\le y\le z\le1\), then the product Lebesgue
+measure, on the coordinates \(V\setminus\{a,b,c\}\), of the slice of the
+unit-cube chamber with \(q_a=x\), \(q_b=y\), and \(q_c=z\) is at most
+\[
+\operatorname{ofReal}\bigl(x^{|S_x|}y^{|S_y|}z^{|S_z|}\bigr).
+\]
+\end{helper}
+\begin{proof}
+Fix \(0\le x\le y\le z\le1\).  In the slice with distinguished coordinates
+\(q_a=x\), \(q_b=y\), and \(q_c=z\), each coordinate in \(S_x\) must lie in
+\([0,x)\), each coordinate in \(S_y\) must lie in \([0,y)\), and each
+coordinate in \(S_z\) must lie in \([0,z)\).  Every other outside coordinate
+is only constrained to lie in \([0,1]\).  The hypotheses that
+\(S_x,S_y,S_z\) are pairwise disjoint and avoid \(\{a,b,c\}\) make these
+coordinate restrictions independent and ensure that no outside coordinate is
+assigned two different thresholds.
+
+The slice is therefore contained in the product box whose side lengths are
+\(x\) on the \(S_x\)-coordinates, \(y\) on the \(S_y\)-coordinates, \(z\) on
+the \(S_z\)-coordinates, and \(1\) on all remaining outside coordinates.
+Finite product Lebesgue measure of this box is the product of its side
+lengths.  Since \(x,y,z\) are nonnegative, this product is
+\(x^{|S_x|}y^{|S_y|}z^{|S_z|}\), and monotonicity of measure gives the stated
+upper bound.  The strict inequalities only shrink the corresponding intervals,
+so no boundary correction is needed for this upper-bound form.
+\end{proof}

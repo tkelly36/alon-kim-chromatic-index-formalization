@@ -1,0 +1,52 @@
+\begin{helper}
+Let $n,q\in\mathbb N$, let $C,T,r\in\mathbb R$, and let
+$s_1,\ldots,s_n$ be real numbers.  Suppose $C>0$, $T=qC+r$,
+$0\le r\le C$, $0\le s_j\le C$ for every $j$, and
+$\sum_j s_j\le T$.  Then
+\[
+\sum_{j=1}^n s_j^2\le qC^2+r^2 .
+\]
+\end{helper}
+\begin{proof}
+We argue by induction on $n$.  The case $n=0$ is immediate, since the
+left-hand side is $0$ and the right-hand side is a sum of nonnegative terms.
+
+Assume the result for $n$ entries and consider $n+1$ entries.  Write
+$x=s_{n+1}$ and let $s_1,\ldots,s_n$ be the remaining entries.  Their sum is
+at most $T-x$ because the total sum is at most $T$, and each of them still
+lies in $[0,C]$.
+
+If $x\le r$, then
+\[
+T-x=qC+(r-x),\qquad 0\le r-x\le C .
+\]
+The induction hypothesis applied to the first $n$ entries gives
+\[
+\sum_{j=1}^n s_j^2\le qC^2+(r-x)^2 .
+\]
+Adding $x^2$ and using $0\le x\le r$ gives
+\[
+\sum_{j=1}^{n+1}s_j^2
+\le qC^2+(r-x)^2+x^2
+\le qC^2+r^2 .
+\]
+
+It remains to treat the case $r<x$.  Since $x\le\sum_{j=1}^{n+1}s_j\le T$
+and $T=qC+r$, the inequality $r<x$ forces $q>0$.  Put $q'=q-1$ and
+$r'=C+r-x$.  Then
+\[
+T-x=q'C+r',\qquad 0\le r'\le C,
+\]
+where the lower bound uses $x\le C$ and $r\ge0$, and the upper bound uses
+$r<x$.  The induction hypothesis gives
+\[
+\sum_{j=1}^n s_j^2\le q'C^2+(C+r-x)^2 .
+\]
+Adding $x^2$ and using $r<x\le C$ yields
+\[
+q'C^2+(C+r-x)^2+x^2
+\le (q'+1)C^2+r^2
+=qC^2+r^2 .
+\]
+This proves the induction step and hence the claim.
+\end{proof}

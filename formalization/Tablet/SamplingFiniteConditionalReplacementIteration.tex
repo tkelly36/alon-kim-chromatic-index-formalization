@@ -1,0 +1,39 @@
+\begin{helper}
+Let \(\Omega\) be a finite set, let \(n\) be a nonnegative integer, let
+\(w:\Omega\to\mathbb{R}\) be a nonnegative weight function, and let
+\(P:\mathbb{N}\times\Omega\to\mathbb{R}\) be a real-valued function.  Suppose
+that for every integer \(k<n\) and every \(\omega\in\Omega\),
+\[
+P(k,\omega)\le P(k+1,\omega).
+\]
+Then
+\[
+\sum_{\omega\in\Omega} w(\omega)P(0,\omega)
+\le
+\sum_{\omega\in\Omega} w(\omega)P(n,\omega).
+\]
+\end{helper}
+\begin{proof}
+We prove the stronger assertion that for every \(m\le n\),
+\[
+\sum_{\omega\in\Omega}w(\omega)P(0,\omega)
+\le
+\sum_{\omega\in\Omega}w(\omega)P(m,\omega).
+\]
+The case \(m=0\) is equality.  For the induction step, assume the assertion
+has been proved for \(m\), and suppose \(m+1\le n\).  Then \(m<n\), so the
+hypothesis gives \(P(m,\omega)\le P(m+1,\omega)\) for every
+\(\omega\in\Omega\).  Since \(w(\omega)\ge 0\), multiplication by
+\(w(\omega)\) preserves the inequality:
+\[
+w(\omega)P(m,\omega)\le w(\omega)P(m+1,\omega).
+\]
+Summing over the finite set \(\Omega\) gives
+\[
+\sum_{\omega\in\Omega}w(\omega)P(m,\omega)
+\le
+\sum_{\omega\in\Omega}w(\omega)P(m+1,\omega).
+\]
+Combining this with the induction hypothesis proves the assertion for
+\(m+1\).  Taking \(m=n\) gives the displayed finite-iteration inequality.
+\end{proof}

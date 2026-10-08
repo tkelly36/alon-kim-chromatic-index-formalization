@@ -1,0 +1,28 @@
+\begin{lemma}
+Let $\iota,\gamma,\Delta$ be real numbers with $\gamma\ge1$, $\Delta\ge4$,
+$e^{-\gamma}\le\min(1/4,\iota/8)$, $1/\gamma\le\iota/4$, and
+$2/\Delta\le\iota/8$. Then
+\[
+\left(1-\frac{1-e^{-\gamma}}\Delta+\frac2{\Delta^2}\right)^{\lceil\Delta/\gamma\rceil}
+\le 1-\frac{1-\iota/2}{\gamma}.
+\]
+\end{lemma}
+\begin{proof}
+Put $u=1-e^{-\gamma}-2/\Delta$. Since $2/\Delta\le1/2$ and
+$e^{-\gamma}\le1/4$, we have $0\le u\le1$. In particular
+$0\le1-u/\Delta$. The inequality $1+x\le e^x$, followed by
+$\lceil\Delta/\gamma\rceil\ge\Delta/\gamma$, gives
+\[
+(1-u/\Delta)^{\lceil\Delta/\gamma\rceil}
+\le e^{-u\lceil\Delta/\gamma\rceil/\Delta}\le e^{-u/\gamma}.
+\]
+Since $0\le u/\gamma\le1$, the exponential remainder estimate
+$|e^x-1-x|\le x^2$ for $|x|\le1$ bounds the last expression by
+$1-u/\gamma+u^2/\gamma^2$. Moreover $u^2\le1$, so
+\[
+e^{-\gamma}+2/\Delta+u^2/\gamma
+\le \iota/8+\iota/8+\iota/4=\iota/2.
+\]
+Dividing this inequality by $\gamma>0$ and substituting the definition
+of $u$ proves the claimed bound.
+\end{proof}

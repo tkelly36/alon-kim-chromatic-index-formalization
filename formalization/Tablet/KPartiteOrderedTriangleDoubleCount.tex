@@ -1,0 +1,40 @@
+\begin{helper}
+Let $k$ be a natural number and let $w_{ij}\ge 0$ be a nonnegative real
+weight assigned to each ordered pair of indices in $\{1,\ldots,k\}$.  For an
+increasing triple $i<j<\ell$, put
+\[
+T(i,j,\ell)=\sqrt{w_{ij}w_{i\ell}w_{j\ell}}.
+\]
+The ordered triangle sum obtained by taking, for each ordered triple of
+distinct indices, the same value $T(a,b,c)$ after sorting its entries
+$a<b<c$, is exactly six times the increasing-triple sum:
+\[
+\begin{aligned}
+&\sum_{i<j<\ell}T(i,j,\ell)
++\sum_{i<\ell<j}T(i,\ell,j)
++\sum_{j<i<\ell}T(j,i,\ell)\\
+&\quad
++\sum_{j<\ell<i}T(j,\ell,i)
++\sum_{\ell<i<j}T(\ell,i,j)
++\sum_{\ell<j<i}T(\ell,j,i)
+=
+6\sum_{i<j<\ell}T(i,j,\ell).
+\end{aligned}
+\]
+\end{helper}
+\begin{proof}
+The nonnegativity hypothesis ensures that these square-root weights are in
+the paper-supported setting of nonnegative edge weights.  The identity itself
+is a finite reindexing.  Each of the six sums on the left is indexed by one of the six possible
+linear orderings of an ordered triple with three distinct entries.  The
+first is already the increasing-triple sum.  For the second ordering
+$i<\ell<j$, the coordinate swap $(i,j,\ell)\mapsto(i,\ell,j)$ is a bijection
+from those triples to the increasing triples, and the summand becomes
+$T(i,\ell,j)$ with its arguments increasing.  The same coordinate
+permutation gives bijections from the remaining four orderings
+$j<i<\ell$, $j<\ell<i$, $\ell<i<j$, and $\ell<j<i$ to the increasing triples.
+In every case the displayed summand is exactly the value attached to the
+sorted triple.  Hence all six summands are equal to
+$\sum_{i<j<\ell}T(i,j,\ell)$, and adding the six equal contributions gives
+$6\sum_{i<j<\ell}T(i,j,\ell)$.
+\end{proof}

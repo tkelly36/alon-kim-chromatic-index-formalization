@@ -1,0 +1,46 @@
+\begin{helper}
+Let $G$ and $G'$ be finite simple graphs with distinguished vertices $v$
+and $w$.  Suppose an injective map $\phi:V(G)\to V(G')$ sends every
+neighbor of $v$ to a neighbor of $w$, every neighbor of $w$ is the image
+under $\phi$ of a neighbor of $v$, and adjacency between pairs of neighbors
+of $v$ is preserved and reflected by $\phi$.  Then for every natural number
+$M$,
+\[
+b_{G,M}(v)=b_{G',M}(w).
+\]
+\end{helper}
+\begin{proof}
+By \noderef{LocalBParameter}, it is enough to show equality of the three
+quantities appearing in the displayed formula: the degree of the
+distinguished vertex, the independent-pair count from
+\noderef{IndependentPairCount}, and the independent-triple count from
+\noderef{IndependentTripleCount}.
+
+The degree equality follows from the neighborhood hypotheses.  The map
+$x\mapsto\phi(x)$ sends the finite set $N_G(v)$ into $N_{G'}(w)$.  The
+surjectivity hypothesis says that every element of $N_{G'}(w)$ is reached
+from some element of $N_G(v)$, and injectivity of $\phi$ makes that preimage
+unique.  Hence the two neighbor sets have the same cardinality, which is
+exactly the equality of degrees.
+
+Fix $n\in\{2,3\}$.  Consider the finite set of all $n$-element independent
+subsets of $N_G(v)$ and the corresponding finite set of all $n$-element
+independent subsets of $N_{G'}(w)$.  The map $S\mapsto\phi(S)$ sends the
+first set into the second: cardinality is preserved because $\phi$ is
+injective, membership in the target neighborhood follows from the
+neighborhood-map hypothesis, and independence follows because adjacency on
+neighbors is preserved and reflected.  Conversely, if
+$T\subseteq N_{G'}(w)$ is an independent $n$-set, take its full preimage
+under $\phi$.  The neighborhood-surjectivity hypothesis says the image of
+this preimage is exactly $T$, and injectivity again gives the same
+cardinality.  Each preimage vertex lies in $N_G(v)$, and if two such
+preimage vertices were adjacent in $G$, their images would be adjacent in
+$G'$, contradicting independence of $T$.  These two constructions are
+inverse to one another, so the two finite sets have equal cardinality.
+
+Applying the preceding paragraph with $n=2$ gives equality of
+\noderef{IndependentPairCount}; applying it with $n=3$ gives equality of
+\noderef{IndependentTripleCount}.  Substituting the degree, pair-count, and
+triple-count equalities into the formula of \noderef{LocalBParameter}
+proves the claimed equality of local $b$-parameters.
+\end{proof}

@@ -1,0 +1,62 @@
+\begin{lemma}
+Let $(\Omega,\nu)$ be a probability space, $A,K$ finite types, and give
+$A$ a sigma algebra with measurable singletons. Let $X_a:\Omega\to A$
+be measurable independent random variables. Let $P\subseteq A$ satisfy
+$X_a(\omega)\in P$ for every $\omega,a$. Suppose
+$f:A^K\to\mathbb R$ satisfies $|f(I)-f(J)|\le1$ whenever $I,J\in P^K$
+agree outside one coordinate. If $m=|K|>0$ and $t>0$, then
+\[
+\nu\{f(X)\ge\mathbb E f(X)+t\}\le \exp(-2t^2/m).
+\]
+\end{lemma}
+\begin{proof}
+All subsets of the finite set $A$ are measurable. Write
+$p_a(v)=\nu\{X_a=v\}$. Independence gives
+$\nu\{X=I\}=\prod_a p_a(I_a)$, and each $p_a$ sums to one.
+Thus the push-forward of $\nu$ by $\omega\mapsto(X_a(\omega))_a$
+is the finite product of these masses. Explicitly, for every $B\subseteq A^K$
+and every real function $g$ on $A^K$,
+\[
+\nu\{X\in B\}=\sum_{I\in B}\prod_a p_a(I_a),\qquad
+\int g(X)\,d\nu=\sum_{I\in A^K}g(I)\prod_a p_a(I_a).
+\]
+These identities follow by partitioning into the finitely many measurable
+fibers; the integral is legitimate because $g(X)$ has finite range.
+Every value with positive $p_a$ belongs to $P$, since its fiber is
+nonempty. We may therefore restrict each coordinate to its nonempty
+positive-mass support without changing either identity.
+
+Enumerate $K$ by $1,\ldots,m$. For a supported prefix $v_1,\ldots,v_i$,
+define $M_i$ to be the sum of $f(v_1,\ldots,v_i,w_{i+1},\ldots,w_m)$
+against the product of the remaining coordinate masses. Thus $M_0=\mathbb Ef(X)$,
+$M_m=f(X)$, and averaging $M_i$ over $v_i$ gives $M_{i-1}$.
+For a fixed prefix of length $i-1$, two possible values of $M_i$ differ
+by at most one: subtract their defining sums, use the assumed pointwise
+bound on $f$, and use that the remaining product masses sum to one.
+If $u$ is the minimum of these values, all lie in $[u,u+1]$.
+Consequently $D_i=M_i-M_{i-1}$ has conditional mean zero and lies
+in $[-p,1-p]$, where $p=M_{i-1}-u\in[0,1]$.
+
+Here is the needed interval-width-one exponential estimate. Convexity
+gives, for $z\in[-p,1-p]$ and $\lambda\ge0$,
+\[
+e^{\lambda z}\le(1-p-z)e^{-\lambda p}+(z+p)e^{\lambda(1-p)}.
+\]
+Averaging a mean-zero $z$ bounds its exponential mean by
+$B(\lambda)=(1-p)e^{-\lambda p}+pe^{\lambda(1-p)}$.
+For $p=0$ or $1$ this is one. Otherwise $h=\log B$ has
+$h(0)=h'(0)=0$ and $h''(\lambda)=q(1-q)\le1/4$, where
+$q=pe^{\lambda(1-p)}/B(\lambda)$. Integrating this inequality twice
+on $[0,\lambda]$ gives $h(\lambda)\le\lambda^2/8$.
+Thus every prefix has conditional exponential mean at most
+$e^{\lambda^2/8}$. Successively summing over the last exposed coordinate
+in the finite product shows
+\[
+\mathbb E e^{\lambda\sum_iD_i}\le e^{m\lambda^2/8}.
+\]
+For $\lambda>0$, on the non-strict tail event the integrand is at least
+$e^{\lambda t}$, so its probability is at most
+$e^{-\lambda t+m\lambda^2/8}$. Choose $\lambda=4t/m>0$ and use
+$\sum_iD_i=f(X)-\mathbb Ef(X)$ to obtain the stated bound. The fiber
+identities above transport both the mean and the event back to $\Omega$.
+\end{proof}

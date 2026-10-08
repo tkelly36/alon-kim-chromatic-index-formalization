@@ -1,0 +1,22 @@
+\begin{helper}
+Let \(V\) be finite and let \(a,b,c\in V\) be pairwise distinct.  The map
+\[
+q\in\mathbb R^V\longmapsto
+\bigl(q_a,q_b,q_c,(q_v)_{v\in V\setminus\{a,b,c\}}\bigr)
+\in \mathbb R^3\times\mathbb R^{V\setminus\{a,b,c\}}
+\]
+preserves finite product Lebesgue measure.
+\end{helper}
+\begin{proof}
+Because \(a,b,c\) are pairwise distinct, the list consisting first of
+\(a,b,c\) and then all elements of \(V\setminus\{a,b,c\}\) is a reindexing of
+the finite set \(V\).  The displayed map is exactly the coordinate
+permutation associated to that reindexing, written with the first three
+coordinates separated from the remaining coordinates.  Finite product
+Lebesgue measure is invariant under coordinate permutations, and the standard
+product identification between
+\(\mathbb R^{\{a,b,c\}\sqcup (V\setminus\{a,b,c\})}\) and
+\(\mathbb R^3\times\mathbb R^{V\setminus\{a,b,c\}}\) is also
+measure-preserving.  Composing these two measure-preserving identifications
+gives the stated measure-preserving map.
+\end{proof}

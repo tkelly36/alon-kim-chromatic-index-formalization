@@ -1,0 +1,55 @@
+\begin{helper}
+Let \(V\) be finite, let \(u\ne v\), and let \(B_U,B_T\subseteq
+V\setminus\{u,v\}\) be disjoint.  The volume of the set of all priority
+vectors \(q\in\mathbb R^V\) such that every coordinate lies in \([0,1]\),
+\(q(v)\le q(u)\), \(q(z)<q(u)\) for every \(z\in B_U\), and
+\(q(z)<q(v)\) for every \(z\in B_T\), is
+\[
+\operatorname{ofReal}\left(\int_0^1\int_0^a
+a^{|B_U|}b^{|B_T|}\,db\,da\right).
+\]
+\end{helper}
+\begin{proof}
+Split the two distinguished coordinates from the complementary coordinates
+by the map
+\[
+q\mapsto\bigl(q(u),q(v),(q(w))_{w\ne u,v}\bigr).
+\]
+By \(\noderef{SamplingTwoCoordinateComplementMeasurePreserving}\), this map
+preserves Lebesgue product measure.  Therefore the required volume is the
+volume, in
+\(\mathbb R\times\mathbb R\times\mathbb R^{V\setminus\{u,v\}}\), of the set
+of triples \((a,b,r)\) with \(0\le a\le1\), \(0\le b\le a\), all
+complementary coordinates \(r(w)\in[0,1]\), all \(B_U\)-coordinates
+\(<a\), and all \(B_T\)-coordinates \(<b\).
+
+This split set is Borel measurable, since it is described by finitely many
+closed interval conditions and strict coordinate inequalities.  Applying
+Tonelli's product-section formula first in the \(a\)-coordinate and then in
+the \(b\)-coordinate writes its volume as the iterated nonnegative integral
+over \((a,b)\) of the volume of the complementary-coordinate fiber.  If
+\((a,b)\) is outside the simplex \(0\le b\le a\le1\), that fiber is empty.
+If \(0\le b\le a\le1\), then
+\(\noderef{SamplingTwoCoordinateChamberFiberVolume}\) gives the fiber volume
+exactly as \(a^{|B_U|}b^{|B_T|}\).
+
+Thus the volume is
+\[
+\int_{\mathbb R}^{+}\int_{\mathbb R}^{+}
+\mathbf 1_{\{0\le b\le a\le1\}}\,
+\operatorname{ofReal}(a^{|B_U|}b^{|B_T|})\,db\,da .
+\]
+The integrand \(a^{|B_U|}b^{|B_T|}\) is continuous.  On the simplex it is
+nonnegative, and replacing the closed intervals by half-open intervals does
+not change Lebesgue measure.  The standard conversion between the
+nonnegative integral of \(\operatorname{ofReal}\) over an oriented interval
+and \(\operatorname{ofReal}\) of the real interval integral, applied first in
+\(b\) over \((0,a]\) and then in \(a\) over \((0,1]\), gives precisely
+\[
+\operatorname{ofReal}\left(\int_0^1\int_0^a
+a^{|B_U|}b^{|B_T|}\,db\,da\right).
+\]
+Combining the measure-preserving coordinate split, the two applications of
+Tonelli, the cited fiber-volume identity, and this interval-integral
+conversion proves the claimed formula.
+\end{proof}

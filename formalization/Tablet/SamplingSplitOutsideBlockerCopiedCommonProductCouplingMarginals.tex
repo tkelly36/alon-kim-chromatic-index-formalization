@@ -1,0 +1,250 @@
+\begin{helper}
+Let \(V\) and \(V'\) be finite vertex sets, let \(\Delta\in\mathbb N\), and
+let \(\gamma\in\mathbb R\).  Let
+\[
+  \nu \quad\text{on}\quad \mathcal P(V)\times\mathbb R^V,
+  \qquad
+  \nu' \quad\text{on}\quad \mathcal P(V')\times\mathbb R^{V'}
+\]
+be the source and target activation-priority product measures, with the
+activation coordinate carrying the full measurable structure and the priority
+coordinate carrying the finite product Borel structure.  Assume
+\[
+  0\le \gamma/\Delta\le 1.
+\]
+Assume that the source activation atoms satisfy, for every \(A\subseteq V\),
+\[
+  \nu\{(B,\pi):B=A\}
+  =
+  \operatorname{ofReal}\!\left(
+    (\gamma/\Delta)^{|A|}
+    (1-\gamma/\Delta)^{|V|-|A|}
+  \right),
+\]
+and that source activation atoms have the lower-rectangle product law: for
+every \(A\subseteq V\) and every threshold vector \(t:V\to\mathbb R\) with
+\(t(v)\in[0,1]\) for all \(v\),
+\[
+  \nu\{(B,\pi):B=A,\ 0\le \pi(v)\le t(v)\text{ for every }v\in V\}
+  =
+  \nu\{(B,\pi):B=A\}\,
+  \operatorname{ofReal}\!\left(\prod_{v\in V} t(v)\right).
+\]
+Assume the analogous two target laws: for every \(A'\subseteq V'\),
+\[
+  \nu'\{(B',\pi'):B'=A'\}
+  =
+  \operatorname{ofReal}\!\left(
+    (\gamma/\Delta)^{|A'|}
+    (1-\gamma/\Delta)^{|V'|-|A'|}
+  \right),
+\]
+and, for every \(A'\subseteq V'\) and every \(t':V'\to\mathbb R\) with
+\(t'(v')\in[0,1]\) for all \(v'\),
+\[
+  \nu'\{(B',\pi'):B'=A',\ 0\le \pi'(v')\le t'(v')
+      \text{ for every }v'\in V'\}
+  =
+  \nu'\{(B',\pi'):B'=A'\}\,
+  \operatorname{ofReal}\!\left(\prod_{v'\in V'} t'(v')\right).
+\]
+Let \(\phi:V\to V'\) be injective, let \(S\subseteq V\) be the source common
+coordinate set, and let \(S'\subseteq V'\) be the target common coordinate
+set with \(S'=\phi(S)\).  Then there is a paired measure
+\(\lambda\) on
+\[
+  \bigl(\mathcal P(V)\times\mathbb R^V\bigr)
+  \times
+  \bigl(\mathcal P(V')\times\mathbb R^{V'}\bigr)
+\]
+such that the nonsynchronized common-record set has zero \(\lambda\)-mass,
+\[
+  \lambda\{((B,\pi),(B',\pi')):
+     \neg(B'\cap S'=\phi(B\cap S)
+       \text{ and }
+       \pi'(\phi(v))=\pi(v)\text{ for every }v\in S)\}=0,
+\]
+and such that \(\lambda\)'s source and target projections are exactly
+\(\nu\) and \(\nu'\) on all measurable events.  That is, for every
+measurable source event \(E\subseteq\mathcal P(V)\times\mathbb R^V\) and
+every measurable target event \(E'\subseteq\mathcal P(V')\times\mathbb R^{V'}\),
+\[
+  \lambda(\{(\eta,\eta'):\eta\in E\})=\nu(E),\qquad
+  \lambda(\{(\eta,\eta'):\eta'\in E'\})=\nu'(E').
+\]
+The same $\lambda$ admits a
+\noderef{SamplingSplitOutsideBlockerProductRealization} for
+$p=\gamma/\Delta$, $\phi$, and $S$. Its entire joint law is the push-forward
+of independent Bernoulli--uniform tagged coordinates by a measurable map.
+\end{helper}
+\begin{proof}
+The tag construction below is supplied by \noderef{SamplingCopiedCommonTags};
+its tag set $V\sqcup(V'\setminus\phi(S))$ is the same construction with
+the common and source-only tags combined into the summand $V$.
+The decoder is measurable by \noderef{SamplingCoordinateDecodeMeasurable}
+on each projection. The two marginal cylinder calculations below are the
+two applications of \noderef{SamplingInjectiveCoordinateDecodeLaws}, and
+their upgrade to full marginal equalities is
+\noderef{SamplingActivationRectangleMeasureUniqueness}. We spell out the
+construction and the measure argument to identify the same joint witness.
+Put $p=\gamma/\Delta$ and form the disjoint tag type
+\[
+T=S\sqcup((V\setminus S)\sqcup(V'\setminus S')).
+\]
+Send $v\in S$ to its common tag and $v\notin S$ to its source-only tag;
+this defines $s$. Send $v'\in S'$ to the common tag of its unique preimage
+under $\phi|_S$, and $v'\notin S'$ to its target-only tag; this defines $t$.
+The preimage exists because $S'=\phi(S)$ and is unique by injectivity.
+The disjoint sums make $s$ and $t$ injective. Every tag is used, and
+$s(v)=t(v')$ holds exactly when $v\in S$ and $v'=\phi(v)$.
+
+On each tag put $b_p\otimes u$, where $b_p=p\delta_1+(1-p)\delta_0$ on
+$\mathbb R$ and $u=\operatorname{Leb}|_{[0,1]}$. Both are probability
+measures, including $p=0$ and $p=1$. Let $m$ be their finite product over $T$.
+Use $D=D_{s,t}$ from \noderef{SamplingSplitOutsideBlockerProductDecode}
+and set $\lambda=D_*m$. The map $D$ is measurable: each priority coordinate
+is a coordinate projection, and the inverse image of a prescribed source
+activation set is a finite intersection of Borel sets
+$\{q:q(s(v))_1=1\}$ and their complements. The target activation fibers
+are treated identically. The activation spaces are finite and discrete, so
+singleton fibers suffice; pairing these measurable maps gives the asserted
+measurability into the natural product space. This supplies every field of
+\noderef{SamplingSplitOutsideBlockerProductRealization}, including its
+exact push-forward identity for this same $\lambda$.
+
+For every input $q$, common activation and priority records of $D(q)$ agree
+because they use the same common tag. Thus the nonsynchronized set has empty
+inverse image. Each priority lies in $[0,1]$ almost surely, and the finite
+union of exceptional coordinate sets is null. Consequently
+\[
+  \lambda(\text{nonsynchronized common records})=0,
+\]
+\[
+  \lambda\{((B,\pi),(B',\pi')):\pi\notin[0,1]^V\}=0,\qquad
+  \lambda\{((B,\pi),(B',\pi')):\pi'\notin[0,1]^{V'}\}=0,
+\]
+For a source atom $A$ and thresholds $a:V\to[0,1]$, the inverse cylinder
+restricts the distinct tags $s(v)$. Each $v\in A$ contributes activation
+factor $p$, each $v\notin A$ contributes $1-p$, and its priority factor
+is $u([0,a(v)])=a(v)$. Tags outside $s(V)$ are unrestricted and contribute
+one. Thus finite-product rectangle evaluation gives
+$p^{|A|}(1-p)^{|V|-|A|}\prod_v a(v)$, also the value given by the
+hypotheses on $\nu$. For a target atom $A'$, use the distinct tags $t(v')$;
+the same calculation gives
+$p^{|A'|}(1-p)^{|V'|-|A'|}\prod_{v'}a'(v')$, with source-only tags
+integrating out. Renaming thresholds $t,t'$, we obtain
+\[
+  \lambda\{((B,\pi),(B',\pi')):B=A,\ 0\le\pi(v)\le t(v)\ \forall v\}
+  =
+  \nu\{(B,\pi):B=A,\ 0\le\pi(v)\le t(v)\ \forall v\},
+\]
+with the analogous target cylinder identity for \(V'\) and \(\nu'\).
+The first of these conclusions is exactly the synchronization clause required
+in the present statement.  It remains only to upgrade the cylinder identities
+to full source and target marginal identities.
+
+Write
+\[
+  Q_V=\{(B,\pi):0\le \pi(v)\le 1\hbox{ for every }v\in V\}.
+\]
+We first prove from the hypotheses on \(\nu\), and not from the paired
+cylinder theorem, that \(\nu(Q_V^c)=0\).  Fix an activation atom
+\[
+  H_A=\{(B,\pi):B=A\}.
+\]
+Put \(t(v)=1\) for every \(v\).  The source lower-rectangle law gives
+\[
+  \nu(H_A\cap Q_V)
+  =
+  \nu(H_A)\operatorname{ofReal}\!\left(\prod_{v\in V}1\right)
+  =
+  \nu(H_A).
+\]
+The atom law identifies \(\nu(H_A)\) with a finite real Bernoulli mass, hence
+\(\nu(H_A)<\infty\).  Since \(H_A\cap Q_V\subseteq H_A\), finite subtraction
+in the measure algebra gives
+\[
+  \nu(H_A\setminus Q_V)=0.
+\]
+The finitely many atoms \(H_A\), \(A\subseteq V\), partition
+\(\mathcal P(V)\times\mathbb R^V\).  Therefore
+\[
+  Q_V^c=\bigcup_{A\subseteq V}(H_A\setminus Q_V)
+\]
+up to equality, and finite subadditivity gives \(\nu(Q_V^c)=0\).
+
+Let \(\mu_s\) be the source projection measure of \(\lambda\):
+\[
+  \mu_s(E)=\lambda\{((B,\pi),(B',\pi')):(B,\pi)\in E\}.
+\]
+The source unit-cube nullity proved above
+says \(\mu_s(Q_V^c)=0\).  For every atom \(A\) the same all-one threshold
+cylinder identity gives
+\[
+  \mu_s(H_A\cap Q_V)=\nu(H_A\cap Q_V)=\nu(H_A).
+\]
+Summing over the finite activation partition shows
+\(\mu_s(Q_V)=\nu(Q_V)\).  Together with the two outside-cube nullities this
+also gives \(\mu_s\) and \(\nu\) the same finite total mass.
+
+We now prove equality on all measurable subsets of \(Q_V\).  On the trace
+space \(Q_V\), consider the family
+\[
+  \mathcal P_s=
+  \{H_A\cap\{(B,\pi):0\le \pi(v)\le t(v)\ \forall v\}:
+    A\subseteq V,\ t(v)\in[0,1]\ \forall v\}.
+\]
+Adjoin the empty set to this family. It is then a \(\pi\)-system. Indeed,
+the intersection of two activation
+atoms is either empty or the same atom, and the intersection of two anchored
+lower rectangles is the anchored lower rectangle with threshold
+\(\min(t_1(v),t_2(v))\).  The empty set is harmless.  It generates the trace
+product \(\sigma\)-algebra on \(Q_V\): the activation coordinate is a finite
+discrete measurable space, and in each real coordinate the subspace Borel
+\(\sigma\)-algebra on \([0,1]\) is generated by the anchored closed intervals
+\([0,t]\), \(0\le t\le1\); finite products of these one-coordinate generators
+generate the finite product Borel structure on \([0,1]^V\), and adjoining the
+finite activation atoms gives the product with \(\mathcal P(V)\).
+
+By the source cylinder identity computed above,
+\(\mu_s\) and \(\nu\) agree on every member of \(\mathcal P_s\).  Since their
+restrictions to \(Q_V\) have the same finite total mass, the usual
+\(\pi\)-\(\lambda\) theorem applies: the class of trace-measurable
+\(E\subseteq Q_V\) for which \(\mu_s(E)=\nu(E)\) is a Dynkin class containing
+\(\mathcal P_s\), hence contains the trace \(\sigma\)-algebra generated by
+\(\mathcal P_s\).  Thus \(\mu_s(E)=\nu(E)\) for every measurable
+\(E\subseteq Q_V\).
+
+Finally let \(E\subseteq \mathcal P(V)\times\mathbb R^V\) be any measurable
+source event.  Decompose it as
+\[
+  E=(E\cap Q_V)\,\dot\cup\,(E\cap Q_V^c).
+\]
+The first piece is trace-measurable in \(Q_V\), so the preceding paragraph
+gives equality of its \(\mu_s\)- and \(\nu\)-masses.  The second piece has
+zero \(\mu_s\)-mass because \(\mu_s(Q_V^c)=0\), and zero \(\nu\)-mass because
+\(\nu(Q_V^c)=0\).  Hence \(\mu_s(E)=\nu(E)\), which is the required source
+projection identity for arbitrary measurable \(E\).
+
+The target marginal is proved independently in exactly the same way, with
+\[
+  Q_{V'}=\{(B',\pi'):0\le \pi'(v')\le1\hbox{ for every }v'\in V'\}.
+\]
+The target atom law and target lower-rectangle law with all thresholds equal
+to \(1\) first give \(\nu'(Q_{V'}^c)=0\) by finite additivity over the
+activation atoms \(A'\subseteq V'\).  The target unit-cube nullity and target
+cylinder identities computed above
+give the corresponding projection measure
+\[
+  \mu_t(E')=\lambda\{((B,\pi),(B',\pi')):(B',\pi')\in E'\}
+\]
+zero mass outside \(Q_{V'}\) and equality with \(\nu'\) on all target
+activation atoms times anchored lower rectangles.  Those target cylinders are
+again a \(\pi\)-system generating the trace product \(\sigma\)-algebra on
+\(Q_{V'}\).  The same finite-measure \(\pi\)-\(\lambda\) argument gives
+\(\mu_t(E')=\nu'(E')\) for every measurable target event \(E'\), after
+splitting \(E'\) into its part inside \(Q_{V'}\) and its null outside-cube
+part.  Therefore the measure \(\lambda\) has the claimed full source and
+target marginals, together with the already obtained almost-sure common
+synchronization.
+\end{proof}

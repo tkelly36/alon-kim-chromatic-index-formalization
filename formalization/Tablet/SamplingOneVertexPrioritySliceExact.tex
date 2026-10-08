@@ -1,0 +1,56 @@
+\begin{helper}
+Fix a finite vertex set \(V\), a graph \(G\) on \(V\), a measure \(\nu\) on
+\(\operatorname{Finset}(V)\times \mathbb R^V\), an activation set \(A\), a
+vertex \(v\), and real numbers \(0\le a\le b\le 1\).  Assume the lower-rectangle
+law
+\[
+\nu\{\omega:\omega_1=A\text{ and }0\le \omega_2(u)\le t(u)\text{ for all }u\}
+=
+\nu\{\omega:\omega_1=A\}\operatorname{ofReal}\Bigl(\prod_{u\in V}t(u)\Bigr)
+\]
+for every \(t:V\to[0,1]\).  Assume also that
+\(\nu\{\omega:\omega_1=A\}\) is finite.  Then
+\[
+\begin{aligned}
+&\nu\{\omega:\omega_1=A,\ a<\omega_2(v)\le b,\text{ and for every }u,\,
+0\le \omega_2(u)\le b\text{ if }u=v,\\
+&\hspace{35mm}
+0\le \omega_2(u)\le a\text{ if }u\in A\text{ and }uv\in E(G),\text{ and }
+0\le \omega_2(u)\le1\text{ otherwise}\}\\
+&=
+\nu\{\omega:\omega_1=A\}\operatorname{ofReal}
+\bigl(b\,a^{|\{u\in A:uv\in E(G)\}|}\bigr)
+-
+\nu\{\omega:\omega_1=A\}\operatorname{ofReal}
+\bigl(a\,a^{|\{u\in A:uv\in E(G)\}|}\bigr).
+\end{aligned}
+\]
+\end{helper}
+\begin{proof}
+Let \(R_b\) be the lower rectangle in which the \(v\)-coordinate is bounded by
+\(b\), the activated neighbors of \(v\) in \(A\) are bounded by \(a\), and all
+other coordinates are bounded by \(1\).  Let \(R_a\) be the same rectangle with
+the \(v\)-coordinate also bounded by \(a\).  Since \(a\le b\), we have
+\(R_a\subseteq R_b\).  The displayed slice is exactly \(R_b\setminus R_a\): a
+point of \(R_b\) fails to lie in \(R_a\) precisely when its \(v\)-priority is
+larger than \(a\).
+
+By \(\noderef{SamplingOneVertexPriorityRectangle}\), the lower-rectangle law
+gives
+\[
+\nu(R_b)=\nu\{\omega:\omega_1=A\}\operatorname{ofReal}
+\bigl(b\,a^{|\{u\in A:uv\in E(G)\}|}\bigr)
+\]
+and similarly
+\[
+\nu(R_a)=\nu\{\omega:\omega_1=A\}\operatorname{ofReal}
+\bigl(a\,a^{|\{u\in A:uv\in E(G)\}|}\bigr).
+\]
+The assumed finiteness of the atom implies \(\nu(R_a)<\infty\), because the
+second factor is a finite extended nonnegative real.  In the Lean model for
+these priority samples, the ambient measurable space is the top measurable
+space, so \(R_a\) is null-measurable.  The standard finite-measure difference
+formula therefore gives
+\(\nu(R_b\setminus R_a)=\nu(R_b)-\nu(R_a)\).  Substituting the two displayed
+rectangle evaluations proves the claimed identity.
+\end{proof}

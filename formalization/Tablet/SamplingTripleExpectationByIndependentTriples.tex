@@ -1,0 +1,32 @@
+\begin{helper}
+Let $G$ be a finite graph, let $X\subseteq V(G)$, and let $\mu$ be a real
+weight on subsets of $V(G)$.  Assume every set $S$ with $\mu(S)\ne0$ is
+independent in $G$.  Let $\mathcal J_3$ be the family of three-element
+independent subsets of $X$.  Then
+\[
+\sum_S \mu(S)\binom{|S\cap X|}{3}
+=\sum_{Q\in\mathcal J_3}\sum_{S:Q\subseteq S}\mu(S).
+\]
+\end{helper}
+\begin{proof}
+For a fixed subset $S$, the number $\binom{|S\cap X|}{3}$ is exactly the
+number of three-element subsets $Q$ of $S\cap X$.  Thus
+\[
+\binom{|S\cap X|}{3}
+=\sum_Q {\bf 1}_{\{|Q|=3,\ Q\subseteq X,\ Q\subseteq S\}}.
+\]
+If $\mu(S)=0$, multiplying by $\mu(S)$ makes the contribution of this $S$
+zero.  If $\mu(S)\ne0$, the hypothesis says that $S$ is independent in $G$;
+hence every subset $Q\subseteq S$ is independent.  Therefore, on the support
+of $\mu$, the displayed indicator is the same as
+${\bf 1}_{\{Q\in\mathcal J_3,\ Q\subseteq S\}}$.  Multiplying by $\mu(S)$ and
+summing over all $S$ gives
+\[
+\sum_S\mu(S)\binom{|S\cap X|}{3}
+=\sum_S\sum_Q \mu(S){\bf 1}_{\{Q\in\mathcal J_3,\ Q\subseteq S\}}.
+\]
+The vertex set is finite, so both sums are finite and may be interchanged.
+After interchanging them, the terms with $Q\notin\mathcal J_3$ vanish, and
+the remaining inner sum is precisely $\sum_{S:Q\subseteq S}\mu(S)$.
+
+\end{proof}

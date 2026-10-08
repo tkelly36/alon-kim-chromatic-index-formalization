@@ -1,0 +1,44 @@
+\begin{helper}
+Let \(\Omega\) be a type equipped with the all-subsets measurable structure,
+let \(V\) be a finite coordinate type, let \(\nu\) be a measure on
+\(\Omega\), let \(F:\Omega\to\{\mathrm{true},\mathrm{false}\}\) be a fiber
+event, let \(p:\Omega\to\mathbb R^V\) be a coordinate map, and let \(M\) be
+an extended nonnegative real number.  Let \(a,b,c\in V\) be pairwise
+distinct.  Let \(S_x,S_y,S_z\subseteq V\) be pairwise disjoint finite sets,
+each disjoint from \(\{a,b,c\}\).  Assume that the fiber has finite
+\(\nu\)-measure,
+\[
+\nu\{\omega\in\Omega:F(\omega)\}<\infty,
+\]
+that \(M=\nu\{\omega\in\Omega:F(\omega)\}\), and that the following
+lower-rectangle law holds: for every \(t:V\to\mathbb R\) with
+\(0\le t_v\le 1\) for every \(v\in V\),
+\[
+\nu\{\omega\in\Omega:
+F(\omega)\ \text{and}\ 0\le p(\omega)_v\le t_v\ \text{for every }v\in V\}
+=M\,\operatorname{ofReal}\!\left(\prod_{v\in V} t_v\right).
+\]
+Let \(C\subseteq\mathbb R^V\) be the unit-cube chamber
+\[
+\{q:q_a\le q_b\le q_c,\ q_w<q_a\ (w\in S_x),\
+q_w<q_b\ (w\in S_y),\ q_w<q_c\ (w\in S_z),\ q_v\in[0,1]\ (v\in V)\}.
+\]
+\[
+\nu\{\omega\in\Omega:F(\omega),\ p(\omega)\in C\}
+\le M\,\operatorname{vol}(C).
+\]
+\end{helper}
+\begin{proof}
+The coordinate map \(p\) is measurable because \(\Omega\) has the
+all-subsets measurable structure.
+The chamber \(C\) is Borel: it is defined inside the finite product cube by
+finitely many coordinate inequalities, and each coordinate map is continuous.
+It is contained in \([0,1]^V\) by definition.  Apply
+\noderef{SamplingFiniteProductLowerOrthantEqualityMeasurable} to this
+\(C\), using the assumed finite fiber mass, its equality to \(M\), and
+the lower-rectangle law.
+The event in the statement is exactly \(\{\omega:F(\omega),p(\omega)\in C\}\).
+The additional cube intersection in the cited equality is redundant since
+\(C\subseteq[0,1]^V\).  Thus the cited theorem gives equality with
+\(M\operatorname{vol}(C)\), and hence the asserted upper bound.
+\end{proof}

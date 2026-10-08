@@ -1,0 +1,78 @@
+\begin{helper}
+For every $\eta>0$ there are real parameters $\alpha,L,\gamma_0$ and a
+natural number $\Delta_0$ such that
+\[
+0<\alpha\le 1,\qquad 0<1-\alpha,\qquad 0\le L,\qquad 0\le\gamma_0,
+\qquad 3\alpha\le \eta/3,
+\]
+\[
+e^{-\gamma_0}\left(1+\frac1\alpha\right)\le\alpha,
+\]
+\[
+\frac53+2\alpha\le
+2(1-\alpha)^2 e^{-\alpha L}
+\int_0^L\bigl(e^{-x}-e^{-L}\bigr)\,dx,
+\]
+and, for every natural $\Delta\ge\Delta_0$,
+\[
+\gamma_0<\Delta,\qquad L<\Delta,\qquad
+\frac{\gamma_0^2}{\Delta-\gamma_0}\le-\log(1-\alpha),\qquad
+\frac{L^2}{\Delta-L}\le-\log(1-\alpha).
+\]
+\end{helper}
+\begin{proof}
+Choose
+\[
+\alpha=\min\{10^{-3},\eta/9\}.
+\]
+Since $\eta>0$, this gives $0<\alpha\le10^{-3}\le1$ and
+$3\alpha\le\eta/3$; in particular $0<1-\alpha$.  Put $L=6$.
+
+The exponential tail tends to zero as $t\to\infty$, so we may choose a real
+$g$ such that
+\[
+e^{-t}\left(1+\frac1\alpha\right)\le \alpha
+\quad\text{for all }t\ge g .
+\]
+Set $\gamma_0=\max\{g,0\}$.  Then $0\le\gamma_0$, and the same tail
+inequality holds at $\gamma_0$.
+
+It remains to check the fixed numerical margin.  From
+$2<e$, raising to the sixth power gives $64<e^6$, hence
+$e^{-6}\le 1/64$.  Also
+\[
+\int_0^6 (e^{-x}-e^{-6})\,dx
+=1-7e^{-6}\ge 57/64.
+\]
+Because $\alpha\le10^{-3}$, we have
+\[
+(1-\alpha)^2\ge (999/1000)^2
+\quad\text{and}\quad
+e^{-6\alpha}\ge 1-6\alpha\ge 497/500,
+\]
+where the exponential lower bound is the elementary inequality
+$1+y\le e^y$ applied to $y=-6\alpha$.  Therefore
+\[
+2(1-\alpha)^2e^{-6\alpha}
+\int_0^6(e^{-x}-e^{-6})\,dx
+\ge
+2\left(\frac{998001}{1000000}\right)
+\left(\frac{497}{500}\right)
+\left(\frac{57}{64}\right).
+\]
+The right hand side is greater than $5/3+2/1000$, and
+$2\alpha\le2/1000$, so the desired high-overlap numerical inequality holds
+for $L=6$.
+
+Finally, since $0<\alpha<1$, we have $-\log(1-\alpha)>0$.  As
+$\Delta\to\infty$ through the natural numbers, both $\Delta$ and
+$\Delta-\gamma_0$ tend to infinity, and so do $\Delta-L$; hence
+\[
+\frac{\gamma_0^2}{\Delta-\gamma_0}\to0,
+\qquad
+\frac{L^2}{\Delta-L}\to0.
+\]
+Choosing $\Delta_0$ large enough gives simultaneously
+$\gamma_0<\Delta$, $L<\Delta$, and the two displayed logarithmic error
+bounds for every natural $\Delta\ge\Delta_0$.
+\end{proof}

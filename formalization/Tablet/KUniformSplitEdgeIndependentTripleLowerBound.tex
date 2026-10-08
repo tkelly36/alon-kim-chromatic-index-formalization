@@ -1,0 +1,52 @@
+\begin{helper}
+Let $\mathcal F$ be a finite multi-hypergraph with distinct edge labels
+$f$ and $g$.  Suppose $u$ and $v$ are distinct old vertices, with
+$u\in f\cap g$ and $v\in g$.  Form the split-edge hypergraph
+\[
+\mathcal F_2=\noderef{KUniformSplitEdgeHypergraph}(k,\mathcal F,g,v,x_1).
+\]
+Then the independent-triple count in the line-graph neighborhood of $f$
+does not decrease after passing to the old-edge copy of $f$:
+\[
+T_{L(\mathcal F)}(f)
+\le
+T_{L(\mathcal F_2)}(\operatorname{inl} f).
+\]
+\end{helper}
+\begin{proof}
+By \noderef{IndependentTripleCount}, the left side counts three-element
+subsets of the line-graph neighborhood of $f$ whose members are pairwise
+nonadjacent in \(L(\mathcal F)\).  Send such a triple \(S\) to the triple
+\(\operatorname{inl}(S)=\{\operatorname{inl}(e):e\in S\}\) of old-edge
+copies in \(\mathcal F_2\).
+
+The map preserves size three because the old-edge-label inclusion
+\(e\mapsto \operatorname{inl}(e)\) is injective.  It also sends every old
+neighbor of \(f\) to a neighbor of \(\operatorname{inl}(f)\).  Indeed, by
+\noderef{LineGraphOfHypergraph}, adjacency means distinct labels with
+intersecting hyperedges.  If the old neighbor is not \(g\), then
+\noderef{KUniformSplitEdgeHypergraph} says both hyperedges are simply copied
+on old vertices, so their nonempty intersection is copied.  If the old
+neighbor is \(g\), then the modified copy of \(g\) deletes \(v\) and adds the
+fresh vertex \(x_1\); the vertex \(u\) is still present because \(u\in g\)
+and \(u\ne v\), and it also lies in \(f\).  Thus \(\operatorname{inl}(g)\)
+still meets \(\operatorname{inl}(f)\).
+
+It remains to check pairwise independence.  For any two old labels \(a,b\),
+if their old-edge copies are adjacent after the split, then their split
+hyperedges have a common vertex.  When neither label is \(g\), this common
+vertex is the copy of an old vertex lying in both original hyperedges.  When
+one label is \(g\), the other copied old hyperedge contains no fresh vertex,
+so any common vertex again comes from an old vertex of \(g\) that was not
+deleted and lies in the other original hyperedge.  When both labels are
+\(g\), the original hyperedge \(g\) is nonempty because it contains \(v\).
+In every case, adjacency of old-edge copies in \(L(\mathcal F_2)\) implies
+adjacency of the original labels in \(L(\mathcal F)\).  Therefore a pairwise
+nonadjacent old triple maps to a pairwise nonadjacent split triple.
+
+Finally, the map on triples is injective because old-edge labels are copied
+injectively.  Hence the finite set counted by
+\(T_{L(\mathcal F)}(f)\) injects into the finite set counted by
+\(T_{L(\mathcal F_2)}(\operatorname{inl} f)\), proving the stated
+inequality.
+\end{proof}

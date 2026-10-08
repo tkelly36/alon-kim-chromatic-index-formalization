@@ -1,0 +1,200 @@
+\begin{lemma}
+For every $\eta>0$ there are $\Delta_0$ and $\gamma_0$ such that the
+following holds.  Let $G$ be a $\Delta$-regular graph with
+$\Delta\ge\Delta_0$, let $\gamma\ge\gamma_0$, and let $I$ be sampled by
+\noderef{RandomIndependentSetSampling}.  Fix $r$ and
+$X\subseteq N_G(r)$, and assume that no two distinct vertices of $X$ have a
+common neighbor outside $N_G[r]$.  Let $\mathcal J_3$ be the independent
+triples in $X$, and, for every independent pair $ab\subseteq X$, put
+\[
+\ell_{ab}=\frac{|N_G(a)\cap N_G(b)|}{\Delta}.
+\]
+Then
+\[
+\mathbb E\binom{|I\cap X|}{3}
+\le
+\frac{|\mathcal J_3|}{\Delta^3}
++\frac{1}{3\Delta^3}
+\sum_{abc\in\mathcal J_3}\ \sum_{\{p,q\}\subset\{a,b,c\}}
+\left(\frac{2}{(2-\ell_{pq})(1-\ell_{pq})}-1\right)
++\eta .
+\]
+\end{lemma}
+\begin{proof}
+Write $\overline T_X=\binom{|I\cap X|}{3}$.  By linearity of expectation,
+\[
+\mathbb E\overline T_X
+=\sum_{Q\in\mathcal J_3}\Pr[Q\subseteq I],
+\]
+because the output set in \noderef{RandomIndependentSetSampling} is always
+independent, so a three-subset of $X$ can contribute only if it is one of the
+triples in $\mathcal J_3$.
+
+Fix one triple $Q=\{a,b,c\}\in\mathcal J_3$.  Condition on the event that
+$a,b,c$ are activated, and use the rescaled priority variables
+$x_v=\gamma(1-\pi(v))$ for $v\in Q$.  The three activation probabilities and
+the uniform priority law in \noderef{RandomIndependentSetSampling} give the
+factor $dx_a\,dx_b\,dx_c/\Delta^3$ on $[0,\gamma]^3$.  The sampling
+definition also gives $0<\gamma$ and $0\le\gamma/\Delta\le1$, because
+$\gamma/\Delta$ is the Bernoulli activation probability.  Hence
+$0<\gamma\le\Delta$, and every quantity $x_v/\Delta$ used below lies in
+$[0,1]$.  A vertex
+$z\notin Q$ adjacent to the nonempty set $S_z\subseteq Q$ deletes a member of
+$Q$ exactly when $z$ is activated and has priority larger than at least one
+neighbor in $S_z$, and this has conditional probability
+$\max_{v\in S_z}x_v/\Delta$.  Hence the conditional survival probability is
+the product over such vertices of
+$1-\max_{v\in S_z}x_v/\Delta$.
+
+We now estimate this product on each ordered chamber.  On the chamber
+$x_a\ge x_b\ge x_c$, classify vertices outside $Q$ according to their
+nonempty adjacency pattern to $Q$:
+\[
+n_a,n_b,n_c,n_{ab},n_{ac},n_{bc},n_{abc}.
+\]
+Thus, for example, $n_{ab}$ counts vertices adjacent to $a$ and $b$ but not
+to $c$.  The clean-neighborhood hypothesis says that for every pair in $Q$
+all common neighbors are in $N_G[r]$; in particular
+\[
+\ell_{ab}=\frac{n_{ab}+n_{abc}}{\Delta},\quad
+\ell_{ac}=\frac{n_{ac}+n_{abc}}{\Delta},\quad
+\ell_{bc}=\frac{n_{bc}+n_{abc}}{\Delta}.
+\]
+The $\Delta$ neighbors of $a$ all contribute factors with maximum coordinate
+$x_a$.  After those have been counted, the remaining neighbors of $b$ are
+exactly the $b$-only and $bc$-vertices, namely
+$\Delta-(n_{ab}+n_{abc})=(1-\ell_{ab})\Delta$ vertices, and they contribute
+with maximum coordinate $x_b$.  Finally, after all vertices adjacent to
+$a$ or $b$ have been counted, the only remaining neighbors of $c$ are the
+$c$-only vertices, namely
+\[
+n_c=\Delta-n_{ac}-n_{bc}-n_{abc}
+=\Delta(1-\ell_{ac}-\ell_{bc})+n_{abc}.
+\]
+Using $1-t\le e^{-t}$ for $0\le t\le1$, the chamber contribution is at most
+\[
+\int_{0\le z\le y\le x\le\gamma}
+e^{-x}e^{-(1-\ell_{ab})y}e^{-(n_c/\Delta)z}\,dz\,dy\,dx .
+\]
+The five other chambers have the identical form with the ordered triple
+permuted.
+
+It remains to bound the sum of these six elementary integrals.  Set
+\[
+\lambda_{ab}=1-\ell_{ab},\qquad
+\rho_c=n_c/\Delta
+=1-\ell_{ac}-\ell_{bc}+n_{abc}/\Delta,
+\]
+and define $\rho_a,\rho_b$ by cyclic permutation.  The pattern counts are
+nonnegative.  For any pair from $Q$, the clean-neighborhood hypothesis puts
+all its common neighbors in $N_G[r]$, and independence of $Q$ excludes the
+other two vertices of the pair and the third vertex of $Q$ from being common
+neighbors.  Hence the pair has at most $\Delta-1$ common neighbors.  Thus
+$0<\lambda_{pq}\le1$, while
+$0\le\rho_v\le1$ is immediate from its definition as a normalized count.
+For fixed larger pair $ab$ the two chambers in which $a$ and $b$ are the two
+larger coordinates contribute at most
+\[
+C_{ab}
+=2\int_{0\le z\le y\le x<\infty}
+e^{-x}e^{-\lambda_{ab}y}e^{-\rho_c z}\,dz\,dy\,dx .
+\]
+Direct integration gives, with the value at $\rho_c=0$ understood as the
+limit,
+\[
+\begin{aligned}
+C_{ab}
+&=2\int_0^\infty e^{-(1+\lambda_{ab})y}
+  \left(\int_0^y e^{-\rho_c z}\,dz\right)\,dy  \\
+&=\frac{2}{\rho_c}
+  \left(\frac1{1+\lambda_{ab}}
+  -\frac1{1+\lambda_{ab}+\rho_c}\right)  \\
+&=\frac{2}{(1+\lambda_{ab})(1+\lambda_{ab}+\rho_c)}.
+\end{aligned}
+\]
+The cyclic formula gives $C_{ac}$ and $C_{bc}$.
+
+Now put
+\[
+x=\lambda_{ab},\qquad y=\lambda_{ac},\qquad z=\lambda_{bc},\qquad
+\tau=n_{abc}/\Delta .
+\]
+The degree equations give the common-denominator identities
+\[
+1+\lambda_{ab}+\rho_c
+=1+\lambda_{ac}+\rho_b
+=1+\lambda_{bc}+\rho_a
+=x+y+z+\tau .
+\]
+For instance,
+\[
+1+\lambda_{ab}+\rho_c
+=1+\left(1-\frac{n_{ab}+n_{abc}}{\Delta}\right)
+  +\left(1-\frac{n_{ac}+n_{bc}+n_{abc}}{\Delta}\right)
+=3-\frac{n_{ab}+n_{ac}+n_{bc}+2n_{abc}}{\Delta},
+\]
+and the two other expressions are the same.  Therefore, writing
+$M=x+y+z+\tau$, the sum of the six chamber bounds is
+\[
+C_{ab}+C_{ac}+C_{bc}
+=\frac2M\left(\frac1{1+x}+\frac1{1+y}+\frac1{1+z}\right).
+\]
+Since $\tau\ge0$, we have $M\ge x+y+z$.  Hence
+\[
+C_{ab}+C_{ac}+C_{bc}
+\le
+\frac2{x+y+z}\left(\frac1{1+x}+\frac1{1+y}+\frac1{1+z}\right).
+\]
+It remains only to compare this last expression with the desired average.
+For positive $x,y,z$ the following identity is obtained by putting the left
+side over the common denominator
+$xy z(1+x)(1+y)(1+z)$ and collecting the three unordered pairs:
+\[
+\begin{aligned}
+&(x+y+z)\left(\frac1{x(1+x)}+\frac1{y(1+y)}
+  +\frac1{z(1+z)}\right)
+-3\left(\frac1{1+x}+\frac1{1+y}+\frac1{1+z}\right)\\
+&\quad =
+\frac{(x-y)^2(x+y+1)}{xy(1+x)(1+y)}
++\frac{(x-z)^2(x+z+1)}{xz(1+x)(1+z)}
++\frac{(y-z)^2(y+z+1)}{yz(1+y)(1+z)} .
+\end{aligned}
+\]
+Each term on the right is nonnegative.  Thus
+\[
+\frac2{x+y+z}\left(\frac1{1+x}+\frac1{1+y}+\frac1{1+z}\right)
+\le
+\frac23\left(\frac1{x(1+x)}+\frac1{y(1+y)}+\frac1{z(1+z)}\right).
+\]
+Returning to $\lambda_{pq}=1-\ell_{pq}$, this is exactly
+\[
+C_{ab}+C_{ac}+C_{bc}
+\le
+1+\frac13\sum_{pq\in\{ab,ac,bc\}}
+\left(\frac{2}{(1+\lambda_{pq})\lambda_{pq}}-1\right).
+\]
+Indeed the right hand side simplifies to
+$\frac23\sum_{pq}1/((1+\lambda_{pq})\lambda_{pq})$ because
+$1+\frac13\sum(A_{pq}-1)=\frac13\sum A_{pq}$.
+This is precisely where the three ordered chamber families are averaged; no
+common-neighbor factor is reused to create an extra exponent.
+
+Combining the six ordered-chamber bounds and restricting from the infinite
+orthant back to $[0,\gamma]^3$ gives
+\[
+\Pr[Q\subseteq I]
+\le
+\frac1{\Delta^3}
+\left[
+1+\frac13\sum_{\{p,q\}\subset Q}
+\left(\frac{2}{(2-\ell_{pq})(1-\ell_{pq})}-1\right)
+\right].
+\]
+There is no truncation error here: the exponential product is an upper bound
+on the original finite product on the whole valid box $[0,\gamma]^3$, and
+replacing that box by the infinite chamber only increases the integral.
+Summing the last displayed estimate over $Q\in\mathcal J_3$ proves the same
+bound without the final $+\eta$ term.  The stated version with $+\eta$ follows
+immediately for the given $\eta>0$; for example, take
+$\Delta_0=\gamma_0=1$.
+\end{proof}

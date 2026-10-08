@@ -1,0 +1,18 @@
+\begin{lemma}
+Let $V,W$ be finite sets, $\phi:V\to W$ injective, and $S\subseteq V$.
+There exist a finite tag set $T$ and injections $s:V\to T$, $t:W\to T$
+such that $s(v)=t(w)$ if and only if $v\in S$ and $\phi(v)=w$.
+Every tag belongs to the image of $s$ or of $t$.
+\end{lemma}
+\begin{proof}
+Take $T=V\sqcup(W\setminus\phi(S))$ and $s(v)=\operatorname{inl}(v)$.
+For $w\in\phi(S)$, let $t(w)=\operatorname{inl}(v)$ for its unique
+preimage $v\in S$; existence follows from image membership and uniqueness
+from injectivity. Otherwise put $t(w)=\operatorname{inr}(w)$.
+The two summands are disjoint, so equality of a source and target tag is
+exactly the stated condition. The source map is injective. Two equal target
+tags are either both right tags, when their labels coincide, or both left
+tags, when applying $\phi$ to their equal labels gives equal vertices.
+Each left tag is a source tag and each right tag is its labelled target's
+tag. This construction also applies when either finite set is empty.
+\end{proof}

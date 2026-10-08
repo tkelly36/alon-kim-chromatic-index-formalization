@@ -1,0 +1,136 @@
+\begin{lemma}
+In a $3$-uniform $3$-simple local extremal setup at scale $D$, with
+$\mathcal F$, $f$, $P(f)$, $T(f)$, and
+$b_{L(\mathcal F),3D}(f)$ as in
+\noderef{ThreeUniformThreeSimpleLocalSetup}, the independent-pair count
+satisfies
+\[
+P(f)\le 1.031D^2-9D
+\]
+for all sufficiently large $D$.
+\end{lemma}
+\begin{proof}
+Let $G$ be the subgraph of $L(\mathcal F)$ induced by
+$N_{L(\mathcal F)}(f)$, and let $\overline G$ be its complement.  The
+independent pairs and independent triples in the line-graph neighborhood are
+the edges and triangles of $\overline G$, by the definitions
+\noderef{IndependentPairCount}, \noderef{IndependentTripleCount}, and
+\noderef{LineGraphOfHypergraph}.  The graph $\overline G$ is tripartite:
+the saturated edge structure separates the neighbors of $f$ according to the
+unique vertex of $f$ that they contain, and two neighbors in the same class
+intersect at that vertex, so they are adjacent in $G$ and nonadjacent in
+$\overline G$.  Hence \noderef{TriangleCountPartite} gives
+\[
+T(f)\le \left(\frac{P(f)}3\right)^{3/2}.
+\]
+
+Assume for contradiction that
+$P(f)>1.031D^2-9D$.  Since
+\noderef{ExtremalBParameterSaturationThreeSimple} gives
+$\deg_{L(\mathcal F)}(f)=3(D-1)$ in the extremal setup, the formula
+\noderef{LocalBParameter} and the triangle bound just proved give
+\[
+b_{L(\mathcal F),3D}(f)
+\le
+\frac{3(D-1)}{3D}
+-\frac{P(f)}{(3D)^2}
++\frac{(P(f)/3)^{3/2}}{(3D)^3}.
+\]
+Put
+\[
+p=\frac{P(f)}{D^2}.
+\]
+Because $P(f)$ is an edge count of $\overline G$, it is nonnegative.  Also
+$\overline G$ has the same vertex set as the neighborhood of $f$, and
+\noderef{ThreeUniformThreeSimpleLocalSetup} together with
+\noderef{ExtremalBParameterSaturationThreeSimple} says that this neighborhood
+has $3(D-1)$ vertices.  Hence
+\[
+0\le P(f)\le \binom{3D-3}{2},
+\qquad\text{so}\qquad
+0\le p\le \frac{(3D-3)(3D-4)}{2D^2}\le \frac92
+\]
+for every positive $D$.  In terms of $p$, the displayed upper bound is
+\[
+b_{L(\mathcal F),3D}(f)
+\le
+-\frac1D+F(p),
+\qquad
+F(x)=1-\frac{x}{9}+\frac{x^{3/2}}{81\sqrt3}.
+\]
+For $0\le x\le 9/2$,
+\[
+F'(x)=-\frac19+\frac{\sqrt{x}}{54\sqrt3}<0,
+\]
+because $\sqrt{x}\le\sqrt{9/2}<6\sqrt3$.  Thus $F$ is decreasing on the
+whole admissible interval.  Moreover $F'(x)\ge -1/9$ there, since the second
+term in $F'(x)$ is nonnegative.
+
+The contradiction hypothesis says
+\[
+p>1.031-\frac9D.
+\]
+For all sufficiently large $D$ the left endpoint
+$a_D=1.031-9/D$ is positive, and $a_D\le 1.031$.  By monotonicity,
+$F(p)<F(a_D)$.  By the lower derivative bound, or equivalently by the mean
+value theorem applied on $[a_D,1.031]$,
+\[
+F(a_D)-F(1.031)\le \frac{1.031-a_D}{9}=\frac1D.
+\]
+Therefore
+\[
+b_{L(\mathcal F),3D}(f)
+\le -\frac1D+F(p)
+< -\frac1D+F(a_D)
+\le F(1.031).
+\]
+It remains only to record the numerical margin in a checkable form.  Since
+$1.031=1031/1000$,
+\[
+F(1.031)
+=1-\frac{1031}{9000}
+  +\frac{1031\sqrt{1031}}{810000\sqrt{30}}.
+\]
+The last term is at most $6719/900000$: both sides are nonnegative, and after
+squaring this is exactly the rational inequality
+\[
+\frac{1031^3}{810000^2\cdot 30}
+<
+\frac{6719^2}{900000^2},
+\]
+whose difference is
+$11097613/196830000000000>0$.  Hence
+\[
+F(1.031)
+<
+1-\frac{1031}{9000}+\frac{6719}{900000}
+=0.89291.
+\]
+Thus the assumption $P(f)>1.031D^2-9D$ forces
+\[
+b_{L(\mathcal F),3D}(f)<0.89291.
+\]
+
+On the other hand, apply
+\noderef{ThreeUniformThreeSimpleExtremalExample} with
+$\eta=1/300000$.  It gives, for all sufficiently large $D$, an admissible
+$3$-uniform $3$-simple hypergraph-edge pair $(\mathcal H,e)$ with
+\[
+b_{L(\mathcal H),3D}(e)\ge
+1-\frac19+\frac1{3^5}-\frac1{300000}.
+\]
+The right side is
+\[
+1-\frac19+\frac1{243}-\frac1{300000}
+=0.893000781\ldots>0.893.
+\]
+Since \noderef{ThreeUniformThreeSimpleLocalSetup} includes the choice of
+$(\mathcal F,f)$ maximizing $b_{L(\mathcal H),3D}(e)$ over all admissible
+$3$-uniform $3$-simple hypergraphs of maximum degree at most $D$, we get
+\[
+b_{L(\mathcal F),3D}(f)\ge b_{L(\mathcal H),3D}(e)>0.893.
+\]
+This contradicts the upper bound
+$b_{L(\mathcal F),3D}(f)<0.89291$.  Therefore the assumed strict inequality
+for $P(f)$ is impossible, and the cutoff follows.
+\end{proof}

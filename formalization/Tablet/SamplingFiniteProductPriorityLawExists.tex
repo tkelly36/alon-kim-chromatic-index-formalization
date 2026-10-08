@@ -1,0 +1,66 @@
+\begin{lemma}
+Let \(G\) be a finite graph, let \(\Delta\in\mathbb N\), and let
+\(0<\gamma\le\Delta\).  There is a probability law \(\nu\) on pairs
+\((A,\pi)\), where \(A\subseteq V(G)\) and \(\pi:V(G)\to\mathbb R\), such
+that:
+\[
+\nu(A=A_0)=
+\left(\frac{\gamma}{\Delta}\right)^{|A_0|}
+\left(1-\frac{\gamma}{\Delta}\right)^{|V(G)|-|A_0|},
+\]
+\[
+\nu(A=A_0,\ \pi(v)\in[0,1]\text{ for all }v\in A_0)=\nu(A=A_0),
+\]
+for every \(t\in[0,1]^{V(G)}\),
+\[
+\nu(A=A_0,\ 0\le \pi(v)\le t_v\text{ for all }v)
+=\nu(A=A_0)\prod_{v\in V(G)}t_v,
+\]
+and, for every \(v\in A_0\),
+\[
+\nu\bigl(A=A_0,\ \pi(u)\in[0,1]\text{ for all }u\in A_0,\ 
+\pi(u)<\pi(v)\text{ for all }u\in A_0\cap N_G(v)\bigr)
+\]
+equals
+\[
+\nu(A=A_0)\int_0^1 a^{|A_0\cap N_G(v)|}\,da .
+\]
+\end{lemma}
+\begin{proof}
+Put \(p=\gamma/\Delta\).  By
+\noderef{SamplingBernoulliActivationMass}, the activation weights
+\[
+p^{|A|}(1-p)^{|V(G)|-|A|}
+\]
+are nonnegative and sum to one over all \(A\subseteq V(G)\).  Thus they define
+a probability law for the activation set \(A\).
+
+On the finite product cube \([0,1]^{V(G)}\), take the product of one
+Lebesgue-uniform probability measure for each vertex coordinate.  Because the
+indexing set \(V(G)\) is finite, this product probability measure exists and
+has total mass one.  Its defining finite-dimensional rectangle formula gives,
+for every vector \(t\in[0,1]^{V(G)}\), the mass
+\[
+\prod_{v\in V(G)} t_v
+\]
+of the lower rectangle \(0\le \pi(v)\le t_v\) for all \(v\).  It is supported
+on the unit cube, so restricting the activated coordinates to \([0,1]\) loses
+no mass.
+
+Let \(\nu\) be the product of the activation law and this priority law.  The
+total mass of \(\nu\) is \(1\cdot1=1\).  The formula for \(\nu(A=A_0)\) is the
+activation atom weight, and the lower-rectangle identity follows by
+multiplying that atom weight by the priority lower-rectangle mass.  This gives
+the first three displayed identities.
+
+It remains to verify the fixed-activation comparison identity.  Fix
+\(A_0\subseteq V(G)\) and \(v\in A_0\).  Conditional on the activation atom
+\(A=A_0\), the priority coordinates are independent uniforms on \([0,1]\).
+Condition further on \(\pi(v)=a\).  For each activated neighbor
+\(u\in A_0\cap N_G(v)\), the condition \(\pi(u)<\pi(v)\) then has probability
+\(a\), and these conditions are independent over the distinct neighbors.
+Coordinates not in \(A_0\cap N_G(v)\) impose no restriction.  Therefore the
+conditional probability is \(a^{|A_0\cap N_G(v)|}\).  Integrating over the
+uniform value \(a\in[0,1]\) of \(\pi(v)\), and then multiplying by the atom
+mass \(\nu(A=A_0)\), gives exactly the displayed integral formula.
+\end{proof}

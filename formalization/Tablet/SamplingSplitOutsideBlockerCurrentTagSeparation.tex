@@ -1,0 +1,32 @@
+\begin{lemma}
+Let $S\subseteq V$ and $S'\subseteq V'$ be finite sets,
+$\phi:V\to V'$ with $S'=\phi(S)$, and let $s:V\to T$ and $t:V'\to T$
+be injections satisfying
+\[
+ s(y)=t(y')\quad\Longleftrightarrow\quad y\in S\ \text{and}\ \phi(y)=y'.
+\]
+Fix $v\notin S$, a finite type $A$, and an injection $b:A\to V'$ with
+$b(a)\notin S'$ for all $a$. Define
+$j:\{*\}\sqcup A\to T$ by $j(*)=s(v)$ and $j(a)=t(b(a))$, and set
+$J=\operatorname{im}j$. Then $j$ is injective,
+\[
+ s(y)\in J\ \Longleftrightarrow\ y=v,\qquad
+ t(y')\in J\ \Longleftrightarrow\ (\exists a\in A,\ b(a)=y'),
+\]
+and $s(y)\notin J$ for every $y\in S$.
+\end{lemma}
+\begin{proof}
+No $s(v)$ equals a target tag, since the overlap equivalence would imply
+$v\in S$. No $t(b(a))$ equals a source tag $s(y)$: such an equality
+would give $y\in S$ and $\phi(y)=b(a)$, contradicting $b(a)\notin S'$.
+Thus the distinguished tag and all private tags are distinct, and two
+private tags are equal only when injectivity of $t$ and then $b$ gives
+equal indices. This proves injectivity of $j$.
+If $s(y)\in J$, its index cannot be private by the second exclusion,
+so $s(y)=s(v)$ and $y=v$ by injectivity of $s$; the converse is immediate.
+If $t(y')\in J$, its index cannot be distinguished by the first
+exclusion, so $t(y')=t(b(a))$ for some $a$, and injectivity of $t$ gives
+$y'=b(a)$. The converse is again immediate. Finally, if $y\in S$ and
+$s(y)\in J$, the first characterization gives $y=v$, contrary to
+$v\notin S$.
+\end{proof}

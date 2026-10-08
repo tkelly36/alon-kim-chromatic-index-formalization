@@ -1,0 +1,24 @@
+\begin{helper}
+Let \(f:\mathbb R\to\mathbb R\), and let \(a\le b\).  Assume that \(f\) is
+interval-integrable on \([a,b]\) and that \(f(x)\ge0\) for every
+\(x\in(a,b]\).  Then
+\[
+\int_{(a,b]}^{+}\operatorname{ofReal}(f(x))\,dx
+=
+\operatorname{ofReal}\left(\int_a^b f(x)\,dx\right).
+\]
+\end{helper}
+\begin{proof}
+Because \(a\le b\), the interval integral \(\int_a^b f(x)\,dx\) is the
+Bochner integral of \(f\) over the restricted Lebesgue measure on
+\((a,b]\).  The endpoint \(a\) has measure zero, so using \((a,b]\) instead
+of \([a,b]\) does not change either side.  The interval-integrability
+hypothesis says precisely that \(f\) is integrable for this restricted finite
+measure.  The pointwise nonnegativity hypothesis gives \(0\le f\) almost
+everywhere for the same restricted measure.  The standard
+Lebesgue-integral conversion theorem for an integrable nonnegative real-valued
+function states that the nonnegative integral of
+\(\operatorname{ofReal}\circ f\) equals \(\operatorname{ofReal}\) of the real
+integral of \(f\).  Applying that theorem to the restricted measure
+\(\operatorname{vol}|_{(a,b]}\) gives exactly the displayed equality.
+\end{proof}

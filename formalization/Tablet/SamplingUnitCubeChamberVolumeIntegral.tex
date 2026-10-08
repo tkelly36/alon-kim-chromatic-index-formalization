@@ -1,0 +1,37 @@
+\begin{helper}
+Let \(V\) be finite.  Let \(a,b,c\in V\) be distinct, and let
+\(S_x,S_y,S_z\subseteq V\) be pairwise disjoint and disjoint from
+\(\{a,b,c\}\).  The Lebesgue product measure of the unit-cube chamber
+\[
+C=\{q:q_a\le q_b\le q_c,\ q_w<q_a\ (w\in S_x),\
+q_w<q_b\ (w\in S_y),\ q_w<q_c\ (w\in S_z),\
+q_v\in[0,1]\ (v\in V)\}
+\]
+is at most
+\[
+\operatorname{ofReal}\left(\int_0^1\int_0^z\int_0^y
+x^{|S_x|}y^{|S_y|}z^{|S_z|}\,dx\,dy\,dz\right).
+\]
+\end{helper}
+\begin{proof}
+Use Fubini for product Lebesgue measure on the finite product
+\(\mathbb R^V\), ordering the integrations by the three distinguished
+coordinates \(q_c=z\), \(q_b=y\), and \(q_a=x\).  The chamber condition on
+these three coordinates is exactly \(0\le x\le y\le z\le1\).
+
+For fixed \(x,y,z\) in this simplex, the remaining coordinates separate
+because the sets \(S_x,S_y,S_z\) are pairwise disjoint and avoid
+\(\{a,b,c\}\).  A coordinate in \(S_x\) is allowed to range over \([0,x)\),
+contributing length \(x\); a coordinate in \(S_y\) contributes length \(y\);
+and a coordinate in \(S_z\) contributes length \(z\).  Every remaining
+coordinate ranges over the whole interval \([0,1]\) and contributes length
+\(1\).  Thus the conditional product volume of the outside coordinates is
+\(x^{|S_x|}y^{|S_y|}z^{|S_z|}\).
+
+The strict outside inequalities differ from weak interval constraints only on
+finitely many coordinate hyperplanes.  Each such hyperplane has product
+Lebesgue measure zero, and a finite union of null hyperplanes is null.  Hence
+the chamber volume is exactly the displayed iterated integral.  The Lean
+statement asks only for the corresponding upper bound, so this equality
+immediately implies the claim.
+\end{proof}

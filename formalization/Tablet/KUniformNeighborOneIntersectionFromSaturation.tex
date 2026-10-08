@@ -1,0 +1,32 @@
+\begin{helper}
+Let $\mathcal F$ be a $k$-uniform hypergraph and let $f\in E(\mathcal F)$.
+Suppose that every vertex of $f$ has degree exactly $D$, and that the number
+of line-graph neighbors of $f$ is exactly $kD-k$.  Then every edge
+$g\ne f$ meeting $f$ meets it in exactly one vertex:
+\[
+|g\cap f|=1 .
+\]
+\end{helper}
+\begin{proof}
+Let $N$ be the set of edges $g\ne f$ with $g\cap f\ne\emptyset$.  For a
+vertex $v\in f$, the number of edges other than $f$ containing $v$ is
+$D-1$, because $v$ has degree $D$ and one of those incident edges is $f$.
+Since $\mathcal F$ is $k$-uniform, $|f|=k$, and hence the total number of
+incidences
+\[
+\{(v,g): v\in f,\ g\in N,\ v\in g\}
+\]
+is $k(D-1)$.
+
+Counting the same incidences by the edge $g\in N$ gives
+\[
+\sum_{g\in N}|g\cap f|=k(D-1).
+\]
+The hypothesis on the line-neighborhood says
+$|N|=kD-k=k(D-1)$.  Each summand $|g\cap f|$ is at least $1$, by the
+definition of $N$.  If some $g\in N$ had $|g\cap f|\ne 1$, then since it is
+a positive integer it would have $|g\cap f|\ge2$, while all other summands
+would still be at least $1$.  The sum would then be at least $|N|+1$,
+contradicting $\sum_{g\in N}|g\cap f|=|N|$.  Therefore every $g\in N$
+satisfies $|g\cap f|=1$.
+\end{proof}

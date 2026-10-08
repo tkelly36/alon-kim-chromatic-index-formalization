@@ -1,0 +1,213 @@
+\begin{helper}
+Fix finite source and target vertex sets, a source common coordinate set
+\(S\subseteq V\), a target common coordinate set \(S'\subseteq V'\), and an
+injective transport map \(\phi:V\to V'\) with \(S'=\phi(S)\).  Assume the
+source and target activation--priority laws have the Bernoulli activation
+atom formula with parameter \(\gamma/\Delta\in[0,1]\) and the finite priority
+lower-rectangle formula.
+
+Let
+\[
+  \Omega_0=\{A\subseteq V:A\subseteq S\}
+\]
+index the common activation trace.  For \(A\in\Omega_0\), set
+\[
+  B_A=\{\eta:\eta_{\rm act}\cap S=A\},\qquad
+  B'_A=\{\eta':\eta'_{\rm act}\cap S'=\phi(A)\}.
+\]
+Let
+\[
+  \Lambda=\{0,1\}\times S.
+\]
+The two labels attached to \(v\in S\) are
+\[
+  0<\pi(v),\qquad \pi(v)\le 1,
+\]
+and on the target side they are transported to
+\[
+  0<\pi'(\phi(v)),\qquad \pi'(\phi(v))\le 1.
+\]
+Let \(T_A(\eta,\eta')\) mean that
+\[
+  \eta'_{\rm act}\cap S'=(\eta_{\rm act}\cap S)^\phi
+  \quad\text{and}\quad
+  \pi'(\phi(v))=\pi(v)\ \text{for all }v\in S.
+\]
+Then the source and target base cells and label events are measurable, the
+base cells are pairwise disjoint on each side, \(T_A\) transports the paired
+base cells and every paired label, and every truth-vector atom
+\[
+  B_A\cap\{\eta:\eta\in Q_\lambda\Longleftrightarrow \lambda\in\tau
+        \text{ for all }\lambda\in\Lambda\}
+\]
+has the same nonnegative real mass as its transported target atom.  Moreover
+the base cells cover the full unit-priority support on each side, and the
+complement of unit-priority support has measure zero for both laws.
+\end{helper}
+\begin{proof}
+Write \(p=\gamma/\Delta\).  The hypotheses give \(0\le p\le1\), the exact
+Bernoulli mass of every full activation atom, and, conditional on such a full
+activation atom, the exact mass of every lower rectangle
+\(\{0\le\pi(v)\le t_v\}_{v\in V}\) with \(0\le t_v\le1\).  The same three
+facts hold on the target side with \(V'\).
+The single-law support and boundary calculation is registered as
+\noderef{SamplingPriorityPositiveUnitSupport}; its finite-fibre hypothesis
+holds here because every activation mass is an \(\operatorname{ofReal}\)
+value. The activation-trace calculation is registered as
+\noderef{SamplingBernoulliActivationTraceMass}. We give the resulting
+set and mass arguments explicitly below, keeping all atoms raw rather than
+redefining them by intersection with the support.
+
+We first record the elementary measurable and set-theoretic parts.  The
+activation coordinate has the discrete finite measurable space, so
+\(\eta\mapsto\eta_{\rm act}\cap S\) and
+\(\eta'\mapsto\eta'_{\rm act}\cap S'\) are measurable maps into finite
+discrete spaces.  Hence each fibre \(B_A\) and \(B'_A\) is measurable.  For
+each \(v\in S\), the priority coordinate maps
+\(\eta\mapsto \pi_\eta(v)\) and
+\(\eta'\mapsto\pi_{\eta'}(\phi(v))\) are measurable real coordinate maps.
+Thus the inverse images of \((0,\infty)\) and \((-\infty,1]\) give
+measurability of all source and target label events.
+
+The source base cells are disjoint because an activation trace on \(S\) has a
+unique value.  If a target sample lies in \(B'_A\cap B'_{A'}\), then
+\(\phi(A)=\phi(A')\) as subsets of \(S'\).  Since \(\phi\) is injective, its
+restriction to \(S\) is injective, so \(A=A'\); hence the target base cells
+are disjoint.  If \(T_A(\eta,\eta')\) holds, then by definition
+\[
+  \eta'_{\rm act}\cap S'=(\eta_{\rm act}\cap S)^\phi
+  \quad\text{and}\quad
+  \pi_{\eta'}'(\phi(v))=\pi_\eta(v)\quad(v\in S).
+\]
+Therefore \(\eta\in B_A\) iff \(\eta'\in B'_A\), and for each label
+\(\lambda=(b,v)\in\{0,1\}\times S\), the source truth condition attached to
+\(\lambda\) is equivalent to the transported target truth condition.
+
+We next prove the unit-support nullity, because the raw truth atoms are most
+conveniently computed after removing the null set where some priority
+coordinate is outside \([0,1]\).  Fix a full source activation atom
+\(\{\eta_{\rm act}=F\}\).  Apply the priority lower-rectangle hypothesis with
+the constant threshold \(t_v=1\) for every \(v\in V\).  The product of the
+thresholds is \(1\), so
+\[
+ \nu\{\eta:\eta_{\rm act}=F,\ 0\le\pi_\eta(v)\le1\text{ for all }v\in V\}
+ =\nu\{\eta:\eta_{\rm act}=F\}.
+\]
+The set on the left is contained in the activation atom on the right, hence
+the difference
+\[
+ \{\eta:\eta_{\rm act}=F,\ \neg(0\le\pi_\eta(v)\le1
+       \text{ for all }v\in V)\}
+\]
+has measure zero.  The finitely many full activation atoms partition the
+activation coordinate, so finite additivity over their disjoint union gives
+\(\nu(U^c)=0\), where
+\[
+  U=\{\eta:0\le\pi_\eta(v)\le1\text{ for all }v\in V\}.
+\]
+The identical argument with \(V'\), \(\nu'\), and constant threshold \(1\)
+gives \(\nu'((U')^c)=0\) for the target unit-priority support.
+
+The same lower-rectangle law also gives the boundary nullities needed for the
+strict labels.  Fix \(v_0\in V\) and a full activation atom \(F\).  Put
+\(t_{v_0}=0\) and \(t_v=1\) for \(v\ne v_0\).  All thresholds lie in
+\([0,1]\), and the product is \(0\), so
+\[
+ \nu\{\eta:\eta_{\rm act}=F,\ 0\le\pi_\eta(v)\le t_v
+       \text{ for all }v\in V\}=0.
+\]
+This lower rectangle contains, inside the full unit cube, the boundary
+\(\{\pi_\eta(v_0)=0\}\).  Summing over \(F\) gives
+\(\nu(U\cap\{\pi(v_0)=0\})=0\).  Repeating this for the finitely many
+\(v_0\in S\), and similarly for \(\phi(v_0)\in S'\), shows that all source
+and target coordinate-zero boundaries used by the labels have measure zero.
+
+Now fix \(A\in\Omega_0\) and a truth vector
+\(\tau\subseteq\Lambda\).  Let \(Q_{A,\tau}\) be the corresponding source
+truth-vector atom inside \(B_A\), and \(Q'_{A,\tau}\) the transported target
+atom inside \(B'_A\).  Since \(U^c\) and \((U')^c\) have measure zero, it is
+enough to compute \(Q_{A,\tau}\cap U\) and \(Q'_{A,\tau}\cap U'\).
+
+Consider one coordinate \(v\in S\).  There are four possible truth
+assignments for the two labels \(0<\pi(v)\) and \(\pi(v)\le1\).
+Inside \(U\), if both labels are true, the condition is
+\[
+  0<\pi(v)\le1,
+\]
+which differs from \(0\le\pi(v)\le1\) only by the already null boundary
+\(\pi(v)=0\).  If \(0<\pi(v)\) is false and \(\pi(v)\le1\) is true, then
+inside \(U\) we have \(\pi(v)=0\), so this branch has measure zero.  If
+\(0<\pi(v)\) is true and \(\pi(v)\le1\) is false, then inside \(U\) it would
+require \(\pi(v)>1\), impossible.  If both labels are false, it requires both
+\(\pi(v)\le0\) and \(\pi(v)>1\), impossible even before intersecting with
+\(U\).  Thus, after discarding null coordinate-zero boundaries, the only
+nonzero source atom is the one in which for every \(v\in S\) both labels are
+true; every other truth vector has source mass zero.  The same four-case
+analysis applies to the target coordinate \(\phi(v)\), and injectivity of
+\(\phi\) identifies the list of target coordinates with the list of source
+coordinates, so the zero and nonzero cases are transported exactly.
+
+It remains to compute the nonzero case.  Suppose \(\tau\) contains both
+labels attached to every \(v\in S\).  Modulo the zero coordinate boundaries,
+\[
+  Q_{A,\tau}\cap U
+  =
+  \{\eta:\eta_{\rm act}\cap S=A,\ 0\le\pi_\eta(v)\le1
+       \text{ for all }v\in V\}.
+\]
+This set is the disjoint finite union over full activation sets
+\[
+  F\subseteq V,\qquad F\cap S=A,
+\]
+of the full activation atom \(\{\eta_{\rm act}=F\}\) intersected with the
+full priority cube.  For each such \(F\), the constant-\(1\) rectangle
+calculation above says that the priority cube contributes the full
+activation mass, namely
+\[
+  \operatorname{ofReal}\bigl(p^{|F|}(1-p)^{|V|-|F|}\bigr).
+\]
+Since \(0\le p\le1\), these summands are nonnegative real masses.  Summing
+over all \(F\) with trace \(A\) factors as
+\[
+  p^{|A|}(1-p)^{|S|-|A|}
+  \sum_{E\subseteq V\setminus S} p^{|E|}(1-p)^{|V\setminus S|-|E|}.
+\]
+The finite binomial expansion of \((p+(1-p))^{|V\setminus S|}\), together
+with \(p+(1-p)=1\), makes the outside sum equal to \(1\).  Hence the source
+mass is represented by the nonnegative real
+\[
+  w_A=p^{|A|}(1-p)^{|S|-|A|}.
+\]
+
+On the target side, the nonzero transported atom is the disjoint finite union
+over all \(F'\subseteq V'\) with
+\[
+  F'\cap S'=\phi(A).
+\]
+The same calculation gives
+\[
+  p^{|\phi(A)|}(1-p)^{|S'|-|\phi(A)|}.
+\]
+Because \(S'=\phi(S)\) and \(\phi\) is injective on \(S\), we have
+\(|S'|=|S|\) and \(|\phi(A)|=|A|\).  Therefore the target real mass is the
+same \(w_A\).  Thus in the nonzero truth-vector case we take
+\(w=w_A\), while in every other truth-vector case we take \(w=0\).  The
+preceding paragraph proves \(0\le w\) and
+\[
+  \operatorname{ofReal}(w)=\nu(Q_{A,\tau})
+  \quad\text{and}\quad
+  \operatorname{ofReal}(w)=\nu'(Q'_{A,\tau}),
+\]
+including the inconsistent-label and boundary cases.
+
+Finally, the support-cover assertions are immediate from the definition of
+the base cells.  If \(\eta\in U\), then
+\(A=\eta_{\rm act}\cap S\) is a subset of \(S\), so \(A\in\Omega_0\) and
+\(\eta\in B_A\).  If \(\eta'\in U'\), then
+\(A'=\eta'_{\rm act}\cap S'\) is a subset of \(S'=\phi(S)\).  Since
+\(\phi:S\to S'\) is a bijection onto its image, there is a unique
+\(A\subseteq S\) with \(\phi(A)=A'\), and \(\eta'\in B'_A\).  Together with
+the already proved \(\nu(U^c)=0\) and \(\nu'((U')^c)=0\), this establishes
+all asserted measurability, disjointness, transport, truth-atom mass,
+support-cover, and support-null conclusions.
+\end{proof}

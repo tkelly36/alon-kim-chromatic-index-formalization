@@ -1,0 +1,15 @@
+\begin{lemma}
+Let $H$ be a finite $k$-uniform hypergraph, where $k\ge1$.
+If $r\ge1$ is real and all vertex degrees of $H$ are at most $r$, then,
+for $n=\lfloor r\rfloor_+$ and every edge $e$,
+\[
+b^{\mathbb R}_{L(H),kr}(e)\le b_{L(H),kn}(e).
+\]
+\end{lemma}
+\begin{proof}
+By \noderef{RealDegreeFloorBound}, the maximum degree is at most $n$.
+We have $n\ge1$, and \noderef{UniformHypergraphLineDegreeBound} bounds
+the line degree of $e$ by $k(n-1)\le kn$. Thus $0<kn\le kr$ are
+admissible scales. Apply \noderef{LocalBParameterRealAntitone} to these
+scales and then \noderef{LocalBParameterRealNatCast} at $kn$.
+\end{proof}

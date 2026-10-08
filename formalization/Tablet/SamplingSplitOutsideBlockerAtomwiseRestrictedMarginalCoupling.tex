@@ -1,0 +1,156 @@
+\begin{helper}
+Let \(V,V'\), and \(\Omega\) be finite types, with decidable equality on
+\(V\) and \(V'\).  Let
+\[
+  \nu \quad\text{on}\quad
+  \mathcal P(V)\times\mathbb R^V
+  \qquad\text{and}\qquad
+  \nu' \quad\text{on}\quad
+  \mathcal P(V')\times\mathbb R^{V'}
+\]
+be measures on the natural product measurable spaces
+\(\top\otimes\operatorname{Borel}\), namely the full measurable structure on
+the finite activation coordinate together with the Borel product structure on
+the priority coordinate.  Fix a map
+\(\phi:V\to V'\), a finite source common coordinate set \(S\subseteq V\), a
+finite target common coordinate set \(S'\subseteq V'\), source and target
+atom families
+\[
+  C_\omega\subseteq \mathcal P(V)\times\mathbb R^V,\qquad
+  C'_\omega\subseteq \mathcal P(V')\times\mathbb R^{V'}
+  \qquad(\omega\in\Omega),
+\]
+and weights \(w:\Omega\to\mathbb R\).
+
+Suppose there is a paired measure \(\lambda\) on the natural product
+measurable space
+\[
+  (\mathcal P(V)\times\mathbb R^V)
+  \times
+  (\mathcal P(V')\times\mathbb R^{V'})
+\]
+which gives zero mass to the nonsynchronized common-record set
+\[
+  A'\cap S'\ne\phi(A\cap S)
+  \quad\text{or}\quad
+  \pi'(\phi(v))\ne\pi(v)\text{ for some }v\in S .
+\]
+Assume also that \(\lambda\) has the full source and target marginals
+\(\nu\) and \(\nu'\): for every measurable
+\(E\subseteq\mathcal P(V)\times\mathbb R^V\) and every measurable
+\(E'\subseteq\mathcal P(V')\times\mathbb R^{V'}\),
+\[
+  \lambda(\{(\eta,\eta'):\eta\in E\})=\nu(E),
+  \qquad
+  \lambda(\{(\eta,\eta'):\eta'\in E'\})=\nu'(E').
+\]
+Assume that the weights are nonnegative, that each source and target atom has
+the prescribed mass
+\[
+  \operatorname{ofReal}(w(\omega))=\nu(C_\omega)=\nu'(C'_\omega),
+\]
+that every \(C_\omega\) and \(C'_\omega\) is measurable in the corresponding
+natural product measurable space, and that synchronized pairs transport atom
+membership:
+\[
+  A'\cap S'=\phi(A\cap S),\ \pi'(\phi(v))=\pi(v)\ (v\in S)
+  \quad\Longrightarrow\quad
+  \eta\in C_\omega\Longleftrightarrow \eta'\in C'_\omega .
+\]
+Then there is an
+\(\noderef{SamplingSplitOutsideBlockerMarginalPreservingCouplingData}\)
+package for this same
+\(\nu,\nu',\phi,S,S',\Omega,C_\omega,C'_\omega,w(\omega)\) surface.  In other
+words, one may keep the supplied paired measure $\lambda$ and choose paired cells
+\(\widehat C_\omega\) so that each \(\widehat C_\omega\) projects into
+\(C_\omega\times C'_\omega\), has mass
+\(\operatorname{ofReal}(w(\omega))\), synchronizes both the common activation
+trace \(A'\cap S'=\phi(A\cap S)\) and all common priorities
+\(\pi'(\phi(v))=\pi(v)\) for \(v\in S\), and preserves the restricted source
+and target marginals on every measurable source and target event:
+\[
+  \lambda(\{\zeta:\zeta_1\in E\}\cap\widehat C_\omega)
+    =\nu(E\cap C_\omega),
+  \qquad
+  \lambda(\{\zeta:\zeta_2\in E'\}\cap\widehat C_\omega)
+    =\nu'(E'\cap C'_\omega).
+\]
+Moreover, the returned measure is exactly the supplied $\lambda$, and the
+returned cells are exactly
+\[
+\widehat C_\omega=\{(\eta,\eta'): \eta\in C_\omega,
+ \eta'\in C'_\omega,\ A'\cap S'=\phi(A\cap S),\
+ \pi'(\phi(v))=\pi(v)\text{ for all }v\in S\}.
+\]
+\end{helper}
+\begin{proof}
+For each \(\omega\), define
+\[
+  \widehat C_\omega
+  =\{(\eta,\eta'):\eta\in C_\omega,\ \eta'\in C'_\omega,\
+      A'\cap S'=\phi(A\cap S),\
+      \pi'(\phi(v))=\pi(v)\text{ for all }v\in S\}.
+\]
+The projection containment in the data package is immediate from the first
+two membership clauses in this definition.  The common activation-trace and
+common-priority fields are immediate from the last two synchronization
+clauses in the definition.
+
+The only point requiring care is that the explicit paired cell differs from
+the one-sided source cylinder \(\{(\eta,\eta'):\eta\in C_\omega\}\) only on a
+\(\lambda\)-null set.  Indeed, outside the nonsynchronized set, the
+transported membership hypothesis says
+\(\eta\in C_\omega\) if and only if \(\eta'\in C'_\omega\).  Therefore a
+synchronized pair with \(\eta\in C_\omega\) automatically has
+\(\eta'\in C'_\omega\), and it belongs to \(\widehat C_\omega\).  Conversely
+every point of \(\widehat C_\omega\) has \(\eta\in C_\omega\).  Hence the
+symmetric difference between
+\(\widehat C_\omega\) and
+\(\{(\eta,\eta'):\eta\in C_\omega\}\) is contained in the nonsynchronized
+set, which has \(\lambda\)-measure zero.  Since \(C_\omega\) is measurable and
+the source marginal of \(\lambda\) is \(\nu\),
+\[
+  \lambda(\widehat C_\omega)
+  =\lambda(\{(\eta,\eta'):\eta\in C_\omega\})
+  =\nu(C_\omega)
+  =\operatorname{ofReal}(w(\omega)).
+\]
+This proves the paired-cell mass field.  The same argument may also be made
+from the target side using \(C'_\omega\), but the source calculation already
+gives the required value.
+
+Now fix a measurable source event \(E\).  Intersecting the previous
+null-difference containment with the source cylinder
+\(\{(\eta,\eta'):\eta\in E\}\) shows that
+\[
+  \{(\eta,\eta'):\eta\in E\}\cap\widehat C_\omega
+\]
+differs by a \(\lambda\)-null set from
+\[
+  \{(\eta,\eta'):\eta\in E\cap C_\omega\}.
+\]
+The event \(E\cap C_\omega\) is measurable because both \(E\) and
+\(C_\omega\) are measurable.  Applying the source marginal identity of
+\(\lambda\) gives
+\[
+  \lambda(\{(\eta,\eta'):\eta\in E\}\cap\widehat C_\omega)
+  =\nu(E\cap C_\omega).
+\]
+This is exactly the source restricted marginal field in
+\(\noderef{SamplingSplitOutsideBlockerMarginalPreservingCouplingData}\).
+
+The target restricted marginal is identical.  For measurable \(E'\), the set
+\(\{(\eta,\eta'):\eta'\in E'\}\cap\widehat C_\omega\) differs by a null set
+from \(\{(\eta,\eta'):\eta'\in E'\cap C'_\omega\}\), because outside the same
+nonsynchronized null set membership in \(C_\omega\) and \(C'_\omega\) is
+equivalent.  The target marginal identity of \(\lambda\), together with the
+measurability of \(E'\cap C'_\omega\), gives
+\[
+  \lambda(\{(\eta,\eta'):\eta'\in E'\}\cap\widehat C_\omega)
+  =\nu'(E'\cap C'_\omega).
+\]
+Thus the measure \(\lambda\) and the cells \(\widehat C_\omega\) supply every
+field of the atomwise marginal-preserving coupling data on the original
+finite atom surface, without changing \(\Omega\), \(C_\omega\), \(C'_\omega\),
+or \(w\).
+\end{proof}

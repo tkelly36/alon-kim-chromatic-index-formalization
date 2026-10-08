@@ -1,0 +1,16 @@
+\begin{lemma}
+For a finite set $V$, any set $T$ and map $s:V\to T$, the map
+\[
+q\longmapsto (\{v:q(s(v))_1=1\},(q(s(v))_2)_{v\in V})
+\]
+from $(\mathbb R^2)^T$ to $\mathcal P(V)\times\mathbb R^V$ is measurable
+for the product Borel structures and the discrete activation structure.
+\end{lemma}
+\begin{proof}
+Each priority coordinate is a composition of coordinate projections.
+The fiber over an activation set $A$ is the finite intersection, over $v\in A$,
+of the closed coordinate tests $q(s(v))_1=1$, and, over $v\notin A$, of their
+complements. These fibers are measurable. Every subset of the finite activation
+space is a finite union of singletons, so the activation map is measurable.
+Pairing the two measurable maps proves the claim, including $V=\varnothing$.
+\end{proof}

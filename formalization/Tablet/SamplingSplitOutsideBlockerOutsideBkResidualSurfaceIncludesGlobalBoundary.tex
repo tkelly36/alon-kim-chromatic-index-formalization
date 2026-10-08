@@ -1,0 +1,40 @@
+\begin{helper}
+Let \(U^-_x\) and \(U^+_x\) be first-witness pieces formed from residual
+witness predicates
+\[
+R^-_x=C^-_x\setminus D^-,
+\qquad
+R^+_x=C^+_x\setminus D^+,
+\]
+where \(D^-\) and \(D^+\) are global boundary events, not events indexed by
+the selected witness \(x\).  Then the selected first-witness pieces are
+exactly
+\[
+U^-_x=\{s:s\in C^-_x,\ s\notin D^-,\text{ and no earlier }z<x
+\text{ has }s\in C^-_z\setminus D^-\},
+\]
+and
+\[
+U^+_x=\{t:t\in C^+_x,\ t\notin D^+,\text{ and no earlier }z<x
+\text{ has }t\in C^+_z\setminus D^+\}.
+\]
+In particular, an outside-\(B_k\) selected witness does not remove the global
+boundary complements; those complements remain part of the residual surface.
+\end{helper}
+\begin{proof}
+Unfold the definition of a residual witness.  On the source side,
+\(s\in R^-_x\) means exactly \(s\in C^-_x\) and \(s\notin D^-\), because
+\(R^-_x=C^-_x\setminus D^-\).  The first-witness piece \(U^-_x\) adds the
+condition that for every earlier index \(z<x\), the same state \(s\) is not
+in \(R^-_z\).  Replacing \(R^-_z\) by its definition gives precisely
+\(\neg(s\in C^-_z\setminus D^-)\), equivalently
+\(\neg(s\in C^-_z\ \text{and}\ s\notin D^-)\).  This proves the displayed
+source equality.
+
+The target equality is identical, with \(C^+_z,D^+,R^+_z,U^+_z\) in place of
+the source objects.  The argument never uses any relation between the
+selected index \(x\) and the global boundary events.  Therefore if, in an
+application, \(x\notin B_k\), that fact can rule out only \(x\) as a possible
+current-boundary witness; it cannot delete the global complements \(D^-\) and
+\(D^+\), which may still be witnessed by a different candidate.
+\end{proof}

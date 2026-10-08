@@ -1,0 +1,125 @@
+\begin{helper}
+Fix the actual split-outside-blocker witness surface: the graphs \(G,G'\), the
+activation--priority laws \(\nu,\nu'\) with common parameter
+\(\gamma/\Delta\in[0,1]\), the local embedding \(\phi\), the root \(r\), the
+candidate set \(X\), the private blocker map \(\beta\), the injective outside
+blocker list \(z_0,\ldots,z_{n-1}\), the candidate sets
+\[
+  B_k=\{x\in X:xz_k\in E(G)\},
+\]
+the source and target coordinate layers, the paired refined cells
+\(C_\omega,C'_\omega\), the common weights \(w(\omega)\), and the complete
+stage events \(S_j(\omega),T_j(\omega)\) with retained source blockers
+\(i\ge j\) and already private target blockers \(i<j\).  Also fix the
+adjacent boundary events \(L_k(\omega),R_k(\omega)\), and assume that they
+are the displayed current common-blocker and current private-blocker boundary
+events for the same \(k,\omega\) surface.  Assume the actual coordinate and
+graph-replacement clauses on this same surface.  Assume also the prescribed
+common refined-cell clauses: \(w(\omega)\ge0\),
+\(\operatorname{ofReal}(w(\omega))=\nu(C_\omega)=\nu'(C'_\omega)\), pairwise
+disjointness of the source and target cells, unit-priority support coverage
+up to null complements, and the common-coordinate transport rule between
+\(C_\omega\) and \(C'_\omega\).  Finally assume the displayed definitions of
+\(S_j(\omega)\) and \(T_j(\omega)\) on this same cell surface.
+Assume, in addition, the same-surface mixed data needed by the Claim--2
+chain: a paired mixed measure surface \(\mathcal S\) of the kind defined in
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\) for this
+same \(G,G',\phi,r,X,n,z,B,\beta,C,C'\), and \(w\).  Assume directly the two
+endpoint mass identities for \(\mathcal S\): the \(j=0\) mixed mass is the
+true source survival mass in \(C_\omega\), and the \(j=n\) mixed mass is the
+true target survival mass in \(C'_\omega\).  Assume also the adjacent
+shared-context comparison for \(\mathcal S\): for every
+\(k<n\) and \(\omega\), the two consecutive mixed masses split as
+\[
+M_k(\omega)=U_{k,\omega}+P^-_{k,\omega},\qquad
+M_{k+1}(\omega)=U_{k,\omega}+P^+_{k,\omega},
+\]
+with \(P^-_{k,\omega}\le P^+_{k,\omega}\), exactly as required by
+\(\noderef{SamplingSplitOutsideBlockerActualPairedSurfaceAdjacentMonotonicity}\).
+
+Then there is a single real family \(H(j,\omega)\) such that
+\[
+H(j,\omega)\ge0,\qquad w(\omega)=0\Rightarrow H(j,\omega)=0,
+\]
+the endpoint identities are the true source and target endpoint cell masses,
+\[
+\operatorname{ofReal}(w(\omega)H(0,\omega))
+=\nu(\{I_G(A,\pi)\cap X\ne\emptyset\}\cap C_\omega),
+\]
+\[
+\operatorname{ofReal}(w(\omega)H(n,\omega))
+=\nu'(\{I_{G'}(A',\pi')\cap \phi(X)\ne\emptyset\}\cap C'_\omega),
+\]
+and every adjacent replacement is monotone:
+\[
+  H(k,\omega)\le H(k+1,\omega)\qquad(k<n).
+\]
+This is the complete-stage mass law used by the hybrid producer.  It is a
+one-sided aggregate comparison on the actual witness surface, not a
+same-index source--target equality and not a sum of paired outside-\(B_k\)
+primitive atom equalities.
+\end{helper}
+\begin{proof}
+Let \(\mathcal S\) be the paired mixed measure surface assumed in the
+statement.  By the statement of
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\), this
+single object contains a real family \(M_j(\omega)\) on the same
+\(n,z,B,\Omega,C,C'\), and \(w\) witness surface.  It also states the two
+normalization properties
+\[
+  M_j(\omega)\ge0,\qquad w(\omega)=0\Rightarrow M_j(\omega)=0
+\]
+for every \(j\) and \(\omega\), and the measured-stage identity
+\[
+\operatorname{ofReal}(w(\omega)M_j(\omega))
+=\lambda(\widehat S_j(\omega)\cap\widehat C_\omega).
+\]
+Define the desired hybrid family by
+\[
+  H(j,\omega):=M_j(\omega).
+\]
+This is one global choice of \(H\), made before any endpoint or adjacent case
+is checked; in particular \(H(k,\omega)\) and \(H(k+1,\omega)\) are not chosen
+separately inside the \(k\)-th comparison.
+
+The nonnegativity clause for \(H\) follows immediately from the corresponding
+nonnegativity field of the paired surface:
+\[
+  H(j,\omega)=M_j(\omega)\ge0.
+\]
+Likewise, if \(w(\omega)=0\), then the zero-weight field of the same paired
+surface gives \(M_j(\omega)=0\), hence \(H(j,\omega)=0\).
+
+Next use the source endpoint mass premise assumed in the statement.  It says,
+for every \(\omega\),
+\[
+\operatorname{ofReal}(w(\omega)M_0(\omega))
+=\nu(\{(A,\pi): I_G(A,\pi)\cap X\ne\emptyset\}\cap C_\omega).
+\]
+Since \(H(0,\omega)=M_0(\omega)\) by definition, this is precisely the required
+source endpoint identity for \(H\).  The target endpoint mass premise says,
+for every \(\omega\),
+\[
+\operatorname{ofReal}(w(\omega)M_n(\omega))
+=\nu'(\{(A',\pi'): I_{G'}(A',\pi')\cap \phi(X)\ne\emptyset\}\cap C'_\omega).
+\]
+Again substituting \(H(n,\omega)=M_n(\omega)\) gives the required target
+endpoint identity.  These are endpoint-only uses: no statement about an
+endpoint projection set or an intermediate source-only or target-only
+residual projection is invoked.
+
+Finally fix \(k<n\) and \(\omega\).  The assumed shared-context decomposition
+for the same paired surface is exactly the hypothesis of
+\(\noderef{SamplingSplitOutsideBlockerActualPairedSurfaceAdjacentMonotonicity}\).
+Therefore that node gives
+\[
+  M_k(\omega)\le M_{k+1}(\omega).
+\]
+Replacing \(M\) by the definition of \(H\) gives
+\[
+  H(k,\omega)\le H(k+1,\omega).
+\]
+All clauses in the asserted \(H\)-family have now been verified from the one
+paired surface \(\mathcal S\), its endpoint identities, and its adjacent
+same-context comparisons.
+\end{proof}

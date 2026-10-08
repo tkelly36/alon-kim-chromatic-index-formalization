@@ -1,0 +1,52 @@
+\begin{helper}
+Let \(S\) and \(T\) be two finite classes of possible blockers in the
+nonadjacent-pair chamber calculation.  Suppose the activation probability is
+\(\gamma/\Delta\), where \(\Delta\) is a natural number and \(\gamma\ne0\).
+This algebraic helper is interpreted with Lean's total real-division
+convention, so if \(\Delta=0\) every quotient with denominator \(\Delta\) is
+interpreted as \(0\).  In the sampling applications one separately has
+\(\Delta>0\).  For chamber coordinates \(x,y\), the product of the one-vertex
+inactive-or-harmless contributions satisfies
+\[
+\prod_{w\in S}\left[
+\left(1-\frac{\gamma}{\Delta}\right)
++\frac{\gamma}{\Delta}\left(1-\frac{x}{\gamma}\right)\right]
+\prod_{w\in T}\left[
+\left(1-\frac{\gamma}{\Delta}\right)
++\frac{\gamma}{\Delta}\left(1-\frac{y}{\gamma}\right)\right]
+=
+\prod_{w\in S}\left(1-\frac{x}{\Delta}\right)
+\prod_{w\in T}\left(1-\frac{y}{\Delta}\right).
+\]
+\end{helper}
+\begin{proof}
+For a blocker in \(S\), the two allowed alternatives in this chamber are:
+the vertex is inactive, contributing \(1-\gamma/\Delta\), or it is active but
+has priority below the threshold for \(u\), contributing
+\((\gamma/\Delta)(1-x/\gamma)\).  Their sum is
+\[
+1-\frac{\gamma}{\Delta}
++\frac{\gamma}{\Delta}\left(1-\frac{x}{\gamma}\right)
+=1-\frac{x}{\Delta}.
+\]
+The same calculation with \(y\) gives
+\[
+1-\frac{\gamma}{\Delta}
++\frac{\gamma}{\Delta}\left(1-\frac{y}{\gamma}\right)
+=1-\frac{y}{\Delta}
+\]
+for each blocker in \(T\).  Substituting these two one-vertex identities into
+the two finite products gives the claimed product identity.
+
+The displayed one-vertex algebra is valid under the stated convention.  If
+\(\Delta\ne0\), the first identity follows by expanding
+\[
+1-\frac{\gamma}{\Delta}
++\frac{\gamma}{\Delta}-\frac{\gamma}{\Delta}\frac{x}{\gamma}
+=1-\frac{x}{\Delta},
+\]
+using \(\gamma\ne0\) to cancel \(\gamma\); the \(y\)-identity is identical.
+If \(\Delta=0\), then every quotient by \(\Delta\) is interpreted as \(0\), so
+both sides of each one-vertex identity are \(1\).  Hence the finite product
+identity holds for every natural number \(\Delta\), exactly as stated.
+\end{proof}

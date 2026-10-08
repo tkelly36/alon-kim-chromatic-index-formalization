@@ -1,0 +1,44 @@
+\begin{helper}
+Let $\nu$ be any measure on activation--priority pairs $(A,\pi)$, and use the
+output map from \noderef{RandomIndependentSetSampling}: for such a pair write
+\[
+I(A,\pi)=\{z\in A:\pi(w)<\pi(z)\text{ for every }w\in A\cap N_G(z)\}.
+\]
+For every fixed finite vertex set $Q$,
+\[
+\nu\{(A,\pi):Q\subseteq I(A,\pi)\}
+=\sum_{A:Q\subseteq A}
+\nu\{(A',\pi):A'=A\text{ and every }q\in Q\text{ beats every activated
+neighbor in }A\}.
+\]
+Moreover, for each activation set $A$ and priority function $\pi$,
+\[
+Q\subseteq I(A,\pi)
+\quad\Longleftrightarrow\quad
+Q\subseteq A\text{ and every }q\in Q\text{ beats every activated neighbor
+in }A.
+\]
+\end{helper}
+\begin{proof}
+The activation coordinate is discrete and the priority coordinates have
+their Borel product sigma algebra. Thus the activation equality $A'=A$
+is measurable, as is every strict comparison $\pi(w)<\pi(q)$.
+Each fiber displayed in the sum is a finite intersection of such events,
+and therefore is measurable.
+
+The pointwise characterization is obtained by applying
+\noderef{SamplingOneVertexOutputMembership} to each vertex $q\in Q$.
+Indeed, $q\in I(A,\pi)$ is equivalent to the conjunction that $q\in A$ and
+that every activated neighbor $w\in A$ of $q$ has $\pi(w)<\pi(q)$.  Thus
+$Q\subseteq I(A,\pi)$ holds exactly when this conjunction holds for every
+$q\in Q$, which is the displayed characterization.
+
+Now partition the event $\{(A,\pi):Q\subseteq I(A,\pi)\}$ according to the
+first coordinate $A$.  By the characterization just proved, only activation
+sets satisfying $Q\subseteq A$ can occur, and for such an $A$ the fiber is
+precisely the event that the first coordinate equals $A$ and every
+$q\in Q$ beats every activated neighbor in $A$.  These fibers are pairwise
+disjoint, because a single sample has only one activation set.  Since the
+vertex set is finite, there are only finitely many activation sets, so finite
+additivity of $\nu$ over this disjoint union gives the stated sum.
+\end{proof}

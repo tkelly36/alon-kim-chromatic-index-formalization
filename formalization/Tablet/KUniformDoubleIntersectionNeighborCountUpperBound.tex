@@ -1,0 +1,36 @@
+\begin{helper}
+Let $\mathcal F$ be a finite $k$-uniform multi-hypergraph, let $f$ be an
+edge, and suppose every vertex of \(f\) has degree exactly \(D\).  If an
+edge \(g\ne f\) contains two distinct vertices \(u,v\in f\), then the number
+of line-graph neighbors of \(f\) is at most
+\[
+  k(D-1)-1 .
+\]
+\end{helper}
+\begin{proof}
+By \noderef{LineGraphOfHypergraph}, the line-graph neighbors of \(f\) are
+exactly the edge labels \(e\ne f\) whose hyperedges meet \(f\).  Let this
+finite set be \(N\).
+
+For each vertex \(x\in f\), the number of edge labels \(e\ne f\) containing
+\(x\) is \(D-1\): by the saturation hypothesis and
+\noderef{HypergraphDegree}, exactly \(D\) edge labels contain \(x\), and one
+of them is \(f\).  Since \(\mathcal F\) is \(k\)-uniform by
+\noderef{UniformHypergraph}, the total number of incidences
+\[
+  (x,e)\quad\text{with }x\in f,\ e\ne f,\ x\in e
+\]
+is therefore \(k(D-1)\).
+
+The same incidence set can be counted by summing, over \(e\in N\), the size of
+\(f\cap e\).  Every \(e\in N\) contributes at least one incidence, because it
+meets \(f\).  The distinguished edge \(g\) contributes at least two
+incidences, namely the two distinct vertices \(u\) and \(v\).  Hence the
+incidence count is at least \(|N|+1\).  Combining this lower bound with the
+previous exact count gives
+\[
+  |N|+1 \le k(D-1),
+\]
+and therefore \(|N|\le k(D-1)-1\).  This is precisely the asserted upper
+bound on the line-graph neighbor count of \(f\).
+\end{proof}

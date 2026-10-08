@@ -1,0 +1,58 @@
+\begin{helper}
+Fix a degree parameter $\Delta$, a window length $L$, an error parameter
+$\alpha$, and an exponent $N$.  Assume $0<\Delta$, $0\le L<\Delta$,
+$0<1-\alpha$, $N\le\Delta$,
+$N/\Delta\le\alpha$, and
+\[
+\frac{L^2}{\Delta-L}\le -\log(1-\alpha).
+\]
+Assume also the explicit high-overlap margin
+\[
+\frac53+2\alpha\le
+2\int_{0}^{L}\int_x^L
+\bigl((1-\alpha)e^{-\alpha L}\bigr)
+\bigl((1-\alpha)e^{-y}\bigr)\,dy\,dx .
+\]
+Then
+\[
+\frac2{\Delta^2}
+\int_{0}^{L}\int_x^L
+\left(1-\frac{x}{\Delta}\right)^N
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx
+\ge
+\frac{5/3+2\alpha}{\Delta^2}.
+\]
+\end{helper}
+\begin{proof}
+By \noderef{SamplingFiniteProductPointwiseLower}, for every
+$x\in[0,L]$,
+\[
+\left(1-\frac{x}{\Delta}\right)^N
+\ge
+(1-\alpha)\exp\!\left(-\frac{N}{\Delta}x\right).
+\]
+Since $N/\Delta\le\alpha$, $x\le L$, and both $x$ and $\alpha$ are
+nonnegative, we have $(N/\Delta)x\le\alpha L$.  The exponential function is
+monotone, so
+\[
+\exp\!\left(-\frac{N}{\Delta}x\right)\ge e^{-\alpha L}.
+\]
+Multiplying by the nonnegative factor $1-\alpha$ gives
+\[
+\left(1-\frac{x}{\Delta}\right)^N
+\ge (1-\alpha)e^{-\alpha L}.
+\]
+
+The same node, applied with exponent $N=\Delta$, gives for every
+$y\in[0,L]$
+\[
+\left(1-\frac{y}{\Delta}\right)^\Delta
+\ge (1-\alpha)e^{-y},
+\]
+because $\Delta/\Delta=1$.  Thus the two pointwise lower hypotheses of
+\noderef{SamplingPairHighOverlapWindowLower} hold on the whole square
+$[0,L]^2$.  The remaining hypotheses of that node are precisely
+$0<\Delta$, $0\le L$, $0<1-\alpha$, and the displayed high-overlap margin
+assumed here.  Applying \noderef{SamplingPairHighOverlapWindowLower} yields
+the claimed finite-window lower bound.
+\end{proof}

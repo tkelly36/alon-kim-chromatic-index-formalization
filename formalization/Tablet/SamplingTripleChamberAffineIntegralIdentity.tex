@@ -1,0 +1,33 @@
+\begin{helper}
+Let \(\gamma>0\), and let \(S_x,S_y,S_z\) be finite sets.  Then
+\[
+\int_0^1\int_0^z\int_0^y
+x^{|S_x|}y^{|S_y|}z^{|S_z|}\,dx\,dy\,dz
+=
+\frac1{\gamma^3}\int_0^\gamma\int_z^\gamma\int_y^\gamma
+\left(1-\frac{x}{\gamma}\right)^{|S_x|}
+\left(1-\frac{y}{\gamma}\right)^{|S_y|}
+\left(1-\frac{z}{\gamma}\right)^{|S_z|}\,dx\,dy\,dz .
+\]
+\end{helper}
+\begin{proof}
+Apply the affine change of variables
+\[
+x'=\gamma(1-x),\qquad y'=\gamma(1-y),\qquad z'=\gamma(1-z)
+\]
+to the region \(0\le x\le y\le z\le1\).  Since \(\gamma>0\), this is a
+bijective \(C^1\) change of variables from that simplex onto
+\(0\le z'\le y'\le x'\le\gamma\).  Its Jacobian determinant has absolute value
+\(\gamma^3\), or equivalently \(dx\,dy\,dz=\gamma^{-3}\,dx'\,dy'\,dz'\) after
+moving the factor to the right-hand integral.  The coordinate powers transform
+as
+\[
+x^{|S_x|}=\left(1-\frac{x'}{\gamma}\right)^{|S_x|},\quad
+y^{|S_y|}=\left(1-\frac{y'}{\gamma}\right)^{|S_y|},\quad
+z^{|S_z|}=\left(1-\frac{z'}{\gamma}\right)^{|S_z|}.
+\]
+Rewriting the transformed domain in the order
+\(0\le z'\le y'\le x'\le\gamma\) gives exactly the right-hand iterated
+integral, with the factor \(\gamma^{-3}=1/\gamma^3\).  Renaming
+\((x',y',z')\) back to \((x,y,z)\) yields the displayed identity.
+\end{proof}

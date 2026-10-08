@@ -1,0 +1,48 @@
+\begin{helper}
+In a local extremal setup $S$ at scale $D$ as in
+\noderef{ThreeUniformThreeSimpleLocalSetup}, write $P=S.P$, $T=S.T$,
+and $b=S.b$. Then
+\[
+0\le P\le\frac92D^2,\qquad 0\le T,\qquad T^2\le P^3/27,
+\qquad
+b=\frac{3(D-1)}{3D}-\frac{P}{(3D)^2}+\frac{T}{(3D)^3}.
+\]
+\end{helper}
+\begin{proof}
+Let $N$ be the set of edges $g\ne f$ meeting $f$. By
+\noderef{LineGraphOfHypergraph}, this is the line-graph neighborhood of $f$.
+The setup \noderef{ThreeUniformThreeSimpleLocalSetup}, with class membership
+interpreted by \noderef{HypergraphClass}, supplies
+$D\ge100$, $|N|=3(D-1)$, uniformity with $|f|=3$, and degree $D$
+at every vertex of $f$. Thus
+\noderef{KUniformNeighborOneIntersectionFromSaturation}, with $k=3$
+and $3(D-1)=3D-3$, says that each $g\in N$ meets $f$ in exactly one
+vertex. Label the three vertices of $f$ by $0,1,2$, and assign $g$ the
+label of this unique intersection vertex.
+
+Define a simple graph $J$ on $N$ by joining distinct $g,h$ exactly when
+$g\cap h$ is empty. Two edges assigned the same label contain the same
+vertex of $f$, so cannot be adjacent in $J$. Thus this labeling is a
+tripartition. An edge of $J$ is an unordered two-element subset of $N$
+whose two edges are nonadjacent in the line graph. Sending such a pair
+to its underlying subset of the ambient edge set is a bijection with
+the subsets counted by \noderef{IndependentPairCount}: the inverse
+regards each element of that subset as an element of $N$. Hence
+$|E(J)|=P$, using the setup's pair-count identity. In exactly the same
+way, a triangle of $J$ is a three-element subset of $N$ with all pairs
+nonadjacent in the line graph. The underlying-subset bijection and its
+inverse identify these with the subsets of
+\noderef{IndependentTripleCount}, so the number of triangles is $T$.
+Both counts are nonnegative.
+
+Apply \noderef{TriangleCountPartite} to $J$ to obtain
+$T\le(P/3)^{3/2}$. Squaring nonnegative quantities gives
+$T^2\le(P/3)^3=P^3/27$. Also every edge of $J$ is one of the
+$\binom{|N|}{2}$ unordered pairs, so
+$P\le |N|(|N|-1)/2\le |N|^2/2\le9D^2/2$; here
+$0\le|N|=3(D-1)\le3D$.
+Finally, \noderef{LocalBParameter} defines $b$ as the degree divided by
+$3D$, minus the pair count divided by $(3D)^2$, plus the triple count
+divided by $(3D)^3$. Substitute the setup's count identities and
+the degree $|N|=3(D-1)$ to obtain the asserted formula.
+\end{proof}

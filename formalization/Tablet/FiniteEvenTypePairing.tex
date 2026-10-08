@@ -1,0 +1,31 @@
+\begin{helper}
+Let $A$ be a finite type whose cardinality is even.  Then there are a
+finite type $P$ of pairs and a map
+\[
+  \operatorname{pair}:P\times\{0,1\}\to A
+\]
+which is bijective.  Equivalently, the elements of $A$ can be partitioned
+into ordered two-element slots indexed by $P$.
+\end{helper}
+\begin{proof}
+Write $|A|=2n$.  Choose a bijection $e:A\to\{0,\ldots,2n-1\}$.  Let
+$P=\{0,\ldots,n-1\}$.  For $p\in P$ and $i\in\{0,1\}$, define
+\[
+  \operatorname{pair}(p,i)=e^{-1}(2p+i).
+\]
+The inequality $0\le 2p+i<2n$ follows from $0\le p<n$ and
+$i\in\{0,1\}$, so this is well-defined.
+
+The map is injective: if
+$\operatorname{pair}(p,i)=\operatorname{pair}(q,j)$, applying $e$ gives
+$2p+i=2q+j$.  Reducing this equality modulo $2$ gives $i=j$, because
+$i$ and $j$ are each either $0$ or $1$.  Substituting $i=j$ into the same
+equality gives $p=q$.
+
+The map is surjective: for any $a\in A$, write $e(a)=k$ with
+$0\le k<2n$.  Euclidean division by $2$ gives
+$k=2\lfloor k/2\rfloor+(k\bmod 2)$, with
+$0\le \lfloor k/2\rfloor<n$ and $k\bmod 2\in\{0,1\}$.  Hence
+$a=\operatorname{pair}(\lfloor k/2\rfloor,k\bmod 2)$.  Thus
+$\operatorname{pair}$ is bijective.
+\end{proof}

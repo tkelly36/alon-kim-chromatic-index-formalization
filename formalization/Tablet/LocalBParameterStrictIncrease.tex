@@ -1,0 +1,27 @@
+\begin{lemma}
+Let $G$ and $H$ be finite simple graphs, possibly on different vertex sets,
+with distinguished vertices $v$ and $w$. Let $M,r$ be natural numbers with
+$0<M$ and $r<M$. Write $P_G(v)$ and $T_G(v)$ for the independent pair and
+triple counts in the neighborhood of $v$, and similarly for $H,w$.
+Suppose
+\[
+\deg_H(w)=\deg_G(v)+1,\qquad
+P_H(w)\le P_G(v)+r,\qquad T_G(v)\le T_H(w).
+\]
+Then $b_{G,M}(v)<b_{H,M}(w)$, where $b$ is
+\noderef{LocalBParameter}.
+\end{lemma}
+\begin{proof}
+Regard all counts and $M,r$ as real numbers. Since $M>0$, division by
+$M^2$ and $M^3$ preserves inequalities. Expanding the definition gives
+\[
+\begin{aligned}
+b_{H,M}(w)-b_{G,M}(v)
+&=\frac{1}{M}-\frac{P_H(w)-P_G(v)}{M^2}
+  +\frac{T_H(w)-T_G(v)}{M^3}\\
+&\ge\frac{1}{M}-\frac{r}{M^2}
+ =\frac{M-r}{M^2}>0.
+\end{aligned}
+\]
+The last inequality uses $r<M$ and $M^2>0$, proving the claim.
+\end{proof}

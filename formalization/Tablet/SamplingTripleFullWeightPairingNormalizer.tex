@@ -1,0 +1,99 @@
+\begin{helper}
+Let $G$ be a finite graph, let $\Delta$ be a natural number, and let
+$\gamma$ be real.  Fix distinct pairwise nonadjacent vertices $a,b,c$.
+Suppose the seven natural numbers
+$n_a,n_b,n_c,n_{ab},n_{ac},n_{bc},n_{abc}$ are the actual adjacency pattern
+counts outside $\{a,b,c\}$, where $n_a,n_b,n_c$ count the vertices adjacent to
+exactly the indicated one of $a,b,c$, $n_{ab},n_{ac},n_{bc}$ count the vertices
+adjacent to exactly the indicated two, and $n_{abc}$ counts the vertices
+adjacent to all three.  Suppose also that
+\[
+n_a+n_{ab}+n_{ac}+n_{abc}=\Delta,\quad
+n_b+n_{ab}+n_{bc}+n_{abc}=\Delta,\quad
+n_c+n_{ac}+n_{bc}+n_{abc}=\Delta .
+\]
+For an ordered triple $t=(t_1,t_2,t_3)$, let $\Phi_t$ be the full ordered
+chamber integral with common factor $\Delta^{-3}$:
+\[
+\Phi_t=\frac1{\Delta^3}\int_0^\gamma\int_z^\gamma\int_y^\gamma
+\left(1-\frac{x}{\Delta}\right)^{|\{w\notin\{t_1,t_2,t_3\}:w\sim t_1\}|}
+\left(1-\frac{y}{\Delta}\right)^{|\{w\notin\{t_1,t_2,t_3\}:w\not\sim t_1,\ w\sim t_2\}|}
+\left(1-\frac{z}{\Delta}\right)^{|\{w\notin\{t_1,t_2,t_3\}:w\not\sim t_1,\ w\not\sim t_2,\ w\sim t_3\}|}
+\,dx\,dy\,dz .
+\]
+Put
+\[
+N_{ab}=\Delta-(n_{ab}+n_{abc}),\quad
+N_{ac}=\Delta-(n_{ac}+n_{abc}),\quad
+N_{bc}=\Delta-(n_{bc}+n_{abc}),
+\]
+and let $I_{ab},I_{ac},I_{bc}$ be the three normalized chamber integrals with
+exponents $(\Delta,N_{ab},n_c)$, $(\Delta,N_{ac},n_b)$, and
+$(\Delta,N_{bc},n_a)$, respectively:
+\[
+I_{ab}=\int_0^\gamma\int_u^\gamma\int_v^\gamma
+\left(1-\frac{w}{\Delta}\right)^\Delta
+\left(1-\frac{v}{\Delta}\right)^{N_{ab}}
+\left(1-\frac{u}{\Delta}\right)^{n_c}\,dw\,dv\,du,
+\]
+\[
+I_{ac}=\int_0^\gamma\int_u^\gamma\int_v^\gamma
+\left(1-\frac{w}{\Delta}\right)^\Delta
+\left(1-\frac{v}{\Delta}\right)^{N_{ac}}
+\left(1-\frac{u}{\Delta}\right)^{n_b}\,dw\,dv\,du,
+\]
+\[
+I_{bc}=\int_0^\gamma\int_u^\gamma\int_v^\gamma
+\left(1-\frac{w}{\Delta}\right)^\Delta
+\left(1-\frac{v}{\Delta}\right)^{N_{bc}}
+\left(1-\frac{u}{\Delta}\right)^{n_a}\,dw\,dv\,du.
+\]
+Then
+\[
+\Phi_{(a,b,c)}+\Phi_{(b,a,c)}
+{}+\Phi_{(a,c,b)}+\Phi_{(c,a,b)}
+{}+\Phi_{(b,c,a)}+\Phi_{(c,b,a)}
+=
+\frac1{\Delta^3}\bigl(2I_{ab}+2I_{ac}+2I_{bc}\bigr).
+\]
+\end{helper}
+\begin{proof}
+We identify the three exponents in each ordered chamber.  The node
+\noderef{SamplingTripleOrderedExponentNormalizer} says that, for any ordered
+triple $(p,q,r)$, the top exponent is the sum of the four pattern classes
+adjacent to $p$, the middle exponent is the sum of the two pattern classes
+adjacent to $q$ but not to $p$, and the bottom exponent is the single pattern
+class adjacent only to $r$ among the vertices not adjacent to $p$ or $q$.
+
+For $(a,b,c)$ the top exponent is
+$n_a+n_{ab}+n_{ac}+n_{abc}=\Delta$, the middle exponent is
+$n_b+n_{bc}=\Delta-(n_{ab}+n_{abc})=N_{ab}$ by the $b$-degree identity, and
+the bottom exponent is $n_c$.  For $(b,a,c)$ the same argument gives top
+exponent $\Delta$, middle exponent
+$n_a+n_{ac}=\Delta-(n_{ab}+n_{abc})=N_{ab}$, and bottom exponent $n_c$.
+Thus both of these two ordered chamber weights equal
+$\Delta^{-3}I_{ab}$.
+
+For $(a,c,b)$ and $(c,a,b)$, the top exponent is again $\Delta$ in each
+order.  The middle exponents are $n_c+n_{bc}$ and $n_a+n_{ab}$, which the
+$c$- and $a$-degree identities rewrite as
+$\Delta-(n_{ac}+n_{abc})=N_{ac}$, and the bottom exponent is $n_b$ in both
+orders.  Hence both weights equal $\Delta^{-3}I_{ac}$.
+
+For $(b,c,a)$ and $(c,b,a)$, the top exponent is $\Delta$ in both orders.
+The middle exponents are $n_c+n_{ac}$ and $n_b+n_{ab}$, which the $c$- and
+$b$-degree identities rewrite as
+$\Delta-(n_{bc}+n_{abc})=N_{bc}$, and the bottom exponent is $n_a$ in both
+orders.  Hence both weights equal $\Delta^{-3}I_{bc}$.
+
+Adding the six displayed equalities and factoring out the common
+$\Delta^{-3}$ gives
+\[
+\Phi_{(a,b,c)}+\Phi_{(b,a,c)}
+{}+\Phi_{(a,c,b)}+\Phi_{(c,a,b)}
+{}+\Phi_{(b,c,a)}+\Phi_{(c,b,a)}
+=
+\frac1{\Delta^3}(2I_{ab}+2I_{ac}+2I_{bc}),
+\]
+as required.
+\end{proof}

@@ -1,0 +1,52 @@
+\begin{theorem}
+For every $\iota>0$, there are constants $\Delta_0$ and $\gamma_0$ such that
+the following holds.  Let $G$ be a $\Delta$-regular graph with
+$\Delta\ge\Delta_0$, let $\gamma\ge\gamma_0$, and let $I$ be the random
+independent set produced by the activation--priority procedure of
+\noderef{RandomIndependentSetSampling}.  Then, for every vertex $r$,
+\[
+\left|\Pr[r\in I]-\frac{1-e^{-\gamma}}{\Delta}\right|\le \frac{2}{\Delta^2}.
+\]
+Moreover, for every $X\subseteq N_G(r)$,
+\[
+\Pr[I\cap X\ne\emptyset]\le b_{G[X\cup\{r\}],\Delta}(r)+\iota,
+\]
+where the local parameter $b$ is the one in \noderef{LocalBParameter}.
+\end{theorem}
+\begin{proof}
+Choose $\Delta_0$ and $\gamma_0$ large enough for both support estimates
+\noderef{SamplingOneVertexEstimate} and
+\noderef{SamplingTripleBonferroniEstimate} with error budget $\iota$.  The
+one-vertex estimate applies directly to every vertex of the given
+$\Delta$-regular graph sampled by \noderef{RandomIndependentSetSampling}, and
+therefore gives
+\[
+\left|\Pr[r\in I]-\frac{1-e^{-\gamma}}{\Delta}\right|\le \frac{2}{\Delta^2}
+\]
+for each root $r$.
+
+Now fix $r$ and $X\subseteq N_G(r)$.  By
+\noderef{SamplingRegularEnlargementReduction}, we may replace $G$ by a
+$\Delta$-regular enlargement $G'$ in which the induced graph on
+$X\cup\{r\}$ is preserved, no two distinct vertices of $X$ have a common
+neighbor outside the closed neighborhood of $r$, and
+\[
+\Pr_G[I\cap X\ne\emptyset]\le \Pr_{G'}[I'\cap X\ne\emptyset].
+\]
+Because the induced local graph is preserved, the value of
+$b_{G[X\cup\{r\}],\Delta}(r)$ is the same in $G$ and $G'$ by
+\noderef{LocalBParameter}, \noderef{IndependentPairCount}, and
+\noderef{IndependentTripleCount}.  Applying
+\noderef{SamplingTripleBonferroniEstimate} in $G'$ gives
+\[
+\Pr_{G'}[I'\cap X\ne\emptyset]\le
+b_{G'[X\cup\{r\}],\Delta}(r)+\iota
+=b_{G[X\cup\{r\}],\Delta}(r)+\iota .
+\]
+Combining this with the monotonicity inequality from the enlargement
+reduction proves
+\[
+\Pr_G[I\cap X\ne\emptyset]\le
+b_{G[X\cup\{r\}],\Delta}(r)+\iota .
+\]
+\end{proof}

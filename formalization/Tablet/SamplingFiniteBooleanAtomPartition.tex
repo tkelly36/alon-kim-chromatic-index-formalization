@@ -1,0 +1,56 @@
+\begin{lemma}
+Let \(\Lambda\) be a finite label set and let \(B\) be a
+null-measurable base event in a measured space.  For each
+\(\lambda\in\Lambda\), let \(Q_\lambda\) be a null-measurable label event.
+For a truth vector \(\tau\subseteq\Lambda\), define
+\[
+  A_\tau
+  =
+  B\cap
+  \{s:s\in Q_\lambda\Longleftrightarrow \lambda\in\tau
+       \text{ for every }\lambda\in\Lambda\}.
+\]
+Then the finite family \((A_\tau)_{\tau\subseteq\Lambda}\) covers \(B\), is
+pairwise almost-disjoint, and consists of null-measurable sets.
+\end{lemma}
+\begin{proof}
+For each point \(s\in B\), define its truth vector by
+\[
+  \tau(s)=\{\lambda\in\Lambda:s\in Q_\lambda\}.
+\]
+Since \(\Lambda\) is finite, \(\tau(s)\) is one of the allowed finite truth
+vectors.  By construction, \(s\in A_{\tau(s)}\).  This proves
+\[
+  B\subseteq \bigcup_{\tau\subseteq\Lambda} A_\tau .
+\]
+The reverse inclusion is immediate from the definition \(A_\tau\subseteq B\).
+Thus the atoms cover \(B\).
+
+If \(\tau_1\ne\tau_2\), then some label
+\(\lambda\in\Lambda\) belongs to exactly one of the two truth vectors.  A
+point in \(A_{\tau_1}\cap A_{\tau_2}\) would have to satisfy both
+\[
+  s\in Q_\lambda\Longleftrightarrow \lambda\in\tau_1
+  \quad\text{and}\quad
+  s\in Q_\lambda\Longleftrightarrow \lambda\in\tau_2,
+\]
+which is impossible.  Hence \(A_{\tau_1}\cap A_{\tau_2}=\emptyset\) for
+distinct truth vectors.  Empty intersection implies almost-disjointness for
+every measure.
+
+Finally,
+\[
+  \{s:s\in Q_\lambda\Longleftrightarrow \lambda\in\tau
+       \text{ for every }\lambda\}
+  =
+  \bigcap_{\lambda\in\Lambda}
+  \begin{cases}
+    Q_\lambda, & \lambda\in\tau,\\
+    Q_\lambda^c, & \lambda\notin\tau .
+  \end{cases}
+\]
+This is a finite intersection of null-measurable sets and complements of
+null-measurable sets, so it is null-measurable.  Intersecting it with the
+null-measurable base event \(B\) proves that each \(A_\tau\) is
+null-measurable.
+\end{proof}

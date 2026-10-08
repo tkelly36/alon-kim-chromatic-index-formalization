@@ -1,0 +1,24 @@
+\begin{lemma}
+Let \(S\) and \(T\) be measurable spaces and let \(\nu\) and \(\nu'\) be
+\(s\)-finite probability measures on them.  For every source event
+\(E\subseteq S\) and target event \(F\subseteq T\), the
+product law satisfies the two cylinder projection identities
+\[
+(\nu\otimes\nu')(E\times T)=\nu(E),\qquad
+(\nu\otimes\nu')(S\times F)=\nu'(F).
+\]
+\end{lemma}
+\begin{proof}
+The product-measure rectangle formula gives
+\[
+(\nu\otimes\nu')(E\times T)=\nu(E)\nu'(T)
+\]
+and
+\[
+(\nu\otimes\nu')(S\times F)=\nu(S)\nu'(F).
+\]
+The hypotheses say \(\nu(S)=1\) and \(\nu'(T)=1\).  Substituting these two
+normalizations into the displayed rectangle formulas gives
+\((\nu\otimes\nu')(E\times T)=\nu(E)\cdot 1=\nu(E)\) and
+\((\nu\otimes\nu')(S\times F)=1\cdot\nu'(F)=\nu'(F)\), as required.
+\end{proof}

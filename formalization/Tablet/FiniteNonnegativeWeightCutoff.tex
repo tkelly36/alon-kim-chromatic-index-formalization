@@ -1,0 +1,24 @@
+\begin{lemma}
+Let $S$ be a finite set, let $w$ assign a nonnegative real weight to each
+element of $S$, and let $b\ge0$. There is a subset $A\subseteq S$ such that
+\[
+\sum_{x\in A}w(x)\le b,\qquad
+b<\sum_{x\in A}w(x)+w(y)\quad(y\in S\setminus A),
+\]
+and $w(x)\le w(y)$ whenever $x\in A$ and $y\in S\setminus A$.
+\end{lemma}
+\begin{proof}
+Induct on the cardinality of $S$, allowing any nonnegative budget.
+For the empty set choose $A=\varnothing$. Otherwise choose $a\in S$
+of minimum weight, which exists because $S$ is finite. If $w(a)>b$,
+choose $A=\varnothing$: every remaining weight is at least $w(a)>b$,
+and the ordering requirement is vacuous.
+If $w(a)\le b$, apply the induction hypothesis to $S\setminus\{a\}$
+with budget $b-w(a)\ge0$, obtaining $A'$. Set $A=A'\cup\{a\}$.
+Its total weight is $w(a)+\sum_{A'}w\le b$. For every $y\in S\setminus A$,
+the induction hypothesis gives $b-w(a)<\sum_{A'}w+w(y)$, which is the
+required strict inequality after adding $w(a)$. For the ordering property,
+the selected element $a$ has weight at most every remaining weight by
+minimality, and each selected element of $A'$ has that property by the
+induction hypothesis. This proves all three assertions.
+\end{proof}

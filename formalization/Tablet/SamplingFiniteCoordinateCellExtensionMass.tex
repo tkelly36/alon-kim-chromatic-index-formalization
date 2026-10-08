@@ -1,0 +1,101 @@
+\begin{helper}
+Let \(V\) be finite and let \(\nu\) be an activation--priority law on
+\(\mathcal P(V)\times\mathbb R^V\) satisfying the Bernoulli activation atom
+law and the uniform priority lower-rectangle law with parameter \(p\in[0,1]\),
+as in \(\noderef{SamplingFiniteCoordinateMarginalCellLaw}\).  Let
+\(C,D\subseteq V\) be disjoint finite coordinate sets.  On \(C\), prescribe
+an activation pattern \(A_C\subseteq C\), disjoint lower and strict priority
+cut sets \(L,U\subseteq C\), and thresholds \(t_v\in[0,1]\) for
+\(v\in L\cup U\).  On \(D\), prescribe an activation pattern
+\(A_D\subseteq D\) and a set \(K\subseteq D\) of new lower-cut coordinates,
+with thresholds \(t_v\in[0,1]\) for \(v\in K\).  Assume also that the new
+lower-cut coordinates are disjoint from the old lower and strict coordinates.
+
+Let \(E_C\) be the base exposed cell
+\[
+\{A\cap C=A_C,\ \pi(v)\le t_v\text{ for }v\in L,\ 
+  t_v<\pi(v)\text{ for }v\in U\}.
+\]
+Let \(E_{C,D}\) be the extended cell
+\[
+\{A\cap(C\cup D)=A_C\cup A_D,\ 
+  \pi(v)\le t_v\text{ for }v\in L\cup K,\ 
+  t_v<\pi(v)\text{ for }v\in U\}.
+\]
+Then there are nonnegative real masses \(w_C\) and \(w_{C,D}\) such that
+\(\operatorname{ofReal}(w_C)=\nu(E_C)\),
+\(\operatorname{ofReal}(w_{C,D})=\nu(E_{C,D})\), and
+\[
+w_{C,D}
+=w_C\,
+  p^{|A_D|}(1-p)^{|D|-|A_D|}
+  \prod_{v\in K} t_v .
+\]
+In particular, adjoining unexposed coordinates multiplies the finite exposed
+cell mass by their Bernoulli activation factor and by the lower-rectangle
+volume factor for the newly cut priority coordinates.
+\end{helper}
+\begin{proof}
+Apply \(\noderef{SamplingFiniteCoordinateMarginalCellLaw}\) to the base
+coordinate set \(C\), activation pattern \(A_C\), lower set \(L\), strict set
+\(U\), and threshold function \(t\).  The hypotheses \(A_C\subseteq C\),
+\(L,U\subseteq C\), \(L\cap U=\emptyset\), and \(0\le t_v\le1\) on
+\(L\cup U\) are exactly the hypotheses of that node.  It gives a nonnegative
+real number \(w_C\) with \(\operatorname{ofReal}(w_C)=\nu(E_C)\) and
+\[
+w_C
+=p^{|A_C|}(1-p)^{|C|-|A_C|}
+  \prod_{v\in L}t_v
+  \prod_{v\in U}(1-t_v).
+\tag{1}
+\]
+
+Now apply the same node to the larger coordinate set \(C\cup D\), activation
+pattern \(A_C\cup A_D\), lower set \(L\cup K\), strict set \(U\), and the
+same threshold function.  Since \(C\cap D=\emptyset\),
+\(A_C\subseteq C\), and \(A_D\subseteq D\), the activation pattern
+\(A_C\cup A_D\) is a subset of \(C\cup D\) and
+\[
+|A_C\cup A_D|=|A_C|+|A_D|.
+\tag{2}
+\]
+Similarly, \(|C\cup D|=|C|+|D|\).  The lower set \(L\cup K\) is contained in
+\(C\cup D\); the strict set \(U\) is contained in \(C\); and the assumed
+disjointness of \(L,K,U\) gives \((L\cup K)\cap U=\emptyset\).  Thus the
+marginal-cell law gives a nonnegative real number \(w_{C,D}\) with
+\(\operatorname{ofReal}(w_{C,D})=\nu(E_{C,D})\) and
+\[
+w_{C,D}
+=p^{|A_C\cup A_D|}(1-p)^{|C\cup D|-|A_C\cup A_D|}
+  \prod_{v\in L\cup K}t_v
+  \prod_{v\in U}(1-t_v).
+\tag{3}
+\]
+
+Because \(C\) and \(D\) are disjoint, every element of \(A_C\) is outside
+\(A_D\).  Equation (2) and \(|C\cup D|=|C|+|D|\) therefore rewrite the
+activation factor in (3) as
+\[
+p^{|A_C|}(1-p)^{|C|-|A_C|}
+\cdot
+p^{|A_D|}(1-p)^{|D|-|A_D|}.
+\tag{4}
+\]
+The lower-cut product also splits:
+\[
+\prod_{v\in L\cup K}t_v
+=\left(\prod_{v\in L}t_v\right)\left(\prod_{v\in K}t_v\right),
+\tag{5}
+\]
+because \(L\cap K=\emptyset\).  Substituting (4) and (5) into (3), and then
+using the base formula (1), gives
+\[
+w_{C,D}
+=w_C\,
+  p^{|A_D|}(1-p)^{|D|-|A_D|}
+  \prod_{v\in K}t_v .
+\]
+All factors are nonnegative since \(0\le p\le1\) and \(0\le t_v\le1\), so the
+real products are legitimate masses and their \(\operatorname{ofReal}\)
+images are precisely the two cell measures supplied above.
+\end{proof}

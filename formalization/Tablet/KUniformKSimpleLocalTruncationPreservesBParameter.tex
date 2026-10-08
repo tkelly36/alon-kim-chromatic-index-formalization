@@ -1,0 +1,71 @@
+\begin{helper}
+Fix positive integers $k$ and $D$.  Let $\mathcal H\in H(k,k,D)$ and
+$e\in E(\mathcal H)$.  Then there is a local truncation
+$(\mathcal H_{\mathrm{loc}},e_{\mathrm{loc}})$, still belonging to
+$H(k,k,D)$, whose edge labels are exactly $e$ together with the
+line-graph neighbors of $e$, whose vertices are exactly the vertices lying
+in those retained edges, and whose retained edges have exactly the same
+incidence relation as the corresponding edges of $\mathcal H$.  Under this
+identification, $e_{\mathrm{loc}}$ corresponds to $e$, and
+\[
+b_{L(\mathcal H),kD}(e)=
+b_{L(\mathcal H_{\mathrm{loc}}),kD}(e_{\mathrm{loc}}).
+\]
+\end{helper}
+\begin{proof}
+Let $N$ be the set of edge indices $g\ne e$ such that $g$ is adjacent to
+$e$ in the line graph.  By \noderef{LineGraphOfHypergraph}, this condition
+is exactly
+\[
+\mathcal H(g)\cap \mathcal H(e)\ne\emptyset .
+\]
+Define the retained edge set to be $\{e\}\cup N$, and define the retained
+vertex set to be the union of the hyperedges indexed by this retained edge
+set.  The local hypergraph $\mathcal H_{\mathrm{loc}}$ has these retained
+vertices and retained edge indices, with each retained edge carrying exactly
+the same vertex set it carried in $\mathcal H$, now viewed as a subset of
+the retained vertex set.  The distinguished edge $e_{\mathrm{loc}}$ is the
+copy of $e$.
+
+We first check the class condition.  Every retained edge is literally an
+original edge with the same cardinality.  Since $\mathcal H\in H(k,k,D)$,
+\noderef{HypergraphClass} gives the $k$-uniformity component, and
+\noderef{UniformHypergraph} says that each original edge has cardinality
+$k$; hence every local edge has cardinality $k$.  If two retained local
+edges are distinct, their intersection is the same intersection as the
+corresponding two original edges.  The $k$-simplicity component of
+\noderef{HypergraphClass}, interpreted by \noderef{TSimpleHypergraph},
+therefore gives intersection size at most $k$.  Finally, the degree of a
+retained vertex in the local hypergraph counts only retained edge indices
+containing that vertex, while its degree in $\mathcal H$ counts all original
+edge indices containing it.  Thus the local degree is at most the original
+degree.  By the maximum-degree component of \noderef{HypergraphClass},
+spelled out in \noderef{MaxDegreeAtMost} and \noderef{HypergraphDegree},
+the original degree is at most $D$, so the local degree is also at most
+$D$.  These three verifications prove
+$\mathcal H_{\mathrm{loc}}\in H(k,k,D)$.
+
+It remains to compare the local $b$-parameters.  The neighbors of
+$e_{\mathrm{loc}}$ in $L(\mathcal H_{\mathrm{loc}})$ are precisely the
+retained copies of the indices in $N$: by construction every element of $N$
+still intersects $e$, and no other retained edge exists besides $e$ itself.
+Thus the line-graph degree of the distinguished edge is unchanged.  Moreover,
+for two retained neighbors $g,h\in N$, adjacency between them in the local
+line graph is equivalent, again by \noderef{LineGraphOfHypergraph}, to
+nonempty intersection of their two retained hyperedges.  Those retained
+hyperedges are unchanged from $\mathcal H$, so this adjacency relation among
+neighbors is exactly the same as in the original line graph.  Consequently
+the independent two-subsets of the neighborhood counted by
+\noderef{IndependentPairCount} are in bijection with the original
+independent two-subsets, and the independent three-subsets counted by
+\noderef{IndependentTripleCount} are likewise in bijection with the original
+independent three-subsets.
+
+The definition \noderef{LocalBParameter} expresses
+$b_{L(\cdot),kD}(\cdot)$ solely in terms of the line-graph degree of the
+distinguished edge, the independent-pair count in its line-graph
+neighborhood, and the independent-triple count in the same neighborhood,
+with the common denominator $kD$.  All three quantities have just been
+identified for $\mathcal H$ and for $\mathcal H_{\mathrm{loc}}$, so the two
+local $b$-parameters are equal.
+\end{proof}

@@ -1,0 +1,61 @@
+\begin{helper}
+Let $k\ge 3$, fix a vertex $i\in\{1,\ldots,k\}$, and let $w_{ab}$ be
+nonnegative real weights.  Use the symmetric unordered-pair convention
+\[
+e(a,b)=
+\begin{cases}
+w_{ab},&a<b,\\
+w_{ba},&b<a,\\
+0,&a=b.
+\end{cases}
+\]
+Put
+\[
+M=\sum_{a<b} e(a,b),\qquad
+M_i=\sum_a e(i,a),
+\]
+and let $I=\{a:a\ne i\}$.  Then
+\[
+\sum_{\substack{a<b\\a,b\in I}}
+\sqrt{e(i,a)e(i,b)e(a,b)}
+\le
+M_i\sqrt{\frac{k-2}{2(k-1)}(M-M_i)}.
+\]
+\end{helper}
+\begin{proof}
+The symmetric convention gives $e(a,b)\ge 0$ for all $a,b$, $e(i,i)=0$,
+and $e(a,b)=e(b,a)$.  The set $I=\{a:a\ne i\}$ has cardinality $k-1$,
+which is positive because $k\ge 3$.
+
+Apply \noderef{KPartiteFixedVertexReducedEstimate} to the finite ordered
+set $I$, with $u_a=e(i,a)$ and $v_{ab}=e(a,b)$.  This gives
+\[
+\sum_{\substack{a<b\\a,b\in I}}\sqrt{e(i,a)e(i,b)e(a,b)}
+\le
+\left(\sum_{a\in I} e(i,a)\right)
+\sqrt{\frac{|I|-1}{2|I|}
+\sum_{\substack{a<b\\a,b\in I}}e(a,b)}. \tag{1}
+\]
+Since $e(i,i)=0$, the first factor in (1) is
+$\sum_{a\in I}e(i,a)=\sum_a e(i,a)=M_i$.
+
+It remains to identify the second sum.  Partition the increasing pairs
+$\{a,b\}$ into those disjoint from $\{i\}$ and those incident with $i$.
+The disjoint part is exactly
+$\sum_{\substack{a<b\\a,b\in I}}e(a,b)$.  For the incident part, each
+$a\ne i$ contributes exactly once: if $i<a$ the increasing pair is
+$(i,a)$ and contributes $e(i,a)$, while if $a<i$ the increasing pair is
+$(a,i)$ and contributes $e(a,i)=e(i,a)$.  Thus the incident part is
+$\sum_a e(i,a)=M_i$.  Therefore
+\[
+\sum_{\substack{a<b\\a,b\in I}}e(a,b)+M_i=M,
+\]
+so the nonincident sum is $M-M_i$.
+
+Finally $|I|=k-1$, hence
+\[
+\frac{|I|-1}{2|I|}=\frac{k-2}{2(k-1)}.
+\]
+Substituting these two identities into (1) gives exactly the claimed
+bound.
+\end{proof}

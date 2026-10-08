@@ -1,0 +1,84 @@
+\begin{lemma}
+Let $G$ be a $\Delta$-regular graph, let $I$ be sampled by
+\noderef{RandomIndependentSetSampling} with parameter $\gamma$, fix a vertex
+$r$, and let $X\subseteq N_G(r)$.  Assume that no two distinct vertices of
+$X$ have a common neighbor outside $N_G[r]$.  Let $\mathcal J_2$ be the
+independent pairs in $X$.  For $uv\in\mathcal J_2$, put
+$c_{uv}=|N_G(u)\cap N_G(v)|$.  Then
+\[
+\mathbb E\binom{|I\cap X|}{2}
+=
+\sum_{uv\in\mathcal J_2}
+\frac{2}{\Delta^2}
+\int_{0\le x\le y\le\gamma}
+\left(1-\frac{x}{\Delta}\right)^{\Delta-c_{uv}}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx .
+\]
+\end{lemma}
+\begin{proof}
+Let $\overline P_X=\binom{|I\cap X|}{2}$.  Since the output set in
+\noderef{RandomIndependentSetSampling} is independent, a two-subset of $X$
+contributes to $\overline P_X$ exactly when it is an element of
+$\mathcal J_2$ and both of its vertices survive.  Linearity of expectation
+therefore gives
+\[
+\mathbb E\overline P_X
+=\sum_{uv\in\mathcal J_2}\Pr[u\in I\text{ and }v\in I].
+\]
+
+Fix $uv\in\mathcal J_2$.  Condition on the event that $u$ and $v$ are
+activated and use the rescaled priority variables
+\[
+x=\gamma(1-\pi(u)),\qquad y=\gamma(1-\pi(v)).
+\]
+The two activation probabilities and the uniform priority law in
+\noderef{RandomIndependentSetSampling} give density
+$dx\,dy/\Delta^2$ on the square $[0,\gamma]^2$.
+
+Consider first the ordered chamber $x\le y$, equivalently
+$\pi(u)\ge\pi(v)$.  A common neighbor of $u$ and $v$ defeats at least one of
+the two vertices exactly when it is activated and its priority is larger than
+$\pi(v)$ or $\pi(u)$; on this chamber that means priority larger than
+$\pi(v)$, and the conditional defeat probability is $y/\Delta$.  Thus each
+common neighbor contributes the survival factor $1-y/\Delta$.  A neighbor
+of $u$ that is not adjacent to $v$ defeats only $u$, so it contributes
+$1-x/\Delta$.  A neighbor of $v$ that is not adjacent to $u$ contributes
+$1-y/\Delta$.
+
+Because $G$ is $\Delta$-regular, both $u$ and $v$ have exactly $\Delta$
+neighbors.  The clean-neighborhood hypothesis is used here only to ensure
+that the common-neighbor count relevant to the two survival events is the
+actual graph-theoretic number $c_{uv}=|N_G(u)\cap N_G(v)|$ and that no
+outside vertex supplies an additional common-neighbor correlation.  Hence
+there are $c_{uv}$ common neighbors, $\Delta-c_{uv}$ neighbors of $u$ not
+adjacent to $v$, and $\Delta-c_{uv}$ neighbors of $v$ not adjacent to $u$.
+Multiplying the independent survival factors on the chamber $x\le y$ gives
+\[
+\left(1-\frac{x}{\Delta}\right)^{\Delta-c_{uv}}
+\left(1-\frac{y}{\Delta}\right)^{c_{uv}}
+\left(1-\frac{y}{\Delta}\right)^{\Delta-c_{uv}}
+=
+\left(1-\frac{x}{\Delta}\right)^{\Delta-c_{uv}}
+\left(1-\frac{y}{\Delta}\right)^\Delta .
+\]
+
+On the opposite chamber $y\le x$ the same calculation with $u$ and $v$
+interchanged gives
+\[
+\left(1-\frac{y}{\Delta}\right)^{\Delta-c_{uv}}
+\left(1-\frac{x}{\Delta}\right)^\Delta .
+\]
+The integral over the opposite chamber becomes the same integral after
+swapping the names of $x$ and $y$.  Thus the two chambers give two copies
+of the integral with $x$ the smaller rescaled priority and $y$ the larger
+one:
+\[
+\Pr[u,v\in I]
+=
+\frac{2}{\Delta^2}
+\int_{0\le x\le y\le\gamma}
+\left(1-\frac{x}{\Delta}\right)^{\Delta-c_{uv}}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx .
+\]
+Substitution into the linearity formula proves the asserted identity.
+\end{proof}

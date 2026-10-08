@@ -1,0 +1,37 @@
+\begin{lemma}
+In a $3$-uniform $3$-simple local extremal setup $S$ at scale $D$,
+\[
+\sum_{g\in V_2}\sigma(g)\ge2w(X_b)-D|V_1|.
+\]
+\end{lemma}
+\begin{proof}
+Use the set, weight, cross-degree and column formulas in
+\noderef{ThreeUniformThreeSimpleLocalSetup}.
+By \noderef{SaturatedNeighborClassPartition}, every neighbor index of
+$f$ belongs to a unique class $C_u=\{g\ne f:u\in g\}$, $u\in f$.
+For $x\in X_b$ write $a_{u,x}=\deg_{\mathcal F}(u,x)$.
+Since $x\notin f$, this is precisely the number of indices in $C_u$
+containing $x$. The weight formula shows that $2w(X_b)$ counts tuples
+$(x,u,v,g,h)$ with $x\in X_b$, distinct $u,v\in f$,
+$g\in C_u$, $h\in C_v$, and $x\in g\cap h$.
+Indeed the two orientations of each two-element row set give the
+ordered row pairs, and independent choices of the two indices give
+the product $a_{u,x}a_{v,x}$.
+
+Partition these tuples by the first index $g$, which lies in
+$N=V_1\mathbin{\dot\cup}V_2$. If $g\in V_2$, its two outside vertices
+are exactly $g\cap X_b$, and its unique row is $u$; consequently the
+number of these tuples with first index $g$ is exactly $\sigma(g)$.
+If $g\in V_1$, it contains its unique vertex in $f$ and at least one
+vertex in $X_s$. The sets $f,X_s,X_b$ are pairwise disjoint: both
+outside sets lie in $X$, which avoids $f$, and the setup makes the
+outside sets disjoint. Since $g$ has only three vertices, it has at
+most one vertex in $X_b$. If it has none, there are no tuples.
+Otherwise let that vertex be $x$. For its fixed row $u$, the possible
+second indices number $\sum_{v\in f\setminus\{u\}}a_{v,x}$, at most
+$\sum_{v\in f}a_{v,x}\le D$ by the column bound and nonnegativity of
+the entries. Thus the total contribution from first indices in $V_1$
+is at most $D|V_1|$. Subtracting this contribution from $2w(X_b)$
+proves the claim. Throughout, choices are of indices, not just distinct
+vertex sets.
+\end{proof}

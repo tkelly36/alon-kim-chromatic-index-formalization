@@ -1,0 +1,89 @@
+\begin{theorem}
+For each $\iota>0$, there is $D_0$ such that if $D\ge D_0$ and
+$\mathcal H$ is a $3$-uniform $3$-simple hypergraph with maximum degree at
+most $D$, then
+\[
+\chi'(\mathcal H)\le
+\left(1-\frac19+\frac{1}{3^5}+\iota\right)3D.
+\]
+In particular, for sufficiently large $D$, every $3$-uniform $3$-simple
+hypergraph with maximum degree at most $D$ has chromatic index at most
+$2.6791D$.
+\end{theorem}
+\begin{proof}
+Fix $\iota>0$.  Choose a positive real number $\alpha$ such that
+$\alpha\le\iota$ and
+\[
+1-\frac19+\frac1{3^5}+\frac{\alpha}{2}<1;
+\]
+this is possible because $1-\frac19+\frac1{3^5}<1$.  Set
+\[
+\varepsilon=\alpha/2,\qquad
+\theta=1-\frac19+\frac1{3^5}+\alpha/2 .
+\]
+Then $\varepsilon>0$ and $0<\theta<1$.
+
+Apply \noderef{GeneralColoringTheorem} with $k=3$, this $\varepsilon$, and
+this $\theta$.  It gives a threshold $D_{\mathrm{GCT}}$ such that every
+$3$-uniform hypergraph $\mathcal H$ of maximum degree at most $D\ge
+D_{\mathrm{GCT}}$ has chromatic index at most $(\theta+\varepsilon)3D$,
+provided that for every $D'\ge\varepsilon D/3$, every sub-hypergraph
+$H\subseteq\mathcal H$ of maximum degree at most $D'$, and every edge
+$e\in E(H)$, one has
+\[
+b_{L(H),3D'}(e)\le\theta .
+\]
+
+Apply \noderef{ThreeUniformThreeSimpleBParameterEstimate} with
+$\eta=\alpha/2$.  It gives a threshold $D_{\mathrm b}$ such that every
+$3$-uniform $3$-simple hypergraph of maximum degree at most a natural
+number $n\ge D_{\mathrm b}$ satisfies
+\[
+b_{L(H),3n}(e)\le
+1-\frac19+\frac1{3^5}+\alpha/2=\theta
+\]
+for every edge $e$.
+
+Choose $D_0$ large enough that $D_0\ge D_{\mathrm{GCT}}$ and
+$\varepsilon D/3\ge D_{\mathrm b}+1$ for every $D\ge D_0$.  Now let
+$D\ge D_0$, and let $\mathcal H$ be $3$-uniform, $3$-simple, and of maximum
+degree at most $D$.  Fix any real $r=D'\ge\varepsilon D/3$ and any
+sub-hypergraph $H\subseteq\mathcal H$ whose vertex degrees are at most $r$.
+By \noderef{SubhypergraphInheritance}, $H$ is $3$-uniform and $3$-simple.
+Put $n=\lfloor r\rfloor_+$.  Since $r\ge D_{\mathrm b}+1$, we have
+$r\ge1$ and $n\ge D_{\mathrm b}$.
+By \noderef{RealDegreeFloorBound}, $H$ has maximum degree at most $n$.
+Apply the integer estimate above at $n$, and then apply
+\noderef{LocalBParameterRealFloorTransfer} with $k=3$ to obtain, for every edge,
+\[
+b^{\mathbb R}_{L(H),3r}(e)\le b_{L(H),3n}(e)\le\theta.
+\]
+This verifies the real-scale local hypothesis of
+\noderef{GeneralColoringTheorem}, applied with main scale $(D:\mathbb R)$.
+Therefore
+\[
+\chi'(\mathcal H)\le(\theta+\varepsilon)3D
+=\left(1-\frac19+\frac1{3^5}+\alpha\right)3D
+\le
+\left(1-\frac19+\frac1{3^5}+\iota\right)3D.
+\]
+This proves the asymptotic chromatic-index bound.
+
+For the decimal conclusion,
+\[
+3\left(1-\frac19+\frac1{3^5}\right)
+=3\cdot\frac89+\frac{3}{243}
+=\frac83+\frac1{81}
+=2.679012\ldots <2.6791.
+\]
+Choose a positive $\iota$ so small that
+$3(1-\frac19+\frac1{3^5}+\iota)\le2.6791$, and use the first part with this
+$\iota$.  For all sufficiently large $D$ every $3$-uniform $3$-simple
+hypergraph of maximum degree at most $D$ then satisfies
+\[
+\chi'(\mathcal H)\le
+\left(1-\frac19+\frac1{3^5}+\iota\right)3D
+\le2.6791D,
+\]
+which is the stated decimal bound.
+\end{proof}

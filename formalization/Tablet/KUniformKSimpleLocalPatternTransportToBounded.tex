@@ -1,0 +1,71 @@
+\begin{helper}
+Fix positive integers $k$ and $D$.  Let $\mathcal H\in H(k,k,D)$ and
+let $e\in E(\mathcal H)$.  Then the local value of $(\mathcal H,e)$ is
+represented by a bounded local pattern: there is a bounded local pattern
+$(\mathcal P,p)$ in the sense of
+\noderef{KUniformKSimpleBoundedLocalPattern} such that
+\[
+b_{L(\mathcal H),kD}(e)\le b_{L(\mathcal P),kD}(p).
+\]
+\end{helper}
+\begin{proof}
+Apply \noderef{KUniformKSimpleLocalTruncationPreservesBParameter} to
+$\mathcal H$ and $e$.  It gives a local truncation
+$(\mathcal H_{\mathrm{loc}},e_{\mathrm{loc}})$ belonging to $H(k,k,D)$,
+whose edge labels are exactly $e$ together with the line-graph neighbors of
+$e$, whose vertices are exactly the vertices lying in those retained edges,
+and whose incidence relation is inherited from $\mathcal H$.  The same node
+also gives
+\[
+b_{L(\mathcal H),kD}(e)
+=b_{L(\mathcal H_{\mathrm{loc}}),kD}(e_{\mathrm{loc}}).
+\]
+
+It remains to relabel this local truncation into the fixed finite label
+sets used by \noderef{KUniformKSimpleBoundedLocalPattern}.  Since
+$\mathcal H_{\mathrm{loc}}$ belongs to $H(k,k,D)$,
+\noderef{HypergraphClass} gives $k$-uniformity, $k$-simplicity, and maximum
+degree at most $D$.  By \noderef{UniformHypergraph}, the distinguished edge
+$e_{\mathrm{loc}}$ has exactly $k$ vertices.  Every neighbor of
+$e_{\mathrm{loc}}$ meets one of these $k$ vertices, and for each such vertex
+\noderef{MaxDegreeAtMost} and \noderef{HypergraphDegree} say that at most
+$D$ local edge labels contain it.  Excluding the distinguished edge itself,
+there are therefore at most $k(D-1)$ neighbor labels.  Hence the retained
+edge-label set has size at most $1+k(D-1)$.
+
+Each retained edge has exactly $k$ vertices by \noderef{UniformHypergraph}.
+The retained vertex set is the union of the distinguished edge and the
+neighbor edges, so it has size at most
+\[
+k+k\cdot k(D-1).
+\]
+Choose injections from the retained edge-label set into
+$\{0,\ldots,1+k(D-1)-1\}$ and from the retained vertex set into
+$\{0,\ldots,k+k^2(D-1)-1\}$, sending $e_{\mathrm{loc}}$ to the distinguished
+label $p$.  Define the bounded pattern $\mathcal P$ by putting, at each used
+edge label, the image of the corresponding local edge.  Suppose there are
+$m$ unused edge labels.  Then the local truncation has exactly
+$1+k(D-1)-m$ retained edge labels, so it has at most
+$k+k(k(D-1)-m)$ retained vertices.  The bounded vertex-label set therefore
+has at least $km$ labels outside the image of the retained vertex set.  Split
+these unused vertex labels into $m$ disjoint $k$-sets and assign one of them
+to each unused edge label.  These padding edges are disjoint from the
+distinguished edge and from every retained local vertex.  They are
+$k$-element edges, have pairwise intersections of size at most $k$, and add
+degree one only to newly introduced padding vertices.  Hence the resulting
+finite labelled hypergraph still satisfies the three components of
+\noderef{HypergraphClass}.
+
+The line graph around the distinguished label is unchanged.  Indeed,
+\noderef{LineGraphOfHypergraph} defines adjacency by nonempty hyperedge
+intersection, the injections preserve and reflect membership in every used
+edge, and the padding edges are disjoint from the distinguished edge, so
+they are not neighbors of $p$.  Thus the degree of the distinguished label,
+the independent-pair count of its neighborhood from
+\noderef{IndependentPairCount}, and the independent-triple count from
+\noderef{IndependentTripleCount} are the same for
+$(\mathcal H_{\mathrm{loc}},e_{\mathrm{loc}})$ and for
+$(\mathcal P,p)$.  By the formula \noderef{LocalBParameter}, their local
+$b$-parameters are equal.  Combining this equality with the equality from
+the truncation step gives the displayed inequality.
+\end{proof}

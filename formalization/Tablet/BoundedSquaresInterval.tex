@@ -1,0 +1,24 @@
+\begin{lemma}
+Let $a\le b$ be real numbers.  If $r_1,\ldots,r_n\in[a,b]$, then
+\[
+\sum_{i=1}^n r_i^2\le
+(a+b)\sum_{i=1}^n r_i-nab .
+\]
+\end{lemma}
+\begin{proof}
+For each $i$, both factors in $(r_i-a)(b-r_i)$ are nonnegative.  Hence
+\[
+0\le (r_i-a)(b-r_i)=(a+b)r_i-r_i^2-ab .
+\]
+Rearranging gives
+\[
+r_i^2\le (a+b)r_i-ab .
+\]
+Summing this inequality over $i=1,\ldots,n$ yields
+\[
+\sum_i r_i^2\le
+(a+b)\sum_i r_i-\sum_i ab
+=(a+b)\sum_i r_i-nab,
+\]
+which is the asserted inequality.
+\end{proof}

@@ -1,0 +1,32 @@
+\begin{lemma}
+For every $q\in\mathbb N$, the number of independent pairs in the
+neighborhood of $\ast$ in $L(A_q)$ is $9q^2$.
+\end{lemma}
+\begin{proof}
+By \noderef{IndependentPairCount}, the objects counted are two-element
+sets of neighbors whose two distinct indices are not adjacent.
+By \noderef{OrderThreeAffineGeometry} the neighbors are exactly the
+nonvertical indices. For distinct indices, \noderef{LineGraphOfHypergraph}
+identifies nonadjacency with disjointness of their edge sets. The disjointness
+clause of \noderef{OrderThreeAffineGeometry} therefore says that an
+independent pair consists of indices with one common slope and two distinct
+intercepts.
+
+Here is an explicit bijection valid for arbitrary $q$. Let
+$\mathcal J=\{(0,1),(0,2),(1,2)\}$, using the indicated representatives of
+the residues. Map
+\[
+(m,(a,b),i,j)\longmapsto\{(m,a,i),(m,b,j)\}
+\]
+from $(\mathbb Z/3\mathbb Z)\times\mathcal J\times
+\{0,\ldots,q-1\}^2$ to the independent pairs. Different intercepts
+ensure that the image has two elements, and the geometry ensures independence.
+Conversely, take any independent pair. Its common slope determines $m$;
+sort its two intercepts using $0<1<2$ to obtain the unique $(a,b)\in\mathcal J$.
+The unique edge-index of the pair above $a$ determines $i$, and the unique
+one above $b$ determines $j$. This defines an inverse, since reconstruction
+returns exactly the two original indices, and reading off an image recovers
+all four parameters. Thus the cardinality is
+$3\cdot3\cdot q\cdot q=9q^2$. The same bijection applies when $q=0$:
+both sets are empty.
+\end{proof}

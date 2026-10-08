@@ -1,0 +1,59 @@
+\begin{lemma}
+For every $\varepsilon>0$ there are integers $\Delta_0,\gamma_0$ such that
+the following holds whenever $\Delta\ge\Delta_0$, $\gamma\ge\gamma_0$,
+and $0<\gamma\le\Delta$. Let $H$ have finite edge-index set and maximum
+degree at most $D$, let $K$ be a finite color type, and let every retained
+list $M(e)$ have cardinality $\ell$. Suppose the line graph has degree at
+most $\Delta$ and $b_{L(H),\Delta}(e)\le b$ for every edge. For every
+completion datum $Q$, use the product experiment with $p=\gamma/\Delta$.
+Then
+\[
+\mathbb EY_x\le D\left(1-\frac{1-e^{-\gamma}}{\Delta}
++\frac2{\Delta^2}\right)^\ell,\qquad
+\mathbb E|\operatorname{Del}_e|\le(b+\varepsilon)\ell.
+\]
+The statistics are those of the selections $I_a$ from this same experiment.
+\end{lemma}
+\begin{proof}
+Take the thresholds in \noderef{IndependentSetSamplingBound} for error
+$\varepsilon$. Obtain the completed-set marginal laws and color independence
+from \noderef{NibbleProductSamplingLaw}. All the statistics are finite sums
+of measurable indicators by \noderef{NibbleResidualDegree} and
+\noderef{NibbleDeletedColors}, hence bounded and integrable. By
+\noderef{NibbleCompletionData}, each completed graph is $\Delta$-regular
+and each $j_a$ is an injective induced embedding. For an original
+edge $e$ and $a\in M(e)$, the one-vertex estimate applied at $j_a(e)$ gives
+$\Pr[e\in I_a]\ge (1-e^{-\gamma})/\Delta-2/\Delta^2$.
+The complement probability is at most
+$q=1-(1-e^{-\gamma})/\Delta+2/\Delta^2$.
+Here $\Delta\ge1$, so $q\ge1-1/\Delta\ge0$.
+Here \noderef{NibbleSelectedEdges} identifies original selection with
+completed selection at $j_a(e)$; for $a\notin M(e)$ selection is impossible.
+Independence across colors
+therefore gives $\Pr[e\text{ unselected}]=\prod_{a\in M(e)}
+\Pr[e\notin I_a]\le q^\ell$.
+By \noderef{NibbleResidualDegree}, $Y_x$ is the sum of the unselected-edge
+indicators over edges through $x$. There are at most $D$ such edge indices
+by \noderef{HypergraphDegree} and \noderef{MaxDegreeAtMost}.
+Summing their expectations proves
+the first inequality, including $\ell=0$.
+
+Fix $e$ and $a\in M(e)$. By \noderef{NibbleDeletedColors} and the pullback
+formula in \noderef{NibbleSelectedEdges}, the deletion event for $a$ asks that the completed
+selection meet the image $X$ of the neighbors of $e$ whose retained lists
+contain $a$. These vertices are neighbors of $j_a(e)$ by the inducedness
+in \noderef{NibbleCompletionData}.
+The second estimate in \noderef{IndependentSetSamplingBound} bounds its
+probability by the local parameter in $Q_a[X\cup\{j_a(e)\}]$ plus
+$\varepsilon$. The map $j_a$ bijects this rooted graph with the induced
+graph of $L(H)$ on $\{e\}\cup\{f:f\sim e,\ a\in M(f)\}$.
+Under this bijection, neighbors correspond, every neighbor in the completed
+rooted graph has a preimage, and adjacency is preserved and reflected.
+Thus \noderef{LocalBParameterNeighborhoodEmbeddingTransport} gives equality
+of the local parameters. Apply \noderef{NibbleInducedBParameterComparison}
+to this finite subset of $L(H)$: the parameter is at most
+$b_{L(H),\Delta}(e)\le b$. Thus each of the $\ell$ deletion indicators
+has mean at most $b+\varepsilon$. Sum them using
+\noderef{NibbleDeletedColors}. This proves the second inequality without
+any assumption on the sign or size of $b$.
+\end{proof}

@@ -1,0 +1,46 @@
+\begin{helper}
+Let $k$ be a natural number and let $w_{ab}$ be nonnegative real weights.
+Use the symmetric unordered-pair convention
+\[
+e(a,b)=
+\begin{cases}
+w_{ab},&a<b,\\
+w_{ba},&b<a,\\
+0,&a=b.
+\end{cases}
+\]
+Let
+\[
+M=\sum_{a<b} e(a,b).
+\]
+Then, for every vertex $i$,
+\[
+0\le \sum_b e(i,b)
+\quad\text{and}\quad
+\sum_b e(i,b)\le M,
+\]
+and the incident totals satisfy
+\[
+\sum_i\sum_b e(i,b)=2M.
+\]
+\end{helper}
+\begin{proof}
+The symmetric convention and nonnegativity of the original weights give
+$e(a,b)\ge 0$ for all $a,b$, $e(i,i)=0$, and $e(a,b)=e(b,a)$.
+Therefore each incident total $\sum_b e(i,b)$ is a sum of nonnegative
+terms, so it is nonnegative.
+
+Fix $i$.  The terms of $\sum_b e(i,b)$ are exactly the weights of the
+increasing unordered pairs incident with $i$: if $i<b$, the contributing
+pair is $(i,b)$ and the weight is $e(i,b)$; if $b<i$, the contributing
+pair is $(b,i)$ and its weight is $e(b,i)=e(i,b)$; and the diagonal term
+$b=i$ is zero.  Hence $\sum_b e(i,b)$ is a sub-sum of
+$M=\sum_{a<b}e(a,b)$, and all omitted terms are nonnegative.  Thus
+$\sum_b e(i,b)\le M$.
+
+Finally apply \noderef{KPartiteIncidentWeightDoubleCount} to the original
+weights $w_{ab}$.  Its displayed symmetric incident sum is precisely
+$\sum_i\sum_b e(i,b)$ under the definition of $e$, and its increasing-pair
+sum is precisely $M$.  Therefore
+$\sum_i\sum_b e(i,b)=2M$.
+\end{proof}

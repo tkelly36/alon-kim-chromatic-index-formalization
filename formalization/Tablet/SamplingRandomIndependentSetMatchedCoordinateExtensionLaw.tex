@@ -1,0 +1,44 @@
+\begin{lemma}
+Let \(G\) and \(G'\) be two finite graphs sampled by
+\(\noderef{RandomIndependentSetSampling}\) with the same parameters
+\(\Delta,\gamma\), and put \(p=\gamma/\Delta\).  Assume \(0\le p\le1\).
+Then one may choose the activation--priority laws \(\nu,\nu'\) supplied by
+the two sampling hypotheses so that they support the matched finite
+coordinate-extension mass theorem of
+\(\noderef{SamplingFiniteProductMatchedCoordinateExtensionMass}\).
+
+Concretely, for any disjoint source base and extension coordinate sets
+\(C,D\), any disjoint target base and extension coordinate sets \(C',D'\),
+any compatible prescribed activation patterns, lower cuts, upper cuts, and
+thresholds on those coordinates, if the source and target base cells have
+the same normalized real mass, if the finite Bernoulli activation factors on
+\(D\) and \(D'\) agree, and if the finite priority cut products on the
+extension cuts agree, then the source and target extended cylinder masses are
+represented by nonnegative real numbers \(m^-,m^+\) with \(m^-=m^+\).
+\end{lemma}
+\begin{proof}
+Unpack the two \(\noderef{RandomIndependentSetSampling}\) hypotheses and
+choose their underlying activation--priority laws \(\nu\) and \(\nu'\).
+The definition of \(\noderef{RandomIndependentSetSampling}\) states, for
+each chosen law, the total mass identity, the Bernoulli activation-atom
+formula, and the full finite priority lower-rectangle formula.  These are
+exactly the measure-law inputs required by
+\(\noderef{SamplingFiniteProductMatchedCoordinateExtensionMass}\), with the
+common parameter \(p=\gamma/\Delta\).
+
+Now fix arbitrary source and target coordinate-extension data satisfying the
+displayed hypotheses in the statement.  The assumptions \(0\le p\le1\),
+disjointness of base and extension coordinates, containment of the prescribed
+activation and priority cuts, disjointness of lower and upper cut families,
+and the threshold bounds in \([0,1]\) give the side-specific hypotheses of
+\(\noderef{SamplingFiniteProductMatchedCoordinateExtensionMass}\).  The
+base-mass compatibility, equality of Bernoulli activation factors, and
+equality of extension priority products are exactly the three cross-side
+compatibility hypotheses of that node.
+
+Applying \(\noderef{SamplingFiniteProductMatchedCoordinateExtensionMass}\)
+therefore produces nonnegative real source and target extension masses,
+identifies them with the two one-sided extended cylinders, and proves their
+equality.  This is precisely the claimed sampling-law-level matched
+coordinate-extension export.
+\end{proof}

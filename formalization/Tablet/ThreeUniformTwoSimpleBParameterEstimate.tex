@@ -1,0 +1,57 @@
+\begin{lemma}
+For every $\eta>0$ there is $D_0$ such that, whenever $D\ge D_0$,
+$\mathcal H$ is a $3$-uniform $2$-simple hypergraph with maximum degree at
+most $D$, and $e\in E(\mathcal H)$, one has
+\[
+b_{L(\mathcal H),3D}(e)\le 1-\frac29+\frac{2}{3^5}+\eta .
+\]
+\end{lemma}
+\begin{proof}
+Fix $\eta>0$. By \noderef{ThreeUniformTwoSimpleEventualNumericalError},
+choose $D_{\rm err}$ such that its displayed numerical inequality holds
+for every $D\ge D_{\rm err}$. By \noderef{ExtremalBParameterSaturation},
+choose $D_{\rm sat}$ such that its conclusion holds for every
+$D\ge D_{\rm sat}$. Set $D_0=\max(1,D_{\rm err},D_{\rm sat})$ and fix
+$D\ge D_0$ and an admissible pair $(\mathcal H,e)$.
+
+Apply \noderef{ThreeUniformTwoSimpleFiniteExtremalAttainment} at this
+positive $D$. It supplies a finite-vertex, finite-edge admissible pair
+$(\mathcal F,f)$ whose local $b$-value dominates that of every admissible
+pair, in particular $(\mathcal H,e)$. Its universal maximality is exactly
+the premise of \noderef{ExtremalBParameterSaturation}, which gives degree
+$D$ at every vertex of $f$ and exactly $3(D-1)$ neighboring edge indices.
+
+Apply \noderef{ThreeUniformTwoSimpleSaturatedMatrixCertificate} to this
+pair. It constructs an injective enumeration of $f$ and the sorted big
+columns, padded by actual dummy slots when necessary. Write $A$ for its
+normalized matrix, with $n\ge3$ columns, and put
+\[
+Q=\sum_j\sum_{i<i'}A_{ij}A_{i'j},\qquad
+P=\operatorname{per}(A_{[3],[3]}),\qquad
+L=\sum_{i,j\le3}A_{ij},\qquad r=1+18D^{-1/3}.
+\]
+The certificate gives entries in $[0,1]$, decreasing column sums bounded
+by one, and total entry sum at most three. Therefore
+\noderef{ThreeByNMatrixBound} gives $Q/9+P/27-L/27\le2/3^5$.
+Also $Q\ge0$ since its summands are products of nonnegative entries,
+and $L\le3$ by adding the first three column bounds. Finally $r\ge1$.
+Thus \noderef{ThreeUniformTwoSimpleMatrixRescaling} gives
+\[
+\frac{r^2Q}{9}+\frac{r^3P}{27}-\frac{rL}{27}
+\le r^3\frac2{3^5}+\frac{(r^2-1)r}{9}.
+\]
+In particular, the correction for the negative linear term is retained;
+the different homogeneities are not replaced by a single scale factor.
+
+The saturated certificate also supplies the consistently loosened bound
+\[
+b_{L(\mathcal F),3D}(f)\le
+1-\frac29+\frac29D^{-1/3}+\frac8{9D}
++\frac{r^2Q}{9}+\frac{r^3P}{27}-\frac{rL}{27}.
+\]
+Substitute the preceding rescaling inequality. Since $D\ge D_{\rm err}$,
+\noderef{ThreeUniformTwoSimpleEventualNumericalError} bounds all the
+terms after $1-2/9$ by $2/3^5+\eta$. This proves the desired estimate
+for $(\mathcal F,f)$. The extremal comparison then proves it for the
+original $(\mathcal H,e)$.
+\end{proof}

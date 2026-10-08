@@ -1,0 +1,71 @@
+\begin{helper}
+Let $x,y,z>0$ and $\tau\ge0$.  In the fixed-triple chamber calculation,
+write
+\[
+x=1-\ell_{ab},\qquad y=1-\ell_{ac},\qquad z=1-\ell_{bc},
+\qquad M=x+y+z+\tau .
+\]
+After the finite chambers have been bounded by exponential kernels and
+enlarged to the infinite ordered chambers, the two ordered chambers whose two
+largest coordinates correspond to the pair $ab$ contribute at most
+\[
+\frac{2}{(1+x)M},
+\]
+and similarly the two chambers for the pairs $ac$ and $bc$ contribute at most
+$2/((1+y)M)$ and $2/((1+z)M)$.  These three paired contributions satisfy
+\[
+\frac{2}{(1+x)M}+\frac{2}{(1+y)M}+\frac{2}{(1+z)M}
+\le
+1+\frac13\left[
+\left(\frac{2}{(1+x)x}-1\right)
++\left(\frac{2}{(1+y)y}-1\right)
++\left(\frac{2}{(1+z)z}-1\right)
+\right].
+\]
+\end{helper}
+\begin{proof}
+The hypotheses give $x+y+z>0$ and $M=x+y+z+\tau\ge x+y+z$.  Since
+$x,y,z$ are positive, also $1+x$, $1+y$, and $1+z$ are positive.  Therefore
+replacing $M$ by the smaller denominator $x+y+z$ can only increase each
+positive term:
+\[
+\sum_{\lambda\in\{x,y,z\}}\frac{2}{(1+\lambda)M}
+\le
+\frac{2}{x+y+z}\left(\frac1{1+x}+\frac1{1+y}+\frac1{1+z}\right).
+\]
+
+It remains to prove the square-sum estimate
+\[
+\frac{2}{x+y+z}\left(\frac1{1+x}+\frac1{1+y}+\frac1{1+z}\right)
+\le
+\frac23\left(\frac1{x(1+x)}+\frac1{y(1+y)}+\frac1{z(1+z)}\right).
+\]
+Because all denominators are positive, this is equivalent to
+\[
+3\left(\frac1{1+x}+\frac1{1+y}+\frac1{1+z}\right)
+\le
+(x+y+z)\left(\frac1{x(1+x)}+\frac1{y(1+y)}
++\frac1{z(1+z)}\right).
+\]
+The difference between the right-hand side and the left-hand side is exactly
+\[
+\frac{(x-y)^2(x+y+1)}{xy(1+x)(1+y)}
++\frac{(x-z)^2(x+z+1)}{xz(1+x)(1+z)}
++\frac{(y-z)^2(y+z+1)}{yz(1+y)(1+z)} .
+\]
+Every denominator and every linear factor in this expression is positive,
+and the squared factors are nonnegative.  Hence the difference is
+nonnegative, proving the square-sum estimate.
+
+Finally,
+\[
+1+\frac13\sum_{\lambda\in\{x,y,z\}}
+\left(\frac{2}{(1+\lambda)\lambda}-1\right)
+=\frac23\sum_{\lambda\in\{x,y,z\}}\frac1{\lambda(1+\lambda)},
+\]
+because there are three terms in the sum.  Combining this identity with the
+two inequalities above gives the claimed bound for the three paired chamber
+contributions.  In the paper's notation $1+x=2-\ell_{ab}$, and cyclically,
+so this is precisely the real-algebra estimate used after the infinite
+chamber integrations in the fixed-triple survival proof.
+\end{proof}

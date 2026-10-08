@@ -1,0 +1,26 @@
+\begin{lemma}
+Let $H'$ and $H$ be finite-edge-indexed multihypergraphs on the same vertex
+type, and suppose $H'$ is a sub-hypergraph of $H$ in the sense of
+\noderef{SubhypergraphOf}. Then every uniformity parameter and every
+simplicity parameter of $H$ is inherited by $H'$:
+for every natural number $k$, if $H$ is $k$-uniform then $H'$ is
+$k$-uniform; for every natural number $t$, if $H$ is $t$-simple then $H'$
+is $t$-simple. Moreover, for every vertex $v$,
+$\deg_{H'}(v)\le\deg_H(v)$.
+\end{lemma}
+\begin{proof}
+By \noderef{SubhypergraphOf}, choose an injective edge-index map $i:F\to E$
+with $H'.\mathrm{edge}(f)=H.\mathrm{edge}(i(f))$ for every $f$.
+If every ambient edge has cardinality $k$, the same equality shows that
+every child edge has cardinality $k$, proving the assertion about
+\noderef{UniformHypergraph}.
+For distinct child indices $f,g$, injectivity gives $i(f)\ne i(g)$.
+The intersection of their vertex sets is exactly the intersection of the
+ambient edges indexed by $i(f),i(g)$, which has cardinality at most $t$
+by \noderef{TSimpleHypergraph}. This proves the simplicity assertion.
+Finally, fix $v$. The map $i$ sends every child index incident with $v$
+to an ambient index incident with $v$, by the edge equality, and remains
+injective on this subset. The finite child incidence set therefore has
+cardinality at most that of the ambient incidence set. These two
+cardinalities are exactly the degrees by \noderef{HypergraphDegree}.
+\end{proof}

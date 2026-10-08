@@ -1,0 +1,107 @@
+\begin{helper}
+Let $G$ be a finite graph, let $\mu$ be an activation--priority sample with
+activation probability $\gamma/\Delta$ as in
+\noderef{RandomIndependentSetSampling}, and assume $\Delta>0$.  Fix three
+distinct vertices $a,b,c$, put $Q=\{a,b,c\}$, and consider the ordered chamber
+\[
+0\le z\le y\le x\le \gamma
+\]
+corresponding to $x=\gamma(1-\pi(a))$, $y=\gamma(1-\pi(b))$, and
+$z=\gamma(1-\pi(c))$.  For an activation set $A\supseteq Q$, let the three
+atomwise exponents be
+\[
+|\{w\in A\setminus Q:w\sim a\}|,
+\quad
+|\{w\in A\setminus Q:w\not\sim a,\ w\sim b\}|,
+\quad
+|\{w\in A\setminus Q:w\not\sim a,\ w\not\sim b,\ w\sim c\}|.
+\]
+Then the finite sum over activation atoms of the Bernoulli atom weight times
+the corresponding ordered-chamber integral is exactly
+\[
+\begin{aligned}
+&\sum_{A\supseteq Q}
+\left(\frac{\gamma}{\Delta}\right)^{|A|}
+\left(1-\frac{\gamma}{\Delta}\right)^{|V(G)|-|A|}
+\frac1{\gamma^3}
+\int_{0\le z\le y\le x\le\gamma}
+\left(1-\frac{x}{\gamma}\right)^{|\{w\in A\setminus Q:w\sim a\}|} \\
+&\qquad\qquad\qquad\qquad\cdot
+\left(1-\frac{y}{\gamma}\right)^{|\{w\in A\setminus Q:w\not\sim a,\ w\sim b\}|}
+\left(1-\frac{z}{\gamma}\right)^{|\{w\in A\setminus Q:w\not\sim a,\ w\not\sim b,\ w\sim c\}|}
+\,dx\,dy\,dz  \\
+&=
+\frac1{\Delta^3}
+\int_{0\le z\le y\le x\le\gamma}
+\left(1-\frac{x}{\Delta}\right)^{|\{w\in V(G)\setminus Q:w\sim a\}|}
+\left(1-\frac{y}{\Delta}\right)^{|\{w\in V(G)\setminus Q:w\not\sim a,\ w\sim b\}|} \\
+&\qquad\qquad\qquad\qquad\cdot
+\left(1-\frac{z}{\Delta}\right)^{|\{w\in V(G)\setminus Q:w\not\sim a,\ w\not\sim b,\ w\sim c\}|}
+\,dx\,dy\,dz .
+\end{aligned}
+\]
+\end{helper}
+\begin{proof}
+The activation law in \noderef{RandomIndependentSetSampling} says that an
+activation atom $A$ has weight
+\[
+\left(\frac{\gamma}{\Delta}\right)^{|A|}
+\left(1-\frac{\gamma}{\Delta}\right)^{|V(G)|-|A|}.
+\]
+Since $\Delta>0$, \noderef{RandomIndependentSetSamplingGammaLeDelta} gives
+$\gamma\le\Delta$ in every nonempty sampling instance, and the definition of
+the sampling law gives $\gamma>0$.  Thus $\gamma/\Delta$ is a genuine
+Bernoulli parameter and the change of variables
+$x_q=\gamma(1-\pi(q))$ contributes the density factor $\gamma^{-3}$ for the
+three fixed coordinates $a,b,c$.
+
+Fix chamber coordinates $(x,y,z)$ with $0\le z\le y\le x\le\gamma$.  Because
+the sum over $A$ is finite and the chamber integrands are polynomials in
+$x,y,z$, the finite sum may be moved inside the three integrals.  We therefore
+evaluate the activation sum pointwise at this fixed triple of coordinates.
+
+The condition $A\supseteq Q$ forces $a,b,c$ to be activated.  Their three
+Bernoulli activation factors are
+\[
+\left(\frac{\gamma}{\Delta}\right)^3.
+\]
+After multiplication by the priority-density factor $\gamma^{-3}$, these
+three forced activations give the outside coefficient $\Delta^{-3}$.
+
+Now consider any vertex $w\notin Q$.  Its contribution to the pointwise
+activation sum depends only on the first applicable class in the ordered list
+\[
+w\sim a,\qquad
+w\not\sim a\text{ and }w\sim b,\qquad
+w\not\sim a,\ w\not\sim b\text{ and }w\sim c,
+\]
+or on none of these classes.  If $w\sim a$, then an inactive $w$ contributes
+$1-\gamma/\Delta$, while an active $w$ contributes
+$(\gamma/\Delta)(1-x/\gamma)$.  The total contribution of the two activation
+choices is therefore
+\[
+1-\frac{\gamma}{\Delta}
++\frac{\gamma}{\Delta}\left(1-\frac{x}{\gamma}\right)
+=1-\frac{x}{\Delta}.
+\]
+If $w\not\sim a$ and $w\sim b$, the same calculation gives
+$1-y/\Delta$.  If $w\not\sim a$, $w\not\sim b$, and $w\sim c$, it gives
+$1-z/\Delta$.  If $w$ is in none of the three classes, no chamber survival
+factor involves $w$, and its inactive and active contributions add to
+\[
+1-\frac{\gamma}{\Delta}+\frac{\gamma}{\Delta}=1.
+\]
+
+The activation choices of distinct vertices are independent and the
+activation-set sum ranges over all choices with $Q$ forced active.  Hence the
+pointwise sum factors as the product of the preceding one-vertex
+contributions over all vertices outside $Q$.  Collecting like factors gives
+\[
+\left(1-\frac{x}{\Delta}\right)^{|\{w\in V(G)\setminus Q:w\sim a\}|}
+\left(1-\frac{y}{\Delta}\right)^{|\{w\in V(G)\setminus Q:w\not\sim a,\ w\sim b\}|}
+\left(1-\frac{z}{\Delta}\right)^{|\{w\in V(G)\setminus Q:w\not\sim a,\ w\not\sim b,\ w\sim c\}|}.
+\]
+Together with the forced-activation coefficient $\Delta^{-3}$, this is the
+integrand on the right-hand side.  Integrating the pointwise identity over the
+ordered chamber proves the displayed equality.
+\end{proof}

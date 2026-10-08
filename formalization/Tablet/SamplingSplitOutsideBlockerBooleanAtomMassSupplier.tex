@@ -1,0 +1,90 @@
+\begin{helper}
+Let \(C^0_{\omega_0}\) and \(C^{\prime0}_{\omega_0}\) be paired source and
+target supported base cells, indexed by \(\omega_0\in\Omega_0\).  Let
+\(\Lambda\) be a finite set of secondary Boolean labels, with source tests
+\(Q_\lambda\) and target tests \(Q'_\lambda\).  For a truth vector
+\(\tau\subseteq\Lambda\), write
+\[
+C^0_{\omega_0,\tau}
+=C^0_{\omega_0}\cap
+  \{\eta:\eta\in Q_\lambda\Longleftrightarrow \lambda\in\tau
+      \text{ for every }\lambda\in\Lambda\}
+\]
+and define \(C^{\prime0}_{\omega_0,\tau}\) analogously using
+\(C^{\prime0}_{\omega_0}\) and \(Q'_\lambda\).
+
+Assume the concrete source atoms \(C^0_{\omega_0,\tau}\) are measurable,
+cover \(C^0_{\omega_0}\), and are pairwise disjoint as \(\tau\) varies.
+Assume likewise that the concrete target atoms
+\(C^{\prime0}_{\omega_0,\tau}\) are measurable, cover
+\(C^{\prime0}_{\omega_0}\), and are pairwise disjoint as \(\tau\) varies.
+Assume also that each transported source atom and target atom have equal
+measure,
+\[
+\nu(C^0_{\omega_0,\tau})=\nu'(C^{\prime0}_{\omega_0,\tau}),
+\]
+and that this common atom mass is represented by a nonnegative real weight:
+there is \(w_{\omega_0,\tau}\ge0\) with
+\[
+\operatorname{ofReal}(w_{\omega_0,\tau})
+=\nu(C^0_{\omega_0,\tau})
+=\nu'(C^{\prime0}_{\omega_0,\tau}).
+\]
+Then the four mass hypotheses needed by the finite stage-cell common
+refinement hold for these concrete cells and labels.  Namely,
+\[
+\nu(C^0_{\omega_0})
+=\sum_{\tau\subseteq\Lambda}\nu(C^0_{\omega_0,\tau}),
+\qquad
+\nu'(C^{\prime0}_{\omega_0})
+=\sum_{\tau\subseteq\Lambda}\nu'(C^{\prime0}_{\omega_0,\tau}),
+\]
+corresponding source and target atom masses are equal, and those common atom
+masses have nonnegative real representatives.
+\end{helper}
+\begin{proof}
+For each fixed \(\omega_0\), the source splitting hypothesis is the finite
+additivity identity for the actual source measurable partition
+\(\{C^0_{\omega_0,\tau}:\tau\subseteq\Lambda\}\).  This partition consists
+of all simultaneous truth-vector atoms of the finitely many source Boolean
+tests inside the supported base cell.  The atoms cover \(C^0_{\omega_0}\)
+and are pairwise disjoint by hypothesis; the cover is also forced by the
+truth-vector construction, since each state has the unique truth vector
+consisting of the labels whose source tests contain it.  Because
+\(\Lambda\) is finite, there are only finitely many truth vectors.  Finite
+additivity for measures over a finite pairwise-disjoint measurable union
+therefore gives
+\[
+\nu(C^0_{\omega_0})
+=\sum_{\tau\subseteq\Lambda}\nu(C^0_{\omega_0,\tau}).
+\]
+This is the first output hypothesis.
+
+The target argument is identical.  For each \(\omega_0\), the target atoms
+\(\{C^{\prime0}_{\omega_0,\tau}:\tau\subseteq\Lambda\}\) are the simultaneous
+truth-vector atoms of the transported target Boolean tests inside
+\(C^{\prime0}_{\omega_0}\).  They cover the target base cell, are pairwise
+disjoint, and are measurable by hypothesis.  Finite additivity over this
+finite disjoint measurable cover gives the displayed sum for
+\(\nu'(C^{\prime0}_{\omega_0})\).  This is the second output hypothesis.
+
+The third output hypothesis is the assumed transported atom-mass equality:
+for every \(\omega_0\) and truth vector \(\tau\), the source atom
+\(C^0_{\omega_0,\tau}\) and target atom
+\(C^{\prime0}_{\omega_0,\tau}\) have equal measure.  This equality is not
+derived from the abstract common-refinement lemma or from the unrefined base
+cell weight; it must come from the concrete product and extension laws for
+the specific supported atoms under consideration.
+
+The fourth output hypothesis is the assumed finite real representation of
+each common atom mass.  The chosen representative
+\(w_{\omega_0,\tau}\) is nonnegative and satisfies
+\[
+\operatorname{ofReal}(w_{\omega_0,\tau})
+=\nu(C^0_{\omega_0,\tau})
+=\nu'(C^{\prime0}_{\omega_0,\tau}).
+\]
+Thus the source splitting, target splitting, atom equality, and nonnegative
+atom-weight clauses are all available as a single registered supplier for
+the stage-cell common-refinement node.
+\end{proof}

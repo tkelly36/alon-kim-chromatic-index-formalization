@@ -1,0 +1,29 @@
+\begin{helper}
+Let $G$ be a finite graph with a part map
+$\operatorname{part}:V(G)\to [k]$.  For each increasing triple
+$i<j<\ell$ of parts, let $A_i,A_j,A_\ell$ be the corresponding fibres of
+the part map, and let $m_{ij},m_{i\ell},m_{j\ell}$ be the ordered edge
+counts between the corresponding pairs of fibres.  Then the sum, over all
+increasing triples of parts, of the number of ordered triangles with one
+vertex in each of the three fibres is at most
+\[
+\sum_{i<j<\ell}\sqrt{m_{ij}m_{i\ell}m_{j\ell}}.
+\]
+\end{helper}
+\begin{proof}
+Fix one increasing triple $i<j<\ell$.  Apply
+\noderef{KPartiteFixedThreePartProductEstimate} to the three finite vertex
+sets $A_i,A_j,A_\ell$.  Its statement says exactly that the number of ordered
+triples $(a,b,c)\in A_i\times A_j\times A_\ell$ spanning all three graph
+edges is at most the square root of the product of the three ordered
+pair-edge counts between $A_i,A_j$, between $A_i,A_\ell$, and between
+$A_j,A_\ell$.
+
+This pointwise inequality holds for every increasing triple of parts.  The
+indexing set of such triples is finite, and summing a pointwise inequality
+over a finite set preserves the inequality.  The three pair-edge counts in
+the cited node are precisely the numbers denoted
+$m_{ij},m_{i\ell},m_{j\ell}$ here, because each fibre is defined by the
+corresponding value of the part map.  Summing the pointwise bounds over all
+$i<j<\ell$ gives the displayed inequality.
+\end{proof}

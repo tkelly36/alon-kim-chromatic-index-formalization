@@ -1,0 +1,131 @@
+\begin{lemma}
+For every $A,k\in\mathbb N$ and every $\iota>0$, there is
+$\gamma_0\in\mathbb N$ such that, for every natural number
+$\gamma\ge\gamma_0$, the following holds for all sufficiently large natural
+numbers $D$.  Let $\mathcal H$ be a $k$-uniform hypergraph with
+finite edge-index set and with $\Delta(\mathcal H)\le D$, and let $L$ be a
+list assignment for $E(\mathcal H)$ using colors from $[AD]$, with
+$|L(e)|\ge \ell:=\lceil kD/\gamma\rceil$ for every edge $e$.  If
+\[
+b\ge \max_{e\in E(\mathcal H)} b_{L(\mathcal H),kD}(e),
+\]
+then there is a partial $L$-coloring $c$ such that the residual hypergraph
+$\mathcal H_c$ and residual list assignment $L_c$ satisfy
+\[
+\Delta(\mathcal H_c)\le D':=\left(1-\frac{1-\iota}{\gamma}\right)D
+\]
+and
+\[
+|L_c(e)|\ge \ell':=(1-b-\iota)\ell
+\]
+for every residual edge $e$.
+\end{lemma}
+\begin{proof}
+Always take $\gamma_0,D_0\ge1$. Then $\gamma\ge1$ and
+$1-(1-\iota)/\gamma=(\gamma-1+\iota)/\gamma>0$, so $D'\ge0$.
+If $k=0$, \noderef{UniformHypergraph} says every edge is empty.
+Thus all degrees are zero by \noderef{HypergraphDegree}, and $\ell=0$.
+Use the empty colored set, residual edge type $E$, identity embedding,
+the original hypergraph, and the original lists. The residual-list
+equivalence is immediate since there are no colored edges, and both bounds
+follow from nonnegativity. Hence assume $k\ge1$.
+If $A=0$, all lists are empty, whereas $\ell=\lceil kD/\gamma\rceil\ge1$.
+The list-size hypothesis therefore implies that $E$ is empty. The same
+empty coloring and identity residual construction works. In the remaining
+case assume $A\ge1$. If $E$ is empty the same construction again suffices;
+the probabilistic argument below is needed only when $E$ is nonempty.
+
+Apply \noderef{NibbleExpectationBounds} with $\varepsilon=\iota/2$,
+giving thresholds $\Delta_s,\gamma_s$, and apply
+\noderef{NibbleNumericalThresholds} to $A,k,\iota$, giving $\gamma_n$.
+Take $\gamma_0=\max(1,\gamma_s,\gamma_n)$. For each fixed
+$\gamma\ge\gamma_0$, take $D_0$ at least the numerical threshold and
+$\Delta_s$. Since $k\ge1$, $D\ge D_0$ implies $\Delta=kD\ge\Delta_s$.
+The numerical theorem gives $0<\gamma\le\Delta$, $\ell>0$, and all three
+tail/local-lemma numerical bounds used below. Its natural ceiling equals
+the integer ceiling here because $\Delta/\gamma\ge0$.
+These choices depend only on $A,k,\iota$ and then $\gamma$, never on
+$H,L,b$.
+
+Choose a sublist $M(e)\subseteq L(e)$ of cardinality exactly $\ell$ for
+each edge. Such sublists exist by the assumed cardinality inequality;
+finite choice makes them simultaneous. We will use $M$ to run the
+experiment, but extract residual lists from the original $L$.
+By \noderef{UniformHypergraphLineDegreeBound}, the line graph has degree
+at most $k(D-1)\le\Delta$. By \noderef{NibbleRegularCompletionsExist}
+choose one completion datum $Q$ for $H,M,\Delta$.
+Its coordinate type is $T=\{(a,v):a\in[AD],v\in\operatorname{Fin}(n_a)\}$.
+Use the single measure $\nu=\operatorname{NibbleProductMeasure}_T(\gamma/\Delta)$
+of \noderef{NibbleProductMeasure}, with selections from
+\noderef{NibbleCompletedSelection} and \noderef{NibbleSelectedEdges}.
+The theorem \noderef{NibbleProductSamplingLaw} gives a probability measure,
+the actual completed-graph sampling marginals, Borel selection events,
+independence across colors, the coordinate product law, and pointwise
+independence of each selected original-edge set. No new completion or
+sampling witnesses are chosen in the subsequent estimates.
+
+Write $Y_x$ for \noderef{NibbleResidualDegree} and $Z_e$ for the
+cardinality in \noderef{NibbleDeletedColors}. The hypotheses of
+\noderef{NibbleExpectationBounds} hold for this $Q$: retained lists have
+size $\ell$, the maximum hypergraph degree is $D$, the line-graph degree
+is at most $\Delta$, and the assumed ambient local parameters are at most
+$b$. It gives
+\[
+\mathbb EY_x\le D\left(1-\frac{1-e^{-\gamma}}\Delta+
+\frac2{\Delta^2}\right)^\ell,\qquad
+\mathbb EZ_e\le(b+\iota/2)\ell.
+\]
+The expectation theorem uses \noderef{NibbleInducedBParameterComparison}
+for the rooted induced old-neighbor graph inside each completion; hence
+this use does not replace an induced local parameter by a whole-completion
+parameter. The numerical bound gives
+\[
+\mathbb EY_x\le (1-(1-\iota/2)/\gamma)D
+=D'-\iota D/(2\gamma).
+\]
+Apply \noderef{NibbleConcentrationBounds} with $m=AD>0$ and
+$t=\iota D/(2\gamma)>0$. We obtain
+\[
+\Pr[Y_x>D']\le\exp[-\iota^2D/(2\gamma^2A)],\qquad
+\Pr[Z_e\ge(b+\iota)\ell]\le\exp[-\iota^2\ell/(8+2\iota)].
+\]
+In the first calculation, $-2t^2/(AD)=-\iota^2D/(2\gamma^2A)$.
+The second rate uses the bound $\mathbb EZ_e\le\ell$ in its denominator
+and is therefore uniform in $b$. By \noderef{NibbleNumericalThresholds},
+both probabilities are at most $P=\exp[-(\log D)^2]$.
+
+Use \noderef{NibbleBadEvent} with $d=D'$ and $z=(b+\iota)\ell$.
+Only the finite union $W=\bigcup_e H(e)$ indexes degree events, so no
+finiteness of the ambient vertex type is assumed.
+The theorem \noderef{NibbleCompletedDependencyBound} supplies Borel
+events and determining sets of the actual color--completion coordinates,
+with at most $q=4A(k+1)k^4D^6$ intersecting other determining sets per event.
+Here $q\ge1$. The numerical theorem gives $eP(q+1)\le1$.
+Apply \noderef{NibbleFiniteLocalLemma}, with $p=\gamma/\Delta\in[0,1]$,
+to this same product measure and these determining sets. Choose an outcome
+outside every bad event. At this outcome $Y_x\le D'$ for $x\in W$ and
+$Z_e<(b+\iota)\ell$ for every edge. For $x\notin W$, no edge contains
+$x$, so $Y_x=0\le D'$ as well.
+
+Now apply \noderef{NibbleDeterministicExtraction} to the realized sets
+$I_a$. Its hypotheses follow from pointwise independence in the product-law
+theorem and the selection definition, which forces $a\in M(e)$ whenever
+$e\in I_a$. It supplies a proper partial $L$-coloring, the canonical
+uncolored subtype $F=\{e:e\notin C\}$, and exactly the original lists
+with colors used by intersecting colored edges removed. The residual
+hypergraph assigns $H(e)$ to the corresponding subtype element. Its degree
+is exactly $Y_x$, and hence at most $D'$. Its residual list at $f$ has
+cardinality at least $\ell-Z_f$, since $Z_f\le\ell$ and natural
+subtraction agrees with real subtraction after casting. Consequently
+\[
+|L_c(f)|\ge\ell-Z_f>\ell-(b+\iota)\ell=(1-b-\iota)\ell,
+\]
+which implies the required non-strict inequality. The subtype inclusion
+is the residual embedding; an original edge has a preimage exactly when
+it is uncolored. The extraction theorem gives the exact residual-list
+equivalence required in the statement. This completes the construction.
+If the existential residual edge type is required in a different universe,
+transport this finite subtype along its bijection with a lifted
+$\operatorname{Fin}(|F|)$. The edge, coverage, list, and degree identities
+are invariant under that bijection.
+\end{proof}

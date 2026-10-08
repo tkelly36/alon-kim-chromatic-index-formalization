@@ -1,0 +1,68 @@
+\begin{helper}
+Let $\Delta$ be a positive integer and let $\gamma$ be a real number with
+$0\le \gamma\le \Delta$.  Then
+\[
+\left|
+\frac1\Delta\int_0^\gamma \left(1-\frac{x}{\Delta}\right)^\Delta\,dx
+-\frac{1-e^{-\gamma}}{\Delta}
+\right|
+\le \frac2{\Delta^2}.
+\]
+\end{helper}
+\begin{proof}
+For every $x\in[0,\gamma]$ we also have $0\le x\le\Delta$.  The elementary
+inequality $(1-t/n)^n\le e^{-t}$, applied with $n=\Delta$ and $t=x$, gives
+\[
+\left(1-\frac{x}{\Delta}\right)^\Delta\le e^{-x}
+\]
+on this interval.  Therefore the integral of the polynomial factor is at most
+the integral of $e^{-x}$ over $[0,\gamma]$, and the difference
+\[
+\int_0^\gamma e^{-x}\,dx-
+\int_0^\gamma \left(1-\frac{x}{\Delta}\right)^\Delta\,dx
+\]
+is nonnegative.
+
+The same pointwise comparison is valid on the whole interval $[0,\Delta]$.
+Since the difference of the two integrands is nonnegative there, and since
+$[0,\gamma]\subseteq[0,\Delta]$, the preceding difference is at most
+\[
+\int_0^\Delta e^{-x}\,dx-
+\int_0^\Delta \left(1-\frac{x}{\Delta}\right)^\Delta\,dx .
+\]
+Both endpoint integrals are explicit.  First,
+\[
+\int_0^\Delta e^{-x}\,dx=1-e^{-\Delta}.
+\]
+Second, with the substitution $u=1-x/\Delta$,
+\[
+\int_0^\Delta \left(1-\frac{x}{\Delta}\right)^\Delta\,dx
+=\Delta\int_0^1 u^\Delta\,du
+=\frac{\Delta}{\Delta+1}.
+\]
+Thus
+\[
+\int_0^\Delta e^{-x}\,dx-
+\int_0^\Delta \left(1-\frac{x}{\Delta}\right)^\Delta\,dx
+=(1-e^{-\Delta})-\frac{\Delta}{\Delta+1}
+\le 1-\frac{\Delta}{\Delta+1}
+=\frac1{\Delta+1}
+\le\frac1\Delta .
+\]
+Since $\int_0^\gamma e^{-x}\,dx=1-e^{-\gamma}$, we have
+\[
+0\le
+(1-e^{-\gamma})-
+\int_0^\gamma\left(1-\frac{x}{\Delta}\right)^\Delta\,dx
+\le \frac1\Delta .
+\]
+Multiplying by the positive factor $1/\Delta$ gives
+\[
+\left|
+\frac1\Delta\int_0^\gamma \left(1-\frac{x}{\Delta}\right)^\Delta\,dx
+-\frac{1-e^{-\gamma}}{\Delta}
+\right|
+\le \frac1{\Delta^2}\le \frac2{\Delta^2},
+\]
+which is the desired estimate.
+\end{proof}

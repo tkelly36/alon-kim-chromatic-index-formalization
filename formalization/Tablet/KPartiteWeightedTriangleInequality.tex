@@ -1,0 +1,109 @@
+\begin{lemma}
+Let $k\ge 3$, and assign a nonnegative real weight $w_{ij}$ to each unordered
+pair $\{i,j\}\subseteq \{1,\ldots,k\}$.  Put
+\[
+M=\sum_{1\le i<j\le k}w_{ij}.
+\]
+Then
+\[
+\sum_{1\le i<j<\ell\le k}\sqrt{w_{ij}w_{i\ell}w_{j\ell}}
+\le
+\binom{k}{3}\left(\frac{M}{\binom{k}{2}}\right)^{3/2}.
+\]
+\end{lemma}
+\begin{proof}
+It is enough to prove the claim for $M>0$, since if $M=0$ then every
+nonnegative weight is zero and both sides are zero.  Assume $M>0$.
+For a vertex $i$ of the index set, write
+\[
+M_i=\sum_{j\ne i}w_{ij}.
+\]
+Also write $T_i$ for the part of the weighted triangle sum coming from
+triangles that contain $i$:
+\[
+T_i=\sum_{\substack{j<\ell\\ j,\ell\ne i}}
+\sqrt{w_{ij}w_{i\ell}w_{j\ell}}.
+\]
+Every weighted triangle has exactly three vertices, so
+\[
+3\sum_{i<j<\ell}\sqrt{w_{ij}w_{i\ell}w_{j\ell}}
+=\sum_i T_i. \tag{1}
+\]
+
+Fix $i$.  Apply Cauchy--Schwarz to the finite family indexed by unordered
+pairs $\{j,\ell\}$ disjoint from $\{i\}$, with entries
+$\sqrt{w_{ij}w_{i\ell}}$ and $\sqrt{w_{j\ell}}$.  This gives
+\[
+T_i^2
+\le
+\left(\sum_{\substack{j<\ell\\ j,\ell\ne i}} w_{ij}w_{i\ell}\right)
+\left(\sum_{\substack{j<\ell\\ j,\ell\ne i}} w_{j\ell}\right). \tag{2}
+\]
+The second factor in (2) is the total weight of pairs not incident with
+$i$, namely $M-M_i$.  For the first factor, the numbers
+$(w_{ij})_{j\ne i}$ are $k-1$ nonnegative numbers with sum $M_i$.  Hence
+\[
+\sum_{\substack{j<\ell\\ j,\ell\ne i}}w_{ij}w_{i\ell}
+=\frac{M_i^2-\sum_{j\ne i}w_{ij}^2}{2}
+\le
+\frac{M_i^2-M_i^2/(k-1)}2
+=\frac{k-2}{2(k-1)}M_i^2, \tag{3}
+\]
+where the inequality uses Cauchy--Schwarz in the form
+$\sum_{j\ne i}w_{ij}^2\ge M_i^2/(k-1)$.  Combining (2) and (3), and using
+nonnegativity to take square roots, gives
+\[
+T_i\le
+M_i\sqrt{\frac{k-2}{2(k-1)}(M-M_i)}. \tag{4}
+\]
+
+Set $x_i=M_i/M$.  Since $M>0$, these numbers are nonnegative, and because
+each unordered pair contributes to exactly two of the sums $M_i$, we have
+\[
+\sum_i x_i=2. \tag{5}
+\]
+Also $M_i\le M$, so $0\le x_i\le 1$.  Summing (4) over $i$ and factoring
+out $M^{3/2}$ gives
+\[
+\sum_i T_i
+\le
+M^{3/2}\sqrt{\frac{k-2}{2(k-1)}}
+\sum_i x_i\sqrt{1-x_i}. \tag{6}
+\]
+The remaining finite optimization is another direct Cauchy--Schwarz
+calculation:
+\[
+\left(\sum_i x_i\sqrt{1-x_i}\right)^2
+\le
+\left(\sum_i x_i\right)
+\left(\sum_i x_i(1-x_i)\right). \tag{7}
+\]
+By (5), the first factor in (7) is $2$.  For the second factor,
+\[
+\sum_i x_i(1-x_i)=2-\sum_i x_i^2
+\le
+2-\frac{(\sum_i x_i)^2}{k}
+=2-\frac4k
+=\frac{2(k-2)}k, \tag{8}
+\]
+again by Cauchy--Schwarz.  Equations (7) and (8) imply
+\[
+\sum_i x_i\sqrt{1-x_i}\le 2\sqrt{\frac{k-2}{k}}. \tag{9}
+\]
+Substituting (9) into (6), then dividing by $3$ using (1), yields
+\[
+\sum_{i<j<\ell}\sqrt{w_{ij}w_{i\ell}w_{j\ell}}
+\le
+\frac{\sqrt2}{3}\frac{k-2}{\sqrt{k(k-1)}}\,M^{3/2}. \tag{10}
+\]
+Finally
+\[
+\frac{\binom{k}{3}}{\binom{k}{2}^{3/2}}
+=
+\frac{k(k-1)(k-2)/6}{(k(k-1)/2)^{3/2}}
+=
+\frac{\sqrt2}{3}\frac{k-2}{\sqrt{k(k-1)}}.
+\]
+Replacing the coefficient in (10) by this identical binomial expression is
+exactly the desired bound.
+\end{proof}

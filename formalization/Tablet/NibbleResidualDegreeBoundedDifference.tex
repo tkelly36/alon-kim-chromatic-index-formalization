@@ -1,0 +1,31 @@
+\begin{lemma}
+Let $\mathcal H$ have finite edge-index set $E$, let $K$ be a finite
+color set, and let $I,J:K\to 2^E$. Fix $a\in K$. Suppose $I(a)$ and
+$J(a)$ are independent sets in the line graph of $\mathcal H$, and
+$I(b)=J(b)$ for every $b\ne a$. For each hypergraph vertex $x$, put
+\[
+R_I(x)=\{e\in E:x\in e\text{ and }e\notin I(b)\text{ for every }b\in K\},
+\]
+and define $R_J(x)$ in the same way. Then
+$\bigl||R_I(x)|-|R_J(x)|\bigr|\le1$, with cardinalities viewed as real numbers.
+\end{lemma}
+\begin{proof}
+Let $T$ be the set of edges containing $x$ that belong to none of the
+sets $I(b)$ for $b\ne a$. The agreement assumption means that the same
+set is obtained using $J(b)$ for $b\ne a$. Consequently
+$R_I(x)=T\setminus I(a)$ and $R_J(x)=T\setminus J(a)$.
+Any two distinct edges of $T$ intersect at $x$, so they are adjacent
+by \noderef{LineGraphOfHypergraph}. Independence therefore implies
+$|T\cap I(a)|\le1$ and $|T\cap J(a)|\le1$.
+The disjoint partitions of $T$ into its intersection with each of these
+sets and its complement give
+\[
+|R_I(x)|=|T|-|T\cap I(a)|,\qquad
+|R_J(x)|=|T|-|T\cap J(a)|.
+\]
+Their difference is $|T\cap J(a)|-|T\cap I(a)|$, which lies in
+$[-1,1]$. This proves the asserted absolute-value bound. In the nibble
+experiment these are exactly the residual incident edges, since an edge
+is colored if at least one color selects it; the tie-breaking rule does
+not change whether it is colored.
+\end{proof}

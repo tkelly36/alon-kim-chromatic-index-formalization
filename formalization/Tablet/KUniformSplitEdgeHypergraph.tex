@@ -1,0 +1,14 @@
+\begin{definition}
+For a hypergraph $\mathcal F$, an old edge label $g$, a vertex
+$v\in g$, and a distinguished fresh vertex $x_1$ among $k-1$ fresh
+vertices, let $\operatorname{SplitEdge}_k(\mathcal F,g,v,x_1)$ be the
+hypergraph obtained as follows.  The vertex set is enlarged by the
+$k-1$ fresh vertices.  Every old edge label except $g$ is retained with
+the same old vertices.  The old label $g$ is reassigned to the modified
+edge
+\[
+  (g\setminus\{v\})\cup\{x_1\}.
+\]
+One new edge label is added for the edge consisting of $v$ together with all
+the $k-1$ fresh vertices.
+\end{definition}

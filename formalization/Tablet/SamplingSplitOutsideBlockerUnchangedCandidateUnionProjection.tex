@@ -1,0 +1,32 @@
+\begin{helper}
+The unchanged summand comparison across one split-blocker cut is obtained by
+finite additivity over the candidate-indexed union, not by comparing one
+unspecified candidate cylinder.  In any fixed actual witness surface, suppose
+the unchanged source event and unchanged target event are written as finite
+unions
+\[
+U^-=\bigcup_{x\in B_k} U^-_x,\qquad
+U^+=\bigcup_{x\in B_k} U^+_x,
+\]
+where the candidate pieces are pairwise almost-disjoint on each side,
+measurable up to null sets, and have equal source and target masses:
+\(\nu(U^-_x)=\nu'(U^+_x)\) for every candidate \(x\in B_k\).  Then
+\(\nu(U^-)=\nu'(U^+)\).
+\end{helper}
+\begin{proof}
+Replace the two unchanged events by their displayed finite candidate unions.
+Because the source pieces are pairwise almost-disjoint and null-measurable,
+finite additivity gives
+\[
+\nu(U^-)=\sum_{x\in B_k}\nu(U^-_x).
+\]
+The same argument on the target side gives
+\[
+\nu'(U^+)=\sum_{x\in B_k}\nu'(U^+_x).
+\]
+The summands agree candidate by candidate by hypothesis.  Therefore the two
+finite sums agree, and hence the two unchanged-event masses agree.  This is
+the exact additivity step needed after the finite product/cylinder and
+marginal calculations have supplied equality on each candidate cell; overlaps
+are handled by the stated almost-disjointness hypotheses rather than ignored.
+\end{proof}

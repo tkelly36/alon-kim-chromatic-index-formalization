@@ -1,0 +1,65 @@
+\begin{helper}
+Let \(X\) and \(W\) be measure spaces with the measures used by Lean's
+\(\operatorname{volume}\), and assume that the volume measure on \(W\) is
+s-finite.  Let
+\(\Phi:X\to\mathbb R^3\times W\) be measure preserving, let
+\(E\subseteq X\), let \(A\subseteq\mathbb R^3\times W\) be measurable, and let
+\(g:\mathbb R^3\to\mathbb R\) be
+continuous.  Assume \(g(x,y,z)\ge0\) whenever
+\(0\le x\le y\le z\le1\).  Assume \(E\subseteq\Phi^{-1}(A)\), and assume
+every point \((x,y,z,w)\in A\) satisfies \(0\le x\le y\le z\le1\).
+Finally assume that, for every \(0\le x\le y\le z\le1\), the \(W\)-section
+\[
+\{w\in W:(x,y,z,w)\in A\}
+\]
+has outer measure at most \(\operatorname{ofReal}(g(x,y,z))\).  Then
+\[
+\operatorname{vol}(E)\le
+\operatorname{ofReal}\left(\int_0^1\int_0^z\int_0^y
+g(x,y,z)\,dx\,dy\,dz\right).
+\]
+\end{helper}
+\begin{proof}
+Since \(E\subseteq\Phi^{-1}(A)\), monotonicity of measure gives
+\(\operatorname{vol}(E)\le \operatorname{vol}(\Phi^{-1}(A))\).  Because
+\(A\) is measurable and \(\Phi\) is measure preserving,
+\(\operatorname{vol}(\Phi^{-1}(A))=\operatorname{vol}(A)\).  It remains to
+bound the product measure of the measurable set \(A\).
+
+Apply the product-measure section formula successively to
+\(\mathbb R\times(\mathbb R\times(\mathbb R\times W))\).  Since \(A\) is
+measurable, its section \(A_{x,y,z}:=\{w:(x,y,z,w)\in A\}\) is measurable for
+almost every \((x,y,z)\), and the nonnegative measurable function
+\((x,y,z)\mapsto\operatorname{vol}(A_{x,y,z})\) has integral
+\(\operatorname{vol}(A)\).  Equivalently,
+\[
+\operatorname{vol}(A)=
+\int_{\mathbb R}^{+}\int_{\mathbb R}^{+}\int_{\mathbb R}^{+}
+\operatorname{vol}(A_{x,y,z})\,dz\,dy\,dx
+\]
+with the variables ordered according to the displayed product coordinates.
+
+The containment hypothesis says that the integrand vanishes outside the
+simplex \(0\le x\le y\le z\le1\): if \(A_{x,y,z}\) is nonempty then some
+\((x,y,z,w)\in A\), so the simplex inequalities hold.  Hence the preceding
+integral may be restricted to this simplex.  On the simplex, the section
+hypothesis gives
+\(\operatorname{vol}(A_{x,y,z})\le\operatorname{ofReal}(g(x,y,z))\).
+Monotonicity of the nonnegative integral therefore bounds \(\operatorname{vol}(A)\)
+by the nonnegative integral of \(\operatorname{ofReal}(g(x,y,z))\) over
+\(0\le x\le y\le z\le1\).
+
+The map \((x,y,z)\mapsto g(x,y,z)\) is continuous, hence measurable and
+Lebesgue integrable on the compact simplex.  The assumed nonnegativity on the
+simplex allows the standard conversion between the nonnegative integral of
+\(\operatorname{ofReal}(g)\) over the nested intervals
+\(0\le x\le y\le z\le1\) and \(\operatorname{ofReal}\) of the corresponding
+iterated real interval integral.  Thus
+\[
+\operatorname{vol}(A)\le
+\operatorname{ofReal}\left(\int_0^1\int_0^z\int_0^y
+g(x,y,z)\,dx\,dy\,dz\right).
+\]
+Combining this inequality with
+\(\operatorname{vol}(E)\le\operatorname{vol}(A)\) proves the claim.
+\end{proof}

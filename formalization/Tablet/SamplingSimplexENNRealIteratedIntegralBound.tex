@@ -1,0 +1,99 @@
+\begin{helper}
+Let \(g:\mathbb R^3\to\mathbb R\) be continuous, written
+\(g(x,y,z)\), and suppose \(g(x,y,z)\ge 0\) on the simplex
+\(0\le x\le y\le z\le 1\).  Then the iterated nonnegative integral of
+\(\operatorname{ofReal}(g)\) over this simplex is bounded by the
+\(\operatorname{ofReal}\) of the corresponding iterated real interval
+integral:
+\[
+\int_{\mathbb R}^{+}\int_{\mathbb R}^{+}\int_{\mathbb R}^{+}
+\mathbf 1_{\{0\le x\le y\le z\le 1\}}\operatorname{ofReal}(g(x,y,z))
+\,dz\,dy\,dx
+\le
+\operatorname{ofReal}\left(\int_0^1\int_0^z\int_0^y
+g(x,y,z)\,dx\,dy\,dz\right).
+\]
+\end{helper}
+\begin{proof}
+Put
+\[
+S=\{(x,y,z)\in\mathbb R^3:0\le x\le y\le z\le 1\}
+\]
+and
+\[
+H(x,y,z)=\mathbf 1_S(x,y,z)\operatorname{ofReal}(g(x,y,z)).
+\]
+The set \(S\) is Borel measurable: it is the intersection of the closed
+half-spaces cut out by the continuous functions \(x\), \(y-x\), \(z-y\), and
+\(1-z\).  Since \(g\) is continuous, the function
+\((x,y,z)\mapsto \operatorname{ofReal}(g(x,y,z))\) is Borel measurable as an
+\([0,\infty]\)-valued function, and therefore the indicator product \(H\) is
+measurable and nonnegative.  The Tonelli/order-swap and restriction lemma
+\(\noderef{SamplingSimplexIndicatorLIntegralRestriction}\), applied to this
+continuous \(g\), gives the exact equality
+\[
+\int_{\mathbb R}^{+}\int_{\mathbb R}^{+}\int_{\mathbb R}^{+}H(x,y,z)
+\,dz\,dy\,dx
+=
+\int_{(0,1]}^{+}\int_{(0,z]}^{+}\int_{(0,y]}^{+}
+\operatorname{ofReal}(g(x,y,z))\,dx\,dy\,dz .
+\]
+
+It remains to convert the nested nonnegative interval integral into
+\(\operatorname{ofReal}\) of the nested real interval integral.  The
+one-dimensional conversion fact is
+\(\noderef{SamplingIntervalLIntegralOfRealConversion}\): on an oriented
+interval \([a,b]\) with \(a\le b\), if a real function is interval-integrable
+and nonnegative on \((a,b]\), then the lintegral of \(\operatorname{ofReal}\)
+over \((a,b]\) equals \(\operatorname{ofReal}\) of the real interval integral.
+The regularity and nonnegativity hypotheses needed for the three applications
+are supplied by
+\(\noderef{SamplingSimplexPartialIntegralRegularity}\), applied to the present
+continuous \(g\) and its assumed simplex nonnegativity.
+
+First fix \(y,z\) with \(0\le y\le z\le 1\).  The function
+\(x\mapsto g(x,y,z)\) is interval-integrable on \([0,y]\) and nonnegative on
+\((0,y]\) by the first clause of
+\(\noderef{SamplingSimplexPartialIntegralRegularity}\).  Since \(0\le y\),
+\(\noderef{SamplingIntervalLIntegralOfRealConversion}\) gives
+\[
+\int_{0}^{y,+}\operatorname{ofReal}(g(x,y,z))\,dx
+=
+\operatorname{ofReal}\left(\int_0^y g(x,y,z)\,dx\right).
+\]
+
+Second fix \(z\in[0,1]\) and define
+\[
+F_z(y)=\int_0^y g(x,y,z)\,dx .
+\]
+The second clause of
+\(\noderef{SamplingSimplexPartialIntegralRegularity}\) says that \(F_z\) is
+continuous on \([0,z]\), interval-integrable on \([0,z]\), and nonnegative on
+\((0,z]\).  Since \(0\le z\),
+\(\noderef{SamplingIntervalLIntegralOfRealConversion}\) gives
+\[
+\int_0^{z,+}\operatorname{ofReal}\left(\int_0^y g(x,y,z)\,dx\right)\,dy
+=
+\operatorname{ofReal}\left(\int_0^z\int_0^y g(x,y,z)\,dx\,dy\right).
+\]
+
+Third define
+\[
+G(z)=\int_0^z\int_0^y g(x,y,z)\,dx\,dy .
+\]
+The third clause of \(\noderef{SamplingSimplexPartialIntegralRegularity}\)
+says that \(G\) is continuous on \([0,1]\), interval-integrable on \([0,1]\),
+and nonnegative on \((0,1]\).  Since \(0\le1\), a third application of
+\(\noderef{SamplingIntervalLIntegralOfRealConversion}\) yields
+\[
+\int_0^{1,+}\operatorname{ofReal}\left(\int_0^z\int_0^y
+g(x,y,z)\,dx\,dy\right)\,dz
+=
+\operatorname{ofReal}\left(\int_0^1\int_0^z\int_0^y
+g(x,y,z)\,dx\,dy\,dz\right).
+\]
+Combining the Tonelli order swap, the restriction of the indicator integral to
+the simplex bounds, and the three \(\operatorname{ofReal}\)-conversion steps
+shows that the left side of the statement is equal to the right side.  The
+claimed inequality follows immediately.
+\end{proof}

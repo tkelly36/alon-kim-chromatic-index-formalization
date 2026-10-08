@@ -1,0 +1,37 @@
+\begin{helper}
+Use the paired candidate events of
+\noderef{SamplingSplitOutsideBlockerPairedCandidateEvent}. Assume the
+blocker list and private incidence map are injective, every listed blocker
+lies outside \(X\cup\{r\}\), and every private vertex is distinct from
+every \(\phi(y)\) with \(y\in X\cup\{r\}\). Fix \(k<n\).
+Suppose paired states \(\zeta,\xi\) have identical activation indicators
+and priorities at every source coordinate except possibly \(z_k\), and
+at every target coordinate except possibly the vertices \(\beta(x,z_k)\)
+for valid incidences with \(x\in X\). Then for every \(x\in X\),
+\[
+ \zeta\in F_{\{i:i<k\},\{i:k<i\}}(x)
+ \quad\Longleftrightarrow\quad
+ \xi\in F_{\{i:i<k\},\{i:k<i\}}(x).
+\]
+This asserts coordinate invariance, not probabilistic independence.
+\end{helper}
+\begin{proof}
+Expand \noderef{SamplingSplitOutsideBlockerPairedCandidateEvent}.
+The source candidate and embedded-neighbor coordinates lie in
+\(X\cup\{r\}\), so none equals \(z_k\). All their activation and
+priority tests agree between the two states. The corresponding target
+coordinates \(\phi(y)\) avoid every current private vertex by freshness,
+so their activation and priority tests also agree.
+
+For a retained source test with \(k<i\), injectivity of the blocker list
+gives \(z_i\ne z_k\). Its activation, blocker priority, and candidate
+priority therefore agree. For a private test with \(i<k\), suppose its
+coordinate \(\beta(x,z_i)\) equalled some current coordinate
+\(\beta(a,z_k)\). Injectivity of \(\beta\) would identify the two
+incidences and hence give \(z_i=z_k\); injectivity of the list would then
+give \(i=k\), a contradiction. Thus this private coordinate is also
+unchanged. Every atomic clause in the candidate event has the same truth
+value in the two states. Conjunction and the displayed universal
+quantifiers preserve this equivalence, proving the assertion for each
+fixed candidate.
+\end{proof}

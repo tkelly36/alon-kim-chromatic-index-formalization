@@ -1,0 +1,34 @@
+\begin{helper}
+Let \(G\) be a finite graph, let \(C\subseteq V(G)\) be a finite candidate
+set, and let \(Q\subseteq V(G)\) be a finite coordinate set.  Suppose \(Q\)
+contains every neighbor of every candidate: whenever \(x\in C\) and
+\(xy\in E(G)\), one has \(y\in Q\).  Then, for every activation--priority
+outcome \((A,\pi)\), the event \(I_G(A,\pi)\cap C\ne\emptyset\) is equivalent
+to the finite local survival event
+\[
+\exists x\in C\cap A\quad
+  \text{such that}\quad
+  \pi(y)<\pi(x)
+  \text{ for every }y\in A\cap Q\text{ with }xy\in E(G).
+\]
+\end{helper}
+\begin{proof}
+By definition of the activation--priority output,
+\[
+I_G(A,\pi)=\{v\in A:\pi(y)<\pi(v)\hbox{ for every }y\in A\cap N_G(v)\}.
+\]
+Thus \(I_G(A,\pi)\cap C\ne\emptyset\) holds if and only if there is an
+\(x\in C\cap A\) such that \(\pi(y)<\pi(x)\) for every activated neighbor
+\(y\) of \(x\).
+
+If such a surviving \(x\) exists, then it certainly beats every activated
+neighbor lying in \(Q\), so the finite local survival condition holds.
+
+Conversely, suppose the finite local survival condition holds for some
+\(x\in C\cap A\).  Let \(y\in A\) be any neighbor of \(x\).  Since \(x\in C\),
+the covering hypothesis places \(y\) in \(Q\).  Therefore \(y\) is one of the
+neighbors tested by the finite local condition, and hence
+\(\pi(y)<\pi(x)\).  This proves that \(x\) beats every activated neighbor in
+the full graph, so \(x\in I_G(A,\pi)\) and
+\(I_G(A,\pi)\cap C\ne\emptyset\).  The two events are pointwise identical.
+\end{proof}

@@ -1,0 +1,20 @@
+\begin{helper}
+Let $G$ be a finite simple graph and let $v$ be a vertex.  Form the graph
+$C$ on the neighbor set $N_G(v)$ by joining two distinct neighbors exactly
+when they are not adjacent in $G$.  Then
+\[
+|E(C)|\le P_G(v),
+\]
+where $P_G(v)$ is the number of independent pairs in $N_G(v)$ as defined in
+\noderef{IndependentPairCount}.
+\end{helper}
+\begin{proof}
+Each edge of $C$ is an unordered pair $\{x,y\}$ of distinct vertices in
+$N_G(v)$ such that $x$ and $y$ are nonadjacent in $G$.  Sending the edge to
+the two-element subset $\{x,y\}$ therefore gives an independent pair in the
+neighborhood of $v$, exactly of the kind counted by
+\noderef{IndependentPairCount}.  The map is injective, because a simple-graph
+edge is determined by its two endpoints as an unordered pair.  Hence the
+number of edges of $C$ is at most the number of independent neighbor-pairs
+counted by $P_G(v)$.
+\end{proof}

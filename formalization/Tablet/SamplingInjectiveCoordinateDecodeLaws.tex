@@ -1,0 +1,37 @@
+\begin{lemma}
+Let $V,T$ be finite sets, $s:V\to T$ injective, and $0\le p\le1$.
+Put $b_p=p\delta_1+(1-p)\delta_0$, $u=\operatorname{Leb}|_{[0,1]}$,
+and $m=(b_p\otimes u)^T$. Let $\mu$ be the push-forward of $m$ by
+$q\mapsto(\{v:q(s(v))_1=1\},(q(s(v))_2)_v)$.
+Then for every $A\subseteq V$,
+\[
+\mu\{(B,\pi):B=A\}=\operatorname{ofReal}(p^{|A|}(1-p)^{|V|-|A|}),
+\]
+and for every $t:V\to[0,1]$,
+\[
+\mu\{(B,\pi):B=A,\ 0\le\pi_v\le t_v\ (v\in V)\}
+=\mu\{B=A\}\operatorname{ofReal}(\prod_v t_v).
+\]
+\end{lemma}
+\begin{proof}
+The decoding map is measurable by \noderef{SamplingCoordinateDecodeMeasurable}.
+Its displayed events are measurable, since their activation fibers are discrete
+and their priority conditions are finite intersections of closed coordinate
+conditions. Thus their push-forward masses equal the masses of their inverse
+images. The measure $b_p$ has total mass $p+(1-p)=1$, with mass $p$ on
+$\{1\}$ and $1-p$ on its complement, because $0\ne1$.
+Also $u(\mathbb R)=1$ and $u([0,a])=a$ for $0\le a\le1$.
+For the activation event, its inverse image is the product rectangle whose
+factor at $s(v)$ is $\{1\}\times\mathbb R$ if $v\in A$, and
+$(\mathbb R\setminus\{1\})\times\mathbb R$ otherwise; at tags not in
+$s(V)$ its factor is $\mathbb R^2$. Injectivity makes these assignments
+unambiguous. Finite-product rectangle evaluation therefore gives one factor
+$p$ for each member of $A$, one factor $1-p$ for each member of $V\setminus A$,
+and a factor one for every unused tag. This is the first formula.
+For the second event replace each used tag's priority factor $\mathbb R$
+by $[0,t_v]$. Product-measure rectangle evaluation now multiplies the previous
+activation factors by $t_v$ for each $v$. Regrouping the finite product yields
+the first mass times $\prod_v t_v$. All factors are nonnegative, so passage
+through $\operatorname{ofReal}$ respects these products. No division was used;
+the argument includes $p=0,1$ and empty coordinate sets, with empty products one.
+\end{proof}

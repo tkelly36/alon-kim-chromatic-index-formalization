@@ -1,0 +1,44 @@
+\begin{lemma}
+In a $3$-uniform $3$-simple local extremal setup at scale $D$, let
+$\mathcal F\in H(3,3,D)$, $f$, $X$, $P(f)$, $w(X)$, and
+$Y=Y_{\mathcal F}(f)$ be as in
+\noderef{ThreeUniformThreeSimpleLocalSetup}.  Then
+\[
+P(f)\ge D^2-9D+Y_{\mathcal F}(f).
+\]
+\end{lemma}
+\begin{proof}
+Let $X=X(f,\mathcal F)$, and write
+\[
+w(X)=\sum_{x\in X}\sum_{v<v'\in f}
+\deg_{\mathcal F}(v,x)\deg_{\mathcal F}(v',x).
+\]
+By \noderef{SaturatedLineGraphEdgeCount}, applied to the saturated edge
+$f$, the line-graph edge count inside $N_{L(\mathcal F)}(f)$ is
+$3\binom{D-1}{2}+w(X)-Y_{\mathcal F}(f)$ with
+$Y_{\mathcal F}(f)\ge0$.  Since the neighborhood has $3D-3$ vertices, the
+independent pairs are the nonedges in that induced line graph, so
+\[
+P(f)=\binom{3D-3}{2}-3\binom{D-1}{2}-w(X)+Y_{\mathcal F}(f)
+=3D^2-6D+3-w(X)+Y_{\mathcal F}(f).
+\]
+
+The table with rows indexed by the three vertices of $f$ and columns indexed
+by $X$ has entries $a_{v,x}=\deg_{\mathcal F}(v,x)$.  The saturated structure
+\noderef{ThreeUniformSaturatedEdgeStructure} gives the column bound: for every
+$x$, the column sum is at most $D$.  It also gives row sums $2(D-1)$, hence
+total table sum $6(D-1)$.
+Applying \noderef{TablePairBound} with $k=3$, $C=D$, and
+$T=6(D-1)$ gives
+\[
+w(X)\le \frac13\cdot 6(D-1)D\le 2D^2 .
+\]
+Substituting this into the identity for $P(f)$ yields
+\[
+P(f)\ge 3D^2-6D+3-2D^2+Y_{\mathcal F}(f)
+=D^2-6D+3+Y_{\mathcal F}(f)
+\ge D^2-9D+Y_{\mathcal F}(f),
+\]
+for $D$ in the sufficiently large range of the proof.  This is the desired
+bound.
+\end{proof}

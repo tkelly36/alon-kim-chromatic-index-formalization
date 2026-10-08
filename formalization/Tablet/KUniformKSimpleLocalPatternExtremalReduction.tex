@@ -1,0 +1,78 @@
+\begin{helper}
+Fix positive integers $k$ and $D$.  Let $\mathcal H\in H(k,k,D)$ and
+$e\in E(\mathcal H)$.  Then there is an admissible representative
+$(\mathcal F,f)$, still in $H(k,k,D)$, such that
+\[
+b_{L(\mathcal H),kD}(e)\le b_{L(\mathcal F),kD}(f),
+\]
+and $(\mathcal F,f)$ maximizes $b_{L(\mathcal G),kD}(g)$ among all
+$k$-uniform, $k$-simple hypergraphs of maximum degree at most $D$ whose
+vertex and edge types lie in the same ambient universe levels as
+$(\mathcal F,f)$.
+\end{helper}
+\begin{proof}
+We prove the finite local-pattern reduction used at the start of the
+paper's extremal argument.  Let $N$ be the set of edge indices
+$g\ne e$ such that $g$ is adjacent to $e$ in the line graph.  By
+\noderef{LineGraphOfHypergraph}, this means exactly that the hyperedges
+$\mathcal H(g)$ and $\mathcal H(e)$ have nonempty intersection.  Retain the
+edge index $e$, all indices in $N$, and all vertices lying in the retained
+hyperedges.  Let $\mathcal H_{\mathrm{loc}}$ be the resulting local
+hypergraph, with the retained edge attached to exactly the same finite set
+of vertices that it had in $\mathcal H$.
+
+The line-graph neighborhood of $e$ is unchanged by this truncation.  Indeed,
+the neighbors of $e$ are precisely the retained indices $N$, and for two
+retained neighbors $g,h\in N$, the truth of
+\[
+\mathcal H(g)\cap \mathcal H(h)\ne\emptyset
+\]
+is unchanged because the two retained hyperedges themselves are unchanged.
+Thus the line-graph degree of $e$ is the same in
+$L(\mathcal H)$ and in $L(\mathcal H_{\mathrm{loc}})$.  The same
+identification preserves exactly the independent two-subsets of the
+neighborhood counted by \noderef{IndependentPairCount}, and exactly the
+independent three-subsets counted by \noderef{IndependentTripleCount}.  The
+formula in \noderef{LocalBParameter} therefore gives
+\[
+b_{L(\mathcal H_{\mathrm{loc}}),kD}(e)
+=b_{L(\mathcal H),kD}(e).
+\]
+
+The local hypergraph is still in $H(k,k,D)$.  Its edges are original edges,
+so their cardinalities are unchanged and \noderef{UniformHypergraph}
+preserves $k$-uniformity.  Intersections of two retained edges are the same
+intersections as before, so \noderef{TSimpleHypergraph} preserves
+$k$-simplicity.  Finally, deleting edge indices can only decrease the number
+of retained edges containing any vertex.  With degrees interpreted by
+\noderef{HypergraphDegree}, the maximum-degree condition
+\noderef{MaxDegreeAtMost} is therefore inherited from $\mathcal H$.
+Together these three facts are exactly the membership condition
+\noderef{HypergraphClass}.
+
+For fixed $k$ and $D$ there are only finitely many such local patterns up to
+renaming.  The edge $e$ has $k$ vertices, and each of these vertices lies in
+at most $D$ edge indices; after excluding $e$, there are at most $k(D-1)$
+neighbors of $e$.  Each retained edge has exactly $k$ vertices, so the local
+vertex set has size at most
+\[
+k+k\cdot k(D-1).
+\]
+After relabeling the retained edge indices and vertices inside fixed finite
+sets of these sizes, a local pattern is just a finite list of $k$-element
+subsets satisfying the stated simplicity and degree constraints.  Hence the
+set of possible local-pattern values of
+$b_{L(\cdot),kD}(\cdot)$ is finite and has a maximum.
+
+Choose a representative $(\mathcal F,f)$ attaining this maximum.  Since the
+original pair $(\mathcal H,e)$ has the same local value as its truncation,
+and that truncation is one of the finite local patterns, we get
+\[
+b_{L(\mathcal H),kD}(e)\le b_{L(\mathcal F),kD}(f).
+\]
+Moreover, every admissible pair has a truncation with the same local value
+and one of the finite patterns just considered.  Thus no admissible pair in
+the same ambient universe levels has larger local $b$-value than
+$(\mathcal F,f)$.  This is exactly the maximizer condition required by the
+subsequent extremal saturation and pair-counting nodes.
+\end{proof}

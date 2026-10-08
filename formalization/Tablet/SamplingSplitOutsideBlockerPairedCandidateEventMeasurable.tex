@@ -1,0 +1,27 @@
+\begin{helper}
+Every paired candidate event \(F_{P,T}(x)\) defined in
+\noderef{SamplingSplitOutsideBlockerPairedCandidateEvent} is measurable
+in the product of the two activation--priority spaces, with the full
+sigma algebras on finite activation sets and Borel sigma algebras on
+the real priority coordinates. No graph or coordinate injectivity
+assumptions are needed for this measurability assertion.
+\end{helper}
+\begin{proof}
+Expand \noderef{SamplingSplitOutsideBlockerPairedCandidateEvent}.
+Activation membership at any fixed vertex is the preimage of a subset
+of the finite activation space under the corresponding coordinate
+projection, hence measurable. Each priority evaluation is a measurable
+coordinate map. A strict comparison between two evaluations is measurable
+as the preimage of the open set \(\{(a,b):a<b\}\); a test that an
+evaluation belongs to \([0,1]\) is measurable as the preimage of a closed
+interval. The negation of a blocker conjunction is consequently measurable.
+The embedded-neighbor clauses are finite intersections of implications,
+and an implication is a union of the complement of its antecedent with its
+consequent. All graph and index membership antecedents are constant events.
+The private blocker clauses also quantify over proofs of a fixed
+proposition. If no such proof exists this clause is the whole state space;
+otherwise proof irrelevance identifies all its values, leaving the single
+measurable blocker test. Finally intersect the two activation conditions,
+the embedded-neighbor clauses, and the finitely many private and retained
+tests. This is precisely \(F_{P,T}(x)\).
+\end{proof}

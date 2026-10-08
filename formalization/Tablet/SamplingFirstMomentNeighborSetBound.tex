@@ -1,0 +1,27 @@
+\begin{lemma}
+For every $\eta>0$ there are $\Delta_0$ and $\gamma_0$ such that, whenever
+$G$ is $\Delta$-regular with $\Delta\ge\Delta_0$, $\gamma\ge\gamma_0$, and
+$I$ is sampled by \noderef{RandomIndependentSetSampling}, every vertex $r$
+and every $X\subseteq N_G(r)$ satisfy
+\[
+\mathbb E|I\cap X|\le \frac{|X|}{\Delta}+\eta .
+\]
+\end{lemma}
+\begin{proof}
+Choose $\Delta_0$ large enough that \noderef{SamplingOneVertexEstimate}
+applies and $2/\Delta\le\eta$ for all $\Delta\ge\Delta_0$.  For each
+$x\in X$, that node gives
+\[
+\Pr[x\in I]=\frac{1-e^{-\gamma}}{\Delta}+O(\Delta^{-2})
+\le \frac1\Delta+\frac{2}{\Delta^2}.
+\]
+Since $X\subseteq N_G(r)$ and $G$ is $\Delta$-regular, $|X|\le\Delta$.
+Summing the one-vertex bound over $x\in X$ gives
+\[
+\mathbb E|I\cap X|
+=\sum_{x\in X}\Pr[x\in I]
+\le \frac{|X|}{\Delta}+\frac{2|X|}{\Delta^2}
+\le \frac{|X|}{\Delta}+\frac2\Delta
+\le \frac{|X|}{\Delta}+\eta .
+\]
+\end{proof}

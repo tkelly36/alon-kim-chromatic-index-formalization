@@ -1,0 +1,40 @@
+\begin{helper}
+Let \(V\) be finite, let \(u\ne v\), and let
+\(B_U,B_T\subseteq V\setminus\{u,v\}\) be disjoint.  If
+\(0\le b\le a\le1\), then in the complementary coordinate space
+\(\mathbb R^{V\setminus\{u,v\}}\) the set of all complementary priority
+vectors \(r\) satisfying \(r(w)\in[0,1]\) for every complementary coordinate,
+\(r(z)<a\) for \(z\in B_U\), and \(r(z)<b\) for \(z\in B_T\), has volume
+\[
+a^{|B_U|}b^{|B_T|}.
+\]
+\end{helper}
+\begin{proof}
+Let \(W=V\setminus\{u,v\}\), and define
+\[
+U(w)=
+\begin{cases}
+a,&w\in B_U,\\
+b,&w\in B_T,\\
+1,&w\notin B_U\cup B_T.
+\end{cases}
+\]
+The half-open product box \(\prod_{w\in W}[0,U(w))\) is contained in the
+mixed chamber section: on \(B_U\) and \(B_T\) it gives the required strict
+upper inequalities, while on all other coordinates it lies in \([0,1]\).
+By \noderef{SamplingTwoCoordinateFiberBoxVolume}, this half-open box has
+volume \(a^{|B_U|}b^{|B_T|}\).
+
+The mixed chamber section is contained in the closed product box
+\(\prod_{w\in W}[0,U(w)]\).  The standard finite product formula for closed
+boxes gives this closed box the same volume
+\(\prod_{w\in W}U(w)\).  The same cardinality computation as in
+\noderef{SamplingTwoCoordinateFiberBoxVolume} identifies that product with
+\(a^{|B_U|}b^{|B_T|}\): \(B_U\) contributes \(|B_U|\) factors \(a\),
+\(B_T\) contributes \(|B_T|\) factors \(b\), and every other coordinate
+contributes \(1\).
+
+Thus the mixed chamber section is squeezed between two measurable product
+boxes of equal volume.  Monotonicity of Lebesgue measure gives both
+inequalities, so its volume is exactly \(a^{|B_U|}b^{|B_T|}\).
+\end{proof}

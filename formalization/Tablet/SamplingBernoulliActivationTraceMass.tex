@@ -1,0 +1,38 @@
+\begin{helper}
+Let $V$ be finite, let $p\in[0,1]$, and let $\nu$ be a measure on
+$\mathcal P(V)\times\mathbb R^V$ with the discrete and Borel product
+measurable structure. Suppose for each $F\subseteq V$,
+\[
+ \nu\{\eta:\eta_{\rm act}=F\}
+ =\operatorname{ofReal}\bigl(p^{|F|}(1-p)^{|V|-|F|}\bigr).
+\]
+For any $A\subseteq S\subseteq V$,
+\[
+ \nu\{\eta:\eta_{\rm act}\cap S=A\}
+ =\operatorname{ofReal}\bigl(p^{|A|}(1-p)^{|S|-|A|}\bigr).
+\]
+\end{helper}
+\begin{proof}
+Write $C=V\setminus S$. The activation sets with trace $A$ on $S$
+are precisely $F=A\cup E$ for $E\subseteq C$; the inverse correspondence
+is $E=F\setminus S$. Their activation fibres are measurable and pairwise
+disjoint. Finite additivity and the assumed fibre masses therefore give
+the real sum of $p^{|A\cup E|}(1-p)^{|V|-|A\cup E|}$, converted by
+$\operatorname{ofReal}$. This conversion commutes with the finite sum
+because $p$ and $1-p$ are nonnegative.
+Since $A\cap E=\varnothing$, we have
+$|A\cup E|=|A|+|E|$ and
+$|V|-|A\cup E|=(|S|-|A|)+(|C|-|E|)$.
+Factoring the common powers leaves
+\[
+ p^{|A|}(1-p)^{|S|-|A|}
+ \sum_{E\subseteq C}p^{|E|}(1-p)^{|C|-|E|}.
+\]
+To evaluate the remaining sum, expand
+$\prod_{v\in C}(p+(1-p))$ by choosing the first summand exactly at the
+indices in $E$. The term for $E$ is exactly
+$p^{|E|}(1-p)^{|C|-|E|}$. Thus the sum is
+$(p+(1-p))^{|C|}=1$. This proves the formula. The calculation involves
+only sums and products, never division, and so includes $p=0$, $p=1$,
+and empty $A$, $S$, or $C$, with zeroth powers equal to one.
+\end{proof}

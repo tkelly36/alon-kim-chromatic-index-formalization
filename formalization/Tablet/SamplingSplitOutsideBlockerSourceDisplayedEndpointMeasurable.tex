@@ -1,0 +1,57 @@
+\begin{helper}
+For a finite source graph \(G\), a root \(r\), a finite candidate set
+\(X\), a listed family of outside blockers \(z_i\), and blocker incidence
+sets \(B_i\), the displayed source endpoint event
+\[
+  D_X=\{(A,\pi):\exists x\in X,\ x\in A,\ x \hbox{ beats every active
+  neighbor in }X\cup\{r\},\ \text{and every listed blocker }z_i
+  \text{ with }x\in B_i\text{ fails the opposite strict unit-cube test}\}
+\]
+is measurable in the product measurable space on
+\(\operatorname{Finset}(V)\times (V\to\mathbb R)\), where the activation
+coordinate has the discrete measurable space and the priority coordinate has
+the finite product Borel measurable space.  The sets \(B_i\) are arbitrary
+finite incidence sets for this measurability lemma; the displayed formula
+uses them only through the tests \(x\in B_i\).  In formulas,
+\[
+  D_X=
+  \left\{(A,\pi):\exists x\in X,\ x\in A,\ 
+    \forall y\in X\cup\{r\},\ y\in A,\ Gxy\Rightarrow \pi(y)<\pi(x),
+    \ \forall i,\ x\in B_i\Rightarrow
+      \neg\bigl(z_i\in A,\ \pi(x)<\pi(z_i),\ 0\le\pi(z_i)\le1\bigr)
+  \right\}
+\]
+is measurable.
+\end{helper}
+\begin{proof}
+Because \(V\) is finite, it is enough to check measurability for the event
+attached to one fixed candidate \(x\) and then take the finite union over
+\(x\in V\).  The condition \(x\in X\) is a constant truth value, and
+\(\{(A,\pi):x\in A\}\) is measurable because the activation coordinate has
+the full discrete measurable space.
+
+For each fixed local vertex \(y\), the condition
+\[
+  y\in X\cup\{r\}\Rightarrow y\in A\Rightarrow Gxy\Rightarrow \pi(y)<\pi(x)
+\]
+is measurable.  If either \(y\notin X\cup\{r\}\) or \(Gxy\) is false, the
+condition is the whole space.  Otherwise it is the union of the measurable
+activation-complement event \(\{y\notin A\}\) and the Borel strict-inequality
+event \(\{\pi(y)<\pi(x)\}\), since coordinate projections
+\(\pi\mapsto\pi(y)\) and \(\pi\mapsto\pi(x)\) are measurable on the finite
+product priority space.  Taking the finite intersection over all \(y\in V\)
+preserves measurability.
+
+Similarly, for a fixed index \(i\), if \(x\notin B_i\) the blocker condition
+is the whole space.  If \(x\in B_i\), it is the complement of the intersection
+of the activation event \(\{z_i\in A\}\), the strict-inequality event
+\(\{\pi(x)<\pi(z_i)\}\), and the closed interval event
+\(\{0\le \pi(z_i)\le1\}\).  Each of these three events is measurable, so the
+blocker condition is measurable.  A finite intersection over \(i\) remains
+measurable.
+
+Thus the fixed-\(x\) displayed endpoint event is an intersection of measurable
+events, and is measurable.  The full event \(D_X\) is the finite union of
+these fixed-\(x\) events over the finite type \(V\), hence \(D_X\) is
+measurable.
+\end{proof}

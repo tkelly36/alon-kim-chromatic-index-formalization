@@ -1,0 +1,29 @@
+\begin{helper}
+Let $V$ be finite and let $\nu$ be a measure on
+$\mathcal P(V)\times\mathbb R^V$, with the discrete measurable structure
+on the first factor and the Borel structure on the second.
+Assume each activation fibre $H_A=\{\eta:\eta_{\rm act}=A\}$ has finite
+mass, and for every $A\subseteq V$ and $t\in[0,1]^V$ assume
+\[
+ \nu\{\eta\in H_A:0\le\pi(v)\le t_v\ (v\in V)\}
+ =\nu(H_A)\operatorname{ofReal}\Bigl(\prod_{v\in V}t_v\Bigr).
+\]
+Then for $\nu$-almost every sample, $0<\pi(v)\le1$ for every $v\in V$.
+\end{helper}
+\begin{proof}
+Put $U=\{\eta:0\le\pi(v)\le1\text{ for all }v\in V\}$.
+All activation fibres and coordinate interval events are measurable.
+The rectangle formula at $t\equiv1$ gives
+$\nu(H_A\cap U)=\nu(H_A)$. Since this mass is finite, subtraction for
+the nested measurable sets gives $\nu(H_A\setminus U)=0$.
+The finitely many activation fibres cover the whole space; hence
+$\nu(U^c)=0$ by finite subadditivity.
+For any fixed $v_0\in V$, use the threshold $t_{v_0}=0$ and $t_v=1$
+for $v\ne v_0$. Its product is zero. The associated rectangle on $H_A$
+is exactly $H_A\cap U\cap\{\pi(v_0)=0\}$, and therefore is null.
+Taking the finite union over $A$ shows $U\cap\{\pi(v_0)=0\}$ is null.
+Taking the finite union over $v_0$, and adding $U^c$, gives a null set
+outside which every coordinate is in $[0,1]$ and is not zero.
+Thus every coordinate lies in $(0,1]$, as claimed. If $V$ is empty,
+the conclusion is vacuous and the same argument has no boundary terms.
+\end{proof}

@@ -1,0 +1,137 @@
+\begin{lemma}
+For every $\eta>0$ there is $D_0$ such that, whenever $D\ge D_0$, there is a
+$3$-uniform $3$-simple hypergraph $\mathcal H$ of maximum degree at most $D$
+and an edge $e\in E(\mathcal H)$ with
+\[
+b_{L(\mathcal H),3D}(e)\ge
+1-\frac19+\frac1{3^5}-\eta .
+\]
+\end{lemma}
+\begin{proof}
+Choose an integer $D_0$ so large that $D_0\ge 4$ and
+$4/D_0\le \eta$.  Fix $D\ge D_0$, and put
+\[
+q=\left\lfloor\frac{D-1}{3}\right\rfloor .
+\]
+We construct the required multihypergraph explicitly.  The vertex set is
+\[
+V=\{0,1,2\}\times\{0,1,2\},
+\]
+with all arithmetic in the two coordinates taken modulo $3$.  Let
+\[
+e=\{(0,0),(0,1),(0,2)\}
+\]
+be the distinguished edge.  For each slope $m\in\{0,1,2\}$ and intercept
+$a\in\{0,1,2\}$ define
+\[
+L_{m,a}=\{(x,mx+a):x\in\{0,1,2\}\}.
+\]
+The edge-index set consists of one index for $e$ and, for every triple
+$(m,a,i)$ with $m,a\in\{0,1,2\}$ and $1\le i\le q$, one further index whose
+edge is $L_{m,a}$.  This is a multihypergraph in the sense of
+\noderef{MultiHypergraph}: different indices with the same $(m,a)$ and
+different $i$ have the same assigned set of vertices.
+
+Each set $L_{m,a}$ has exactly three vertices, because its first coordinates
+are the three distinct residues $0,1,2$, and $e$ plainly has three vertices.
+Thus every edge has size $3$, so $\mathcal H$ is $3$-uniform by
+\noderef{UniformHypergraph}.  Since every edge has size $3$, the intersection
+of any two distinct edge indices has size at most $3$; this includes parallel
+copies of the same $L_{m,a}$, whose intersection has size exactly $3$.
+Therefore $\mathcal H$ is $3$-simple by \noderef{TSimpleHypergraph}.
+
+We next compute degrees, using \noderef{HypergraphDegree}.  A point
+$(0,y)$ of $e$ lies in $e$.  For each slope $m$ there is exactly one intercept,
+namely $a=y$, for which $(0,y)\in L_{m,a}$, and there are $q$ indices with
+that slope and intercept.  Hence
+\[
+\deg_{\mathcal H}(0,y)=1+3q\le D,
+\]
+because $3q\le D-1$ by the definition of the floor.  Now let $x\ne 0$.
+For each slope $m$ there is exactly one intercept $a=y-mx$ for which
+$(x,y)\in L_{m,a}$, and the point is not in $e$.  Thus
+\[
+\deg_{\mathcal H}(x,y)=3q\le D.
+\]
+So \noderef{MaxDegreeAtMost} holds with parameter $D$, and together with
+the preceding uniformity and simplicity checks, \noderef{HypergraphClass}
+places $\mathcal H$ in $H(3,3,D)$.
+
+By \noderef{LineGraphOfHypergraph}, the neighbors of the edge-index $e$ are
+exactly the indices whose assigned edge intersects $e$.  For every
+$(m,a,i)$, the line $L_{m,a}$ contains the point $(0,a)$ of $e$, so every one
+of the $9q$ nonvertical line indices is a neighbor of $e$.  There are no other
+edge indices besides $e$ itself.  Hence
+\[
+\deg_{L(\mathcal H)}(e)=9q.
+\]
+
+We record the elementary intersection facts for the sets $L_{m,a}$.  First,
+$L_{m,a}\cap e=\{(0,a)\}$, since a point of $e$ has first coordinate $0$, and
+the defining equation of $L_{m,a}$ then gives second coordinate $a$.  Second,
+if $m$ is fixed and $a\ne b$, then $L_{m,a}$ and $L_{m,b}$ are disjoint:
+a common point with first coordinate $x$ would give
+$mx+a=mx+b$ modulo $3$, hence $a=b$, a contradiction.  Third, if
+$m\ne n$, then $L_{m,a}$ and $L_{n,b}$ meet in exactly one point.  Indeed,
+a common point must satisfy $(m-n)x=b-a$ modulo $3$; since the nonzero
+residues modulo $3$ are invertible, this equation has exactly one solution
+$x\in\{0,1,2\}$, and the corresponding $y=mx+a$ gives the unique common
+point.
+
+Using \noderef{IndependentPairCount}, an independent pair in the
+neighborhood of $e$ is exactly an unordered pair of neighboring edge-indices
+whose assigned hyperedges are disjoint.  The intersection facts show that this
+happens exactly when the two indices have the same slope and different
+intercepts: equal slopes with different intercepts are disjoint, equal slopes
+with the same intercept are parallel copies of the same three-vertex edge and
+therefore intersect, and different slopes intersect in one point.  There are
+$3$ choices of the slope, $\binom32=3$ unordered choices of the two
+intercepts, and then $q$ choices of the copy index over each intercept.
+Consequently
+\[
+P_{L(\mathcal H)}(e)=3\binom32 q^2=9q^2.
+\]
+
+Similarly, by \noderef{IndependentTripleCount}, an independent triple in the
+neighborhood of $e$ is exactly a three-element set of neighboring edge-indices
+that are pairwise disjoint.  The pairwise classification above implies that
+all three indices must have the same slope and pairwise different intercepts.
+For a fixed slope, this forces one index over each of the three intercepts,
+and there are $q^3$ choices of their copy indices.  With $3$ possible slopes,
+\[
+T_{L(\mathcal H)}(e)=3q^3.
+\]
+
+Substituting these exact values into \noderef{LocalBParameter} with scale
+$3D$ gives
+\[
+b_{L(\mathcal H),3D}(e)
+=\frac{9q}{3D}-\frac{9q^2}{(3D)^2}+\frac{3q^3}{(3D)^3}
+=3\frac qD-\left(\frac qD\right)^2+\frac19\left(\frac qD\right)^3.
+\]
+Write $x=q/D$ and $c=1/3$.  Since $q=\lfloor(D-1)/3\rfloor$, there is
+$s\in\{1,2,3\}$ with $D=3q+s$, so
+\[
+0\le c-x=\frac{s}{3D}\le \frac1D .
+\]
+For $0\le x\le c$, the polynomial $f(t)=3t-t^2+t^3/9$ satisfies
+\[
+f(c)-f(x)=(c-x)\left(3-(c+x)+\frac{c^2+cx+x^2}{9}\right).
+\]
+The parenthesized factor is less than $4$, because $0\le x,c\le 1$ makes it
+at most $3+1/3$.  Hence
+\[
+\left(1-\frac19+\frac1{3^5}\right)
+-b_{L(\mathcal H),3D}(e)
+=f(c)-f(x)
+< \frac4D
+\le \frac4{D_0}
+\le \eta .
+\]
+Therefore
+\[
+b_{L(\mathcal H),3D}(e)\ge
+1-\frac19+\frac1{3^5}-\eta,
+\]
+as required.
+\end{proof}

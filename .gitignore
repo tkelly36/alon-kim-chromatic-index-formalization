@@ -1,0 +1,16 @@
+.DS_Store
+*.aux
+*.log
+*.out
+*.olean
+*.ilean
+
+# Lean/Trellis runtime state
+**/.lake/
+**/.trellis/
+**/.trellis-history/
+
+# The frozen manuscript and local operator state are not public artifacts.
+paper/*
+!paper/README.md
+source-checkpoint/

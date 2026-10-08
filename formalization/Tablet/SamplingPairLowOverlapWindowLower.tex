@@ -1,0 +1,76 @@
+\begin{helper}
+Let \(\Delta>0\), let \(0\le\gamma_0\le\gamma\le\Delta\), and let
+\(\gamma_0<\Delta\).  Fix a natural exponent \(N\) with
+\(N\le\Delta\), and suppose \(N/\Delta=\lambda\).  Assume the compact-window
+error condition
+\[
+\frac{\gamma_0^2}{\Delta-\gamma_0}\le -\log(1-\alpha)
+\]
+with \(1-\alpha>0\).  If the exponential low-overlap window has the margin
+\[
+2\int_0^{\gamma_0}\int_x^{\gamma_0}
+(1-\alpha)e^{-\lambda x}(1-\alpha)e^{-y}\,dy\,dx
+\ge
+\frac{2}{1+\lambda}-6\alpha,
+\]
+then the full finite pair chamber satisfies
+\[
+\frac2{\Delta^2}\int_0^\gamma\int_x^\gamma
+\left(1-\frac{x}{\Delta}\right)^N
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx
+\ge
+\frac{2/(1+\lambda)-6\alpha}{\Delta^2}.
+\]
+\end{helper}
+\begin{proof}
+On the fixed window \(0\le x\le y\le\gamma_0\), the hypotheses
+\(\gamma_0<\Delta\), \(N\le\Delta\), and
+\(\gamma_0^2/(\Delta-\gamma_0)\le-\log(1-\alpha)\) allow us to apply
+\noderef{SamplingFiniteProductPointwiseLower}.  For the first factor, using
+\(N/\Delta=\lambda\), this gives
+\[
+\left(1-\frac{x}{\Delta}\right)^N
+\ge (1-\alpha)e^{-\lambda x}.
+\]
+For the second factor, applying the same node with exponent \(\Delta\) gives
+\[
+\left(1-\frac{y}{\Delta}\right)^\Delta
+\ge (1-\alpha)e^{-y}.
+\]
+Since \(1-\alpha>0\), both exponential lower factors are nonnegative.
+Multiplying the two pointwise inequalities therefore yields, throughout the
+window,
+\[
+\left(1-\frac{x}{\Delta}\right)^N
+\left(1-\frac{y}{\Delta}\right)^\Delta
+\ge
+(1-\alpha)e^{-\lambda x}(1-\alpha)e^{-y}.
+\]
+
+Both sides are continuous functions on the compact chamber.  Interval-integral
+monotonicity in \(y\in[x,\gamma_0]\) and then in \(x\in[0,\gamma_0]\) gives
+\[
+\int_0^{\gamma_0}\int_x^{\gamma_0}
+(1-\alpha)e^{-\lambda x}(1-\alpha)e^{-y}\,dy\,dx
+\le
+\int_0^{\gamma_0}\int_x^{\gamma_0}
+\left(1-\frac{x}{\Delta}\right)^N
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx .
+\]
+The finite integrand is nonnegative on the relevant chamber, so enlarging
+first the inner interval from \([x,\gamma_0]\) to \([x,\gamma]\), and then
+the outer interval from \([0,\gamma_0]\) to \([0,\gamma]\), can only increase
+the integral.  Hence the exponential window integral is at most the full
+finite chamber integral over \(0\le x\le y\le\gamma\).
+
+Multiplying this comparison by the positive scale \(2/\Delta^2\) and using
+the assumed exponential-window margin gives
+\[
+\frac2{\Delta^2}\int_0^\gamma\int_x^\gamma
+\left(1-\frac{x}{\Delta}\right)^N
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx
+\ge
+\frac{2/(1+\lambda)-6\alpha}{\Delta^2},
+\]
+as claimed.
+\end{proof}

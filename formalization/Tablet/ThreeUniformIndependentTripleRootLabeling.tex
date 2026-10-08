@@ -1,0 +1,18 @@
+\begin{lemma}
+Let $H$ be a hypergraph and let $v_0,v_1,v_2$ cover the
+vertices of an edge $f$. Let $S$ be a set of three edge indices, each
+meeting $f$, and suppose distinct members of $S$ are nonadjacent in
+the line graph. Then there is a map $q:\{0,1,2\}\to S$ whose image is
+$S$, with $v_i\in H(q(i))$. Moreover, any member of $S$ containing
+$v_i$ equals $q(i)$.
+\end{lemma}
+\begin{proof}
+Choose for each member $e$ of $S$ a vertex of $H(e)\cap H(f)$ and an
+index $r(e)$ representing it. Distinct members cannot have the same
+index: they would share $v_{r(e)}$ and hence be adjacent by
+\noderef{LineGraphOfHypergraph}. Thus $r$ is an injection between two
+three-element sets, and is a bijection. Take its inverse $q$.
+Its image is $S$ and $q(i)$ contains $v_i$. Any other member containing
+$v_i$ would intersect $q(i)$, contradicting nonadjacency. This proves
+the final uniqueness assertion.
+\end{proof}

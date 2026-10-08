@@ -1,0 +1,14 @@
+\begin{lemma}
+Let $G$ be a finite simple graph and $q$ a positive natural number.
+If every vertex has degree less than $q$, then there exists a coloring
+$c:V(G)\to\{0,\ldots,q-1\}$ with $c(e)\ne c(f)$ whenever $e,f$ are adjacent.
+\end{lemma}
+\begin{proof}
+Induct on a finite set $S$ of vertices to color $G[S]$ with the given palette.
+The empty set has a coloring. To insert $a\notin S$, collect the colors
+of its neighbors in $S$. There are at most $\deg_G(a)<q$ such colors,
+so some palette color is absent. Assign it to $a$ and keep the colors on
+$S$. Edges inside $S$ remain properly colored, and every edge from $a$
+has different colors at its ends. Applying this induction to all vertices
+proves the claim.
+\end{proof}

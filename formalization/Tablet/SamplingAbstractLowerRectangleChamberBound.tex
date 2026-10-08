@@ -1,0 +1,70 @@
+\begin{helper}
+Let \(V\) be finite, let \(\nu\) be a finite-on-the-fiber measure on a space
+\(\Omega\), let \(F\subseteq\Omega\) be a fiber event, and let
+\(p:\Omega\to\mathbb R^V\) be a priority-coordinate map.  Suppose that the
+fiber priority coordinates have the lower-rectangle law with mass \(M\):
+for every \(t=(t_v)_{v\in V}\in[0,1]^V\),
+\[
+\nu\{\omega:F(\omega),\ 0\le p(\omega)_v\le t_v\text{ for every }v\}
+=M\operatorname{ofReal}\Bigl(\prod_{v\in V}t_v\Bigr),
+\]
+where \(M=\nu\{\omega:F(\omega)\}\) and this fiber mass is finite.  Let
+\(\gamma>0\), let \(a,b,c\in V\) be pairwise distinct, and let
+\(S_x,S_y,S_z\subseteq V\) be pairwise disjoint and disjoint from
+\(\{a,b,c\}\).  Then
+\[
+\begin{aligned}
+&\nu\bigl(\{\omega:F(\omega),\ p_a(\omega)\le p_b(\omega)\le p_c(\omega),\\
+&\qquad\qquad\quad
+  p_w(\omega)<p_a(\omega)\ (w\in S_x),\
+  p_w(\omega)<p_b(\omega)\ (w\in S_y),\
+  p_w(\omega)<p_c(\omega)\ (w\in S_z)\}\\
+&\qquad\qquad\cap\{\omega:p_v(\omega)\in[0,1]\text{ for every }v\in V\}\bigr)
+\end{aligned}
+\]
+is at most
+\[
+M\operatorname{ofReal}\left(
+\frac{1}{\gamma^3}
+\int_{0\le z\le y\le x\le\gamma}
+\left(1-\frac{x}{\gamma}\right)^{|S_x|}
+\left(1-\frac{y}{\gamma}\right)^{|S_y|}
+\left(1-\frac{z}{\gamma}\right)^{|S_z|}\,dx\,dy\,dz\right).
+\]
+\end{helper}
+\begin{proof}
+Restrict \(\nu\) to the fiber \(F\) and push it forward by the coordinate map
+\(p\).  The lower-rectangle hypothesis says that this pushed-forward finite
+measure agrees on every anchored rectangle
+\(\prod_v[0,t_v]\), \(0\le t_v\le1\), with \(M\) times the product Lebesgue
+probability measure on \([0,1]^V\).  These anchored rectangles form a
+pi-system generating the Borel sigma-algebra of the finite cube, and the two
+finite measures have the same total mass \(M\).  By the finite-measure
+uniqueness theorem for generated sigma-algebras, the two measures therefore
+agree on every Borel subset of the cube.
+
+The chamber event in the statement is a Borel subset of the cube because it is
+defined by finitely many coordinate inequalities.  We may consequently compute
+its measure under \(M\) times product Lebesgue measure on \([0,1]^V\).  Since
+the sets \(S_x,S_y,S_z\) are pairwise disjoint and avoid \(a,b,c\), Fubini's
+theorem factors the outside-coordinate conditions independently once the three
+coordinates \(p_a,p_b,p_c\) are fixed.  For fixed values
+\(\alpha=p_a\), \(\beta=p_b\), and \(\chi=p_c\) with
+\(\alpha\le\beta\le\chi\), the factors are
+\(\alpha^{|S_x|}\), \(\beta^{|S_y|}\), and \(\chi^{|S_z|}\); all other
+coordinates are unrestricted and contribute \(1\).  Boundary hyperplanes have
+zero product measure, so the strict outside inequalities and weak ordered
+coordinate inequalities are represented by the same iterated integral.
+
+Finally apply the affine change of variables
+\[
+x=\gamma(1-\alpha),\qquad y=\gamma(1-\beta),\qquad z=\gamma(1-\chi).
+\]
+Because \(\gamma>0\), this maps the region
+\(0\le\alpha\le\beta\le\chi\le1\) bijectively onto
+\(0\le z\le y\le x\le\gamma\) with Jacobian factor \(\gamma^{-3}\), and it
+turns the three outside-coordinate factors into
+\((1-x/\gamma)^{|S_x|}\), \((1-y/\gamma)^{|S_y|}\), and
+\((1-z/\gamma)^{|S_z|}\).  Multiplying by the fiber mass \(M\) gives exactly
+the displayed bound.
+\end{proof}

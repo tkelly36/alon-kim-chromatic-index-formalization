@@ -1,0 +1,31 @@
+\begin{lemma}
+Let $H$ have finitely many edge indices, and let $v_0,v_1,v_2$ cover
+the vertices of an edge $f$. Let $x_0,x_1,x_2$ be vertex slots, each
+either a real vertex or a dummy symbol. Define $b_{ij}$ to be the
+number of edge indices containing $v_i$ and $x_j$ for a real slot,
+and zero for a dummy slot. Let $T$ be a finite family of three-element
+sets of edge indices meeting $f$ whose distinct members are nonadjacent in the
+line graph. Suppose every edge in every member of $T$ contains a real
+slot vertex. Then
+\[
+|T|\le \sum_{p\in S_3} b_{0,p(0)}b_{1,p(1)}b_{2,p(2)}.
+\]
+\end{lemma}
+\begin{proof}
+For each $S\in T$, use \noderef{ThreeUniformIndependentTripleRootLabeling}
+to choose its root-labelled tuple $q_S$. Its image is the three-element
+set $S$, so it is injective. For each root $i$, choose a real slot
+$r_S(i)$ whose vertex lies in $H(q_S(i))$. These three chosen slot
+indices are distinct: equality of two indices would give a vertex
+shared by distinct members of $S$, contrary to nonadjacency and
+\noderef{LineGraphOfHypergraph}. Thus $r_S$ is a permutation $p_S$.
+
+For a fixed permutation $p$, let $F_{p,i}$ be the edge indices containing
+$v_i$ and a real vertex in slot $p(i)$. For a dummy slot this fiber is
+empty; otherwise its cardinality is precisely $b_{i,p(i)}$.
+Send $S$ to $(p_S,q_S)$ in the disjoint union over permutations of
+$F_{p,0}\times F_{p,1}\times F_{p,2}$. This map is injective because
+the image of $q_S$ recovers $S$. Counting this disjoint union proves
+the inequality, including the case of dummy slots. No uniqueness of
+the initial slot choices is needed; one choice is fixed for each $S$.
+\end{proof}

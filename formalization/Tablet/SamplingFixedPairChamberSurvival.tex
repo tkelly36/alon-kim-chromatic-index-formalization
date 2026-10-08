@@ -1,0 +1,66 @@
+\begin{helper}
+Let $G$ be a $\Delta$-regular graph and let $I$ be sampled from
+\noderef{RandomIndependentSetSampling} with parameter $\gamma$.  Fix
+$r$ and $X\subseteq N_G(r)$, and assume that no two distinct vertices of
+$X$ have a common neighbor outside $N_G[r]$.  If $u,v\in X$ are distinct
+and non-adjacent, then, writing
+$c_{uv}=|N_G(u)\cap N_G(v)|$,
+\[
+\Pr[u\in I\hbox{ and }v\in I]
+=
+\frac{2}{\Delta^2}
+\int_{0\le x\le y\le\gamma}
+\left(1-\frac{x}{\Delta}\right)^{\Delta-c_{uv}}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx .
+\]
+\end{helper}
+\begin{proof}
+By \noderef{RandomIndependentSetSampling}, the random output is obtained by
+first activating each vertex independently with probability $\gamma/\Delta$,
+then assigning independent uniform priorities, and then retaining exactly the
+activated vertices whose activated neighbors all have smaller priority.  Thus
+the event $\{u,v\subseteq I\}$ is the event that both $u$ and $v$ are
+activated and neither is defeated by an activated neighbor of larger priority.
+
+Condition on the activations of $u$ and $v$.  The two activation probabilities
+contribute the factor $(\gamma/\Delta)^2$.  Write
+$x=\gamma(1-\pi(u))$ and $y=\gamma(1-\pi(v))$.  Since the priorities are
+uniform and independent, the pair $(x,y)$ is uniformly distributed on
+$[0,\gamma]^2$; after the activation factor is included this gives density
+$dx\,dy/\Delta^2$ on the priority square.  The diagonal $x=y$ has measure zero,
+so it may be assigned to either chamber without changing the probability.
+
+On the chamber $x\le y$, equivalently $\pi(u)\ge\pi(v)$, a neighbor adjacent
+only to $u$ defeats $u$ precisely when it is activated and has priority larger
+than $\pi(u)$, which has conditional probability $x/\Delta$.  Such a neighbor
+therefore contributes the survival factor $1-x/\Delta$.  A neighbor adjacent
+to $v$ defeats $v$ if it is activated with priority larger than $\pi(v)$,
+which has conditional probability $y/\Delta$, so it contributes
+$1-y/\Delta$.  A common neighbor of $u$ and $v$ defeats at least one of the two
+vertices on this chamber exactly when it is activated with priority larger
+than $\pi(v)$; it therefore also contributes $1-y/\Delta$.
+
+The hypotheses give the required counts.  Since $G$ is $\Delta$-regular,
+each of $u$ and $v$ has exactly $\Delta$ neighbors.  There are
+$c_{uv}$ common neighbors, hence $\Delta-c_{uv}$ neighbors of $u$ that are not
+neighbors of $v$, and $\Delta-c_{uv}$ neighbors of $v$ that are not neighbors
+of $u$.  The clean-neighborhood assumption ensures that every common neighbor
+of the independent pair $u,v\in X$ lies in the closed neighborhood of $r$, so
+there is no additional outside common-neighbor correlation beyond this actual
+intersection count.  Multiplying the independent survival factors on
+$x\le y$ gives
+\[
+\left(1-\frac{x}{\Delta}\right)^{\Delta-c_{uv}}
+\left(1-\frac{y}{\Delta}\right)^{c_{uv}}
+\left(1-\frac{y}{\Delta}\right)^{\Delta-c_{uv}}
+=
+\left(1-\frac{x}{\Delta}\right)^{\Delta-c_{uv}}
+\left(1-\frac{y}{\Delta}\right)^\Delta .
+\]
+
+The chamber $y\le x$ is identical after interchanging $u$ and $v$ and then
+renaming the two variables.  Therefore the two ordered chambers contribute two
+equal copies of the displayed integral over $0\le x\le y\le\gamma$.  This is
+exactly the asserted formula for the probability that the fixed independent
+pair $u,v$ survives.
+\end{proof}

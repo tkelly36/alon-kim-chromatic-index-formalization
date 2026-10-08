@@ -1,0 +1,208 @@
+\begin{lemma}
+For every $\eta>0$ and every positive integer $k$, there is $D_0$ such that,
+whenever $D\ge D_0$, $\mathcal H$ is a $k$-uniform $k$-simple hypergraph
+with maximum degree at most $D$, and $e\in E(\mathcal H)$, one has
+\[
+b_{L(\mathcal H),kD}(e)
+\le
+1-\frac{k-1}{2k^2}
++\frac{(k-1)(k-2)}{6k^3\sqrt{k}}+\eta .
+\]
+\end{lemma}
+\begin{proof}
+Fix $\eta>0$ and $k\in\mathbb Z^+$.  We first make the finite local-pattern
+reduction required for a universal statement.  For fixed $D$ and an
+arbitrary admissible pair $(\mathcal H,e)$, retain $e$, every edge meeting
+$e$, and all vertices lying in those retained edges.  The line graph
+\noderef{LineGraphOfHypergraph} has edge indices as vertices and adjacency
+given by nonempty intersection of the corresponding hyperedges.  Hence the
+induced line-graph neighborhood of $e$ is unchanged by this truncation.
+Consequently the line-graph degree of $e$, the independent-pair count
+\noderef{IndependentPairCount}, the independent-triple count
+\noderef{IndependentTripleCount}, and the value of
+\noderef{LocalBParameter} at $e$ are unchanged.
+
+The truncation preserves membership in $H(k,k,D)$.  Each retained edge keeps
+its original size, so \noderef{UniformHypergraph} is preserved.  Pairwise
+edge intersections are original intersections, so \noderef{TSimpleHypergraph}
+is preserved.  Vertex degrees only decrease when edge indices are discarded;
+using \noderef{HypergraphDegree} and \noderef{MaxDegreeAtMost}, the maximum
+degree is still at most $D$.  Thus \noderef{HypergraphClass} still applies.
+There are at most $kD$ retained neighboring edge indices and finitely many
+retained vertices for fixed $D$ and $k$, so there are only finitely many
+truncated local patterns up to relabeling.  Choose a representative
+$(\mathcal F,f)$ maximizing $b_{L(\mathcal H),kD}(e)$ among these finitely
+many patterns.  Proving the asserted bound for this representative proves it
+for the original pair, because the original pair has the same local
+parameter as its truncation and the representative is maximal among all
+truncated local patterns.
+Moreover, every admissible pair has one of these truncations with the same
+local parameter, so this representative also satisfies the maximizer
+hypothesis appearing in the extremal nodes cited below.
+
+We next split off the case $k=1$.  In a $1$-uniform hypergraph every edge is
+a single vertex.  If a neighboring edge $g$ of $e$ meets $e$, then both are
+the same singleton as subsets of the vertex set; distinct edge indices may
+be parallel, but every two such neighbors meet in that same vertex.  Thus the
+line-graph neighborhood of $e$ is a clique.  Consequently there are no
+independent pairs and no independent triples in this neighborhood, so
+\noderef{IndependentPairCount} and \noderef{IndependentTripleCount} give
+$P_{L(\mathcal H)}(e)=T_{L(\mathcal H)}(e)=0$.  The maximum-degree condition
+in \noderef{HypergraphClass}, interpreted through
+\noderef{HypergraphDegree} and \noderef{MaxDegreeAtMost}, says that the
+single vertex of $e$ lies in at most $D$ edge indices; excluding $e$ itself,
+\[
+\deg_{L(\mathcal H)}(e)\le D-1.
+\]
+Since in this case the scale in \noderef{LocalBParameter} is $kD=D$, we have
+\[
+b_{L(\mathcal H),D}(e)
+=\frac{\deg_{L(\mathcal H)}(e)}D
+\le \frac{D-1}{D}\le 1\le 1+\eta .
+\]
+For $k=1$ the displayed bound in the statement is exactly $1+\eta$, because
+both numerator factors $k-1$ in the correction terms vanish.  This proves
+the lemma when $k=1$.
+
+Assume from now on that $k\ge2$.  This is the only case in which we use the
+$k$-partite triangle bound, so the denominator $\binom{k}{2}$ is positive.
+By \noderef{KUniformKSimpleExtremalSaturation}, after increasing $D_0$ if
+necessary, the extremal representative satisfies
+\[
+\deg_{L(\mathcal F)}(f)=k(D-1)=kD-k. \tag{1}
+\]
+By \noderef{KUniformKSimplePairLowerBound},
+\[
+P_{L(\mathcal F)}(f)\ge \frac{k-1}{2}D^2-k^2D. \tag{2}
+\]
+Set
+\[
+a=\frac{k-1}{2},\qquad
+y=\frac{P_{L(\mathcal F)}(f)}{D^2}.
+\]
+Then (2) says
+\[
+y\ge a-\frac{k^2}{D}. \tag{3}
+\]
+Increasing $D_0$ once more, we may and do assume
+$k^2/D\le a$, so the lower endpoint in (3) is nonnegative.
+
+Independent triples in $N_{L(\mathcal F)}(f)$ are triangles in the complement
+of the graph induced by $L(\mathcal F)$ on that neighborhood.  The complement
+is $k$-partite.  Indeed, \noderef{KUniformKSimpleExtremalSaturation} also
+says that each of the $k$ vertices of $f$ has degree $D$, so there are
+$k(D-1)$ incidences between vertices of $f$ and edges other than $f$.  The
+same node says that there are exactly $k(D-1)$ distinct neighboring edge
+indices.  Since every neighbor contains at least one vertex of $f$, each
+neighbor contains exactly one such vertex.  Partition the neighbors according
+to that unique vertex.  Two neighbors in the same part share that vertex, so
+they are adjacent in the line graph and therefore nonadjacent in the
+complement; hence the complement is $k$-partite.  The number of edges of this
+complement is precisely $P_{L(\mathcal F)}(f)$ by
+\noderef{IndependentPairCount}.  Hence
+\noderef{KPartiteTriangleCount} gives
+\[
+T_{L(\mathcal F)}(f)
+\le
+\binom{k}{3}
+\left(\frac{P_{L(\mathcal F)}(f)}{\binom{k}{2}}\right)^{3/2}. \tag{4}
+\]
+
+Also,
+\[
+P_{L(\mathcal F)}(f)\le \binom{\deg_{L(\mathcal F)}(f)}2
+=\binom{kD-k}{2}<\frac{k^2D^2}{2},
+\]
+because $P$ counts independent pairs among the neighbors of $f$.  Therefore
+\[
+0\le y<\frac{k^2}{2}. \tag{5}
+\]
+
+Substitute (1), the definition of $y$, and (4) into
+\noderef{LocalBParameter}:
+\[
+\begin{aligned}
+b_{L(\mathcal F),kD}(f)
+&\le
+\frac{kD-k}{kD}
+-\frac{P_{L(\mathcal F)}(f)}{(kD)^2}\\
+&\quad+
+\frac{\binom{k}{3}
+\left(P_{L(\mathcal F)}(f)/\binom{k}{2}\right)^{3/2}}
+{(kD)^3}.
+\end{aligned}
+\]
+Since $P_{L(\mathcal F)}(f)=yD^2$, this becomes
+\[
+\begin{aligned}
+b_{L(\mathcal F),kD}(f)
+&\le
+1-\frac1D-\frac{y}{k^2}
++c_k y^{3/2}, \tag{6}
+\end{aligned}
+\]
+where
+\[
+c_k=\frac{\binom{k}{3}}{k^3\binom{k}{2}^{3/2}} .
+\]
+
+It remains only to check the one-variable estimate on the whole feasible
+interval.  Define
+\[
+F(x)=1-\frac{x}{k^2}+c_k x^{3/2}
+\qquad (x\ge0).
+\]
+For $0\le x\le k^2/2$,
+\[
+F'(x)=-\frac1{k^2}+\frac32 c_k\sqrt{x}
+\le
+-\frac1{k^2}+\frac32 c_k\frac{k}{\sqrt2}.
+\]
+A direct simplification gives
+\[
+\frac32 c_k\frac{k}{\sqrt2}
+=\frac{k-2}{2k^{5/2}\sqrt{k-1}}
+\le \frac1{k^2},
+\]
+because $k-2\le 2\sqrt{k(k-1)}$ for every $k\ge2$.  Hence $F$ is
+nonincreasing on $[0,k^2/2]$.
+
+By (3) and (5), the value $y$ in (6) lies in the interval
+$[a-k^2/D,k^2/2]$.  Since $F$ is nonincreasing there,
+\[
+F(y)\le F\left(a-\frac{k^2}{D}\right).
+\]
+On the interval $[a-k^2/D,a]$ the same derivative formula gives
+$F'(x)\ge -1/k^2$, and so
+\[
+F\left(a-\frac{k^2}{D}\right)
+\le F(a)+\frac1D.
+\]
+Combining this with (6) yields
+\[
+b_{L(\mathcal F),kD}(f)\le F(a).
+\]
+Finally,
+\[
+\begin{aligned}
+F(a)
+&=
+1-\frac{k-1}{2k^2}
++\frac{\binom{k}{3}}{k^3\binom{k}{2}^{3/2}}
+\left(\frac{k-1}{2}\right)^{3/2}\\
+&=
+1-\frac{k-1}{2k^2}
++\frac{(k-1)(k-2)}{6k^3\sqrt{k}},
+\end{aligned}
+\]
+where the last equality is the cancellation
+\[
+\frac{\binom{k}{3}\left((k-1)/2\right)^{3/2}}
+{k^3\left(k(k-1)/2\right)^{3/2}}
+=\frac{(k-1)(k-2)}{6k^3\sqrt{k}}.
+\]
+Thus the desired bound holds for the extremal representative with room to
+spare, and therefore also with the extra $+\eta$ in the statement.  The
+finite local-pattern reduction at the start transfers the same bound back to
+the original pair $(\mathcal H,e)$.
+\end{proof}

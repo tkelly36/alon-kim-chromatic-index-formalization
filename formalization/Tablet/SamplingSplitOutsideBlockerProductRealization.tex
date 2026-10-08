@@ -1,0 +1,23 @@
+\begin{definition}
+For finite $V,V'$, $p\in\mathbb R$, $\phi:V\to V'$, $S\subseteq V$, and a
+measure $\lambda$ on the natural paired activation--priority space, a
+copied-product realization consists of a finite type $T$, injections
+$s:V\to T$, $t:V'\to T$, and the following properties:
+\[
+s(v)=t(v')\quad\Longleftrightarrow\quad v\in S\text{ and }\phi(v)=v',
+\qquad T=s(V)\cup t(V').
+\]
+The map $D_{s,t}$ of
+\noderef{SamplingSplitOutsideBlockerProductDecode} is measurable from the
+finite product Borel space $(\mathbb R\times\mathbb R)^T$ to the paired
+space (discrete activation sets and Borel priority coordinates), and
+\[
+\lambda=(D_{s,t})_*\bigotimes_{a\in T}
+ \left[(\operatorname{ofReal}(p)\delta_1+
+ \operatorname{ofReal}(1-p)\delta_0)\otimes
+ (\operatorname{Leb}|_{[0,1]})\right].
+\]
+For $0\le p\le1$ the first factor is the real-coded Bernoulli law.
+Thus common coordinates are copied literally, while all distinct tags carry
+independent activation--priority pairs.
+\end{definition}

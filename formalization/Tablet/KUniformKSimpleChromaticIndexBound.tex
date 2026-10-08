@@ -1,0 +1,101 @@
+\begin{theorem}
+For each $\iota>0$ and $k\in\mathbb Z^+$, there is $D_0$ such that if
+$D\ge D_0$ and $\mathcal H$ is a $k$-uniform $k$-simple hypergraph with
+maximum degree at most $D$, then
+\[
+\chi'(\mathcal H)\le
+\left(1-\frac{k-1}{2k^2}
++\frac{(k-1)(k-2)}{6k^3\sqrt{k}}+\iota\right)kD.
+\]
+\end{theorem}
+\begin{proof}
+Fix $\iota>0$ and a positive integer $k$.  First consider the case
+$k=1$.  Then every edge of $\mathcal H$ consists of a single vertex by
+\noderef{UniformHypergraph}.  For each vertex $v$, at most $D$ edge indices
+are incident with $v$ by \noderef{MaxDegreeAtMost} and
+\noderef{HypergraphDegree}.  Color the edges incident with each fixed
+vertex injectively from a common set of $D$ colors, reusing the same color
+set at different vertices.  Edges supported on different vertices are
+disjoint, and edges supported on the same vertex receive distinct colors, so
+this is a proper edge-coloring in the sense of
+\noderef{ProperEdgeColoring}.  Hence
+\noderef{ChromaticIndexAtMostReal} gives $\chi'(\mathcal H)\le D$.  When
+$k=1$, the coefficient in the theorem is $1+\iota$, so
+$D\le(1+\iota)D$, and the desired bound follows.
+
+We may therefore assume $k\ge2$.  Put
+\[
+c_k=
+1-\frac{k-1}{2k^2}
++\frac{(k-1)(k-2)}{6k^3\sqrt{k}}.
+\]
+For $k\ge2$ the elementary inequality $c_k<1$ holds: the positive term is
+strictly smaller than $(k-1)/(2k^2)$ after clearing denominators and using
+$k-2<3k\sqrt{k}$ for $k\ge2$. Also $c_k>0$: the subtracted term
+$(k-1)/(2k^2)$ is less than $1$, and the final term is nonnegative.
+Set $\varepsilon=\min\{\iota/2,(1-c_k)/2\}>0$ and
+$\theta_*=c_k+\varepsilon\in(0,1)$. Then $2\varepsilon\le\iota$.
+Let $D_g$ be the natural threshold from \noderef{GeneralColoringTheorem}
+for $\varepsilon,k$, and let $D_b$ be the threshold from
+\noderef{KUniformKSimpleBParameterEstimate} for error $\varepsilon$ and $k$.
+Choose a natural number $N>3(D_b+1)/\varepsilon$ and put
+$D_0=\max\{D_g,N\}$. In particular, for every natural $D\ge D_0$,
+$\varepsilon D/3>D_b+1$.
+
+Now let $D\ge D_0$ and let $\mathcal H\in H(k,k,D)$.  By
+\noderef{HypergraphClass}, this means that $\mathcal H$ is $k$-uniform,
+$k$-simple, and has maximum degree at most $D$; these are precisely the
+three components \noderef{UniformHypergraph}, \noderef{TSimpleHypergraph},
+and \noderef{MaxDegreeAtMost}.  We verify the hypothesis needed to apply
+\noderef{GeneralColoringTheorem} to $\mathcal H$ with parameter
+$\theta_*$.
+
+Let $D'=r\ge \varepsilon D/3$ be real, and let
+$H\subseteq\mathcal H$ be a sub-hypergraph with
+$\Delta(H)\le D'$.  The relation $H\subseteq\mathcal H$ is
+\noderef{SubhypergraphOf}: there is an injective map from the edge indices
+of $H$ to those of $\mathcal H$ preserving their vertex sets.
+By \noderef{SubhypergraphInheritance}, $H$ is still $k$-uniform and
+$k$-simple. In particular, distinct child edge indices have distinct
+ambient representatives, so the ambient simplicity bound applies.
+Set $n=\lfloor r\rfloor_+$. By \noderef{RealDegreeFloorBound}, the real
+degree bound implies \noderef{MaxDegreeAtMost} at the natural bound $n$.
+Also $r\ge D_b+1\ge1$, so $n\ge D_b$ and $n\ge1$.
+Thus \noderef{HypergraphClass} places $H$ in $H(k,k,n)$, and
+\noderef{KUniformKSimpleBParameterEstimate} applies at $n$.
+For every edge
+$e\in E(H)$,
+\[
+b^{\mathbb R}_{L(H),kr}(e)
+\le b_{L(H),kn}(e)
+\le
+1-\frac{k-1}{2k^2}
++\frac{(k-1)(k-2)}{6k^3\sqrt{k}}+\varepsilon
+=\theta_* .
+\]
+The first inequality is \noderef{LocalBParameterRealFloorTransfer};
+its hypotheses hold because $k>0$, $H$ is $k$-uniform, $r\ge1$, and
+all vertex degrees are at most $r$.
+This is exactly the local $b$-parameter hypothesis in
+\noderef{GeneralColoringTheorem}; the graph in that hypothesis is
+\noderef{LineGraphOfHypergraph} and the parameter is
+\noderef{LocalBParameterReal}. We apply the real main parameter of that
+theorem to the real cast of our original natural $D$.
+
+Applying \noderef{GeneralColoringTheorem} gives
+\[
+\chi'(\mathcal H)\le(\theta_*+\varepsilon)kD.
+\]
+Finally $2\varepsilon\le\iota$, so
+\[
+\theta_*+\varepsilon
+=
+1-\frac{k-1}{2k^2}
++\frac{(k-1)(k-2)}{6k^3\sqrt{k}}+2\varepsilon
+\le
+1-\frac{k-1}{2k^2}
++\frac{(k-1)(k-2)}{6k^3\sqrt{k}}+\iota.
+\]
+Substituting this inequality into the preceding coloring bound gives the
+claimed estimate.
+\end{proof}

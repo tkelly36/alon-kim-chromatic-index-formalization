@@ -1,0 +1,57 @@
+\begin{lemma}
+Let $\mathcal H$ be a $3$-uniform $2$-simple hypergraph of maximum degree at
+most $D$, and let $e\in E(\mathcal H)$ intersect exactly $3(D-1)$ other
+edges.  Put
+\[
+X(e,\mathcal H)=
+\left(\bigcup\{h\in E(\mathcal H):h\cap e\ne\emptyset\}\right)\setminus e
+\]
+and, for $v\in e$ and $x\in X(e,\mathcal H)$, let
+$\deg_{\mathcal H}(v,x)$ be the number of edges containing both $v$ and $x$.
+Then:
+\begin{enumerate}
+\item every edge $h\ne e$ satisfies $|h\cap e|\le 1$;
+\item for every $x\in X(e,\mathcal H)$,
+$\sum_{v\in e}\deg_{\mathcal H}(v,x)\le D$;
+\item for every $v\in e$,
+$\sum_{x\in X(e,\mathcal H)}\deg_{\mathcal H}(v,x)=2(D-1)$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+The hypotheses are the $3$-uniform and maximum-degree components of the
+local $H(3,2,D)$ setup described by \noderef{HypergraphClass}.  By
+\noderef{UniformHypergraph}, the edge $e$ has exactly three vertices; write
+$e=\{v_1,v_2,v_3\}$.
+
+For the first assertion, suppose some edge $h\ne e$ contains two
+vertices of $e$, say $v_1$ and $v_2$.  Counting neighboring edges of $e$ by
+the vertex of $e$ that they contain gives at most
+$3(D-1)$ incidences: by \noderef{MaxDegreeAtMost} and the incidence-counting
+definition of degree in \noderef{HypergraphDegree}, each $v_i$ belongs to at
+most $D$ edges of $\mathcal H$, hence to at most $D-1$ edges other than
+$e$.  The edge $h$ is counted at least twice, so the number of distinct edges
+meeting $e$ is at most $3(D-1)-1$, contradicting the hypothesis that there
+are exactly $3(D-1)$ such edges.  Hence every edge other than $e$ contains at
+most one vertex of $e$.
+
+Fix $x\in X(e,\mathcal H)$.  By the first assertion, the sets of edges
+counted by $\deg_{\mathcal H}(v_i,x)$ for $i=1,2,3$ are pairwise disjoint:
+an edge counted for two different $v_i$ would contain $x$ and two vertices
+of $e$.  Their union is a subset of the set of all edges containing $x$.
+Using again \noderef{HypergraphDegree} to interpret $\deg_{\mathcal H}(x)$
+as the number of incident edges and \noderef{MaxDegreeAtMost} to bound that
+degree, we get
+\[
+\sum_{i=1}^3\deg_{\mathcal H}(v_i,x)\le \deg_{\mathcal H}(x)\le D.
+\]
+
+Finally fix $v_i\in e$.  The same incidence count used above has total
+$3(D-1)$ and is a sum of three quantities, each at most $D-1$.  Since the
+number of distinct neighboring edges is also $3(D-1)$ and no edge is counted
+twice, each $v_i$ is contained in exactly $D-1$ neighboring edges.  Each such
+edge has exactly three vertices by \noderef{UniformHypergraph} and meets
+$e$ only in $v_i$, so it contains exactly two
+vertices from $X(e,\mathcal H)$ and contributes exactly two to
+$\sum_{x\in X(e,\mathcal H)}\deg_{\mathcal H}(v_i,x)$.  Thus the sum is
+$2(D-1)$.
+\end{proof}

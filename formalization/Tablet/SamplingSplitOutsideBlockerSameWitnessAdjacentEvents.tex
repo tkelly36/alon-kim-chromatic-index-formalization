@@ -1,0 +1,48 @@
+\begin{helper}
+Fix the split-outside-blocker replacement data, an already chosen finite
+supported atom family \(\Omega\), and already chosen paired cells
+\(C_\omega,C'_\omega\).  On this same atom family one may define the
+replacement index sets
+\[
+  R_j=\{i:i<j\},\qquad T_j=\{i:j\le i<n\},
+\]
+and the core-included adjacent boundary events \(L_k(\omega)\) and
+\(R_k(\omega)\).  For \(k<n\), \(L_k(\omega)\) is the source event in which
+some \(x\in B_k\) is active, beats every active embedded neighbor in
+\(X\cup\{r\}\), satisfies every retained noncurrent source-blocker test
+\(i\in T_k\), \(i\ne k\), and is not killed by the current blocker \(z_k\).
+The target event \(R_k(\omega)\) is the analogous event with the transported
+core, every already replaced noncurrent private-blocker test
+\(i\in R_{k+1}\), \(i\ne k\), and the current private blocker
+\(\beta(x,z_k)\).  The construction also records a flat representative of
+the sigma-type map \(\beta\) at the current incidence, agreeing with
+\(\beta(x,z_k)\) for every \(x\in B_k\).
+\end{helper}
+\begin{proof}
+No new atom family is chosen.  Define \(R_j\) to be the finite set of blocker
+indices whose natural-number value is \(<j\), and define \(T_j\) to be the
+finite set of indices whose value is at least \(j\).  These definitions are
+made inside the finite type \(\operatorname{Fin} n\), so they apply to the
+same \(n,z_i,B_i,\Omega,C_\omega,C'_\omega\) that were already supplied by
+the supported common-cell package.
+
+For \(k<n\), define \(L_k(\omega)\) by the displayed source formula: choose a
+candidate \(x\in X\), require \(x\in B_k\), require \(x\) to be active, require
+the embedded-neighbor comparison against every active \(y\in X\cup\{r\}\),
+require all retained noncurrent tests for \(i\in T_k\), \(i\ne k\), and
+finally require the negation of the current \(z_k\)-blocking event.  This is
+a definition, so the asserted formula for \(L_k(\omega)\) follows
+immediately from the definition.
+
+For \(R_k(\omega)\), first define the flat representative \(\beta_k\) by
+using the original sigma-type value \(\beta(x,z_k)\) when \(x\in X\) and
+\(x z_k\in E(G)\), and by an arbitrary fallback value otherwise.  If
+\(x\in B_k\), then the displayed definition of \(B_k\) supplies exactly
+\(x\in X\) and \(x z_k\in E(G)\), while the outside-blocker list supplies
+\(z_k\notin X\cup\{r\}\).  Hence \(\beta_k(x,z_k)=\beta(x,z_k)\) in the
+sigma-type notation.  Define \(R_k(\omega)\) by the transported core formula,
+the already replaced noncurrent private tests, and the current private test
+for \(\beta_k(x,z_k)\).  Again this is a definition on the original
+\(\Omega,C_\omega,C'_\omega\), so the target adjacent-event formula and the
+agreement clause follow directly.
+\end{proof}

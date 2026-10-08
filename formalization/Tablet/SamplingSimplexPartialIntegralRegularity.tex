@@ -1,0 +1,59 @@
+\begin{helper}
+Let \(g:\mathbb R^3\to\mathbb R\) be continuous, written \(g(x,y,z)\), and
+assume \(g(x,y,z)\ge0\) whenever \(0\le x\le y\le z\le1\).  Then the following
+regularity facts hold.
+
+First, for every \(0\le y\le z\le1\), the function
+\(x\mapsto g(x,y,z)\) is interval-integrable on \([0,y]\) and is nonnegative
+on \((0,y]\).
+
+Second, for every \(0\le z\le1\), the function
+\[
+F_z(y)=\int_0^y g(x,y,z)\,dx
+\]
+is continuous on \([0,z]\), interval-integrable on \([0,z]\), and
+nonnegative on \((0,z]\).
+
+Third, the function
+\[
+G(z)=\int_0^z\int_0^y g(x,y,z)\,dx\,dy
+\]
+is continuous on \([0,1]\), interval-integrable on \([0,1]\), and
+nonnegative on \((0,1]\).
+\end{helper}
+\begin{proof}
+Fix \(0\le y\le z\le1\).  The map \(x\mapsto g(x,y,z)\) is continuous because
+it is the composition of the continuous map \(x\mapsto(x,y,z)\) with the
+continuous function \(g\).  A continuous real-valued function is
+interval-integrable on every compact interval, so it is interval-integrable on
+\([0,y]\).  If \(x\in(0,y]\), then \(0\le x\le y\le z\le1\), and the simplex
+nonnegativity hypothesis gives \(g(x,y,z)\ge0\).
+
+Now fix \(0\le z\le1\).  Consider
+\[
+F_z(y)=\int_0^y g(x,y,z)\,dx .
+\]
+The two-variable map \((x,y)\mapsto g(x,y,z)\) is continuous.  The theorem on
+continuity of parameter-dependent interval integrals with continuous
+integrand and continuous moving endpoint therefore gives continuity of
+\(F_z\) as a function of \(y\); restricting to \([0,z]\) gives continuity on
+that compact interval.  Hence \(F_z\) is interval-integrable on \([0,z]\).  If
+\(y\in(0,z]\), then the first paragraph applies to every \(x\in(0,y]\), so
+the integrand in \(\int_0^y g(x,y,z)\,dx\) is nonnegative almost everywhere on
+\((0,y]\).  Monotonicity of the real integral over an interval with
+nonnegative orientation gives \(F_z(y)\ge0\).
+
+Finally define
+\[
+G(z)=\int_0^z F_z(y)\,dy
+=\int_0^z\int_0^y g(x,y,z)\,dx\,dy .
+\]
+The preceding parameter-integral continuity theorem, applied to the
+continuous three-variable integrand \(g\) and the continuous endpoint
+\((y,z)\mapsto y\), gives continuity of \((y,z)\mapsto F_z(y)\) on the
+triangle \(0\le y\le z\le1\).  Applying the same theorem once more to the
+outer integral with endpoint \(z\) gives continuity of \(G\) on \([0,1]\).
+Thus \(G\) is interval-integrable on \([0,1]\).  If \(z\in(0,1]\), the second
+paragraph gives \(F_z(y)\ge0\) for every \(y\in(0,z]\), so real-integral
+monotonicity on \([0,z]\) gives \(G(z)\ge0\).
+\end{proof}

@@ -1,0 +1,228 @@
+\begin{helper}
+In the setting of the split-outside-blocker comparison, assume the source and
+target activation--priority laws have the Bernoulli activation atom formulas
+and the finite priority lower-rectangle product formulas with
+\(0\le \gamma/\Delta\le 1\).  Let \(r\in V\), \(X\subseteq N_G(r)\), and let
+\(\phi:V\to V'\) and \(\beta\) satisfy the local-copy and private-blocker
+hypotheses used in the replacement construction: \(\phi\) is injective and
+preserves all adjacencies inside \(X\cup\{r\}\); the vertices
+\(\beta(x,z)\), indexed by outside incidences
+\[
+  x\in X,\qquad z\notin X\cup\{r\},\qquad xz\in E(G),
+\]
+are distinct, fresh from \(\phi(X\cup\{r\})\), adjacent only to the intended
+\(\phi(x)\) among the embedded candidates, nonadjacent to \(\phi(r)\), and
+exhaust all non-local neighbors of every \(\phi(x)\), \(x\in X\).
+Then there is one common witness system for the actual hybrid comparison.  It
+consists of a finite enumeration \(z_0,\ldots,z_{n-1}\) of the outside
+blockers, candidate sets \(B_k=\{x\in X:xz_k\in E(G)\}\), source common and
+extension coordinates, target common and extension coordinates, a single
+finite atom index set \(\Omega\), paired source and target cells
+\(C_\omega,C'_\omega\), a common nonnegative weight \(w(\omega)\), complete
+source and target mixed-stage events \(S_j(\omega)\) and \(T_j(\omega)\), and
+normalized masses \(P(j,\omega)\).  The coordinates satisfy the actual
+enumeration and transport clauses: the enumeration is injective, the source
+common coordinates contain
+\(X\cup\{r\}\), the source extension coordinates contain all \(z_k\) and are
+disjoint from the common coordinates, the target common coordinates are the
+\(\phi\)-image of the source common coordinates, and the target extension
+coordinates contain all private blockers \(\beta(x,z_k)\) with \(x\in B_k\).
+
+The same cells \(C_\omega,C'_\omega\) simultaneously have the following
+properties.  They are pairwise disjoint on each side, cover the corresponding
+unit-priority support, and the complements of the unit-priority supports have
+zero measure.  Their weights agree with the source and target cell masses:
+\[
+  \operatorname{ofReal}(w(\omega))=\nu(C_\omega)
+  =\nu'(C'_\omega),
+  \qquad w(\omega)\ge0 .
+\]
+For every \(j\le n\), the complete source stage \(S_j(\omega)\) is the event
+that some \(x\in X\) survives the embedded local-neighborhood tests and all
+retained common blockers \(z_i\) with \(j\le i<n\); the complete target stage
+\(T_j(\omega)\) is the event that the corresponding \(\phi(x)\) survives the
+embedded local-neighborhood tests and all already-replaced private blockers
+\(\beta(x,z_i)\) with \(i<j\).  The registered masses \(P(j,\omega)\) are
+nonnegative and vanish on zero-weight atoms.  They are the values of a
+hybrid/composite stage chain used for endpoints and adjacent monotonicity,
+not same-index identifications of the source and final-target projections.
+The endpoint values represent the true source event at \(j=0\) and the true
+target event at \(j=n\), and the family is monotone across adjacent
+replacements:
+\[
+  P(k,\omega)\le P(k+1,\omega) \qquad(k<n).
+\]
+In addition, these endpoint identities aggregate over the same finite atom
+family:
+\[
+  \operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w(\omega)P(0,\omega)\right)
+  =
+  \nu\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\},
+\]
+\[
+  \operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w(\omega)P(n,\omega)\right)
+  =
+  \nu'\{(A',\pi'):I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\}.
+\]
+If \(n=0\), these two displayed endpoint identities are both asserted
+directly for the same value \(P(0,\omega)=P(n,\omega)\); no adjacent step is
+available or used to relate them.
+\end{helper}
+\begin{proof}
+Apply
+\(\noderef{SamplingSplitOutsideBlockerActualSameSurfaceInputConstruction}\)
+to the two activation--priority laws, the ratio hypotheses
+\(0\le\gamma/\Delta\le1\), the four activation and priority product
+formulas, and the replacement data \(\phi,r,X,\beta\).  The hypotheses passed
+to it are exactly the local-copy and private-blocker hypotheses in the
+assembly statement: \(X\subseteq N_G(r)\), injectivity of \(\phi\),
+adjacency preservation on \(X\cup\{r\}\), injectivity and freshness of
+\(\beta\), intended adjacency to \(\phi(x)\), nonadjacency to \(\phi(r)\), no
+adjacency to another embedded candidate \(\phi(y)\) unless \(y=x\), and
+exhaustion of all nonlocal neighbors of every \(\phi(x)\).  Its statement returns
+one actual witness surface:
+\[
+  n,\ z_0,\ldots,z_{n-1},\ B_k,\ S,S_{\rm ext},\ S',S'_{\rm ext},T',
+  \Omega,\ C_\omega,\ C'_\omega,\ w(\omega),
+\]
+together with a proof \(h_{\rm out}(k)\) that every listed \(z_k\) lies
+outside \(X\cup\{r\}\).  The same node gives the injectivity of
+\(k\mapsto z_k\), the assertion that each listed \(z_k\) is adjacent to some
+candidate in \(X\), the converse coverage of every outside blocker adjacent
+to \(X\), and
+\[
+  B_k=\{x\in X:xz_k\in E(G)\}.
+\]
+It also gives all source and target coordinate clauses asserted in this
+assembly: \(X\cup\{r\}\subseteq S\), \(z_k\in S_{\rm ext}\), disjointness of
+the source common and extension coordinates, \(S'=\phi(S)\), disjointness of
+the target common and extension coordinates, \(T'=S'\cup S'_{\rm ext}\),
+\(\phi(X\cup\{r\})\subseteq S'\), and membership of every relevant private
+blocker \(\beta(x,z_k)\) in \(S'_{\rm ext}\).
+
+The construction node also returns the prescribed common refined-cell
+clauses on exactly the same surface.  Hence, for every \(\omega\),
+\[
+  w(\omega)\ge0,\qquad
+  \operatorname{ofReal}(w(\omega))=\nu(C_\omega),\qquad
+  \operatorname{ofReal}(w(\omega))=\nu'(C'_\omega).
+\]
+The source cells are pairwise disjoint, the target cells are pairwise
+disjoint, the cells cover the two unit-priority supports, the complements of
+the two unit-priority supports have zero measure, and membership in
+\(C_\omega\) is transported to membership in \(C'_\omega\) by equality of the
+activation trace and priority values on the common coordinates.  Finally, and
+crucially, the same construction node supplies a
+\(\noderef{SamplingSplitOutsideBlockerActualSameSurfaceInputData}\) package
+on this same \(n,z,B,\Omega,C,C',w\) surface.  This package is the paired
+mixed surface together with the source endpoint identity, the target endpoint
+identity, and the adjacent shared-context comparisons.  No second blocker
+enumeration, atom type, cell family, or weight function is introduced.
+
+Define the source complete stage \(S_j(\omega)\) by the displayed formula in
+the statement: a state lies in \(S_j(\omega)\) when some \(x\in X\) is active,
+beats every active embedded neighbor from \(X\cup\{r\}\), and is not killed by
+any retained common blocker \(z_i\) with \(j\le i<n\) and \(x\in B_i\).
+Define the target complete stage \(T_j(\omega)\) by the displayed transported
+formula: \(\phi(x)\) is active, beats active embedded neighbors, and is not
+killed by any already installed private blocker \(\beta(x,z_i)\) with
+\(i<j\) and \(x\in B_i\).  These definitions give the two stage-description
+clauses of the assembly directly.  They also fix the indexing convention
+used throughout the hybrid chain: source blockers with index at least the cut
+remain common, while target blockers with index below the cut have been
+split into private coordinates.
+
+Use the same-witness adjacent-event node
+\(\noderef{SamplingSplitOutsideBlockerSameWitnessAdjacentEvents}\) on these
+very cells and blocker sets to name the current left and right boundary
+events.  Its statement gives the displayed left boundary with all retained
+source blockers except the current one, and the displayed right boundary
+with all already-private target blockers except the current one, using a
+flattened notation for the current private blocker.  Therefore the adjacent
+events are still attached to the same \(n,z_k,B_k,\Omega,C_\omega,C'_\omega\)
+surface.
+
+Unpack the supplied same-surface input package.  Its surface field is a
+paired mixed measure surface \(\mathcal S\), its endpoint fields identify
+\(\mathcal S.M_0(\omega)\) and \(\mathcal S.M_n(\omega)\) with the true
+source and target endpoint masses in \(C_\omega\) and \(C'_\omega\), and its
+adjacent field states that consecutive mixed masses split as
+\[
+  \mathcal S.M_k(\omega)=U+L,\qquad
+  \mathcal S.M_{k+1}(\omega)=U+R,\qquad L\le R .
+\]
+
+Now apply
+\(\noderef{SamplingSplitOutsideBlockerActualCompleteStageMassLaw}\) to the
+same graphs, measures, graph-replacement data, enumeration, coordinate
+sets, cells, weights, just-defined stage events, adjacent boundary events,
+and paired-input data \(\mathcal S\).  The hypotheses of that node are exactly
+the coordinate clauses from
+\(\noderef{SamplingSplitOutsideBlockerActualCoordinatePackage}\), the common
+cell clauses from
+\(\noderef{SamplingSplitOutsideBlockerPrescribedCommonRefinedCellPackage}\),
+the two displayed definitions of \(S_j(\omega)\) and \(T_j(\omega)\), the
+adjacent-event descriptions from
+\(\noderef{SamplingSplitOutsideBlockerSameWitnessAdjacentEvents}\), and the
+paired surface, endpoint, and adjacent shared-context premises supplied in
+the preceding paragraph.  The mass law supplies a single family
+\(P(j,\omega)\) of real normalized complete-stage values with
+\[
+  P(j,\omega)\ge0,\qquad w(\omega)=0\Rightarrow P(j,\omega)=0,
+\]
+the true source endpoint identity at \(j=0\), the true target endpoint
+identity at \(j=n\), and the adjacent monotonicity
+\[
+  P(k,\omega)\le P(k+1,\omega)\qquad(k<n).
+\]
+Summing the endpoint cell identities over the same finite atom family gives
+the two aggregate endpoint identities asserted in the statement, as follows.
+For the source endpoint event
+\[
+  E=\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\},
+\]
+take the support \(U=\bigcup_{\omega\in\Omega} C_\omega\).  The refined-cell
+package supplies measurability of \(E\) and of every \(C_\omega\), and the
+complete-stage mass law supplies
+\[
+  \operatorname{ofReal}(w(\omega)P(0,\omega))=\nu(E\cap C_\omega).
+\]
+The containment \(C_\omega\subseteq U\) is immediate from the definition of
+\(U\), and
+\[
+  E\cap U=\bigcup_{\omega\in\Omega}(E\cap C_\omega)
+\]
+is the elementary distributivity of intersection over this finite union.  To
+check the null-complement hypothesis, observe that if a source state has all
+priority coordinates in \([0,1]\), the refined-cell package puts it in some
+\(C_\omega\).  Hence \(E\setminus U\) is contained in the complement of the
+unit-priority support, whose \(\nu\)-measure is zero by the same package.  The
+other hypotheses of
+\(\noderef{SamplingFiniteCellEndpointSumDecomposition}\) are exactly the
+nonnegativity of \(w\), nonnegativity of \(P(0,\omega)\), the zero-weight
+convention, and pairwise disjointness of the cells.  Applying that node gives
+\[
+  \operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w(\omega)P(0,\omega)\right)
+  =\nu(E).
+\]
+The target endpoint is identical: take
+\[
+  E'=\{(A',\pi'):I_{G'}(A',\pi')\cap \phi(X)\ne\emptyset\},\qquad
+  U'=\bigcup_{\omega\in\Omega} C'_\omega,
+\]
+use the target measurability, target cell disjointness, target unit-support
+cover, target null-complement clause, and the target atomwise identity
+\[
+  \operatorname{ofReal}(w(\omega)P(n,\omega))=\nu'(E'\cap C'_\omega),
+\]
+then apply
+\(\noderef{SamplingFiniteCellEndpointSumDecomposition}\) again.  This proves
+the two finite weighted endpoint identities in the assembly statement.
+
+Thus all asserted witnesses and all asserted properties live on one common
+\(n,z_k,B_k,\Omega,C_\omega,C'_\omega,w\) surface.  The proof uses the
+hybrid mass law as the actual supplier of the complete-stage family; it does
+not infer the family from the algebraic hybrid producer, and it does not
+assert any same-index source--target stage equality or any primitive
+outside-\(B_k\) paired atom equality.
+\end{proof}

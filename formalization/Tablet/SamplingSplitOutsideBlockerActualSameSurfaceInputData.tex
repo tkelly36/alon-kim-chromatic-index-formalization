@@ -1,0 +1,44 @@
+\begin{definition}
+For a fixed split-outside-blocker replacement surface, a
+\(\operatorname{SameSurfaceInputProducer}\) package is the actual
+same-surface paired input data used by the hybrid comparison.  The parameters
+are finite graphs \(G,G'\), activation--priority laws \(\nu,\nu'\), the local
+embedding \(\phi\), the root \(r\), the candidate set \(X\), an injective
+outside-blocker list \(z_0,\ldots,z_{n-1}\), candidate sets
+\[
+  B_k=\{x\in X:xz_k\in E(G)\},
+\]
+the private-neighbor map \(\beta\), one finite atom family
+\(\Omega,C_\omega,C'_\omega,w(\omega)\), and the proof that every listed
+blocker \(z_k\) lies outside \(X\cup\{r\}\).
+
+The package consists of one
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\)
+\(\mathcal S\) on exactly this
+\[
+  G,G',\phi,r,X,n,z,B,\beta,\Omega,C,C',w
+\]
+surface, together with the two endpoint mass identities
+\[
+  \operatorname{ofReal}(w(\omega)\mathcal S.M_0(\omega))
+  =
+  \nu(\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\}\cap C_\omega),
+\]
+\[
+  \operatorname{ofReal}(w(\omega)\mathcal S.M_n(\omega))
+  =
+  \nu'(\{(A',\pi'):I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\}\cap C'_\omega),
+\]
+for every atom \(\omega\).  It also contains the adjacent shared-context
+comparison: for every \(k<n\) and every \(\omega\), there are real numbers
+\(U,L,R\) such that
+\[
+  \mathcal S.M_k(\omega)=U+L,\qquad
+  \mathcal S.M_{k+1}(\omega)=U+R,\qquad
+  L\le R .
+\]
+The common term \(U\) is the mixed retained context before endpoint
+projection.  Thus this definition records the paired input on one actual
+witness surface; it is not a theorem asserting that such a surface can be
+constructed for arbitrary weak finite cell families.
+\end{definition}

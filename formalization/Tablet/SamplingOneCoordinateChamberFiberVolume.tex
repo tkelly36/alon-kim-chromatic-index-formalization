@@ -1,0 +1,23 @@
+\begin{helper}
+Let \(V\) be finite, let \(v\in V\), and let \(B\subseteq V\setminus\{v\}\).
+For \(0\le a\le 1\), the Lebesgue measure of the fiber
+\[
+\{r\in \mathbb R^{V\setminus\{v\}}: 0\le r(w)\le 1\text{ for all }w,\ 
+r(z)<a\text{ for all }z\in B\}
+\]
+is \(a^{|B|}\).
+\end{helper}
+\begin{proof}
+The displayed fiber is squeezed between two axis-parallel boxes.  The lower
+box uses half-open intervals \([0,a)\) on coordinates in \(B\) and \([0,1)\)
+on all other coordinates.  The upper box uses closed intervals \([0,a]\) on
+coordinates in \(B\) and \([0,1]\) on all other coordinates.  Since
+\(0\le a\le 1\), both boxes are contained in the appropriate direction.
+
+Finite product Lebesgue measure gives the same value for both boxes:
+each coordinate in \(B\) contributes length \(a\), each other coordinate
+contributes length \(1\), and \(B\) has exactly \(|B|\) coordinates in
+\(V\setminus\{v\}\).  Hence both the lower and upper boxes have measure
+\(a^{|B|}\).  Monotonicity of measure in the two inclusions forces the fiber
+itself to have measure \(a^{|B|}\).
+\end{proof}

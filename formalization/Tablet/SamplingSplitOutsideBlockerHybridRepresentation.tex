@@ -1,0 +1,116 @@
+\begin{helper}
+Let \(G\) and \(G'\) be finite \(\Delta\)-regular graphs, let \(\gamma\) be a
+real parameter, and let \(\mu,\mu'\) be sampling laws satisfying
+\(\noderef{RandomIndependentSetSampling}\) for \(G,\Delta,\gamma\) and
+\(G',\Delta,\gamma\), respectively.  Let \(\nu\) and \(\nu'\) be
+activation--priority laws on
+\(\mathcal P(V)\times\mathbb R^V\) and
+\(\mathcal P(V')\times\mathbb R^{V'}\) with the Bernoulli activation atom
+formula and the finite priority lower-rectangle product formula at activation
+ratio \(\gamma/\Delta\).
+
+Let \(r\in V\), \(X\subseteq V\), and let \(\phi:V\to V'\) be injective.
+Assume \(X\subseteq N_G(r)\) and that \(\phi\) preserves all adjacencies inside
+\(X\cup\{r\}\).  For every outside incidence
+\[
+  x\in X,\qquad z\notin X\cup\{r\},\qquad xz\in E(G),
+\]
+let \(\beta(x,z)\in V'\) be a private replacement vertex.  Assume the
+replacement vertices are distinct, fresh from \(\phi(X\cup\{r\})\), adjacent
+to their intended vertex \(\phi(x)\), nonadjacent to \(\phi(r)\), adjacent to
+no other \(\phi(y)\) with \(y\in X\), and that they exhaust all nonlocal
+neighbors of each \(\phi(x)\).
+
+Then there is one common actual hybrid witness system.  It consists of a
+finite injective list \(z_0,\ldots,z_{n-1}\) of all outside blockers adjacent
+to \(X\), candidate sets
+\[
+  B_k=\{x\in X:xz_k\in E(G)\},
+\]
+source common and extension coordinates, target common and extension
+coordinates, a finite atom index set \(\Omega\), source and target cells
+\(C_\omega,C'_\omega\), common nonnegative weights \(w(\omega)\), complete
+source and target stage events \(S_j(\omega),T_j(\omega)\), and real
+normalized stage masses \(P(j,\omega)\).  The coordinate clauses, cell-mass
+clauses, pairwise-disjointness clauses, unit-support cover and null-complement
+clauses, and the displayed formulas for \(S_j\) and \(T_j\) are exactly the
+actual split-blocker clauses for this single witness surface.  Moreover
+\[
+  P(j,\omega)\ge0,\qquad w(\omega)=0\Rightarrow P(j,\omega)=0,
+\]
+the two endpoint cell identities hold,
+\[
+\operatorname{ofReal}(w(\omega)P(0,\omega))
+ =\nu(\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\}\cap C_\omega),
+\]
+\[
+\operatorname{ofReal}(w(\omega)P(n,\omega))
+ =\nu'(\{(A',\pi'):I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\}\cap C'_\omega),
+\]
+and every adjacent replacement step is monotone on every atom:
+\[
+  P(k,\omega)\le P(k+1,\omega)\qquad(k<n).
+\]
+The endpoint identities also aggregate over this same finite atom family:
+\[
+  \operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w(\omega)P(0,\omega)\right)
+  =
+  \nu\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\},
+\]
+\[
+  \operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w(\omega)P(n,\omega)\right)
+  =
+  \nu'\{(A',\pi'):I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\}.
+\]
+This node is the paper-facing bridge from the original split-blocker graph
+interface and the two sampling laws to the aggregate witness system, including
+the range reduction \(0\le\gamma/\Delta\le1\).  The lower
+\(\noderef{SamplingSplitOutsideBlockerActualHybridWitnessAssembly}\) node has
+the different role of constructing the actual coordinate/cell surface,
+building the same-surface paired input on that surface, and assembling the
+complete hybrid mass chain.
+\end{helper}
+\begin{proof}
+First record the activation-ratio range needed by the actual assembly.  The
+source sampling hypothesis is a \(\noderef{RandomIndependentSetSampling}\) law
+and therefore gives \(\gamma>0\).  If \(\Delta=0\), then the Lean real
+convention gives \(\gamma/(\Delta:\mathbb R)=0\), so the ratio lies in
+\([0,1]\).  If \(0<\Delta\), the vertex \(r\) witnesses that \(V\) is
+nonempty, and
+\(\noderef{RandomIndependentSetSamplingGammaLeDelta}\) applied to the source
+sampling law gives \(\gamma\le\Delta\).  Dividing by the positive real
+\((\Delta:\mathbb R)\) gives
+\[
+  0\le \gamma/(\Delta:\mathbb R)\le 1 .
+\]
+
+Now apply
+\(\noderef{SamplingSplitOutsideBlockerActualHybridWitnessAssembly}\) to the
+graphs, the two activation--priority laws, the product atom and rectangle
+formulas, the local-copy data \(\phi,r,X\), the private-blocker map \(\beta\),
+and the split-blocker hypotheses.  That node first chooses the actual
+coordinate package and prescribed common refined-cell package, then defines
+the complete source and target stages and the adjacent boundary events on
+that same data, constructs the paired mixed surface with its endpoint and
+adjacent premises, and applies the complete-stage mass law.  Its conclusion
+is exactly the witness system stated here: one list \(z_k\), one family
+\(B_k\), one source/target coordinate
+surface, one atom type \(\Omega\), one paired cell family
+\(C_\omega,C'_\omega\), one common weight function \(w\), complete stages
+\(S_j,T_j\), and one normalized mass family \(P(j,\omega)\) satisfying
+nonnegativity, zero-weight normalization, the two endpoint cell identities,
+and adjacent monotonicity.  No separate displayed-cell package, same-index
+source--target equality, or outside-\(B_k\) residual atom equality is used.
+The assembly node also supplies the endpoint aggregation over this same atom
+family:
+\[
+  \operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w(\omega)P(0,\omega)\right)
+  =
+  \nu\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\},
+\]
+\[
+  \operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w(\omega)P(n,\omega)\right)
+  =
+  \nu'\{(A',\pi'):I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\}.
+\]
+\end{proof}

@@ -1,0 +1,29 @@
+\begin{lemma}
+Let $A,B$ be finite measurable spaces with measurable singletons, and let
+$p,q$ be probability measures on $A,B$, respectively. Suppose
+$g:A\times B\to\mathbb R$ satisfies
+$|g(a,b)-g(a',b)|\le 1$ for every $a,a',b$.
+Set $M(a)=\int g(a,b)\,dq(b)$. Then some $u\in\mathbb R$ satisfies
+$u\le M(a)\le u+1$ for every $a$. Moreover, $M-\int M\,dp$ has
+sub-Gaussian moment-generating function with parameter $1/4$: its
+exponential moments are finite and, for every $\lambda\in\mathbb R$,
+\[
+\int \exp\bigl(\lambda(M(a)-\textstyle\int M\,dp)\bigr)\,dp(a)
+\le \exp(\lambda^2/8).
+\]
+\end{lemma}
+\begin{proof}
+All functions on these finite spaces are measurable and integrable.
+For any $a,a'$, linearity and monotonicity of integration give
+\[
+M(a)-M(a')=\int(g(a,b)-g(a',b))\,dq(b)\le\int 1\,dq=1.
+\]
+Since $p$ is a probability measure, $A$ is nonempty. Choose $a_0$ minimizing
+$M$ and put $u=M(a_0)$. Minimality gives $u\le M(a)$, while the displayed
+inequality with $a'=a_0$ gives $M(a)\le u+1$.
+Writing $c=\int M\,dp$, the centered function $M-c$ has integral zero
+and takes values in $[u-c,u+1-c]$. Hoeffding's interval lemma for a
+mean-zero bounded random variable gives sub-Gaussian parameter
+$((u+1-c-(u-c))/2)^2=1/4$, including finiteness of all exponential
+moments. This is exactly the displayed estimate.
+\end{proof}

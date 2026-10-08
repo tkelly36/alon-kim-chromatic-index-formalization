@@ -1,0 +1,52 @@
+\begin{helper}
+Let \(V\) be finite, let \(\nu\) be a finite-on-the-fiber measure on a space
+\(\Omega\), let \(F\subseteq\Omega\), and let \(p:\Omega\to\mathbb R^V\).
+Assume that on the fiber \(F\) the priority coordinates satisfy the
+lower-rectangle law: for every \(t=(t_v)_{v\in V}\in[0,1]^V\),
+\[
+\nu\{\omega:F(\omega),\ 0\le p(\omega)_v\le t_v\text{ for every }v\}
+=M\operatorname{ofReal}\Bigl(\prod_{v\in V}t_v\Bigr),
+\]
+where \(M=\nu\{\omega:F(\omega)\}\) and this fiber mass is finite.  Let
+\(a,b,c\in V\) be pairwise distinct, and let \(S_x,S_y,S_z\subseteq V\) be
+pairwise disjoint and disjoint from \(\{a,b,c\}\).  Then
+\[
+\begin{aligned}
+&\nu\bigl(\{\omega:F(\omega),\ p_a(\omega)\le p_b(\omega)\le p_c(\omega),\\
+&\qquad\qquad
+  p_w(\omega)<p_a(\omega)\ (w\in S_x),\
+  p_w(\omega)<p_b(\omega)\ (w\in S_y),\
+  p_w(\omega)<p_c(\omega)\ (w\in S_z)\}\\
+&\qquad\qquad\cap\{\omega:p_v(\omega)\in[0,1]\text{ for every }v\in V\}\bigr)
+\end{aligned}
+\]
+is at most
+\[
+M\operatorname{ofReal}\left(
+\int_0^1\int_0^z\int_0^y
+x^{|S_x|}y^{|S_y|}z^{|S_z|}\,dx\,dy\,dz\right).
+\]
+\end{helper}
+\begin{proof}
+Restrict \(\nu\) to the fiber \(F\) and push it forward by \(p\) to a finite
+measure on \(\mathbb R^V\).  The lower-rectangle hypothesis says that, on each
+anchored box \(\prod_v[0,t_v]\) with \(0\le t_v\le1\), this pushforward equals
+\(M\) times product Lebesgue measure on the unit cube.  The anchored boxes form
+a pi-system generating the Borel sigma-algebra of the finite cube, and the two
+finite measures have the same total mass \(M\).  Finite-measure uniqueness on
+the generated sigma-algebra therefore identifies the pushed-forward fiber
+measure with \(M\) times product Lebesgue measure on every Borel subset of
+\([0,1]^V\).
+
+The displayed chamber is Borel, since it is cut out inside the finite cube by
+finitely many coordinate inequalities.  Under product Lebesgue measure, fix
+\(p_c=z\), \(p_b=y\), and \(p_a=x\) with \(0\le x\le y\le z\le1\).  The sets
+\(S_x,S_y,S_z\) are pairwise disjoint and avoid \(a,b,c\), so Fubini separates
+the outside-coordinate requirements: the coordinates in \(S_x\) contribute
+\(x^{|S_x|}\), those in \(S_y\) contribute \(y^{|S_y|}\), those in \(S_z\)
+contribute \(z^{|S_z|}\), and all remaining coordinates contribute \(1\).
+The difference between strict and weak outside inequalities lies on finitely
+many coordinate hyperplanes, each of product measure zero.  Thus the product
+measure of the chamber is precisely the stated iterated integral, and
+multiplication by the fiber mass \(M\) gives the claimed bound.
+\end{proof}

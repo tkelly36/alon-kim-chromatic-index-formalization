@@ -1,0 +1,22 @@
+\begin{lemma}
+For every real $r\ge0$,
+\[
+\frac{r^2}{2+r}\le (1+r)\log(1+r)-r.
+\]
+\end{lemma}
+\begin{proof}
+Put $x=r/(2+r)$, so $0\le x<1$ and
+$(1+x)/(1-x)=1+r$. The logarithm series, with nonnegative
+terms on this interval, gives
+\[
+\frac12\log\frac{1+x}{1-x}
+=\sum_{j=0}^{\infty}\frac{x^{2j+1}}{2j+1}\ge x.
+\]
+Consequently $\log(1+r)\ge2r/(2+r)$. Multiplying by
+$1+r>0$ and subtracting $r$ yields
+\[
+(1+r)\log(1+r)-r\ge
+\frac{2r(1+r)}{2+r}-r=\frac{r^2}{2+r},
+\]
+including $r=0$.
+\end{proof}

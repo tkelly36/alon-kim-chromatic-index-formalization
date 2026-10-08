@@ -1,0 +1,34 @@
+\begin{lemma}
+Let \(G\) be a finite graph and let \(\nu\) be a probability law on
+activation--priority pairs \((A,\pi)\).  Define
+\[
+I(A,\pi)=\{v\in A:\pi(v)>\pi(w)\text{ for every }w\in A\cap N_G(v)\}.
+\]
+Then the push-forward law \(\mu(S)=\nu\{(A,\pi):I(A,\pi)=S\}\) is a
+probability mass function on subsets of \(V(G)\), satisfies the exact
+push-forward identity for every \(S\subseteq V(G)\), and gives positive mass
+only to independent sets of \(G\).
+\end{lemma}
+\begin{proof}
+The set of all subsets \(S\subseteq V(G)\) is finite.  The events
+\[
+E_S=\{(A,\pi):I(A,\pi)=S\}
+\]
+are pairwise disjoint and their union is the whole sample space, because every
+sample has a unique output set \(I(A,\pi)\).  Define \(\mu(S)=\nu(E_S)\),
+viewed as a real number.  Since \(\nu\) is a probability law, every
+\(\mu(S)\) is nonnegative, and finite additivity over the disjoint partition
+\((E_S)_S\) gives
+\[
+\sum_S \mu(S)=\nu\left(\bigcup_S E_S\right)=\nu(\Omega)=1.
+\]
+The displayed definition is exactly the push-forward identity.
+
+Now suppose \(\mu(S)>0\).  Then \(E_S\) is nonempty up to positive measure, so
+there are samples with output \(S=I(A,\pi)\).  For any such sample, two
+adjacent vertices cannot both lie in \(I(A,\pi)\).  Indeed, if \(u\) and \(v\)
+are adjacent and both are in \(I(A,\pi)\), then the survival condition for
+\(u\) gives \(\pi(v)<\pi(u)\), while the survival condition for \(v\) gives
+\(\pi(u)<\pi(v)\), a contradiction.  Thus every output set is independent, and
+hence every set receiving positive \(\mu\)-mass is independent.
+\end{proof}

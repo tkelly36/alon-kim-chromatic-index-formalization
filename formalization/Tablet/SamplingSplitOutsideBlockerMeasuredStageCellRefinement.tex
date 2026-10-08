@@ -1,0 +1,75 @@
+\begin{helper}
+Let \(\Omega_0\) be a finite family of source base cells
+\(B_{\omega_0}\) and transported target base cells \(B'_{\omega_0}\), and
+let \(\Lambda\) be a finite set of actual-stage Boolean labels.  For each
+label \(\ell\in\Lambda\), let \(L_\ell\) and \(L'_\ell\) be corresponding
+source and target measurable label events.  Assume the source and target base
+cells are measurable and pairwise disjoint, the label events are measurable,
+and a transport relation identifies membership in corresponding base cells and
+in every corresponding label event.  Assume moreover that for every base cell
+\(\omega_0\) and every truth vector \(\tau\subseteq\Lambda\), the source atom
+\[
+B_{\omega_0}\cap\{ \eta : \eta\in L_\ell \Longleftrightarrow \ell\in\tau
+\text{ for all }\ell\in\Lambda\}
+\]
+and the corresponding target atom
+\[
+B'_{\omega_0}\cap\{ \eta' : \eta'\in L'_\ell \Longleftrightarrow \ell\in\tau
+\text{ for all }\ell\in\Lambda\}
+\]
+have a common nonnegative real mass \(w_{\omega_0,\tau}\), in the sense that
+\[
+\operatorname{ofReal}(w_{\omega_0,\tau})
+=\nu(\text{source atom})
+=\nu'(\text{target atom}).
+\]
+Then there is a finite refined-cell space \(\Omega\), a projection
+\(\operatorname{baseOf}:\Omega\to\Omega_0\), a truth vector
+\(\operatorname{truth}(\omega)\subseteq\Lambda\), source and target refined
+cells \(C_\omega,C'_\omega\), and nonnegative weights \(w_\omega\), such that
+each \(C_\omega\) and \(C'_\omega\) is exactly the atom of its base cell cut
+out by \(\operatorname{truth}(\omega)\); the refined source atoms cover every
+source base cell and the refined target atoms cover every target base cell;
+the source and target refined families are pairwise disjoint; every label has
+constant truth value on each corresponding refined atom; transport identifies
+the corresponding refined source and target atoms; the same nonnegative
+weight represents the \(\nu\)-mass of \(C_\omega\) and the \(\nu'\)-mass of
+\(C'_\omega\); and both endpoint finite-additivity identities hold:
+\[
+\nu(B_{\omega_0})=\sum_{\omega:\operatorname{baseOf}(\omega)=\omega_0}
+  \nu(C_\omega),\qquad
+\nu'(B'_{\omega_0})=\sum_{\omega:\operatorname{baseOf}(\omega)=\omega_0}
+  \nu'(C'_\omega).
+\]
+\end{helper}
+\begin{proof}
+Apply \(\noderef{SamplingSplitOutsideBlockerHybridRefinedAtomMassLaw}\) to
+the measurable source and target base cells, the measurable source and target
+label events, the transport relation, and the assumed common nonnegative mass
+certificate for every truth-vector atom.  Its statement gives exactly the
+measurability of all truth-vector atoms, the decomposition of each base cell
+as the union over truth vectors, pairwise disjointness of distinct truth-vector
+atoms inside a fixed base cell, the transported atom equivalence, the two
+finite-additivity identities over truth vectors, equality of corresponding
+source and target atom masses, and a nonnegative real representing each
+corresponding pair of atom masses.
+
+Now apply \(\noderef{SamplingSplitOutsideBlockerStageCellCommonRefinement}\)
+to the original pairwise-disjoint base-cell families and to the atom-level
+mass and finite-additivity conclusions just obtained.  That node takes
+\(\Omega=\Omega_0\times\mathcal P(\Lambda)\), sets
+\(\operatorname{baseOf}(\omega_0,\tau)=\omega_0\) and
+\(\operatorname{truth}(\omega_0,\tau)=\tau\), and defines the source and
+target refined cells to be precisely the corresponding truth-vector atoms.
+Because the original base cells are pairwise disjoint and the truth-vector
+atoms inside a base cell are pairwise disjoint, the resulting refined source
+and target families are pairwise disjoint.  The cover statements follow from
+the truth-vector union decompositions.  The constant-truth assertions are
+immediate from the definitions of the atoms, and the refined transport
+assertion is the transported atom equivalence supplied by
+\(\noderef{SamplingSplitOutsideBlockerHybridRefinedAtomMassLaw}\).  The
+nonnegative weights and the two mass identities for \(C_\omega\) and
+\(C'_\omega\), together with the endpoint finite-additivity identities indexed
+by \(\operatorname{baseOf}\), are exactly the remaining conclusions of
+\(\noderef{SamplingSplitOutsideBlockerStageCellCommonRefinement}\).
+\end{proof}

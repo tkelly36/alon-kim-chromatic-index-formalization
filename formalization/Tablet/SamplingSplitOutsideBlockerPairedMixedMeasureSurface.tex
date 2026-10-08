@@ -1,0 +1,61 @@
+\begin{definition}
+Fix the actual split-outside-blocker data: graphs \(G,G'\), a map
+\(\phi:V(G)\to V(G')\), a root \(r\), a candidate set \(X\), and a listed
+family of outside blockers \(z_0,\ldots,z_{n-1}\), with each
+\(z_i\notin X\cup\{r\}\) and with the list injective.  Also fix the
+candidate sets
+\[
+  B_i=\{x\in X:xz_i\in E(G)\},
+\]
+the private blocker map \(\beta(x,z_i)\), source cells \(C_\omega\), target
+cells \(C'_\omega\), and common cell weights \(w(\omega)\).  A paired mixed
+measure surface for these data consists of the following objects on the single
+paired state space
+\[
+  ((A,\pi),(A',\pi'))\in
+  (\mathcal P(V)\times \mathbb R^V)\times
+  (\mathcal P(V')\times \mathbb R^{V'}).
+\]
+First, it records the source common coordinate set \(S\) and the target
+common coordinate set \(S'=\phi(S)\), with \(X\cup\{r\}\subseteq S\).  It has a
+coupling measure \(\lambda\) on the natural product measurable space of this
+paired state space and paired cells \(\widehat C_\omega\) whose projections lie in
+\(C_\omega\) and \(C'_\omega\), with
+\[
+  \lambda(\widehat C_\omega)=\operatorname{ofReal}(w(\omega)).
+\]
+On every paired cell the common activation trace and common priorities are
+synchronized:
+\[
+  A'\cap S'=\phi(A\cap S),\qquad
+  \pi'(\phi(v))=\pi(v)\quad(v\in S).
+\]
+Second, for every cut \(j\le n\) it has a mixed event
+\(\widehat S_j(\omega)\).  A paired state lies in
+\(\widehat S_j(\omega)\) when there is a single witness \(x\in X\) such that
+\(x\) is active on the source side, \(\phi(x)\) is active on the target side,
+\(x\) beats all active embedded neighbors in \(X\cup\{r\}\) on the source
+side, \(\phi(x)\) beats the corresponding active embedded neighbors on the
+target side, every already replaced blocker \(i<j\) with \(x\in B_i\) fails
+through the private target blocker \(\beta(x,z_i)\), and every retained
+common blocker \(j\le i<n\) with \(x\in B_i\) fails through the source blocker
+\(z_i\).  Thus the intermediate event keeps both halves of the context before
+any endpoint projection is made.
+
+Finally, the surface has a real mass family \(M_j(\omega)\) satisfying
+\[
+  M_j(\omega)\ge0,\qquad
+  w(\omega)=0\Rightarrow M_j(\omega)=0,
+\]
+and the measured-stage identity
+\[
+  \operatorname{ofReal}(w(\omega)M_j(\omega))
+  =\lambda\bigl(\widehat S_j(\omega)\cap \widehat C_\omega\bigr)
+  \qquad(j\le n).
+\]
+No intermediate boundary projections, event decompositions, or adjacent
+mass inequalities are part of this carrier.  They require separate theorems.
+In particular, synchronization and marginal identities alone do not imply
+independence of the source and target extension coordinates.  Endpoint
+projection identities are also proved separately, at cuts \(0\) and \(n\).
+\end{definition}

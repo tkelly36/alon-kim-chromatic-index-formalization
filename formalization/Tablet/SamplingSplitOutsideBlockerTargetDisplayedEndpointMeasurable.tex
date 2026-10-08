@@ -1,0 +1,33 @@
+\begin{helper}
+Fix finite source and target vertex sets, a source graph \(G\), a map
+\(\phi\), root \(r\), candidates \(X\), listed blockers \(z_i\), sets
+\(B_i\), and an incidence-indexed private map \(\beta\).
+The displayed target endpoint event \(D'\) is measurable on the natural
+activation--priority space. Here \(D'\) consists of states \((A',\pi')\)
+for which there exists \(x\in X\) such that \(\phi(x)\in A'\),
+\[
+ \forall y\in X\cup\{r\},\quad
+ \phi(y)\in A'\land Gxy\Rightarrow\pi'(\phi(y))<\pi'(\phi(x)),
+\]
+and for every listed \(i\) with \(x\in B_i\) and every proof of the
+incidence \(z_i\notin X\cup\{r\}\), \(Gxz_i\),
+\[
+ \neg(\beta(x,z_i)\in A'\land
+ \pi'(\phi(x))<\pi'(\beta(x,z_i))\land\pi'(\beta(x,z_i))\in[0,1]).
+\]
+No injectivity or support hypotheses are needed for measurability.
+\end{helper}
+\begin{proof}
+Activation at a fixed target vertex is a measurable cylinder because
+the finite activation space has its full sigma algebra. Priority
+evaluation is measurable, strict comparison of two evaluations is a
+measurable open comparison event, and membership in \([0,1]\) is a
+measurable closed-interval event. Thus each blocker conjunction and its
+complement is measurable. Each embedded-neighbor implication is a union
+of a measurable complement and a measurable comparison event.
+Intersect over the finitely many embedded neighbors and blocker indices.
+Incidence proofs introduce no further events: the quantifier is vacuous
+if no proof exists, and otherwise proof irrelevance gives a single test.
+Finally take the finite union over candidates \(x\in X\). This is exactly
+\(D'\), proving the assertion in the stated natural measurable space.
+\end{proof}

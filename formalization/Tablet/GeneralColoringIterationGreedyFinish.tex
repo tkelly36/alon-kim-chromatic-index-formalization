@@ -1,0 +1,37 @@
+\begin{lemma}
+Assume $0<\varepsilon\le1$ and let $k$ be a positive integer. There is a
+natural number $D_0$ such that for every real $D\ge D_0$ and
+$\theta\in(0,1)$, every finite $k$-uniform hypergraph $\mathcal H$ with
+all vertex degrees at most $D$ satisfying the following local hypothesis
+has an edge-coloring with at most $(\theta+\varepsilon)kD$ colors.
+The local hypothesis is that for every natural number
+$n\ge\varepsilon D/3$, every subhypergraph $H\subseteq\mathcal H$ with
+maximum degree at most $n$, and every edge $e\in E(H)$,
+\[
+b_{L(H),kn}(e)\le\theta.
+\]
+Here the local parameter uses the natural scale $kn$.
+\end{lemma}
+\begin{proof}
+Apply \noderef{GeneralColoringRoundedSchedule} to $\varepsilon,k$ to
+obtain $A$. Apply \noderef{GeneralColoringScheduledNibbleIteration}
+with $\varepsilon,A,k$ to obtain $\gamma_0$. The schedule lemma then
+chooses a positive $\gamma\ge\gamma_0$. At this $\gamma$, the iteration
+lemma supplies $D_{\rm nib}$, and the schedule lemma supplies $D_0$.
+All these choices precede $\theta$, so $D_0$ is independent of $\theta$.
+
+Fix $D\ge D_0$, $\theta\in(0,1)$, and $H$ satisfying the assumptions.
+The schedule lemma gives $s,N_i,K_i$, with $D\le N_0$, the initial
+list bound, and every step's threshold, palette, degree, and list
+increment inequalities. Since every degree of $H$ is at most $D$,
+its maximum degree is at most the natural number $N_0$.
+The local hypothesis of the iteration lemma is exactly the local
+hypothesis here, at natural scales $kn$ with $n\ge\varepsilon D/3$.
+Thus \noderef{GeneralColoringScheduledNibbleIteration} gives a proper
+partial coloring with $K_s$ colors and canonical residual degree at
+most $N_s$. Apply \noderef{PartialEdgeColoringGreedyFinish} to finish
+with $K_s+kN_s+1$ colors. The schedule lemma's final inequality bounds
+this natural number by $(\theta+\varepsilon)kD$, including both the
+initial rounding from $D$ and all subsequent palette costs.
+This witnesses \noderef{ChromaticIndexAtMostReal}, as required.
+\end{proof}

@@ -1,0 +1,33 @@
+\begin{lemma}
+Let $A$ be a finite index type, let $q,c,y:A\to\mathbb R$, and let
+$D,\varepsilon,m,B,Y$ be real numbers. Suppose $D\ge0$,
+$0<\varepsilon\le1/2$, and, for every $i\in A$,
+\[
+0\le q_i\le2D,\quad q_i\le2D-c_i+y_i,\quad y_i\ge0,
+\quad |c_i-4D/3|\le\varepsilon D.
+\]
+If $\sum_i y_i\le2Y$ and $\sum_i c_i\ge2B-Dm$, then
+\[
+\sum_i q_i^2\le(20/9+\varepsilon^2)|A|D^2
+-\tfrac83 DB+\tfrac43 mD^2+(16/3+2\varepsilon)DY.
+\]
+\end{lemma}
+\begin{proof}
+Put $d_i=2D-c_i$. The cross-degree assumption gives
+$(2/3-\varepsilon)D\le d_i\le(2/3+\varepsilon)D$; in particular $d_i\ge0$.
+Multiplying $q_i\le d_i+y_i$ first by $q_i\ge0$ and then by
+$d_i\ge0$ gives
+$q_i^2\le d_i^2+d_i y_i+y_iq_i$.
+Thus $q_i^2\le d_i^2+((2/3+\varepsilon)D+2D)y_i$.
+Reindexing $A$ by $\{0,\ldots,|A|-1\}$ and applying
+\noderef{BoundedSquaresInterval} yields
+\[
+\sum_i d_i^2\le\tfrac43D\sum_i d_i
+-|A|(4/9-\varepsilon^2)D^2.
+\]
+Also $\sum_i d_i=2D|A|-\sum_i c_i\le2D|A|-2B+Dm$.
+Sum the pointwise square estimate, substitute these two inequalities,
+and use $\sum_i y_i\le2Y$. Both multiplying coefficients,
+$4D/3$ and $(8/3+\varepsilon)D$, are nonnegative. Expansion gives
+exactly the stated inequality.
+\end{proof}

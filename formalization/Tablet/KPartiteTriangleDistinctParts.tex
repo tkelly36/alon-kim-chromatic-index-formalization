@@ -1,0 +1,15 @@
+\begin{helper}
+Let $G$ be a finite $k$-partite graph with part map
+$p:V(G)\to\{1,\ldots,k\}$, so that adjacent vertices always have distinct
+parts.  If $S$ is a three-vertex clique in $G$, then the three vertices of
+$S$ lie in three distinct partite classes; equivalently, the image $p(S)$
+has size $3$.
+\end{helper}
+\begin{proof}
+It is enough to show that the restriction of $p$ to $S$ is injective, since
+$S$ has size $3$.  Let $u,v\in S$ and suppose $p(u)=p(v)$.  If $u\ne v$,
+then the clique hypothesis on $S$ gives that $u$ and $v$ are adjacent in
+$G$.  But the defining property of the part map says that adjacent vertices
+have distinct parts, contradicting $p(u)=p(v)$.  Therefore $u=v$.
+Thus $p$ is injective on $S$, and so $|p(S)|=|S|=3$.
+\end{proof}

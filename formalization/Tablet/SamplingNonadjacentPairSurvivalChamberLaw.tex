@@ -1,0 +1,122 @@
+\begin{helper}
+Let \(G\) be a finite \(\Delta\)-regular graph, let \(0<\gamma\le\Delta\),
+and let \(\nu\) be a law on activation--priority pairs \((A,\pi)\).  Assume
+that \(\nu\) has total mass one and that, for every \(A_0\subseteq V(G)\),
+\[
+\nu(A=A_0)=
+\left(\frac{\gamma}{\Delta}\right)^{|A_0|}
+\left(1-\frac{\gamma}{\Delta}\right)^{|V(G)|-|A_0|}.
+\]
+Assume that priorities are supported on the unit cube on every activation
+atom:
+\[
+\nu(A=A_0,\ \pi(z)\in[0,1]\text{ for every }z\in A_0)=\nu(A=A_0).
+\]
+Assume that for every vector \(t\in[0,1]^{V(G)}\),
+\[
+\nu(A=A_0,\ 0\le \pi(z)\le t_z\text{ for every }z)
+=\nu(A=A_0)\prod_{z\in V(G)}t_z.
+\]
+Assume also the fixed-activation one-vertex comparison identity: for every
+\(z\in A_0\),
+\[
+\nu\bigl(A=A_0,\ \pi(q)\in[0,1]\text{ for every }q\in A_0,\ 
+\pi(q)<\pi(z)\text{ for every }q\in A_0\cap N_G(z)\bigr)
+\]
+equals
+\[
+\nu(A=A_0)\int_0^1 a^{|A_0\cap N_G(z)|}\,da .
+\]
+For distinct nonadjacent vertices \(u,v\), let
+\[
+I(A,\pi)=\{z\in A:\pi(z)>\pi(w)\text{ for every }w\in A\cap N_G(z)\}.
+\]
+Then
+\[
+\nu\{(A,\pi):u\in I(A,\pi)\text{ and }v\in I(A,\pi)\}
+=
+\operatorname{ofReal}\!\left[
+\frac{2}{\Delta^2}\int_0^\gamma\int_x^\gamma
+\left(1-\frac{x}{\Delta}\right)^{
+\Delta-|N_G(u)\cap N_G(v)|}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx\right].
+\]
+\end{helper}
+\begin{proof}
+The hypotheses \(0<\gamma\le\Delta\) imply \(\Delta>0\) and
+\(0<\gamma/\Delta\le 1\).  Thus the activation atom formula is a genuine
+Bernoulli product law with parameter \(p=\gamma/\Delta\).  The lower-rectangle
+law on an atom \(A=A_0\), together with the unit-cube support, identifies the
+conditional priority law with product Lebesgue measure on the finite cube
+\([0,1]^{V(G)}\): lower rectangles
+\(\prod_z[0,t_z]\), \(0\le t_z\le1\), form an intersection-stable generating
+class for the finite product Borel algebra, and both finite measures agree on
+that class and on the whole cube.  Consequently every finite Boolean
+combination of coordinate intervals inside the cube has its ordinary product
+volume, and disjoint finite unions of such cells have the sum of those product
+volumes.  This is the lower-rectangle-to-interval conversion used below.
+
+First fix the activation and priority coordinates of \(u\) and \(v\), and
+write
+\[
+x=\gamma(1-\pi(u)),\qquad y=\gamma(1-\pi(v)).
+\]
+The affine map \((\pi(u),\pi(v))\mapsto(x,y)\) sends the unit square to
+\([0,\gamma]^2\) and has Jacobian \(\gamma^2\) in the inverse direction.
+Since the two priority coordinates are independent uniforms, the
+\((x,y)\)-density is \(\gamma^{-2}\,dx\,dy\).  The activations of \(u\) and
+\(v\) are independent of these priorities and contribute \(p^2\).  Therefore
+after the two mandatory activations are included, the base density on the
+\((x,y)\)-square is
+\[
+p^2\gamma^{-2}\,dx\,dy=\Delta^{-2}\,dx\,dy .
+\]
+The diagonal \(x=y\) has two-dimensional product measure zero, so the square
+is the disjoint union up to a null set of the two ordered chambers
+\(x\le y\) and \(y\le x\).
+
+We compute the chamber \(0\le x\le y\le\gamma\), equivalently
+\(\pi(u)\ge\pi(v)\).  A vertex \(w\notin\{u,v\}\) can affect the event
+\(\{u,v\subseteq I(A,\pi)\}\) only if it is adjacent to \(u\) or to \(v\).
+If \(w\in N_G(u)\setminus N_G(v)\), then \(w\) defeats \(u\) exactly when
+\(w\) is activated and \(\pi(w)>\pi(u)=1-x/\gamma\).  By the activation atom
+law and the interval consequence of the lower-rectangle law, this has
+probability
+\[
+p\cdot |\,(1-x/\gamma,1]\,|=(\gamma/\Delta)(x/\gamma)=x/\Delta .
+\]
+Therefore such a vertex contributes the avoidance factor \(1-x/\Delta\).
+
+If \(w\in N_G(v)\), including the common-neighbor case
+\(w\in N_G(u)\cap N_G(v)\), assign \(w\) to the \(v\)-test on this chamber.
+It defeats \(v\) exactly when it is activated and
+\(\pi(w)>\pi(v)=1-y/\gamma\), which has probability \(y/\Delta\).  Hence it
+contributes the factor \(1-y/\Delta\).  For a common neighbor this single
+condition is the stronger one on the chamber: \(x\le y\) gives
+\(\pi(u)\ge\pi(v)\), so \(\pi(w)\le\pi(v)\) automatically implies
+\(\pi(w)\le\pi(u)\).  Thus assigning common neighbors to the \(v\)-side
+prevents them from defeating either of the two surviving vertices and counts
+each common neighbor once.
+
+The finitely many activation indicators and priority coordinates for
+different vertices are independent by the Bernoulli atom formula and by the
+finite product priority law.  Hence the avoidance factors multiply.  Since
+\(G\) is \(\Delta\)-regular, \(u\) has exactly \(\Delta\) neighbors, of which
+\(|N_G(u)\cap N_G(v)|\) are common with \(v\); the \(u\)-only class therefore
+has size \(\Delta-|N_G(u)\cap N_G(v)|\).  The whole neighbor set of \(v\) has
+size \(\Delta\).  The chamber contribution is consequently
+\[
+\Delta^{-2}\int_0^\gamma\int_x^\gamma
+\left(1-\frac{x}{\Delta}\right)^{
+\Delta-|N_G(u)\cap N_G(v)|}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx .
+\]
+
+On the opposite chamber \(y\le x\), the same argument with \(u\) and \(v\)
+interchanged gives the same numerical contribution after renaming the two
+integration variables.  Adding the two ordered chambers and ignoring the null
+diagonal gives the displayed factor \(2/\Delta^2\).  The integrand is
+nonnegative on the chamber because \(0\le x\le y\le\gamma\le\Delta\), so the
+real value inside \(\operatorname{ofReal}\) is nonnegative and represents the
+\(\nu\)-mass of the survival event.
+\end{proof}

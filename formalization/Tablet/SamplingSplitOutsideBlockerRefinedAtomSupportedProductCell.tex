@@ -1,0 +1,31 @@
+\begin{helper}
+Let \(D\) be a displayed finite-coordinate cell, let \(U\) be the unit-priority
+support, and let \(\overline C=D\cap U\) be the supported base cell.  Let
+\(Q\) be one Boolean truth-vector atom inside that base cell, and suppose the
+refined cell is
+\[
+C=\overline C\cap Q.
+\]
+Then the same refined cell is a supported displayed cell in its own right:
+there is a refined displayed cell \(D_Q\), namely
+\[
+D_Q=D\cap Q,
+\]
+such that
+\[
+C=D_Q\cap U.
+\]
+\end{helper}
+\begin{proof}
+Define \(D_Q=D\cap Q\).  Using \(\overline C=D\cap U\) and
+\(C=\overline C\cap Q\), we compute
+\[
+C=(D\cap U)\cap Q.
+\]
+Intersection is associative and commutative, so
+\[
+(D\cap U)\cap Q=(D\cap Q)\cap U=D_Q\cap U.
+\]
+This proves the asserted exact supported-cell representation of the refined
+truth-vector atom.
+\end{proof}

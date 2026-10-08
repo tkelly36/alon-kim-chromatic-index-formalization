@@ -1,0 +1,133 @@
+\begin{lemma}
+Let $D$ be sufficiently large, let $\mathcal F\in H(3,3,D)$, and let
+$f\in E(\mathcal F)$ maximize $b_{L(\mathcal H),3D}(e)$ over all
+$\mathcal H\in H(3,3,D)$ and all $e\in E(\mathcal H)$.  Then every vertex
+$v\in f$ has $\deg_{\mathcal F}(v)=D$, and $f$ intersects exactly
+$3(D-1)$ other edges of $\mathcal F$.
+\end{lemma}
+\begin{proof}
+This is Lemma~\ref{lem: structure1} of the paper specialized to $k=3$ and
+$t=3$.  We give the local perturbation argument and check the $3$-simple
+membership directly.
+
+First suppose a vertex $v_1\in f$ has degree less than $D$.  Add a fresh edge
+$g=\{v_1,x_1,x_2\}$ using two new vertices, and keep the same distinguished
+edge $f$.  By \noderef{HypergraphClass}, to verify that the perturbed
+hypergraph remains in $H(3,3,D)$ we must check the three component
+conditions.  It is $3$-uniform by \noderef{UniformHypergraph}, since $g$ has
+three vertices and all old edges are unchanged.  It is $3$-simple by
+\noderef{TSimpleHypergraph}, because old-old intersections are unchanged and
+the new edge can meet an old edge only in the single old vertex $v_1$.  It has
+maximum degree at most $D$ by \noderef{MaxDegreeAtMost} and
+\noderef{HypergraphDegree}: the fresh vertices have degree $1$, the old
+vertices other than $v_1$ keep their degrees, and the degree of $v_1$ rises
+from a value strictly below $D$ to a value at most $D$.
+
+Let $d=\deg_{L(\mathcal F)}(f)$ and let $P,T$ be the old values
+$P_{L(\mathcal F)}(f),T_{L(\mathcal F)}(f)$ from
+\noderef{IndependentPairCount} and \noderef{IndependentTripleCount}.  By
+\noderef{LineGraphOfHypergraph}, the new edge $g$ is a new neighbor of $f$,
+and no old adjacency to $f$ changes; hence the line-graph degree of $f$
+becomes $d+1$.  The new independent pairs in the neighborhood of $f$ are
+precisely the pairs $\{g,h\}$ with $h$ an old neighbor of $f$ disjoint from
+$g$.  Since $x_1,x_2$ are fresh, this means exactly that $h$ does not contain
+$v_1$.  There are $d-(\deg_{\mathcal F}(v_1)-1)$ such old neighbors, because
+\noderef{HypergraphDegree} counts $\deg_{\mathcal F}(v_1)-1$ edge indices
+other than $f$ containing $v_1$.  Thus
+\[
+P_{\rm new}=P+d-\deg_{\mathcal F}(v_1)+1 .
+\]
+Similarly, a new independent triple must contain $g$ and an old independent
+pair of neighbors neither of whose two edges contains $v_1$.  Therefore
+\[
+T_{\rm new}=T+P-Q,
+\]
+where $Q$ is the number of old independent pairs in the neighborhood of $f$
+that involve an edge containing $v_1$; here $0\le Q\le P$.
+
+Substituting these three changes into \noderef{LocalBParameter} with
+$M=3D$ gives
+\[
+\begin{aligned}
+b_{\rm new}(f)-b_{\rm old}(f)
+&=\frac1{3D}
+-\frac{d-\deg_{\mathcal F}(v_1)+1}{(3D)^2}
++\frac{P-Q}{(3D)^3}  \\
+&\ge \frac1{3D}-\frac{d+1}{(3D)^2}.
+\end{aligned}
+\]
+Finally $d$ is at most the number of incidences between $f$ and edges other
+than $f$.  The vertex $v_1$ contributes at most $D-2$ such incidences, because
+$\deg_{\mathcal F}(v_1)<D$ and one incident edge is $f$, and each of the other
+two vertices of $f$ contributes at most $D-1$.  Hence $d+1\le 3D-3<3D$, so
+the displayed lower bound is positive.  This contradicts maximality of
+$(\mathcal F,f)$.  Thus every vertex of $f$ has degree $D$.
+
+Now suppose $f$ intersects fewer than $3(D-1)$ other edges.  The three
+vertices of $f$ have $3(D-1)$ incidences with edges other than $f$, so some
+neighboring edge $e$ contains at least two vertices of $f$, say $v_1,v_2$.
+Replace $e$ by
+\[
+e_1=\{v_1,x_1,x_2\},\qquad
+e_2=(e\cup\{x_1\})\setminus\{v_1\},
+\]
+where the $x_i$ are fresh, and keep $f$ as the distinguished edge.  Again
+\noderef{HypergraphClass} reduces membership in $H(3,3,D)$ to the component
+conditions.  Both new edges have size three, so \noderef{UniformHypergraph}
+is preserved.  The replacement preserves $3$-simplicity by
+\noderef{TSimpleHypergraph}: old-old intersections not involving $e$ do not
+change; $e_1$ uses only one old vertex; $e_2$ is obtained from $e$ by replacing
+the old vertex $v_1$ by the fresh vertex $x_1$; and
+$e_1\cap e_2=\{x_1\}$.  Hence every new intersection has size at most the
+corresponding old intersection size, or else is visibly a singleton.  The
+maximum-degree bound from \noderef{MaxDegreeAtMost} and
+\noderef{HypergraphDegree} is also preserved: $v_1$ loses $e$ and gains
+$e_1$, every old vertex of $e\setminus\{v_1\}$ loses $e$ and gains $e_2$,
+all other old degrees are unchanged, and the fresh vertices have degrees at
+most two.
+
+Let $d=\deg_{L(\mathcal F)}(f)$ before the replacement.  By
+\noderef{LineGraphOfHypergraph}, the old neighbor $e$ of $f$ is removed and
+the two new edges $e_1,e_2$ are both neighbors of $f$, so the line-graph
+degree of $f$ becomes $d+1$.  We next compare the independent-pair counts
+from \noderef{IndependentPairCount}.  Old independent pairs not involving
+$e$ remain present unless one of their two old edges changes, and no old edge
+except $e$ changes.  The only genuinely new independent pairs are therefore
+pairs $\{e_1,h\}$ or $\{e_2,h\}$ with $h$ an old neighbor of $f$ different
+from $e$.  Let
+\[
+A=\{h:\ h\text{ is an old neighbor of }f,\ h\ne e,\ h\cap e_1=\varnothing\}
+\]
+and
+\[
+B=\{h:\ h\text{ is an old neighbor of }f,\ h\ne e,\ h\cap e_2=\varnothing\}.
+\]
+The number of new pairs involving $e_1$ or $e_2$ is $|A|+|B|$; the pair
+$\{e_1,e_2\}$ is not independent because the two edges meet at $x_1$.  A
+neighbor $h$ lies in both $A$ and $B$ exactly when it is disjoint from both
+new edges.  Since $x_1,x_2$ are fresh and
+$e_1\cup e_2=e\cup\{x_1,x_2\}$ as far as old vertices are concerned, this is
+equivalent to $h\cap e=\varnothing$.  Thus the double-counted elements
+$A\cap B$ are precisely the old independent pairs $\{e,h\}$ that are lost
+when $e$ is removed.  After those lost pairs are subtracted, the net increase
+in $P_{L(\mathcal F)}(f)$ is at most
+\[
+|A\cup B|\le d-1<3D,
+\]
+because $A\cup B$ is a set of old neighbors of $f$ other than $e$.
+
+The independent-triple count from \noderef{IndependentTripleCount} does not
+decrease.  Indeed, an old independent triple not using $e$ remains unchanged.
+If an old independent triple is $\{e,h_1,h_2\}$, then $h_1$ and $h_2$ are
+disjoint from $e$ and from each other; because $e_2\setminus\{x_1\}\subseteq e$
+and $x_1$ is fresh, the triple $\{e_2,h_1,h_2\}$ is an independent triple in
+the new line-graph neighborhood of $f$.  This replacement is injective and its
+image is disjoint from the unchanged triples not using $e$.
+
+Using \noderef{LocalBParameter} with $M=3D$, the degree contribution to
+$b_{L(\mathcal F),3D}(f)$ increases by $1/(3D)$, the pair contribution
+decreases the parameter by less than $3D/(3D)^2=1/(3D)$, and the triple
+contribution is nonnegative.  Hence the total change in the $b$-parameter is
+strictly positive.  This contradicts maximality of $(\mathcal F,f)$.  Hence
+$f$ meets exactly $3(D-1)$ other edges.
+\end{proof}

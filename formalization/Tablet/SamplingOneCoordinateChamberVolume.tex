@@ -1,0 +1,27 @@
+\begin{helper}
+Let \(V\) be finite, fix \(v\in V\), and let \(B\subseteq V\setminus\{v\}\).
+Then the Lebesgue measure of the chamber
+\[
+\{q\in\mathbb R^V: 0\le q(x)\le 1\text{ for all }x\in V,\ 
+q(z)<q(v)\text{ for all }z\in B\}
+\]
+is
+\[
+\int_0^1 a^{|B|}\,da .
+\]
+\end{helper}
+\begin{proof}
+Use the measure-preserving coordinate splitting from
+\noderef{SamplingOneCoordinateComplementMeasurePreserving}, writing a point of
+\(\mathbb R^V\) as \((a,r)\), where \(a=q(v)\) and
+\(r\in\mathbb R^{V\setminus\{v\}}\).  Under this splitting the chamber becomes
+the set of pairs with \(a\in[0,1]\), all remaining coordinates \(r(w)\in[0,1]\),
+and \(r(z)<a\) for every \(z\in B\).
+
+For each fixed \(a\in[0,1]\), the fiber in the remaining coordinates has
+Lebesgue measure \(a^{|B|}\) by
+\noderef{SamplingOneCoordinateChamberFiberVolume}.  For \(a\notin[0,1]\), the
+fiber is empty.  Tonelli's theorem for product Lebesgue measure therefore
+identifies the chamber measure with the integral over \(a\in[0,1]\) of
+\(a^{|B|}\), which is the displayed formula.
+\end{proof}

@@ -1,0 +1,51 @@
+\begin{helper}
+Let \((S,\mathcal A)\) be a measurable space, let \(\nu\) be a measure on
+this measurable space, let \(E\subseteq S\) be a measurable event, and let
+\(U\subseteq S\) be a support for \(E\), in the sense that
+\(\nu(E\setminus U)=0\).  Let
+\(\{C_\omega:\omega\in\Omega\}\) be a finite family of pairwise disjoint
+measurable cells contained in \(U\) whose intersections with \(E\) cover the
+supported part of \(E\):
+\[
+E\cap U=\bigsqcup_{\omega\in\Omega}(E\cap C_\omega).
+\]
+Suppose that for each \(\omega\) there are real numbers \(w_\omega\ge0\) and
+\(P_\omega\ge0\), with the zero-mass convention \(P_\omega=0\) whenever
+\(w_\omega=0\), such that
+\[
+\operatorname{ofReal}(w_\omega P_\omega)=\nu(E\cap C_\omega).
+\]
+Then the event mass is the finite weighted sum
+\[
+\operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w_\omega P_\omega\right)
+=\nu(E).
+\]
+\end{helper}
+\begin{proof}
+Since the cells \(C_\omega\) are pairwise disjoint, the sets
+\(E\cap C_\omega\) are also pairwise disjoint.  Since each cell is contained
+in \(U\), the displayed cover says that their finite union is exactly
+\(E\cap U\).  Finite additivity of the measure gives
+\[
+\nu(E\cap U)=\sum_{\omega\in\Omega}\nu(E\cap C_\omega)
+\]
+as a finite sum in the extended nonnegative reals.
+
+For each \(\omega\), the assumed cell identity rewrites the corresponding
+summand as \(\operatorname{ofReal}(w_\omega P_\omega)\).  The factors are
+nonnegative: \(w_\omega\ge0\) and \(P_\omega\ge0\), while the zero-mass
+convention merely fixes the otherwise arbitrary normalized probability on
+null cells and ensures that a null cell contributes the real number \(0\).
+Thus every real summand \(w_\omega P_\omega\) is nonnegative.  For a finite
+sum of nonnegative real numbers, \(\operatorname{ofReal}\) commutes with the
+sum.  Therefore
+\[
+\sum_{\omega\in\Omega}\operatorname{ofReal}(w_\omega P_\omega)
+=
+\operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w_\omega P_\omega\right).
+\]
+Finally \(E\) is the disjoint union of \(E\cap U\) and \(E\setminus U\), and
+the latter has measure \(0\) by hypothesis.  Thus \(\nu(E)=\nu(E\cap U)\).
+Combining this equality with finite additivity proves the claimed endpoint
+sum formula.
+\end{proof}

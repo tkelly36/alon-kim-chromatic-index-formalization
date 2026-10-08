@@ -1,0 +1,16 @@
+\begin{helper}
+Let $G$ be a finite simple graph and let $v$ be a vertex.  Form the graph
+$C$ on the neighbor set $N_G(v)$ by joining two distinct neighbors exactly
+when they are not adjacent in $G$.  Then the number of triangles of $C$ is
+equal to the independent-triple count $T_G(v)$ from
+\noderef{IndependentTripleCount}.
+\end{helper}
+\begin{proof}
+A triangle of $C$ is a three-element set of neighbors of $v$ whose three
+pairs are edges of $C$.  By the definition of $C$, this says precisely that
+the three neighbors are pairwise nonadjacent in $G$.  Conversely, every
+three-element subset of $N_G(v)$ that is pairwise nonadjacent in $G$ becomes
+a triangle in $C$.  Thus the map that forgets the neighbor-subtype labels is
+a bijection between triangles in $C$ and the three-element independent
+subsets counted by \noderef{IndependentTripleCount}.
+\end{proof}

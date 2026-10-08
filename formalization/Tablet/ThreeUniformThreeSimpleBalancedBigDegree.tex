@@ -1,0 +1,81 @@
+\begin{lemma}
+In a $3$-uniform $3$-simple local extremal setup at scale $D$, assume
+$|X_b|=6$ and $w(X_b)\ge(2-\delta)D^2$.  Then every $g\in V_2$ satisfies
+\[
+\sum_{x\in g\setminus f}\sum_{v\in f\setminus g}
+\deg_{\mathcal F}(v,x)
+=\left(\frac43\pm\sqrt{\frac83\delta}\right)D .
+\]
+\end{lemma}
+\begin{proof}
+Fix $g\in V_2$.  We prove the displayed interval by contradiction.  Let
+\[
+\eta_0=
+\left|
+\sum_{x\in g\setminus f}\sum_{v\in f\setminus g}\deg_{\mathcal F}(v,x)
+-\frac43D
+\right|.
+\]
+Suppose that
+\[
+\eta_0>\sqrt{\frac83\delta}\,D. \tag{1}
+\]
+Since $\delta\ge0$ and $D$ is nonnegative, the right hand side of (1) is
+nonnegative, so $\eta_0>0$.
+
+The local setup \noderef{ThreeUniformThreeSimpleLocalSetup} supplies the
+table used here.  Its rows are the three vertices of $f$, its columns are
+vertices of $X_b$, and the entry in row $v$ and column $x$ is
+$\deg_{\mathcal F}(v,x)$.  The same setup states that column sums are at most
+$D$, and that $w(X_b)$ is exactly the sum, over columns $x\in X_b$, of the
+three row-pair products
+\[
+\sum_{v<v'\in f}\deg_{\mathcal F}(v,x)\deg_{\mathcal F}(v',x).
+\]
+The cardinality hypothesis of this lemma, not any separate big-part lemma,
+gives $|X_b|=6$.  Thus this is a nonnegative $3\times6$ table with column
+bound $D$.  The sufficiently-large range for $D$ recorded in
+\noderef{ThreeUniformThreeSimpleLocalSetup} also gives $D>0$, as required for
+the positive column-bound parameter in \noderef{TablePairStability}.
+
+Again by \noderef{ThreeUniformThreeSimpleLocalSetup}, every edge in $V_2$
+meets $f$ in exactly one vertex and meets $X_b$ in exactly two vertices.  Let
+$v_g$ be the unique vertex of $g\cap f$, and let $x_1,x_2$ be the two
+vertices of $g\cap X_b$.  Since $g$ is $3$-uniform and has precisely one
+vertex in $f$ and two in $X_b$, these two vertices are exactly
+$g\setminus f$.  Therefore the setup's local cross-degree sum for $g$ is
+identified with the two selected columns, excluding the selected row:
+\[
+\sum_{x\in g\setminus f}\sum_{v\in f\setminus g}\deg_{\mathcal F}(v,x)
+=\sum_{v\in f,\ v\ne v_g}
+\bigl(\deg_{\mathcal F}(v,x_1)+\deg_{\mathcal F}(v,x_2)\bigr).
+\]
+Because $k=3$, the balanced value in \noderef{TablePairStability} is
+\[
+2\left(1-\frac13\right)D=\frac43D.
+\]
+Thus the two columns $x_1,x_2$ and the row $v_g$ satisfy the imbalance
+hypothesis of \noderef{TablePairStability} with the actual positive parameter
+$\eta_0$.
+
+Applying \noderef{TablePairStability} with $k=3$, $n=6$, $C=D$, and
+$\delta=\eta_0$ gives
+\[
+w(X_b)\le
+\frac{3-1}{2\cdot3}\cdot6D^2-\frac{3\eta_0^2}{4(3-1)}
+=2D^2-\frac38\eta_0^2. \tag{2}
+\]
+From (1), using $\delta\ge0$ and the nonnegativity of $D$, we have
+\[
+\eta_0^2>\left(\sqrt{\frac83\delta}\,D\right)^2
+=\frac83\delta D^2.
+\]
+Multiplying by $3/8$ gives $\frac38\eta_0^2>\delta D^2$.  Combining this
+strict loss with (2) yields
+\[
+w(X_b)<2D^2-\delta D^2=(2-\delta)D^2,
+\]
+contradicting the hypothesis $w(X_b)\ge(2-\delta)D^2$.  Hence no such $g$
+exists.  Since $g\in V_2$ was arbitrary, every $g\in V_2$ satisfies the
+claimed $\left(\frac43\pm\sqrt{\frac83\delta}\right)D$ bound.
+\end{proof}

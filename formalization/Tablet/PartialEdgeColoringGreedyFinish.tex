@@ -1,0 +1,19 @@
+\begin{lemma}
+Let $H$ be a finite $k$-uniform hypergraph and let $K,N$ be natural
+numbers. Suppose $C\subseteq E(H)$ has a proper coloring with $K$ colors
+and its canonical residual on $E(H)\setminus C$ has maximum degree at
+most $N$. Then $H$ has a proper edge-coloring with $K+kN+1$ colors.
+\end{lemma}
+\begin{proof}
+The canonical residual is $k$-uniform because its edge sets are unchanged.
+By \noderef{UniformHypergraphLineDegreeBound}, each degree in its line
+graph is at most $k(N-1)\le kN$, with natural subtraction understood.
+By \noderef{FiniteGraphGreedyColoring}, it has a proper vertex-coloring
+with the positive number $kN+1$ of colors. Use these on residual edges,
+adding $K$ to their labels, and retain the original labels on $C$.
+Intersecting edges in $C$ have distinct colors by assumption;
+intersecting residual edges are adjacent in the line graph and thus
+receive distinct colors. A pair with one edge in each part has distinct
+colors because its labels lie on opposite sides of $K$. This is the
+required \noderef{ChromaticIndexAtMost} coloring.
+\end{proof}

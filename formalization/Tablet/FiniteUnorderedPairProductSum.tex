@@ -1,0 +1,18 @@
+\begin{lemma}
+Let $s$ be a subset of a finite linearly ordered set $V$, and let
+$f:V\to R$ take values in a commutative semiring. Then
+\[
+\sum_{\substack{p\subseteq s\\|p|=2}}\prod_{v\in p}f(v)
+=\sum_{v\in s}\sum_{\substack{w\in s\\v<w}}f(v)f(w).
+\]
+\end{lemma}
+\begin{proof}
+Map each ordered pair $(v,w)\in s\times s$ with $v<w$ to $\{v,w\}$.
+Its image is a two-element subset of $s$. Every two-element subset has
+exactly one increasing enumeration, so this map is surjective. If two
+increasing pairs have the same underlying set, their smaller elements
+agree, and then their larger elements agree, proving injectivity.
+The product over $\{v,w\}$ is $f(v)f(w)$ because $v\ne w$.
+Reindexing the finite sum along this bijection and then summing first over
+$v$ and next over the allowed $w$ gives the identity.
+\end{proof}

@@ -1,0 +1,148 @@
+{
+  "_comment": "Public default Trellis config (codex provider). setup_repo.sh uses this template by default and rewrites repo_path, paper_tex_path, main-result targets, tmux session, and chat metadata for your project. To use a different provider, change the 'provider' fields below to 'claude' or 'gemini' (gemini also requires GEMINI_OAUTH_CLIENT_ID / GEMINI_OAUTH_CLIENT_SECRET in the environment). Replace placeholder values marked with REPLACE_ME if you write a config by hand instead of running setup_repo.sh.",
+  "repo_path": "REPLACE_ME",
+  "goal_file": "GOAL.md",
+  "state_dir": ".trellis",
+  "policy_path": "trellis.policy.json",
+  "worker": {
+    "provider": "codex",
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "label": "codex-xhigh"
+  },
+  "easy_worker": {
+    "provider": "codex",
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "label": "codex-xhigh"
+  },
+  "hard_worker": {
+    "provider": "codex",
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "label": "codex-xhigh"
+  },
+  "reviewer": {
+    "provider": "codex",
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "label": "codex-xhigh"
+  },
+  "verification": {
+    "provider": "codex",
+    "model": "gpt-6-astra",
+    "thinking_budget": "high",
+    "max_context_tokens": 50000,
+    "correspondence_agents": [
+      {
+        "provider": "codex",
+        "model": "gpt-6-astra",
+        "effort": "xhigh",
+        "label": "codex-xhigh"
+      }
+    ],
+    "soundness_agents": [
+      {
+        "provider": "codex",
+        "model": "gpt-6-astra",
+        "effort": "xhigh",
+        "label": "codex-xhigh"
+      }
+    ],
+    "substantiveness_agents": [
+      {
+        "provider": "codex",
+        "model": "gpt-6-astra",
+        "effort": "xhigh",
+        "label": "codex-xhigh"
+      }
+    ]
+  },
+  "tmux": {
+    "session_name": "alon-kim-chromatic-index",
+    "dashboard_window_name": "dashboard",
+    "kill_windows_after_capture": true,
+    "burst_user": "REPLACE_ME",
+    "burst_group": "REPLACE_ME",
+    "burst_home": "REPLACE_ME"
+  },
+  "sandbox": {
+    "enabled": true,
+    "backend": "bwrap"
+  },
+  "loogle": {
+    "enabled": false
+  },
+  "sidecar": {
+    "enabled": false,
+    "model": {
+      "provider": "codex",
+      "name": "gpt-5.6-luna",
+      "reasoning_effort": "high"
+    },
+    "daemon": {
+      "grunts": 2,
+      "lean_threads": 2
+    },
+    "budgets": {
+      "attempt_wall_seconds": 3600
+    }
+  },
+  "workflow": {
+    "start_phase": "theorem_stating",
+    "paper_tex_path": "paper/main_trellis_20260811.tex",
+    "approved_axioms_path": "APPROVED_AXIOMS.json",
+    "allowed_import_prefixes": [
+      "Mathlib"
+    ],
+    "forbidden_keyword_allowlist": [],
+    "human_input_path": "HUMAN_INPUT.md",
+    "input_request_path": "INPUT_REQUEST.md",
+    "main_result_labels": [
+      "trellis:thm-3-2",
+      "trellis:thm-3-3",
+      "trellis:thm-k-k",
+      "trellis:thm-gct"
+    ],
+    "main_result_targets": [
+      {
+        "start_line": 73,
+        "end_line": 76,
+        "tex_label": "trellis:thm-3-2"
+      },
+      {
+        "start_line": 78,
+        "end_line": 81,
+        "tex_label": "trellis:thm-3-3"
+      },
+      {
+        "start_line": 83,
+        "end_line": 85,
+        "tex_label": "trellis:thm-k-k"
+      },
+      {
+        "start_line": 107,
+        "end_line": 111,
+        "tex_label": "trellis:thm-gct"
+      }
+    ],
+    "phase_overrides": {}
+  },
+  "chat": {
+    "root_dir": "REPLACE_ME",
+    "repo_name": "alon-kim-chromatic-index",
+    "project_name": "Alon-Kim-Chromatic-Index Formalization",
+    "public_base_url": ""
+  },
+  "git": {
+    "remote_url": null,
+    "remote_name": "origin",
+    "branch": "master",
+    "author_name": ".trellis",
+    "author_email": "trellis@localhost"
+  },
+  "max_cycles": 0,
+  "sleep_seconds": 1.0,
+  "startup_timeout_seconds": 120.0,
+  "burst_timeout_seconds": 14400.0
+}

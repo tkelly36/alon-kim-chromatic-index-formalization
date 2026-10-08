@@ -1,0 +1,51 @@
+\begin{helper}
+Let $\mu$ be the push-forward law of the activation--priority output set in
+\noderef{RandomIndependentSetSampling}, and let $\nu$ be the underlying law on
+pairs $(A,\pi)$.  For every fixed finite set of vertices $Q$,
+\[
+\operatorname{ofReal}\!\left(\sum_S
+  {\bf 1}_{Q\subseteq S}\,\mu(S)\right)
+=
+\nu\!\left(\{(A,\pi):Q\subseteq I(A,\pi)\}\right),
+\]
+where
+\[
+I(A,\pi)=\{z\in A:\pi(w)<\pi(z)\text{ for every }w\in A\cap N_G(z)\}.
+\]
+\end{helper}
+\begin{proof}
+The activation coordinate has the discrete sigma algebra, so every test
+$z\in A$ is measurable. Each priority evaluation is measurable for the
+Borel product sigma algebra, hence so is each strict comparison
+$\pi(w)<\pi(z)$. Finite intersections and complements show that
+$\{z\in I(A,\pi)\}$ is measurable. For a fixed $S$, its output fiber is the
+intersection, over all vertices $z$, of this event when $z\in S$ and its
+complement otherwise. Thus every output fiber is measurable; the
+survival event below is a finite union of these measurable fibers.
+
+Let $I(A,\pi)$ denote the output set appearing in
+\noderef{RandomIndependentSetSampling}.  Put
+\[
+\mathcal T=\{S:S\text{ is a finite vertex set and }Q\subseteq S\}.
+\]
+Since the weights $\mu(S)$ are nonnegative, passing the finite sum
+\[
+\sum_S {\bf 1}_{Q\subseteq S}\mu(S)
+\]
+through $\operatorname{ofReal}$ gives
+\[
+\sum_{S\in\mathcal T}\operatorname{ofReal}(\mu(S)).
+\]
+For each finite set $S$, the push-forward clause of
+\noderef{RandomIndependentSetSampling} identifies the summand
+\(\operatorname{ofReal}(\mu(S))\) with
+\[
+\nu\{(A,\pi):S=I(A,\pi)\}.
+\]
+The events $\{S=I(A,\pi)\}$ are pairwise disjoint as $S$ ranges over distinct
+finite sets.  Their union over all $S\in\mathcal T$ is exactly the event
+\(\{(A,\pi):Q\subseteq I(A,\pi)\}\): if $Q\subseteq I(A,\pi)$, choose
+$S=I(A,\pi)$, and conversely if $S=I(A,\pi)$ with $Q\subseteq S$, then
+$Q\subseteq I(A,\pi)$.  Finite additivity of $\nu$ over this disjoint union
+therefore gives the displayed identity.
+\end{proof}

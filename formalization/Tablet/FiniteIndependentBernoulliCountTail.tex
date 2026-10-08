@@ -1,0 +1,52 @@
+\begin{lemma}
+Let $(\Omega,\nu)$ be a probability space, $A,K$ finite types, with
+measurable singletons in $A$. Let $X_a:\Omega\to A$ be measurable
+independent random variables. For $s\subseteq K$ and predicates $R_a$
+on $A$, put $Z=|\{a\in s:R_a(X_a)\}|$ and $n=|s|$.
+Writing $\mu=\mathbb EZ$, we have $0\le\mu\le n$, and for every real $t>0$,
+\[
+\nu\{Z\ge\mu+t\}\le\exp\bigl(-t^2/(2\mu+t)\bigr).
+\]
+\end{lemma}
+\begin{proof}
+All subsets of $A$ are measurable, so $B_a=1_{R_a(X_a)}$ is measurable.
+Independence of the $X_a$ implies independence of the $B_a$: for any
+specified zero-one values, their joint event is the intersection of the
+corresponding coordinate preimages, and its measure is the product of
+their measures. Put $p_a=\mathbb EB_a\in[0,1]$ and
+$\mu=\sum_{a\in s}p_a=\mathbb EZ$. In particular $0\le\mu\le n$.
+All integral and event calculations here are finite sums: the push-forward
+to $\{0,1\}^s$ has at a vector $v$ mass
+$\prod_{a\in s}(p_a\text{ if }v_a=1\text{ else }1-p_a)$.
+This follows from the joint-event identity, including when some masses
+vanish. Partitioning $\Omega$ into those measurable fibers proves both
+the integral and event transport identities. In particular all displayed
+random variables are integrable.
+
+If $\mu=0$, nonnegativity of the finitely many $p_a$ implies each is zero.
+The finite union of success events is null, whence $Z=0$ almost surely.
+Since $t>0$ the tail is null and the claim follows, also when $s$ is empty.
+Suppose now $\mu>0$. For $\lambda>0$, finite independence and
+$1+u\le e^u$ give
+\[
+\mathbb E e^{\lambda Z}
+=\prod_{a\in s}(1+p_a(e^\lambda-1))
+\le \exp(\mu(e^\lambda-1)).
+\]
+On the non-strict event $Z\ge\mu+t$, the exponential is at least
+$e^{\lambda(\mu+t)}$, so integration bounds its probability by
+$\exp(\mu(e^\lambda-1)-\lambda(\mu+t))$.
+Take $\lambda=\log(1+r)>0$, $r=t/\mu>0$. The bound becomes
+$\exp[-\mu((1+r)\log(1+r)-r)]$.
+
+For completeness, $g(r)=\log(1+r)-2r/(2+r)$ has $g(0)=0$ and
+$g'(r)=r^2/((1+r)(2+r)^2)\ge0$ on $r\ge0$.
+The derivative of
+$h(r)=(1+r)\log(1+r)-r-r^2/(2+r)$ is
+$\log(1+r)-r(4+r)/(2+r)^2$, at least
+$r^2/(2+r)^2\ge0$ by the inequality for $g$.
+Since $h(0)=0$, the exponent is at most $-t^2/(2\mu+t)$.
+This is the asserted tail estimate, and the already established bounds
+$0\le\mu\le n$ finish the proof. No bound on any external threshold
+parameter is used.
+\end{proof}

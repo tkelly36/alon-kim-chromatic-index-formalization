@@ -1,0 +1,43 @@
+\begin{definition}
+Let $G$ be a finite graph of degree scale $\Delta$, let $\gamma>0$, and let
+$\mu$ be a probability mass function on subsets of $V(G)$.  We say that
+$\mu$ is an independent-set sample obtained by the activation--priority
+procedure if there is a probability law on pairs $(A,\pi)$, where
+$A\subseteq V(G)$ is the activated set and $\pi:V(G)\to\mathbb R$ is the
+priority function, such that $A$ has the product Bernoulli law with activation
+probability $\gamma/\Delta$ and, independently of $A$, the coordinates
+$(\pi(v))_{v\in V(G)}$ are independent uniform random variables on $[0,1]$.
+Equivalently, for every activated set $A_0$ and every vector
+$t\in[0,1]^{V(G)}$,
+\[
+\Pr(A=A_0\text{ and }\pi(v)\le t_v\text{ for all }v)
+=\Pr(A=A_0)\prod_{v\in V(G)} t_v.
+\]
+The same independent uniform-priority law is also available in the
+fixed-activation comparison form used in the one-vertex calculation: for every
+fixed activated set $A_0$ and every $v\in A_0$,
+\[
+\Pr\bigl(A=A_0,\ \pi(u)\in[0,1]\text{ for all }u\in A_0,\text{ and }
+\pi(u)<\pi(v)\text{ for every }u\in A_0\cap N_G(v)\bigr)
+\]
+equals
+\[
+\Pr(A=A_0)\int_0^1 a^{|A_0\cap N_G(v)|}\,da .
+\]
+The two-priority chamber comparison used in the fixed-pair calculation is also
+part of the interface.  If $G$ is $\Delta$-regular and $u,v$ are distinct
+non-adjacent vertices, then
+\[
+\Pr[u\in I\hbox{ and }v\in I]
+=
+\frac{2}{\Delta^2}
+\int_{0\le x\le y\le\gamma}
+\left(1-\frac{x}{\Delta}\right)^{\Delta-|N_G(u)\cap N_G(v)|}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx .
+\]
+The law $\mu$ is the push-forward law of
+\[
+I(A,\pi)=\{v\in A:\pi(v)>\pi(w)\text{ for every }w\in A\cap N_G(v)\}.
+\]
+In particular, every set receiving positive mass is independent in $G$.
+\end{definition}

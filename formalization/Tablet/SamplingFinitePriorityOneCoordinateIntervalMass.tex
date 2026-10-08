@@ -1,0 +1,72 @@
+\begin{helper}
+Let \(V\) be finite and let \(\nu\) be a law on activation--priority pairs
+\((A,\pi)\in\mathcal P(V)\times\mathbb R^V\).  Fix \(p\in[0,1]\).  Suppose
+that every activation atom has mass
+\[
+\nu\{A=A_0\}=
+\operatorname{ofReal}\!\left(p^{|A_0|}(1-p)^{|V|-|A_0|}\right),
+\]
+and suppose that, on each activation atom, the priority coordinates satisfy
+the lower-rectangle product law
+\[
+\nu\{A=A_0,\ 0\le \pi(q)\le s_q\hbox{ for every }q\in V\}
+=
+\nu\{A=A_0\}\operatorname{ofReal}\!\left(\prod_{q\in V}s_q\right)
+\]
+for every threshold vector \(s\in[0,1]^V\).  If \(z\in V\) and
+\(0\le a\le b\le1\), then for every activation atom \(A_0\subseteq V\),
+\[
+\nu\{A=A_0,\ 0\le\pi(q)\le1\hbox{ for every }q\in V,\ 
+      a<\pi(z)\le b\}
+\]
+equals
+\[
+\operatorname{ofReal}\!\left(
+p^{|A_0|}(1-p)^{|V|-|A_0|}(b-a)\right).
+\]
+\end{helper}
+\begin{proof}
+Let
+\[
+R_b=\{A=A_0,\ 0\le\pi(q)\le1\text{ for all }q,\ \pi(z)\le b\}
+\]
+and define \(R_a\) in the same way with \(a\) in place of \(b\).  Since
+\(a\le b\), we have \(R_a\subseteq R_b\), and
+\[
+\{A=A_0,\ 0\le\pi(q)\le1\text{ for all }q,\ a<\pi(z)\le b\}
+=R_b\setminus R_a .
+\]
+Indeed, a point of \(R_b\) is outside \(R_a\) exactly when it does not satisfy
+\(\pi(z)\le a\), which is equivalent to \(a<\pi(z)\).
+
+Apply \(\noderef{SamplingFinitePriorityCutProductFormula}\) with lower-cut
+set \(\{z\}\), no upper-cut coordinates, and threshold \(b\) at \(z\) and
+\(1\) at every other coordinate.  The hypotheses \(0\le b\le1\) put this
+threshold vector in the unit cube.  The product over the lower-cut coordinates
+is \(b\), and all other priority factors are \(1\), so
+\[
+\nu(R_b)=
+\operatorname{ofReal}\!\left(
+p^{|A_0|}(1-p)^{|V|-|A_0|}b\right).
+\]
+The same application with threshold \(a\) gives
+\[
+\nu(R_a)=
+\operatorname{ofReal}\!\left(
+p^{|A_0|}(1-p)^{|V|-|A_0|}a\right).
+\]
+The latter value is finite because it is an \(\operatorname{ofReal}\) value.
+Therefore finite measure subtraction gives
+\[
+\nu(R_b\setminus R_a)=\nu(R_b)-\nu(R_a).
+\]
+
+Write
+\[
+\alpha=p^{|A_0|}(1-p)^{|V|-|A_0|}.
+\]
+The assumptions \(0\le p\le1\) imply \(\alpha\ge0\), and \(a\ge0\).  Hence
+\(\operatorname{ofReal}(\alpha b)-\operatorname{ofReal}(\alpha a)
+=\operatorname{ofReal}(\alpha(b-a))\), using \(a\le b\).  Combining this
+with the set identity above proves the displayed interval-mass formula.
+\end{proof}

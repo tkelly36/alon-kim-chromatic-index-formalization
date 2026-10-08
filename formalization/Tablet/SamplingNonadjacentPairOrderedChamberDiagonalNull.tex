@@ -1,0 +1,112 @@
+\begin{helper}
+Let \(V\) be finite and let \(\nu\) be a measure on activation--priority
+pairs \((A,\pi)\in\mathcal P(V)\times\mathbb R^V\).  Fix
+\(0\le p\le1\).  Assume that every activation atom satisfies
+\[
+\nu\{A=A_0\}=
+\operatorname{ofReal}\!\left(p^{|A_0|}(1-p)^{|V|-|A_0|}\right)
+\]
+for every \(A_0\subseteq V\).  Assume also that activated priorities are
+supported in the unit cube on each atom, in the sense that
+\[
+\nu\{A=A_0,\ \pi(q)\in[0,1]\text{ for every }q\in A_0\}
+=\nu\{A=A_0\}
+\]
+for every \(A_0\subseteq V\).  Finally, assume the full lower-rectangle
+product law: for every \(A_0\subseteq V\) and every threshold vector
+\(t:V\to\mathbb R\) with \(t(q)\in[0,1]\) for all \(q\),
+\[
+\nu\{A=A_0,\ 0\le \pi(q)\le t(q)\text{ for every }q\in V\}
+=\nu\{A=A_0\}\operatorname{ofReal}\!\left(\prod_{q\in V}t(q)\right).
+\]
+If \(u\ne v\), then
+\[
+\nu\{u,v\in A,\ \pi(q)\in[0,1]\text{ for every }q\in A,\ \pi(u)=\pi(v)\}=0 .
+\]
+\end{helper}
+\begin{proof}
+For an activation atom \(A_0\), write
+\[
+\alpha(A_0)=p^{|A_0|}(1-p)^{|V|-|A_0|}.
+\]
+The activation-atom hypothesis gives
+\(\nu\{A=A_0\}=\operatorname{ofReal}(\alpha(A_0))\), and \(0\le p\le1\)
+implies \(\alpha(A_0)\ge0\).  Let
+\[
+Q=\{(A,\pi): A=A_0,\ 0\le \pi(q)\le1\hbox{ for every }q\in V\}.
+\]
+Applying the lower-rectangle hypothesis with the constant threshold vector
+\(t(q)=1\) gives
+\[
+\nu(Q)=\nu\{A=A_0\}\operatorname{ofReal}\!\left(\prod_{q\in V}1\right)
+=\nu\{A=A_0\}.
+\]
+Thus the complement of \(Q\) inside the atom \(A=A_0\) has \(\nu\)-measure
+\(0\).
+
+Now restrict attention to this full cube.  For every threshold vector
+\(t:V\to[0,1]\), the lower-rectangle hypothesis says that the atom-restricted
+measure of the anchored rectangle
+\(\prod_{q\in V}[0,t(q)]\) is
+\[
+\operatorname{ofReal}(\alpha(A_0))\,
+\operatorname{ofReal}\!\left(\prod_{q\in V}t(q)\right).
+\]
+Equivalently, on every anchored rectangle in \([0,1]^V\), the push-forward of
+\(\nu\) from the atom to the priority coordinates agrees with the finite
+measure
+\[
+\operatorname{ofReal}(\alpha(A_0))\cdot\lambda_V,
+\]
+where \(\lambda_V\) is product Lebesgue measure on the finite cube
+\([0,1]^V\).  The anchored rectangles are closed under finite intersections
+and generate the Borel sigma-algebra of the cube.  Both finite measures have
+the same total mass, namely \(\operatorname{ofReal}(\alpha(A_0))\), by the
+constant-threshold-\(1\) calculation above.  Hence the finite-measure
+uniqueness theorem identifies the atom-restricted priority law on all Borel
+subsets of the full cube with
+\(\operatorname{ofReal}(\alpha(A_0))\lambda_V\).
+
+Assume first that \(u,v\in A_0\).  Since \(u\ne v\), the diagonal
+\[
+D=\{\pi\in[0,1]^V:\pi(u)=\pi(v)\}
+\]
+is a coordinate hyperplane in the finite product cube.  By Fubini over the
+\(u\)-coordinate, after fixing all coordinates except \(u\), the section of
+\(D\) is the singleton \(\{\pi(v)\}\).  A singleton has one-dimensional
+Lebesgue measure \(0\); this is the fixed-coordinate zero-length section that
+one obtains from the interval-mass calculation of
+\noderef{SamplingFinitePriorityOneCoordinateIntervalMass} after passing to
+the one-dimensional section.  Therefore \(\lambda_V(D)=0\), and the
+atomwise diagonal part
+\[
+\{A=A_0,\ 0\le\pi(q)\le1\hbox{ for every }q\in V,\ \pi(u)=\pi(v)\}
+\]
+has \(\nu\)-measure
+\(\operatorname{ofReal}(\alpha(A_0))\lambda_V(D)=0\).  If \(u\notin A_0\) or
+\(v\notin A_0\), then the atomwise part of the displayed event is empty,
+because the displayed event requires \(u,v\in A\).
+
+It remains only to pass from the full-cube atomwise statement to the event in
+the theorem, which asks for cube bounds only on activated coordinates.  On
+the atom \(A=A_0\), the constant-threshold-\(1\) lower-rectangle calculation
+above says
+\[
+\nu\{A=A_0,\ 0\le \pi(q)\le1\hbox{ for every }q\in V\}
+=\nu\{A=A_0\}.
+\]
+Thus, inside this atom, the complement of the full cube
+\[
+\{0\le \pi(q)\le1\hbox{ for every }q\in V\}
+\]
+has measure \(0\).  Now take a point in the atomwise part of the theorem's
+diagonal event.  If this point lies in the full cube, then it lies in the
+full-cube diagonal part already proved null.  If it does not lie in the full
+cube, then it lies in the zero-measure complement just identified.  Therefore
+the atomwise part of the theorem's diagonal event is contained in the union of
+the full-cube diagonal part and the complement of the full cube inside the
+atom.  Both pieces have \(\nu\)-measure \(0\), so every activation atom
+contributes measure \(0\).  There are finitely many atoms because \(V\) is
+finite, and the displayed diagonal event is the finite union of these atomwise
+parts.  Finite subadditivity gives total \(\nu\)-measure \(0\).
+\end{proof}

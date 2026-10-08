@@ -1,0 +1,88 @@
+\begin{lemma}
+For every $\eta>0$ there is $D_0$ such that, whenever $D\ge D_0$,
+$\mathcal H$ is a $3$-uniform $3$-simple hypergraph with maximum degree at
+most $D$, and $e\in E(\mathcal H)$, one has
+\[
+b_{L(\mathcal H),3D}(e)\le 1-\frac19+\frac1{3^5}+\eta .
+\]
+\end{lemma}
+\begin{proof}
+Fix $\eta>0$. Choose a uniform integer threshold large enough for
+\noderef{ExtremalBParameterSaturationThreeSimple},
+\noderef{ThreeUniformThreeSimplePairUpperCutoff}, and
+\noderef{ThreeUniformThreeSimpleT2UniformEstimate} with error $\eta$,
+and at least $100$.
+
+Let $D$ exceed this threshold and let $(\mathcal H,e)$ be admissible.
+First apply \noderef{FiniteHypergraphClassRelabeling} with $k=t=3$ and
+$M=3D$. Its scale hypotheses hold since $D>0$. This gives finite vertex
+and edge types, class membership, and exactly the same local parameter.
+Apply \noderef{KUniformKSimpleLocalPatternExtremalReduction} at $k=3$
+to this relabeled hypergraph. It supplies a representative
+$(\mathcal F_m,f_m)$ with local parameter at least the original one
+and at least that of every competitor in $H(3,3,D)$. Its vertex type
+need not be finite. Apply \noderef{FiniteHypergraphClassRelabeling}
+again to this representative. The resulting $(\mathcal F,f)$ has
+finite vertex and edge types and the same parameter as
+$(\mathcal F_m,f_m)$, hence retains both inequalities and global
+maximality. In Lean both applications may land in fixed small universes;
+the first also ensures that the extremal reduction and all subsequent
+competitors use those universes.
+
+Apply \noderef{ExtremalBParameterSaturationThreeSimple} to this
+maximizer. Every vertex of $f$ has degree $D$ and $f$ has exactly
+$3(D-1)$ neighbors. Together with $D\ge100$, finite types, class
+membership, and maximality these are exactly the assumptions of
+\noderef{ThreeUniformThreeSimpleSetupConstruction}, which supplies a
+setup $S$ on the same $\mathcal F,f$. Thus no setup-dependent estimate
+is used to produce the setup.
+
+Write $P,T,b$ for its pair count, triple count, and parameter.
+By \noderef{ThreeUniformThreeSimplePairLowerBound} and
+\noderef{ThreeUniformThreeSimplePairUpperCutoff},
+\[
+ D^2-9D+Y\le P\le1.031D^2-9D .
+\]
+Define $\delta=(P+9D)/D^2-1$. Since $D>0$, this gives
+$P=(1+\delta)D^2-9D$ exactly. Using $Y\ge0$ from
+\noderef{ThreeUniformThreeSimpleLocalSetup} in the lower bound and
+dividing both bounds by $D^2>0$ gives $0\le\delta\le0.031$.
+
+The cutoff and pair equality now allow
+\noderef{ThreeUniformThreeSimpleSmallXs} to give
+$\mathrm{totalXs}\le(8/5)\delta D$.
+By \noderef{ThreeUniformThreeSimpleT1IncidenceBound},
+\[
+ T_1\le |V_1|D^2\le\mathrm{totalXs}\,D^2
+       \le(8/5)\delta D^3.
+\]
+The uniform estimate \noderef{ThreeUniformThreeSimpleT2UniformEstimate}
+gives
+\[
+ T_2\le(1/9+1.33\delta+\eta)D^3 .
+\]
+That estimate includes the positive auxiliary epsilon slack needed when
+$\delta=0$; its threshold is uniform in the setup and $\delta$.
+Since $T=T_1+T_2$ by the setup, and $\delta\ge0$,
+\[
+ T\le(1/9+2.93\delta+\eta)D^3
+   \le(1/9+3\delta+\eta)D^3.
+\]
+
+Finally the exact parameter identity in
+\noderef{ThreeUniformThreeSimpleNeighborhoodComplementBounds} gives
+\[
+\begin{aligned}
+ b&=\frac{3(D-1)}{3D}-\frac{P}{(3D)^2}+\frac{T}{(3D)^3}\\
+ &\le\frac{3(D-1)}{3D}
+ -\frac{(1+\delta)D^2-9D}{(3D)^2}
+ +\frac{(1/9+3\delta+\eta)D^3}{(3D)^3}\\
+ &=1-\frac19+\frac1{3^5}+\frac{\eta}{27}
+ \le1-\frac19+\frac1{3^5}+\eta.
+\end{aligned}
+\]
+The equality cancels $-1/D$ against $+1/D$ and
+$-\delta/9$ against $+\delta/9$. The last inequality uses $\eta>0$.
+The extremal comparison and both relabeling equalities transfer this
+bound to the original $(\mathcal H,e)$, as required.
+\end{proof}

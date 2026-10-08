@@ -1,0 +1,47 @@
+\begin{helper}
+Let $\Delta$ be a positive integer and let $\gamma$ be real.  Then the
+substitution $x=\gamma(1-a)$ gives
+\[
+\frac{\gamma}{\Delta}\int_0^1
+\left(1-\frac{\gamma}{\Delta}(1-a)\right)^\Delta\,da
+=
+\frac1\Delta\int_0^\gamma
+\left(1-\frac{x}{\Delta}\right)^\Delta\,dx .
+\]
+\end{helper}
+\begin{proof}
+Let
+\[
+f(x)=\left(1-\frac{x}{\Delta}\right)^\Delta .
+\]
+If $\gamma=0$, both sides are zero: the left side has the factor $\gamma$,
+and the right side is an integral over the degenerate interval $[0,0]$.
+
+Assume now that $\gamma\ne0$.  The affine substitution formula for interval
+integrals gives, for the map $a\mapsto \gamma-\gamma a$,
+\[
+\int_0^1 f(\gamma-\gamma a)\,da
+=
+\gamma^{-1}\int_{\gamma-\gamma\cdot 1}^{\gamma-\gamma\cdot 0} f(x)\,dx
+=
+\gamma^{-1}\int_0^\gamma f(x)\,dx .
+\]
+For every $a$,
+\[
+f(\gamma-\gamma a)
+=\left(1-\frac{\gamma-\gamma a}{\Delta}\right)^\Delta
+=\left(1-\frac{\gamma}{\Delta}(1-a)\right)^\Delta .
+\]
+Substituting this identity into the preceding display and multiplying by
+$\gamma/\Delta$ gives
+\[
+\frac{\gamma}{\Delta}\int_0^1
+\left(1-\frac{\gamma}{\Delta}(1-a)\right)^\Delta\,da
+=
+\frac{\gamma}{\Delta}\gamma^{-1}\int_0^\gamma f(x)\,dx
+=
+\frac1\Delta\int_0^\gamma
+\left(1-\frac{x}{\Delta}\right)^\Delta\,dx,
+\]
+as required.
+\end{proof}

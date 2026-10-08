@@ -1,0 +1,25 @@
+\begin{lemma}
+Let $S$ be a finite set and let $w:S\to\mathbb R$ be nonnegative.
+Put $n=\max(3,|S|)$. There are slots $x_j\in S\sqcup\{\bot\}$,
+indexed by $0\le j<n$, in which each member of $S$ occurs exactly once.
+Extend every function on $S$ by zero at $\bot$. The values $w(x_j)$
+are nonincreasing, and for every real function $g$ on the ambient set,
+$\sum_{j<n}g(x_j)=\sum_{y\in S}g(y)$.
+If any of the first three slots is dummy, every member of $S$ occurs
+in those first three slots. Every member not in those slots has weight
+at most the weight of slot $2$.
+\end{lemma}
+\begin{proof}
+Choose a bijection from $\{0,\ldots,|S|-1\}$ to $S$, and permute its
+indices to sort the weights in decreasing order. Such a permutation
+exists by sorting a finite tuple in the reverse order on the reals.
+Use that sorted bijection for slots with index less than $|S|$, and
+put $\bot$ in all remaining slots. Bijectivity proves both the uniqueness
+and the exhaustive coverage of real slots. The real-slot weights decrease;
+the appended zero weights preserve this order because every weight is
+nonnegative. For any $g$, the real slots sum to the sum over $S$ by the
+bijection, and the dummy slots add zero, proving the sum identity.
+If slot $j<3$ is dummy, then $|S|\le j<3$, so every real slot is among
+the first three. Finally, the unique slot of an unselected member has
+index at least $3$, and monotonicity bounds its weight by that of slot $2$.
+\end{proof}

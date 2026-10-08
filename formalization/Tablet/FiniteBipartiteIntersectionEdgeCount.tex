@@ -1,0 +1,23 @@
+\begin{lemma}
+Let $A,B$ be finite sets of edge indices and let $h(a)$ be a finite vertex
+set for each index. Suppose that $h(a)\cap h(b)\subseteq X$ for every
+$a\in A,b\in B$, where $X$ is finite. Put
+$d_A(x)=|\{a\in A:x\in h(a)\}|$ and define $d_B(x)$ similarly.
+Then, as an integer identity,
+\[
+|\{(a,b)\in A\times B:h(a)\cap h(b)\ne\varnothing\}|
+=\sum_{x\in X}d_A(x)d_B(x)
+-\sum_{a\in A}\sum_{b\in B}\max\{0,|h(a)\cap h(b)|-1\}.
+\]
+\end{lemma}
+\begin{proof}
+Count triples $(x,a,b)$ with $x\in X$, $a\in A$, $b\in B$ and
+$x\in h(a)\cap h(b)$. For fixed $x$ the number is $d_A(x)d_B(x)$.
+For fixed $(a,b)$ the number is $|h(a)\cap h(b)|$, because the entire
+intersection lies in $X$. Thus the first sum equals
+$\sum_{a\in A,b\in B}|h(a)\cap h(b)|$.
+For any nonnegative integer $m$, the difference $m-\max\{0,m-1\}$
+is zero if $m=0$ and one if $m\geq1$. Apply this identity with
+$m=|h(a)\cap h(b)|$ and sum over $A\times B$. The remaining sum of
+indicators is precisely the cardinality on the left.
+\end{proof}

@@ -1,0 +1,41 @@
+\begin{lemma}
+Let $T,J$ be finite and let $\nu$ be the nibble product measure with
+$0\le p\le1$. Suppose $B_j$ are Borel events determined by finite sets
+$S_j\subseteq T$: agreement on $S_j$ preserves membership in $B_j$.
+Suppose each $S_j$ intersects at most $q$ other determining sets, where
+$q\ge1$, and $\nu(B_j)\le P$ for a real $P\ge0$ satisfying
+$eP(q+1)\le1$. Then $\nu(\bigcap_j B_j^c)>0$, and there exists an
+outcome outside every $B_j$.
+\end{lemma}
+\begin{proof}
+The factors of \noderef{NibbleProductMeasure} have mass one. A determining
+event is a cylinder over its determining coordinates: fix the unused
+coordinates at $(0,0)$ and take the inverse image of the event under this
+measurable extension map. Its section is Borel and the determining property
+identifies the original event with the cylinder over that section.
+The product rectangle formula, extended to Borel sections by the pi-lambda
+theorem, shows that an event is independent of the sigma algebra generated
+by all events whose determining sets avoid its determining set. In particular
+it is independent of the simultaneous avoidance of any of its nonneighbors.
+
+Put $z=1/(q+1)$, so $0<z<1$.
+Induct simultaneously on the size of a set $S$ of events to show that its
+avoidance has positive probability and that, for $i\notin S$,
+$\Pr[B_i\mid\bigcap_{j\in S}B_j^c]\le z$.
+For the empty set positivity is one. For general $S$, its positivity
+follows by ordering its members and using the already established bounds
+for conditioning sets of smaller size, giving probability at least
+$(1-z)^{|S|}>0$.
+For the conditional bound, separate $S$ into neighbors $S_1$ of $i$ and
+nonneighbors $S_2$. If $S_1$ is empty, independence gives a bound $P\le z$.
+Otherwise the numerator conditioned on avoidance of $S_2$ is at most
+$P$, by independence. In the denominator, order $S_1$ and expand its
+avoidance conditional on $S_2$. Each factor is at least $1-z$ by induction:
+its conditioning set has size at most $|S|-1$. Thus the desired conditional
+probability is at most $P/(1-z)^{|S_1|}\le P/(1-z)^q$.
+Since $q\log(1+1/q)\le1$, we have $(1-z)^q\ge e^{-1}$.
+Consequently this ratio is at most $eP\le z$, completing the induction.
+The avoidance probability of the entire family is at least
+$(1-z)^{|J|}>0$. A positive-measure set is nonempty, giving the final
+existence assertion. The argument also covers an empty event family.
+\end{proof}

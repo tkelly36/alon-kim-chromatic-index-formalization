@@ -1,0 +1,49 @@
+\begin{helper}
+Fix an activation set $A$ and a vertex $v$ in the sampling space of
+\noderef{RandomIndependentSetSampling}.  Let $\nu$ be any measure satisfying
+the rectangular priority clause from that definition.  If $0\le a\le 1$ and
+$0\le b\le 1$, then the $\nu$-measure of the rectangle in which the activation
+set is exactly $A$, the priority of $v$ is at most $b$, every activated
+neighbor of $v$ has priority at most $a$, and all remaining priority
+coordinates lie in $[0,1]$, is
+\[
+\nu[\omega_1=A]\,
+b\,a^{|\{u\in V(G):u\in A\text{ and }u\sim_G v\}|}.
+\]
+\end{helper}
+\begin{proof}
+Define a threshold function $t$ on vertices by
+\[
+t(u)=
+\begin{cases}
+b, & u=v,\\
+a, & u\ne v,\ u\in A,\text{ and }u\sim_G v,\\
+1, & \text{otherwise}.
+\end{cases}
+\]
+Because $0\le a\le 1$ and $0\le b\le 1$, every value of $t$ lies in
+$[0,1]$.  Applying the rectangular priority clause of
+\noderef{RandomIndependentSetSampling} to this threshold function gives
+\[
+\nu\{\omega:\omega_1=A\text{ and }0\le \omega_2(u)\le t(u)
+\text{ for every }u\}
+=
+\nu[\omega_1=A]\prod_{u\in V(G)}t(u).
+\]
+The event on the left is exactly the stated rectangle: the coordinate of
+$v$ is bounded above by $b$, activated neighbors of $v$ are bounded above by
+$a$, and every other coordinate is bounded above by $1$.
+
+It remains to simplify the finite product.  The factor belonging to $v$ is
+$b$.  Since a simple graph has no loop at $v$, the vertex $v$ is not counted
+among the vertices satisfying $u\in A$ and $u\sim_G v$.  Every such activated
+neighbor contributes a factor $a$, and every remaining vertex contributes
+$1$.  Hence
+\[
+\prod_{u\in V(G)}t(u)
+=
+b\,a^{|\{u\in V(G):u\in A\text{ and }u\sim_G v\}|}.
+\]
+Substituting this product identity into the preceding rectangular-measure
+formula proves the claim.
+\end{proof}

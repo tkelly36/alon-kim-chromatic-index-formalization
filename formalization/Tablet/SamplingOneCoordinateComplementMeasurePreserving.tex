@@ -1,0 +1,19 @@
+\begin{helper}
+Let \(V\) be a finite vertex set and fix \(v\in V\).  The coordinate-splitting
+map
+\[
+q\longmapsto \bigl(q(v),(q(w))_{w\ne v}\bigr)
+\]
+from \(\mathbb R^V\) to \(\mathbb R\times\mathbb R^{V\setminus\{v\}}\)
+preserves Lebesgue product measure.
+\end{helper}
+\begin{proof}
+Choose the bijection \(\{\ast\}\sqcup (V\setminus\{v\})\to V\) sending the
+distinguished point to \(v\) and every remaining coordinate to itself.  The
+standard product-coordinate permutation induced by this bijection preserves
+finite product Lebesgue measure.  The standard measurable equivalence
+\(\mathbb R^{\{\ast\}\sqcup W}\cong \mathbb R^{\{\ast\}}\times\mathbb R^W\)
+also preserves product measure, as does the identification
+\(\mathbb R^{\{\ast\}}\cong\mathbb R\).  Their composition is exactly the
+displayed coordinate-splitting map, so the map is measure preserving.
+\end{proof}

@@ -1,0 +1,54 @@
+\begin{lemma}
+Let $G$ be a finite simple graph of maximum degree at most $\Delta$.  Then
+there is a finite simple $\Delta$-regular graph $G'$ and an injective map
+$\phi:V(G)\to V(G')$ such that, for all old vertices $u,v\in V(G)$,
+\[
+uv\in E(G) \quad\Longleftrightarrow\quad
+\phi(u)\phi(v)\in E(G').
+\]
+Thus the image of $G$ is an induced subgraph of $G'$.
+\end{lemma}
+\begin{proof}
+If $\Delta=0$, the maximum-degree hypothesis says that $G$ has no edges.
+Take $G'=G$ and $\phi$ to be the identity; every vertex then has degree
+$0$, and the induced-subgraph assertion is immediate.
+
+Assume $\Delta>0$.  Start with a disjoint copy of $G$ and call its vertices
+old.  For each old vertex $v$ of degree $d_G(v)$, create
+\[
+\Delta-d_G(v)
+\]
+formal stubs incident with $v$.  Filling each stub by one new edge will make
+the old vertex have degree exactly $\Delta$.  Let $s$ be the total number of
+old stubs.  If $s$ is odd, add one fresh isolated vertex and give it
+$\Delta$ stubs.  Since an odd $s$ can occur only when $\Delta$ is odd by the
+handshaking parity congruence
+\[
+s=\Delta |V(G)|-2|E(G)|\equiv \Delta |V(G)|\pmod 2,
+\]
+the number $s+\Delta$ is even.  If $s$ is already even, add no parity
+vertex.  We now have an even finite set of stubs.
+
+Pair the stubs arbitrarily.  For each pair of stubs, introduce a fresh copy
+of the complete graph $K_{\Delta+1}$ and choose one edge $ab$ inside that
+copy.  Delete the edge $ab$.  If the two paired stubs belong to vertices
+$x$ and $y$, add the edges $xa$ and $yb$.  The two vertices $a$ and $b$ had
+degree $\Delta-1$ after deleting $ab$, and each regains one incident edge;
+all other vertices of the complete-graph block keep degree $\Delta$.
+Meanwhile each stub-owner receives exactly one new incident edge.  If
+$x=y$, the two new neighbors $a$ and $b$ are distinct, so no loop is formed.
+If $x\ne y$, both new endpoints are fresh and lie in a block not used for
+any other stub-pair, so no duplicate edge is formed.  No edge is ever added
+between two old vertices.
+
+After all stub pairs are filled, every old vertex has gained exactly the
+number of missing incident edges, the possible parity vertex has also had
+all of its stubs filled, and every vertex in every fresh
+$K_{\Delta+1}$ block has degree $\Delta$.  The resulting graph is finite
+because it is obtained from finitely many stubs and finitely many finite
+blocks.  It is simple by the no-loop and no-duplicate checks above.  Since
+no old-old edge was added or removed, two old vertices are adjacent in the
+final graph exactly when they were adjacent in $G$.  Hence the inclusion of
+old vertices is injective and identifies $G$ with an induced subgraph of the
+finite $\Delta$-regular graph just constructed.
+\end{proof}

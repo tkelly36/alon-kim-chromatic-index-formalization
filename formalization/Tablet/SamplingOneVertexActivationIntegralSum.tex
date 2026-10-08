@@ -1,0 +1,41 @@
+\begin{helper}
+Fix a finite simple graph $G$, a vertex $v$, a regularity value $\Delta$ with
+every vertex having degree $\Delta$, and a sampling parameter $\gamma$.  Then
+\[
+\begin{aligned}
+&\sum_{A\subseteq V(G)}{\bf 1}_{v\in A}
+\left(\frac{\gamma}{\Delta}\right)^{|A|}
+\left(1-\frac{\gamma}{\Delta}\right)^{|V(G)|-|A|}
+\int_0^1 a^{|\{u:u\in A,\ u\sim_G v\}|}\,da  \\
+&\qquad =
+\frac{\gamma}{\Delta}
+\int_0^1
+\left(1-\frac{\gamma}{\Delta}(1-a)\right)^\Delta\,da .
+\end{aligned}
+\]
+\end{helper}
+\begin{proof}
+For each fixed priority threshold $a$, identify an activation set $A$ with
+its Boolean activation-decision function $b:V(G)\to\{\mathrm{inactive},
+\mathrm{active}\}$.  The summand on the left is zero unless $v$ is active.
+When $v\in A$, its Bernoulli atom contributes one factor $\gamma/\Delta$ for
+$v$, each activated neighbor of $v$ contributes an additional factor $a$, each
+other activated vertex contributes $\gamma/\Delta$, and each inactive vertex
+different from $v$ contributes $1-\gamma/\Delta$.  Thus the finite sum over
+activation sets at threshold $a$ is exactly the activation-decision weight
+computed in \noderef{SamplingOneVertexFixedThresholdProduct}.
+
+That node gives the pointwise identity
+\[
+\sum_A{\bf 1}_{v\in A}
+\left(\frac{\gamma}{\Delta}\right)^{|A|}
+\left(1-\frac{\gamma}{\Delta}\right)^{|V(G)|-|A|}
+a^{|\{u:u\in A,\ u\sim_G v\}|}
+=
+\frac{\gamma}{\Delta}
+\left(1-\frac{\gamma}{\Delta}(1-a)\right)^\Delta .
+\]
+All sums are finite and all integrands are polynomials in $a$, hence
+integrable on $[0,1]$.  Integrating this pointwise identity over $a\in[0,1]$
+and moving the finite sum through the integral gives the displayed formula.
+\end{proof}

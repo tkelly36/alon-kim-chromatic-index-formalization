@@ -1,0 +1,45 @@
+\begin{helper}
+Let \(U\) be a finite union of witness events \(W_i\), indexed by a finite
+linearly ordered type:
+\[
+  U=\bigcup_i W_i .
+\]
+Then there is a canonical first-witness refinement \(P_i\) of this union,
+defined by
+\[
+  P_i=\{a:a\in W_i\hbox{ and }a\notin W_j\hbox{ for every }j<i\}.
+\]
+The refined pieces still cover \(U\),
+\[
+  U=\bigcup_i P_i,
+\]
+and the family \((P_i)_i\) is pairwise disjoint.
+\end{helper}
+\begin{proof}
+Define \(P_i\) by the displayed formula.  First we prove that the \(P_i\)
+cover \(U\).  If \(a\in P_i\) for some \(i\), then \(a\in W_i\) by the first
+clause in the definition of \(P_i\), and hence \(a\in U\) because
+\(U=\bigcup_i W_i\).
+
+Conversely suppose \(a\in U\).  Since \(U=\bigcup_i W_i\), the finite set
+\[
+  S(a)=\{i:a\in W_i\}
+\]
+is nonempty.  Choose its least element \(i_0\) in the fixed finite linear
+order.  Then \(a\in W_{i_0}\).  If \(j<i_0\), minimality of \(i_0\) in
+\(S(a)\) gives \(j\notin S(a)\), hence \(a\notin W_j\).  Therefore
+\(a\in P_{i_0}\), so \(a\) lies in the union of the refined pieces.
+
+Now take two distinct indices \(i\ne j\).  Since the order is linear, either
+\(i<j\) or \(j<i\).  If \(a\in P_i\cap P_j\) and \(i<j\), then the
+first-witness exclusion in the definition of \(P_j\) says \(a\notin W_i\),
+whereas \(a\in P_i\) says \(a\in W_i\), a contradiction.  The case \(j<i\)
+is symmetric.  Thus \(P_i\cap P_j=\emptyset\) whenever \(i\ne j\), which is
+pairwise disjointness.
+
+Finally, intersecting every event with a fixed cell preserves both the union
+identity and disjointness: \((\bigcup_i P_i)\cap C=\bigcup_i(P_i\cap C)\),
+and subsets of disjoint sets remain disjoint.  Pairwise disjointness implies
+pairwise almost-disjointness for any measure, since the intersection of two
+distinct refined pieces is empty and therefore has measure zero.
+\end{proof}

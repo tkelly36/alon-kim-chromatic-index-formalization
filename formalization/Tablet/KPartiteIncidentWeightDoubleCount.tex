@@ -1,0 +1,35 @@
+\begin{helper}
+Let $k$ be a natural number and let $w_{ij}$ be a real weight assigned to
+each ordered pair of indices in $\{1,\ldots,k\}$.  Then the symmetric
+incident sum
+\[
+\sum_i\sum_j
+\begin{cases}
+w_{ij},& i<j,\\
+w_{ji},& j<i,\\
+0,& i=j
+\end{cases}
+\]
+is equal to twice the increasing-pair sum:
+\[
+\sum_i\sum_j
+\begin{cases}
+w_{ij},& i<j,\\
+w_{ji},& j<i,\\
+0,& i=j
+\end{cases}
+=
+2\sum_{i<j}w_{ij}.
+\]
+\end{helper}
+\begin{proof}
+Split the displayed double sum into the contribution of the ordered pairs
+with $i<j$ and the contribution of the ordered pairs with $j<i$; the diagonal
+terms contribute $0$.  The first contribution is exactly
+$\sum_{i<j}w_{ij}$.  In the second contribution, rename the ordered pair
+$(i,j)$ as $(j,i)$; this is a bijection from the ordered pairs with $j<i$ to
+the ordered pairs with $i<j$, and under this renaming the summand $w_{ji}$
+becomes $w_{ij}$.  Hence the second contribution is also
+$\sum_{i<j}w_{ij}$.  Adding the two equal contributions gives
+$2\sum_{i<j}w_{ij}$.
+\end{proof}

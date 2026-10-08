@@ -1,0 +1,28 @@
+\begin{definition}
+For finite vertex types, a source graph \(G\), a map \(\phi\), a root
+\(r\), candidates \(X\), listed blockers \(z_i\), sets \(B_i\), and an
+incidence-indexed private map \(\beta\), define \(F_{P,T}(x)\) for
+\(x\in X\) and index sets \(P,T\subseteq\operatorname{Fin}n\).
+It is the event on paired activation--priority states
+\(\zeta=((A,\pi),(A',\pi'))\) that all the following hold for this same
+candidate \(x\):
+\(x\in A\), \(\phi(x)\in A'\),
+\[
+\forall y\in X\cup\{r\},\quad
+ (y\in A\land Gxy\Rightarrow\pi(y)<\pi(x)),\qquad
+ (\phi(y)\in A'\land Gxy\Rightarrow\pi'(\phi(y))<\pi'(\phi(x))),
+\]
+and, for each \(i\in P\) with \(x\in B_i\), every proof that
+\(z_i\notin X\cup\{r\}\) and \(Gxz_i\) gives
+\[
+ \neg(\beta(x,z_i)\in A'\land
+ \pi'(\phi(x))<\pi'(\beta(x,z_i))\land\pi'(\beta(x,z_i))\in[0,1]),
+\]
+while for each \(i\in T\) with \(x\in B_i\) one has
+\[
+ \neg(z_i\in A\land\pi(x)<\pi(z_i)\land\pi(z_i)\in[0,1]).
+\]
+In particular \(P=\{i:i<k\}\), \(T=\{i:k<i\}\) gives the
+candidate-indexed mixed noncurrent context, and \(P=\{i:i<j\}\),
+\(T=\{i:j\le i\}\) gives the mixed stage's candidate event.
+\end{definition}

@@ -1,0 +1,43 @@
+\begin{helper}
+Let \(L\) and \(\alpha\) be real parameters.  Suppose the one-dimensional
+exponential tail calculation gives the numeric lower bound
+\[
+\frac53+2\alpha
+\le
+2(1-\alpha)^2 e^{-\alpha L}
+\int_0^L \bigl(e^{-x}-e^{-L}\bigr)\,dx .
+\]
+Then the high-overlap exponential window has the required margin:
+\[
+\frac53+2\alpha
+\le
+2\int_0^L\int_x^L
+(1-\alpha)e^{-\alpha L}(1-\alpha)e^{-y}\,dy\,dx .
+\]
+\end{helper}
+\begin{proof}
+For fixed \(x\), the only \(y\)-dependent factor in the inner integral is
+\(e^{-y}\).  The derivative of \(-e^{-y}\) is \(e^{-y}\), so the fundamental
+theorem of calculus gives
+\[
+\int_x^L e^{-y}\,dy=e^{-x}-e^{-L}.
+\]
+Pulling the \(y\)-independent factors out of the inner integral therefore gives
+\[
+\int_x^L
+(1-\alpha)e^{-\alpha L}(1-\alpha)e^{-y}\,dy
+=
+(1-\alpha)^2 e^{-\alpha L}\bigl(e^{-x}-e^{-L}\bigr).
+\]
+Integrating this identity in \(x\) from \(0\) to \(L\), and pulling the constant
+\((1-\alpha)^2e^{-\alpha L}\) outside the outer integral, yields
+\[
+\int_0^L\int_x^L
+(1-\alpha)e^{-\alpha L}(1-\alpha)e^{-y}\,dy\,dx
+=
+(1-\alpha)^2 e^{-\alpha L}
+\int_0^L \bigl(e^{-x}-e^{-L}\bigr)\,dx .
+\]
+Multiplying by \(2\) and applying the assumed one-dimensional lower bound gives
+the displayed high-overlap margin.
+\end{proof}

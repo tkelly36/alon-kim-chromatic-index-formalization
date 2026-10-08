@@ -1,0 +1,40 @@
+\begin{lemma}
+Let $A=(a_{ij})_{i,j\in\{0,1,2\}}$ have nonnegative real entries and
+column sums $c_j=\sum_i a_{ij}\le1$. Then
+\[
+3\sum_{j=0}^2\sum_{i<i'}a_{ij}a_{i'j}+\operatorname{perm}(A)
+\le \sum_{j=0}^2 c_j^2+\frac29c_0c_1c_2.
+\]
+\end{lemma}
+\begin{proof}
+Put $d_{ij}=a_{ij}-c_j/3$. Each column of $d$ sums to zero.
+Since $0\le a_{ij}\le c_j\le1$, we have $|d_{ij}|\le2/3$.
+Write $R_i=d_{i0}^2+d_{i1}^2+d_{i2}^2$ and
+\[
+E_i=-\frac{c_2}{3}d_{i0}d_{i1}-\frac{c_1}{3}d_{i0}d_{i2}
+-\frac{c_0}{3}d_{i1}d_{i2}+2d_{i0}d_{i1}d_{i2}.
+\]
+The inequality $-uv\le(u^2+v^2)/2$ implies
+$-(t/3)uv\le(u^2+v^2)/6$ for $0\le t\le1$.
+Also $|uv|\le(u^2+v^2)/2$ and $|w|\le2/3$ imply
+$2uvw\le(2/3)(u^2+v^2)$. Consequently
+$E_i\le R_i-(2/3)d_{i2}^2\le R_i$.
+
+For completeness the permanent is the sum of the six products with row
+triples $(0,1,2),(0,2,1),(1,0,2),(1,2,0),(2,0,1),(2,1,0)$
+in columns $0,1,2$, respectively. Substituting $a_{ij}=c_j/3+d_{ij}$
+in these six products and using the three zero column sums gives
+\[
+\operatorname{perm}(A)=\frac29c_0c_1c_2+\sum_i E_i.
+\]
+Indeed the terms linear in $d$ vanish, the terms involving two distinct
+columns are $-(c_l/3)\sum_i d_{ij}d_{ik}$, and the cubic terms are
+$2\sum_i d_{i0}d_{i1}d_{i2}$.
+The identity $2\sum_{i<i'}a_{ij}a_{i'j}=c_j^2-\sum_i a_{ij}^2$
+and $\sum_i a_{ij}^2=c_j^2/3+\sum_i d_{ij}^2$ give
+\[
+3\sum_j\sum_{i<i'}a_{ij}a_{i'j}=\sum_j c_j^2-\frac32\sum_i R_i.
+\]
+Adding the permanent and using $\sum_i E_i\le\sum_i R_i$ leaves
+the claimed upper bound minus $(1/2)\sum_i R_i$, a nonpositive term.
+\end{proof}

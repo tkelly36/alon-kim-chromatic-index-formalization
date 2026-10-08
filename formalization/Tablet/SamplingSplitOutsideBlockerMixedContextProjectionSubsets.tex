@@ -1,0 +1,57 @@
+\begin{helper}
+Fix one split-outside-blocker witness surface with outside-blocker list
+\((z_i)_{i<n}\), candidate sets
+\[
+  B_i=\{x\in X:xz_i\in E(G)\},
+\]
+and private blocker map \(\beta(x,z_i)\).  Suppose the paired mixed
+unchanged context at a cut \(k<n\) is the event of paired source--target
+states with one common witness \(x\in X\) such that \(x\) is adjacent to the
+current blocker \(z_k\), the source and target embedded-neighbor priority
+conditions both hold, every already-private target blocker with index
+\(i<k\) fails to kill \(\phi(x)\), and every retained common source blocker
+with index \(i>k\) fails to kill \(x\).
+
+Then every paired state in this mixed context projects to the corresponding
+separated omitted-current source and target contexts.  On the source side,
+the projected source state has a witness \(x\in B_k\), satisfies the source
+embedded-neighbor conditions, and satisfies all retained common tests
+\(i>k\) for which \(x\in B_i\).  On the target side, the projected target
+state has the same witness \(x\in B_k\), satisfies the transported
+embedded-neighbor conditions, and satisfies all already-private tests
+\(i<k\) for which \(x\in B_i\).  The current blocker test itself is not added
+to either projected omitted-current context.
+\end{helper}
+\begin{proof}
+Fix \(k<n\), an atom label \(\omega\), and a paired state
+\((\eta,\eta')\) in the displayed mixed unchanged context.  By the defining
+formula for that context, there are \(x\in X\) and a proof of adjacency
+\(xz_k\in E(G)\) such that \(\eta\) contains \(x\), \(\eta'\) contains
+\(\phi(x)\), the source and target embedded-neighbor priority conditions hold
+for this same \(x\), all target private tests with \(i<k\) hold, and all
+source retained common tests with \(i>k\) hold.
+
+The displayed identity \(B_k=\{x\in X:xz_k\in E(G)\}\) now gives
+\(x\in B_k\) from \(x\in X\) and \(xz_k\in E(G)\).  This is the witness used
+for both projections.
+
+For the source projection, keep the same \(x\).  The source membership
+\(x\in\eta_1\) and the source embedded-neighbor inequalities are already part
+of the paired-context data.  If \(i>k\) and \(x\in B_i\), the same displayed
+identity for \(B_i\) gives \(xz_i\in E(G)\).  The paired-context retained
+common clause therefore applies at index \(i\), and gives exactly the
+non-killing condition for the common blocker \(z_i\) in the source projected
+omitted-current event.  Thus \(\eta\) lies in the separated source context.
+
+For the target projection, again keep the same \(x\).  The target membership
+\(\phi(x)\in\eta'_1\) and the transported embedded-neighbor inequalities are
+already part of the paired-context data.  If \(i<k\) and \(x\in B_i\), then
+the displayed identity for \(B_i\) gives the adjacency \(xz_i\in E(G)\);
+together with the outside-blocker hypothesis for \(z_i\), this is the
+dependent datum needed to form the private vertex \(\beta(x,z_i)\).  The
+paired-context already-private clause at index \(i\) gives the required
+non-killing condition for that private blocker.  Hence \(\eta'\) lies in the
+separated target omitted-current context.  No assertion about equality of the
+two projected masses is made here; the lemma records only the exact
+set-theoretic projection content of the paired context.
+\end{proof}

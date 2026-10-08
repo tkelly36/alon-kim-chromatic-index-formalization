@@ -1,0 +1,28 @@
+\begin{helper}
+Let $\mathcal F$ be a $k$-uniform finite multi-hypergraph, and let
+$f\in E(\mathcal F)$.  Suppose every vertex of $f$ has degree $D$, and
+suppose every edge different from $f$ that meets $f$ meets it in exactly one
+vertex.  Then $f$ has exactly $kD-k$ neighboring edges, that is,
+\[
+\left|\{g\in E(\mathcal F):g\ne f,\ g\cap f\ne\emptyset\}\right|=kD-k .
+\]
+\end{helper}
+\begin{proof}
+By \noderef{UniformHypergraph}, the edge $f$ has exactly $k$ vertices.  For a
+fixed vertex $v\in f$, \noderef{HypergraphDegree} says that
+$\deg_{\mathcal F}(v)$ is the number of edge labels whose edge contains $v$.
+The saturation hypothesis gives $\deg_{\mathcal F}(v)=D$.  Among these $D$
+edge labels, one is $f$ itself, so exactly $D-1$ labels $g\ne f$ contain
+$v$.  Summing over all $v\in f$ gives exactly $k(D-1)$ incidences
+\[
+(v,g)\quad\text{with}\quad v\in f,\ g\ne f,\ v\in g .
+\]
+
+Now compare these incidences with neighboring edges of $f$.  Each neighboring
+edge $g\ne f$ contributes at least one incidence because it meets $f$.
+The one-intersection hypothesis says it contributes exactly one incidence.
+Thus the incidence-counting map from incidences to neighboring edges is
+one-to-one and onto after forgetting the unique vertex of $g\cap f$.  Hence
+the number of neighboring edges is the same as the incidence count, namely
+$k(D-1)=kD-k$.
+\end{proof}

@@ -1,0 +1,69 @@
+\begin{helper}
+Let \(\Omega\) be a measurable space, let \(V\) be a finite coordinate type,
+let \(\nu\) be a measure on \(\Omega\), let \(F\subseteq\Omega\), and let
+\(p:\Omega\to\mathbb R^V\) be measurable.  Let \(M\) be an
+extended nonnegative real number.  Assume that \(\nu(F)\) is finite, that
+\(M=\nu(F)\), and that the lower-rectangle law holds: for every
+\(t:V\to\mathbb R\) with \(0\le t_v\le1\) for all \(v\),
+\[
+\nu\{\omega:F(\omega)\text{ and }0\le p(\omega)_v\le t_v
+\text{ for every }v\in V\}
+=M\,\operatorname{ofReal}\!\left(\prod_{v\in V}t_v\right).
+\]
+If \(C\subseteq\mathbb R^V\) is Borel and contained in the unit cube
+\([0,1]^V\), then
+\[
+\nu\bigl(\{\omega:F(\omega),\ p(\omega)\in C\}
+\cap\{\omega:p(\omega)_v\in[0,1]\text{ for every }v\in V\}\bigr)
+= M\,\operatorname{vol}(C).
+\]
+\end{helper}
+\begin{proof}
+Let \(Q=[0,1]^V\) and let
+\(Q_\Omega=\{\omega:p(\omega)_v\in[0,1]\text{ for every }v\in V\}\).
+Restrict \(\nu\) to \(F\cap Q_\Omega\) and push it forward by \(p\); call
+the resulting measure \(\mu\) on \(\mathbb R^V\).  Let
+\(\rho=M\,\operatorname{vol}\!\restriction Q\).  Since \(\Omega\) has the
+all-subsets measurable structure, \(p\) is measurable.
+
+The hypothesis with \(t_v=1\) for every \(v\) gives
+\[
+\mu(\mathbb R^V)=\nu(F\cap Q_\Omega)=M.
+\]
+Also \(\operatorname{vol}(Q)=1\), by the finite-product volume formula for
+\(\prod_v[0,1]\), and therefore \(\rho(\mathbb R^V)=M\).  Because
+\(\mu(\mathbb R^V)\le\nu(F)<\infty\), \(\mu\) is finite; \(\rho\) has the
+same finite total mass.
+
+We next compare \(\mu\) and \(\rho\) on every product lower orthant
+\(\{q:q_v\le s_v\text{ for all }v\}\), with arbitrary \(s:V\to\mathbb R\).
+If some \(s_v<0\), then the orthant has empty intersection with \(Q\), so
+both measures assign it mass \(0\).  If all \(s_v\ge0\), put
+\(t_v=\min(s_v,1)\).  Then \(t_v\in[0,1]\), and intersecting the orthant
+with \(Q\) is exactly the box \(\prod_v[0,t_v]\).  The lower-rectangle
+hypothesis gives
+\[
+\mu\{q:q_v\le s_v\text{ for all }v\}
+=M\,\operatorname{ofReal}\!\left(\prod_v t_v\right).
+\]
+The finite-product Lebesgue formula gives the same value for
+\(\rho\), because \(\rho\) is \(M\) times Lebesgue measure restricted to
+\(Q\).  Hence \(\mu\) and \(\rho\) agree on all finite product lower
+orthants.
+
+The one-dimensional lower rays generate the Borel sigma-algebra on
+\(\mathbb R\), and finite products of these rays form a pi-system generating
+the product Borel sigma-algebra on \(\mathbb R^V\).  Since \(\mu\) and
+\(\rho\) are finite measures, agree on this generating pi-system, and have
+the same total mass, the finite-measure uniqueness theorem gives
+\(\mu=\rho\) on all Borel subsets of \(\mathbb R^V\).
+
+Apply this equality to the Borel set \(C\).  The event in the statement is
+precisely \(p^{-1}(C)\cap F\cap Q_\Omega\), whose \(\nu\)-measure is
+\(\mu(C)\).  Since \(C\subseteq Q\),
+\[
+\rho(C)=M\,\operatorname{vol}(Q\cap C)=M\,\operatorname{vol}(C).
+\]
+Therefore the displayed event has measure \(M\,\operatorname{vol}(C)\), as
+claimed.
+\end{proof}

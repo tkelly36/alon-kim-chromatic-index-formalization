@@ -1,0 +1,60 @@
+\begin{lemma}
+Let $D$ be sufficiently large, let $\mathcal F$ be a $3$-uniform
+$2$-simple hypergraph of maximum degree at most $D$, and let
+$f=\{v_1,v_2,v_3\}$ be an edge that intersects exactly $3(D-1)$ other edges.
+Put $X=X(f,\mathcal F)$, and suppose the following saturated-edge conclusions
+hold for $f$: every neighboring edge meets $f$ in exactly one vertex, each
+$x\in X$ has
+$\sum_{v\in f}\deg_{\mathcal F}(v,x)\le D$, and each $v\in f$ has
+$\sum_{x\in X}\deg_{\mathcal F}(v,x)=2(D-1)$.  Let $G$ be the subgraph of
+$L(\mathcal F)$ induced on $N_{L(\mathcal F)}(f)$, let $P(f)$ be the number
+of independent pairs in this neighborhood, and assume the pair-counting lower
+bound
+\[
+P(f)\ge 3D^2-6D+3-w_{\mathcal F,f}(X).
+\]
+Define
+\[
+X_s=\left\{x\in X:\sum_{v\in f}\deg_{\mathcal F}(v,x)<D^{2/3}\right\},
+\qquad
+X_b=X\setminus X_s .
+\]
+Then
+\[
+w_{\mathcal F,f}(X_s)\le 2D^{5/3}.
+\]
+Consequently,
+\[
+P(f)\ge 3D^2-6D+3-w_{\mathcal F,f}(X_b)-2D^{5/3}.
+\]
+\end{lemma}
+\begin{proof}
+Apply the table inequality \noderef{TablePairBound} with three rows, columns
+indexed by $X_s$,
+$a_{v,x}=\deg_{\mathcal F}(v,x)$, column bound $C=D^{2/3}$, and total
+table sum $T=6(D-1)$.  The table entries are nonnegative because they are
+degrees.  The column bound holds by the definition of $X_s$.
+The total table sum is at most $6(D-1)$ because
+\noderef{SaturatedEdgeStructure} gives
+$\sum_{x\in X}\deg_{\mathcal F}(v,x)=2(D-1)$ for each of the three
+vertices $v\in f$.  The table inequality gives
+\[
+w_{\mathcal F,f}(X_s)
+=\sum_{x\in X_s}\sum_{v<v'\in f}
+\deg_{\mathcal F}(v,x)\deg_{\mathcal F}(v',x)
+\le {1\over 3}TC
+\le {1\over3}\cdot6(D-1)D^{2/3}
+\le 2D^{5/3},
+\]
+where the final inequality uses $D-1\le D$.
+
+By the assumed pair-counting lower bound,
+\[
+P(f)\ge 3D^2-6D+3-w_{\mathcal F,f}(X).
+\]
+Since $X$ is the disjoint union of $X_b$ and $X_s$, the weight is additive:
+$w(X)=w(X_b)+w(X_s)$.  Substituting the just-proved bound on $w(X_s)$ gives
+\[
+P(f)\ge 3D^2-6D+3-w(X_b)-2D^{5/3}.
+\]
+\end{proof}

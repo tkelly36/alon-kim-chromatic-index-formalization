@@ -1,0 +1,21 @@
+\begin{lemma}
+Let $G$ be a finite graph, let $\Delta$ be a positive integer, and let
+$\gamma>0$.  If the activation--priority sampling law
+\noderef{RandomIndependentSetSampling} exists on a nonempty vertex set with
+activation probability $\gamma/\Delta$, then $\gamma\le \Delta$.
+\end{lemma}
+\begin{proof}
+Let $A=V(G)$ be the atom in which every vertex is activated.  By
+\noderef{RandomIndependentSetSampling}, the measure of this atom is
+\[
+\left(\frac{\gamma}{\Delta}\right)^{|V(G)|}
+\left(1-\frac{\gamma}{\Delta}\right)^0
+=\left(\frac{\gamma}{\Delta}\right)^{|V(G)|}.
+\]
+The atom is a subset of the whole sample space, whose total measure is $1$,
+so this number is at most $1$.  Since the vertex set is nonempty, its
+cardinality is positive.  If $\gamma/\Delta>1$, then the positive power
+$(\gamma/\Delta)^{|V(G)|}$ would be strictly larger than $1$, contradicting
+the preceding inequality.  Therefore $\gamma/\Delta\le 1$.  Because
+$\Delta>0$, multiplying by $\Delta$ gives $\gamma\le\Delta$.
+\end{proof}

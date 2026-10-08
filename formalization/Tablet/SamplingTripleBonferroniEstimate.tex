@@ -1,0 +1,77 @@
+\begin{lemma}
+For every $\eta>0$ there are $\Delta_0$ and $\gamma_0$ such that the
+following holds.  Let $G$ be a $\Delta$-regular graph with
+$\Delta\ge\Delta_0$, let $\gamma\ge\gamma_0$, and let $I$ be sampled by
+\noderef{RandomIndependentSetSampling}.  For every vertex $r$ and every
+$X\subseteq N_G(r)$ such that no two distinct vertices of $X$ have a common
+neighbor outside $N_G[r]$,
+\[
+\Pr[I\cap X\ne\emptyset]\le b_{G[X\cup\{r\}],\Delta}(r)+\eta ,
+\]
+where the local parameter of the induced graph is the quantity defined in
+\noderef{SamplingInducedNeighborhoodLocalBParameter}.
+\end{lemma}
+\begin{proof}
+Let $I_X=I\cap X$, let
+$\overline P_X=\binom{|I_X|}{2}$, and let
+$\overline T_X=\binom{|I_X|}{3}$.  The third Bonferroni inequality applied
+to the events $\{x\in I\}$ for $x\in X$ gives
+\[
+\Pr[I_X\ne\emptyset]
+\le \mathbb E|I_X|-\mathbb E\overline P_X+\mathbb E\overline T_X .
+\]
+Let $\mathcal J_2$ and $\mathcal J_3$ be the independent pairs and triples in
+$X$.  Since every vertex of $X$ is adjacent to $r$, these are exactly the
+two- and three-element independent subsets of the neighborhood of $r$ in the
+induced graph $G[X\cup\{r\}]$.  Therefore
+$|\mathcal J_2|=P_{G[X\cup\{r\}]}(r)$ and
+$|\mathcal J_3|=T_{G[X\cup\{r\}]}(r)$ by
+\noderef{IndependentPairCount} and \noderef{IndependentTripleCount}.
+
+Choose $\Delta_0$ and $\gamma_0$ large enough for
+\noderef{SamplingPairTripleBonferroniCore} and
+\noderef{SamplingOneVertexEstimate} with the error budgets used below.
+Applying \noderef{SamplingPairTripleBonferroniCore} with error budget
+$\eta/2$ gives
+\[
+\mathbb E\overline P_X-\mathbb E\overline T_X
+\ge
+\frac{|\mathcal J_2|}{\Delta^2}
+-\frac{|\mathcal J_3|}{\Delta^3}
+-\eta/2 .
+\]
+
+It remains to bound the first moment.  If $X=\emptyset$, then
+$I_X=\emptyset$, $\mathcal J_2=\mathcal J_3=\emptyset$, and
+$b_{G[X\cup\{r\}],\Delta}(r)=0$; the desired probability is then $0$.
+Assume $X$ is nonempty.  For each $x\in X$, the identity in
+\noderef{SamplingOneVertexEstimate} gives
+\[
+\Pr[x\in I]
+=\frac1\Delta\int_0^\gamma \left(1-\frac t\Delta\right)^\Delta\,dt .
+\]
+As in the proof of that node, the sampling law gives $0<\gamma\le\Delta$ in
+the non-vacuous case.  Hence
+$0\le(1-t/\Delta)^\Delta\le e^{-t}$ for $0\le t\le\gamma$, and
+\[
+\Pr[x\in I]\le
+\frac1\Delta\int_0^\gamma e^{-t}\,dt
+\le\frac1\Delta .
+\]
+Summing over $X$ yields
+$\mathbb E|I_X|=\sum_{x\in X}\Pr[x\in I]\le |X|/\Delta$.
+
+Combining this first-moment bound with Bonferroni and the pair-minus-triple
+core estimate gives
+\[
+\Pr[I_X\ne\emptyset]\le
+\frac{|X|}{\Delta}-\frac{|\mathcal J_2|}{\Delta^2}
++\frac{|\mathcal J_3|}{\Delta^3}+\eta/2 .
+\]
+By \noderef{LocalBParameter} and the identifications supplied by
+\noderef{IndependentPairCount} and \noderef{IndependentTripleCount}, the
+right-hand side is
+$b_{G[X\cup\{r\}],\Delta}(r)+\eta/2$, which is at most
+$b_{G[X\cup\{r\}],\Delta}(r)+\eta$ because $\eta>0$.  This proves the
+claim.
+\end{proof}

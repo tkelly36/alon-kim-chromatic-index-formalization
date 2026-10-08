@@ -1,0 +1,59 @@
+\begin{helper}
+Fix a paired mixed measure surface as in
+\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}, an index
+\(k<n\), and an atom \(\omega\). Using
+\noderef{SamplingSplitOutsideBlockerPairedCandidateEvent}, set
+\[
+ C_x=F_{\{i:i<k\},\{i:k<i\}}(x),\qquad
+ U=\{\zeta:\exists x\in X\setminus B_k,\ \zeta\in C_x\}.
+\]
+Write \(s_x(\zeta)\) for
+\(\neg(z_k\in A\land\pi(x)<\pi(z_k)\land\pi(z_k)\in[0,1])\).
+Write \(t_x(\zeta)\) for the analogous private test
+\(\neg(\beta(x,z_k)\in A'\land
+\pi'(\phi(x))<\pi'(\beta(x,z_k))\land\pi'(\beta(x,z_k))\in[0,1])\),
+universally quantified over the incidence proof needed to define \(\beta\).
+Define the paired events
+\[
+ L=\{\zeta:\zeta\notin U,\ \exists x\in X\cap B_k,\
+       \zeta\in C_x\land s_x(\zeta)\},\qquad
+ R=\{\zeta:\zeta\notin U,\ \exists x\in X\cap B_k,\
+       \zeta\in C_x\land t_x(\zeta)\}.
+\]
+Then, on the whole paired state space,
+\[
+ \widehat S_k(\omega)=U\mathbin{\dot\cup}L,\qquad
+ \widehat S_{k+1}(\omega)=U\mathbin{\dot\cup}R.
+\]
+All \(C_x,U,L,R\) are measurable for the natural paired measurable space.
+In particular the two identities remain true after intersection with the
+same paired cell. This is an event decomposition, not a mass comparison.
+\end{helper}
+\begin{proof}
+The displayed stage rule of
+\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface} at \(k\)
+has private indices \(i<k\) and source indices \(k\le i\). Splitting the
+latter into \(i=k\) and \(k<i\), for each fixed candidate \(x\) its entire
+rule is exactly \(C_x\land(x\in B_k\Rightarrow s_x)\).
+At \(k+1\), split the private indices \(i<k+1\) into \(i<k\) and \(i=k\);
+the source indices are precisely \(k<i\). Its rule for that same candidate
+is \(C_x\land(x\in B_k\Rightarrow t_x)\). No witness has been changed in
+either rewriting.
+
+For either of these rules, a witness outside \(B_k\) establishes \(U\) and
+has no current test. If \(U\) is false, every successful witness must lie in
+\(B_k\) and must satisfy its own current test. This gives respectively
+\(L\) or \(R\). Conversely an \(U\)-witness satisfies the appropriate stage
+rule because its current implication is vacuous; an \(L\)- or \(R\)-witness
+satisfies the same rule by construction. Both boundaries explicitly exclude
+\(U\), proving disjointness. Intersecting a disjoint union with a fixed cell
+preserves its equality and disjointness.
+
+Each \(C_x\), and each full-stage candidate event, is measurable by
+\noderef{SamplingSplitOutsideBlockerPairedCandidateEventMeasurable}.
+Finite union over \(x\) proves measurability of the full stages and of
+\(U\). The identities just proved and disjointness give
+\(L=\widehat S_k(\omega)\setminus U\) and
+\(R=\widehat S_{k+1}(\omega)\setminus U\), so both are measurable.
+These paired events need not be pullbacks from either individual copy.
+\end{proof}

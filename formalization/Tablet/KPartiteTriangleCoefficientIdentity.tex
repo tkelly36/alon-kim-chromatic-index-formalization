@@ -1,0 +1,46 @@
+\begin{helper}
+For every integer $k\ge 3$,
+\[
+\frac{2}{3}
+\sqrt{\frac{k-2}{2(k-1)}}
+\sqrt{\frac{k-2}{k}}
+=
+\frac{\binom{k}{3}}{\binom{k}{2}^{3/2}}.
+\]
+\end{helper}
+\begin{proof}
+Since $k\ge 3$, all denominators below are positive.  The standard binomial
+recurrence gives
+\[
+3\binom{k}{3}=(k-2)\binom{k}{2},
+\]
+and $\binom{k}{2}=k(k-1)/2$.  Therefore
+\[
+\frac{\binom{k}{3}}{\binom{k}{2}^{3/2}}
+=
+\frac{k-2}{3\sqrt{\binom{k}{2}}}
+=
+\frac{k-2}{3\sqrt{k(k-1)/2}}.
+\]
+On the other hand, the product of the three quantities under the square roots
+in
+\[
+\frac{2}{3}
+\sqrt{\frac{k-2}{2(k-1)}}
+\sqrt{\frac{k-2}{k}}
+\]
+after multiplying by $\sqrt{k(k-1)/2}/\sqrt{k(k-1)/2}$ is
+\[
+\frac{k-2}{2(k-1)}\cdot\frac{k-2}{k}\cdot\frac{k(k-1)}2
+=\left(\frac{k-2}{2}\right)^2.
+\]
+Because $k-2\ge 0$, the square root of this square is $(k-2)/2$.  Thus
+\[
+\frac{2}{3}
+\sqrt{\frac{k-2}{2(k-1)}}
+\sqrt{\frac{k-2}{k}}
+\sqrt{\frac{k(k-1)}2}=k-2,
+\]
+which is equivalent, after division by the positive factor
+$\sqrt{k(k-1)/2}$, to the displayed identity.
+\end{proof}

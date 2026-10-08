@@ -1,0 +1,68 @@
+\begin{lemma}
+Let $k,n\in\mathbb N$ with $k\ge2$, let $C,T>0$, and let
+$A=(a_{i,j})_{i\in[k],j\in[n]}$ be a real $k\times n$ table with
+$a_{i,j}\ge0$ for every $i,j$.  Suppose that every column has sum at most
+$C$,
+\[
+\sum_{i=1}^k a_{i,j}\le C\qquad\text{for every }j\in[n],
+\]
+and that the total table sum is at most $T$,
+\[
+\sum_{i=1}^k\sum_{j=1}^n a_{i,j}\le T.
+\]
+Then
+\[
+\sum_{j=1}^{n}\sum_{1\le i<i'\le k}a_{i,j}a_{i',j}
+\le {k-1\over 2k}\,TC .
+\]
+\end{lemma}
+\begin{proof}
+For a fixed column $j$, put
+\[
+s_j=\sum_{i=1}^k a_{i,j}.
+\]
+The entries in this column are nonnegative, so $s_j\ge0$.  The column-sum
+hypothesis gives $s_j\le C$.  Hence
+\[
+s_j^2\le Cs_j,
+\]
+because multiplying the inequality $s_j\le C$ by the nonnegative number
+$s_j$ preserves the inequality.
+
+We next bound the pair products inside this one column.  For real numbers
+$x_1,\ldots,x_k$ with sum $s$, the identity
+\[
+\sum_{1\le i<i'\le k}x_ix_{i'}
+= {k-1\over 2k}s^2
+- {1\over 2k}\sum_{1\le i<i'\le k}(x_i-x_{i'})^2
+\]
+holds by expanding both sides.  Applying this identity to
+$x_i=a_{i,j}$ and using that every square is nonnegative gives
+\[
+\sum_{1\le i<i'\le k}a_{i,j}a_{i',j}
+\le {k-1\over 2k}s_j^2
+\le {k-1\over 2k}Cs_j .
+\]
+
+Summing the last inequality over all columns yields
+\[
+\sum_{j=1}^{n}\sum_{1\le i<i'\le k}a_{i,j}a_{i',j}
+\le {k-1\over 2k}C\sum_{j=1}^n s_j.
+\]
+Finally,
+\[
+\sum_{j=1}^n s_j
+=\sum_{j=1}^n\sum_{i=1}^k a_{i,j}
+=\sum_{i=1}^k\sum_{j=1}^n a_{i,j}
+\le T
+\]
+by rearranging the finite double sum and then applying the total-sum
+hypothesis.  Since $C>0$, multiplying by
+$\frac{k-1}{2k}C\ge0$ preserves the inequality, and therefore
+\[
+\sum_{j=1}^{n}\sum_{1\le i<i'\le k}a_{i,j}a_{i',j}
+\le {k-1\over 2k}CT
+={k-1\over 2k}TC .
+\]
+This is the desired bound.
+\end{proof}

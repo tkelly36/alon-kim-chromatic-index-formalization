@@ -1,0 +1,38 @@
+\begin{helper}
+Fix natural numbers $k$ and $D$.  If the bounded local-pattern type
+\noderef{KUniformKSimpleBoundedLocalPattern} is nonempty, then there is a
+bounded local pattern $(\mathcal P_{\max},p_{\max})$ whose value
+\[
+b_{L(\mathcal P_{\max}),kD}(p_{\max})
+\]
+is at least the corresponding value
+\[
+b_{L(\mathcal P),kD}(p)
+\]
+for every bounded local pattern $(\mathcal P,p)$ with the same parameters
+$k$ and $D$.
+\end{helper}
+\begin{proof}
+The definition \noderef{KUniformKSimpleBoundedLocalPattern} fixes finite
+edge and vertex label sets, namely finite initial intervals of sizes
+$1+k(D-1)$ and $k+k^2(D-1)$.  Therefore the collection of bounded local
+patterns for fixed $k$ and $D$ is a finite type: there are only finitely
+many edge labels, finitely many finite subsets of the vertex-label set for
+each edge label, finitely many choices of the distinguished edge label, and
+the condition of belonging to $H(k,k,D)$ merely selects a subtype of these
+finite data.
+
+Define the real-valued score of a bounded local pattern $(\mathcal P,p)$ to
+be
+\[
+(\mathcal P,p)\longmapsto b_{L(\mathcal P),kD}(p),
+\]
+where the line graph is interpreted by \noderef{LineGraphOfHypergraph} and
+the displayed value is interpreted by \noderef{LocalBParameter}.  By the
+hypothesis, the bounded local-pattern type is nonempty.  Applying
+\noderef{FiniteRealFunctionAttainsMaximum} to this nonempty finite type and
+to the score just defined gives an element
+$(\mathcal P_{\max},p_{\max})$ whose score is at least the score of every
+other bounded local pattern.  This is exactly the asserted maximality of
+$b_{L(\mathcal P_{\max}),kD}(p_{\max})$.
+\end{proof}

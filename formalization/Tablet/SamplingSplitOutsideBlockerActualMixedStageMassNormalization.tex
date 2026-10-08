@@ -1,0 +1,62 @@
+\begin{helper}
+Fix the actual split-outside-blocker witnesses
+\[
+  n,\ z_i,\ B_i,\ \Omega,\ C_\omega,\ C'_\omega,\ w(\omega)
+\]
+and a marginal-preserving paired coupling on these same atom cells.  Then
+there are paired mixed events \(\widehat S_j(\omega)\), for every
+\(j\le n\), defined by the actual private-before and retained-after rule:
+a paired state belongs to \(\widehat S_j(\omega)\) exactly when a single
+candidate \(x\in X\) is active on both the source and target embedded copies,
+beats all active embedded neighbors in \(X\cup\{r\}\) on both sides, is not
+killed by the private target blockers already replaced at indices \(i<j\),
+and is not killed by the retained source blockers at indices \(j\le i<n\).
+
+There are also real normalized masses \(M_j(\omega)\) such that
+\[
+  M_j(\omega)\ge 0,\qquad
+  w(\omega)=0\Rightarrow M_j(\omega)=0,
+\]
+and, for every \(j\le n\),
+\[
+  \operatorname{ofReal}(w(\omega)M_j(\omega))
+  =
+  \lambda\bigl(\widehat S_j(\omega)\cap\widehat C_\omega\bigr),
+\]
+where \(\lambda\) and \(\widehat C_\omega\) are the paired measure and paired
+cells from the given coupling.
+\end{helper}
+\begin{proof}
+Keep the already chosen atom surface and coupling fixed.  Define
+\(\widehat S_j(\omega)\) by the displayed mixed-stage rule in the statement:
+one witness \(x\in X\) must survive the embedded-neighbor tests on both
+copies, the already replaced private-blocker tests for \(i<j\), and the
+retained source-blocker tests for \(j\le i<n\).  This definition uses the
+given \(z_i\), \(B_i\), \(\beta\), cells, and coupling; it does not introduce
+a new atom family.
+
+For fixed \(j\) and \(\omega\), apply
+\(\noderef{SamplingFiniteMassSubcellNormalization}\) to the paired measure
+\(\lambda\), the paired cell \(\widehat C_\omega\), the subevent
+\(\widehat S_j(\omega)\cap\widehat C_\omega\), and the weight
+\(w(\omega)\).  The subset hypothesis is immediate because
+\(\widehat S_j(\omega)\cap\widehat C_\omega\subseteq\widehat C_\omega\).  The
+cell-mass hypothesis is exactly the coupling field
+\[
+  \lambda(\widehat C_\omega)=\operatorname{ofReal}(w(\omega)),
+\]
+read in the orientation required by the normalization lemma, and
+\(w(\omega)\ge0\) is one of the present hypotheses.
+
+The normalization lemma therefore supplies a real value \(M_j(\omega)\) with
+nonnegativity, the zero-weight convention, and the measured-stage identity
+\[
+  \operatorname{ofReal}(w(\omega)M_j(\omega))
+  =
+  \lambda(\widehat S_j(\omega)\cap\widehat C_\omega).
+\]
+Choosing such a value for each pair \((j,\omega)\) gives the asserted mass
+family.  The proof only normalizes the actual paired mixed subevent inside
+the actual paired cell; it does not assert any source-target same-index stage
+equality or any adjacent boundary comparison.
+\end{proof}

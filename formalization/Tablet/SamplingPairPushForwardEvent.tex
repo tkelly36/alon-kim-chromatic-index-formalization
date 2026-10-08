@@ -1,0 +1,22 @@
+\begin{helper}
+Let $\mu$ be the push-forward law of the activation--priority output set in
+\noderef{RandomIndependentSetSampling}, and let $\nu$ be the underlying law
+on pairs $(A,\pi)$.  For any two vertices $u,v$,
+\[
+\operatorname{ofReal}\!\left(\sum_S
+  {\bf 1}_{\{u,v\}\subseteq S}\,\mu(S)\right)
+=
+\nu\!\left(\{(A,\pi):\{u,v\}\subseteq I(A,\pi)\}\right),
+\]
+where
+\[
+I(A,\pi)=\{z\in A:\pi(w)<\pi(z)\text{ for every }w\in A\cap N_G(z)\}.
+\]
+\end{helper}
+\begin{proof}
+Apply \noderef{SamplingFiniteSetPushForwardEvent} with $Q=\{u,v\}$.
+Its hypotheses are exactly the nonnegativity and push-forward identities
+assumed here. Its measurable disjoint output-fiber partition and finite-sum
+identity give the assertion. No distinctness is required: when $u=v$,
+the finite set $\{u,v\}$ is the singleton $\{u\}$, and the same argument applies.
+\end{proof}

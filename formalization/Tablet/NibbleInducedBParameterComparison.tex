@@ -1,0 +1,24 @@
+\begin{lemma}
+Let $G$ be a finite simple graph, $\Delta>0$ an integer, $s$ a subset of
+its vertices and $r\in s$. If $\deg_G(r)\le\Delta$, then
+$b_{G[s],\Delta}(r)\le b_{G,\Delta}(r)$.
+\end{lemma}
+\begin{proof}
+Write $d=|N_G(r)\setminus s|$, and let $P,T$ and $P',T'$ be the independent
+pair and triple counts in the original and restricted neighborhoods.
+The restricted degree is $\deg_G(r)-d$. Every lost independent pair has
+a member in $N_G(r)\setminus s$. Counting incidences of a lost pair with
+one of its deleted members bounds the number of lost pairs by
+$d|N_G(r)|\le d\Delta$: each deleted member has at most $|N_G(r)|$
+possible partners, and every lost pair is counted at least once.
+Thus $P'\ge P-d\Delta$. Every restricted independent triple is an original
+one, because the subgraph is induced; hence $T'\le T$.
+These counts are exactly \noderef{IndependentPairCount} and
+\noderef{IndependentTripleCount}. The positive denominator in
+\noderef{LocalBParameter} gives
+\[
+b_{G[s],\Delta}(r)\le
+\frac{\deg_G(r)-d}{\Delta}-\frac{P-d\Delta}{\Delta^2}
++\frac{T}{\Delta^3}=b_{G,\Delta}(r).
+\]
+\end{proof}

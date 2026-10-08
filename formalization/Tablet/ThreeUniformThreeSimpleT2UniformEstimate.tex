@@ -1,0 +1,61 @@
+\begin{lemma}
+For every $\eta>0$, for all sufficiently large integers $D$, uniformly
+over all setups $S$ in \noderef{ThreeUniformThreeSimpleLocalSetup} and
+all $0\le\delta\le0.031$ with $P=(1+\delta)D^2-9D$, one has
+\[
+T_2\le(1/9+1.33\delta+\eta)D^3.
+\]
+\end{lemma}
+\begin{proof}
+Take $D\ge100$. The assumed pair equality implies
+$P\le1.031D^2-9D$. Apply \noderef{ThreeUniformThreeSimpleSmallXs}
+with this cutoff and the given nonnegative $\delta$ to obtain
+$WX_s\le(2/75)\delta D^2$.
+By \noderef{ThreeUniformThreeSimplePairLowerBound},
+$P\ge D^2-9D+Y$, whence $Y\le\delta D^2$.
+The setup gives $Y\ge0$, $W=WX_s+WX_b$, and
+$P=3D^2-6D+3-W+Y$. Substitution yields
+\[
+WX_b=(2-\delta)D^2+3D+3+Y-WX_s
+ \ge (2-77\delta/75)D^2.
+\]
+Also \noderef{ThreeUniformThreeSimpleBigPartSize} gives $|X_b|=6$.
+Set $\delta'=77\delta/75\ge0$ and
+$\varepsilon_0=\sqrt{8\delta'/3}$. Applying
+\noderef{ThreeUniformThreeSimpleBalancedBigDegree} with $\delta'$
+therefore gives $|\sigma(g)-(4/3)D|\le\varepsilon_0D$ for every $g\in V_2$.
+We have $\varepsilon_0^2\le (8/3)(77/75)(31/1000)<1/4$, hence
+$0\le\varepsilon_0\le1/2$.
+
+Set $\varepsilon=\max\{\varepsilon_0,D^{-1/4}\}$. This is strictly
+positive, including when $\delta=0$, and at most $1/2$ for $D\ge100$.
+The cross-degree bound remains true with $\varepsilon$ in place of
+$\varepsilon_0$, since $D>0$. Moreover
+$\varepsilon^2\le\varepsilon_0^2+D^{-1/2}$.
+All hypotheses of \noderef{ThreeUniformThreeSimpleT2TriangleBound}
+are now verified, so
+\[
+T_2\le\frac1{12}\left(
+ \frac{(8/3)(P+WX_s)+(4+2\varepsilon)Y}{D^2}
+ -\frac43+3\varepsilon^2\right)D^3+\frac43D^2.
+\]
+Here $(4+2\varepsilon)Y\le5\delta D^2$, since $Y\ge0$,
+$\varepsilon\le1/2$, and $Y\le\delta D^2$.
+Also $3\varepsilon^2\le8(77/75)\delta+3D^{-1/2}$.
+Insert these inequalities, the bound on $WX_s$, and the pair equality.
+All multipliers are nonnegative because $D>0$. Dropping the negative
+contribution from $-9D$ in the pair equality gives
+\[
+T_2\le\left(\frac19+\frac{3589}{2700}\delta\right)D^3
+ +\frac14D^{5/2}+\frac43D^2
+ \le(1/9+1.33\delta)D^3+\frac{19}{12}D^{5/2}.
+\]
+The coefficient computation is
+$((8/3)(77/75)+5+8(77/75))/12=3589/2700<133/100$;
+the final inequality uses $\delta\ge0$ and $D^2\le D^{5/2}$ for $D\ge1$.
+Choose an integer $D_0\ge100$ with
+$D_0\ge(19/(12\eta))^2$. For every $D\ge D_0$, positivity gives
+$19/(12\sqrt D)\le\eta$, so the error term is at most $\eta D^3$.
+This threshold depends only on $\eta$, not on the setup or $\delta$,
+and proves the stated uniform estimate.
+\end{proof}

@@ -1,0 +1,143 @@
+\begin{helper}
+Let $G$ and $G'$ be finite $\Delta$-regular graphs, let $\gamma$ be a real
+parameter, and let $\mu$ and $\mu'$ be activation--priority sampling laws for
+$G$ and $G'$ with the same parameters \(\Delta\) and \(\gamma\), hence with
+the same activation ratio \(p=\gamma/\Delta\) whenever \(\Delta>0\).  Suppose that
+$\phi:V(G)\to V(G')$ is injective, $X\subseteq N_G(r)$, the map $\phi$
+preserves all adjacencies inside $X\cup\{r\}$.  Suppose moreover that $G'$
+has the following split-blocker interface.  For every original outside
+incidence $(x,z)$ with $x\in X$, $z\notin X\cup\{r\}$, and $xz\in E(G)$,
+there is a replacement vertex $\beta(x,z)\in V(G')$.  The replacement
+vertices are distinct and are fresh from the embedded local copy:
+$\beta(x,z)\ne\phi(y)$ for every $y\in X\cup\{r\}$.  Also
+$\beta(x,z)$ is adjacent to $\phi(x)$, is not adjacent to $\phi(r)$, and is
+not adjacent to any $\phi(y)$ with $y\in X\setminus\{x\}$.  Finally, every
+neighbor of an embedded vertex $\phi(x)$ with $x\in X$ is either an embedded
+local neighbor $\phi(y)$ with $y\in X\cup\{r\}$ and $xy\in E(G)$, or one of
+the replacement vertices $\beta(x,z)$ for an original outside incidence
+$(x,z)$.  Then
+\[
+\sum_{S\subseteq V(G)} {\bf 1}_{S\cap X\ne\emptyset}\mu(S)
+\le
+\sum_{S'\subseteq V(G')} {\bf 1}_{S'\cap \phi(X)\ne\emptyset}\mu'(S').
+\]
+\end{helper}
+\begin{proof}
+By \noderef{RandomIndependentSetSampling}, choose underlying
+activation--priority laws \(\nu\) and \(\nu'\) whose push-forwards are
+\(\mu\) and \(\mu'\).  Thus an outcome for \(G\) is a pair
+\((A,\pi)\), an outcome for \(G'\) is a pair \((A',\pi')\), the activated
+sets have the Bernoulli product law with parameter \(\gamma/\Delta\), the
+priority coordinates are independent uniform coordinates on \([0,1]\), and
+the output sets are
+\[
+I_G(A,\pi)=\{v\in A:\pi(w)<\pi(v)\hbox{ for all }w\in A\cap N_G(v)\}
+\]
+and the analogous set \(I_{G'}(A',\pi')\).  The same definition says that
+\(\mu\) and \(\mu'\) are precisely the push-forward laws of these two output
+maps.
+
+Apply \noderef{SamplingNonemptyPushForwardEvent} first to the source law and
+the finite vertex set \(X\), and then to the target law and the finite vertex
+set \(\phi(X)\).  It gives the two endpoint identities
+\[
+\operatorname{ofReal}\!\left(\sum_{S\subseteq V(G)}
+{\bf 1}_{S\cap X\ne\emptyset}\mu(S)\right)
+=
+\nu\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\},
+\]
+and
+\[
+\operatorname{ofReal}\!\left(\sum_{S'\subseteq V(G')}
+{\bf 1}_{S'\cap\phi(X)\ne\emptyset}\mu'(S')\right)
+=
+\nu'\{(A',\pi'):I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\}.
+\]
+Therefore it remains to compare these two activation--priority event
+probabilities.
+
+The hypotheses of the present helper are the paper-facing split-blocker
+interface.  They give finite \(\Delta\)-regular graphs, two sampling laws with
+the same \(\Delta\) and \(\gamma\), an injective local copy \(\phi\), the
+containment \(X\subseteq N_G(r)\), preservation of all adjacencies in
+\(X\cup\{r\}\), and private replacement vertices \(\beta(x,z)\) that are
+distinct, fresh from \(\phi(X\cup\{r\})\), adjacent only to their intended
+embedded candidate among vertices of \(\phi(X)\), nonadjacent to \(\phi(r)\),
+and exhaustive for nonlocal neighbors of embedded \(X\)-vertices.
+
+Invoke \noderef{SamplingSplitOutsideBlockerHybridRepresentation}.  It gives a finite list
+\(z_0,\ldots,z_{n-1}\) of the original outside blockers, the candidate sets
+\(B_k=\{x\in X:xz_k\in E(G)\}\), one finite exposed-state set \(\Omega\),
+nonnegative weights \(w:\Omega\to\mathbb R\), inner stage probabilities
+\(P(k,\omega)\), pairwise disjoint source and target cell families covering
+the unit-priority supports up to null complements, the endpoint cell
+identities
+\[
+\operatorname{ofReal}(w(\omega)P(0,\omega))
+=
+\nu(\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\}\cap C_\omega),
+\]
+\[
+\operatorname{ofReal}(w(\omega)P(n,\omega))
+=
+\nu'(\{(A',\pi'):I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\}\cap C'_\omega),
+\]
+and the adjacent monotonicity inequalities
+\[
+P(k,\omega)\le P(k+1,\omega)\qquad(k<n,\ \omega\in\Omega).
+\]
+These are statement-level conclusions of the hybrid node; the present proof
+does not reconstruct its displayed cells, fixed-stage normalizations, or
+candidate-priority comparison.
+
+Now apply \noderef{SamplingFiniteConditionalReplacementIteration} to the
+finite set \(\Omega\), the nonnegative weight function \(w\), the stage
+function \(P\), and the adjacent inequalities just supplied by
+\noderef{SamplingSplitOutsideBlockerHybridRepresentation}.  This gives
+\[
+\sum_{\omega\in\Omega}w(\omega)P(0,\omega)
+\le
+\sum_{\omega\in\Omega}w(\omega)P(n,\omega).
+\]
+Because \(w(\omega)\ge0\), \(P(j,\omega)\ge0\), and \(P(j,\omega)=0\) on
+zero-weight atoms, the endpoint cell identities can be summed over the finite
+atom family.  Applying
+\noderef{SamplingFiniteCellEndpointSumDecomposition} to the source endpoint
+event, the source cells \(C_\omega\), and the values \(P(0,\omega)\), using
+the source disjointness, cover, null-complement, and endpoint cell-mass
+clauses from \noderef{SamplingSplitOutsideBlockerHybridRepresentation}, gives
+\[
+\operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w(\omega)P(0,\omega)\right)
+=
+\nu\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\}.
+\]
+The same finite decomposition lemma applied to the target endpoint event, the
+target cells \(C'_\omega\), and the values \(P(n,\omega)\), gives
+\[
+\operatorname{ofReal}\!\left(\sum_{\omega\in\Omega}w(\omega)P(n,\omega)\right)
+=
+\nu'\{(A',\pi'):I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\}.
+\]
+Monotonicity of \(\operatorname{ofReal}\) applied to the weighted-sum
+inequality therefore yields
+\[
+\nu\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\}
+\le
+\nu'\{(A',\pi'):I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\},
+\]
+after substituting the hybrid endpoint event identities.
+
+Finally substitute the two push-forward identities from
+\noderef{SamplingNonemptyPushForwardEvent}.  The target sum is nonnegative
+because \(\mu'\) is a probability mass function in
+\noderef{RandomIndependentSetSampling} and every indicator is nonnegative.
+Hence the order comparison of the two \(\operatorname{ofReal}\)-images
+implies the corresponding real inequality of the two finite push-forward
+masses:
+\[
+\sum_{S\subseteq V(G)} {\bf 1}_{S\cap X\ne\emptyset}\mu(S)
+\le
+\sum_{S'\subseteq V(G')} {\bf 1}_{S'\cap\phi(X)\ne\emptyset}\mu'(S').
+\]
+This is the desired event monotonicity.
+\end{proof}

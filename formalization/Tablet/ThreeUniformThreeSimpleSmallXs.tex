@@ -1,0 +1,118 @@
+\begin{lemma}
+In a $3$-uniform $3$-simple local extremal setup at scale $D$, let
+$X_s$ be the maximal set of lowest-degree vertices in $X$ whose total degree
+into $f$ is at most $D/2$, and let $X_b=X\setminus X_s$, as recorded in
+\noderef{ThreeUniformThreeSimpleLocalSetup}.  Assume explicitly the standing
+pair cutoff $P(f)\le1.031D^2-9D$.  If $\delta\ge0$ and
+\[
+P(f)\le (1+\delta)D^2-9D,
+\]
+then
+\[
+\sum_{v\in f}\sum_{x\in X_s}\deg_{\mathcal F}(v,x)
+\le \frac85\delta D
+\]
+and
+\[
+w(X_s)\le \frac{2}{75}\delta D^2 .
+\]
+\end{lemma}
+\begin{proof}
+Put
+\[
+\varepsilon D=
+\sum_{v\in f}\sum_{x\in X_s}\deg_{\mathcal F}(v,x).
+\]
+The definition node \noderef{ThreeUniformThreeSimpleLocalSetup} records that
+$D$ is in the sufficiently large range, so $D>0$, and that the total over
+$X_s$ is at most $D/2$.  Hence $\varepsilon\ge0$ and
+$\varepsilon\le1/2$.
+
+First suppose $\varepsilon=0$.  Then the total of all nonnegative table
+entries in the $X_s$ columns is zero.  Each such entry is therefore zero, and
+every product contributing to the weight of an $X_s$ column is zero.  Thus
+$\sum_{v\in f}\sum_{x\in X_s}\deg_{\mathcal F}(v,x)=0$ and
+$w(X_s)=0$, so both required inequalities follow from $\delta\ge0$.
+
+It remains to consider $\varepsilon>0$.  The local setup gives the row and
+column table facts used here: the entries are
+$a_{v,x}=\deg_{\mathcal F}(v,x)$, every column sum is at most $D$, the total
+sum over all of $X$ is $6(D-1)$, the total over $X_s$ is $\varepsilon D$,
+and $X_b=X\setminus X_s$.  Therefore the total over $X_b$ is
+$6(D-1)-\varepsilon D\le (6-\varepsilon)D$.  Applying
+\noderef{TablePairFillingBound} with $k=3$, $C=D$, and
+$T=(6-\varepsilon)D$ gives $q=5$ and $r=(1-\varepsilon)D$, because
+$0<\varepsilon\le1/2$.  Hence
+\[
+w(X_b)\le \frac13\left(5D^2+(1-\varepsilon)^2D^2\right).
+\]
+For the $X_s$ columns, every column sum is at most the total
+$\varepsilon D$, since all entries are nonnegative.  Applying the same node
+to the $X_s$ columns, now with $C=T=\varepsilon D>0$, gives $q=1$ and
+$r=0$, and so
+\[
+w(X_s)\le \frac13(\varepsilon D)^2.
+\]
+Since \noderef{ThreeUniformThreeSimpleLocalSetup} states
+$w(X)=w(X_s)+w(X_b)$, we obtain the upper bound
+\[
+w(X)=w(X_b)+w(X_s)
+\le \left(2-\frac23\varepsilon+\frac23\varepsilon^2\right)D^2 .
+\]
+
+The same setup records the exact pair identity
+\[
+P(f)=3D^2-6D+3-w(X)+Y
+\]
+and $Y\ge0$.  Combining this identity with the arbitrary hypothesis
+$P(f)\le(1+\delta)D^2-9D$ gives
+\[
+w(X)=3D^2-6D+3+Y-P(f)
+\ge (2-\delta)D^2+3D+3+Y
+\ge (2-\delta)D^2.
+\]
+Comparing this lower bound with the upper bound just proved, and dividing by
+the positive number $D^2$, yields
+\[
+\frac23\varepsilon-\frac23\varepsilon^2\le\delta .
+\]
+
+We next get a small absolute bound on $\varepsilon$ from the fixed pair
+cutoff, not from the arbitrary $\delta$.  By the explicit cutoff hypothesis,
+$P(f)\le1.031D^2-9D$.  Repeating the preceding rearrangement with this
+bound in place of the arbitrary hypothesis gives
+\[
+w(X)\ge (3-1.031)D^2+3D+3+Y\ge1.969D^2.
+\]
+Comparing again with
+$w(X)\le(2-\frac23\varepsilon+\frac23\varepsilon^2)D^2$ gives
+\[
+\frac23\varepsilon(1-\varepsilon)\le0.031.
+\]
+Since $0\le\varepsilon\le1/2$, the left side is increasing on this interval.
+Equivalently, the allowed values below $1/2$ satisfy
+\[
+\varepsilon\le \frac12-\frac12\sqrt{1-6\cdot0.031}<0.049 .
+\]
+Returning to the arbitrary-$\delta$ inequality and using
+$\varepsilon\le0.049$, we have
+\[
+\frac{2\varepsilon}{3}(1-0.049)
+\le \frac23\varepsilon(1-\varepsilon)
+\le \delta .
+\]
+Because $(2/3)(1-0.049)>5/8$, this implies
+$\varepsilon\le 8\delta/5$.  Multiplying by $D$ proves
+\[
+\sum_{v\in f}\sum_{x\in X_s}\deg_{\mathcal F}(v,x)
+=\varepsilon D\le \frac85\delta D.
+\]
+Finally, using the $X_s$ filling bound and the two bounds
+$\varepsilon\le8\delta/5$ and $\varepsilon\le0.049$,
+\[
+w(X_s)\le \frac13\varepsilon^2D^2
+\le \frac13\left(\frac{8\delta}{5}\right)(0.049)D^2
+\le \frac{2}{75}\delta D^2 .
+\]
+This proves both estimates.
+\end{proof}

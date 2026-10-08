@@ -1,0 +1,42 @@
+\begin{lemma}
+Let $V$ be finite and let $\mu,\nu$ be measures on
+$\mathcal P(V)\times\mathbb R^V$ with discrete activation and product Borel
+priority structures. Suppose $m_A<\infty$ for every $A\subseteq V$, and
+both measures assign mass $m_A$ to $H_A=\{(B,\pi):B=A\}$.
+Suppose also that, for $\rho=\mu,\nu$ and every $t:V\to[0,1]$,
+\[
+\rho\{(B,\pi):B=A,\ 0\le\pi_v\le t_v\ \forall v\}
+=\rho(H_A)\operatorname{ofReal}(\prod_v t_v).
+\]
+Then $\mu=\nu$.
+\end{lemma}
+\begin{proof}
+Write $Q=[0,1]^V$. For either measure $\rho$ and each $A$, setting all
+thresholds equal to one gives $\rho(H_A\cap(\mathcal P(V)\times Q))=m_A$.
+Both this set and $H_A$ are measurable, and $\rho(H_A)=m_A<\infty$.
+Subtracting their finite masses gives
+$\rho(H_A\setminus(\mathcal P(V)\times Q))=0$.
+The finitely many $H_A$ partition the whole space. Hence both measures are
+finite, with total mass $\sum_A m_A$, and both vanish outside
+$\mathcal P(V)\times Q$.
+
+Fix a measurable event $E$. For each $A$, let
+$C_A=\{q:(A,q)\in E\}\cap Q$. This is Borel, because
+$q\mapsto(A,q)$ is measurable and $Q$ is a finite intersection of closed
+coordinate conditions. Apply
+\noderef{SamplingFiniteProductLowerOrthantEqualityMeasurable} separately
+to $\rho=\mu$ and $\rho=\nu$, with $F=H_A$, priority map the second
+projection, $M=m_A$, and $C=C_A$. The projection is measurable; the atom
+has finite mass $m_A$; and the assumed rectangle formula is exactly that
+lemma's lower-rectangle hypothesis. Its conclusion, since $C_A\subseteq Q$,
+is
+\[
+\rho\{(B,q):B=A,\ q\in C_A\}=m_A\operatorname{vol}(C_A).
+\]
+Thus the two measures agree on $E\cap H_A\cap(\mathcal P(V)\times Q)$.
+The omitted part of $E\cap H_A$ is null by the first paragraph, so they agree
+on $E\cap H_A$. Summing over the finite disjoint activation partition gives
+$\mu(E)=\nu(E)$. Since this holds for every measurable $E$, the measures
+are equal. If $V$ is empty, there is one activation atom and the same argument
+uses the zero-dimensional cube and empty products, so no exception is required.
+\end{proof}

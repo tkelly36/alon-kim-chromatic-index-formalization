@@ -1,0 +1,105 @@
+\begin{helper}
+Let $G$ be a finite graph, let $\mu$ be an activation--priority independent-set
+sample as in \noderef{RandomIndependentSetSampling}, and assume $\Delta>0$.
+Fix three distinct pairwise nonadjacent vertices $a,b,c$, put
+$Q=\{a,b,c\}$, and let
+\[
+\mathcal O=\{(a,b,c),(a,c,b),(b,a,c),(b,c,a),(c,a,b),(c,b,a)\}.
+\]
+For an order $t=(p,q,r)\in\mathcal O$, define the full-graph ordered-chamber
+weight
+\[
+\begin{aligned}
+\Phi_t
+&=\frac{1}{\Delta^3}
+\int_0^\gamma\int_z^\gamma\int_y^\gamma
+\left(1-\frac{x}{\Delta}\right)^{|\{w\in V(G)\setminus\{p,q,r\}:w\sim p\}|} \\
+&\qquad\qquad\cdot
+\left(1-\frac{y}{\Delta}\right)^{
+|\{w\in V(G)\setminus\{p,q,r\}:w\not\sim p,\ w\sim q\}|}
+\left(1-\frac{z}{\Delta}\right)^{
+|\{w\in V(G)\setminus\{p,q,r\}:w\not\sim p,\ w\not\sim q,\ w\sim r\}|}
+\,dx\,dy\,dz .
+\end{aligned}
+\]
+Then the survival probability of the fixed triple is bounded, as an extended
+nonnegative real inequality, by the sum of the six full-graph ordered-chamber
+weights:
+\[
+\operatorname{ofReal}\Pr[Q\subseteq I]\le
+\operatorname{ofReal}\left(\sum_{t\in\mathcal O}\Phi_t\right).
+\]
+\end{helper}
+\begin{proof}
+Let $\nu$ be the activation--priority law supplied by
+\noderef{RandomIndependentSetSampling}.  The push-forward identity
+\noderef{SamplingFiniteSetPushForwardEvent} rewrites
+\[
+\operatorname{ofReal}\Pr[Q\subseteq I]
+\]
+as the $\nu$-measure of the event that every vertex of $Q$ belongs to the
+output independent set.  Applying
+\noderef{SamplingFiniteSetActivationPartition} partitions this event according
+to the activation atom $A$.  Thus the left hand side is the sum, over
+activation sets $A\supseteq Q$, of the fixed-activation event
+\[
+A\text{ is the activation set and every }q\in Q
+\text{ beats every activated neighbor in }A .
+\]
+
+Fix such an activation set $A$.  Since $Q\subseteq A$, the three vertices
+$a,b,c$ all lie in $A$; by hypothesis they are distinct and pairwise
+nonadjacent.  The fixed-activation assembly helper
+\noderef{SamplingTripleFixedActivationSixChamberAssembly} applies to this
+atom.  It bounds the measure of the fixed-activation survival event by
+\[
+\sum_{t\in\mathcal O}\nu[A]\operatorname{ofReal}(W_t(A)),
+\]
+where $W_t(A)$ is the ordered chamber integral with the three atomwise
+exponents
+\[
+|\{w\in A\setminus\{p,q,r\}:w\sim p\}|,\quad
+|\{w\in A\setminus\{p,q,r\}:w\not\sim p,\ w\sim q\}|,
+\]
+and
+\[
+|\{w\in A\setminus\{p,q,r\}:w\not\sim p,\ w\not\sim q,\ w\sim r\}|.
+\]
+The same helper also states $W_t(A)\ge0$ for every order $t$.
+
+Summing the fixed-activation inequalities over all $A\supseteq Q$ gives a
+finite sum of extended nonnegative real terms.  For a fixed order $t$, the
+atom measure in \noderef{RandomIndependentSetSampling} has the Bernoulli
+form
+\[
+\nu[A]=\operatorname{ofReal}\left(
+\left(\frac{\gamma}{\Delta}\right)^{|A|}
+\left(1-\frac{\gamma}{\Delta}\right)^{|V(G)|-|A|}
+\right).
+\]
+The Bernoulli atom weight is nonnegative, and the preceding paragraph gives
+the nonnegativity of $W_t(A)$.  Therefore
+\noderef{SamplingActivationENNRealWeightedSumConversion} converts, for each
+fixed order $t$, the activation-atom sum of
+$\nu[A]\operatorname{ofReal}(W_t(A))$ into the single extended nonnegative
+real number obtained from the corresponding real Bernoulli-weighted activation
+sum.
+
+Finally apply \noderef{SamplingTripleActivationChamberSum} to that fixed
+order $t=(p,q,r)$.  Its statement is exactly the activation-summation identity:
+the real Bernoulli-weighted sum over activation atoms of the ordered chamber
+integral $W_t(A)$ equals the full-graph ordered-chamber integral $\Phi_t$.
+This use is valid for all six orders because each order is a permutation of
+the distinct vertices $a,b,c$, and the pairwise nonadjacency hypothesis is not
+needed by the summation identity beyond the sampling law itself.
+
+Substituting these six identities into the summed fixed-activation bound gives
+\[
+\operatorname{ofReal}\Pr[Q\subseteq I]
+\le
+\operatorname{ofReal}\left(\sum_{t\in\mathcal O}\Phi_t\right),
+\]
+which is the claimed activation-summed six-order bound.  No paired chamber
+normalization, infinite-chamber estimate, or final pair-sum reduction is used
+in this helper.
+\end{proof}

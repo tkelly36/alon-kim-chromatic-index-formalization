@@ -1,0 +1,25 @@
+\begin{helper}
+Let $G$ be a $\Delta$-regular finite graph, let $r$ be a vertex, and let
+$X\subseteq N_G(r)$.  If $\mathcal J_2$ is the family of independent
+two-element subsets of $X$, then
+\[
+|\mathcal J_2|\le \frac{\Delta^2}{2}.
+\]
+\end{helper}
+\begin{proof}
+Every member of $\mathcal J_2$ is, in particular, a two-element subset of
+$X$.  Hence
+\[
+|\mathcal J_2|\le \binom{|X|}{2}.
+\]
+Because $X\subseteq N_G(r)$ and $G$ is $\Delta$-regular, we have
+$|X|\le |N_G(r)|=\Delta$.  Therefore
+\[
+\binom{|X|}{2}
+=\frac{|X|(|X|-1)}2
+\le \frac{|X|^2}{2}
+\le \frac{\Delta^2}{2}.
+\]
+Combining the two displayed inequalities gives
+$|\mathcal J_2|\le \Delta^2/2$, as required.
+\end{proof}

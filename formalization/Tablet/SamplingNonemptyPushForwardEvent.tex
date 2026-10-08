@@ -1,0 +1,44 @@
+\begin{helper}
+Let $\mu$ be the push-forward law of the activation--priority output set in
+\noderef{RandomIndependentSetSampling}, and let $\nu$ be the underlying law on
+pairs $(A,\pi)$.  For every finite set of vertices $X$,
+\[
+\operatorname{ofReal}\!\left(\sum_S
+  {\bf 1}_{S\cap X\ne\emptyset}\,\mu(S)\right)
+=
+\nu\!\left(\{(A,\pi):I(A,\pi)\cap X\ne\emptyset\}\right),
+\]
+where
+\[
+I(A,\pi)=\{z\in A:\pi(w)<\pi(z)\text{ for every }w\in A\cap N_G(z)\}.
+\]
+\end{helper}
+\begin{proof}
+Let \(I(A,\pi)\) denote the output set appearing in
+\noderef{RandomIndependentSetSampling}.  Put
+\[
+\mathcal T=\{S:S\text{ is a finite vertex set and }S\cap X\ne\emptyset\}.
+\]
+Since the weights \(\mu(S)\) are nonnegative, finite additivity of
+\(\operatorname{ofReal}\) over nonnegative real sums rewrites
+\[
+\operatorname{ofReal}\!\left(\sum_S
+  {\bf 1}_{S\cap X\ne\emptyset}\mu(S)\right)
+\]
+as
+\[
+\sum_{S\in\mathcal T}\operatorname{ofReal}(\mu(S)).
+\]
+For each finite set \(S\), the push-forward clause of
+\noderef{RandomIndependentSetSampling} identifies
+\(\operatorname{ofReal}(\mu(S))\) with
+\[
+\nu\{(A,\pi):S=I(A,\pi)\}.
+\]
+The events \(\{S=I(A,\pi)\}\) are pairwise disjoint as \(S\) ranges over
+distinct finite sets.  Their union over \(S\in\mathcal T\) is exactly the
+event \(\{(A,\pi):I(A,\pi)\cap X\ne\emptyset\}\): if the output meets \(X\),
+choose \(S=I(A,\pi)\), and conversely if \(S=I(A,\pi)\) and \(S\cap X\ne
+\emptyset\), then \(I(A,\pi)\cap X\ne\emptyset\).  Finite additivity of
+\(\nu\) over this disjoint union gives the displayed identity.
+\end{proof}

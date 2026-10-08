@@ -1,0 +1,19 @@
+\begin{lemma}
+Let $\nu$ be a finite measure on a measurable space $\Omega$, let $s$ be a
+finite set of indices, and let $P_i$ be predicates on $\Omega$ whose events
+$A_i=\{\omega:P_i(\omega)\}$ are measurable for $i\in s$.
+The real-valued count $C(\omega)=|\{i\in s:P_i(\omega)\}|$ is integrable and
+\[
+\int C\,d\nu=\sum_{i\in s}\nu(A_i),
+\]
+where the measures on the right are interpreted as real numbers.
+\end{lemma}
+\begin{proof}
+Pointwise, $C=\sum_{i\in s}\mathbf1_{A_i}$. The constant function one is
+integrable since $\nu$ is finite. Its restriction by the indicator of each
+measurable $A_i$ is integrable, so the finite sum is integrable as well.
+Linearity of the integral for a finite sum of integrable functions gives
+$\int C\,d\nu=\sum_{i\in s}\int\mathbf1_{A_i}\,d\nu$.
+Each summand is the real measure of $A_i$, proving the formula, also when
+$s$ is empty.
+\end{proof}

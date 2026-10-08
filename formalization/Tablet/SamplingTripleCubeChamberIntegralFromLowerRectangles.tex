@@ -1,0 +1,64 @@
+\begin{helper}
+Let \(V\) be finite, let \(\nu\) be a measure on
+\(\operatorname{Finset}(V)\times\mathbb R^V\), and fix an activation fiber
+\(A\).  Assume the lower-rectangle law on this fiber: for every
+\((t_v)_{v\in V}\in[0,1]^V\),
+\[
+\nu\{\omega_1=A,\ 0\le \pi(v)\le t_v\text{ for all }v\}
+=\nu\{\omega_1=A\}\operatorname{ofReal}\Bigl(\prod_{v\in V} t_v\Bigr).
+\]
+Let \(\gamma>0\), let \(a,b,c\in V\) be pairwise distinct, and let
+\(S_x,S_y,S_z\subseteq V\) be pairwise disjoint and disjoint from
+\(\{a,b,c\}\).  Assume also that the fiber has finite mass.  Then the
+measure of the bounded chamber event
+\[
+\begin{aligned}
+\{\omega:\;&\omega_1=A,\quad
+  \pi_\omega(a)\le \pi_\omega(b)\le \pi_\omega(c),\\
+&\text{for every }w\in S_x,\ \pi_\omega(w)<\pi_\omega(a),\\
+&\text{for every }w\in S_y,\ \pi_\omega(w)<\pi_\omega(b),\\
+  \text{ and for every }w\in S_z,\ \pi_\omega(w)<\pi_\omega(c)\}
+  \cap \{\omega:\pi_\omega(v)\in[0,1]\text{ for every }v\in V\}
+\end{aligned}
+\]
+is at most the displayed ordered integral:
+\[
+\nu[\omega_1=A]\operatorname{ofReal}\left(
+\frac{1}{\gamma^3}
+\int_{0\le z\le y\le x\le\gamma}
+\left(1-\frac{x}{\gamma}\right)^{|S_x|}
+\left(1-\frac{y}{\gamma}\right)^{|S_y|}
+\left(1-\frac{z}{\gamma}\right)^{|S_z|}\,dx\,dy\,dz\right).
+\]
+\end{helper}
+\begin{proof}
+The lower-rectangle law identifies the finite measure on the cube
+\([0,1]^V\) with \(\nu[\omega_1=A]\) times product Lebesgue measure restricted
+to the unit interval in each coordinate.  Indeed, lower rectangles
+\(\prod_v[0,t_v]\), \(0\le t_v\le 1\), form a pi-system generating the Borel
+sets of the finite cube, and both finite measures agree on that pi-system by
+the displayed hypothesis.
+
+It remains to compute the corresponding product-measure chamber.  Use the
+coordinates
+\[
+x=\gamma(1-\pi(a)),\qquad y=\gamma(1-\pi(b)),\qquad
+z=\gamma(1-\pi(c)).
+\]
+Since \(\gamma>0\), the map from \((\pi(a),\pi(b),\pi(c))\in[0,1]^3\) to
+\((x,y,z)\in[0,\gamma]^3\) has Jacobian factor \(\gamma^{-3}\), and the
+ordering \(\pi(a)\le\pi(b)\le\pi(c)\) becomes \(x\ge y\ge z\).  Boundary
+hyperplanes have product measure zero, so replacing weak inequalities by the
+iterated integral over \(0\le z\le y\le x\le\gamma\) does not change the
+value.
+
+For a fixed ordered triple \((x,y,z)\), the constraints on outside
+coordinates factor independently.  For each \(w\in S_x\) the condition
+\(\pi(w)<\pi(a)=1-x/\gamma\) contributes the factor \(1-x/\gamma\); the sets
+\(S_y\) and \(S_z\) similarly contribute \(1-y/\gamma\) and \(1-z/\gamma\).
+The hypotheses that \(S_x,S_y,S_z\) are pairwise disjoint and avoid
+\(\{a,b,c\}\) ensure that these factors involve distinct coordinates, while
+all remaining coordinates are unrestricted and contribute \(1\).  Fubini's
+theorem for the finite product measure gives exactly the claimed integral,
+multiplied by the fiber mass.
+\end{proof}

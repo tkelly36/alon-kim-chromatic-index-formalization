@@ -1,0 +1,68 @@
+\begin{helper}
+Let $k$ be a natural number and let $w_{ab}$ be a real weight assigned to
+each ordered pair of indices in $\{1,\ldots,k\}$.  Define the associated
+symmetric unordered-pair weight by
+\[
+e(a,b)=
+\begin{cases}
+w_{ab},&a<b,\\
+w_{ba},&b<a,\\
+0,&a=b.
+\end{cases}
+\]
+For each vertex $i$, let
+\[
+T_i=\sum_{\substack{j<\ell\\j,\ell\ne i}}
+\sqrt{e(i,j)e(i,\ell)e(j,\ell)}.
+\]
+Then the vertex-through triangle sums double count the increasing weighted
+triangle sum exactly three times:
+\[
+\sum_i T_i
+=3\sum_{a<b<c}\sqrt{w_{ab}w_{ac}w_{bc}}.
+\]
+\end{helper}
+\begin{proof}
+Rewrite the left hand side as one finite sum over triples $(i,j,\ell)$ with
+$j<\ell$, $i\ne j$, and $i\ne \ell$:
+\[
+\sum_i T_i
+=
+\sum_{\substack{j<\ell\\ i\ne j,\ i\ne \ell}}
+\sqrt{e(i,j)e(i,\ell)e(j,\ell)}.
+\]
+This is just the bijection from a vertex $i$ and an ordered pair
+$(j,\ell)$ in the complement of $i$ with $j<\ell$ to the flat triple
+$(i,j,\ell)$ satisfying those three displayed conditions.
+
+Because $j<\ell$ and $i$ is distinct from both $j$ and $\ell$, each flat
+triple lies in exactly one of the three cases
+\[
+i<j<\ell,\qquad j<i<\ell,\qquad j<\ell<i.
+\]
+These three cases are disjoint and exhaustive.  In the first case the flat
+triple is already the increasing triple $(i,j,\ell)$, and the summand is
+\[
+\sqrt{w_{ij}w_{i\ell}w_{j\ell}}.
+\]
+In the second case, the map $(i,j,\ell)\mapsto (j,i,\ell)$ is a bijection
+from triples with $j<i<\ell$ to increasing triples.  Since the symmetric
+weight satisfies $e(i,j)=w_{ji}$, $e(i,\ell)=w_{i\ell}$, and
+$e(j,\ell)=w_{j\ell}$, the summand becomes
+\[
+\sqrt{w_{ji}w_{i\ell}w_{j\ell}},
+\]
+which is the increasing-triple summand for $(j,i,\ell)$, up to the
+commutativity of multiplication.  In the third case, the map
+$(i,j,\ell)\mapsto (j,\ell,i)$ is a bijection from triples with
+$j<\ell<i$ to increasing triples.  There
+$e(i,j)=w_{ji}$, $e(i,\ell)=w_{\ell i}$, and $e(j,\ell)=w_{j\ell}$, so the
+summand is the increasing-triple summand for $(j,\ell,i)$, again up to
+commutativity of multiplication.
+
+Thus each of the three disjoint pieces is exactly
+\[
+\sum_{a<b<c}\sqrt{w_{ab}w_{ac}w_{bc}},
+\]
+and adding the three equal contributions gives the claimed identity.
+\end{proof}

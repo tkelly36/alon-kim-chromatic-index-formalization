@@ -1,0 +1,34 @@
+\begin{helper}
+For a fixed split-blocker witness surface, endpoint identification is a
+separate obligation from adjacent monotonicity.  Let \(S_j(\omega)\) and
+\(T_j(\omega)\) be the complete source and target mixed-stage events, let
+\(C_\omega,C'_\omega\) be the paired cells, and let \(H(j,\omega)\) be a
+normalized stage-mass family.  If the mass of \(H(0,\omega)\) is the mass of
+\(S_0(\omega)\cap C_\omega\), the mass of \(H(n,\omega)\) is the mass of
+\(T_n(\omega)\cap C'_\omega\), and the endpoint set identities
+\[
+S_0(\omega)\cap C_\omega=E_{\rm src}(\omega)\cap C_\omega,\qquad
+T_n(\omega)\cap C'_\omega=E_{\rm tgt}(\omega)\cap C'_\omega
+\]
+hold for every \(\omega\), then the normalized endpoint masses are exactly
+the source and target endpoint masses.  This includes the case \(n=0\):
+there is no adjacent step to invoke, only the two endpoint set identities.
+\end{helper}
+\begin{proof}
+Fix \(\omega\).  The source mass hypothesis gives
+\[
+\operatorname{ofReal}(w(\omega)H(0,\omega))
+  =\nu(S_0(\omega)\cap C_\omega).
+\]
+Substituting the source endpoint set identity
+\(S_0(\omega)\cap C_\omega=E_{\rm src}(\omega)\cap C_\omega\) gives the
+claimed source endpoint formula.  The target side is identical: start from
+\[
+\operatorname{ofReal}(w(\omega)H(n,\omega))
+  =\nu'(T_n(\omega)\cap C'_\omega)
+\]
+and substitute
+\(T_n(\omega)\cap C'_\omega=E_{\rm tgt}(\omega)\cap C'_\omega\).
+No comparison between adjacent indices is used, so the argument is valid
+when \(n=0\) as well as when \(n>0\).
+\end{proof}

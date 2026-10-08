@@ -1,0 +1,23 @@
+\begin{helper}
+Let \((\Omega,\nu)\) be a measure space, and let \(F,C,E\subseteq\Omega\).
+Assume \(E\subseteq F\), \(\nu(F)<\infty\), and \(\nu(F\cap C)=\nu(F)\).
+If \(\nu(E\cap C)\le B\), then \(\nu(E)\le B\).
+\end{helper}
+\begin{proof}
+Since \(F\cap C\subseteq F\) and the two sets have the same finite measure,
+the part of \(F\) outside \(C\) has measure zero.  More explicitly, by finite
+additivity on the disjoint decomposition
+\[
+F=(F\cap C)\,\dot\cup\, (F\setminus C)
+\]
+and by the hypothesis \(\nu(F)<\infty\), subtracting the equality
+\(\nu(F\cap C)=\nu(F)\) gives \(\nu(F\setminus C)=0\).  Because
+\(E\subseteq F\), the outside-cube part \(E\setminus C\) is contained in
+\(F\setminus C\), and hence \(\nu(E\setminus C)=0\).  Applying finite
+additivity to
+\[
+E=(E\cap C)\,\dot\cup\, (E\setminus C)
+\]
+therefore gives \(\nu(E)=\nu(E\cap C)\).  The assumed bound
+\(\nu(E\cap C)\le B\) now implies \(\nu(E)\le B\).
+\end{proof}

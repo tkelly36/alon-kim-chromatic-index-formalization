@@ -1,0 +1,77 @@
+\begin{helper}
+Let $G$ be a finite $\Delta$-regular graph, let $r$ be a vertex, and let
+$X\subseteq N_G(r)$ be clean in the sense that no two distinct vertices of
+$X$ have a common neighbor outside $N_G[r]$.  Fix three distinct pairwise
+nonadjacent vertices $a,b,c\in X$, and put $Q=\{a,b,c\}$.  Let $\ell$ be a
+pair parameter such that, for every independent two-set $P\subseteq X$,
+\[
+\ell(P)=\frac{|N_G(u)\cap N_G(v)|}{\Delta}
+\]
+for the two distinct vertices $u,v$ of $P$.
+
+Partition the vertices of $V(G)\setminus Q$ with nonempty adjacency pattern
+to $Q$ into the seven classes counted by
+\[
+n_a,n_b,n_c,n_{ab},n_{ac},n_{bc},n_{abc},
+\]
+where the subscript records exactly which of $a,b,c$ the vertex is adjacent
+to.  Then
+\[
+\ell(\{a,b\})=\frac{n_{ab}+n_{abc}}{\Delta},\qquad
+\ell(\{a,c\})=\frac{n_{ac}+n_{abc}}{\Delta},\qquad
+\ell(\{b,c\})=\frac{n_{bc}+n_{abc}}{\Delta},
+\]
+and the ordered-chamber exponent identities are
+\[
+n_a+n_{ab}+n_{ac}+n_{abc}=\Delta,
+\]
+\[
+n_b+n_{ab}+n_{bc}+n_{abc}=\Delta,\qquad
+n_c+n_{ac}+n_{bc}+n_{abc}=\Delta,
+\]
+\[
+n_b+n_{bc}=\Delta-n_{ab}-n_{abc},
+\qquad
+n_c=\Delta-n_{ac}-n_{bc}-n_{abc}.
+\]
+Moreover $r$ belongs to the $abc$-class.
+\end{helper}
+\begin{proof}
+The seven classes are disjoint by definition, because every vertex outside
+$Q$ has a unique truth pattern for adjacency to $a,b,c$.
+
+First consider the pair $\{a,b\}$.  A common neighbor $w$ of $a$ and $b$
+cannot equal $a$ or $b$, since $G$ has no loops, and it cannot equal $c$
+because $c$ is nonadjacent to both $a$ and $b$.  Thus every common neighbor
+of $a$ and $b$ lies outside $Q$.  It is either adjacent to $c$ or not, so the
+common-neighbor set is the disjoint union of the $ab$-class and the
+$abc$-class.  Hence
+$|N(a)\cap N(b)|=n_{ab}+n_{abc}$, and the assumed representation of $\ell$
+for independent pairs in $X$ gives the displayed formula for
+$\ell(\{a,b\})$.  The same argument with the labels permuted gives the
+formulas for $\ell(\{a,c\})$ and $\ell(\{b,c\})$.
+
+Next count neighbors of the individual vertices.  Since $a$ is not adjacent
+to $b$ or $c$ and has no loop, every neighbor of $a$ is outside $Q$ and
+falls into exactly one of the four classes whose subscript contains $a$:
+$a,ab,ac,abc$.  These four classes are disjoint and cover $N(a)$, so
+\[
+n_a+n_{ab}+n_{ac}+n_{abc}=|N(a)|=\Delta
+\]
+by $\Delta$-regularity.  Similarly, the neighbors of $b$ are exactly the
+disjoint union of the classes $b,ab,bc,abc$, and the neighbors of $c$ are
+exactly the disjoint union of the classes $c,ac,bc,abc$.  Therefore
+\[
+n_b+n_{ab}+n_{bc}+n_{abc}=\Delta,\qquad
+n_c+n_{ac}+n_{bc}+n_{abc}=\Delta.
+\]
+Rearranging these two equalities in the natural numbers yields
+\[
+n_b+n_{bc}=\Delta-n_{ab}-n_{abc},\qquad
+n_c=\Delta-n_{ac}-n_{bc}-n_{abc}.
+\]
+
+Finally, because $a,b,c\in X\subseteq N_G(r)$, the vertex $r$ is adjacent to
+all three of $a,b,c$.  It is distinct from each of them, since a graph has no
+loops.  Thus $r\notin Q$ and $r$ lies in the class counted by $n_{abc}$.
+\end{proof}

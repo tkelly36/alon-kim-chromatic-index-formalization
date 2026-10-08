@@ -1,0 +1,45 @@
+\begin{lemma}
+For integers $A,k\ge1$ and $\iota>0$, there exists an integer
+$\gamma_0\ge1$ such that, for every integer $\gamma\ge\gamma_0$, there
+exists $D_0\ge1$ such that for all integers $D\ge D_0$, writing
+$\Delta=kD$, $\ell=\lceil\Delta/\gamma\rceil$, and
+$q=4A(k+1)k^4D^6$, we have $\gamma\le\Delta$, $\ell>0$, and
+\[
+\left(1-\frac{1-e^{-\gamma}}\Delta+\frac2{\Delta^2}\right)^\ell
+\le1-\frac{1-\iota/2}\gamma,
+\]
+\[
+e^{-\iota^2D/(2\gamma^2 A)}\le e^{-(\log D)^2},\qquad
+e^{-\iota^2\ell/(8+2\iota)}\le e^{-(\log D)^2},\qquad
+e\,e^{-(\log D)^2}(q+1)\le1.
+\]
+The thresholds depend only on the displayed parameters.
+\end{lemma}
+\begin{proof}
+Choose $\gamma_0\ge1$ so large that $e^{-\gamma_0}\le\min(1/4,\iota/8)$
+and $1/\gamma_0\le\iota/4$. Fix $\gamma\ge\gamma_0$.
+Choose $D$ large enough that $\Delta\ge\max(\gamma,4,16/\iota)$.
+Put $u=1-e^{-\gamma}-2/\Delta$. Then $0\le u\le1$, and
+$e^{-\gamma}+2/\Delta+u^2/\gamma\le\iota/2$.
+Since $0\le1-u/\Delta\le1$ and $\ell\ge\Delta/\gamma$,
+\[
+(1-u/\Delta)^\ell\le e^{-u\ell/\Delta}
+\le e^{-u/\gamma}\le1-u/\gamma+u^2/\gamma^2
+\le1-(1-\iota/2)/\gamma.
+\]
+The exponential inequality for the nonpositive argument $-u/\gamma$
+follows, for example, by integrating the second derivative of $e^x$ on
+the interval between that argument and zero, where $e^x\le1$.
+Positivity of $\Delta/\gamma$ gives $\ell>0$.
+
+The constants $c_1=\iota^2/(2\gamma^2A)$ and
+$c_2=\iota^2k/((8+2\iota)\gamma)$ are positive. For any $c>0$,
+$cD\ge(\log D)^2$ eventually: putting $s=\log D$, the exponential series
+gives $e^s\ge s^3/6$ for $s>0$, hence $s^2/e^s\le6/s\to0$.
+Apply this to $c_1,c_2$ and use $\ell\ge kD/\gamma$ for the two tails.
+Finally put $C=4A(k+1)k^4$. For $D\ge1$,
+$CD^6+1\le(C+1)D^6$, and the logarithm of the required local-lemma
+expression is at most $1+\log(C+1)+6\log D-(\log D)^2$, which is
+nonpositive eventually. Choose an integer $D_0$ above these finitely many
+thresholds. None uses the hypergraph, its lists, or $b$.
+\end{proof}

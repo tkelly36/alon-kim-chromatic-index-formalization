@@ -1,0 +1,77 @@
+\begin{helper}
+For one side of a split-blocker mixed stage, a complete-stage decomposition
+is obtained from the actual two-piece set decomposition and the normalized
+mass representatives; it is not an additional hypothesis.  Let
+\(S_k(\omega)\) be a complete stage on the cell \(C_\omega\), let
+\(U_k(\omega)\) be the unchanged part, and let \(B_k^\partial(\omega)\) be the
+current-boundary part.  Let \(H(k,\omega)\), \(U(k,\omega)\), and
+\(B^\partial(k,\omega)\) be their normalized real representatives with common
+cell weight \(w(\omega)\).
+
+Assume that, for each \(k<n\) and \(\omega\), the weight and representatives
+are nonnegative, and that all three representatives are \(0\) when
+\(w(\omega)=0\).  Assume also that
+\[
+S_k(\omega)\cap C_\omega
+ =
+(U_k(\omega)\cap C_\omega)\cup(B_k^\partial(\omega)\cap C_\omega),
+\]
+that the two pieces on the right are disjoint, and that finite additivity of
+the measure on this displayed two-piece cover gives
+\[
+\nu(S_k(\omega)\cap C_\omega)
+ =
+\nu(U_k(\omega)\cap C_\omega)
+ +\nu(B_k^\partial(\omega)\cap C_\omega).
+\]
+Finally assume the three normalized mass identities
+\[
+\operatorname{ofReal}(w(\omega)H(k,\omega))
+ = \nu(S_k(\omega)\cap C_\omega),
+\]
+\[
+\operatorname{ofReal}(w(\omega)U(k,\omega))
+ = \nu(U_k(\omega)\cap C_\omega),
+\qquad
+\operatorname{ofReal}(w(\omega)B^\partial(k,\omega))
+ = \nu(B_k^\partial(\omega)\cap C_\omega).
+\]
+Then
+\[
+H(k,\omega)=U(k,\omega)+B^\partial(k,\omega)
+\]
+for every \(k<n\) and every \(\omega\).
+\end{helper}
+\begin{proof}
+Fix \(k<n\) and \(\omega\).  We prove the displayed real identity by cases on
+the common weight.
+
+If \(w(\omega)=0\), the zero-weight convention gives
+\[
+H(k,\omega)=0,\qquad U(k,\omega)=0,\qquad
+B^\partial(k,\omega)=0.
+\]
+Therefore \(H(k,\omega)=U(k,\omega)+B^\partial(k,\omega)\).
+
+Now suppose \(w(\omega)\ne0\).  Since \(w(\omega)\ge0\), we have
+\(w(\omega)>0\).  By finite additivity and the three normalized mass
+identities,
+\[
+\operatorname{ofReal}(wH)
+ =
+\operatorname{ofReal}(wU)+\operatorname{ofReal}(wB^\partial),
+\]
+where the arguments are evaluated at the fixed \(k,\omega\).  The products
+\(wH\), \(wU\), and \(wB^\partial\) are nonnegative because the common weight
+and the three representatives are nonnegative.  Hence, after applying
+\(\operatorname{toReal}\) to the preceding extended-nonnegative-real equality,
+\[
+wH=wU+wB^\partial=w(U+B^\partial).
+\]
+Cancelling the positive factor \(w(\omega)\) gives
+\[
+H(k,\omega)=U(k,\omega)+B^\partial(k,\omega).
+\]
+Since \(k\), \(k<n\), and \(\omega\) were arbitrary, the conclusion follows
+for all stages and atoms.
+\end{proof}

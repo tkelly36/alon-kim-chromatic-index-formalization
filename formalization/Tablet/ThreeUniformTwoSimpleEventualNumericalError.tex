@@ -1,0 +1,29 @@
+\begin{lemma}
+For every $\eta>0$ there is a natural number $D_0$ such that for every
+integer $D\ge D_0$, putting $t=D^{-1/3}$ and $r=1+18t$, one has
+\[
+\frac29t+\frac8{9D}+r^3\frac2{3^5}
+ +\frac{(r^2-1)r}{9}\le\frac2{3^5}+\eta.
+\]
+\end{lemma}
+\begin{proof}
+Here is a uniform quantitative choice. Set
+$\epsilon=\min(1/18,\eta/34)>0$, and choose an integer $D_0\ge1$
+with $D_0\ge\epsilon^{-3}$. For $D\ge D_0$ positivity and monotonicity
+of real powers give $0<t=D^{-1/3}\le\epsilon$. Indeed
+$D\ge\epsilon^{-3}>0$ implies $D^{1/3}\ge\epsilon^{-1}$, and taking
+reciprocals gives this inequality. Also $D^{-1}\le D^{-1/3}=t$ since
+$D\ge1$.
+Write $s=18t$, so $0\le s\le1$ and $r=1+s\le2$.
+Using $s^2\le s$ and $s^3\le s$, we have
+$r^3-1=3s+3s^2+s^3\le7s=126t$.
+Likewise $r^2-1=2s+s^2\le3s=54t$, and hence
+$(r^2-1)r/9\le12t$.
+Subtracting $2/3^5$ from the left side in the statement therefore gives
+at most
+\[
+\left(\frac29+\frac89+126\frac2{243}+12\right)t
+=\frac{1146}{81}t\le34t\le\eta.
+\]
+All estimates hold for every $D\ge D_0$, so the choice is uniform.
+\end{proof}

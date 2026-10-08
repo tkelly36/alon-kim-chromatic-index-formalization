@@ -1,0 +1,61 @@
+\begin{helper}
+Let \(V\) be finite, let \(\nu\) be a measure on
+\(\operatorname{Finset}(V)\times \mathbb R^V\), and fix an activation fiber
+\(A\).  Assume the fixed-fiber cube law and lower-rectangle law used in
+\noderef{RandomIndependentSetSampling}: the fiber \(A\) has all activated
+priority coordinates in \([0,1]\) up to null error, and every lower rectangle
+\(0\le \pi(v)\le t_v\), with \(t_v\in[0,1]\), has measure
+\[
+\nu[\omega_1=A]\,\operatorname{ofReal}\Bigl(\prod_{v\in V} t_v\Bigr).
+\]
+Let \(\gamma>0\), let \(a,b,c\in V\) be pairwise distinct, and let
+\(S_x,S_y,S_z\subseteq V\) be pairwise disjoint subsets, each disjoint from
+\(\{a,b,c\}\).  Then the measure of the event
+\[
+\omega_1=A,\qquad
+\pi(a)\le \pi(b)\le \pi(c),
+\]
+together with
+\[
+\pi(w)<\pi(a)\ (w\in S_x),\qquad
+\pi(w)<\pi(b)\ (w\in S_y),\qquad
+\pi(w)<\pi(c)\ (w\in S_z),
+\]
+is at most
+\[
+\nu[\omega_1=A]\operatorname{ofReal}\left(
+\frac{1}{\gamma^3}
+\int_{0\le z\le y\le x\le\gamma}
+\left(1-\frac{x}{\gamma}\right)^{|S_x|}
+\left(1-\frac{y}{\gamma}\right)^{|S_y|}
+\left(1-\frac{z}{\gamma}\right)^{|S_z|}\,dx\,dy\,dz\right).
+\]
+\end{helper}
+\begin{proof}
+Split according to the mass of the fixed activation fiber.  First suppose that
+\(\nu[\omega_1=A]=\infty\).  Then the right hand side of the desired
+inequality is infinite.  Indeed, on \(0\le z\le y\le x\le\gamma\) each factor
+\(1-x/\gamma\), \(1-y/\gamma\), and \(1-z/\gamma\) lies in \([0,1]\), so the
+integrand is nonnegative.  More than this, on the positive-volume subchamber
+\[
+0\le z\le y\le x\le \gamma/2
+\]
+each of these three factors is at least \(1/2\).  Since
+\(|S_x|,|S_y|,|S_z|\) are finite, the integrand is bounded below on that
+subchamber by the positive constant
+\((1/2)^{|S_x|+|S_y|+|S_z|}\).  Therefore the displayed chamber integral is
+strictly positive, and so is its product with \(1/\gamma^3\).  Multiplying the
+positive extended nonnegative real obtained from this positive real by the
+infinite fiber mass gives \(\infty\).  In this case the claimed upper bound is
+therefore automatic.
+
+It remains to consider the finite case
+\(\nu[\omega_1=A]<\infty\).  This is exactly the finite fixed-fiber
+product-cube calculation stated in
+\noderef{SamplingTripleProductChamberIntegralFiniteFiber}.  The hypotheses of
+that node are the present cube law, lower-rectangle law, finite fiber-mass
+assumption, positivity of \(\gamma\), pairwise distinctness of \(a,b,c\), and
+the disjointness assumptions on \(S_x,S_y,S_z\).  Applying that node gives the
+same displayed chamber-integral upper bound in the finite case.  The two cases
+therefore prove the aggregate estimate.
+\end{proof}

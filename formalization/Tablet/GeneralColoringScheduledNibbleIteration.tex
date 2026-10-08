@@ -1,0 +1,89 @@
+\begin{lemma}
+Let $\varepsilon>0$ and $A,k\in\mathbb N$. There exists a natural
+$\gamma_0$ such that for every positive natural $\gamma\ge\gamma_0$
+there is a natural $D_{\rm nib}$ with the following property.
+Let $D,\theta$ be real, $s$ natural, and $N_i,K_i$ natural sequences.
+Write $\ell_i=\lceil kN_i/\gamma\rceil$ and
+$\rho=1-(1-\varepsilon/6)/\gamma$. Assume $\ell_0\le K_0$ and,
+for every $i<s$,
+\[
+D_{\rm nib}\le N_i,\quad \varepsilon D/3\le N_i,\quad
+K_i\le AN_i,\quad K_i\le K_{i+1},\quad \rho N_i\le N_{i+1},\quad
+(1-\theta-\varepsilon/6)\ell_i+K_{i+1}-K_i\ge\ell_{i+1}.
+\]
+Let $H$ be a finite $k$-uniform hypergraph of maximum degree at most $N_0$.
+Assume that for every natural $n\ge\varepsilon D/3$, every subhypergraph
+$H'\subseteq H$ of maximum degree at most $n$, and every edge $e$ of $H'$,
+$b_{L(H'),kn}(e)\le\theta$. Then there are a set $C$ of edges of $H$
+and a proper coloring $c:C\to[K_s]$ such that the canonical residual,
+whose indices are precisely $E(H)\setminus C$ and whose edge sets are
+unchanged, has maximum degree at most $N_s$.
+\end{lemma}
+\begin{proof}
+Choose $\gamma_0$ and then $D_{\rm nib}$ from
+\noderef{OneNibblePartialColoring} with parameters $A,k,\varepsilon/6$.
+We prove by induction on $i\le s$ the stronger assertion that the
+canonical residual of a proper $[K_i]$ partial coloring has degree at
+most $N_i$, and that every uncolored edge has at least $\ell_i$ available
+colors. A color is available if no intersecting colored edge uses it.
+For $i=0$ use the empty coloring: all $K_0$ colors are available.
+
+Suppose $i<s$. Let $C_i$ be the colored indices and let $R_i$ be the
+subtype of indices outside $C_i$. The residual $H_i$ has edge map
+$e\mapsto H(e)$. Its subtype inclusion is injective and preserves edge
+sets, hence witnesses \noderef{SubhypergraphOf}.
+By \noderef{SubhypergraphInheritance}, $H_i$ is $k$-uniform.
+Apply the local assumption at $n=N_i$ to get the required local
+$b$-bound on $H_i$.
+For $e\in R_i$, define
+\[
+L_i(e)=\{a<K_i:\ \forall f\in C_i,
+ c_i(f)=a\Longrightarrow H(f)\cap H(e)=\varnothing\}.
+\]
+The injection $[K_i]\hookrightarrow[AN_i]$ sending a label to itself
+exists by $K_i\le AN_i$. Its images of these lists have the same
+cardinalities. Because $kN_i/\gamma\ge0$, its natural ceiling equals
+its integer ceiling, so the inductive list bound is exactly the input
+list bound of \noderef{OneNibblePartialColoring}. All other inputs hold:
+$N_i\ge D_{\rm nib}$, the degree bound, uniformity, and the local bound.
+
+The nibble supplies a colored set $C'\subseteq R_i$, a proper coloring
+$c'$, and a residual presentation $H_c$ with map $u:F\to R_i$,
+covering precisely the indices outside $C'$. Each $c'(e)$ belongs to the
+image of $L_i(e)$, so it has a unique preimage label below $K_i$.
+Decode $c'$ to these labels; the decoding is injective and preserves
+properness. By \noderef{CanonicalResidualEmbedding}, the canonical
+residual $R'=R_i\setminus C'$ injects into $F$ by a map $j$ with
+$u(j(e))=e$, preserving edge sets, and its degrees are at most those of
+$H_c$. Thus these degrees are at most $\rho N_i\le N_{i+1}$.
+
+Pull the nibble residual list at $j(e)$ back through the label injection.
+The exact residual-list equivalence in \noderef{OneNibblePartialColoring}
+says that a label belongs to it precisely when it belonged to $L_i(e)$
+and is not used on any intersecting edge of $C'$. In particular the
+residual list contains no label outside the injected old palette, so
+decoding preserves its entire cardinality, not merely a subset of it.
+It has size at least $(1-\theta-\varepsilon/6)\ell_i$.
+
+Set $C_{i+1}=C_i\cup\{e.val:e\in C'\}$ and combine the two colorings.
+The two domains are disjoint. Edges in either one have proper colors
+internally. For an old and a new edge, membership of the new color in
+$L_i$ prohibits equality when the edges intersect. Thus the combined
+coloring is proper. Its canonical residual is in edge-preserving
+bijection with $R'$: both consist of the original indices not in $C_i$
+and not selected by $C'$. This bijection preserves degrees, since for
+each vertex it restricts to a bijection of incident indices.
+The residual inclusion into the original edge type is again injective;
+equivalently it is the composition of the two subtype inclusions. No
+injectivity of the nibble's original map $u$ has been assumed.
+
+Embed the combined coloring into $[K_{i+1}]$. For every remaining edge,
+its available labels split disjointly into the decoded old residual list
+and all labels $K_i\le a<K_{i+1}$: none of the latter has been used.
+Their number is therefore at least
+$(1-\theta-\varepsilon/6)\ell_i+K_{i+1}-K_i\ge\ell_{i+1}$.
+This only adds a cardinality to a real lower bound and does not require
+the coefficient $1-\theta-\varepsilon/6$ to be nonnegative.
+This completes the induction, including the case $s=0$ via its base,
+and its degree and properness conclusions at $s$ prove the assertion.
+\end{proof}

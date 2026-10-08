@@ -1,0 +1,34 @@
+\begin{theorem}
+For every $\varepsilon>0$ and every positive integer $k$, there is a natural
+number $D_0$ such that the following holds for every real $D\ge D_0$ and
+every $\theta\in(0,1)$. Let $\mathcal H$ be a finite $k$-uniform hypergraph
+with every vertex degree at most $D$. If, for every real
+$D'\ge\varepsilon D/3$ and every subhypergraph $H\subseteq\mathcal H$
+with every vertex degree at most $D'$, every edge $e\in E(H)$ satisfies
+\[
+b^{\mathbb R}_{L(H),kD'}(e)\le\theta,
+\]
+where $b^{\mathbb R}$ is the real-scale local parameter, then
+\[
+\chi'(\mathcal H)\le(\theta+\varepsilon)kD.
+\]
+\end{theorem}
+\begin{proof}
+Suppose first that $0<\varepsilon\le1$, and choose the natural threshold
+from \noderef{GeneralColoringIterationGreedyFinish}. Its main parameter
+$D$ is real, but its local hypothesis only requires natural scales $n$.
+For each natural $n\ge\varepsilon D/3$ and subhypergraph $H$ of maximum
+degree at most $n$, apply the assumed real-scale hypothesis at the real
+cast of $n$. By \noderef{LocalBParameterRealNatCast},
+$b^{\mathbb R}_{L(H),kn}(e)=b_{L(H),kn}(e)$. Thus the local hypothesis of
+the iteration lemma holds, and that lemma gives the conclusion.
+
+If $\varepsilon>1$, choose $D_0=1$ and put $n=\lfloor D\rfloor_+$.
+Then $n\ge1$, and \noderef{RealDegreeFloorBound} gives maximum degree at
+most $n$. By \noderef{UniformHypergraphGreedyColoring}, there is a proper
+edge-coloring with $kn$ colors. Since $n\le D$, $k>0$, and
+$\theta+\varepsilon>1$, we have
+$kn\le kD\le(\theta+\varepsilon)kD$.
+This is the required real bound in \noderef{ChromaticIndexAtMostReal}.
+The local hypothesis is not needed in this case.
+\end{proof}

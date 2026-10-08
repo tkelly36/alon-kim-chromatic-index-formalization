@@ -1,0 +1,35 @@
+\begin{helper}
+Let $k>0$, let $\mathcal F\in H(k,k,D)$, and let $v$ be a vertex with
+$\deg_{\mathcal F}(v)<D$.  If
+$\operatorname{FreshEdge}_k(\mathcal F,v)$ is the hypergraph obtained by
+adjoining one fresh $k$-edge through $v$ as in
+\noderef{KUniformFreshEdgeHypergraph}, then
+$\operatorname{FreshEdge}_k(\mathcal F,v)$ is also a member of $H(k,k,D)$.
+\end{helper}
+\begin{proof}
+By \noderef{HypergraphClass}, membership in $H(k,k,D)$ means
+$k$-uniformity, $k$-simplicity, and maximum degree at most $D$.
+The old edges of the fresh-edge hypergraph are unchanged except that their
+vertices are viewed inside the enlarged vertex set, while the new edge is
+the vertex $v$ together with exactly $k-1$ fresh vertices by
+\noderef{KUniformFreshEdgeHypergraph}.  Hence every old edge still has
+cardinality $k$ by \noderef{UniformHypergraph}, and the new edge has
+$1+(k-1)=k$ vertices because $k>0$.
+
+For simplicity, two old edges have the same intersection size they had in
+$\mathcal F$, so their intersection has size at most $k$ by the
+\noderef{TSimpleHypergraph} part of the hypothesis.  The new edge meets an
+old edge only possibly at the old vertex $v$, since all other vertices of
+the new edge are fresh; consequently such an intersection has size at most
+$1\le k$.  There is only one new edge label, so there is no distinct
+new--new pair to check.
+
+Finally consider degrees, using \noderef{HypergraphDegree}.  A fresh vertex
+lies in exactly the new edge, so its degree is $1$, and this is at most $D$
+because $\deg_{\mathcal F}(v)<D$ implies $D>0$.  An old vertex different
+from $v$ lies in exactly the same old edge labels as before and not in the
+new edge, so its degree remains at most $D$ by \noderef{MaxDegreeAtMost}.
+The vertex $v$ gains exactly one incident edge, and its old degree was
+strictly less than $D$, so its new degree is at most $D$.  Thus all three
+parts of \noderef{HypergraphClass} hold for the fresh-edge hypergraph.
+\end{proof}

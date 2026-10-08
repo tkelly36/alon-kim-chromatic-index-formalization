@@ -1,0 +1,13 @@
+\begin{lemma}
+If $H$ is a finite $k$-uniform hypergraph with maximum degree at most the
+natural number $n$, then every edge $e$ has degree at most $k(n-1)$ in
+$L(H)$, where subtraction in $n-1$ is natural subtraction.
+\end{lemma}
+\begin{proof}
+Use \noderef{LineGraphOfHypergraph} and \noderef{HypergraphDegree}.
+For each $v\in e$, the set of edges incident with $v$, with $e$ removed,
+has size $\deg_H(v)-1\le n-1$. Every neighbor of $e$ belongs to at
+least one of these sets. The size of their union is at most the sum of
+their sizes, which is at most $|e|(n-1)=k(n-1)$ by
+\noderef{UniformHypergraph} and \noderef{MaxDegreeAtMost}.
+\end{proof}

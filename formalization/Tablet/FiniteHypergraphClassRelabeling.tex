@@ -1,0 +1,43 @@
+\begin{helper}
+Let $H\in H(k,t,D)$ be a multi-hypergraph with finitely many edge indices,
+let $f$ be an edge, and let $M$ be a natural number with $0<M$ and
+$kD\le M$. For any prescribed vertex and edge universes, there exist
+finite carriers $V'$ and $E'$ in those respective universes, a
+multi-hypergraph $H'$ on vertex carrier $V'$ and edge-index carrier $E'$
+with $H'\in H(k,t,D)$, and an edge index $f'\in E'$ such that
+$b_{L(H),M}(f)=b_{L(H'),M}(f')$.
+\end{helper}
+\begin{proof}
+First the scale is admissible for the source line graph. For every edge
+$e$, each neighbor $g$ of $e$ contains some vertex $x\in H(e)$.
+Consequently its neighborhood is contained in the union, over
+$x\in H(e)$, of the sets of edge indices containing $x$. Each such set
+has cardinality at most $D$, and $|H(e)|=k$, by
+\noderef{HypergraphClass}. The finite union bound gives
+$\deg_{L(H)}(e)\le kD\le M$ for every $e$. Together with $M>0$,
+this places the parameter in the paper's positive admissible-scale domain.
+
+Let $S$ be the union of all edges of $H$. This is finite, since there are
+finitely many edges and each edge is finite. Choose bijections from finite
+ordinal sets to $S$ and to the edge-index set, and lift these ordinal sets
+to the prescribed universes. Denote the resulting vertex set by $U$, the
+edge-index set by $W$, the injection $U\to V(H)$ by $i$, and the edge
+bijection by $b:E(H)\to W$. Define
+$H'(e)=\{z\in U:i(z)\in H(b^{-1}(e))\}$ and put $f'=b(f)$.
+For each edge, $i$ restricts to a bijection from its new vertex set to its
+old vertex set, because every old edge is contained in $S$. It likewise
+restricts to a bijection on each intersection of two edges. Thus edge sizes
+and the intersection bounds are preserved. For each $z\in U$, $b$ gives
+a bijection between old edges containing $i(z)$ and new edges containing
+$z$, so degrees are preserved. This proves membership in $H(k,t,D)$
+using \noderef{HypergraphClass}.
+The bijection $b$ preserves adjacency in the line graphs in both directions,
+since it preserves distinctness and nonemptiness of edge intersections.
+It therefore gives a bijection of the neighborhoods of every $e$ and
+$b(e)$, so all line-graph degrees are preserved. Since $b$ is surjective,
+every degree in $L(H')$ is also at most $M$; the same positive scale is
+thus admissible on both sides. In particular the neighborhood bijection
+at $f$ and $f'$ preserves all adjacencies within them. Apply
+\noderef{LocalBParameterNeighborhoodEmbeddingTransport} to this bijection
+to obtain the asserted equality at the given scale $M$.
+\end{proof}

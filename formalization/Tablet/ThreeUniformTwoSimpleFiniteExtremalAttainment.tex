@@ -1,0 +1,56 @@
+\begin{lemma}
+For every positive integer $D$, there is a finite-vertex, finite-edge
+$3$-uniform $2$-simple hypergraph $\mathcal F$ of maximum degree at most $D$
+and a distinguished edge $f$ such that
+\[
+b_{L(\mathcal H),3D}(e)\le b_{L(\mathcal F),3D}(f)
+\]
+for every $3$-uniform $2$-simple hypergraph $\mathcal H$ with finitely many
+edge indices, maximum degree at most $D$, and distinguished edge $e$.
+The competitors' vertex sets need not be finite.
+\end{lemma}
+\begin{proof}
+We construct a finite set of representatives, without maximizing over an
+unbounded class of hypergraphs. Set $M=1+3(D-1)$ and $L=3M$.
+Retain from a competitor only $e$ and its line-graph neighbors $N$.
+For each of the three vertices of $e$, at most $D-1$ other edge indices
+contain that vertex. Every member of $N$ contains at least one such vertex,
+so $|N|\le3(D-1)$. Thus the retained edge-index set has size $m\le M$.
+Restrict the vertex set to the union of the retained edges, of size
+$\ell\le3m\le L$. Retained edges still have size three. Their pairwise
+intersection sizes are unchanged, hence remain at most two for distinct
+indices. At each retained vertex, its new degree counts a subset of its
+old incident edge indices and is therefore at most $D$. These are exactly
+the conditions in \noderef{HypergraphClass}.
+
+The distinguished edge has exactly the same neighbors before and after
+restriction. Intersections of two retained edges have not changed, so
+adjacency between any two of these neighbors has not changed either, by
+\noderef{LineGraphOfHypergraph}. The vertex degree in the line graph and
+the independent pairs and triples in its neighborhood, as defined in
+\noderef{IndependentPairCount} and \noderef{IndependentTripleCount}, are
+consequently unchanged. The three terms in \noderef{LocalBParameter} show that the local
+$b$-value is unchanged.
+
+Relabel these $m$ edge indices by $\operatorname{Fin}(m)$ and these $\ell$
+vertices by $\operatorname{Fin}(\ell)$. Bijections preserve incidences,
+intersection cardinalities, degrees, and the three local counts just
+described. In particular they preserve $2$-simplicity, not just
+$3$-simplicity. Consider all choices of $0\le m\le M$, $0\le\ell\le L$,
+all functions from $\operatorname{Fin}(m)$ to subsets of
+$\operatorname{Fin}(\ell)$ satisfying the three class conditions, and all
+distinguished indices in $\operatorname{Fin}(m)$. This is a finite set:
+there are finitely many sizes, finitely many subsets of each finite vertex
+set, finitely many such functions, and finitely many distinguished indices.
+It is nonempty: take one three-element edge on three vertices, whose
+vertex degrees are one and whose distinct-edge intersection condition is
+vacuous. This is admissible since $D\ge1$, $M\ge1$, and $L\ge3$.
+
+Apply \noderef{FiniteRealFunctionAttainsMaximum} to the real local
+$b$-value on this finite nonempty set. Its maximizing element is a genuine
+admissible hypergraph on two finite sets. Every competitor has the same
+value as an element of this set by the restriction and relabeling above,
+so its value is bounded by this maximum. No unused edge indices are padded
+by duplicate hyperedges; the variable finite sizes preserve $2$-simplicity
+throughout.
+\end{proof}

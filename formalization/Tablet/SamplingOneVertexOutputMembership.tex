@@ -1,0 +1,26 @@
+\begin{helper}
+In the activation--priority output map of
+\noderef{RandomIndependentSetSampling}, a vertex $v$ belongs to the output
+set
+\[
+I(A,\pi)=\{u\in A:\pi(w)<\pi(u)\text{ for every activated neighbor }w
+\text{ of }u\}
+\]
+if and only if $v$ is activated and every activated neighbor of $v$ has
+priority smaller than the priority of $v$.
+\end{helper}
+\begin{proof}
+The output set in \noderef{RandomIndependentSetSampling} is defined by
+filtering the full finite vertex set with the predicate
+\[
+u\in A\quad\text{and}\quad
+\forall w,\; w\in A\Rightarrow uw\in E(G)\Rightarrow \pi(w)<\pi(u).
+\]
+Membership in a filtered finite set is equivalent to membership in the
+ambient finite set together with satisfaction of the filtering predicate.
+The ambient finite set is the full vertex set, so $v$ automatically belongs
+to it.  Substituting $u=v$ in the displayed predicate gives exactly the two
+conditions: $v\in A$, and every activated neighbor $w$ of $v$ has
+$\pi(w)<\pi(v)$.  Conversely, if those two conditions hold, then $v$
+satisfies the filtering predicate and hence belongs to the output set.
+\end{proof}

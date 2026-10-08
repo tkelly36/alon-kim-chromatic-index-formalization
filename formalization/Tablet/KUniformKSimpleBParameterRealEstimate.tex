@@ -1,0 +1,64 @@
+\begin{helper}
+Let $k\ge2$, $D>0$, and let $y$ be a real number satisfying
+\[
+0\le y,\qquad
+\frac{k-1}{2}-\frac{k^2}{D}\le y\le \frac{k^2}{2},
+\qquad
+\frac{k^2}{D}\le \frac{k-1}{2}.
+\]
+Then
+\[
+1-\frac1D-\frac{y}{k^2}
++\frac{\binom{k}{3}}{k^3\binom{k}{2}^{3/2}}y^{3/2}
+\le
+1-\frac{k-1}{2k^2}
++\frac{(k-1)(k-2)}{6k^3\sqrt{k}} .
+\]
+\end{helper}
+\begin{proof}
+Put $a=(k-1)/2$, $M=k^2/2$, and
+$c=\binom{k}{3}/(k^3\binom{k}{2}^{3/2})$.  The hypotheses say that
+$0\le y\le M$ and $a-k^2/D\le y$, while the threshold assumption makes
+$a-k^2/D\ge0$.
+
+For $0\le x_1\le x_2\le M$, write $u_i=\sqrt{x_i}$.  Then
+$x_i^{3/2}=u_i^3$ and
+\[
+u_2^3-u_1^3=(u_2-u_1)(u_2^2+u_1u_2+u_1^2).
+\]
+Since $0\le u_1\le u_2\le\sqrt M$, the factor in parentheses is at most
+$(3/2)\sqrt M\,(u_1+u_2)$.  Multiplying by $u_2-u_1$ gives
+\[
+x_2^{3/2}-x_1^{3/2}
+\le (x_2-x_1)\frac32\sqrt M. \tag{1}
+\]
+Using \noderef{KPartiteTriangleCoefficientIdentity} and the elementary
+inequality
+\[
+\sqrt{\frac{k-2}{2(k-1)}}\sqrt{\frac{k-2}{k}}\le \sqrt2
+\]
+for $k\ge3$ (with the case $k=2$ trivial because $\binom 23=0$), we get
+\[
+c\frac32\sqrt M\le \frac1{k^2}. \tag{2}
+\]
+Also a direct simplification of the same coefficient identity gives
+\[
+c\,a^{3/2}
+=\frac{(k-1)(k-2)}{6k^3\sqrt{k}}. \tag{3}
+\]
+
+If $y\le a$, then $c y^{3/2}\le c a^{3/2}$ and
+$a-k^2/D\le y$ rearranges to
+$-1/D-y/k^2\le -a/k^2$.  Hence the desired bound follows from (3).
+If $a\le y$, apply (1) with $x_1=a$ and $x_2=y$, and then (2), to obtain
+\[
+c(y^{3/2}-a^{3/2})\le \frac{y-a}{k^2}.
+\]
+Thus
+\[
+1-\frac1D-\frac{y}{k^2}+c y^{3/2}
+\le 1-\frac1D-\frac{a}{k^2}+c a^{3/2}
+\le 1-\frac{a}{k^2}+c a^{3/2}.
+\]
+Substituting $a=(k-1)/2$ and using (3) is exactly the stated inequality.
+\end{proof}

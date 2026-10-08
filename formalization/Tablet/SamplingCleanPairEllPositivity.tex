@@ -1,0 +1,51 @@
+\begin{helper}
+Let $G$ be a finite $\Delta$-regular simple graph.  Let $r$ be a vertex and
+let $X\subseteq N_G(r)$ be such that no two distinct vertices of $X$ have a
+common neighbor outside $N_G[r]$.  Let $Q\subseteq X$ be an independent set,
+and let $P\subseteq Q$ have size two.  Let $\ell$ be a real-valued function
+on finite vertex sets.  Suppose that, for every finite set $P'\subseteq X$
+of size two that is independent in $G$, there are two distinct vertices
+$u,v\in P'$ such that
+\[
+\ell(P')=\frac{|N_G(u)\cap N_G(v)|}{\Delta}.
+\]
+Then
+\[
+0\le \ell(P),\qquad 0<1-\ell(P),\qquad 0<2-\ell(P).
+\]
+\end{helper}
+\begin{proof}
+Since $P\subseteq Q\subseteq X$, the set $P$ is a subset of $X$.  Also $P$
+is independent: if $a,b\in P$ are distinct, then $a,b\in Q$, and the
+independence of $Q$ gives that $a$ and $b$ are not adjacent.  Therefore the
+representation hypothesis for the function $\ell$ applies to this particular
+set $P$.  Choose the two distinct vertices $u,v\in P$ supplied by that
+hypothesis, so that
+\[
+\ell(P)=\frac{|N_G(u)\cap N_G(v)|}{\Delta}.
+\]
+Because $P\subseteq Q\subseteq X$, both $u$ and $v$ belong to $X$, and hence
+both are adjacent to $r$.  Thus $\{u,v\}\subseteq N_G(r)$.  Because $G$ is
+$\Delta$-regular, $|N_G(r)|=\Delta$, so in particular $\Delta\ge 2$.
+
+We claim that every common neighbor of $u$ and $v$ lies in
+\[
+\{r\}\cup\bigl(N_G(r)\setminus\{u,v\}\bigr).
+\]
+Indeed, let $w\in N_G(u)\cap N_G(v)$.  If $w=r$ there is nothing to prove.
+If $w\ne r$, the clean-neighborhood hypothesis applied to the distinct
+vertices $u,v\in X$ rules out the possibility that $w$ is not adjacent to
+$r$.  Hence $w\in N_G(r)$.  Also $w\ne u$ and $w\ne v$, since a simple graph
+has no loops and $w$ is adjacent to $u$ and to $v$.  This proves the claimed
+containment.
+
+The set on the right has cardinality $\Delta-1$: the set
+$N_G(r)\setminus\{u,v\}$ has size $\Delta-2$, and $r\notin N_G(r)$, so adding
+$r$ contributes one new vertex.  Therefore
+\[
+|N_G(u)\cap N_G(v)|\le \Delta-1<\Delta .
+\]
+Dividing by the positive real number $\Delta$ gives
+$0\le \ell(P)<1$.  The two strict inequalities
+$0<1-\ell(P)$ and $0<2-\ell(P)$ follow immediately.
+\end{proof}

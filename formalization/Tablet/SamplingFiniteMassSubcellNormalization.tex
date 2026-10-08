@@ -1,0 +1,53 @@
+\begin{helper}
+Let \(\nu\) be a measure on a set \(\Sigma\), let \(C\subseteq \Sigma\) be an
+atom cell, and let \(E\subseteq C\).  Suppose \(w\ge0\) and
+\[
+  \operatorname{ofReal}(w)=\nu(C).
+\]
+Then \(E\) has a normalized nonnegative real representative relative to the
+weight \(w\): there is a real \(p\ge0\) such that \(p=0\) whenever \(w=0\) and
+\[
+  \operatorname{ofReal}(w p)=\nu(E).
+\]
+\end{helper}
+\begin{proof}
+Split into the two possible weight cases.
+
+If \(w=0\), then the cell mass identity gives
+\[
+\nu(C)=\operatorname{ofReal}(0)=0.
+\]
+Because \(E\subseteq C\), monotonicity of measure gives
+\(\nu(E)\le \nu(C)=0\).  Measures are nonnegative, so \(\nu(E)=0\).  Taking
+\(p=0\) gives \(p\ge0\), satisfies the required zero-weight convention, and
+\[
+\operatorname{ofReal}(w p)=\operatorname{ofReal}(0)=0=\nu(E).
+\]
+
+Now suppose \(w\ne0\).  Since \(w\ge0\), this means \(w>0\).  Again
+\(E\subseteq C\), so
+\[
+\nu(E)\le\nu(C)=\operatorname{ofReal}(w).
+\]
+The right-hand side is finite, hence \(\nu(E)\ne\infty\).  Define
+\[
+  p=\frac{\nu(E)_{\mathbb R}}{w},
+\]
+where \(\nu(E)_{\mathbb R}\) denotes the real value \((\nu(E)).\operatorname{toReal}\).
+This number is nonnegative because \((\nu(E)).\operatorname{toReal}\ge0\) and
+\(w>0\).  The algebra of division by a positive real gives
+\[
+  w p = w\frac{(\nu(E)).\operatorname{toReal}}{w}
+      =(\nu(E)).\operatorname{toReal}.
+\]
+Since \(\nu(E)\) is finite, the extended-nonnegative-real identity
+\[
+  \operatorname{ofReal}\bigl((\nu(E)).\operatorname{toReal}\bigr)=\nu(E)
+\]
+applies.  Substituting the preceding equality gives
+\[
+\operatorname{ofReal}(w p)=\nu(E).
+\]
+The implication \(w=0\Rightarrow p=0\) is vacuous in this positive branch.
+Thus the displayed \(p\) satisfies all required clauses in every case.
+\end{proof}

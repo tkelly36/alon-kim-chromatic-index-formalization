@@ -1,0 +1,104 @@
+\begin{lemma}
+Let $k,n\in\mathbb N$ with $k\ge2$, let $C,T>0$, and let
+$A=(a_{i,j})$ be a nonnegative $k\times n$ real table.  Suppose every column
+sum is at most $C$ and the total table sum is at most $T$.  Put
+$q=\lfloor T/C\rfloor$ and $r=T-qC$.  Then
+\[
+\sum_{j=1}^n\sum_{1\le i<i'\le k}a_{i,j}a_{i',j}
+\le \frac{k-1}{2k}(qC^2+r^2).
+\]
+\end{lemma}
+\begin{proof}
+For each column put
+\[
+s_j=\sum_{i=1}^k a_{i,j}.
+\]
+The entries of the table are nonnegative, so $s_j\ge0$ for every $j$.
+The hypotheses give $s_j\le C$ for every $j$ and
+\[
+\sum_{j=1}^n s_j
+=\sum_{j=1}^n\sum_{i=1}^k a_{i,j}
+=\sum_{i=1}^k\sum_{j=1}^n a_{i,j}
+\le T=qC+r .
+\]
+Since $C>0$ and $q=\lfloor T/C\rfloor$, we also have $0\le r<C$.
+
+We first prove the required bound on the column sums:
+\[
+\sum_{j=1}^n s_j^2\le qC^2+r^2. \tag{1}
+\]
+If $q\ge n$, then
+\[
+\sum_{j=1}^n s_j^2\le \sum_{j=1}^n C^2=nC^2\le qC^2\le qC^2+r^2,
+\]
+which proves (1) in this case.
+
+It remains to consider the case $q<n$.  We use a finite water-filling
+argument.  Start with the multiset of numbers $s_1,\ldots,s_n$, all lying in
+$[0,C]$, and repeatedly perform the following operation whenever there are
+two entries $x\ge y$ with $x<C$ and $y>0$: move
+\[
+\varepsilon=\min\{C-x,y\}
+\]
+from the smaller entry to the larger one.  The two affected entries become
+$x+\varepsilon$ and $y-\varepsilon$, so they still lie in $[0,C]$ and their
+sum is unchanged.  Moreover,
+\[
+(x+\varepsilon)^2+(y-\varepsilon)^2-x^2-y^2
+=2\varepsilon(x-y)+2\varepsilon^2\ge0,
+\]
+because $\varepsilon\ge0$ and $x\ge y$.  Thus this operation never decreases
+the sum of squares.  Each operation makes at least one of the two affected
+entries equal to either $C$ or $0$, so after finitely many operations no two
+entries are simultaneously nonzero and below $C$.  The resulting multiset
+therefore has the form
+\[
+\underbrace{C,\ldots,C}_{m\text{ times}},\ u,\ 0,\ldots,0
+\]
+with $0\le u<C$; the middle entry $u$ is omitted if all nonzero entries are
+equal to $C$.  Let $S=\sum_j s_j$.  Then $mC+u=S\le qC+r$.
+If $m\ge q+1$, then $mC+u\ge(q+1)C>qC+r$, contradicting $S\le qC+r$.
+Hence $m\le q$.  If $m=q$, then $qC+u=S\le qC+r$, so $u\le r$ and
+\[
+mC^2+u^2=qC^2+u^2\le qC^2+r^2.
+\]
+If $m<q$, then $u<C$, and hence
+\[
+mC^2+u^2\le mC^2+C^2=(m+1)C^2\le qC^2\le qC^2+r^2.
+\]
+Since the transfer process did not decrease the square sum, the original
+column sums satisfy (1).
+
+Now fix a column $j$ and write $x_i=a_{i,j}$ and $s=s_j=\sum_i x_i$.
+The finite identity
+\[
+\sum_{1\le i<i'\le k}x_ix_{i'}
+=\frac{k-1}{2k}s^2-\frac{1}{2k}
+\sum_{1\le i<i'\le k}(x_i-x_{i'})^2
+\]
+is obtained by expanding
+\[
+\sum_{1\le i<i'\le k}(x_i-x_{i'})^2
+=\sum_{1\le i<i'\le k}(x_i^2+x_{i'}^2-2x_ix_{i'})
+=(k-1)\sum_{i=1}^k x_i^2-2\sum_{1\le i<i'\le k}x_ix_{i'}
+\]
+and also expanding
+\[
+s^2=\left(\sum_{i=1}^k x_i\right)^2
+=\sum_{i=1}^k x_i^2+2\sum_{1\le i<i'\le k}x_ix_{i'}.
+\]
+Substituting the second expansion into the first and solving for
+$\sum_{i<i'}x_ix_{i'}$ gives the displayed identity.  Since every square
+$(x_i-x_{i'})^2$ is nonnegative and $k>0$, this identity implies
+\[
+\sum_{1\le i<i'\le k}a_{i,j}a_{i',j}
+\le \frac{k-1}{2k}s_j^2 .
+\]
+Because $k\ge2$, the coefficient $(k-1)/(2k)$ is nonnegative.  Summing this
+inequality over all columns and then applying (1) gives
+\[
+\sum_{j=1}^n\sum_{1\le i<i'\le k}a_{i,j}a_{i',j}
+\le \frac{k-1}{2k}\sum_{j=1}^n s_j^2
+\le \frac{k-1}{2k}(qC^2+r^2).
+\]
+\end{proof}

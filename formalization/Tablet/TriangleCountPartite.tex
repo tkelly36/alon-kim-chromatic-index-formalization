@@ -1,0 +1,63 @@
+\begin{lemma}
+A tripartite graph with $m$ edges has at most $(m/3)^{3/2}$ triangles.
+\end{lemma}
+\begin{proof}
+Let the three partite classes be $A$, $B$, and $C$.  Since the graph is
+tripartite, every edge joins two different classes.  Therefore every triangle
+has one vertex in each of $A,B,C$: its three vertices have pairwise different
+parts, and there are exactly three parts.
+
+Write
+\[
+x=e(A,B),\qquad y=e(A,C),\qquad z=e(B,C).
+\]
+Then the total number of edges is $m=x+y+z$.  For a vertex $b\in B$, let
+$a_b$ be the number of neighbors of $b$ in $A$, let $c_b$ be the number of
+neighbors of $b$ in $C$, and let $t_b$ be the number of triangles whose
+$B$-vertex is $b$.  Each such triangle is exactly an edge of the
+$A$-$C$ bipartite subgraph with one endpoint in $N_A(b)$ and the other in
+$N_C(b)$, so
+\[
+t_b\le a_b c_b
+\qquad\text{and}\qquad
+t_b\le y.
+\]
+For nonnegative numbers, $r\le p$ and $r\le q$ imply
+$r^2\le pq$; applying this with $r=t_b$, $p=a_bc_b$, and $q=y$ gives
+\[
+t_b\le \sqrt{a_b c_b y}.
+\]
+Summing over $b\in B$ and using that each triangle has a unique vertex in
+$B$, we get
+\[
+T=\sum_{b\in B}t_b
+\le \sqrt y\sum_{b\in B}\sqrt{a_b c_b}.
+\]
+The Cauchy--Schwarz inequality gives
+\[
+\left(\sum_{b\in B}\sqrt{a_b c_b}\right)^2
+\le
+\left(\sum_{b\in B}a_b\right)
+\left(\sum_{b\in B}c_b\right).
+\]
+This is the usual finite Cauchy--Schwarz inequality applied to the two
+vectors $(\sqrt{a_b})_{b\in B}$ and $(\sqrt{c_b})_{b\in B}$; all entries are
+nonnegative, so no absolute values change the expression.
+Here $\sum_b a_b=x$, since both sides count the $A$-$B$ edges, and
+$\sum_b c_b=z$, since both sides count the $B$-$C$ edges.  Hence
+\[
+T\le \sqrt y\,\sqrt{xz}=\sqrt{xyz}.
+\]
+
+Finally, by the arithmetic--geometric mean inequality,
+\[
+xyz\le \left(\frac{x+y+z}{3}\right)^3=\left(\frac m3\right)^3.
+\]
+The quantities $x,y,z$ are edge counts, hence nonnegative, so taking square
+roots preserves the inequality.
+Taking square roots of the nonnegative quantities yields
+\[
+T\le \sqrt{xyz}\le \left(\frac m3\right)^{3/2}.
+\]
+This is the claimed bound.
+\end{proof}

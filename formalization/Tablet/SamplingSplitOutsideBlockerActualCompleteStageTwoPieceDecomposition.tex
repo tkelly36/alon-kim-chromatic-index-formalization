@@ -1,0 +1,173 @@
+\begin{helper}
+On the actual split-outside-blocker witness surface, every adjacent cut
+\(k<n\) has a genuine two-piece decomposition of the complete source and
+target stages.  Fix the activation--priority measures \(\nu,\nu'\), the local embedding
+\(\phi\), the private blocker map \(\beta\), the injective enumeration
+\(z_0,\ldots,z_{n-1}\), the candidate sets
+\[
+B_k=\{x\in X:xz_k\in E(G)\},
+\]
+the paired atom families \(C_\omega,C'_\omega\), the common nonnegative
+weights \(w(\omega)\), and the actual one-changing-coordinate boundary events
+\(L_k(\omega)\) and \(R_k(\omega)\).
+Assume that these boundary events have already been registered as genuine
+subevents of the corresponding complete stages, after the actual stage
+definitions are expanded, and that the boundary-cell intersections
+\[
+L_k(\omega)\cap C_\omega,\qquad R_k(\omega)\cap C'_\omega
+\]
+are measurable in their source and target activation--priority product
+spaces.  These are the side conditions supplied by the measured-stage
+refinement layer; this two-piece node is only the sidewise partition and
+normalization step.
+
+For each \(k<n\) and \(\omega\), let \(S_k(\omega)\) be the source complete
+stage in which a candidate \(x\in X\) is active, beats every active embedded
+neighbor in \(X\cup\{r\}\), and is not killed by any retained common blocker
+\(z_i\) with \(i\ge k\) and \(x\in B_i\).  Let \(T_{k+1}(\omega)\) be the
+target complete stage in which \(\phi(x)\) is active, beats the embedded
+neighbors, and is not killed by any private blocker already installed at an
+index \(i<k+1\).
+
+Then there are source and target residual unchanged events
+\(U^-_k(\omega)\), \(U^+_k(\omega)\), boundary events
+\(D^-_k(\omega)=L_k(\omega)\), \(D^+_k(\omega)=R_k(\omega)\), and normalized
+real representatives
+\[
+H^-_k,\ U^-_k,\ D^-_k,\qquad H^+_{k+1},\ U^+_k,\ D^+_k
+\]
+such that \(U^-_k(\omega)\) is the complement of \(D^-_k(\omega)\) inside
+\(S_k(\omega)\), and \(U^+_k(\omega)\) is the complement of
+\(D^+_k(\omega)\) inside \(T_{k+1}(\omega)\).  Thus, after intersecting with
+the prescribed cells,
+\[
+S_k(\omega)=(U^-_k(\omega)\cup D^-_k(\omega)),\qquad
+T_{k+1}(\omega)=(U^+_k(\omega)\cup D^+_k(\omega)),
+\]
+the two pieces on each side are disjoint modulo the cell, the measure of the
+complete stage is the sum of the two piece measures, all representatives are
+nonnegative, and if \(w(\omega)=0\) then all six representatives are zero.
+Moreover these real representatives are genuine normalized representatives of
+the three subevents on each side:
+\[
+\operatorname{ofReal}\!\bigl(w(\omega)H^-_k(\omega)\bigr)
+ =\nu(S_k(\omega)\cap C_\omega),\quad
+\operatorname{ofReal}\!\bigl(w(\omega)U^-_k(\omega)\bigr)
+ =\nu(U^-_k(\omega)\cap C_\omega),
+\]
+\[
+\operatorname{ofReal}\!\bigl(w(\omega)D^-_k(\omega)\bigr)
+ =\nu(D^-_k(\omega)\cap C_\omega),
+\]
+and
+\[
+\operatorname{ofReal}\!\bigl(w(\omega)H^+_{k+1}(\omega)\bigr)
+ =\nu'(T_{k+1}(\omega)\cap C'_\omega),\quad
+\operatorname{ofReal}\!\bigl(w(\omega)U^+_k(\omega)\bigr)
+ =\nu'(U^+_k(\omega)\cap C'_\omega),
+\]
+\[
+\operatorname{ofReal}\!\bigl(w(\omega)D^+_k(\omega)\bigr)
+ =\nu'(D^+_k(\omega)\cap C'_\omega).
+\]
+Consequently,
+\[
+H^-_k(\omega)=U^-_k(\omega)+D^-_k(\omega),\qquad
+H^+_{k+1}(\omega)=U^+_k(\omega)+D^+_k(\omega),
+\]
+with the displayed boundary pieces equal to the actual adjacent boundary
+events \(L_k(\omega)\) and \(R_k(\omega)\).
+\end{helper}
+\begin{proof}
+Fix \(k<n\) and \(\omega\).  The actual stage surface is the one provided by
+\(\noderef{SamplingSplitOutsideBlockerTrueHybridStageSurface}\): at cut \(j\)
+the target has private tests for the indices \(i<j\), while the source
+retains common blocker tests for the indices \(j\le i<n\).  Thus the source
+complete stage at cut \(k\) consists of the embedded-neighbor survival core
+together with all retained tests \(i\ge k\), and the target complete stage at
+cut \(k+1\) consists of the transported embedded-neighbor core together with
+all private tests \(i<k+1\).
+
+Separate the current boundary event from those two complete stages.  On the
+source side, the boundary event \(D^-_k(\omega)\) is exactly
+\(L_k(\omega)\): it records a witnessing candidate \(x\in B_k\) which
+satisfies the embedded-neighbor core, all retained common-blocker tests
+except the current index, and also satisfies the current common-blocker
+survival test at \(z_k\).  The unchanged source event is not the larger
+omitted-current context, since that larger context contains the boundary
+event.  Instead set
+\[
+U^-_k(\omega)=S_k(\omega)\setminus D^-_k(\omega).
+\]
+Then \(S_k(\omega)=U^-_k(\omega)\cup D^-_k(\omega)\) and the two pieces are
+disjoint, both before and after intersection with \(C_\omega\).  This is the
+genuine partition of the cut-\(k\) complete source stage into the current
+boundary part and its residual nonboundary part.
+
+The target side is identical with the roles transported through the private
+blocker map.  At cut \(k+1\) the current private boundary event is
+\(D^+_k(\omega)=R_k(\omega)\), identified using the supplied flat
+representative of the dependent private vertex.  Define
+\[
+U^+_k(\omega)=T_{k+1}(\omega)\setminus D^+_k(\omega).
+\]
+Then \(T_{k+1}(\omega)=U^+_k(\omega)\cup D^+_k(\omega)\), and the two target
+pieces are disjoint on \(C'_\omega\).  Thus both sides use the same kind of
+residual-inside-complete partition; neither side assumes disjointness for a
+nested omitted-current event.
+
+The finite-additivity identities now follow from the displayed set
+identities and the stated measured-stage side conditions.  Indeed, after
+intersecting with \(C_\omega\), the source complete event is exactly the
+union of \(U^-_k(\omega)\cap C_\omega\) and
+\(D^-_k(\omega)\cap C_\omega\).  The reverse containment uses the explicit
+assumption that \(L_k(\omega)=D^-_k(\omega)\) is a subevent of
+\(S_k(\omega)\).  The two pieces are disjoint because
+\(U^-_k(\omega)=S_k(\omega)\setminus D^-_k(\omega)\), and the second piece
+\(D^-_k(\omega)\cap C_\omega\) is measurable by the hypothesis above.
+Finite additivity for a disjoint union with measurable second piece gives
+\[
+\nu(S_k(\omega)\cap C_\omega)
+=\nu(U^-_k(\omega)\cap C_\omega)+\nu(D^-_k(\omega)\cap C_\omega)
+\]
+on the source side.  The same argument applies to the target side, using the
+assumed containment \(R_k(\omega)\subseteq T_{k+1}(\omega)\) and the
+measurability of \(R_k(\omega)\cap C'_\omega\), and gives
+\[
+\nu'(T_{k+1}(\omega)\cap C'_\omega)
+=\nu'(U^+_k(\omega)\cap C'_\omega)+\nu'(D^+_k(\omega)\cap C'_\omega).
+\]
+For each of the six subevents choose the normalized real representative by
+\(\noderef{SamplingFiniteMassSubcellNormalization}\).  The hypotheses of
+that normalization lemma are checked separately for each subevent.  The
+common weight is nonnegative by the theorem hypothesis.  The cell mass
+identity is
+\(\operatorname{ofReal}(w(\omega))=\nu(C_\omega)\) on the three source
+subevents and
+\(\operatorname{ofReal}(w(\omega))=\nu'(C'_\omega)\) on the three target
+subevents.  Finally each subevent after cell intersection is a subset of
+the relevant cell: for example
+\(S_k(\omega)\cap C_\omega\subseteq C_\omega\),
+\(U^-_k(\omega)\cap C_\omega\subseteq C_\omega\), and
+\(D^-_k(\omega)\cap C_\omega\subseteq C_\omega\), and similarly on the
+target side.  Therefore the six applications of the normalization lemma
+produce nonnegative representatives satisfying the six displayed
+\(\operatorname{ofReal}(w\cdot\hbox{mass})\) equations, and in the branch
+\(w(\omega)=0\) the same lemma gives the stated convention that all six
+representatives are \(0\).
+
+Finally apply the one-sided algebra lemma
+\(\noderef{SamplingSplitOutsideBlockerMixedStageCompleteDecomposition}\)
+first to the source measure, source cell, cut-\(k\) complete stage,
+source residual unchanged event, and source boundary event, and then to the
+target measure, target cell, cut-\((k+1)\) complete stage, target residual
+unchanged event, and target boundary event.  The hypotheses just established
+are exactly its cover, disjointness, finite-additivity, nonnegativity,
+zero-weight, and three mass-representation inputs.  It yields
+\[
+H^-_k(\omega)=U^-_k(\omega)+D^-_k(\omega),\qquad
+H^+_{k+1}(\omega)=U^+_k(\omega)+D^+_k(\omega).
+\]
+Since \(k\) and \(\omega\) were arbitrary, the families can be assembled for
+all adjacent cuts and all atoms on the single witness surface.
+\end{proof}

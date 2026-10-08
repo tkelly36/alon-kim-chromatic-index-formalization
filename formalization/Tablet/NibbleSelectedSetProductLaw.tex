@@ -1,0 +1,38 @@
+\begin{lemma}
+Let $Q$ be a nibble completion datum with finite edge and color types,
+and $0<\gamma\le\Delta$. Give the finite set of subsets of the edge type
+a sigma algebra with measurable singletons. In the measure
+$\nu=\operatorname{NibbleProductMeasure}(\gamma/\Delta)$, each selected
+edge set $I_a$ is measurable, the family $(I_a)_a$ is independent, and
+\[
+(\omega\mapsto(I_a(\omega))_a)_*\nu
+=\bigotimes_a (I_a)_*\nu.
+\]
+\end{lemma}
+\begin{proof}
+By \noderef{NibbleProductSamplingLaw}, $\nu$ is a probability measure
+and every event $e\in I_a$ is measurable. For any fixed edge set $S$,
+the event $I_a=S$ is the finite intersection, over edges $e$, of
+$e\in I_a\leftrightarrow e\in S$. It is measurable. Every subset of
+the finite value space is a finite union of singletons, so this proves
+measurability of $I_a$.
+
+For a color-coordinate vector $\eta$, insert $\eta$ at color $a$ and
+put $(0,0)$ at every other coordinate, obtaining $L_a\eta$.
+The map $L_a$ is measurable because each coordinate is a projection or
+a constant. From \noderef{NibbleSelectedEdges} and
+\noderef{NibbleCompletedSelection}, selection at color $a$ uses only
+that color's coordinates. Hence
+$I_a(L_a((\omega(a,v))_v))=I_a(\omega)$ pointwise.
+For arbitrary subsets $S_a$ of the finite selected-set value spaces,
+put $F_a=\{\eta:I_a(L_a\eta)\in S_a\}$; these are measurable by the
+preceding facts. The color-rectangle clause of
+\noderef{NibbleProductSamplingLaw} now gives
+\[
+\nu\{\forall a,I_a\in S_a\}=\prod_a\nu\{I_a\in S_a\}.
+\]
+Taking $S_a$ to be the full space outside any specified color subset
+gives the defining independence identities. Taking all $S_a$ singleton
+gives the mass of every atom of the finite joint value space; summing
+over atoms proves the displayed equality of measures.
+\end{proof}

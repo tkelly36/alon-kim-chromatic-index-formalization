@@ -1,0 +1,30 @@
+\begin{helper}
+For an activated set $A$, priority function $\pi$, and vertices $u,v$, the
+pair $\{u,v\}$ is contained in the output independent set of the
+\noderef{RandomIndependentSetSampling} priority rule if and only if both
+$u$ and $v$ are activated and each beats all of its activated neighbors:
+\[
+\{u,v\}\subseteq
+\{z\in A:\pi(w)<\pi(z)\text{ for every }w\in A\cap N_G(z)\}
+\]
+if and only if
+\[
+u,v\in A,\qquad
+\pi(w)<\pi(u)\text{ for every }w\in A\cap N_G(u),\qquad
+\pi(w)<\pi(v)\text{ for every }w\in A\cap N_G(v).
+\]
+\end{helper}
+\begin{proof}
+The output set in \noderef{RandomIndependentSetSampling} is defined by a
+vertexwise filter.  If $\{u,v\}$ is a subset of that filter, then applying
+the subset relation to $u\in\{u,v\}$ gives that $u\in A$ and that every
+activated neighbor of $u$ has smaller priority than $u$.  Applying the same
+argument to $v\in\{u,v\}$ gives the analogous two assertions for $v$.
+
+Conversely, assume the four displayed assertions.  To prove
+$\{u,v\}$ is contained in the output filter, take any
+$z\in\{u,v\}$.  Then either $z=u$ or $z=v$.  In the first case the asserted
+activation and priority inequalities for $u$ place $z$ in the filter, and in
+the second case the asserted activation and priority inequalities for $v$
+place $z$ in the filter.  This proves the desired subset equivalence.
+\end{proof}

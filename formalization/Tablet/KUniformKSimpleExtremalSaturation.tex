@@ -1,0 +1,159 @@
+\begin{lemma}
+For every positive integer $k$ there is $D_0$ such that the following holds
+for all $D\ge D_0$.  Let $\mathcal F\in H(k,k,D)$, and let
+$f\in E(\mathcal F)$ maximize $b_{L(\mathcal H),kD}(e)$ over all
+$\mathcal H\in H(k,k,D)$ and all $e\in E(\mathcal H)$.  Then every vertex of
+$f$ has degree $D$, and $f$ intersects exactly $k(D-1)$ other edges of
+$\mathcal F$.
+\end{lemma}
+\begin{proof}
+This is the full $k$-uniform, $k$-simple form of the saturation step used as
+Lemma~\ref{lem: structure1} in the paper.  We spell out the perturbation
+argument because it is later used through this node, not as an uncited paper
+fact.
+Take $D_0\ge 2$.  Then every $D\ge D_0$ is large enough for the fresh
+vertices introduced below, whose degrees are at most two, to respect the
+maximum-degree bound.
+
+By \noderef{HypergraphClass}, the assumptions $\mathcal F\in H(k,k,D)$ mean
+that $\mathcal F$ is $k$-uniform, $k$-simple, and has maximum degree at most
+$D$.  The first condition is \noderef{UniformHypergraph}; the second is
+\noderef{TSimpleHypergraph}; and the degree condition is
+\noderef{MaxDegreeAtMost}, with vertex degrees interpreted by
+\noderef{HypergraphDegree}.  The line graph is \noderef{LineGraphOfHypergraph},
+and the local parameter is
+\[
+b_{L(\mathcal F),kD}(f)
+=\frac{\deg_L(f)}{kD}
+-\frac{P_L(f)}{(kD)^2}
++\frac{T_L(f)}{(kD)^3}
+\]
+by \noderef{LocalBParameter}, where $P_L$ and $T_L$ are the independent-pair
+and independent-triple counts of \noderef{IndependentPairCount} and
+\noderef{IndependentTripleCount}.
+
+First suppose that a vertex $v\in f$ has degree less than $D$.  Add one new
+edge containing $v$ and $k-1$ fresh vertices, and call the enlarged
+hypergraph $\mathcal F_1$.  It is still $k$-uniform because the new edge has
+exactly $k$ vertices and all old edges are unchanged.  It is still
+$k$-simple because the new edge meets every old edge only possibly at $v$,
+so no intersection can exceed $k$.  The maximum degree remains at most $D$:
+only the degree of $v$ increases by one, and it was below $D$, while the
+fresh vertices have degree one.  Thus
+\noderef{HypergraphClass} still places $\mathcal F_1$ in $H(k,k,D)$.
+
+Let $f_1$ be the old edge $f$ inside $\mathcal F_1$.  The new edge is a new
+neighbor of $f_1$ in the line graph, so \noderef{LineGraphOfHypergraph}
+increases $\deg_L(f)$ by one.  All adjacencies among old neighbors of $f$
+are unchanged.  The new independent pairs are exactly pairs consisting of
+the new edge and an old neighbor of $f$ that does not contain $v$; the new
+independent triples are exactly the new edge together with an old independent
+pair whose two members do not contain $v$.  In particular the triangle term
+does not decrease, while the possible increase in the independent-pair term
+is at most the old line-graph degree of $f$.  Since
+\noderef{MaxDegreeAtMost} gives at most $D-1$ other edges through each of
+the $k$ vertices of $f$, the old degree is at most $k(D-1)<kD$.  Therefore
+the change in \noderef{LocalBParameter} is at least
+\[
+\frac1{kD}-\frac{kD-1}{(kD)^2}>0.
+\]
+This contradicts the assumed maximality of $(\mathcal F,f)$.  Hence every
+vertex of $f$ has degree exactly $D$.
+
+Now count incidences between vertices of $f$ and edges other than $f$.  Since
+every vertex of $f$ has degree $D$, there are exactly $k(D-1)$ such
+incidences.  Each edge meeting $f$ contributes at least one of these
+incidences, so $f$ intersects at most $k(D-1)$ other edges.  If it
+intersected fewer than $k(D-1)$ distinct other edges, then some neighboring
+edge $g$ would contain at least two vertices of $f$.
+
+In that case perform the following splitting operation, keeping the local
+counts explicit.  Choose distinct vertices $v,u\in g\cap f$.  Introduce
+fresh vertices
+$x_1,\ldots,x_{k-1}$, replace the edge index $g$ by a modified edge
+\[
+  g'=(g\setminus\{v\})\cup\{x_1\},
+\]
+and add a new edge
+\[
+  a=\{v,x_1,\ldots,x_{k-1}\}.
+\]
+The edge $g'$ still has $k$ vertices, because one old vertex was removed and
+one fresh vertex was inserted, and $a$ has $k$ vertices; hence
+\noderef{UniformHypergraph} is preserved.  The new edge $a$ meets old edges
+only possibly at $v$, and it meets $g'$ only at $x_1$, so its intersection
+with every other edge has size at most one.  For an old edge $h$, the
+intersection $g'\cap h$ is obtained from $g\cap h$ by possibly deleting
+$v$ and by adding no old vertex, since $x_1$ is fresh; therefore
+$|g'\cap h|\le |g\cap h|\le k$.  Thus \noderef{TSimpleHypergraph} is
+preserved.  The maximum degree bound is also preserved: the degree of $v$
+loses the old incidence with $g$ and gains the incidence with $a$, every
+other old vertex has the same or smaller degree, and each fresh vertex has
+degree at most two.  Hence the new hypergraph $\mathcal F_2$ still lies in
+$H(k,k,D)$ by \noderef{HypergraphClass}.
+
+Let $f_2$ be the copy of $f$ in $\mathcal F_2$, and let
+$d=\deg_{L(\mathcal F)}(f)$.  Since $g'$ still contains the vertex
+$u\in f$, it remains adjacent to $f_2$ in the line graph
+\noderef{LineGraphOfHypergraph}; the new edge $a$ is also adjacent to
+$f_2$ through $v$.  No old neighbor other than $g$ is removed.  Thus
+\[
+  \deg_{L(\mathcal F_2)}(f_2)=d+1 .
+\]
+
+Now compare independent triples in the two line-graph neighborhoods, using
+\noderef{IndependentTripleCount}.  An old independent triple not containing
+$g$ is unchanged.  An old independent triple containing $g$ has the form
+$\{g,h_1,h_2\}$ where $h_1$ and $h_2$ are disjoint from $g$ and from each
+other.  Because $x_1$ is fresh and $g'$ is obtained from $g$ by deleting
+$v$ and adding $x_1$, both $h_1$ and $h_2$ are disjoint from $g'$ as well.
+Therefore $\{g',h_1,h_2\}$ is an independent triple in the new
+neighborhood.  This gives an injection from old independent triples to new
+independent triples, so
+\[
+  T_{L(\mathcal F_2)}(f_2)\ge T_{L(\mathcal F)}(f).
+\]
+
+It remains to bound the increase in independent pairs, as defined in
+\noderef{IndependentPairCount}.  First, every old independent pair injects
+into a new independent pair: pairs not using $g$ are unchanged, and a pair
+$\{g,h\}$ with $g\cap h=\emptyset$ maps to $\{g',h\}$, which is still
+independent because $h$ is old and avoids both $g$ and the fresh vertex
+$x_1$.  Hence any increase in $P$ consists only of new independent pairs
+not in this injection.  There are two possible sources.
+
+The first source is a pair involving the added edge $a$.  Such a pair can
+only use an old neighbor $h$ of $f$ that does not contain $v$, because
+$a$ contains $v$ and is adjacent to every edge containing $v$; also $a$ is
+adjacent to $g'$ through $x_1$.  Since the first part of the proof already
+showed $\deg_{\mathcal F}(v)=D$, exactly $D-1$ old neighbors of $f$ contain
+$v$ (all edges through $v$ except $f$ itself), one of which is $g$.  Thus
+there are $d-(D-1)$ possible independent pairs involving $a$.
+
+The second source is a pair $\{g',h\}$ which was not the image of an old
+independent pair.  This means $g$ and $h$ were adjacent before the split but
+$g'$ and $h$ are disjoint after it.  Since $g'$ differs from $g$ only by
+removing $v$ and adding the fresh vertex $x_1$, this can happen only when
+$g\cap h=\{v\}$.  Such an $h$ is one of the old neighbors through $v$ other
+than $g$, so there are at most $D-2$ of them.  Consequently
+\[
+  P_{L(\mathcal F_2)}(f_2)-P_{L(\mathcal F)}(f)
+  \le (d-(D-1))+(D-2)=d-1.
+\]
+Our contradiction assumption says $d<k(D-1)$, so $d-1<kD$.  Therefore, with
+$M=kD$, \noderef{LocalBParameter} gives
+\[
+\begin{aligned}
+b_{L(\mathcal F_2),M}(f_2)-b_{L(\mathcal F),M}(f)
+&=\frac{1}{M}
+  -\frac{P_{L(\mathcal F_2)}(f_2)-P_{L(\mathcal F)}(f)}{M^2}
+  +\frac{T_{L(\mathcal F_2)}(f_2)-T_{L(\mathcal F)}(f)}{M^3}  \\
+&\ge \frac{1}{M}-\frac{d-1}{M^2}
+>0 .
+\end{aligned}
+\]
+This produces another member of $H(k,k,D)$ with strictly larger local
+$b$-parameter than $(\mathcal F,f)$, contradicting the assumed maximality.
+Therefore no neighboring edge contains two vertices of $f$, and the number
+of distinct neighboring edges equals the incidence count $k(D-1)$.
+\end{proof}

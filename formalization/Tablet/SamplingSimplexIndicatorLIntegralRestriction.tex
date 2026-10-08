@@ -1,0 +1,42 @@
+\begin{helper}
+Let \(g:\mathbb R^3\to\mathbb R\) be continuous.  Then the all-real iterated
+nonnegative integral of the simplex indicator equals the nested
+nonnegative integral over the ordered simplex:
+\[
+\int_{\mathbb R}^{+}\int_{\mathbb R}^{+}\int_{\mathbb R}^{+}
+\mathbf 1_{\{0\le x\le y\le z\le1\}}
+\operatorname{ofReal}(g(x,y,z))\,dz\,dy\,dx
+=
+\int_{(0,1]}^{+}\int_{(0,z]}^{+}\int_{(0,y]}^{+}
+\operatorname{ofReal}(g(x,y,z))\,dx\,dy\,dz .
+\]
+\end{helper}
+\begin{proof}
+Let
+\[
+S=\{(x,y,z):0\le x\le y\le z\le1\}.
+\]
+The set \(S\) is Borel measurable, since it is the finite intersection of
+closed sets defined by the continuous inequalities \(x\ge0\), \(y-x\ge0\),
+\(z-y\ge0\), and \(1-z\ge0\).  Continuity of \(g\) implies measurability of
+\((x,y,z)\mapsto\operatorname{ofReal}(g(x,y,z))\), so the indicator integrand
+is a measurable \([0,\infty]\)-valued function.
+
+Tonelli's theorem applies to this nonnegative measurable function on
+\(\mathbb R^3\).  It permits changing the order of integration from the
+displayed \(x\)-then-\(y\)-then-\(z\) all-real iterated integral to the
+\(z\)-then-\(y\)-then-\(x\) all-real iterated integral without changing the
+value.
+
+For fixed \(z\), the indicator is zero unless \(0\le z\le1\).  Replacing the
+outer all-real integral by the restricted integral over \((0,1]\) therefore
+does not change the value, because the discarded boundary point \(z=0\) has
+Lebesgue measure zero and the integrand vanishes off \([0,1]\).  For such a
+fixed \(z\), the indicator is zero unless \(0\le y\le z\), so the middle
+all-real integral restricts to \((0,z]\), again with only a null endpoint
+discarded.  For fixed \(y,z\) in those ranges, the indicator is zero unless
+\(0\le x\le y\), so the inner all-real integral restricts to \((0,y]\).  On
+the remaining region \(0<x\le y\le z\le1\), the indicator is identically one,
+and the integrand is exactly \(\operatorname{ofReal}(g(x,y,z))\).  These three
+restriction steps give the displayed equality.
+\end{proof}

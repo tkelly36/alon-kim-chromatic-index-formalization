@@ -1,0 +1,78 @@
+\begin{helper}
+Let $G$ be a finite $\Delta$-regular graph, let $r$ be a vertex, and let
+$X\subseteq N_G(r)$.  Assume that whenever $u,v\in X$ are distinct, every
+common neighbor of $u$ and $v$ outside $r$ is also adjacent to $r$.  Let
+$\mathcal J_2$ be the independent two-element subsets of $X$ and let
+$\mathcal J_3$ be the independent three-element subsets of $X$.  For a
+two-element set $P\in\mathcal J_2$, let
+\[
+C(P)=\{w:\text{$w$ is adjacent in $G$ to every vertex of $P$}\}.
+\]
+If $W(P)\ge0$ for every $P\in\mathcal J_2$, then
+\[
+\sum_{Q\in\mathcal J_3}\ \sum_{\substack{P\subseteq Q\\ |P|=2}} W(P)
+\le
+\sum_{P\in\mathcal J_2}\bigl(\Delta-|C(P)|\bigr)W(P).
+\]
+\end{helper}
+\begin{proof}
+First fix $P\in\mathcal J_2$, and write $P=\{u,v\}$ with $u\ne v$.  Because
+$P\subseteq X\subseteq N_G(r)$, the root $r$ is adjacent to both $u$ and
+$v$, so $r\in C(P)$.  If $w\in C(P)$ and $w\ne r$, then $w$ is a common
+neighbor of the distinct vertices $u,v\in X$.  The clean-neighborhood
+hypothesis therefore implies that $w$ is adjacent to $r$.  Also $w\notin P$,
+since otherwise $w$ would be adjacent to itself.  Hence
+\[
+C(P)\setminus\{r\}\subseteq N_G(r)\setminus P. \tag{1}
+\]
+
+Let $\mathcal F(P)=\{Q\in\mathcal J_3:P\subseteq Q\}$.  For every
+$Q\in\mathcal F(P)$, the set $Q\setminus P$ has size one, because
+$|Q|=3$, $|P|=2$, and $P\subseteq Q$.  Let $w_Q$ be its unique element.
+Then $Q=P\cup\{w_Q\}$.  Since $Q\subseteq X$, we have $w_Q\in X$; since
+$w_Q\notin P$ by construction; and since $Q$ is independent, $w_Q$ is not
+adjacent to $u$, so $w_Q\notin C(P)$.  Thus
+\[
+w_Q\in X\setminus(C(P)\cup P).
+\]
+Moreover the map $Q\mapsto w_Q$ is injective, because
+$Q=P\cup\{w_Q\}$.  Therefore
+\[
+|\mathcal F(P)|\le |X\setminus(C(P)\cup P)|. \tag{2}
+\]
+
+The sets $X\setminus(C(P)\cup P)$ and $C(P)\setminus\{r\}$ are disjoint,
+and by (1) and $X\subseteq N_G(r)$ their union is contained in
+$N_G(r)\setminus P$.  Since $G$ is $\Delta$-regular at $r$ and $P$ is a
+two-element subset of $N_G(r)$,
+\[
+|N_G(r)\setminus P|=\Delta-2.
+\]
+Also $r\in C(P)$, so $|C(P)\setminus\{r\}|=|C(P)|-1$.  Combining these
+cardinality facts gives
+\[
+|X\setminus(C(P)\cup P)|+|C(P)\setminus\{r\}|
+\le \Delta-2,
+\]
+and hence
+\[
+|X\setminus(C(P)\cup P)|\le \Delta-|C(P)|.
+\]
+Together with (2), this proves
+\[
+|\mathcal F(P)|\le \Delta-|C(P)|
+\quad\text{for every }P\in\mathcal J_2. \tag{3}
+\]
+
+Now reindex the double sum by its distinguished pair:
+\[
+\sum_{Q\in\mathcal J_3}\sum_{\substack{P\subseteq Q\\ |P|=2}} W(P)
+=
+\sum_P |\mathcal F(P)|W(P).
+\]
+If a two-element $P$ occurs inside some $Q\in\mathcal J_3$, then
+$P\subseteq X$ and $P$ is independent, so $P\in\mathcal J_2$; all other
+pairs contribute zero.  For $P\in\mathcal J_2$, multiply (3) by the
+nonnegative number $W(P)$ and sum over $P\in\mathcal J_2$.  This gives the
+claimed inequality.
+\end{proof}

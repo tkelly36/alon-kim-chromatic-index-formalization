@@ -1,0 +1,85 @@
+\begin{helper}
+Fix a positive integer $\Delta$.  For a fixed independent triple
+$\{a,b,c\}$, write
+\[
+\ell_{ab}=\frac{C_{ab}}{\Delta},\qquad
+\ell_{ac}=\frac{C_{ac}}{\Delta},\qquad
+\ell_{bc}=\frac{C_{bc}}{\Delta},
+\]
+where the three $C$'s are the common-neighbor pattern counts supplied by
+\noderef{SamplingTriplePatternCountingBridge}.  Suppose the paired
+ordered-chamber middle exponents and lower exponents satisfy
+\[
+N_{ab}+C_{ab}=\Delta,\quad
+N_{ac}+C_{ac}=\Delta,\quad
+N_{bc}+C_{bc}=\Delta,
+\]
+and
+\[
+L_{ab}+C_{ac}+C_{bc}=\Delta+n_{abc},\quad
+L_{ac}+C_{ab}+C_{bc}=\Delta+n_{abc},\quad
+L_{bc}+C_{ab}+C_{ac}=\Delta+n_{abc}.
+\]
+Put
+\[
+x=1-\ell_{ab},\qquad y=1-\ell_{ac},\qquad z=1-\ell_{bc},
+\qquad \tau=\frac{n_{abc}}{\Delta},
+\]
+and
+\[
+\rho_x=\frac{L_{ab}}{\Delta},\qquad
+\rho_y=\frac{L_{ac}}{\Delta},\qquad
+\rho_z=\frac{L_{bc}}{\Delta}.
+\]
+If $x,y,z>0$, then the hypotheses required by the subsequent full-chamber
+integral estimate hold for the three paired chambers:
+\[
+\frac{N_{ab}}{\Delta}=x,\quad
+\frac{L_{ab}}{\Delta}=\rho_x,\quad
+\frac{N_{ac}}{\Delta}=y,\quad
+\frac{L_{ac}}{\Delta}=\rho_y,\quad
+\frac{N_{bc}}{\Delta}=z,\quad
+\frac{L_{bc}}{\Delta}=\rho_z,
+\]
+$\rho_x,\rho_y,\rho_z,\tau\ge0$, and
+\[
+1+x+\rho_x=1+y+\rho_y=1+z+\rho_z=x+y+z+\tau .
+\]
+\end{helper}
+\begin{proof}
+The three middle-ratio identities are immediate from the complement
+equations.  For example, from $N_{ab}+C_{ab}=\Delta$ and
+$\ell_{ab}=C_{ab}/\Delta$,
+\[
+\frac{N_{ab}}{\Delta}
+=\frac{\Delta-C_{ab}}{\Delta}
+=1-\frac{C_{ab}}{\Delta}
+=1-\ell_{ab}=x.
+\]
+The same calculation gives $N_{ac}/\Delta=y$ and
+$N_{bc}/\Delta=z$.  The lower-ratio identities are definitions of
+$\rho_x,\rho_y,\rho_z$, and the nonnegativity of these three parameters
+and of $\tau$ follows from nonnegativity of the natural-number counts and
+positivity of $\Delta$.
+
+It remains only to check the common denominator.  Using
+$L_{ab}+C_{ac}+C_{bc}=\Delta+n_{abc}$,
+\[
+\rho_x
+=\frac{L_{ab}}{\Delta}
+=1-\frac{C_{ac}}{\Delta}-\frac{C_{bc}}{\Delta}
+  +\frac{n_{abc}}{\Delta}
+=1-\ell_{ac}-\ell_{bc}+\tau .
+\]
+Therefore
+\[
+1+x+\rho_x
+=1+(1-\ell_{ab})+(1-\ell_{ac}-\ell_{bc}+\tau)
+=x+y+z+\tau .
+\]
+The two remaining lower-count equations give, in the same way,
+$1+y+\rho_y=x+y+z+\tau$ and
+$1+z+\rho_z=x+y+z+\tau$.  Thus the six ordered chambers have been grouped
+into the three opposite pairs with exactly the normalized parameters used by
+the subsequent full-chamber integral estimate.
+\end{proof}

@@ -1,0 +1,17 @@
+\begin{lemma}
+Let $H,H_c$ be finite hypergraphs on the same vertex type, with edge-index
+sets $E,F$, and let $C\subseteq E$. Suppose a map $i:F\to E$ satisfies
+$H_c(f)=H(i(f))$ and $e\notin C$ if and only if $e=i(f)$ for some $f$.
+On $R=\{e\in E:e\notin C\}$ define $H_R(e)=H(e)$.
+Then there is an injective map $j:R\to F$ with $i(j(e))=e$.
+Moreover $H_R$ is a subhypergraph of both $H_c$ and $H$, and
+$\deg_{H_R}(v)\le\deg_{H_c}(v)$ for every vertex $v$.
+\end{lemma}
+\begin{proof}
+For each $e\in R$, choose a preimage $j(e)$ using the coverage hypothesis.
+If $j(e)=j(f)$ then applying $i$ gives $e=f$, proving injectivity.
+The edge identity gives $H_c(j(e))=H(i(j(e)))=H(e)=H_R(e)$.
+Thus $j$ realizes \noderef{SubhypergraphOf} into $H_c$; the subtype
+inclusion realizes it into $H$. The degree assertion follows from the
+degree clause of \noderef{SubhypergraphInheritance}.
+\end{proof}

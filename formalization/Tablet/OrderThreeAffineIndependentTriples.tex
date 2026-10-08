@@ -1,0 +1,28 @@
+\begin{lemma}
+For every $q\in\mathbb N$, the number of independent triples in the
+neighborhood of $\ast$ in $L(A_q)$ is $3q^3$.
+\end{lemma}
+\begin{proof}
+The definition \noderef{IndependentTripleCount} counts three-element sets
+of neighbors with no adjacent distinct pair. By
+\noderef{OrderThreeAffineGeometry} all these neighbors are nonvertical
+indices, and by \noderef{LineGraphOfHypergraph} nonadjacency of distinct
+indices means disjointness. The disjointness equivalence in
+\noderef{OrderThreeAffineGeometry} forces every two indices to have equal
+slopes and different intercepts. Consequently all three slopes agree,
+and the three intercepts are exactly $0,1,2$.
+
+Define the map
+\[
+(m,i_0,i_1,i_2)\longmapsto
+\{(m,0,i_0),(m,1,i_1),(m,2,i_2)\}
+\]
+on $(\mathbb Z/3\mathbb Z)\times\{0,\ldots,q-1\}^3$.
+Its three indices are distinct because their intercepts are distinct,
+and their edges are pairwise disjoint by the geometry, so this is an
+independent triple. For an arbitrary independent triple, its common slope
+and the copy index of its unique element above each intercept $0,1,2$
+give a unique inverse image. Reading off those data and then reconstructing
+the set are inverse operations in both directions. This bijection proves
+the exact count $3q^3$ for every $q$, with both sides empty when $q=0$.
+\end{proof}

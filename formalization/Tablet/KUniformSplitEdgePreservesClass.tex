@@ -1,0 +1,38 @@
+\begin{helper}
+Let $\mathcal F\in H(k,k,D)$, let $D\ge 2$, let $g$ be an edge of
+$\mathcal F$, let $v\in g$, and let $x_1$ be one of the $k-1$ fresh
+vertices in the split-edge construction of
+\noderef{KUniformSplitEdgeHypergraph}.  Then
+$\operatorname{SplitEdge}_k(\mathcal F,g,v,x_1)$ is also a member of
+$H(k,k,D)$.
+\end{helper}
+\begin{proof}
+By \noderef{HypergraphClass}, it is enough to prove $k$-uniformity,
+$k$-simplicity, and maximum degree at most $D$ for the split hypergraph.
+The $k$-uniformity statement is exactly \noderef{KUniformSplitEdgeUniformity}.
+
+For $k$-simplicity, use only this uniformity.  If $a$ and $b$ are two
+distinct edge labels in the split hypergraph, then
+$a\cap b\subseteq a$.  Since $a$ has exactly $k$ vertices by the already
+proved uniformity, $|a\cap b|\le |a|=k$.  This is the required
+\noderef{TSimpleHypergraph} condition with $t=k$.
+
+It remains to check degrees, using \noderef{HypergraphDegree} and
+\noderef{MaxDegreeAtMost}.  For an old vertex $w\ne v$, the split
+operation preserves exactly the old incident labels: old labels other than
+$g$ are unchanged, the modified copy of $g$ still contains $w$ precisely
+when $g$ originally contained $w$, and the one new edge contains only the
+old vertex $v$ together with fresh vertices.  Hence the degree of $w$ is
+unchanged and is at most $D$.
+
+For the old vertex $v$, the old label $g$ no longer contains $v$, while the
+one new edge does contain $v$; every other old label contains $v$ exactly
+when it did before.  Thus the degree of $v$ is also unchanged, and is at
+most $D$ by the original maximum-degree hypothesis.
+
+Finally let $y$ be a fresh vertex.  The only split-edge labels that can
+contain $y$ are the modified old label $g$, when $y=x_1$, and the single new
+edge.  Therefore $y$ has degree at most $2$, which is at most $D$ by
+hypothesis.  All vertices have degree at most $D$, so the split hypergraph
+lies in $H(k,k,D)$.
+\end{proof}

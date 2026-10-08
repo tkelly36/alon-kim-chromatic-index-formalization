@@ -1,0 +1,46 @@
+\begin{helper}
+Fix an activation set $A$, a vertex $v$, and two levels $0\le a\le b\le 1$.
+Let $\nu$ be a measure satisfying the rectangular priority clause from
+\noderef{RandomIndependentSetSampling}.  Then the difference of the two
+lower-rectangle values
+\[
+\nu[\omega_1=A]\,b\,a^m-\nu[\omega_1=A]\,a\,a^m,
+\]
+where
+\[
+m=\left|\{u\in V(G):u\in A\text{ and }u\sim_G v\}\right|.
+\]
+is at most the $\nu$-measure of the slice where the activation set is $A$,
+the priority of $v$ lies in $(a,b]$, every activated neighbor of $v$ has
+priority at most $a$, and all remaining priority coordinates lie in $[0,1]$.
+\end{helper}
+\begin{proof}
+Let $R_b$ be the lower rectangle in which $\omega_1=A$, the coordinate of
+$v$ is at most $b$, each activated neighbor of $v$ is at most $a$, and every
+other coordinate is at most $1$.  Define $R_a$ in the same way, except that
+the coordinate of $v$ is at most $a$.  Since $a\le b$, we have
+$R_a\subseteq R_b$.
+
+The stated slice is exactly $R_b\setminus R_a$.  Indeed, membership in
+$R_b$ supplies the constraints with $\omega_2(v)\le b$; failing to belong to
+$R_a$ is precisely the failure of $\omega_2(v)\le a$, because all other
+coordinate constraints are identical in the two rectangles.  Hence the slice
+condition is equivalent to $a<\omega_2(v)\le b$ together with the common
+constraints.
+
+By the rectangular computation \noderef{SamplingOneVertexPriorityRectangle},
+\[
+\nu(R_b)=\nu[\omega_1=A]\,
+b\,a^m
+\quad\text{and}\quad
+\nu(R_a)=\nu[\omega_1=A]\,
+a\,a^m.
+\]
+For arbitrary measures, the general measure inequality
+\[
+\nu(R_b)-\nu(R_a)\le \nu(R_b\setminus R_a)
+\]
+holds.  Substituting the two displayed rectangle values and the identification
+of the slice with $R_b\setminus R_a$ proves the claimed lower bound for the
+slice measure.
+\end{proof}

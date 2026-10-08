@@ -1,0 +1,45 @@
+\begin{helper}
+Let \(M_j(\omega)\) be the mixed mass family on the actual paired mixed
+surface.  Assume that for each \(k<n\) and atom \(\omega\) the two
+consecutive stages are decomposed on the same paired noncurrent context:
+there are real numbers \(U_{k,\omega}\), \(P^-_{k,\omega}\), and
+\(P^+_{k,\omega}\) such that
+\[
+M_k(\omega)=U_{k,\omega}+P^-_{k,\omega},\qquad
+M_{k+1}(\omega)=U_{k,\omega}+P^+_{k,\omega},
+\]
+and the actual one-step product comparison gives
+\[
+  P^-_{k,\omega}\le P^+_{k,\omega}.
+\]
+Then every adjacent replacement step is monotone:
+\[
+  M_k(\omega)\le M_{k+1}(\omega)\qquad(k<n).
+\]
+\end{helper}
+\begin{proof}
+Fix \(k<n\) and \(\omega\).  By the shared-context comparison hypothesis,
+choose \(U_{k,\omega}\), \(P^-_{k,\omega}\), and \(P^+_{k,\omega}\) with
+\[
+M_k(\omega)=U_{k,\omega}+P^-_{k,\omega},\qquad
+M_{k+1}(\omega)=U_{k,\omega}+P^+_{k,\omega},
+\]
+and \(P^-_{k,\omega}\le P^+_{k,\omega}\).  Substituting these two displayed
+equalities reduces the desired inequality to
+\[
+  U_{k,\omega}+P^-_{k,\omega}
+  \le U_{k,\omega}+P^+_{k,\omega},
+\]
+which follows by adding the same unchanged term \(U_{k,\omega}\) to both
+sides of the one-step inequality.
+
+This is the algebraic endpoint of the paired-surface comparison.  The
+substantial lower input is the shared-context decomposition itself: it must
+be produced before projection, with all noncurrent retained-source tests and
+already-private target tests kept inside the same paired event, and with the
+current boundary inequality supplied by the registered fixed-stage/product
+comparison such as
+\(\noderef{SamplingSplitOutsideBlockerActualOneStepMixedProductComparison}\).
+The present node only cancels the common paired contribution; it does not
+compare separated intermediate residuals.
+\end{proof}

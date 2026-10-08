@@ -1,0 +1,19 @@
+\begin{helper}
+Let $D\ge2$, $H\in H(3,2,D)$, $g$ be an edge, and $v\in g$.
+Replace $g$ by $(g\setminus\{v\})\cup\{x_1\}$ and add the edge
+$\{v,x_1,x_2\}$, where $x_1,x_2$ are distinct fresh vertices, as in
+\noderef{KUniformSplitEdgeHypergraph}. The resulting hypergraph belongs to
+$H(3,2,D)$.
+\end{helper}
+\begin{proof}
+First weaken the old intersection bound from two to three.
+\noderef{KUniformSplitEdgePreservesClass} then supplies uniformity three and
+maximum degree at most $D$ for the split hypergraph. For 2-simplicity,
+intersections of two unmodified old edges are unchanged. The intersection
+of the modified edge with an unmodified old edge is contained in the old
+intersection, because the added vertex $x_1$ is fresh, so it has cardinality
+at most two. The fresh edge meets an unmodified old edge only possibly at
+$v$. Finally the modified edge and fresh edge meet exactly at $x_1$:
+the modified edge no longer contains $v$, and does not contain $x_2$.
+Thus every pair of distinct edge indices has intersection size at most two.
+\end{proof}

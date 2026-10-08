@@ -1,0 +1,86 @@
+\begin{lemma}
+Let \(G\) be a finite \(\Delta\)-regular graph, let \(0<\gamma\le \Delta\),
+let \(\nu\) be a law on activation--priority pairs \((A,\pi)\), and let
+\(\mu\) be a nonnegative mass function on subsets of \(V(G)\).  Assume that
+\(\nu\) has total mass one; that every
+activation atom has mass
+\[
+\nu(A=A_0)=
+\left(\frac{\gamma}{\Delta}\right)^{|A_0|}
+\left(1-\frac{\gamma}{\Delta}\right)^{|V(G)|-|A_0|};
+\]
+that priorities on each activation atom are supported on the unit cube; that
+for every \(t\in[0,1]^{V(G)}\),
+\[
+\nu(A=A_0,\ 0\le \pi(z)\le t_z\text{ for all }z)
+=\nu(A=A_0)\prod_{z\in V(G)}t_z;
+\]
+that, for every \(z\in A_0\), the fixed-activation comparison event
+\[
+A=A_0,\quad \pi(q)\in[0,1]\text{ for all }q\in A_0,\quad
+\pi(q)<\pi(z)\text{ for all }q\in A_0\cap N_G(z)
+\]
+has mass
+\[
+\nu(A=A_0)\int_0^1 a^{|A_0\cap N_G(z)|}\,da;
+\]
+and that \(\mu\) is the push-forward of \(\nu\) by the output map
+\[
+I(A,\pi)=\{z\in A:\pi(z)>\pi(w)\text{ for every }w\in A\cap N_G(z)\}.
+\]
+If \(u\ne v\) and \(u,v\) are nonadjacent, then
+\[
+\sum_S {\bf 1}_{\{u,v\}\subseteq S}\mu(S)
+=
+\frac{2}{\Delta^2}\int_0^\gamma\int_x^\gamma
+\left(1-\frac{x}{\Delta}\right)^{
+\Delta-|N_G(u)\cap N_G(v)|}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx .
+\]
+\end{lemma}
+\begin{proof}
+Let
+\[
+E_S=\{(A,\pi): I(A,\pi)=S\}.
+\]
+The events \(E_S\) are pairwise disjoint as \(S\) ranges over all subsets of
+\(V(G)\).  By the push-forward hypothesis,
+\[
+\operatorname{ofReal}(\mu(S))=\nu(E_S)
+\]
+for every \(S\).  Since \(\mu(S)\ge 0\), this identity is an identity of the
+underlying real masses: no negative value can be hidden by the
+\(\operatorname{ofReal}\) map.  Hence, by finite additivity over the disjoint
+subfamily indexed by the sets \(S\) containing both \(u\) and \(v\),
+\[
+\sum_S {\bf 1}_{\{u,v\}\subseteq S}\mu(S)
+=\nu\{(A,\pi):u\in I(A,\pi)\text{ and }v\in I(A,\pi)\}.
+\]
+This is the only place where the nonnegativity of \(\mu\) is used.
+
+It remains to compute this last probability from the activation and priority
+laws.  This computation is exactly
+\noderef{SamplingNonadjacentPairSurvivalChamberLaw}, applied with the present
+graph \(G\), parameters \(\Delta,\gamma\), law \(\nu\), and vertices \(u,v\).
+Its hypotheses are precisely the activation atom formula, unit-cube support,
+lower-rectangle product law, fixed-activation comparison identity,
+\(\Delta\)-regularity, \(0<\gamma\le\Delta\), and the nonadjacency of \(u\)
+and \(v\), all of which are among the present assumptions.  Therefore
+\[
+\nu\{(A,\pi):u\in I(A,\pi)\text{ and }v\in I(A,\pi)\}
+=
+\operatorname{ofReal}\!\left[
+\frac{2}{\Delta^2}\int_0^\gamma\int_x^\gamma
+\left(1-\frac{x}{\Delta}\right)^{
+\Delta-|N_G(u)\cap N_G(v)|}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx\right].
+\]
+The range hypotheses \(0<\gamma\le\Delta\) imply that
+\(0\le x/\Delta\le1\) and \(0\le y/\Delta\le1\) throughout the integration
+chamber \(0\le x\le y\le\gamma\).  Hence the integrand and the prefactor are
+nonnegative, so this extended-nonnegative identity is the same real mass
+identity used in the preceding finite-additivity calculation.
+Combining this identity with the finite push-forward identity proved above
+gives the displayed formula for
+\(\sum_S {\bf 1}_{\{u,v\}\subseteq S}\mu(S)\).
+\end{proof}

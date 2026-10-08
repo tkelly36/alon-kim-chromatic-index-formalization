@@ -1,0 +1,44 @@
+\begin{lemma}
+Let $\mathcal H$ be a $3$-uniform hypergraph of maximum degree at most $D$,
+and let $e\in E(\mathcal H)$ intersect exactly $3(D-1)$ other edges.  Put
+\[
+X(e,\mathcal H)=
+\left(\bigcup\{h\in E(\mathcal H):h\cap e\ne\emptyset\}\right)\setminus e
+\]
+and let $\deg_{\mathcal H}(v,x)$ denote the number of edges containing both
+$v\in e$ and $x\in X(e,\mathcal H)$.  Then:
+\begin{enumerate}
+\item every edge $h\ne e$ satisfies $|h\cap e|\le1$;
+\item for every $x\in X(e,\mathcal H)$,
+$\sum_{v\in e}\deg_{\mathcal H}(v,x)\le D$;
+\item for every $v\in e$,
+$\sum_{x\in X(e,\mathcal H)}\deg_{\mathcal H}(v,x)=2(D-1)$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+This is the $k=3$ case of Lemma~\ref{lem: tableop new} of the paper.  By
+\noderef{UniformHypergraph}, write $e=\{v_1,v_2,v_3\}$.  The maximum-degree
+hypothesis means, by \noderef{MaxDegreeAtMost} and
+\noderef{HypergraphDegree}, that each $v_i$ lies in at most $D$ edge indices,
+hence at most $D-1$ edge indices other than $e$.
+
+If an edge $h\ne e$ contained two vertices of $e$, then the incidence count
+of neighboring edges by the vertex of $e$ they contain would count $h$ twice.
+The total incidence count is at most $3(D-1)$, so the number of distinct
+neighbors of $e$ would be at most $3(D-1)-1$, contradicting the hypothesis
+that there are exactly $3(D-1)$ neighbors.  This proves the first item.
+
+Fix $x\in X(e,\mathcal H)$.  By the first item, no edge can contain $x$ and
+two distinct vertices of $e$.  Hence the sets of edge indices counted by the
+three numbers $\deg_{\mathcal H}(v_i,x)$ are disjoint subsets of the set of
+all edge indices containing $x$.  Their total size is therefore at most
+$\deg_{\mathcal H}(x)\le D$, proving the column-sum bound.
+
+Finally fix $v_i\in e$.  The first item makes the three classes of neighbors,
+classified by their unique vertex in $e$, disjoint.  Since their union has
+size $3(D-1)$ and each class has size at most $D-1$, the class containing
+$v_i$ has exactly $D-1$ edges.  Each such edge has three vertices by
+\noderef{UniformHypergraph}, meets $e$ only in $v_i$, and therefore
+contributes exactly two incidences to
+$\sum_x\deg_{\mathcal H}(v_i,x)$.  The row sum is $2(D-1)$.
+\end{proof}

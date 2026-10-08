@@ -1,0 +1,30 @@
+\begin{helper}
+Let \(S\) be a finite set and let \(p,x\in\mathbb R\).  Then
+\[
+\sum_{B\subseteq S}p^{|B|}(1-p)^{|S|-|B|}x^{|B|}
+=((1-p)+px)^{|S|}.
+\]
+\end{helper}
+\begin{proof}
+For each subset \(B\subseteq S\), combine the two factors depending on
+\(|B|\):
+\[
+p^{|B|}x^{|B|}=(px)^{|B|}.
+\]
+Therefore the displayed sum is
+\[
+\sum_{B\subseteq S}(px)^{|B|}(1-p)^{|S|-|B|}.
+\]
+The finite binomial theorem, written in subset form, says that for any real
+numbers \(r\) and \(q\),
+\[
+\sum_{B\subseteq S}r^{|B|}q^{|S|-|B|}=(r+q)^{|S|}.
+\]
+Applying this with \(r=px\) and \(q=1-p\) gives
+\[
+\sum_{B\subseteq S}(px)^{|B|}(1-p)^{|S|-|B|}
+=((px)+(1-p))^{|S|}.
+\]
+Finally, addition is commutative, so \((px)+(1-p)=(1-p)+px\), which is the
+claimed identity.
+\end{proof}

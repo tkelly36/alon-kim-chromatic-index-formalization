@@ -1,0 +1,57 @@
+\begin{lemma}
+Let $T$ be finite, $J\subseteq T$, and $0\le p\le1$. Put
+$\rho=(p\delta_1+(1-p)\delta_0)\otimes(\operatorname{Leb}|_{[0,1]})$,
+$\mu=\rho^T$, $\tau=\rho^{T\setminus J}$, and $\kappa=\rho^J$,
+all on the natural finite-dimensional Borel spaces. Define
+$F(t,c)_i=c_i$ for $i\in J$ and $F(t,c)_i=t_i$ otherwise.
+The map $(t,c)\mapsto F(t,c)$ and the section $t\mapsto F(t,0)$ are
+measurable. The measures $\mu,\tau,\kappa$ each have total mass one,
+and $\tau$-almost every $t$ has every priority coordinate in $[0,1]$.
+For every measurable $E\subseteq(\mathbb R^2)^T$, the function
+$t\mapsto\kappa\{c:F(t,c)\in E\}$ is measurable and
+\[
+ \mu(E)=\int \kappa\{c:F(t,c)\in E\}\,d\tau(t).
+\]
+The integral is the nonnegative extended integral.
+\end{lemma}
+\begin{proof}
+For a fixed index $i$, evaluation of $F$ is either a current-coordinate
+projection or a context-coordinate projection; the choice depends only on
+$i\in J$. Both are measurable, so the finite product map $F$ is
+measurable. Substituting the constant zero current tuple proves the section
+assertion. Restriction to the two complementary index subsets is a
+measurable inverse to $F$.
+
+The activation factor has total mass $p+(1-p)=1$ and the restricted
+Lebesgue factor has mass one. The finite product rectangle formula then
+gives total mass one for all three measures, even when one index subset
+is empty. Each priority marginal is supported on $[0,1]$, since it is the
+restricted Lebesgue factor and all other factors have mass one. The
+complement of simultaneous priority support is a finite union of these
+coordinate null sets, hence is null.
+
+We verify $F_*(\tau\otimes\kappa)=\mu$. For a Borel rectangle
+$E=\prod_{i\in T}E_i$, its inverse image under $F$ is
+$(\prod_{i\notin J}E_i)\times(\prod_{i\in J}E_i)$. The product
+rectangle formula assigns this inverse image mass
+\[
+ \left(\prod_{i\notin J}\rho(E_i)\right)
+ \left(\prod_{i\in J}\rho(E_i)\right)=\prod_{i\in T}\rho(E_i)=\mu(E).
+\]
+These rectangles form a generating intersection-stable class containing
+the whole space. Both measures are finite with the same total mass; the
+finite-measure uniqueness theorem (equivalently the pi-lambda theorem)
+therefore extends the equality to the product Borel sigma algebra.
+This is precisely the coordinate-splitting measure-preserving identity.
+
+For a measurable $E$, the indicator $1_E(F(t,c))$ is nonnegative and
+jointly measurable. Tonelli's theorem for the two finite measures makes
+its current-coordinate integral a measurable function of $t$, and gives
+\[
+ \mu(E)=\int 1_E(F(t,c))\,d(\tau\otimes\kappa)(t,c)
+       =\int\left(\int 1_E(F(t,c))\,d\kappa(c)\right)d\tau(t).
+\]
+The inner integral is the measure of the displayed fiber. This proves
+both conclusions, without regular conditional probabilities or conditioning
+on any event of a prescribed continuous coordinate value.
+\end{proof}

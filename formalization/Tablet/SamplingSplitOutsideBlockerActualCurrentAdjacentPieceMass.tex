@@ -1,0 +1,53 @@
+\begin{helper}
+Fix an actual split-outside-blocker witness surface, a cut \(k<n\), a cell
+\(\omega\), and a selected candidate \(x\in X\) with \(x\in B_k\).  Let
+\((U^-_{k,\omega,y},U^+_{k,\omega,y})_{y\in X}\) be the first-witness
+residual pieces of
+\(\noderef{SamplingSplitOutsideBlockerActualFirstWitnessResidualPieces}\).
+Assume the source and target finite activation atom formulas, the source and
+target priority lower-rectangle product formulas, the transported common-cell
+descriptions, the transported candidate marginal law on \(B_k\), the source
+current-coordinate factorization on the same cell, and the target private
+coordinate factorization on the same cell.  Assume also that \(z_i\) is
+injective, that \(B_i=\{y\in X:yz_i\in E(G)\}\), that every \(z_i\) is outside
+\(X\cup\{r\}\), that the \(z_i\) lie in the source extension coordinates, and
+that the private vertices \(\beta(y,z_i)\) lie in the target extension
+coordinates, fresh from the transported common coordinates.  Then
+\[
+  \nu\bigl(U^-_{k,\omega,x}\cap C_\omega\bigr)
+  =
+  \nu'\bigl(U^+_{k,\omega,x}\cap C'_\omega\bigr).
+\]
+\end{helper}
+\begin{proof}
+Unfold the residual pieces from
+\(\noderef{SamplingSplitOutsideBlockerActualFirstWitnessResidualPieces}\).
+For the fixed \(x\in B_k\), the source complete-witness clause includes
+activation of \(x\), the embedded-neighbor priority inequalities, and, for
+every \(i\) with \(k\le i\), the retained common blocker non-killing clause
+whenever \(x\in B_i\).  Applying this last condition at \(i=k\) gives exactly
+the current common blocker non-killing clause for \(z_k\).  The global source
+current-boundary event is existential over candidates in \(B_k\); therefore
+the same selected candidate \(x\), together with the complete-witness data
+and the noncurrent clauses already present in the complete-witness data,
+witnesses membership in the source current-boundary event.  Hence every
+source complete-witness state for this \(x\) is removed by the residual
+complement, and the source residual witness event for \(x\) is empty.
+
+The target side is identical.  The target complete-witness clause for \(x\)
+includes all private blocker non-killing clauses with \(i<k+1\).  In
+particular, at \(i=k\) it gives the current private blocker non-killing
+clause for every dependent adjacency datum needed to form
+\(\beta(x,z_k)\).  Since \(x\in B_k\), the same \(x\) witnesses the target
+current-boundary event, using the target embedded-neighbor inequalities and
+the noncurrent private clauses already contained in the complete-witness
+data.  Thus every target complete-witness state for this \(x\) is removed,
+and the target residual witness event for \(x\) is empty.
+
+The first-witness pieces are subsets of these residual witness events, so
+both \(U^-_{k,\omega,x}\) and \(U^+_{k,\omega,x}\) are empty.  Intersecting
+with \(C_\omega\) and \(C'_\omega\) preserves emptiness, and both measures
+are the measure of the empty set.  Therefore
+\(\nu(U^-_{k,\omega,x}\cap C_\omega)
+=\nu'(U^+_{k,\omega,x}\cap C'_\omega)\).
+\end{proof}

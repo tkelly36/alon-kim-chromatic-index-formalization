@@ -1,0 +1,147 @@
+\begin{helper}
+After the actual outside-blocker enumeration and coordinate sets have been
+fixed, the common-coordinate refinement can be carried out without changing
+those witnesses.  More precisely, assume \(n\), \(z_i\), \(B_i\), the source
+common and extension coordinates, and the target common and extension
+coordinates satisfy the actual coordinate clauses: the map \(i\mapsto z_i\)
+is injective and enumerates exactly the outside blockers of vertices of
+\(X\), \(B_i=\{x\in X:xz_i\in E(G)\}\), \(X\cup\{r\}\) lies in the source
+common coordinates, each \(z_i\) lies in the disjoint source extension
+coordinates, the target common coordinates are the \(\phi\)-image of the
+source common coordinates, and all private blockers \(\beta(x,z_i)\) lie in
+the target extension coordinates.
+Under the Bernoulli activation laws and finite priority lower-rectangle laws
+on \(G\) and \(G'\), there is a finite atom index set \(\Omega\), paired cells
+\(C_\omega,C'_\omega\), and weights \(w(\omega)\) on this prescribed
+coordinate surface such that \(w(\omega)\ge0\),
+\[
+  \operatorname{ofReal}(w(\omega))=\nu(C_\omega)
+  =\nu'(C'_\omega),
+\]
+the source cells are pairwise disjoint, the target cells are pairwise
+disjoint, the source cells cover the full source unit-priority support, the
+target cells cover the full target unit-priority support, both complements of
+unit-priority support have measure zero, and membership in \(C_\omega\) is
+transported to membership in \(C'_\omega\) by equality of the activation trace
+and priority values on the common coordinates.  Moreover, every returned
+source cell \(C_\omega\) and target cell \(C'_\omega\) is measurable, and the
+two endpoint survival events
+\[
+  \{(A,\pi): I_G(A,\pi)\cap X\ne\emptyset\},\qquad
+  \{(A',\pi'): I_{G'}(A',\pi')\cap \phi(X)\ne\emptyset\}
+\]
+are measurable events in the corresponding activation--priority product
+measurable spaces.
+\end{helper}
+\begin{proof}
+Keep the prescribed witnesses fixed.  Write
+\[
+  S=\texttt{sourceCoord},\qquad S'=\texttt{targetCommonCoord}.
+\]
+The coordinate hypotheses include \(S'=\phi(S)\).  Define the base index type
+\[
+  \Omega_0=\{A\subseteq V:A\subseteq S\}.
+\]
+For \(A\in\Omega_0\), define the paired base cells
+\[
+  B_A=\{\eta:\eta_{\rm act}\cap S=A\},\qquad
+  B'_A=\{\eta':\eta'_{\rm act}\cap S'= \phi(A)\}.
+\]
+Define the finite label type
+\[
+  \Lambda=\{0,1\}\times S.
+\]
+For a label \((1,v)\) take the source event \(0<\pi(v)\) and the target event
+\(0<\pi'(\phi(v))\).  For a label \((0,v)\) take the source event
+\(\pi(v)\le1\) and the target event \(\pi'(\phi(v))\le1\).  Finally let the
+transport relation \(T_A(\eta,\eta')\) mean that
+\[
+  \eta'_{\rm act}\cap S'=(\eta_{\rm act}\cap S)^\phi
+  \quad\text{and}\quad
+  \pi'(\phi(v))=\pi(v)\text{ for every }v\in S.
+\]
+These are exactly the base cells, labels, and transport relation appearing in
+the Lean statement of the prescribed construction.
+
+The node
+\(\noderef{SamplingSplitOutsideBlockerPrescribedCommonAtomMassSupport}\)
+applied to \(S,S',\phi,\nu,\nu'\) and the two activation--priority laws gives
+the hypotheses needed for the measured refinement on these explicitly fixed
+objects.  Namely, it states that \(B_A\) and \(B'_A\) are measurable, the
+source and target label events are measurable, the base cells are pairwise
+disjoint on each side, \(T_A\) transports base-cell membership and every
+label, and for every \(A\in\Omega_0\) and every truth vector
+\(\tau\subseteq\Lambda\) there is a nonnegative real \(w_{A,\tau}\) whose
+extended value is both the source truth-vector atom mass and the transported
+target truth-vector atom mass.  The same node also states the two full
+unit-support cover facts for the base cells and the two null-complement facts
+for unit-priority support.
+
+Now apply
+\(\noderef{SamplingSplitOutsideBlockerMeasuredStageCellRefinement}\) to this
+specific \(\Omega_0\), this specific \(\Lambda\), the base cells
+\(B_A,B'_A\), the label events just listed, and the transport relation
+\(T_A\).  All of its hypotheses have just been supplied at statement level by
+\(\noderef{SamplingSplitOutsideBlockerPrescribedCommonAtomMassSupport}\).
+Its conclusion returns a finite refined index type \(\Omega\), maps
+\(\operatorname{baseOf}:\Omega\to\Omega_0\) and
+\(\operatorname{truth}:\Omega\to\mathcal P(\Lambda)\), paired cells
+\[
+  C_\omega
+  =B_{\operatorname{baseOf}(\omega)}
+    \cap\{\eta:\eta\in Q_\lambda\Longleftrightarrow
+      \lambda\in\operatorname{truth}(\omega)\text{ for all }\lambda\},
+\]
+and the analogous \(C'_\omega\), together with weights \(w(\omega)\ge0\).
+It gives pairwise disjointness of the refined source cells, pairwise
+disjointness of the refined target cells, fiberwise cover of every base cell,
+transported membership
+\[
+  T_{\operatorname{baseOf}(\omega)}(\eta,\eta')
+  \Longrightarrow
+  (\eta\in C_\omega\Longleftrightarrow\eta'\in C'_\omega),
+\]
+and the mass identities
+\[
+  \operatorname{ofReal}(w(\omega))=\nu(C_\omega),\qquad
+  \operatorname{ofReal}(w(\omega))=\nu'(C'_\omega).
+\]
+Because the base cells and all label events are measurable, each displayed
+refined cell is measurable as a finite intersection of measurable sets; the
+same argument applies on the target side.
+
+It remains only to pass from the base-cell support cover to the final support
+cover asserted here.  If a source point \(\eta\) has all priorities in
+\([0,1]\), the support clause of
+\(\noderef{SamplingSplitOutsideBlockerPrescribedCommonAtomMassSupport}\)
+places it in some base cell \(B_A\).  The fiberwise cover clause of
+\(\noderef{SamplingSplitOutsideBlockerMeasuredStageCellRefinement}\) then
+places it in some refined cell \(C_\omega\).  The target argument is
+identical using \(B'_A\) and \(C'_\omega\).  The nullity of the complement of
+unit-priority support on the source and target sides is already one of the
+conclusions of
+\(\noderef{SamplingSplitOutsideBlockerPrescribedCommonAtomMassSupport}\).
+Finally, if two states satisfy the transported activation-trace and
+common-priority equalities displayed in the statement, then they satisfy the
+relation \(T_{\operatorname{baseOf}(\omega)}\).  The transported refined-cell
+membership clause therefore gives
+\[
+  \eta\in C_\omega\Longleftrightarrow\eta'\in C'_\omega .
+\]
+
+Finally consider the two endpoint survival events.  On the source side, the
+condition \(I_G(A,\pi)\cap X\ne\emptyset\) is the finite disjunction over
+\(x\in X\) of the event that \(x\in A\) and, for every active neighbor
+\(y\in A\) of \(x\), one has \(\pi(y)<\pi(x)\).  The activation coordinate
+is equipped with the top measurable space, so every condition involving
+membership in the finite activation set is measurable.  For fixed vertices
+\(x,y\), the priority comparison \(\pi(y)<\pi(x)\) is measurable because it
+is the inverse image of the open half-plane under the measurable coordinate
+map \(\pi\mapsto(\pi(y),\pi(x))\).  Finite conjunctions and finite
+disjunctions of these measurable events are measurable.  Hence the source
+endpoint event is measurable.  The target endpoint event is identical, with
+\(G'\), \(V'\), and the finite set \(\phi(X)\) in place of \(G\), \(V\), and
+\(X\).  Thus the finite atom family, weights, disjointness, measurability,
+support covers, null-complement identities, and membership transport all
+live on the original prescribed coordinate witnesses.
+\end{proof}

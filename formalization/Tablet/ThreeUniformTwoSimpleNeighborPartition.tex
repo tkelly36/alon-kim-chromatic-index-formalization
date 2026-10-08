@@ -1,0 +1,42 @@
+\begin{lemma}
+Let $\mathcal H$ be a finite-indexed $3$-uniform, $2$-simple
+multihypergraph, let $f$ be an edge, and let $N$ be exactly its neighboring
+edge indices. Suppose every member of $N$ meets $f$ in one vertex.
+Let $A$ be a vertex set disjoint from $f$, with $|A|\le3$.
+Suppose $D\ge1$ is an integer and $|N|=3(D-1)$.
+Put $V_1=\{e\in N:|e\cap A|=0\}$,
+$V_2=\{e\in N:|e\cap A|=2\}$,
+$V_3=\{e\in N:|e\cap A|=1\}$, and
+$S=\sum_{e\in N}|e\cap A|$. Then
+\[
+|V_1|+|V_2|+|V_3|=|N|,\qquad S=2|V_2|+|V_3|,
+\qquad |V_2|\le9,\qquad |V_1|\le3D+6-S.
+\]
+Moreover $S=\sum_{u\in f}\sum_{y\in A}\deg_{\mathcal H}(u,y)$,
+where codegree counts edge indices containing both vertices.
+\end{lemma}
+\begin{proof}
+By \noderef{UniformHypergraph}, each edge has three vertices. For
+$e\in N$, the sets $e\cap f$ and $e\cap A$ are disjoint subsets of $e$.
+The first has size one, so the second has size at most two. Its three
+possible sizes give the partition identity and the displayed formula for
+$S$ by summing the contributions $0,2,1$.
+
+Map each $e\in V_2$ to $(e\cap f,e\cap A)$. These are respectively a
+singleton in $f$ and a two-element subset of $A$. Their union has three
+vertices and is contained in $e$, hence equals $e$. If two edge indices
+have the same image, their edges coincide and their intersection has
+size three. By \noderef{TSimpleHypergraph}, distinct indices have
+intersection size at most two, so the map is injective. Its target has
+size $\binom31\binom{|A|}2\le3\cdot3=9$. Combining the partition and
+incidence identities gives
+$|V_1|+S=3(D-1)+|V_2|\le3D+6$, proving the inequality.
+
+Finally count triples $(u,y,e)$ with $u\in f$, $y\in A$, and both
+vertices in edge $e$. Summing first over $(u,y)$ gives the stated
+codegree sum. Summing first over $e$ gives
+$\sum_e |e\cap f|\,|e\cap A|$. The edge $f$ contributes zero by
+disjointness. Every other edge outside $N$ misses $f$ and also contributes
+zero. Each edge in $N$ contributes $|e\cap A|$ because its intersection
+with $f$ is a singleton. The result is $S$.
+\end{proof}

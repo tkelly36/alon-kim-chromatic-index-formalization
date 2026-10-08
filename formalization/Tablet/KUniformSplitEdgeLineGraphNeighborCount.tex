@@ -1,0 +1,38 @@
+\begin{helper}
+Let $\mathcal F$ be a finite multi-hypergraph with distinct edge labels
+$f$ and $g$.  Suppose $u$ and $v$ are distinct old vertices and that both
+$u$ and $v$ lie in $f\cap g$.  In the split-edge hypergraph
+$\operatorname{SplitEdge}_k(\mathcal F,g,v,x_1)$ of
+\noderef{KUniformSplitEdgeHypergraph}, compare the old-edge copy
+$\operatorname{inl}(f)$ with the original edge $f$.  The number of line-graph
+neighbors of $\operatorname{inl}(f)$ in the split hypergraph is the number of
+line-graph neighbors of $f$ in $L(\mathcal F)$ plus one.
+\end{helper}
+\begin{proof}
+By \noderef{LineGraphOfHypergraph}, two edge labels are adjacent in the line
+graph exactly when they are distinct and their corresponding hyperedges have
+nonempty intersection.
+
+First consider an old edge label $h$ different from the split label $g$.
+By \noderef{KUniformSplitEdgeHypergraph}, the split construction sends both
+$f$ and $h$ to their old-vertex copies, because $f\ne g$ and $h\ne g$.
+Thus the copy of $h$ meets the copy of $f$ exactly when $h$ met $f$ in the
+original hypergraph, and distinctness of old labels is preserved by the
+old-edge inclusion.
+
+For the old label $g$ itself, adjacency is also preserved for the present
+comparison.  In the original hypergraph, $g$ is adjacent to $f$ because
+$g\ne f$ and $u\in f\cap g$.  In the split hypergraph, the modified copy of
+$g$ is obtained from $g$ by deleting $v$ and adding the fresh vertex $x_1$.
+Since $u\ne v$ and $u\in g$, the old copy of $u$ remains in the modified
+copy of $g$; since $u\in f$ as well, the modified copy of $g$ still meets
+the copy of $f$.  Hence the old neighbors of $f$ are in bijection with the
+old-edge copies that neighbor $\operatorname{inl}(f)$ after the split.
+
+There is exactly one non-old edge label in the split construction.  Its edge
+contains the old vertex $v$ together with the fresh vertices.  Because
+$v\in f$, this new edge is adjacent to $\operatorname{inl}(f)$, and it is
+not an old edge label.  Therefore it contributes one additional neighbor
+disjoint from the old-neighbor image.  Taking finite cardinalities gives
+the claimed increase by one.
+\end{proof}

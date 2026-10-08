@@ -1,0 +1,48 @@
+\begin{helper}
+Let $\mathcal F$ be a $k$-uniform hypergraph, let $f$ be an edge, and suppose
+every vertex of $f$ has degree $D$.  Suppose also that every edge other than
+$f$ which meets $f$ meets it in exactly one vertex.  For $v\in f$ put
+\[
+C_v=\{g\in E(\mathcal F):g\ne f,\ v\in g\},
+\]
+and let $N$ be the set of edges other than $f$ which meet $f$.  Then
+$|C_v|=D-1$ for every $v\in f$, the sets $C_u$ and $C_v$ are disjoint for
+distinct $u,v\in f$, every edge in $N$ lies in one of the classes $C_v$, and
+the number of two-element sets of edges which lie inside a single class
+$C_v$ is at most
+\[
+k\binom{D-1}{2}.
+\]
+\end{helper}
+\begin{proof}
+Fix $v\in f$.  By the definition of degree in
+\noderef{HypergraphDegree}, the hypothesis that the degree of $v$ is $D$
+means exactly that $D$ edges of $\mathcal F$ contain $v$.  One of them is
+$f$ itself.  Removing $f$ from this degree count leaves exactly $D-1$ edges
+other than $f$ containing $v$, namely the members of $C_v$.  Hence
+$|C_v|=D-1$.
+
+Now let $u,v\in f$ be distinct.  If some edge $g$ belonged to both $C_u$ and
+$C_v$, then $g\ne f$ and $g$ would contain both $u$ and $v$.  Thus
+$g\cap f$ would contain the two distinct vertices $u$ and $v$, contradicting
+the hypothesis that every edge other than $f$ which meets $f$ meets it in
+exactly one vertex.  Therefore $C_u$ and $C_v$ are disjoint.
+
+If $g\in N$, then $g\ne f$ and $g$ meets $f$, so choose
+$v\in g\cap f$.  Then $v\in f$ and $g\in C_v$.  Conversely, if
+$g\in C_v$ for some $v\in f$, then $g\ne f$ and $v\in g\cap f$, so
+$g\in N$.  Thus the classes $C_v$ cover exactly the neighbor set $N$.
+
+For a fixed $v\in f$, the two-element sets of edges contained in $C_v$ are
+precisely the two-subsets of $C_v$, and there are
+$\binom{|C_v|}{2}=\binom{D-1}{2}$ of them.  Since $\mathcal F$ is
+$k$-uniform, \noderef{UniformHypergraph} gives $|f|=k$.  The collection of
+all two-element sets which lie inside at least one class is contained in the
+union, over the $k$ vertices $v\in f$, of these two-subset collections.  A
+union has cardinality at most the sum of the cardinalities of its members, so
+the total number is at most
+\[
+\sum_{v\in f}\binom{D-1}{2}=k\binom{D-1}{2},
+\]
+as claimed.
+\end{proof}

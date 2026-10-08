@@ -1,0 +1,25 @@
+\begin{helper}
+Let \(G\) be a finite \(\Delta\)-regular graph and let \(u,v\) be distinct
+nonadjacent vertices.  For real \(x,y\),
+\[
+\prod_{w\in N_G(u)\setminus N_G(v)}\left(1-\frac{x}{\Delta}\right)
+\prod_{w\in N_G(v)}\left(1-\frac{y}{\Delta}\right)
+=
+\left(1-\frac{x}{\Delta}\right)^{\Delta-|N_G(u)\cap N_G(v)|}
+\left(1-\frac{y}{\Delta}\right)^\Delta .
+\]
+\end{helper}
+\begin{proof}
+Because \(G\) is \(\Delta\)-regular, both \(N_G(u)\) and \(N_G(v)\) have
+cardinality \(\Delta\).  The finite set \(N_G(u)\) is the disjoint union of
+\(N_G(u)\setminus N_G(v)\) and \(N_G(u)\cap N_G(v)\), so
+\[
+|N_G(u)\setminus N_G(v)|=\Delta-|N_G(u)\cap N_G(v)|.
+\]
+The first product is a product of the same factor
+\(1-x/\Delta\) over exactly this many vertices, and hence equals
+\((1-x/\Delta)^{\Delta-|N_G(u)\cap N_G(v)|}\).  The second product is a product
+of the same factor \(1-y/\Delta\) over all \(\Delta\) neighbors of \(v\), and
+hence equals \((1-y/\Delta)^\Delta\).  Multiplying the two identities gives
+the claimed formula.
+\end{proof}

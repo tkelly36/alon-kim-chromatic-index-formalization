@@ -1,0 +1,106 @@
+\begin{helper}
+Let $G$ be a finite graph, let $\Delta$ be the degree scale, let $\gamma>0$,
+and let $\nu$ be an activation--priority law satisfying the fixed-activation
+cube and lower-rectangle identities on an activation atom $A$.  Fix distinct
+independent vertices $a,b,c\in A$, and put $Q=\{a,b,c\}$.  Let
+\[
+\mathcal O=\{(a,b,c),(a,c,b),(b,a,c),(b,c,a),(c,a,b),(c,b,a)\}.
+\]
+For an order $t=(p,q,r)\in\mathcal O$, define
+\[
+W_t(A)=\frac{1}{\gamma^3}\int_0^\gamma\int_z^\gamma\int_y^\gamma
+\left(1-\frac{x}{\gamma}\right)^{|\{w\in A\setminus\{p,q,r\}:w\sim p\}|}
+\left(1-\frac{y}{\gamma}\right)^{|\{w\in A\setminus\{p,q,r\}:w\not\sim p,\ w\sim q\}|}
+\left(1-\frac{z}{\gamma}\right)^{|\{w\in A\setminus\{p,q,r\}:w\not\sim p,\ w\not\sim q,\ w\sim r\}|}
+\,dx\,dy\,dz .
+\]
+Then
+\[
+\nu\{A\text{ is the activation set and every }u\in Q\text{ beats every
+activated neighbor in }A\}
+\le
+\sum_{t\in\mathcal O}\nu\{A\text{ is the activation set}\}\,
+\operatorname{ofReal}(W_t(A)).
+\]
+Moreover $W_t(A)\ge 0$ for every $t\in\mathcal O$.
+\end{helper}
+\begin{proof}
+Write $F=\{\omega:\omega_1=A\}$ and $M=\nu(F)$.  For each
+$t=(p,q,r)$ define the first-adjacency classes
+\[
+S_x=\{w\in A\setminus\{p,q,r\}:w\sim p\},\quad
+S_y=\{w\in A\setminus\{p,q,r\}:w\not\sim p,\ w\sim q\},
+\]
+\[
+S_z=\{w\in A\setminus\{p,q,r\}:w\not\sim p,\ w\not\sim q,\ w\sim r\}.
+\]
+They avoid the distinguished coordinates by definition.  The first class
+is disjoint from the other two because their tests for adjacency to $p$
+are opposite; the last two are disjoint because their tests for adjacency
+to $q$ are opposite.  Every activated outside neighbor of the triple belongs
+to exactly one class, by choosing its first adjacent vertex in this order.
+
+Put $m=|S_x|$, $n=|S_y|$, and $k=|S_z|$.  The affine identity
+\noderef{SamplingTripleChamberAffineIntegralIdentity} gives
+\[
+W_t(A)=\int_0^1\int_0^z\int_0^y x^m y^n z^k\,dx\,dy\,dz
+=\frac{1}{(m+1)(m+n+2)(m+n+k+3)}>0.
+\]
+For completeness, the inner integral is
+$y^{m+n+1}z^k/(m+1)$; integrating in $y$ gives
+$z^{m+n+k+2}/((m+1)(m+n+2))$, and integrating in $z$ gives
+the displayed value.  These integrations are justified by continuity of
+polynomials on compact intervals, including when any exponent is zero.
+All three denominators are strictly positive.  This proves, in particular,
+the required nonnegativity for every order.
+
+If $M=\infty$, the summand for $(a,b,c)\in\mathcal O$ is infinite because
+$\operatorname{ofReal}(W_{(a,b,c)}(A))>0$.  The entire nonnegative sum is
+therefore infinite, so the measure bound follows immediately.  Henceforth
+assume $M<\infty$.
+
+Let $B=\{\omega:\omega_2(v)\in[0,1]\text{ for all }v\in V\}$.
+The lower-rectangle identity with every threshold equal to $1$ gives
+$\nu(F\cap B)=M$.  Both $F$ and $B$ are measurable: activation is discrete,
+and $B$ is a finite intersection of coordinate interval tests.  Since $M$
+is finite, $\nu(F\setminus B)=0$.  Thus intersecting any measurable event
+inside $F$ with $B$ leaves its measure unchanged.
+
+Let $E$ be the fixed-activation survival event in the statement, and set
+$H_t=E\cap\{\omega:\omega_2(p)\le\omega_2(q)\le\omega_2(r)\}$.
+All these events are measurable: coordinate projections are measurable,
+strict and weak real comparisons are Borel, and the survival condition
+is a finite Boolean combination of such comparisons.  Every three real
+priorities admit an increasing ordering among the six listed orders.
+Consequently $E\subseteq\bigcup_{t\in\mathcal O}H_t$, and finite
+subadditivity gives $\nu(E)\le\sum_{t\in\mathcal O}\nu(H_t)$.
+No disjointness is asserted for these weak chambers.
+
+Fix $t\in\mathcal O$ and let
+\[
+C_t=\{u\in[0,1]^V:u_p\le u_q\le u_r,\
+u_w<u_p\ (w\in S_x),\ u_w<u_q\ (w\in S_y),\
+u_w<u_r\ (w\in S_z)\}.
+\]
+This set is Borel by its finitely many coordinate comparisons and interval
+tests.  Every point of $H_t\cap B$ projects into $C_t$: survival supplies
+the strict comparison for each vertex of each first-adjacency class.
+Apply \noderef{SamplingFiniteProductLowerOrthantEqualityMeasurable} with
+the measurable priority projection $\omega\mapsto\omega_2$, atom $F$,
+mass $M$, and Borel unit-cube subset $C_t$.  Its finite-mass and
+lower-rectangle hypotheses are exactly those established or assumed here.
+It yields
+\[
+\nu(H_t)=\nu(H_t\cap B)
+\le\nu\bigl(\{\omega\in F:\omega_2\in C_t\}\cap B\bigr)
+=M\operatorname{vol}(C_t).
+\]
+The coordinates $p,q,r$ are distinct because $t$ permutes $(a,b,c)$.
+Using the disjointness and exclusions proved above,
+\noderef{SamplingUnitCubeChamberVolumeIntegral} bounds
+$\operatorname{vol}(C_t)$ by the $\operatorname{ofReal}$ of the ascending
+simplex integral, which is $\operatorname{ofReal}(W_t(A))$ by the affine
+identity already cited.  Multiplication by $M$ preserves this inequality.
+Summing over the six orders and using the subadditive cover proves the
+claimed bound.
+\end{proof}

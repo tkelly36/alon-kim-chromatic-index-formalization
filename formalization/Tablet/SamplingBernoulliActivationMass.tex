@@ -1,0 +1,32 @@
+\begin{lemma}
+Let \(V\) be a finite vertex set, let \(\Delta\in\mathbb N\), and let
+\(0<\gamma\le \Delta\).  Put \(p=\gamma/\Delta\).  Then the Bernoulli
+activation weights
+\[
+w(A)=p^{|A|}(1-p)^{|V|-|A|}\qquad(A\subseteq V)
+\]
+are nonnegative and satisfy \(\sum_{A\subseteq V} w(A)=1\).
+\end{lemma}
+\begin{proof}
+Since \(0<\gamma\le\Delta\), necessarily \(\Delta>0\), so \(p=\gamma/\Delta\)
+is defined as a real number with \(0<p\le 1\).  Hence \(p\ge 0\) and
+\(1-p\ge 0\).  For every activation set \(A\), both factors
+\(p^{|A|}\) and \((1-p)^{|V|-|A|}\) are therefore nonnegative, so
+\(w(A)\ge0\).
+
+For the normalization, list the vertices of \(V\) in any order.  Expanding the
+finite product
+\[
+\prod_{v\in V}\bigl(p+(1-p)\bigr)
+\]
+chooses, independently for each vertex \(v\), either the \(p\)-term or the
+\((1-p)\)-term.  The choices of the \(p\)-term determine a unique subset
+\(A\subseteq V\), and the corresponding monomial is exactly
+\(p^{|A|}(1-p)^{|V|-|A|}\).  Conversely every subset \(A\) arises from exactly
+one such choice.  Therefore the product expansion is precisely
+\[
+\sum_{A\subseteq V} p^{|A|}(1-p)^{|V|-|A|}.
+\]
+But each factor \(p+(1-p)\) equals \(1\), so the product equals \(1\).  This
+proves the displayed normalization.
+\end{proof}

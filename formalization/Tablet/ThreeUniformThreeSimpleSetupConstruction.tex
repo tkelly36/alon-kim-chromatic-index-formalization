@@ -1,0 +1,89 @@
+\begin{lemma}
+Let $D\ge100$, let $\mathcal F\in H(3,3,D)$ have finite vertex and
+edge-index sets, and let $f$ be an edge. Suppose that
+$b_{L(\mathcal F),3D}(f)$ is at least $b_{L(\mathcal H),3D}(e)$ for every
+$\mathcal H\in H(3,3,D)$ with finite edge-index set and every edge $e$.
+Suppose also that every vertex of $f$ has degree $D$ and that $f$ meets
+exactly $3(D-1)$ other edge indices. Then there exists a
+\noderef{ThreeUniformThreeSimpleLocalSetup} on this same $D,\mathcal F,f$.
+\end{lemma}
+\begin{proof}
+We construct all the fields, without using any estimate requiring a local
+setup. Put $N=\{g:g\ne f,\ g\cap f\ne\varnothing\}$ and
+$X=\bigcup_{g\in N}(g\setminus f)$. Thus a vertex $x$ belongs to $X$
+exactly when it is outside $f$ and belongs to some edge other than $f$
+meeting $f$, as required by \noderef{ThreeUniformThreeSimpleLocalSetup}.
+Write $a_{v,x}=|\{g:v,x\in g\}|$. Define the functions on all ambient
+vertices by $c(x)=\sum_{v\in f}a_{v,x}$ and
+$r(v)=\sum_{x\in X}a_{v,x}$, and on all edge indices by
+$\sigma(g)=\sum_{x\in g\setminus f}\sum_{v\in f\setminus g}a_{v,x}$.
+These are exactly the three degree functions in the setup.
+
+The hypotheses of \noderef{ThreeUniformSaturatedEdgeStructure} hold:
+uniformity and the degree bound follow from
+\noderef{HypergraphClass}, and the neighbor count is assumed.
+It gives $|g\cap f|\le1$ for $g\ne f$, $c(x)\le D$ for $x\in X$,
+and $r(v)=2(D-1)$ for $v\in f$. Consequently every $g\in N$ meets $f$
+in exactly one vertex. Nonnegativity of all $a_{v,x}$ is immediate from
+their definition as cardinalities. Interchanging finite sums gives
+$\sum_{x\in X}c(x)=\sum_{v\in f}r(v)=6(D-1)$, since $|f|=3$.
+
+Order the finite set $X$ as $x_1,\ldots,x_q$ so that
+$c(x_1)\le\cdots\le c(x_q)$, breaking ties arbitrarily. Such an ordering
+exists by successively choosing a minimum in the remaining finite set.
+For $0\le j\le q$ put $s_j=\sum_{i=1}^j c(x_i)$. Choose the largest
+$t\in\{0,\ldots,q\}$ such that $s_t\le D/2$; this finite set of
+indices is nonempty because $s_0=0$. Set
+$X_s=\{x_1,\ldots,x_t\}$ and $X_b=X\setminus X_s$.
+The sets are disjoint and have union $X$. If $X_b$ is nonempty, then
+$t<q$, and maximality of $t$ implies $s_t+c(x_{t+1})>D/2$.
+For every $x\in X_b$ we have $c(x)\ge c(x_{t+1})$, so
+$s_t+c(x)>D/2$. If $X_b$ is empty this condition is vacuous.
+The ordering also gives $c(x)\le c(y)$ for $x\in X_s,y\in X_b$.
+Define $\mathrm{totalX},\mathrm{totalXs},\mathrm{totalXb}$ as the sums
+of $c$ over the indicated sets. We have just proved the cutoff,
+maximality, ordering, and total-value fields; disjoint additivity gives
+$\mathrm{totalXb}=\mathrm{totalX}-\mathrm{totalXs}$.
+
+For any subset $A$ of $X$, define
+$w(A)=\sum_{x\in A}\sum_{p\subseteq f,\,|p|=2}\prod_{v\in p}a_{v,x}$.
+Put $W=w(X)$, $WX_s=w(X_s)$ and $WX_b=w(X_b)$.
+The disjoint partition of $X$ gives $W=WX_s+WX_b$.
+For an ordering of $f$, the two-element subsets correspond bijectively to
+the increasing pairs $v<v'$, and the displayed product is
+$a_{v,x}a_{v',x}$. Thus the weight agrees with that in
+\noderef{SaturatedLineGraphEdgeCount}. Choose $Y$ to be its overlap
+correction, the sum of $\max\{0,|g\cap h|-1\}$ over pairs from distinct
+row classes. This theorem gives $Y\ge0$ and, for the line graph induced
+on $N$, the edge count $3\binom{D-1}{2}+W-Y$.
+Define $P$ and $T$ to be the real casts of the counts in
+\noderef{IndependentPairCount} and \noderef{IndependentTripleCount}
+at $f$ in \noderef{LineGraphOfHypergraph}. Every two-element subset of
+$N$ is exclusively an adjacent or a nonadjacent pair. Consequently
+\[
+P=\binom{3(D-1)}2-3\binom{D-1}2-W+Y
+ =3D^2-6D+3-W+Y.
+\]
+Indeed, for $m=D-1\ge0$, the difference of binomial coefficients equals
+$((3m)(3m-1)-3m(m-1))/2=3m^2$.
+
+Define $V_1=\{g\in N:g\cap X_s\ne\varnothing\}$ and $V_2=N\setminus V_1$.
+These sets form a disjoint partition of $N$. A member of $N$ has three
+vertices, exactly one in $f$, and its other two vertices belong to $X$.
+If it lies in $V_2$ neither outside vertex belongs to $X_s$, so both lie
+in $X_b$. Since $X_b\cap f=\varnothing$, this proves both required
+intersection cardinalities for $V_2$.
+Define $T_1$ as the number of independent three-element subsets of $N$
+meeting $V_1$, and $T_2$ as the number contained in $V_2$, in each case
+cast to a real. The independence predicate is precisely pairwise disjointness
+of distinct edge indices by \noderef{LineGraphOfHypergraph}.
+For a subset of $N$, not meeting $V_1$ is equivalent to containment in
+$V_2$. These two disjoint families therefore partition the independent
+triples, proving $T=T_1+T_2$ and nonnegativity of both counts.
+
+Finally set $b=b_{L(\mathcal F),3D}(f)$ using \noderef{LocalBParameter}.
+Its defining equation and maximality are respectively definitional and
+assumed. The class membership, lower bound on $D$, vertex saturation,
+and neighbor saturation fields are the hypotheses. All other fields
+were explicitly defined and verified above, giving the required setup.
+\end{proof}

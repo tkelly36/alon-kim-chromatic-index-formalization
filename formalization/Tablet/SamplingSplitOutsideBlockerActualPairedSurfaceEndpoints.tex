@@ -1,0 +1,92 @@
+\begin{helper}
+Let \(\widehat S_j(\omega)\), \(\widehat C_\omega\), \(\lambda\), and
+\(M_j(\omega)\) be a paired mixed measure surface from
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\) on the
+actual split-outside-blocker witness family.  Assume the endpoint projection
+and marginal data supplied by the actual source and target product laws.
+At the source endpoint, the first-coordinate projection of
+\(\widehat S_0(\omega)\cap\widehat C_\omega\) is exactly the true source
+survival event on \(X\) inside \(C_\omega\), and the paired coupling has
+\(\nu\) as its marginal on this projected endpoint event:
+\[
+\{\eta:\exists\eta'\ ((\eta,\eta')\in
+  \widehat S_0(\omega)\cap\widehat C_\omega)\}
+=\{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\}\cap C_\omega,
+\]
+\[
+\lambda(\widehat S_0(\omega)\cap\widehat C_\omega)
+=\nu(\{\eta:\exists\eta'\ ((\eta,\eta')\in
+  \widehat S_0(\omega)\cap\widehat C_\omega)\}).
+\]
+At the target endpoint, the second-coordinate projection of
+\(\widehat S_n(\omega)\cap\widehat C_\omega\) is exactly the true target
+survival event on \(\phi(X)\) inside \(C'_\omega\), and the paired coupling
+has \(\nu'\) as its marginal on this projected endpoint event:
+\[
+\{\eta':\exists\eta\ ((\eta,\eta')\in
+  \widehat S_n(\omega)\cap\widehat C_\omega)\}
+=\{(A',\pi'):I_{G'}(A',\pi')\cap \phi(X)\ne\emptyset\}\cap C'_\omega,
+\]
+\[
+\lambda(\widehat S_n(\omega)\cap\widehat C_\omega)
+=\nu'(\{\eta':\exists\eta\ ((\eta,\eta')\in
+  \widehat S_n(\omega)\cap\widehat C_\omega)\}).
+\]
+Then the two endpoint mixed masses are the true one-sided endpoint cell
+masses:
+\[
+\operatorname{ofReal}(w(\omega)M_0(\omega))
+=\nu(\{(A,\pi): I_G(A,\pi)\cap X\ne\emptyset\}\cap C_\omega),
+\]
+and
+\[
+\operatorname{ofReal}(w(\omega)M_n(\omega))
+=\nu'(\{(A',\pi'): I_{G'}(A',\pi')\cap \phi(X)\ne\emptyset\}\cap
+C'_\omega).
+\]
+Then the surface has exactly these two endpoint identities.  No identity is
+asserted for an intermediate cut \(0<j<n\).
+\end{helper}
+\begin{proof}
+Fix an atom \(\omega\).  The measured-stage field of
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\), applied
+with \(j=0\), gives
+\[
+  \operatorname{ofReal}(w(\omega)M_0(\omega))
+  =\lambda(\widehat S_0(\omega)\cap\widehat C_\omega).
+\]
+By the source marginal premise, the right hand side is the \(\nu\)-measure of
+the first-coordinate projection of the same paired endpoint event.  By the
+source endpoint projection premise, that projected event is exactly
+\[
+  \{(A,\pi):I_G(A,\pi)\cap X\ne\emptyset\}\cap C_\omega.
+\]
+Substituting this set identity gives the asserted \(j=0\) endpoint mass
+identity.  The mathematical reason the source projection premise is
+available only here is that no private target blocker tests are present at
+cut \(0\); after projection, the retained source blocker tests still describe
+the original source survival event on the actual cell.
+
+The target endpoint is identical in form.  The measured-stage field at
+\(j=n\) gives
+\[
+  \operatorname{ofReal}(w(\omega)M_n(\omega))
+  =\lambda(\widehat S_n(\omega)\cap\widehat C_\omega).
+\]
+The target marginal premise rewrites this paired measure as the
+\(\nu'\)-measure of the second-coordinate projection of the same paired
+event, and the target endpoint projection premise identifies that projection
+with
+\[
+  \{(A',\pi'):I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\}\cap C'_\omega.
+\]
+Here the projection premise is endpoint-only because, at cut \(n\), no
+retained common source blocker tests remain; every outside blocker has been
+replaced by its private target blocker.
+
+Packaging these two facts gives the conjunction stated by the helper.  The
+argument deliberately stops at the endpoints.  For an intermediate cut, a
+source projection would discard already-private target tests and a target
+projection would discard retained source tests, so this node records no
+intermediate separated residual equality.
+\end{proof}

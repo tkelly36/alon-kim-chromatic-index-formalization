@@ -1,0 +1,18 @@
+\begin{helper}
+Let $H\in H(3,2,D)$ and let $v$ have degree less than $D$.
+The hypergraph obtained by adding two fresh vertices and one edge consisting
+of those vertices and $v$, as in \noderef{KUniformFreshEdgeHypergraph},
+belongs to $H(3,2,D)$.
+\end{helper}
+\begin{proof}
+The intersection bound two implies the bound three, so $H\in H(3,3,D)$.
+Apply \noderef{KUniformFreshEdgePreservesClass} with $k=3$ to obtain
+uniformity three and maximum degree at most $D$ for the enlarged hypergraph.
+It remains to check the stronger intersection bound two. For distinct old
+edge indices, the intersection is exactly the injective image of the old
+intersection, so its cardinality is at most two. The intersection of the
+new edge with any old edge is contained in $\{v\}$, since the other two
+vertices are fresh, so its cardinality is at most one. There is only one
+new edge index, so no pair of distinct new indices occurs. These cases
+prove 2-simplicity and hence the asserted class membership.
+\end{proof}

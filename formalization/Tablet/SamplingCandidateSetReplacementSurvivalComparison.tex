@@ -1,0 +1,31 @@
+\begin{helper}
+Let $C$ be a nonempty finite set of candidates, let $p\in[0,1]$, and assign
+each candidate $x\in C$ a priority $\pi(x)\in[0,1]$.  Then there is a
+candidate $x_0\in C$ with maximal priority on $C$, and
+\[
+1-p(1-\pi(x_0))
+\le
+1-\prod_{x\in C} p(1-\pi(x)).
+\]
+\end{helper}
+\begin{proof}
+Since $C$ is finite and nonempty, the finite set of real priorities
+$\{\pi(x):x\in C\}$ has a maximum.  Choose $x_0\in C$ attaining this maximum,
+so $\pi(x)\le \pi(x_0)$ for every $x\in C$.
+
+For every $x\in C$, the assumptions $0\le p\le1$ and
+$0\le \pi(x)\le1$ imply $0\le p(1-\pi(x))\le1$.  Applying
+\noderef{SamplingOneBlockerProductInequality} to the finite set $C$, the
+activation probability $p$, the priority function $\pi$, and the chosen
+element $x_0$ gives
+\[
+\prod_{x\in C}p(1-\pi(x))\le p(1-\pi(x_0)).
+\]
+Subtracting the two sides from $1$ reverses the displayed comparison exactly
+as claimed:
+\[
+1-p(1-\pi(x_0))
+\le
+1-\prod_{x\in C}p(1-\pi(x)).
+\]
+\end{proof}

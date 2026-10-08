@@ -1,0 +1,25 @@
+\begin{helper}
+Let $\mathcal F$ be a $k$-uniform hypergraph, let $g$ be an edge of
+$\mathcal F$, let $v\in g$, and let $x_1$ be one of the $k-1$ fresh
+vertices in the split-edge construction of
+\noderef{KUniformSplitEdgeHypergraph}.  Then
+$\operatorname{SplitEdge}_k(\mathcal F,g,v,x_1)$ is $k$-uniform.
+\end{helper}
+\begin{proof}
+By \noderef{UniformHypergraph}, we must check that every edge in the
+split hypergraph has cardinality $k$.  The construction is described in
+\noderef{KUniformSplitEdgeHypergraph}.  Every old edge label other than
+$g$ is unchanged except that its vertices are included into the enlarged
+vertex set, so its cardinality remains $k$.
+
+For the old label $g$, the split construction replaces $g$ by
+$(g\setminus\{v\})\cup\{x_1\}$.  Since $v\in g$ and $g$ originally has
+$k$ vertices, $g\setminus\{v\}$ has $k-1$ vertices.  The vertex $x_1$ is
+fresh, so it is disjoint from the old vertices in $g\setminus\{v\}$.
+Thus the modified old edge has $(k-1)+1=k$ vertices.
+
+The one new edge is $\{v\}$ together with all $k-1$ fresh vertices.  The
+old vertex $v$ is disjoint from the fresh vertices, so this new edge has
+$1+(k-1)=k$ vertices.  Hence every edge in the split hypergraph has
+cardinality $k$, proving $k$-uniformity.
+\end{proof}

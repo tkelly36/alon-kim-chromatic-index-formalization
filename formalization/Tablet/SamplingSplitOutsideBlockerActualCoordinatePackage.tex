@@ -1,0 +1,81 @@
+\begin{helper}
+Let \(G\) and \(G'\) be finite graphs on \(V\) and \(V'\).  Let
+\(\phi:V\to V'\) be injective, let \(r\in V\), and let \(X\subseteq V\).
+For every outside incidence
+\[
+  x\in X,\qquad z\notin X\cup\{r\},\qquad xz\in E(G),
+\]
+let \(\beta(x,z)\in V'\) be a replacement vertex.  Assume that \(\beta\) is
+injective on outside incidences, that every \(\beta(x,z)\) is fresh from
+\(\phi(X\cup\{r\})\), and that every \(\beta(x,z)\) is adjacent to
+\(\phi(x)\) in \(G'\).
+
+Then there are an integer \(n\), a list \(z_0,\ldots,z_{n-1}\) of source
+outside blockers, candidate sets \(B_k\subseteq V\), source common and
+extension coordinate sets \(S,S_{\mathrm{ext}}\subseteq V\), target common
+and extension coordinate sets \(S',S'_{\mathrm{ext}}\subseteq V'\), and a
+target coordinate set \(T'\), such that:
+\[
+z_k\notin X\cup\{r\},\qquad \exists x\in X,\ xz_k\in E(G),
+\]
+every \(z\notin X\cup\{r\}\) adjacent to some \(x\in X\) occurs as some
+\(z_k\), and
+\[
+  B_k=\{x\in X:xz_k\in E(G)\}.
+\]
+Moreover \(X\cup\{r\}\subseteq S\), each \(z_k\in S_{\mathrm{ext}}\), and
+\(S\cap S_{\mathrm{ext}}=\emptyset\).  The target common coordinates are
+\(S'=\phi(S)\), the target extension coordinates are disjoint from \(S'\), the
+target coordinate set is \(T'=S'\cup S'_{\mathrm{ext}}\), and
+\(\phi(X\cup\{r\})\subseteq S'\).  Finally, for every listed blocker
+\(z_k\), every \(x\in X\), and every proof that \(z_k\) is an outside
+neighbor of \(x\), the private blocker \(\beta(x,z_k)\) belongs to
+\(S'_{\mathrm{ext}}\).  The enumeration has no repeated entries:
+\(z_i=z_j\) implies \(i=j\).
+\end{helper}
+\begin{proof}
+Let
+\[
+  Z=\{z\in V:z\notin X\cup\{r\}\hbox{ and }
+      \exists x\in X,\ xz\in E(G)\}.
+\]
+Because \(V\) is finite, \(Z\) is finite.  Choose a finite enumeration
+\(z_0,\ldots,z_{n-1}\) of exactly the elements of \(Z\).  By the definition of
+\(Z\), each listed \(z_k\) lies outside \(X\cup\{r\}\) and is adjacent to at
+least one vertex of \(X\), and conversely every outside blocker adjacent to a
+vertex of \(X\) is an element of \(Z\), hence appears in the list.
+
+For each \(k\), set
+\[
+  B_k=\{x\in X:xz_k\in E(G)\}.
+\]
+This is the required candidate set identity by definition.  Take the source
+common coordinate set to be \(S=X\cup\{r\}\) and the source extension
+coordinate set to be \(S_{\mathrm{ext}}=Z\).  Then \(X\cup\{r\}\subseteq S\);
+each \(z_k\in S_{\mathrm{ext}}\) because \(z_k\in Z\); and
+\(S\cap S_{\mathrm{ext}}=\emptyset\), since membership in \(Z\) includes the
+condition \(z\notin X\cup\{r\}\).
+
+Set \(S'=\phi(S)\).  Let \(S'_{\mathrm{ext}}\) be the set of all private
+blockers \(\beta(x,z_k)\) obtained from the listed outside incidences
+\(x\in B_k\).  Equivalently, \(S'_{\mathrm{ext}}\) is the image under
+\(\beta\) of the finite set of outside-incidence pairs whose second
+coordinate belongs to \(Z\).  Define \(T'=S'\cup S'_{\mathrm{ext}}\).  The
+freshness hypothesis says that every private blocker is different from
+\(\phi(y)\) for every \(y\in X\cup\{r\}=S\); hence no private blocker lies in
+\(\phi(S)=S'\).  Therefore \(S'\cap S'_{\mathrm{ext}}=\emptyset\).  The
+identity \(T'=S'\cup S'_{\mathrm{ext}}\) and the containment
+\(\phi(X\cup\{r\})\subseteq S'\) are immediate from the definitions.
+
+Finally fix \(k\), \(x\in X\), and a certificate that \(z_k\notin X\cup\{r\}\)
+and \(xz_k\in E(G)\).  Then \((x,z_k)\) is one of the outside incidences used
+to form \(S'_{\mathrm{ext}}\), so by definition
+\(\beta(x,z_k)\in S'_{\mathrm{ext}}\).
+
+The list \(z_0,\ldots,z_{n-1}\) was chosen through an equivalence between the
+finite index set and the subtype of elements of \(Z\).  Therefore two indices
+with the same listed vertex correspond to the same subtype element of \(Z\).
+Applying the equivalence back to the two equal subtype elements gives equality
+of the indices.  Hence the map \(k\mapsto z_k\) is injective.  This proves all
+asserted coordinate and blocker-list clauses.
+\end{proof}

@@ -1,0 +1,59 @@
+\begin{lemma}
+Let $A$ be finite, $0\le p\le1$, $K\subseteq A$, and $q:A\to\mathbb R$
+with $0\le q_a\le1$ for $a\in K$. On the Borel space $\mathbb R^2$ put
+$\rho=(p\delta_1+(1-p)\delta_0)\otimes(\operatorname{Leb}|_{[0,1]})$,
+and on $(\mathbb R^2)^{\{*\}\sqcup A}$ put $\mu=\rho^{\{*\}\sqcup A}$.
+For $f_i=(b_i,t_i)$ define
+\[
+ L=\{f:\exists a\in K,\ \neg(b_*=1\land q_a<t_*\land t_*\in[0,1])\},
+\quad
+ R=\{f:\exists a\in K,\ \neg(b_a=1\land q_a<t_a\land t_a\in[0,1])\}.
+\]
+Both events are measurable and $\mu$ has total mass one. If $K$ is empty,
+$\mu(L)=0$. For every maximizing $a\in K$, namely one with
+$q_b\le q_a$ for all $b\in K$,
+\[
+ \mu(L)=\operatorname{ofReal}(1-p(1-q_a)).
+\]
+In all cases,
+\[
+ \mu(R)=\operatorname{ofReal}\left(1-\prod_{a\in K}p(1-q_a)\right),
+ \qquad \mu(L)\le\mu(R).
+\]
+\end{lemma}
+\begin{proof}
+All coordinate evaluations are Borel measurable. Each failure test is the
+intersection of a closed activation equality, an open strict priority
+inequality, and a closed interval condition. Taking complements and finite
+unions proves the stated measurability.
+
+The two Dirac masses are at distinct points, so the activation measure has
+mass $p$ at $1$, mass $1-p$ at $0$, and total mass one. Lebesgue measure of
+$[0,1]$ is one. Thus $\rho$, and every finite product of copies of $\rho$,
+has total mass one, including an empty product. For $0\le q\le1$, the
+failure test on one coordinate is exactly $\{1\}\times(q,1]$ and has
+mass $p(1-q)$ by the rectangle formula for product measure and the length
+formula for intervals. Its complement therefore has mass $1-p(1-q)$.
+These statements also hold at $p=0,1$ and $q=0,1$; no division has occurred.
+
+If $K=\varnothing$, both displayed existential events are empty and the
+empty product in the formula for $R$ is one. Otherwise a maximum of the
+finite nonempty set of priorities is attained, say at $a$. Simultaneous
+failure of all candidates under the common coordinate is equivalent to
+$b_*=1$ and $q_a<t_*\le1$. Indeed this condition implies every failure,
+and failure for the maximizing candidate implies this condition. The
+common-coordinate success event consequently has mass $1-p(1-q_a)$.
+Every unused coordinate contributes its total mass one.
+
+The complement of $R$ requires the failure rectangle on coordinate $a$
+for each $a\in K$, and imposes no restriction on any other coordinate.
+The finite product rectangle formula gives its mass
+$\prod_{a\in K}p(1-q_a)$. Subtracting from the unit total mass proves
+the formula for $R$. This subtraction is finite; all masses lie in $[0,1]$.
+Each factor lies in $[0,1]$. For a maximizing $a$, split the product into
+its $a$ factor and the remaining product. The latter is at most one by
+induction on its finite index set, so the whole product is at most
+$p(1-q_a)$. Subtract from one to obtain $\mu(L)\le\mu(R)$.
+The empty case was already proved. Applying $\operatorname{ofReal}$
+preserves these equalities and inequalities between nonnegative reals.
+\end{proof}

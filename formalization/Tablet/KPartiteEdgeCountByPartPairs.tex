@@ -1,0 +1,33 @@
+\begin{helper}
+Let $G$ be a finite simple $k$-partite graph with part map
+$\operatorname{part}:V(G)\to [k]$, so every edge has endpoints in two
+different parts.  For $i<j$, let $m_{ij}$ be the number of ordered adjacent
+pairs $(u,v)$ with $\operatorname{part}(u)=i$ and
+$\operatorname{part}(v)=j$.  Then
+\[
+|E(G)|=\sum_{i<j} m_{ij}.
+\]
+\end{helper}
+\begin{proof}
+Let $D$ be the finite set of ordered adjacent pairs $(u,v)$ of vertices of
+$G$.  The handshaking identity for simple graphs gives
+$|D|=2|E(G)|$, because each unordered edge contributes exactly the two
+ordered pairs obtained by choosing one of its endpoints first.
+
+Partition $D$ by the ordered pair of parts
+$(\operatorname{part}(u),\operatorname{part}(v))$.  For an ordered part-pair
+$(a,b)$, let $f(a,b)$ be the size of the corresponding fiber.  Since every
+edge goes between two different parts, $f(i,i)=0$ for every $i$.  Also
+$f(i,j)=f(j,i)$: the map $(u,v)\mapsto (v,u)$ is a bijection from the fiber
+over $(i,j)$ to the fiber over $(j,i)$, using symmetry of adjacency.
+
+Therefore
+\[
+|D|=\sum_{a,b} f(a,b)
+   =\sum_{i<j} f(i,j)+\sum_{j<i} f(i,j)+\sum_i f(i,i)
+   =2\sum_{i<j} f(i,j).
+\]
+For $i<j$, the number $f(i,j)$ is exactly $m_{ij}$.  Combining this identity
+with $|D|=2|E(G)|$ and cancelling the factor $2$ gives
+$|E(G)|=\sum_{i<j}m_{ij}$.
+\end{proof}

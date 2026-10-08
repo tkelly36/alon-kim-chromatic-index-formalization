@@ -1,0 +1,43 @@
+\begin{helper}
+Let $I$ be a finite nonempty linearly ordered index set.  Let
+$(u_a)_{a\in I}$ and $(v_{ab})_{a,b\in I}$ be nonnegative real families.  Then
+\[
+\sum_{\substack{a<b\\a,b\in I}}\sqrt{u_a u_b v_{ab}}
+\le
+\left(\sum_{a\in I}u_a\right)
+\sqrt{
+\frac{|I|-1}{2|I|}
+\sum_{\substack{a<b\\a,b\in I}}v_{ab}}.
+\]
+\end{helper}
+\begin{proof}
+Set
+\[
+A=\sum_{a<b}u_a u_b,\qquad
+B=\sum_{a<b}v_{ab},\qquad
+S=\sum_a u_a,\qquad
+c=\frac{|I|-1}{2|I|}.
+\]
+The families are nonnegative, so the finite square-root form of
+Cauchy--Schwarz gives
+\[
+\sum_{a<b}\sqrt{u_a u_b v_{ab}}
+=\sum_{a<b}\sqrt{u_a u_b}\sqrt{v_{ab}}
+\le \sqrt{A}\sqrt{B}. \tag{1}
+\]
+By \noderef{KPartitePairProductCauchyBound}, applied to the family
+$(u_a)_{a\in I}$,
+\[
+A\le cS^2. \tag{2}
+\]
+Also $S\ge 0$, $B\ge 0$, and $c\ge 0$.  Taking square roots in (2) gives
+\[
+\sqrt A\le \sqrt{cS^2}=\sqrt c\,S.
+\]
+Multiplying by $\sqrt B\ge 0$ and using
+$\sqrt c\,\sqrt B=\sqrt{cB}$ yields
+\[
+\sqrt A\sqrt B\le S\sqrt{cB}.
+\]
+Combining this with (1) is exactly the claimed inequality.
+\end{proof}

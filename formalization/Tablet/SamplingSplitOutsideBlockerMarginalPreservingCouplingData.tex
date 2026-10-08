@@ -1,0 +1,46 @@
+\begin{definition}
+Fix finite activation--priority state spaces on \(V\) and \(V'\), measures
+\(\nu\) and \(\nu'\), a map \(\phi:V\to V'\), a finite source common
+coordinate set \(S\), a target common coordinate set \(S'\), and one
+prescribed atom family \(C_\omega,C'_\omega,w(\omega)\) indexed by a finite
+type \(\Omega\).
+An atomwise marginal-preserving coupling for this prescribed surface consists
+of a measure \(\lambda\) on the natural product measurable space of the paired
+activation--priority states
+\[
+  ((A,\pi),(A',\pi'))\in
+  (\mathcal P(V)\times\mathbb R^V)\times
+  (\mathcal P(V')\times\mathbb R^{V'})
+\]
+and paired cells \(\widehat C_\omega\).  Each paired cell projects into the
+corresponding prescribed source and target cells,
+\[
+  \widehat C_\omega\subseteq
+  \{((A,\pi),(A',\pi')):(A,\pi)\in C_\omega,\ (A',\pi')\in C'_\omega\},
+\]
+has mass
+\[
+  \lambda(\widehat C_\omega)=\operatorname{ofReal}(w(\omega)),
+\]
+and synchronizes the common record:
+\[
+  A'\cap S'=\phi(A\cap S),\qquad
+  \pi'(\phi(v))=\pi(v)\quad(v\in S)
+\]
+for every paired state in \(\widehat C_\omega\).
+
+The coupling is restricted-marginal preserving on every atom for measurable
+events in the original activation--priority product spaces: for every
+measurable source event \(E\) and every measurable target event \(E'\),
+\[
+  \lambda(\{((A,\pi),(A',\pi')):(A,\pi)\in E\}\cap\widehat C_\omega)
+    =\nu(E\cap C_\omega),
+\]
+\[
+  \lambda(\{((A,\pi),(A',\pi')):(A',\pi')\in E'\}\cap\widehat C_\omega)
+    =\nu'(E'\cap C'_\omega).
+\]
+Thus the datum is stronger than equality of the total paired-cell mass: it
+records the exact source and target marginals needed later for endpoint
+projection and mixed-stage calculations on the same atom \(\omega\).
+\end{definition}

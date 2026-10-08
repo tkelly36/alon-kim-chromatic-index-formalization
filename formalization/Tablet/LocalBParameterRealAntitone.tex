@@ -1,0 +1,18 @@
+\begin{lemma}
+Let $G$ be a finite simple graph and $v$ a vertex. If
+$0<M\le N$ and $\deg_G(v)\le M$, then
+$b^{\mathbb R}_{G,N}(v)\le b^{\mathbb R}_{G,M}(v)$.
+\end{lemma}
+\begin{proof}
+Write $d=\deg_G(v)$, $P=P_G(v)$ and $T=T_G(v)$.
+By \noderef{IndependentPairCountLeChooseNeighborCard},
+$2P\le d(d-1)\le d^2\le dM$. Put $x=1/M$ and $y=1/N$;
+then $0\le y\le x$ and $P(x+y)\le2Px\le d$.
+The definition \noderef{LocalBParameterReal} gives the exact identity
+\[
+b^{\mathbb R}_{G,M}(v)-b^{\mathbb R}_{G,N}(v)
+=(x-y)\bigl(d-P(x+y)+T(x^2+xy+y^2)\bigr).
+\]
+Both factors are nonnegative: the second is a sum of $d-P(x+y)\ge0$
+and a nonnegative multiple of a nonnegative expression. This proves the claim.
+\end{proof}

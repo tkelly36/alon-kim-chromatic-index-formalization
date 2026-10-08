@@ -1,0 +1,33 @@
+\begin{lemma}
+Let $E,K$ be finite, $M(e)\subseteq L(e)$, and let $I_a$ be independent
+sets in the line graph, with $e\in I_a\Rightarrow a\in M(e)$.
+There exist a finite colored set $C$ and a proper partial $L$-coloring
+$c:C\to K$ with $e\in C\iff\exists a,e\in I_a$.
+On the canonical residual subtype $F=\{e:e\notin C\}$ there are lists
+$L_c$ satisfying the exact equivalence
+\[
+a\in L_c(f)\iff a\in L(f)\ \text{and}\
+\forall e\in C,\ c(e)=a\Rightarrow H(e)\cap H(f)=\varnothing.
+\]
+The hypergraph on $F$ with edge $H(f)$ has degree $Y_x(I)$ at every $x$,
+and $|L_c(f)|\ge |M(f)|-|\operatorname{Del}_f(I)|$ (natural subtraction).
+\end{lemma}
+\begin{proof}
+Take $C=\bigcup_a I_a$ and for each $e\in C$ choose a color $c(e)$ with
+$e\in I_{c(e)}$. Then $c(e)\in M(e)\subseteq L(e)$. If distinct colored
+edges intersect and have the same color $a$, they are adjacent vertices
+of the line graph lying in $I_a$, contradicting independence. This proves
+properness, using \noderef{LineGraphOfHypergraph}.
+Define $L_c(f)$ by filtering $L(f)$ with the displayed universal condition.
+This gives its exact equivalence, not just an inclusion. For fixed $x$,
+the subtype inclusion bijects residual incident edges with
+$\{e:x\in H(e),\ \forall a,e\notin I_a\}$; hence
+\noderef{HypergraphDegree} equals \noderef{NibbleResidualDegree}.
+Finally $M(f)\setminus\operatorname{Del}_f(I)\subseteq L_c(f)$.
+Indeed a color $a$ in this difference is in $L(f)$, and any colored edge
+using $a$ belongs to $I_a$. It is distinct from $f$ because $f\notin C$.
+If it intersected $f$, it would witness deletion of $a$ in
+\noderef{NibbleDeletedColors}, a contradiction. The deleted-color set is
+a subset of $M(f)$, so the difference has cardinality
+$|M(f)|-|\operatorname{Del}_f(I)|$. Taking cardinalities proves the claim.
+\end{proof}

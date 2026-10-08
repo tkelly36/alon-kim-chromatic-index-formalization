@@ -1,0 +1,42 @@
+\begin{helper}
+Let \(V\) be a finite vertex set and let \(a\neq b\).  Let \(S,T\subseteq V\)
+be disjoint from \(\{a,b\}\), and assume also that \(S\cap T=\varnothing\).
+For \(0\le y\le x\le 1\), consider the fiber of the product cube in which
+the two distinguished priority coordinates have values \(q(a)=x\) and
+\(q(b)=y\).  In that fiber, the set of remaining coordinates for which
+\(q(w)<q(a)\) for every \(w\in S\), \(q(w)<q(b)\) for every \(w\in T\), and
+all coordinates lie in \([0,1]\), has Lebesgue volume at most
+\[
+x^{|S|}y^{|T|}.
+\]
+\end{helper}
+\begin{proof}
+Write
+\[
+\beta=\{v\in V:v\neq a,\ v\neq b\}
+\]
+for the remaining coordinate set.  On \(\beta\) define an upper-bound vector
+\[
+U(r)=
+\begin{cases}
+x,& r\in S,\\
+y,& r\in T,\\
+1,& r\notin S\cup T.
+\end{cases}
+\]
+This is well-defined because \(S\) and \(T\) are disjoint.  Any point in the
+fiber described in the statement has every remaining coordinate nonnegative;
+if the coordinate lies in \(S\) it is \(<q(a)=x\), if it lies in \(T\) it is
+\(<q(b)=y\), and otherwise the cube condition gives it at most \(1\).  Hence
+the fiber set is contained in the rectangle \(\prod_{r\in\beta}[0,U(r)]\).
+
+The volume of this rectangle is the product of the side lengths:
+\[
+\prod_{r\in\beta} U(r).
+\]
+The side lengths are \(x\) on the coordinates of \(S\), \(y\) on the
+coordinates of \(T\), and \(1\) on all other remaining coordinates.  Since
+\(S\) and \(T\) are disjoint and neither contains \(a\) or \(b\), the product
+is exactly \(x^{|S|}y^{|T|}\).  Monotonicity of Lebesgue measure under
+containment gives the asserted upper bound for the fiber volume.
+\end{proof}

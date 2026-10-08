@@ -1,0 +1,37 @@
+\begin{helper}
+Fix a finite graph $G$, a vertex $v$, real numbers $p,q$, and a priority
+threshold $a$.  Sum over all activation-decision functions
+$b:V(G)\to\{\mathrm{inactive},\mathrm{active}\}$.  Give an activated copy of
+$v$ weight $p$, an inactive copy of $v$ weight $0$, an activated neighbor of
+$v$ weight $pa$, an inactive neighbor of $v$ weight $q$, an activated
+non-neighbor different from $v$ weight $p$, and an inactive non-neighbor
+different from $v$ weight $q$.  Then
+\[
+\sum_b\prod_{u\in V(G)} W_u(b(u))
+=
+p\prod_{u\in V(G)}
+\begin{cases}
+1, & u=v,\\
+q+pa, & u\sim_G v,\\
+q+p, & u\ne v\text{ and }u\not\sim_G v.
+\end{cases}
+\]
+\end{helper}
+\begin{proof}
+Expand the product of the two possible local weights at every vertex:
+\[
+\prod_{u\in V(G)}\bigl(W_u(\mathrm{active})+
+W_u(\mathrm{inactive})\bigr)
+=\sum_b\prod_{u\in V(G)}W_u(b(u)).
+\]
+This is just the finite distributive law, choosing one of the two summands at
+each vertex.
+
+Now compute the local sums.  At $u=v$ the inactive weight is $0$ and the
+active weight is $p$, so the factor is $p$.  At a neighbor $u$ of $v$, with
+$u\ne v$ because the graph is simple, the active weight is $pa$ and the
+inactive weight is $q$, giving $q+pa$.  At every remaining vertex different
+from $v$, the two weights are $p$ and $q$, giving $q+p$.  Pulling out the
+special factor $p$ at $v$ and replacing that vertex's factor in the product by
+$1$ gives exactly the displayed formula.
+\end{proof}

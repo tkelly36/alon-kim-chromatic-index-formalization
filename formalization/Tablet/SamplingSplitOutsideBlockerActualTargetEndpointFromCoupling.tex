@@ -1,0 +1,129 @@
+\begin{helper}
+Fix an actual paired mixed surface
+\(\widehat S_j(\omega),\widehat C_\omega,\lambda,M_j(\omega)\) from
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\), and fix
+the marginal-preserving coupling data
+\(\mathcal C\) from
+\(\noderef{SamplingSplitOutsideBlockerMarginalPreservingCouplingData}\) on
+the same atom family.  Assume that the surface's paired measure and paired
+cells are exactly the paired measure and paired cells of \(\mathcal C\).
+Assume the local replacement hypotheses for \(\phi\) and \(\beta\): \(\phi\)
+is injective, adjacencies inside \(X\cup\{r\}\) are preserved, every private
+vertex \(\beta(x,z)\) is adjacent to its intended \(\phi(x)\), no private
+vertex for \(x\) is adjacent to a wrong embedded candidate \(\phi(y)\) with
+\(y\in X\), no private vertex is adjacent to \(\phi(r)\), and every neighbor
+of \(\phi(x)\) in \(G'\) is either an embedded neighbor from
+\(\phi(X\cup\{r\})\) or the private replacement of a source outside neighbor
+of \(x\).  Assume also that the actual list \(z_0,\ldots,z_{n-1}\) covers
+every source outside blocker adjacent to \(X\), that the target law \(\nu'\)
+satisfies the Bernoulli activation atom formula and priority lower-rectangle
+law with a parameter \(p\in[0,1]\), and that the target endpoint event
+\[
+  E'_{\phi(X)}
+  =\{(A',\pi'): I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\}
+\]
+is measurable.  Then for every atom \(\omega\),
+\[
+  \operatorname{ofReal}(w(\omega)M_n(\omega))
+  =
+  \nu'(E'_{\phi(X)}\cap C'_\omega).
+\]
+\end{helper}
+\begin{proof}
+Fix \(\omega\).  The measured-stage field of
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\), applied
+with \(j=n\), gives
+\[
+  \operatorname{ofReal}(w(\omega)M_n(\omega))
+  =
+  \lambda(\widehat S_n(\omega)\cap\widehat C_\omega).
+\]
+We first compare \(\widehat S_n(\omega)\), on \(\widehat C_\omega\), with the
+second-coordinate cylinder over the displayed target local/private endpoint
+event.  Let \(D'_{\phi(X)}\) be the event that there is \(x\in X\) such that
+\(\phi(x)\) is active, \(\phi(x)\) beats every active embedded neighbor
+\(\phi(y)\) with \(y\in X\cup\{r\}\), and each listed private blocker
+\(\beta(x,z_i)\) with \(x\in B_i\) fails the opposite strict test
+\[
+  \neg(\beta(x,z_i)\in A',\
+       \pi'(\phi(x))<\pi'(\beta(x,z_i)),\
+       0\le\pi'(\beta(x,z_i))\le1).
+\]
+This exact displayed event is measurable by
+\noderef{SamplingSplitOutsideBlockerTargetDisplayedEndpointMeasurable},
+applied to \(G,\phi,r,X,z_i,B_i,\beta\). Its statement uses the same
+candidate, embedded-neighbor comparisons, and private blocker tests,
+including the unit-interval clause. This is independent of the assumed
+measurability of the true endpoint event. The endpoint boundary lemma will
+later compare these two events in measure.
+
+Let \(\zeta=((A,\pi),(A',\pi'))\in\widehat C_\omega\).  Expanding the
+mixed-stage definition in
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\) at cut
+\(n\), there are no retained source blockers.  Membership in
+\(\widehat S_n(\omega)\) asks for \(x\in X\) such that \(\phi(x)\in A'\), the
+embedded priority tests against \(\phi(X\cup\{r\})\) hold, and every already
+replaced outside blocker \(z_i\) with \(x\in B_i\) fails through the private
+target blocker \(\beta(x,z_i)\).  The source-side activation and embedded
+comparison clauses are redundant on \(\widehat C_\omega\), because the paired
+cell synchronizes the common activation trace and priorities on the source
+coordinates containing \(X\cup\{r\}\).  Thus, for paired states in
+\(\widehat C_\omega\),
+\[
+  \zeta\in\widehat S_n(\omega)
+  \quad\Longleftrightarrow\quad
+  \zeta_2\in D'_{\phi(X)} .
+\]
+Consequently
+\[
+  \widehat S_n(\omega)\cap\widehat C_\omega
+  =
+  \{\zeta:\zeta_2\in D'_{\phi(X)}\}\cap\widehat C_\omega .
+\]
+
+Because the surface and \(\mathcal C\) use the same paired measure and paired
+cells, the target restricted marginal law from
+\(\noderef{SamplingSplitOutsideBlockerMarginalPreservingCouplingData}\),
+applied to the displayed measurable event \(D'_{\phi(X)}\), gives
+\[
+  \lambda(\{\zeta:\zeta_2\in D'_{\phi(X)}\}\cap\widehat C_\omega)
+  =
+  \nu'(D'_{\phi(X)}\cap C'_\omega).
+\]
+
+Now apply
+\(\noderef{SamplingSplitOutsideBlockerEndpointBoundaryCellReduction}\) on the
+target graph.  Use candidate type \(\{x:V:x\in X\}\), candidate set the full
+finite subtype, embedding \(x\mapsto\phi(x)\), local coordinate set
+\(\phi(X\cup\{r\})\), blocker \(b_i(x)=\beta(x,z_i)\), and blocker predicate
+\(H_i(x)\) equal to \(x\in B_i\).  The local-self condition is
+\(\phi(x)\in\phi(X\cup\{r\})\).  If \(H_i(x)\), the surface's
+candidate-set identity gives \(Gxz_i\), while \(hOutside_i\) gives
+\(z_i\notin X\cup\{r\}\); hence the intended-adjacency hypothesis for
+\(\beta\) proves that \(b_i(x)\) is adjacent to \(\phi(x)\).
+
+For the target neighbor-cover condition, let \(w'\) be adjacent to
+\(\phi(x)\).  By the target-neighbor exhaustion hypothesis, either
+\(w'=\phi(y)\) for some \(y\in X\cup\{r\}\), in which case \(w'\) is local,
+or \(w'=\beta(x,z)\) for a source outside neighbor
+\(z\notin X\cup\{r\}\) of \(x\).  In the second case the actual
+outside-blocker coverage gives \(k\) with \(z_k=z\).  The candidate-set
+identity then gives \(x\in B_k\), and substituting \(z=z_k\), using proof
+irrelevance for the subtype proof in the argument of \(\beta\), rewrites
+\(w'\) as the listed blocker \(b_k(x)\).  The wrong-candidate and non-root
+hypotheses ensure that no private vertex attached to another candidate, and
+no private vertex at the copied root, supplies an additional endpoint
+neighbor outside this local-plus-listed classification.
+
+Therefore the boundary-reduction node, with the target activation atom and
+priority rectangle laws and the cell \(C'_\omega\), gives the mass identity
+\[
+  \nu'(E'_{\phi(X)}\cap C'_\omega)
+  =
+  \nu'(D'_{\phi(X)}\cap C'_\omega).
+\]
+Combining this equality with the measured-stage identity at \(j=n\) and the
+target restricted marginal identity proves the target endpoint mass identity
+for the fixed \(\omega\).  Since \(\omega\) was arbitrary, the identity holds
+on every atom.
+\end{proof}

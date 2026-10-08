@@ -1,0 +1,61 @@
+\begin{helper}
+Let $\Delta>0$, let $L\ge0$, and fix a natural exponent $N$ and a parameter
+$\alpha$.  Suppose that on the window $0\le x\le y\le L$ the two finite
+survival factors satisfy the pointwise lower bounds
+\[
+\left(1-\frac{x}{\Delta}\right)^N
+\ge (1-\alpha)e^{-\alpha L}
+\quad\text{and}\quad
+\left(1-\frac{y}{\Delta}\right)^\Delta
+\ge (1-\alpha)e^{-y}.
+\]
+Assume also that \(1-\alpha\ge0\) and that the exponential window has the
+margin
+\[
+\frac53+2\alpha
+\le
+2\int_0^L\int_x^L
+(1-\alpha)e^{-\alpha L}(1-\alpha)e^{-y}\,dy\,dx .
+\]
+Then the finite high-overlap window contribution satisfies
+\[
+\frac2{\Delta^2}\int_0^L\int_x^L
+\left(1-\frac{x}{\Delta}\right)^N
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx
+\ge
+\frac{5/3+2\alpha}{\Delta^2}.
+\]
+\end{helper}
+\begin{proof}
+The proof is the direct finite-window comparison used in the high-overlap
+case.  Since \(1-\alpha\ge0\) and exponentials are positive, the lower bound
+\((1-\alpha)e^{-\alpha L}\) for the first factor is nonnegative.  On every
+point of the chamber \(0\le x\le y\le L\), the two assumed pointwise
+inequalities and multiplication by nonnegative quantities give
+\[
+\left(1-\frac{x}{\Delta}\right)^N
+\left(1-\frac{y}{\Delta}\right)^\Delta
+\ge
+(1-\alpha)e^{-\alpha L}(1-\alpha)e^{-y}.
+\]
+Both sides are continuous on the compact window, so interval-integral
+monotonicity first in \(y\in[x,L]\), and then in \(x\in[0,L]\), gives
+\[
+\int_0^L\int_x^L
+\left(1-\frac{x}{\Delta}\right)^N
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx
+\ge
+\int_0^L\int_x^L
+(1-\alpha)e^{-\alpha L}(1-\alpha)e^{-y}\,dy\,dx .
+\]
+Multiplying by the positive scale factor \(2/\Delta^2\) preserves the
+inequality.  The assumed exponential-window margin then yields
+\[
+\frac2{\Delta^2}\int_0^L\int_x^L
+\left(1-\frac{x}{\Delta}\right)^N
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx
+\ge
+\frac{5/3+2\alpha}{\Delta^2},
+\]
+as required.
+\end{proof}

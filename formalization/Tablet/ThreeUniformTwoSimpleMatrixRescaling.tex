@@ -1,0 +1,17 @@
+\begin{lemma}
+Let $r,Q,P,L$ be real numbers with $r\ge1$, $Q\ge0$, and $L\le3$.
+If $Q/9+P/27-L/27\le2/3^5$, then
+\[
+\frac{r^2Q}{9}+\frac{r^3P}{27}-\frac{rL}{27}
+\le r^3\frac{2}{3^5}+\frac{(r^2-1)r}{9}.
+\]
+\end{lemma}
+\begin{proof}
+Multiply the assumed inequality by $r^3\ge0$. The desired left side
+differs from this scaled left side by
+$-r^2(r-1)Q/9+(r^3-r)L/27$.
+The first summand is nonpositive. The coefficient $r^3-r$ is
+nonnegative, so the second is at most $(r^3-r)/9$ using $L\le3$.
+Adding these inequalities proves the claim, with
+$r^3-r=(r^2-1)r$.
+\end{proof}

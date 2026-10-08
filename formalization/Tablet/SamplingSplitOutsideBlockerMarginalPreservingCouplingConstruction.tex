@@ -1,0 +1,130 @@
+\begin{helper}
+Let \(V,V'\) be finite vertex sets with activation--priority laws
+\(\nu,\nu'\) satisfying the same Bernoulli activation parameter
+\(\gamma/\Delta\in[0,1]\) and the same finite lower-rectangle priority product
+law.  Fix an injective map \(\phi:V\to V'\), a finite source common-coordinate
+set \(S\subseteq V\), and the target common-coordinate set
+\(S'=\phi(S)\).  Suppose that a prescribed common-refined atom family
+\(C_\omega,C'_\omega,w(\omega)\) has already been constructed on this common
+surface, as in
+\(\noderef{SamplingSplitOutsideBlockerPrescribedCommonRefinedCellPackage}\):
+\[
+  w(\omega)\ge0,\qquad
+  \operatorname{ofReal}(w(\omega))=\nu(C_\omega)
+  =\nu'(C'_\omega),
+\]
+the source atoms are pairwise disjoint, the target atoms are pairwise
+disjoint, both atom families are measurable, and membership in
+\(C_\omega\) is transported to membership in \(C'_\omega\) by equality of the
+common activation trace and common priority coordinates.
+
+Then the prescribed atom surface admits an atomwise
+\(\noderef{SamplingSplitOutsideBlockerMarginalPreservingCouplingData}\)
+package.  That is, there are paired cells
+\(\widehat C_\omega\) and one paired measure \(\lambda\) on the natural
+product measurable space of
+\[
+  (\mathcal P(V)\times\mathbb R^V)\times
+  (\mathcal P(V')\times\mathbb R^{V'})
+\]
+such that
+\[
+  \widehat C_\omega\subseteq
+  \{((A,\pi),(A',\pi')):(A,\pi)\in C_\omega,\ (A',\pi')\in C'_\omega\},
+\]
+\[
+  \lambda(\widehat C_\omega)=\operatorname{ofReal}(w(\omega)),
+\]
+every paired state in \(\widehat C_\omega\) has synchronized common
+activation trace and common priorities, and the restriction of \(\lambda\) to
+\(\widehat C_\omega\) has the following source and target marginal
+identities: for every source event \(E\) and every target event \(E'\),
+measurable in their respective activation--priority product spaces,
+\[
+  \lambda(\{((A,\pi),(A',\pi')):(A,\pi)\in E\}\cap\widehat C_\omega)
+    =\nu(E\cap C_\omega),
+\]
+\[
+  \lambda(\{((A,\pi),(A',\pi')):(A',\pi')\in E'\}\cap\widehat C_\omega)
+    =\nu'(E'\cap C'_\omega).
+\]
+The construction is on the already fixed
+\(\Omega,C_\omega,C'_\omega,w(\omega)\) surface and introduces no new atom
+indexing.
+The measure $\lambda$ has a
+\noderef{SamplingSplitOutsideBlockerProductRealization} with parameter
+$\gamma/\Delta$, map $\phi$, and common set $S$. The cells are exactly
+\[
+\widehat C_\omega=\{(\eta,\eta'): \eta\in C_\omega,\ \eta'\in C'_\omega,
+ A'\cap S'=\phi(A\cap S),\ \pi'(\phi(v))=\pi(v)\ (v\in S)\}.
+\]
+\end{helper}
+\begin{proof}
+Write a source state as \(\eta=(A,\pi)\) and a target state as
+\(\eta'=(A',\pi')\).  We first invoke the registered copied-common product
+coupling construction
+\(\noderef{SamplingSplitOutsideBlockerCopiedCommonProductCouplingMarginals}\)
+with the present laws \(\nu,\nu'\), map \(\phi\), common coordinate set
+\(S=\texttt{sourceCoord}\), and \(S'=\texttt{targetCommonCoord}\).  Its
+hypotheses are exactly among the hypotheses of the present statement:
+\(0\le\gamma/\Delta\le1\), the source and target Bernoulli activation atom
+formulas, the source and target finite priority lower-rectangle formulas,
+injectivity of \(\phi\), and \(S'=\phi(S)\).  That node returns a paired
+measure \(\lambda\) on the natural paired activation--priority product space
+such that the nonsynchronized common-record set has \(\lambda\)-measure zero,
+and such that the source and target projections of \(\lambda\) are \(\nu\)
+and \(\nu'\) on every measurable source and target event. It also returns
+the tagged product realization of this same measure, which we retain.
+
+It remains to restrict this global synchronized coupling to the already fixed
+prescribed atoms.  Apply
+\(\noderef{SamplingSplitOutsideBlockerAtomwiseRestrictedMarginalCoupling}\)
+to this \(\lambda\), the present atom families \(C_\omega,C'_\omega\), and
+the present weights \(w(\omega)\).  Its hypotheses are again exactly the
+remaining hypotheses of the present statement: the nonnegativity of
+\(w(\omega)\), the two atom mass identities
+\[
+  \operatorname{ofReal}(w(\omega))=\nu(C_\omega),\qquad
+  \operatorname{ofReal}(w(\omega))=\nu'(C'_\omega),
+\]
+the transported common-cell membership equivalence on synchronized pairs,
+and the measurability of each \(C_\omega\) and \(C'_\omega\).
+
+That node defines
+\[
+  \widehat C_\omega
+  =\{(\eta,\eta'):\eta\in C_\omega,\ \eta'\in C'_\omega,\
+       A'\cap S'=\phi(A\cap S),\
+       \pi'(\phi(v))=\pi(v)\text{ for all }v\in S\}.
+\]
+Because nonsynchronized pairs have \(\lambda\)-measure zero and synchronized
+pairs satisfy
+\(\eta\in C_\omega\Longleftrightarrow\eta'\in C'_\omega\), this paired cell
+differs by a \(\lambda\)-null set from the one-sided source cylinder over
+\(C_\omega\) and also from the one-sided target cylinder over
+\(C'_\omega\).  Therefore the full marginal identities of \(\lambda\) give
+the paired-cell mass
+\[
+  \lambda(\widehat C_\omega)=\nu(C_\omega)
+  =\operatorname{ofReal}(w(\omega)),
+\]
+and, for every measurable source event \(E\) and target event \(E'\), the
+restricted identities
+\[
+  \lambda(\{(\eta,\eta'):\eta\in E\}\cap\widehat C_\omega)
+    =\nu(E\cap C_\omega),
+\]
+\[
+  \lambda(\{(\eta,\eta'):\eta'\in E'\}\cap\widehat C_\omega)
+    =\nu'(E'\cap C'_\omega).
+\]
+The same definition of \(\widehat C_\omega\) also gives the projection
+containment into \(C_\omega\times C'_\omega\) and the common activation and
+priority synchronization fields.  These are precisely the fields of
+\(\noderef{SamplingSplitOutsideBlockerMarginalPreservingCouplingData}\) on
+the original \(\Omega,C_\omega,C'_\omega,w(\omega)\) surface.  Hence the
+required data package exists. The restriction theorem explicitly preserves
+the supplied measure and exports the displayed exact cell formula. Rewriting
+by that measure identity transports the retained product realization to the
+returned coupling. No new coupling is chosen in this transport.
+\end{proof}

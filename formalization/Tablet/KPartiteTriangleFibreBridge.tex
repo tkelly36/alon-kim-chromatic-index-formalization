@@ -1,0 +1,39 @@
+\begin{helper}
+Let $G$ be a finite $k$-partite graph with part map
+$\operatorname{part}:V(G)\to [k]$.  Let $T$ be the set of three-element
+cliques of $G$.  For each increasing triple $i<j<\ell$ of part labels, let
+$A_i,A_j,A_\ell$ be the corresponding fibres of the part map, and let
+$N_{ij\ell}$ be the number of ordered triples
+$(a,b,c)\in A_i\times A_j\times A_\ell$ such that $ab,ac,bc$ are all
+edges of $G$.  Then
+\[
+|T|\le \sum_{i<j<\ell} N_{ij\ell}.
+\]
+\end{helper}
+\begin{proof}
+For every increasing triple $i<j<\ell$ and every ordered triangle
+$(a,b,c)\in A_i\times A_j\times A_\ell$, the three labels are distinct.
+Hence $a,b,c$ are distinct vertices, and the unordered set
+$\{a,b,c\}$ is a three-element clique of $G$.  Forgetting the order
+therefore defines a map from the disjoint union of all ordered fibre
+triangle sets, indexed by $i<j<\ell$, onto a subset of $T$.
+
+We claim this map is in fact onto all of $T$.  Let $S\in T$.  By definition
+$S$ has three vertices and every two distinct vertices in $S$ are adjacent.
+By \noderef{KPartiteTriangleDistinctParts}, the three part labels appearing
+on $S$ are also three distinct labels.  Put these labels in increasing order
+$i<j<\ell$.  For each of the labels $i,j,\ell$, choose the unique vertex of
+$S$ with that label.  Uniqueness follows because two distinct vertices of
+$S$ are adjacent, while the partite hypothesis forbids adjacent vertices
+from having the same part label.  Call the chosen vertices $a,b,c$ in the
+order of the labels $i,j,\ell$.  Then $(a,b,c)$ lies in
+$A_i\times A_j\times A_\ell$, and since $S$ is a clique the three graph
+edges $ab,ac,bc$ are present.  Thus $(a,b,c)$ is counted by
+$N_{ij\ell}$, and forgetting its order gives exactly $S$.
+
+Consequently the disjoint union of the ordered fibre triangle sets
+surjects onto $T$.  A finite set cannot have larger cardinality than a
+finite set that surjects onto it, so $|T|$ is at most the cardinality of
+that disjoint union.  The latter cardinality is precisely
+$\sum_{i<j<\ell}N_{ij\ell}$, proving the desired inequality.
+\end{proof}

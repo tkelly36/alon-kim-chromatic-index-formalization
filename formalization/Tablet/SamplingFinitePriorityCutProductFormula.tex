@@ -1,0 +1,161 @@
+\begin{helper}
+Let \(V\) be a finite set and let \(\nu\) be a probability law on pairs
+\((A,\pi)\), where \(A\subseteq V\) and \(\pi:V\to\mathbb R\).  Fix
+\(p\in[0,1]\).  Suppose that the activation atom of every set \(A_0\subseteq V\)
+has mass
+\[
+\nu\{A=A_0\}=
+\operatorname{ofReal}\!\left(p^{|A_0|}(1-p)^{|V|-|A_0|}\right),
+\]
+and suppose that, in the product-law sense expressed by lower rectangles, for
+every threshold vector \(s\in[0,1]^V\),
+\[
+\nu\{A=A_0,\ 0\le \pi(v)\le s_v\hbox{ for all }v\in V\}
+=
+\nu\{A=A_0\}\operatorname{ofReal}\!\left(\prod_{v\in V}s_v\right).
+\]
+Let \(L,U\subseteq V\) be disjoint finite coordinate sets and let
+\(t_v\in[0,1]\) for every \(v\in L\cup U\).  Then, for every activated set
+\(A_0\subseteq V\),
+\[
+\nu\{A=A_0,\ 0\le \pi(v)\le1\hbox{ for all }v\in V,\ 
+      \pi(v)\le t_v\hbox{ for }v\in L,\ 
+      t_v<\pi(v)\hbox{ for }v\in U\}
+\]
+equals
+\[
+\operatorname{ofReal}\!\left(
+p^{|A_0|}(1-p)^{|V|-|A_0|}
+\prod_{v\in L}t_v
+\prod_{v\in U}(1-t_v)\right).
+\]
+\end{helper}
+\begin{proof}
+Write
+\[
+\alpha=p^{|A_0|}(1-p)^{|V|-|A_0|}.
+\]
+The activation-atom hypothesis says \(\nu\{A=A_0\}=\operatorname{ofReal}(\alpha)\).
+The assumptions \(0\le p\le1\) imply \(\alpha\ge0\).
+
+For every subset \(B\subseteq U\), define a threshold vector \(s^B\) by
+\[
+s^B_v=
+\begin{cases}
+t_v,& v\in L\cup B,\\
+1,& v\notin L\cup B.
+\end{cases}
+\]
+Because \(L\cap U=\emptyset\), a coordinate of \(s^B\) is either one of the
+numbers \(t_v\) with \(v\in L\cup U\), or it is \(1\).  Hence
+\(0\le s^B_v\le1\) for every \(v\).  Let
+\[
+E_B=\{A=A_0,\ 0\le\pi(v)\le1\hbox{ for all }v\in V,\ 
+        \pi(v)\le t_v\hbox{ for }v\in L\cup B\}.
+\]
+The event \(E_B\) is exactly the lower rectangle in the hypothesis with
+threshold vector \(s^B\): on \(L\cup B\) the upper bound is \(t_v\), and off
+\(L\cup B\) the upper bound is \(1\).  Therefore
+\[
+\nu(E_B)
+=\nu\{A=A_0\}\operatorname{ofReal}\!\left(\prod_{v\in V}s^B_v\right)
+\]
+\[
+=
+\operatorname{ofReal}\!\left(
+\alpha
+\prod_{v\in L}t_v
+\prod_{v\in B}t_v\right).
+\tag{1}
+\]
+In the last equality we used disjointness of \(L\) and \(U\) to split
+\(\prod_v s^B_v\) into the \(L\)-part, the \(B\)-part, and factors equal to
+\(1\), and we used \(\operatorname{ofReal}(xy)=\operatorname{ofReal}(x)
+\operatorname{ofReal}(y)\) for nonnegative real factors.
+
+Now work inside the finite-measure cylinder \(E_\emptyset\).  It has finite
+mass by (1), because \(\operatorname{ofReal}\) of a real number is never
+\(\infty\).  For each \(S\subseteq U\), let \(D_S\) be the event
+\[
+\begin{aligned}
+D_S=\{&A=A_0,\ 0\le\pi(v)\le1\hbox{ for all }v\in V,\ 
+        \pi(v)\le t_v\hbox{ for }v\in L,\\
+     &t_v<\pi(v)\hbox{ for }v\in S,\ 
+        \pi(v)\le t_v\hbox{ for }v\in U\setminus S\}.
+\end{aligned}
+\]
+The events \(D_S\), \(S\subseteq U\), are pairwise disjoint: if
+\(u\in S\triangle T\), then one event imposes \(t_u<\pi(u)\) and the other
+imposes \(\pi(u)\le t_u\).  Their union is \(E_\emptyset\), since for each
+\(u\in U\) exactly one of the two alternatives
+\(\pi(u)\le t_u\) and \(t_u<\pi(u)\) holds.  More generally, for each
+\(B\subseteq U\),
+\[
+E_B=\bigsqcup_{S\subseteq U\setminus B}D_S,
+\tag{2}
+\]
+because the extra lower-cut requirements in \(E_B\) force every coordinate of
+\(B\) to lie on the \(\pi(u)\le t_u\) side, while the remaining coordinates
+of \(U\setminus B\) are free to choose either side.  Since all these sets are
+subsets of the finite-measure set \(E_\emptyset\), their measures are finite.
+Thus we may write \(d_S\in\mathbb R_{\ge0}\) for the real number satisfying
+\(\nu(D_S)=\operatorname{ofReal}(d_S)\), and finite additivity applied to
+(2) gives
+\[
+\nu(E_B)=\operatorname{ofReal}\!\left(\sum_{S\subseteq U\setminus B}d_S\right).
+\tag{3}
+\]
+Set
+\[
+r_B=\alpha\prod_{v\in L}t_v\prod_{v\in B}t_v .
+\]
+Equation (1) says \(\nu(E_B)=\operatorname{ofReal}(r_B)\), and \(r_B\ge0\).
+Comparing this with (3) and using injectivity of
+\(\operatorname{ofReal}\) on nonnegative real numbers gives
+\[
+\sum_{S\subseteq U\setminus B}d_S=r_B.
+\tag{4}
+\]
+
+Let \(D_U\) be the desired event, namely the event with all coordinates in
+\(U\) on the strict side \(t_v<\pi(v)\).  We determine \(d_U\) from the
+numbers \(r_B\) by finite Möbius inversion.  Starting from (4),
+\[
+\sum_{B\subseteq U}(-1)^{|B|}
+  \sum_{S\subseteq U\setminus B}d_S
+=
+\sum_{S\subseteq U}d_S
+  \sum_{B\subseteq U\setminus S}(-1)^{|B|}.
+\]
+The inner alternating sum is \((1-1)^{|U\setminus S|}\), so it is \(0\) unless
+\(S=U\), and it is \(1\) when \(S=U\).  Hence
+\[
+d_U=
+\sum_{B\subseteq U}(-1)^{|B|}r_B.
+\tag{5}
+\]
+Substituting the definition of \(r_B\), this becomes
+\[
+d_U=
+\alpha\prod_{v\in L}t_v
+\sum_{B\subseteq U}(-1)^{|B|}\prod_{v\in B}t_v.
+\]
+The remaining finite algebra identity is the expansion
+\[
+\prod_{v\in U}(1-t_v)
+=\sum_{B\subseteq U}(-1)^{|B|}\prod_{v\in B}t_v,
+\]
+obtained by choosing either the \(1\)-term or the \(-t_v\)-term in each
+factor.  Therefore
+\[
+d_U=\alpha\prod_{v\in L}t_v\prod_{v\in U}(1-t_v).
+\]
+
+Finally, \(\nu(D_U)=\operatorname{ofReal}(d_U)\).  Replacing \(\alpha\) by
+the activation atom
+\(p^{|A_0|}(1-p)^{|V|-|A_0|}\) gives exactly the displayed formula in the
+statement.  All real factors are nonnegative because \(0\le p\le1\) and
+\(0\le t_v\le1\), so the uses of \(\operatorname{ofReal}\) and finite
+additivity above take place inside finite real masses and then translate back
+to extended nonnegative real measure values.
+\end{proof}

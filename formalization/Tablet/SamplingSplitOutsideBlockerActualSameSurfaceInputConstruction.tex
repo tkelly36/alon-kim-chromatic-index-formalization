@@ -1,0 +1,211 @@
+\begin{helper}
+In the actual split-outside-blocker setting, assume the two
+activation--priority laws have the Bernoulli activation atom formulas and the
+finite lower-rectangle priority formulas with
+\(0\le\gamma/\Delta\le 1\).  Let \(\phi:V\to V'\) be injective, let
+\(r\in V\), let \(X\subseteq N_G(r)\), and suppose that \(\phi\) preserves
+all adjacencies inside \(X\cup\{r\}\).  Let
+\[
+  \beta(x,z)\in V'
+\]
+be the private replacement vertex attached to each outside incidence
+\(x\in X\), \(z\notin X\cup\{r\}\), \(xz\in E(G)\).  Assume that \(\beta\) is
+injective, fresh from \(\phi(X\cup\{r\})\), and adjacent to the intended
+vertex \(\phi(x)\).  Also assume the full local replacement conditions:
+\(\beta(x,z)\) is adjacent to no embedded candidate \(\phi(y)\) with
+\(y\in X\) except when \(y=x\), it is nonadjacent to \(\phi(r)\), and every
+neighbor of \(\phi(x)\) in \(G'\), for \(x\in X\), is either an embedded
+neighbor \(\phi(y)\) with \(y\in X\cup\{r\}\) and \(xy\in E(G)\), or is one of
+the private vertices \(\beta(x,z)\) attached to an outside source neighbor
+\(z\notin X\cup\{r\}\) of \(x\).
+
+Then there is a single actual witness surface consisting of an injective
+enumeration \(z_0,\ldots,z_{n-1}\) of all outside blockers adjacent to
+\(X\), candidate sets \(B_k=\{x\in X:xz_k\in E(G)\}\), source and target
+coordinate layers, a finite atom index set \(\Omega\), paired cells
+\(C_\omega,C'_\omega\), and common weights \(w(\omega)\).  These witnesses
+satisfy all coordinate clauses of
+\(\noderef{SamplingSplitOutsideBlockerActualCoordinatePackage}\) and all
+prescribed common refined-cell clauses of
+\(\noderef{SamplingSplitOutsideBlockerPrescribedCommonRefinedCellPackage}\):
+cell masses agree with \(w\) on both sides, source and target cells are
+pairwise disjoint, they cover the unit-priority supports up to the stated null
+complements, and cell membership is transported by equality of the common
+activation trace and common priority coordinates.  In addition, each returned
+source cell \(C_\omega\) and target cell \(C'_\omega\) is measurable, and the
+source endpoint event \(I_G(A,\pi)\cap X\ne\emptyset\) and target endpoint
+event \(I_{G'}(A',\pi')\cap\phi(X)\ne\emptyset\) are measurable in the
+corresponding activation--priority product spaces.
+
+On this same \(n,z,B,\Omega,C,C',w\) surface there is a
+\(\noderef{SamplingSplitOutsideBlockerActualSameSurfaceInputData}\) package.
+Equivalently, one has a paired mixed measure surface together with the source
+endpoint identity, the target endpoint identity, and the adjacent
+shared-context decompositions for the consecutive mixed masses.  The theorem
+does not assert a same-index source--target stage equality and does not sum
+paired outside-\(B_k\) primitive atom equalities; it records the concrete
+same-surface input that must be built below the hybrid mass law.
+\end{helper}
+\begin{proof}
+Apply
+\(\noderef{SamplingSplitOutsideBlockerActualCoordinatePackage}\) to
+\(G,G',\phi,r,X\), and \(\beta\), using the injectivity, freshness, and
+intended-adjacency hypotheses required by that coordinate package.  Its
+statement returns the actual
+outside-blocker list \(z_0,\ldots,z_{n-1}\), the sets \(B_k\), the source
+common and extension coordinates, the target common and extension
+coordinates, and the full target coordinate set.  The returned clauses give
+the injectivity of \(k\mapsto z_k\), the fact that every listed \(z_k\) lies
+outside \(X\cup\{r\}\) and is adjacent to some vertex of \(X\), the converse
+coverage of every outside blocker adjacent to \(X\), the identity
+\(B_k=\{x\in X:xz_k\in E(G)\}\), the source-coordinate disjointness and
+containment clauses, the identity of the target common coordinates with the
+\(\phi\)-image of the source common coordinates, the target-coordinate
+disjointness and union clauses, and the containment of every relevant
+private blocker \(\beta(x,z_k)\) in the target extension coordinates.
+
+Now keep exactly these witnesses fixed and apply
+\(\noderef{SamplingSplitOutsideBlockerPrescribedCommonRefinedCellPackage}\).
+Because that node is prescribed on the supplied coordinate surface, it does
+not change \(n,z_k,B_k\) or any coordinate set.  It returns a finite atom type
+\(\Omega\), source cells \(C_\omega\), target cells \(C'_\omega\), and weights
+\(w(\omega)\).  Its statement supplies \(w(\omega)\ge0\), the two mass
+identities
+\[
+  \operatorname{ofReal}(w(\omega))=\nu(C_\omega),
+  \qquad
+  \operatorname{ofReal}(w(\omega))=\nu'(C'_\omega),
+\]
+source and target pairwise disjointness, source and target unit-support
+cover, the two null-complement identities, and the transported
+common-coordinate membership equivalence for each \(\omega\).
+
+It remains to build the actual same-surface input on this very atom surface.
+First apply
+\(\noderef{SamplingSplitOutsideBlockerMarginalPreservingCouplingConstruction}\)
+to the same \(\nu,\nu',\phi,\texttt{sourceCoord},
+\texttt{targetCommonCoord},\Omega,C,C'\), and \(w\).  Its hypotheses are
+the activation and priority product laws from the present theorem, the
+identity
+\(\texttt{targetCommonCoord}=\phi(\texttt{sourceCoord})\) from the coordinate
+package, and the nonnegativity, mass, disjointness, transported-membership,
+and measurability clauses from the prescribed common-refined-cell package.
+It gives paired cells
+\(\widehat C_\omega\subseteq C_\omega\times C'_\omega\) and one paired
+measure \(\lambda\) on the same atom index set \(\Omega\), with
+\[
+  \lambda(\widehat C_\omega)=\operatorname{ofReal}(w(\omega)).
+\]
+Moreover, every paired state in \(\widehat C_\omega\) synchronizes the
+common activation trace and common priority coordinates, and the restriction
+of \(\lambda\) to \(\widehat C_\omega\) has source marginal
+\(\nu|_{C_\omega}\) and target marginal \(\nu'|_{C'_\omega}\).  This is the
+registered paired-coupling layer; no endpoint or adjacent comparison is
+obtained from total mass equality alone.
+The strengthened constructor also exports the exact paired-cell formula
+and a \noderef{SamplingSplitOutsideBlockerProductRealization} for this
+same $\lambda$. In particular it is the push-forward of the independent
+Bernoulli--uniform tag law, not an arbitrary coupling with those marginals.
+Apply \noderef{SamplingSplitOutsideBlockerProductAtomContextInvariant}
+using its tag-overlap clause, the prescribed membership transport, and the
+exact paired-cell formula. The inverse paired cell is a source-cell
+pullback and is unchanged whenever all common-tag coordinates are fixed.
+Each source-current tag is noncommon: $z_k$ is in the extension set
+disjoint from the common set, and source tags are injective. Each target
+private tag is noncommon too: an equality with a common source tag would,
+by the overlap clause, put that private vertex in the target common set,
+contradicting target extension disjointness. Thus restricting to the paired
+atom does not constrain the current tags. This conclusion holds pointwise
+on the tagged product space and needs no conditioning on priority values.
+
+Apply
+\(\noderef{SamplingSplitOutsideBlockerActualMixedStageMassNormalization}\)
+directly to these fixed witnesses and this coupling, using the already proved
+nonnegativity of \(w\).  It supplies the displayed paired mixed events
+\(\widehat S_j(\omega)\): a single candidate is active on both copies,
+passes both embedded-neighbor tests, passes the private tests for \(i<j\),
+and passes the retained source tests for \(j\le i<n\).  It also supplies one
+family \(M_j(\omega)\), nonnegative for every \(j,\omega\), zero whenever
+\(w(\omega)=0\), and satisfying
+\[
+ \operatorname{ofReal}(w(\omega)M_j(\omega))
+ =\lambda(\widehat S_j(\omega)\cap\widehat C_\omega)
+ \qquad(j\le n).
+\]
+Together with the coordinate fields, synchronization, projections and cell
+masses supplied by the same coupling, these are all the fields of
+\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}.
+Thus the slim carrier is now assembled on these witnesses; it has no
+intermediate boundary projections or assumed adjacent inequalities.
+
+For each \(k<n\), use
+\noderef{SamplingSplitOutsideBlockerActualAdjacentSharedContextProducer}
+on this carrier. It supplies the measurable paired context \(C_x\), the
+unchanged success event \(U\) witnessed outside \(B_k\), and the two paired
+boundaries \(L,R\), both excluding \(U\). It proves the disjoint identities
+\(\widehat S_k=U\mathbin{\dot\cup}L\) and
+\(\widehat S_{k+1}=U\mathbin{\dot\cup}R\).
+These are identities for paired events, not one-sided pullbacks.
+The candidate and all its noncurrent tests use the same witness.
+
+Moreover,
+\noderef{SamplingSplitOutsideBlockerPairedContextCurrentInvariant}
+applies with injectivity of \(z_i\), injectivity of \(\beta\), the outside
+condition, and private-coordinate freshness from the present hypotheses.
+It shows that each \(C_x\) is unaffected by changing the source-current
+coordinate or any target-current private coordinate. Consequently \(U\)
+and the survivor set \(K=\{x\in B_k:C_x\}\) are unchanged under those
+coordinate changes. This is an event-level statement only.
+
+Now apply \noderef{SamplingSplitOutsideBlockerActualProductAdjacentIntegral}
+on this same carrier, with $p=\gamma/\Delta$, the retained product
+realization, and the exact cell formula from the coupling constructor.
+Its measurability, weight nonnegativity, and membership-transport
+hypotheses are precisely the clauses of the prescribed atom package.
+Its remaining coordinate hypotheses follow from disjointness:
+$z_i$ is in the source extension set and therefore is not in the source
+common set; each $\beta(x,z_i)$ is in the target extension set and
+therefore is not in the target common set. Injectivity of $\beta$ is
+an original hypothesis. The integral theorem yields, for every $k<n$
+and every $\omega$, nonnegative $u,l,r'$ representing the actual paired
+piece masses divided by the atom weight when that weight is positive,
+and zero when the weight is zero. It proves
+\[
+ M_k(\omega)=u+l,\qquad M_{k+1}(\omega)=u+r',\qquad l\le r'.
+\]
+These are exactly the required numerical adjacent certificates. In
+particular the theorem uses the same global $M$ supplied by normalization;
+no representatives are chosen independently at the two ends of each step.
+The fiber calculation and integration used to establish this certificate
+are registered below the integral theorem, not assumed as fields of the
+carrier.
+
+For the source endpoint apply
+\noderef{SamplingSplitOutsideBlockerActualSourceEndpointFromCoupling}
+to this carrier and coupling. The paired measure and paired cells agree
+by their definitions. Injectivity of $\phi$ is assumed; the outside-blocker
+coverage is supplied by the coordinate package; the parameter bounds and
+source product laws are original hypotheses. The exact source endpoint
+event is measurable by the prescribed atom package. Thus it gives
+$\operatorname{ofReal}(wM_0)=\nu(\{I_G\cap X\ne\varnothing\}\cap C_\omega)$.
+For the target endpoint apply
+\noderef{SamplingSplitOutsideBlockerActualTargetEndpointFromCoupling}.
+Again the measures and cells agree definitionally, coverage comes from
+the coordinate package, and the product laws, parameter bounds, embedded
+adjacency equivalence, intended private adjacency, uniqueness of its
+candidate neighbor, nonadjacency to the root, and exhaustive local
+neighbor description are all original hypotheses. The target endpoint
+measurability is also a conclusion of the atom package. The result is
+$\operatorname{ofReal}(wM_n)=\nu'(\{I_{G'}\cap\phi(X)\ne\varnothing\}
+\cap C'_\omega)$. These endpoint theorems include their displayed-event
+measurability and strict-boundary reduction; no intermediate event is
+projected to one side.
+
+The surface, these two endpoint identities, and the adjacent certificates
+are precisely the four fields of
+\noderef{SamplingSplitOutsideBlockerActualSameSurfaceInputData}.
+Assemble them, retaining the original enumeration, coordinate sets, cells,
+weights, disjointness, support-cover, null-complement, membership-transport,
+and measurability clauses already obtained above. This proves every
+conjunct of the requested existential on one and the same witness surface.
+\end{proof}

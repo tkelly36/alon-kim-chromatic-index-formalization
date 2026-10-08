@@ -1,0 +1,57 @@
+\begin{helper}
+Let \(0<1-\alpha\), let \(0\le t\le L<\Delta\), and let
+\(N\le\Delta\).  If the fixed-window error bound
+\[
+\frac{L^2}{\Delta-L}\le -\log(1-\alpha)
+\]
+holds, then
+\[
+\left(1-\frac t\Delta\right)^N
+\ge
+(1-\alpha)\exp\left(-\frac N\Delta t\right).
+\]
+\end{helper}
+\begin{proof}
+Put \(d=\Delta\) and \(u=t/d\).  Since \(0\le t\le L<d\), we have
+\(0\le u<1\).  The elementary logarithmic inequality
+\[
+1-x^{-1}\le \log x\qquad (x>0)
+\]
+applied to \(x=1-u\) gives
+\[
+\log(1-u)\ge -\frac{u}{1-u}
+= -u-\frac{u^2}{1-u}.
+\]
+Multiplying by the nonnegative number \(N\), we obtain
+\[
+N\log(1-u)\ge
+-Nu-\frac{Nu^2}{1-u}.
+\]
+
+It remains to check that the second-order loss is absorbed by the assumed
+window error.  Since \(N\le d\), \(0\le t\le L\), and \(L<d\),
+\[
+\frac{Nu^2}{1-u}
+=\frac{N(t/d)^2}{1-t/d}
+\le \frac{t^2}{d-t}
+\le \frac{L^2}{d-L}
+\le -\log(1-\alpha).
+\]
+Therefore
+\[
+\log(1-\alpha)-Nu
+\le
+-Nu-\frac{Nu^2}{1-u}
+\le N\log(1-u).
+\]
+The left side is
+\[
+\log\left((1-\alpha)\exp(-Nu)\right),
+\]
+because \(1-\alpha>0\).  Exponentiating preserves the inequality and yields
+\[
+(1-\alpha)e^{-Nu}\le (1-u)^N.
+\]
+Substituting back \(u=t/\Delta\) proves the claimed pointwise finite-product
+lower bound.
+\end{proof}

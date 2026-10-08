@@ -1,0 +1,59 @@
+\begin{helper}
+Fix a finite simple graph $G$, a vertex $v$, a regularity value $\Delta$ with
+$\deg_G(v)=\Delta$ for every vertex $v$, a sampling parameter $\gamma$, and a
+priority threshold $a$.  For each activation-decision function
+$b:V(G)\to\{\mathrm{inactive},\mathrm{active}\}$, give an activated copy of
+$v$ weight $\gamma/\Delta$, an inactive copy of $v$ weight $0$, an activated
+neighbor of $v$ weight $(\gamma/\Delta)a$, an inactive neighbor of $v$ weight
+$1-\gamma/\Delta$, an activated non-neighbor different from $v$ weight
+$\gamma/\Delta$, and an inactive non-neighbor different from $v$ weight
+$1-\gamma/\Delta$.  Then the total activation-decision weight is
+\[
+\sum_b\prod_{u\in V(G)}W_u(b(u))
+=
+\frac{\gamma}{\Delta}
+\left(1-\frac{\gamma}{\Delta}(1-a)\right)^\Delta .
+\]
+\end{helper}
+\begin{proof}
+Apply \noderef{SamplingOneVertexActivationDecisionProduct} with
+\[
+p=\frac{\gamma}{\Delta}
+\qquad\text{and}\qquad
+q=1-\frac{\gamma}{\Delta}.
+\]
+It gives
+\[
+\sum_b\prod_{u\in V(G)}W_u(b(u))
+=
+\frac{\gamma}{\Delta}
+\prod_{u\in V(G)}
+\begin{cases}
+1, & u=v,\\
+1-\gamma/\Delta+(\gamma/\Delta)a, & u\sim_G v,\\
+1, & u\ne v\text{ and }u\not\sim_G v,
+\end{cases}
+\]
+because the non-neighbor factor is
+$(1-\gamma/\Delta)+\gamma/\Delta=1$.
+
+For a neighbor $u$ of $v$, the remaining nontrivial factor satisfies
+\[
+1-\frac{\gamma}{\Delta}+\frac{\gamma}{\Delta}a
+=
+1-\frac{\gamma}{\Delta}(1-a).
+\]
+The factor at $u=v$ is $1$, and a simple graph has no loop at $v$, so this
+special vertex does not contribute to the neighbor count.  Every
+non-neighbor also contributes the factor $1$.  Therefore the whole product is
+the constant
+$1-\frac{\gamma}{\Delta}(1-a)$ raised to the number of neighbors of $v$.
+By the regularity hypothesis, this number is $\deg_G(v)=\Delta$.  Substituting
+this into the preceding displayed formula gives exactly
+\[
+\sum_b\prod_{u\in V(G)}W_u(b(u))
+=
+\frac{\gamma}{\Delta}
+\left(1-\frac{\gamma}{\Delta}(1-a)\right)^\Delta .
+\]
+\end{proof}

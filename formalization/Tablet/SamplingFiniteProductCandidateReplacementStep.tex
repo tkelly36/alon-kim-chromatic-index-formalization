@@ -1,0 +1,147 @@
+\begin{helper}
+Let \(C\) be a nonempty finite set of candidates.  Fix an activation
+parameter \(p\in[0,1]\) and candidate priorities \(\pi(x)\in[0,1]\) for
+\(x\in C\).  Let \(\eta\) be the product law of one Bernoulli-\(p\)
+activation coordinate together with one independent uniform priority
+coordinate, with total mass \(1\), expressed by the lower-rectangle identities
+\[
+\eta\{a=1,\ 0\le q\le t\}=\operatorname{ofReal}(pt)
+\qquad(0\le t\le1)
+\]
+and \(\eta\{a=1,\ q\in[0,1]\}=\operatorname{ofReal}(p)\).
+Let \(\theta\) be the probability law of independent Bernoulli-\(p\)
+activation coordinates and independent uniform priority coordinates indexed by
+\(C\):
+for every \(A\subseteq C\) and every \(t_x\in[0,1]\), \(x\in A\),
+\[
+\theta\{a_x={\bf 1}_{x\in A}\text{ for all }x\in C,\ 
+       0\le q_x\le t_x\text{ for all }x\in A\}
+=\operatorname{ofReal}\!\left(
+  p^{|A|}(1-p)^{|C|-|A|}\prod_{x\in A}t_x\right).
+\]
+Then the probability that at least one candidate is not killed by its private
+blocker under \(\theta\) is at least the probability that at least one
+candidate is not killed by the single common blocker under \(\eta\):
+\[
+\eta\{\neg(a=1,\ q\in[0,1],\ \pi(x)<q\text{ for every }x\in C)\}
+\le
+\theta\{\exists x\in C:\neg(a_x=1,\ q_x\in[0,1],\ \pi(x)<q_x)\}.
+\]
+\end{helper}
+\begin{proof}
+Apply
+\(\noderef{SamplingCandidateSetReplacementSurvivalComparison}\) to the finite
+set \(C\), the number \(p\), and the function \(\pi\).  Its statement supplies
+a witness \(x_0\in C\) such that \(\pi(x)\le \pi(x_0)\) for every \(x\in C\)
+and
+\[
+1-p(1-\pi(x_0))
+\le
+1-\prod_{x\in C}p(1-\pi(x)).
+\tag{1}
+\]
+We use this supplied witness in the one-blocker computation; no separate
+maximizer is chosen.
+
+Let
+\[
+K=\{a=1,\ q\in[0,1],\ \pi(x)<q\text{ for every }x\in C\}
+\]
+be the event that the common blocker kills all candidates.  Because \(x_0\)
+has maximal priority, the condition \(\pi(x)<q\) for every \(x\in C\) is
+equivalent to \(\pi(x_0)<q\).  Inside the active unit event
+\[
+U=\{a=1,\ 0\le q\le1\},
+\]
+the two disjoint events
+\[
+L=\{a=1,\ 0\le q\le\pi(x_0)\}
+\quad\text{and}\quad
+K=\{a=1,\ \pi(x_0)<q\le1\}
+\]
+partition \(U\).  This is an exact order partition; it does not use
+conditioning on the value \(q=\pi(x_0)\) and does not require a separate
+atomlessness assertion.  The hypotheses on \(\eta\) give
+\[
+\eta(U)=\operatorname{ofReal}(p),\qquad
+\eta(L)=\operatorname{ofReal}(p\,\pi(x_0)),
+\]
+since \(0\le\pi(x_0)\le1\).  As \(0\le p\,\pi(x_0)\le p\le1\), finite
+additivity on the disjoint union \(U=L\sqcup K\) gives
+\[
+\eta(K)
+=\operatorname{ofReal}(p)-\operatorname{ofReal}(p\,\pi(x_0))
+=\operatorname{ofReal}\bigl(p(1-\pi(x_0))\bigr).
+\]
+The common-blocker survival event in the statement is \(K^c\).  Since
+\(\eta\) has total mass \(1\),
+\[
+\eta(K^c)=\operatorname{ofReal}\bigl(1-p(1-\pi(x_0))\bigr).
+\tag{2}
+\]
+
+Now let \(P\) be the event that every private blocker kills its candidate:
+\[
+P=\{a_x=1,\ q_x\in[0,1],\ \pi(x)<q_x
+       \text{ for every }x\in C\}.
+\]
+The private-blocker survival event in the statement is \(P^c\).  Indeed, over
+the finite nonempty set \(C\), saying that some candidate is not killed by its
+private blocker is exactly the negation of saying that all candidates are
+killed by their private blockers.
+
+It remains to compute \(\theta(P)\) from the cylinder identities.  Write
+\[
+U_C=\{a_x=1,\ 0\le q_x\le1\text{ for every }x\in C\}
+\]
+for the all-active unit cube.  Taking the activation set \(A=C\) and the
+constant threshold \(t_x=1\) in the cylinder identity gives
+\[
+\theta(U_C)=\operatorname{ofReal}(p^{|C|}).
+\]
+Apply \noderef{SamplingFiniteProductLowerOrthantEqualityMeasurable}
+with \(F=U_C\), the priority projection \(q=(q_x)_{x\in C}\),
+\(M=\operatorname{ofReal}(p^{|C|})\), and the box
+\(D=\prod_{x\in C}(\pi(x),1]\).
+The projection is measurable because the supplied sample space has the
+all-subsets measurable structure.  The preceding threshold-one calculation
+gives \(\theta(F)=M<\infty\).  For unit thresholds \(t_x\), the condition
+\(0\le q_x\le t_x\) already implies \(q_x\in[0,1]\); hence the cylinder
+identity with \(A=C\) gives exactly
+\[
+\theta\{F,\ 0\le q_x\le t_x\text{ for all }x\}
+=M\operatorname{ofReal}\left(\prod_{x\in C}t_x\right).
+\]
+The box \(D\) is Borel and lies in the unit cube since \(\pi(x)\ge0\).
+The cited theorem therefore gives the mass of \(F\cap\{q\in D\}\),
+with its redundant unit-cube intersection, as \(M\operatorname{vol}(D)\).
+This event is exactly \(P\).  Finite-product Lebesgue volume gives
+\(\operatorname{vol}(D)=\prod_{x\in C}\operatorname{ofReal}(1-\pi(x))\).
+All factors are nonnegative, so their product is
+\(\operatorname{ofReal}(\prod_{x\in C}(1-\pi(x)))\).  Since
+\(\prod_{x\in C}p(1-\pi(x))=p^{|C|}\prod_{x\in C}(1-\pi(x))\), we get
+\[
+\theta(P)=
+\operatorname{ofReal}\!\left(\prod_{x\in C}p(1-\pi(x))\right).
+\tag{4}
+\]
+All terms are nonnegative and at most \(1\), because \(0\le p\le1\) and
+\(0\le\pi(x)\le1\).  Therefore total mass \(1\) and (4) give
+\[
+\theta(P^c)=
+\operatorname{ofReal}\!\left(
+1-\prod_{x\in C}p(1-\pi(x))\right).
+\tag{5}
+\]
+
+Combining (1), (2), and (5), and using monotonicity of
+\(\operatorname{ofReal}\) on real numbers, yields exactly
+\[
+\eta(K^c)\le\theta(P^c).
+\]
+This is the claimed comparison.  The argument only uses finite additivity,
+the stated lower-rectangle/cylinder identities, and the cited measurable
+lower-orthant theorem; it never conditions on an exact value of a continuous
+priority coordinate and never infers arbitrary strict-threshold event
+probabilities directly from \(\noderef{RandomIndependentSetSampling}\).
+\end{proof}

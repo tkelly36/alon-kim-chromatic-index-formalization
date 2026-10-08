@@ -1,0 +1,33 @@
+\begin{helper}
+Let \(V\) be finite, let \(u\ne v\), and let
+\(B_U,B_T\subseteq V\setminus\{u,v\}\) be disjoint.  If
+\(0\le b\le a\le1\), then in the complementary coordinate space
+\(\mathbb R^{V\setminus\{u,v\}}\) the product box with side interval
+\([0,a)\) on \(B_U\), side interval \([0,b)\) on \(B_T\), and side interval
+\([0,1)\) on all other complementary coordinates has volume
+\[
+a^{|B_U|}b^{|B_T|}.
+\]
+\end{helper}
+\begin{proof}
+Let \(W=V\setminus\{u,v\}\).  Define the upper endpoint
+\[
+U(w)=
+\begin{cases}
+a,&w\in B_U,\\
+b,&w\in B_T,\\
+1,&w\notin B_U\cup B_T.
+\end{cases}
+\]
+The box in the statement is \(\prod_{w\in W}[0,U(w))\).  By the finite
+product formula for half-open intervals, its Lebesgue volume is
+\[
+\prod_{w\in W} (U(w)-0).
+\]
+Since \(B_U\) and \(B_T\) are disjoint and both avoid \(u\) and \(v\), their
+images inside \(W\) have exactly the same cardinalities as \(B_U\) and
+\(B_T\).  The product over \(W\) therefore has one factor \(a\) for each
+element of \(B_U\), one factor \(b\) for each element of \(B_T\), and one
+factor \(1\) for every remaining coordinate.  Hence the product is
+\(a^{|B_U|}b^{|B_T|}\), as claimed.
+\end{proof}

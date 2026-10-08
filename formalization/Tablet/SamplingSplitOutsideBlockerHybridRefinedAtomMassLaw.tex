@@ -1,0 +1,103 @@
+\begin{helper}
+Let \(V,V'\), and \(\Lambda\) be finite types with decidable equality, and
+let the source and target state spaces
+\(\mathcal P(V)\times\mathbb R^V\) and
+\(\mathcal P(V')\times\mathbb R^{V'}\) carry the source and target laws
+\(\nu,\nu'\).  For each base index \(\omega_0\), let
+\[
+C^0_{\omega_0}\subseteq \mathcal P(V)\times\mathbb R^V,\qquad
+C^{\prime0}_{\omega_0}\subseteq \mathcal P(V')\times\mathbb R^{V'}
+\]
+be paired supported base cells.  Let
+\(Q_\lambda\) and \(Q'_\lambda\), \(\lambda\in\Lambda\), be the finite list
+of source and target Boolean labels used by the Hybrid secondary refinement,
+and let \(T_{\omega_0}\) be the paired transport relation on the base cells.
+Assume the base cells and labels are measurable, and that \(T_{\omega_0}\)
+transports membership in the base cells and in every label \(Q_\lambda\) to
+the corresponding \(Q'_\lambda\).
+
+For a truth vector \(\tau\subseteq\Lambda\), define the refined atoms
+\[
+C^0_{\omega_0,\tau}
+=C^0_{\omega_0}\cap
+  \{\eta:\eta\in Q_\lambda\Longleftrightarrow\lambda\in\tau
+      \text{ for all }\lambda\in\Lambda\},
+\]
+and define \(C^{\prime0}_{\omega_0,\tau}\) analogously using the target
+labels.  Assume that, for each \((\omega_0,\tau)\), the refined source and
+target atoms already carry the common real mass certificate supplied by the
+actual positive-mass product-subcell analysis on the supported common atom
+family, together with the zero-mass branch: there is
+\(w_{\omega_0,\tau}\ge0\) whose extended nonnegative value is both the source
+atom mass and the corresponding target atom mass.  Candidate priorities are
+carried by the registered common-atom marginal, while current and private
+blockers enter through fresh-coordinate product laws, not through an old-cut
+Boolean wrapper.
+
+Then the atoms \(C^0_{\omega_0,\tau}\) and
+\(C^{\prime0}_{\omega_0,\tau}\) are measurable; as \(\tau\) ranges over the
+finite truth vectors, the source atoms form a finite pairwise-disjoint cover
+of \(C^0_{\omega_0}\) and the target atoms form a finite pairwise-disjoint
+cover of \(C^{\prime0}_{\omega_0}\); transported paired states lie in
+corresponding truth-vector atoms; finite additivity gives
+\[
+\nu(C^0_{\omega_0})=\sum_{\tau\subseteq\Lambda}
+  \nu(C^0_{\omega_0,\tau}),\qquad
+\nu'(C^{\prime0}_{\omega_0})=\sum_{\tau\subseteq\Lambda}
+  \nu'(C^{\prime0}_{\omega_0,\tau});
+\]
+and for each \((\omega_0,\tau)\) there is \(w_{\omega_0,\tau}\ge0\) with
+\[
+\operatorname{ofReal}(w_{\omega_0,\tau})
+=\nu(C^0_{\omega_0,\tau})
+=\nu'(C^{\prime0}_{\omega_0,\tau}).
+\]
+These are precisely the atom-mass and finite-additivity inputs needed by
+\(\noderef{SamplingSplitOutsideBlockerStageCellCommonRefinement}\).
+\end{helper}
+\begin{proof}
+Fix \(\omega_0\).  Measurability of a truth-vector atom follows from the
+measurability of the base cell and the finitely many label sets: the atom is
+the base cell intersected with, for each \(\lambda\), either \(Q_\lambda\) or
+its complement.  The same finite-intersection argument applies on the target
+side.
+
+Because \(\Lambda\) is finite, every source state in \(C^0_{\omega_0}\) has
+a unique truth vector
+\[
+\tau(\eta)=\{\lambda\in\Lambda:\eta\in Q_\lambda\}.
+\]
+This proves that the source truth-vector atoms cover the base cell.  If two
+truth vectors differ, some label \(\lambda\) has different membership status
+in them, so no state can lie in both corresponding atoms.  Hence the cover is
+pairwise disjoint.  The target cover and target disjointness are identical
+with \(Q'_\lambda\) in place of \(Q_\lambda\).
+
+Now let \(T_{\omega_0}(\eta,\eta')\) hold.  The paired-cell transport says
+\(\eta\in C^0_{\omega_0}\) iff
+\(\eta'\in C^{\prime0}_{\omega_0}\), and label transport says
+\(\eta\in Q_\lambda\) iff \(\eta'\in Q'_\lambda\) for every
+\(\lambda\).  Combining these equivalences with the definition of the
+truth-vector atoms gives
+\[
+\eta\in C^0_{\omega_0,\tau}
+\Longleftrightarrow
+\eta'\in C^{\prime0}_{\omega_0,\tau}.
+\]
+
+The mass comparison is the only point at which the split-blocker product
+analysis enters this bookkeeping lemma.  It enters as a hypothesis of the
+present statement: for each \((\omega_0,\tau)\) there is a nonnegative real
+\(w_{\omega_0,\tau}\) whose extended nonnegative value is both the source
+atom mass and the transported target atom mass.  This is exactly the
+supported-common-atom output provided upstream by the actual positive-mass
+product-subcell producer together with the zero-mass branch; the present node
+does not derive that analytic product fact and does not repackage the fixed
+stage calculation.
+
+Finally apply finite additivity to the finite measurable disjoint covers just
+constructed.  This gives the two displayed base-to-atom sum identities.  The
+transported atom-mass identity and the nonnegative representatives supplied
+by the atom-mass hypothesis are exactly the remaining inputs required by
+\(\noderef{SamplingSplitOutsideBlockerStageCellCommonRefinement}\).
+\end{proof}

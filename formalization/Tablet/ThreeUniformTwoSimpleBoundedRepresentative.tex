@@ -1,0 +1,49 @@
+\begin{helper}
+Let $D>0$ be an integer, let $\mathcal H\in H(3,2,D)$ have finitely
+many edge indices (with no finiteness assumption on its vertex set), and
+let $e$ be an edge index. There exist natural numbers $m,\ell$ with
+$m\le 1+3(D-1)$ and $\ell\le 3m$, a hypergraph
+$\mathcal F\in H(3,2,D)$ on vertex set $\operatorname{Fin}(\ell)$ and
+edge-index set $\operatorname{Fin}(m)$, and an index $f$, such that
+\[
+b_{L(\mathcal H),3D}(e)=b_{L(\mathcal F),3D}(f).
+\]
+\end{helper}
+\begin{proof}
+By \noderef{HypergraphClass}, $\mathcal H$ also belongs to $H(3,3,D)$:
+its intersection bound two implies the bound three. Apply
+\noderef{KUniformKSimpleLocalTruncationPreservesBParameter} with $k=3$.
+Write $\mathcal K,a$ for the resulting truncation. Its edge-index
+bijection identifies its indices with $e$ and the line-graph neighbors of
+$e$; its vertex bijection identifies its vertices with those lying in
+these retained edges. Its incidence equivalence identifies each local
+edge with its original edge, and its local $b$-value equals the original
+value. For distinct local indices, the vertex map injects their
+intersection into the intersection of the corresponding distinct original
+edges. Thus their intersection has size at most two. The truncation's
+uniformity and degree bounds, together with this observation, show that
+$\mathcal K\in H(3,2,D)$.
+
+Every index other than $a$ intersects $a$, by the incidence equivalence
+and the edge-index bijection. For each $x\in\mathcal K(a)$ let $A_x$ be
+the set of indices other than $a$ containing $x$. Its size is
+$\deg_{\mathcal K}(x)-1\le D-1$. The union of these three sets contains
+every index other than $a$, so, writing $m$ for the number of local
+indices, $m-1\le 3(D-1)$. Let $S$ be the union of all local edges and
+put $\ell=|S|$. The union bound and uniformity give $\ell\le 3m$.
+
+Choose bijections from $\operatorname{Fin}(\ell)$ to $S$ and from the
+local edge indices to $\operatorname{Fin}(m)$. Define $\mathcal F$ by
+transporting incidence under these bijections, and take $f$ to be the
+image of $a$. Each edge and each pairwise intersection is in bijection
+with its counterpart in $\mathcal K$. Each vertex's incident-index set
+is likewise in bijection with the old incident-index set. Hence edge
+sizes, intersection sizes, and vertex degrees are preserved, giving
+$\mathcal F\in H(3,2,D)$. By \noderef{LineGraphOfHypergraph}, the
+edge-index bijection preserves and reflects line-graph adjacency. It
+therefore maps the neighborhood of $a$ bijectively onto that of $f$ and
+preserves adjacency within it. Apply
+\noderef{LocalBParameterNeighborhoodEmbeddingTransport} to obtain
+equality of their local $b$-values. Combine this equality with the
+truncation equality to finish. No additional edge indices are introduced.
+\end{proof}

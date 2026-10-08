@@ -1,0 +1,96 @@
+\begin{helper}
+Let $\Delta>0$, let $0\le\gamma\le\Delta$, and let
+$x,y,z>0$ and $\tau\ge0$.  Put $M=x+y+z+\tau$.  For the three unordered
+pairs in a fixed independent triple, suppose the paired ordered chambers have
+middle exponents $N_x,N_y,N_z$ and lower exponents
+$L_x,L_y,L_z$ satisfying
+\[
+\frac{N_x}{\Delta}=x,\quad \frac{L_x}{\Delta}=\rho_x,\quad
+\frac{N_y}{\Delta}=y,\quad \frac{L_y}{\Delta}=\rho_y,\quad
+\frac{N_z}{\Delta}=z,\quad \frac{L_z}{\Delta}=\rho_z,
+\]
+where $\rho_x,\rho_y,\rho_z\ge0$, and assume
+\[
+1+x+\rho_x=1+y+\rho_y=1+z+\rho_z=M .
+\]
+Then the three paired finite full-graph chamber integrals obtained after
+\noderef{SamplingTripleActivationChamberSum} satisfy
+\[
+\begin{aligned}
+&2\int_{0\le u\le v\le w\le\gamma}
+\left(1-\frac w\Delta\right)^\Delta
+\left(1-\frac v\Delta\right)^{N_x}
+\left(1-\frac u\Delta\right)^{L_x}\,dw\,dv\,du \\
+&\quad+
+2\int_{0\le u\le v\le w\le\gamma}
+\left(1-\frac w\Delta\right)^\Delta
+\left(1-\frac v\Delta\right)^{N_y}
+\left(1-\frac u\Delta\right)^{L_y}\,dw\,dv\,du \\
+&\quad+
+2\int_{0\le u\le v\le w\le\gamma}
+\left(1-\frac w\Delta\right)^\Delta
+\left(1-\frac v\Delta\right)^{N_z}
+\left(1-\frac u\Delta\right)^{L_z}\,dw\,dv\,du \\
+&\le
+\frac{2}{(1+x)M}+\frac{2}{(1+y)M}+\frac{2}{(1+z)M}.
+\end{aligned}
+\]
+\end{helper}
+\begin{proof}
+We prove the estimate for the first paired term; the other two are identical
+with $(x,\rho_x,N_x,L_x)$ replaced by $(y,\rho_y,N_y,L_y)$ or
+$(z,\rho_z,N_z,L_z)$.
+
+On the finite chamber $0\le u\le v\le w\le\gamma$, the hypothesis
+$\gamma\le\Delta$ gives $0\le u/\Delta,v/\Delta,w/\Delta\le1$.  Hence every
+base $1-u/\Delta$, $1-v/\Delta$, and $1-w/\Delta$ is nonnegative.  The
+standard inequality $1-t\le e^{-t}$ for $0\le t\le1$, applied term by term
+and then raised to the corresponding natural exponents, gives
+\[
+\left(1-\frac w\Delta\right)^\Delta
+\left(1-\frac v\Delta\right)^{N_x}
+\left(1-\frac u\Delta\right)^{L_x}
+\le
+e^{-w}\,e^{-xv}\,e^{-\rho_x u}.
+\]
+Here the exponent identities use
+$N_x/\Delta=x$ and $L_x/\Delta=\rho_x$.
+
+The exponential kernel is nonnegative.  Therefore enlarging the region from
+the finite chamber $0\le u\le v\le w\le\gamma$ to the infinite chamber
+$0\le u\le v\le w<\infty$ can only increase the integral.  Thus the first
+paired finite chamber contribution is at most
+\[
+2\int_0^\infty\int_u^\infty\int_v^\infty
+e^{-w}e^{-xv}e^{-\rho_xu}\,dw\,dv\,du .
+\]
+The three elementary integrations are legitimate because
+$1>0$, $x>0$, and $\rho_x\ge0$.  First
+\[
+\int_v^\infty e^{-w}\,dw=e^{-v}.
+\]
+Then
+\[
+\int_u^\infty e^{-(1+x)v}\,dv
+=\frac{e^{-(1+x)u}}{1+x},
+\]
+since $1+x>0$.  Finally
+\[
+\int_0^\infty \frac{e^{-(1+x+\rho_x)u}}{1+x}\,du
+=\frac{1}{(1+x)(1+x+\rho_x)}.
+\]
+Multiplying by the factor $2$ and using $1+x+\rho_x=M$ gives the bound
+\[
+2\int_{0\le u\le v\le w\le\gamma}
+\left(1-\frac w\Delta\right)^\Delta
+\left(1-\frac v\Delta\right)^{N_x}
+\left(1-\frac u\Delta\right)^{L_x}\,dw\,dv\,du
+\le \frac{2}{(1+x)M}.
+\]
+
+Applying the same argument to the other two paired chamber terms gives
+$2/((1+y)M)$ and $2/((1+z)M)$.  Adding the three inequalities proves the
+displayed estimate.  The final comparison of these three rational terms with
+the square-sum expression in the paper is deliberately left to
+\noderef{SamplingTripleRealChamberEstimate}.
+\end{proof}

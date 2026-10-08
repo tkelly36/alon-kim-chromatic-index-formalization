@@ -1,0 +1,39 @@
+\begin{helper}
+Let \(V\) be finite and let \(a,b,c\in V\) be pairwise distinct.  Let
+\(E\subseteq\mathbb R^V\) be Lebesgue measurable for the finite product
+Lebesgue measure, and let \(g:\mathbb R^3\to\mathbb R\) be continuous.  Assume
+that \(g(x,y,z)\ge0\) whenever \(0\le x\le y\le z\le1\), and assume that every
+\(q\in E\) satisfies
+\[
+0\le q_a\le q_b\le q_c\le 1.
+\]
+Assume also that for every \(0\le x\le y\le z\le1\), the slice of \(E\) with
+\(q_a=x\), \(q_b=y\), and \(q_c=z\), viewed as a subset of the remaining
+coordinates \(V\setminus\{a,b,c\}\), has product Lebesgue outer measure at
+most \(\operatorname{ofReal}(g(x,y,z))\).  Then
+\[
+\operatorname{vol}(E)\le
+\operatorname{ofReal}\left(\int_0^1\int_0^z\int_0^y
+g(x,y,z)\,dx\,dy\,dz\right).
+\]
+\end{helper}
+\begin{proof}
+Because \(a,b,c\) are pairwise distinct, the coordinate map
+\(\mathbb R^V\to\mathbb R^3\times \mathbb R^{V\setminus\{a,b,c\}}\) sending
+\(q\) to \(((q_a,q_b,q_c),(q_v)_{v\notin\{a,b,c\}})\) is a permutation of the
+finite product coordinates and preserves product Lebesgue measure.  Apply
+Tonelli--Fubini to the measurable set \(E\) under this coordinate
+identification.  The containment hypothesis says that the indicator of \(E\)
+vanishes unless the distinguished coordinates lie in the simplex
+\(0\le x\le y\le z\le1\).  Thus \(\operatorname{vol}(E)\) is bounded by the
+iterated integral, over this simplex, of the outer product measure of the
+corresponding outside-coordinate slice.
+
+For each point of the simplex the slice hypothesis bounds that outside measure
+by \(\operatorname{ofReal}(g(x,y,z))\).  The continuity of \(g\) supplies the
+measurability and interval-integrability needed for the displayed iterated
+Lebesgue integrals, and the assumed nonnegativity on the simplex justifies
+passing between the nonnegative outer-measure bound and
+\(\operatorname{ofReal}(g(x,y,z))\).  Monotonicity of the nonnegative integral
+therefore gives the displayed upper bound.
+\end{proof}

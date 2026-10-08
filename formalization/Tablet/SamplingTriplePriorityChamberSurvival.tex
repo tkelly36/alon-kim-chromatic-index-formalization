@@ -1,0 +1,120 @@
+\begin{helper}
+Let $G$ be a finite graph with degree scale $\Delta$ and let $\nu$ be an
+activation--priority law with the following fixed-activation consequences of
+\noderef{RandomIndependentSetSampling}: on the fiber $A$, the full priority
+cube $[0,1]^A$ has measure $\nu[A]$, and for every vector
+$t\in[0,1]^{V(G)}$,
+\[
+\nu\bigl(A\text{ is the activated set and }0\le \pi(v)\le t_v
+\text{ for all }v\in V(G)\bigr)
+=\nu[A]\prod_{v\in V(G)}t_v .
+\]
+Assume $\gamma>0$.  Fix three distinct independent vertices $a,b,c\in A$.
+Put $Q=\{a,b,c\}$.  For each nonempty adjacency pattern to $Q$, let
+\[
+n_a,n_b,n_c,n_{ab},n_{ac},n_{bc},n_{abc}
+\]
+be the number of vertices of $A\setminus Q$ adjacent to exactly the indicated
+vertices of $Q$.  On the ordered chamber
+\[
+x_a\ge x_b\ge x_c,\qquad x_q=\gamma(1-\pi(q)),
+\]
+equivalently $\pi(a)\le\pi(b)\le\pi(c)$, the $\nu$-measure of the event that
+all three vertices of $Q$ beat every activated neighbor and the activation set
+is $A$ is at most
+\[
+\nu[A]\frac{1}{\gamma^3}
+\int_{0\le z\le y\le x\le \gamma}
+\left(1-\frac{x}{\gamma}\right)^{n_a+n_{ab}+n_{ac}+n_{abc}}
+\left(1-\frac{y}{\gamma}\right)^{n_b+n_{bc}}
+\left(1-\frac{z}{\gamma}\right)^{n_c}\,dx\,dy\,dz .
+\]
+\end{helper}
+\begin{proof}
+We use only the two fixed-activation hypotheses displayed in the statement.
+Let $\nu_A$ be the finite measure on $\mathbb R^{V(G)}$ obtained by restricting
+$\nu$ to the fiber whose activated set is $A$ and then forgetting the first
+coordinate:
+\[
+\nu_A(B)=\nu\{(A',\pi): A'=A\text{ and }\pi\in B\}.
+\]
+For every vector $t\in[0,1]^{V(G)}$, the lower-rectangle hypothesis says
+\[
+\nu_A\prod_{v\in V(G)}[0,t_v]
+=\nu[A]\prod_{v\in V(G)}t_v .
+\]
+Since $V(G)$ is finite, the boxes $\prod_v[0,t_v]$ form a pi-system generating
+the Borel sigma-algebra of the cube $[0,1]^{V(G)}$.  The full-cube hypothesis,
+together with the same lower-rectangle formula at $t_v=1$ for every $v$, says
+that $\nu_A$ gives no mass to the complement of this cube on the activated
+coordinates relevant here.  By the standard uniqueness theorem for finite
+measures on a finite product cube, the restriction of $\nu_A$ to
+$[0,1]^{V(G)}$ is therefore
+\[
+\nu[A]\bigotimes_{v\in V(G)}\lambda_{[0,1]},
+\]
+where $\lambda_{[0,1]}$ is one-dimensional Lebesgue measure restricted to
+$[0,1]$.  In particular the priority coordinates are independent uniform
+coordinates under this restricted finite measure, with total mass $\nu[A]$.
+
+Write $x_q=\gamma(1-\pi(q))$ for $q\in Q$.  This change of variables reverses
+the order of priorities, so the chamber $x_a\ge x_b\ge x_c$ is exactly the
+priority chamber $\pi(a)\le\pi(b)\le\pi(c)$.  Projection of the product measure
+to the three coordinates $a,b,c$, followed by the affine map
+$\pi(q)\mapsto x_q$, has density $\nu[A]/\gamma^3$ with respect to Lebesgue
+measure on $[0,\gamma]^3$.  Thus any nonnegative measurable function of
+$(x_a,x_b,x_c)$ integrates over this chamber as
+\[
+\nu[A]\frac1{\gamma^3}
+\int_{0\le z\le y\le x\le \gamma}(\cdots)\,dx\,dy\,dz .
+\]
+The hyperplanes $x_a=x_b$, $x_b=x_c$, $x_q=0$, and $x_q=\gamma$ have
+three-dimensional Lebesgue measure zero.  Hence replacing weak chamber
+inequalities by strict ones, or using closed rather than half-open endpoint
+intervals, does not change the measure.
+
+It remains to compute the fiber measure over the outside coordinates after
+the three coordinates have been fixed.  This is again a consequence of the
+same finite product law, now by Fubini's theorem for the product measure.
+Fix chamber coordinates $(x_a,x_b,x_c)$ and write
+$\pi_q=1-x_q/\gamma$.  For a vertex $w\in A\setminus Q$ with nonempty
+adjacency pattern $S\subseteq Q$, the event that $w$ does not beat any adjacent
+member of $Q$ is
+\[
+\pi(w)<\pi(q)\quad\text{for every }q\in S .
+\]
+Under the one-dimensional uniform factor for $w$, this interval has length
+\[
+\min_{q\in S}\pi_q
+=1-\max_{q\in S}x_q/\gamma .
+\]
+The strict inequality causes no loss: the boundary point
+$\pi(w)=\min_{q\in S}\pi_q$ has one-dimensional Lebesgue measure zero.  Since
+the outside coordinates are independent factors of the finite product
+measure, the measure of the simultaneous outside-coordinate constraints is
+the product of these interval lengths over the relevant outside vertices.
+Vertices of $A\setminus Q$ with empty adjacency pattern impose no condition
+and contribute the factor $1$; vertices not in $A$ are irrelevant because the
+survival event quantifies only over activated neighbors $w\in A$.
+
+On the chamber $x_a\ge x_b\ge x_c$, the maximum coordinate for patterns
+$a,ab,ac,abc$ is $x_a$; for the remaining patterns involving $b$ but not $a$,
+namely $b,bc$, it is $x_b$; and for the sole remaining nonempty pattern
+$c$, it is $x_c$.  Hence the product over all outside activated vertices is
+exactly
+\[
+\left(1-\frac{x_a}{\gamma}\right)^{n_a+n_{ab}+n_{ac}+n_{abc}}
+\left(1-\frac{x_b}{\gamma}\right)^{n_b+n_{bc}}
+\left(1-\frac{x_c}{\gamma}\right)^{n_c}.
+\]
+
+Multiplying this conditional survival product by the chamber density and
+integrating over $0\le x_c\le x_b\le x_a\le\gamma$ gives the displayed upper
+bound for the measure of the fixed activation atom, the ordered chamber, and
+the event that every member of $Q$ beats each activated neighbor.  The word
+``bound'' rather than ``equality'' is harmless because the event in the
+statement is a subset of the full-cube event on which the product-law
+calculation is performed, and the complement of that full-cube event inside
+the fixed activation fiber has zero measure by the full-cube hypothesis.
+Renaming $x_a,x_b,x_c$ as $x,y,z$ gives the integral in the statement.
+\end{proof}

@@ -1,0 +1,21 @@
+\begin{helper}
+Let $X$ be a finite set of vertices, let $C$ be a finite set of edges, and
+let $m$ be a natural number.  Suppose that for every edge $g\in C$ the set
+of vertices of $X$ lying in $g$ has size at most $m$.  If the column indexed
+by $x\in X$ records the number of edges $g\in C$ containing $x$, then the
+sum of these column entries over all $x\in X$ is at most $|C|m$.
+\end{helper}
+\begin{proof}
+Count the set of incidences
+\[
+\{(g,x): g\in C,\ x\in X,\ x\in g\}.
+\]
+Counting first by $x\in X$ gives exactly the stated sum of column entries.
+Counting first by $g\in C$ gives
+\[
+\sum_{g\in C}|X\cap g|.
+\]
+By hypothesis each summand is at most $m$, so this second count is at most
+$|C|m$.  The two counts enumerate the same incidence set, hence the desired
+inequality follows.
+\end{proof}

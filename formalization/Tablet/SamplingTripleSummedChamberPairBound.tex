@@ -1,0 +1,160 @@
+\begin{helper}
+Let $G$ be a finite graph, let $\Delta>0$, and let
+$0\le\gamma\le\Delta$.  Fix distinct pairwise nonadjacent vertices
+$a,b,c$ and write $Q=\{a,b,c\}$.  For the six ordered triples
+\[
+\mathcal O=\{(a,b,c),(a,c,b),(b,a,c),(b,c,a),(c,a,b),(c,b,a)\},
+\]
+let $\Phi_t$ be the full-graph ordered chamber weight of
+\noderef{SamplingTripleActivationSummedSixChamberBound}.  Suppose the seven
+natural numbers $n_a,n_b,n_c,n_{ab},n_{ac},n_{bc},n_{abc}$ are the actual
+adjacency-pattern counts outside $Q$:
+\[
+n_a=|\{w\in V(G)\setminus Q:w\sim a,\ w\not\sim b,\ w\not\sim c\}|,
+\]
+\[
+n_b=|\{w\in V(G)\setminus Q:w\not\sim a,\ w\sim b,\ w\not\sim c\}|,\quad
+n_c=|\{w\in V(G)\setminus Q:w\not\sim a,\ w\not\sim b,\ w\sim c\}|,
+\]
+\[
+n_{ab}=|\{w\in V(G)\setminus Q:w\sim a,\ w\sim b,\ w\not\sim c\}|,
+\]
+\[
+n_{ac}=|\{w\in V(G)\setminus Q:w\sim a,\ w\not\sim b,\ w\sim c\}|,\quad
+n_{bc}=|\{w\in V(G)\setminus Q:w\not\sim a,\ w\sim b,\ w\sim c\}|,
+\]
+\[
+n_{abc}=|\{w\in V(G)\setminus Q:w\sim a,\ w\sim b,\ w\sim c\}|.
+\]
+Suppose also that these counts satisfy
+\[
+\ell_{ab}=\frac{n_{ab}+n_{abc}}{\Delta},\quad
+\ell_{ac}=\frac{n_{ac}+n_{abc}}{\Delta},\quad
+\ell_{bc}=\frac{n_{bc}+n_{abc}}{\Delta},
+\]
+\[
+n_a+n_{ab}+n_{ac}+n_{abc}=\Delta,\quad
+n_b+n_{ab}+n_{bc}+n_{abc}=\Delta,\quad
+n_c+n_{ac}+n_{bc}+n_{abc}=\Delta,
+\]
+and $1-\ell_{ab},1-\ell_{ac},1-\ell_{bc}>0$.  Then
+\[
+\sum_{t\in\mathcal O}\Phi_t
+\le
+\frac1{\Delta^3}\left[
+1+\frac13\sum_{pq\in\{ab,ac,bc\}}
+\left(\frac{2}{(2-\ell_{pq})(1-\ell_{pq})}-1\right)\right].
+\]
+\end{helper}
+\begin{proof}
+Pair the six ordered chambers according to their two largest vertices:
+$(a,b,c)$ with $(b,a,c)$, $(a,c,b)$ with $(c,a,b)$, and $(b,c,a)$ with
+$(c,b,a)$.  We first identify the three exponents in each pair directly
+from the displayed definition of the full-graph weight $\Phi_t$.
+
+For $t=(a,b,c)$, the largest-coordinate exponent counts vertices outside
+$Q$ adjacent to $a$, hence is
+$n_a+n_{ab}+n_{ac}+n_{abc}=\Delta$.  Its middle exponent counts vertices
+outside $Q$ not adjacent to $a$ and adjacent to $b$, hence is
+$n_b+n_{bc}$.  Using the $b$-degree identity,
+\[
+n_b+n_{bc}=\Delta-(n_{ab}+n_{abc}).
+\]
+Its lower exponent counts vertices outside $Q$ adjacent to $c$ and adjacent
+to neither $a$ nor $b$, hence is $n_c$.  For $t=(b,a,c)$, the largest
+exponent is $n_b+n_{ab}+n_{bc}+n_{abc}=\Delta$, the middle exponent is
+$n_a+n_{ac}=\Delta-(n_{ab}+n_{abc})$ by the $a$-degree identity, and the
+lower exponent is again $n_c$.  Thus the two orders $(a,b,c)$ and
+$(b,a,c)$ form the $ab$ pair with largest exponent $\Delta$, middle
+exponent $\Delta-(n_{ab}+n_{abc})$, and lower exponent $n_c$.
+
+The same calculation for $t=(a,c,b)$ and $t=(c,a,b)$ gives the $ac$ pair.
+The largest exponent is $\Delta$ in both orders.  The middle exponents are
+$n_c+n_{bc}$ and $n_a+n_{ab}$, respectively, and the $c$- and $a$-degree
+identities rewrite both as
+\[
+\Delta-(n_{ac}+n_{abc}).
+\]
+The lower exponent in both orders is $n_b$.  Therefore this pair has
+largest exponent $\Delta$, middle exponent $\Delta-(n_{ac}+n_{abc})$, and
+lower exponent $n_b$.
+
+Finally, for $t=(b,c,a)$ and $t=(c,b,a)$, the largest exponent is again
+$\Delta$ in both orders.  The middle exponents are $n_c+n_{ac}$ and
+$n_b+n_{ab}$, respectively, and the $c$- and $b$-degree identities rewrite
+both as
+\[
+\Delta-(n_{bc}+n_{abc}).
+\]
+The lower exponent in both orders is $n_a$.  Thus the $bc$ pair has largest
+exponent $\Delta$, middle exponent $\Delta-(n_{bc}+n_{abc})$, and lower
+exponent $n_a$.
+
+Set
+\[
+x=1-\ell_{ab},\qquad y=1-\ell_{ac},\qquad z=1-\ell_{bc},\qquad
+\tau=\frac{n_{abc}}{\Delta}.
+\]
+The middle-exponent complement identities required for the paired chamber
+normalization are therefore
+\[
+N_{ab}+C_{ab}=\Delta,\quad
+N_{ac}+C_{ac}=\Delta,\quad
+N_{bc}+C_{bc}=\Delta,
+\]
+where
+\[
+C_{ab}=n_{ab}+n_{abc},\quad
+C_{ac}=n_{ac}+n_{abc},\quad
+C_{bc}=n_{bc}+n_{abc},
+\]
+and $N_{ab},N_{ac},N_{bc}$ are the three middle exponents identified above.
+The lower-exponent identities required for the paired chamber normalization
+are exactly the three additive degree identities above, rewritten as
+\[
+n_c+(n_{ac}+n_{abc})+(n_{bc}+n_{abc})=\Delta+n_{abc},
+\]
+for the $ab$ lower exponent $L_{ab}=n_c$,
+\[
+n_b+(n_{ab}+n_{abc})+(n_{bc}+n_{abc})=\Delta+n_{abc},
+\]
+for the $ac$ lower exponent $L_{ac}=n_b$, and
+\[
+n_a+(n_{ab}+n_{abc})+(n_{ac}+n_{abc})=\Delta+n_{abc},
+\]
+for the $bc$ lower exponent $L_{bc}=n_a$.  These are obtained from the
+$c$-, $b$-, and $a$-degree identities by adding one extra copy of
+$n_{abc}$ to both sides.  Therefore
+\noderef{SamplingTriplePairedChamberParameterNormalizer} applies to this
+fixed independent triple with
+$C_{ab}=n_{ab}+n_{abc}$, $C_{ac}=n_{ac}+n_{abc}$,
+$C_{bc}=n_{bc}+n_{abc}$, $L_{ab}=n_c$, $L_{ac}=n_b$, and $L_{bc}=n_a$.
+It gives nonnegative lower parameters
+$\rho_x,\rho_y,\rho_z$ and the common denominator identities
+\[
+1+x+\rho_x=1+y+\rho_y=1+z+\rho_z=x+y+z+\tau .
+\]
+
+Using these normalized parameters,
+\noderef{SamplingTripleFullChamberIntegralEstimate} bounds the sum of the
+three paired finite chamber integrals by
+\[
+\frac{2}{(1+x)(x+y+z+\tau)}
++\frac{2}{(1+y)(x+y+z+\tau)}
++\frac{2}{(1+z)(x+y+z+\tau)}.
+\]
+Then \noderef{SamplingTripleRealChamberEstimate} gives
+\[
+\frac{2}{(1+x)(x+y+z+\tau)}
++\frac{2}{(1+y)(x+y+z+\tau)}
++\frac{2}{(1+z)(x+y+z+\tau)}
+\le
+1+\frac13\sum_{r\in\{x,y,z\}}\left(\frac{2}{(1+r)r}-1\right).
+\]
+Substituting $x=1-\ell_{ab}$, $y=1-\ell_{ac}$, and
+$z=1-\ell_{bc}$ changes $(1+r)r$ into
+$(2-\ell_{pq})(1-\ell_{pq})$ for the corresponding pair $pq$.
+Finally, every full ordered chamber weight $\Phi_t$ contains the common
+outside factor $\Delta^{-3}$, so factoring this out from the six-order sum
+gives exactly the displayed inequality.
+\end{proof}

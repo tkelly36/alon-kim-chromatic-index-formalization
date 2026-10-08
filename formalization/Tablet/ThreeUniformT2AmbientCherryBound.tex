@@ -1,0 +1,30 @@
+\begin{lemma}
+Let $S$ be a $3$-uniform $3$-simple local extremal setup at scale $D$
+for the indexed hypergraph $\mathcal F$ and edge index $f$.
+Let $N$ be the set of edge indices other than $f$ meeting $f$ and put
+$q(g)=|\{h\in N:\mathcal F(g)\cap\mathcal F(h)=\varnothing\}|$.
+Then $T_2\le\frac1{12}\sum_{g\in V_2}q(g)^2$.
+\end{lemma}
+\begin{proof}
+Use the data of \noderef{ThreeUniformThreeSimpleLocalSetup}.
+On the finite vertex type consisting of indices in $V_2$, form the graph
+whose adjacency is disjointness of the two indexed hyperedges.
+This is symmetric and irreflexive: every hyperedge has size three and
+so is nonempty. Its triangles correspond bijectively to the three-element
+subsets of $V_2$ consisting of pairwise disjoint hyperedges, by forgetting
+the membership proofs of the subtype. Conversely each such subset lifts
+uniquely to the subtype. The defining formula for $T_2$ counts exactly
+these subsets, since $V_2\subseteq N$ and nonadjacency in the line graph
+for distinct indices means disjointness.
+
+Each $g\in V_2$ meets $f$ in exactly one vertex, by the edge-shape clause
+of the setup. Label $g$ by that vertex, identifying the three vertices
+of $f$ with $\{0,1,2\}$. Adjacent vertices cannot have the same label,
+since that would give a common vertex of their hyperedges. Thus the graph
+is tripartite. By \noderef{TriangleCountTripartiteCherries}, its triangle
+count is at most one twelfth of the sum of its squared degrees.
+For each $g$, forgetting subtype membership injects its neighbor set
+into $\{h\in N:\mathcal F(g)\cap\mathcal F(h)=\varnothing\}$.
+Its degree is therefore at most $q(g)$. Both counts are nonnegative,
+so squaring and summing preserves this inequality and proves the claim.
+\end{proof}

@@ -1,0 +1,16 @@
+\begin{helper}
+For every finite simple graph $G$ and vertex $v$, the number of independent
+pairs in the neighborhood of $v$ is at most
+\[
+\binom{|N_G(v)|}{2}.
+\]
+\end{helper}
+\begin{proof}
+By \noderef{IndependentPairCount}, an independent pair counted at $v$ is a
+two-element subset $S$ of the neighbor set $N_G(v)$ satisfying the additional
+condition that no two distinct vertices of $S$ are adjacent in $G$.  Forgetting
+this additional nonadjacency condition gives an injection from the counted
+family into the family of all two-element subsets of $N_G(v)$.  The latter
+family has cardinality $\binom{|N_G(v)|}{2}$, so the independent-pair count is
+bounded by that binomial coefficient.
+\end{proof}

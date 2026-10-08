@@ -1,0 +1,51 @@
+\begin{helper}
+Let \(C\) be a nonempty finite set of candidates, let \(p\in[0,1]\), and let
+\(\lambda\) be a measure on the space of numerical candidate-priority vectors
+\(\pi:C\to\mathbb R\).  Suppose \(\lambda\)-almost every priority vector lies
+in the unit cube, that is \(0\le \pi(x)\le 1\) for every \(x\in C\).
+For every priority vector \(\pi\), let \(\eta_\pi\) be a one-common-blocker
+law and let \(\theta_\pi\) be a private-blocker product law indexed by \(C\).
+Assume that, for every \(\pi\), the laws \(\eta_\pi\) and \(\theta_\pi\)
+satisfy the total-mass, active-unit, lower-rectangle, and product-cylinder
+hypotheses appearing in
+\(\noderef{SamplingFiniteProductCandidateReplacementStep}\), with the same
+activation parameter \(p\).  Then the integrated probability of candidate
+survival after replacing the common blocker by private blockers is monotone:
+\[
+\int
+\eta_\pi\{\neg(a=1,\ q\in[0,1],\ \pi(x)<q\hbox{ for every }x\in C)\}
+\,d\lambda(\pi)
+\]
+is at most
+\[
+\int
+\theta_\pi\{\exists x\in C:
+\neg(a_x=1,\ q_x\in[0,1],\ \pi(x)<q_x)\}
+\,d\lambda(\pi).
+\]
+\end{helper}
+\begin{proof}
+For \(\lambda\)-almost every vector \(\pi\), the support hypothesis gives
+\(0\le \pi(x)\le1\) for every \(x\in C\).  Fix such a vector \(\pi\).  The
+activation parameter \(p\) satisfies \(0\le p\le1\) by hypothesis, and the
+families \(\eta_\pi\) and \(\theta_\pi\) satisfy exactly the one-common-blocker
+and private-blocker product-law hypotheses required by
+\(\noderef{SamplingFiniteProductCandidateReplacementStep}\).  Applying that
+node at this numerical vector \(\pi\) gives the pointwise inequality
+\[
+\eta_\pi\{\neg(a=1,\ q\in[0,1],\ \pi(x)<q\hbox{ for every }x\in C)\}
+\le
+\theta_\pi\{\exists x\in C:
+\neg(a_x=1,\ q_x\in[0,1],\ \pi(x)<q_x)\}.
+\tag{1}
+\]
+This use is pointwise in the actual numerical priority vector; no event is
+conditioned on the value of \(\pi\), and no finite order chamber is treated as
+though it determined the numbers \(\pi(x)\).
+
+The nonnegative Lebesgue integral is monotone under almost-everywhere
+inequality of its integrands.  Since (1) holds for \(\lambda\)-almost every
+\(\pi\), integrating both sides with respect to \(\lambda\) gives precisely
+the displayed integrated inequality.  Thus the one-step blocker comparison
+continues to hold after averaging over the candidate-priority vector itself.
+\end{proof}

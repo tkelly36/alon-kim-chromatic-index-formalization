@@ -1,0 +1,106 @@
+\begin{helper}
+Let \(V\) be finite and let \(\nu\) be a measure on activation--priority
+pairs \((A,\pi)\in\mathcal P(V)\times\mathbb R^V\).  Fix \(0\le p\le1\),
+distinct \(u,v\in V\), and disjoint finite sets
+\(U,T\subseteq V\setminus\{u,v\}\).  Assume the activation atom law
+\[
+\nu(A=A_0)=\operatorname{ofReal}\bigl(p^{|A_0|}(1-p)^{|V|-|A_0|}\bigr)
+\]
+for every \(A_0\subseteq V\).  Assume also that, on each activation atom, the
+activated priorities are supported in \([0,1]\), and that every full lower
+rectangle satisfies
+\[
+\nu(A=A_0,\ 0\le \pi(q)\le t_q\text{ for all }q\in V)
+=\nu(A=A_0)\operatorname{ofReal}\!\left(\prod_{q\in V}t_q\right)
+\]
+whenever \(0\le t_q\le1\) for all \(q\).
+
+Then the ordered chamber
+\[
+\begin{aligned}
+E_{u,v}(U,T)=\{(A,\pi):\;&u,v\in A,\ \pi(v)\le\pi(u),\
+\pi(q)\in[0,1]\text{ for every }q\in A,\\
+& z\in U\cap A\Rightarrow \pi(z)<\pi(u),\
+z\in T\cap A\Rightarrow \pi(z)<\pi(v)\}
+\end{aligned}
+\]
+has mass
+\[
+\nu(E_{u,v}(U,T))
+=\operatorname{ofReal}\!\left(
+\int_0^1\int_0^a
+p^2\bigl((1-p)+pa\bigr)^{|U|}
+\bigl((1-p)+pb\bigr)^{|T|}\,db\,da\right).
+\]
+\end{helper}
+\begin{proof}
+Put \(S=U\cup T\) and \(C=S\cup\{u,v\}\).  Since \(u\ne v\),
+\(u,v\notin S\), and \(U\cap T=\emptyset\), the sets
+\(U,T,\{u\},\{v\}\) are pairwise disjoint.  Fix an activation atom
+\(A_0\).  Applying the lower-rectangle hypothesis with all thresholds equal
+to \(1\) shows that the full cube
+\(\{0\le \pi(q)\le1\text{ for every }q\in V\}\) has the whole mass of the
+atom \(A=A_0\).  Thus restricting an atom to the full cube changes no
+\(\nu\)-measure.
+
+On this full cube, the lower-rectangle hypothesis gives the masses of all
+anchored rectangles \(\prod_q[0,t_q]\), \(0\le t_q\le1\), as the activation
+atom mass times \(\prod_q t_q\).  These anchored rectangles form a
+\(\pi\)-system generating the Borel sigma-algebra of the finite cube
+\([0,1]^V\), and both finite measures have the same total mass.  The
+finite-measure uniqueness theorem therefore identifies the priority law on
+the atom with the activation atom mass times finite product Lebesgue measure
+on \([0,1]^V\).  This is the same lower-rectangle-to-cell calculation
+registered in \noderef{SamplingFiniteCoordinateMarginalCellLaw}, with the
+atomwise interval calculation supplied by
+\noderef{SamplingFinitePriorityOneCoordinateIntervalMass}.
+
+Partition the chamber by the activated subsets \(B_U\subseteq U\),
+\(B_T\subseteq T\), and \(R\subseteq V\setminus C\).  The corresponding atom
+is
+\[
+A_{B_U,B_T,R}=\{u,v\}\cup B_U\cup B_T\cup R .
+\]
+The associated chamber pieces are pairwise disjoint, and their union differs
+from \(E_{u,v}(U,T)\) only by atomwise complements of the activated-priority
+cube, which have measure \(0\).  Hence finite additivity reduces
+\(\nu(E_{u,v}(U,T))\) to the finite sum of these piece masses.
+
+For a fixed triple \((B_U,B_T,R)\), write \(a=\pi(u)\) and \(b=\pi(v)\).
+The product-measure identification on the atom and Tonelli's theorem on the
+finite cube give the piece volume
+\[
+\int_0^1\int_0^a a^{|B_U|}b^{|B_T|}\,db\,da .
+\]
+Indeed, once \(0\le b\le a\le1\) is fixed, each coordinate in \(B_U\) ranges
+independently over an interval of length \(a\), each coordinate in \(B_T\)
+ranges independently over an interval of length \(b\), and all remaining
+priority coordinates have interval length \(1\).  Thus the piece mass is
+\[
+\operatorname{ofReal}\!\left(
+p^{|A_{B_U,B_T,R}|}(1-p)^{|V|-|A_{B_U,B_T,R}|}
+\int_0^1\int_0^a a^{|B_U|}b^{|B_T|}\,db\,da\right).
+\]
+
+Now sum first over \(R\subseteq V\setminus C\).  Since the displayed sets are
+disjoint from \(V\setminus C\),
+\[
+\sum_R p^{|R|}(1-p)^{|V\setminus C|-|R|}
+=(p+(1-p))^{|V\setminus C|}=1 .
+\]
+The remaining finite sums over \(B_U\subseteq U\) and \(B_T\subseteq T\) are
+nonnegative, so finite sums may be moved through the two integrals.  The
+\(U\)-sum is the binomial expansion
+\[
+\sum_{B_U\subseteq U}p^{|B_U|}(1-p)^{|U|-|B_U|}a^{|B_U|}
+=((1-p)+pa)^{|U|},
+\]
+and the \(T\)-sum is
+\[
+\sum_{B_T\subseteq T}p^{|B_T|}(1-p)^{|T|-|B_T|}b^{|B_T|}
+=((1-p)+pb)^{|T|}.
+\]
+Multiplying by the forced activations of \(u\) and \(v\) gives the factor
+\(p^2\).  Substituting these two binomial identities into the finite additive
+sum gives exactly the stated integral formula.
+\end{proof}

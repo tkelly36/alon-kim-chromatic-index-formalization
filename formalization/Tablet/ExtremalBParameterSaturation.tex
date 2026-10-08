@@ -1,0 +1,86 @@
+\begin{lemma}
+Let $D$ be sufficiently large, let $\mathcal F\in H(3,2,D)$, and let
+$f\in E(\mathcal F)$ maximize
+$b_{L(\mathcal H),3D}(e)$ over all $\mathcal H\in H(3,2,D)$ and all
+$e\in E(\mathcal H)$.  Then every vertex $v\in f$ has
+$\deg_{\mathcal F}(v)=D$, and $f$ intersects exactly $3(D-1)$ other edges of
+$\mathcal F$.
+\end{lemma}
+\begin{proof}
+It suffices to take $D\ge2$. By \noderef{HypergraphClass}, $H=\mathcal F$
+is 3-uniform, 2-simple, and has maximum degree at most $D$. Write $N$
+for the neighbors of $f$ in \noderef{LineGraphOfHypergraph}, and put
+$d=|N|$, $P=P_L(f)$, $T=T_L(f)$, and $M=3D$.
+The counts $P,T$ are those of \noderef{IndependentPairCount} and
+\noderef{IndependentTripleCount}. By \noderef{LocalBParameter},
+\[
+ b_{L(H),M}(f)=d/M-P/M^2+T/M^3.
+\]
+For each $x\in f$, at most $D-1$ edges other than $f$ contain $x$,
+by \noderef{HypergraphDegree} and \noderef{MaxDegreeAtMost}. Every
+neighbor contains at least one such $x$, and there are exactly three
+choices of $x$ by \noderef{UniformHypergraph}. Counting these incidences
+therefore gives $d\le3(D-1)=M-3$.
+
+Suppose $v\in f$ has degree less than $D$. Add two fresh vertices and
+the fresh edge through $v$. By
+\noderef{ThreeUniformTwoSimpleFreshEdgePreservesClass}, the resulting
+hypergraph $H_1$ still belongs to $H(3,2,D)$.
+For the old copy $f_1$ of $f$,
+\noderef{KUniformFreshEdgeLineGraphNeighborCount},
+\noderef{KUniformFreshEdgeIndependentPairUpperBound}, and
+\noderef{KUniformFreshEdgeIndependentTripleLowerBound} give respectively
+\[
+ d_1=d+1,\qquad P_1\le P+d,\qquad T_1\ge T.
+\]
+Thus
+\[
+ b_{L(H_1),M}(f_1)-b_{L(H),M}(f)
+ \ge \frac1M-\frac d{M^2}=\frac{M-d}{M^2}>0.
+\]
+Here $M>0$ and $d\le M-3$. In particular, even the paper's weaker
+increment $1/M-(d+1)/M^2$ is strictly positive by this same bound;
+$d<M$ alone would not justify positivity of that weaker increment.
+If the types in the maximality hypothesis lie in different universes,
+\noderef{FiniteHypergraphClassRelabeling} represents $(H_1,f_1)$ there
+without changing class membership or the local parameter.
+Its scale hypotheses hold because $M=3D>0$ and $3D\le M$.
+The strict increase contradicts maximality. All vertices of $f$ therefore
+have degree exactly $D$.
+
+We next show that every neighbor $g$ meets $f$ in exactly one vertex.
+If not, its nonempty intersection contains distinct vertices $u,v$.
+Replace $g$ by $(g\setminus\{v\})\cup\{x_1\}$ and add
+$\{v,x_1,x_2\}$ with two fresh vertices. By
+\noderef{ThreeUniformTwoSimpleSplitEdgePreservesClass}, the result $H_2$
+belongs to $H(3,2,D)$. The retained vertex $u$ ensures that the modified
+copy of $g$ is still a neighbor of the old copy $f_2$ of $f$. The statements
+\noderef{KUniformSplitEdgeLineGraphNeighborCount},
+\noderef{KUniformSplitEdgeIndependentPairUpperBound}, and
+\noderef{KUniformSplitEdgeIndependentTripleLowerBound} give
+\[
+ d_2=d+1,\qquad
+ P_2\le P+|N\setminus\{g\}|,\qquad T_2\ge T.
+\]
+The pair bound accounts for both kinds of newly independent pairs.
+Pairs involving the modified old edge that were not previously independent
+are charged to neighbors containing the removed vertex $v$.
+Pairs involving the fresh edge are charged to neighbors not containing $v$;
+the modified edge cannot be paired independently with the fresh edge,
+because both contain $x_1$. These charge sets are disjoint subsets of
+$N\setminus\{g\}$, exactly as expressed by the cited pair bound.
+In addition, \noderef{KUniformDoubleIntersectionNeighborCountUpperBound}
+applies to the now saturated $f$ and gives $d\le3(D-1)-1$.
+Put $c=|N\setminus\{g\}|$. Since $c\le d<M$, the parameter comparison is
+\[
+ b_{L(H_2),M}(f_2)-b_{L(H),M}(f)
+ \ge \frac1M-\frac c{M^2}=\frac{M-c}{M^2}>0.
+\]
+Use \noderef{FiniteHypergraphClassRelabeling} if necessary to place this
+competitor in the universes of the maximality hypothesis. This again
+uses $M=3D>0$ and $3D\le M$. It
+contradicts maximality. Every neighbor consequently meets $f$ once.
+Finally \noderef{KUniformSaturatedOneIntersectionNeighborCount}, with
+$k=3$ and the proved vertex saturation and one-intersection properties,
+gives exactly $3D-3=3(D-1)$ neighbors, as required.
+\end{proof}

@@ -1,0 +1,44 @@
+\begin{helper}
+Let $G$ be a finite graph with activation--priority measure $\nu$, and fix an
+activation atom $A$.  For vertices $a,b,c$, put $Q=\{a,b,c\}$.  Let
+$C_{pqr}$ denote the event that $A$ is the activation set, that
+\[
+\pi(p)\le \pi(q)\le \pi(r),
+\]
+and that every vertex of $\{p,q,r\}$ beats every activated neighbor in $A$.
+Then
+\[
+\nu\{A\text{ is the activation set and every }q\in Q\text{ beats every
+activated neighbor in }A\}
+\le
+\sum_{(p,q,r)}
+\nu(C_{pqr}),
+\]
+where the sum is over the six ordered triples
+\[
+(a,b,c),\ (a,c,b),\ (b,a,c),\ (b,c,a),\ (c,a,b),\ (c,b,a).
+\]
+\end{helper}
+\begin{proof}
+Let $E$ be the fixed-activation survival event on the left-hand side.  For any
+point of $E$, the three real priority coordinates $\pi(a),\pi(b),\pi(c)$ are
+linearly ordered.  Hence at least one of the six weak orders
+\[
+\pi(a)\le\pi(b)\le\pi(c),\quad
+\pi(a)\le\pi(c)\le\pi(b),\quad
+\pi(b)\le\pi(a)\le\pi(c),
+\]
+\[
+\pi(b)\le\pi(c)\le\pi(a),\quad
+\pi(c)\le\pi(a)\le\pi(b),\quad
+\pi(c)\le\pi(b)\le\pi(a)
+\]
+holds.  Ties cause no difficulty because the chamber inequalities are weak.
+Since each ordered triple is a permutation of $a,b,c$, the set
+$\{p,q,r\}$ appearing in the chamber event is the same set $Q$.  Therefore
+every point of $E$ lies in the union of the six chamber events
+$C_{abc},C_{acb},C_{bac},C_{bca},C_{cab},C_{cba}$.
+
+Applying finite subadditivity of the measure $\nu$ to this six-set cover gives
+the displayed inequality.
+\end{proof}

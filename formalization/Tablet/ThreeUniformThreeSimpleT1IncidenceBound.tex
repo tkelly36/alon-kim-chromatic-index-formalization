@@ -1,0 +1,41 @@
+\begin{lemma}
+For a setup $S$ as in \noderef{ThreeUniformThreeSimpleLocalSetup},
+write
+\[
+\mathrm{totalXs}:=\sum_{x\in X_s}\sum_{v\in f}
+\bigl|\{h\in E(\mathcal F):v\in h\text{ and }x\in h\}\bigr|,
+\]
+where the summands count edge indices and the sum is regarded as real.
+Then
+\[
+T_1\le |V_1|D^2,\qquad |V_1|\le\mathrm{totalXs}.
+\]
+\end{lemma}
+\begin{proof}
+Apply \noderef{ThreeUniformSaturatedEdgeStructure} to the uniformity,
+maximum-degree bound, and saturated neighbor count supplied by
+\noderef{ThreeUniformThreeSimpleLocalSetup}. Every neighboring edge meets
+$f$ in precisely one vertex. Fix $g\in V_1$ and denote this vertex by $u$.
+In an independent triple containing $g$, the other two edges cannot
+contain $u$, and cannot contain the same vertex of $f$ as each other:
+in either case they would intersect, contradicting independence in
+\noderef{LineGraphOfHypergraph}. Since $|f|=3$, the other two edges
+therefore meet the two different vertices of $f\setminus\{u\}$.
+Order these two vertices. Map the triple to the ordered pair of its other
+edges, in that order. This map is injective for fixed $g$, since the
+triple can be recovered by adjoining $g$. Each coordinate has at most
+$D$ possibilities, by \noderef{MaxDegreeAtMost} and
+\noderef{HypergraphDegree}. Thus at most $D^2$ independent triples
+contain this fixed $g$. Summing over $g\in V_1$ counts every triple
+in $T_1$ at least once, by the defining count field of the setup, proving
+$T_1\le |V_1|D^2$.
+
+For each $g\in V_1$, choose $x\in g\cap X_s$ and take the unique
+$u\in g\cap f$. The map $g\mapsto(u,x,g)$ is injective, since its last
+coordinate remembers $g$. Its image is contained in
+$\{(v,x,h):v\in f,\ x\in X_s,\ v,x\in h\}$, whose cardinality is
+$\sum_{x\in X_s}\sum_{v\in f}|\{h:v,x\in h\}|$ by counting the fibers
+over $(x,v)$. By the displayed definition this is
+$\mathrm{totalXs}$. Taking cardinalities and real casts proves the second
+inequality.
+\end{proof}

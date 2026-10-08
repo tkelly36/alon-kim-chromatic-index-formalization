@@ -1,0 +1,88 @@
+\begin{lemma}
+Let $G$ be a finite $\Delta$-regular graph and let $0<\gamma\le\Delta$.
+Then there is a probability mass function $\mu$ on subsets of $V(G)$ which is
+the activation--priority independent-set sampling law of
+\noderef{RandomIndependentSetSampling} with activation probability
+$\gamma/\Delta$.
+\end{lemma}
+\begin{proof}
+Put $p=\gamma/\Delta$.  The assumptions give $0<p\le 1$.  On the finite
+space of activation sets, give each set $A\subseteq V(G)$ the Bernoulli
+product weight
+\[
+p^{|A|}(1-p)^{|V(G)|-|A|}.
+\]
+These weights are nonnegative and sum to $(p+(1-p))^{|V(G)|}=1$ by
+\noderef{SamplingBernoulliActivationMass}, the finite binomial/product
+expansion over the independent activation decisions.
+Independently of this activation choice, take the priority vector
+\(\pi\in[0,1]^{V(G)}\) with the product Lebesgue probability measure.  Because
+\(V(G)\) is finite, this product measure exists on the finite Cartesian
+product of unit intervals; each coordinate is uniform on $[0,1]$, and for
+every vector \(t\in[0,1]^{V(G)}\) the lower rectangle has measure
+\(\prod_v t_v\).  The existence of the joint activation--priority law
+\(\nu\), with the Bernoulli atom formula, unit-cube support on each activation
+atom, lower-rectangle product identity, and fixed-activation comparison
+identity, is exactly \noderef{SamplingFiniteProductPriorityLawExists}.
+
+Let \(\nu\) be the law supplied by
+\noderef{SamplingFiniteProductPriorityLawExists}.  Then \(\nu\) has total mass
+one.  Its activation atoms have exactly the displayed Bernoulli weights,
+priorities lie in the unit cube with full conditional measure on every
+activation atom, and the lower-rectangle identity on each atom is the product
+formula for independent uniform coordinates.
+For a fixed activation set \(A\) and a fixed activated vertex \(v\), the event
+that \(v\) beats all activated neighbors is computed by conditioning on
+\(\pi(v)=a\): each activated neighbor has priority below \(a\) with
+probability \(a\), independently.  Integrating over \(a\in[0,1]\) gives
+\[
+\Pr(A\text{ is the activation set and }v\text{ beats its activated
+neighbors})
+=\Pr(A)\int_0^1 a^{|A\cap N_G(v)|}\,da,
+\]
+which is precisely the fixed-activation comparison clause in
+\noderef{RandomIndependentSetSampling}.
+
+Define
+\[
+I(A,\pi)=\{v\in A:\pi(v)>\pi(w)\text{ for every }w\in A\cap N_G(v)\}
+\]
+and apply \noderef{SamplingActivationPriorityPushForwardSupport}.  This
+supplies a finite mass function \(\mu\) on subsets, proves that \(\mu\) is
+nonnegative and has total mass one, identifies \(\mu(S)\) with
+\(\nu\{(A,\pi):I(A,\pi)=S\}\), and proves that every set with positive
+\(\mu\)-mass is independent.  The last assertion follows from the strict
+priority rule: if adjacent vertices \(u\) and \(v\) were both in
+\(I(A,\pi)\), then the two inequalities \(\pi(v)<\pi(u)\) and
+\(\pi(u)<\pi(v)\) would both have to hold.
+
+It remains only to check the two-vertex integral clause of
+\noderef{RandomIndependentSetSampling}.  Let \(u\ne v\) be nonadjacent.  By
+\noderef{SamplingNonadjacentPairChamberIntegral}, applied to the same
+\(\nu\), the push-forward \(\mu\), the product clauses above, and the
+\(\Delta\)-regularity of \(G\), the probability that the output contains both
+\(u\) and \(v\) is exactly the displayed chamber integral.  Concretely, for
+both \(u\) and \(v\) to survive, they must both be activated, contributing
+the factor \(p^2\).  Write the rescaled priority coordinates as
+\(x=\gamma(1-\pi(u))\) and \(y=\gamma(1-\pi(v))\).  Splitting the square
+\([0,\gamma]^2\) into the two ordered chambers and using symmetry gives the
+factor \(2/\Delta^2\) and the region \(0\le x\le y\le\gamma\).  On this
+chamber, a neighbor of \(u\) which is not also a neighbor of \(v\) avoids
+blocking \(u\) with probability \(1-x/\Delta\), while every neighbor of
+\(v\) avoids blocking \(v\) with probability \(1-y/\Delta\).  Common
+neighbors are counted in the second group only on this ordered chamber, so
+the first exponent is
+\(\Delta-|N_G(u)\cap N_G(v)|\) and the second exponent is \(\Delta\).  The
+regularity of \(G\) supplies the two degree counts equal to \(\Delta\).
+Multiplying the independent avoidance probabilities and integrating over the
+ordered chamber gives exactly
+\[
+\frac{2}{\Delta^2}\int_0^\gamma\int_x^\gamma
+\left(1-\frac{x}{\Delta}\right)^{
+\Delta-|N_G(u)\cap N_G(v)|}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx .
+\]
+Therefore the measure \(\nu\) and its push-forward \(\mu\) satisfy every
+clause in \noderef{RandomIndependentSetSampling}, proving the claimed
+existence.
+\end{proof}

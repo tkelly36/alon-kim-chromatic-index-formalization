@@ -1,0 +1,70 @@
+\begin{lemma}
+Let $k$ be a positive integer.  If $G$ is a $k$-partite graph with $m$ edges,
+then the number of triangles in $G$ is at most
+\[
+\binom{k}{3}\left(\frac{m}{\binom{k}{2}}\right)^{3/2}.
+\]
+\end{lemma}
+\begin{proof}
+Fix a $k$-partition $V(G)=A_1\cup\cdots\cup A_k$.  For
+$1\le i<j\le k$, write $m_{ij}$ for the number of edges of $G$ between
+$A_i$ and $A_j$.  Since $G$ is $k$-partite, every edge has its endpoints in
+two distinct parts, so
+\[
+\sum_{1\le i<j\le k}m_{ij}=m. \tag{1}
+\]
+Also every triangle has its three vertices in three distinct partite
+classes.  Thus the total triangle count is the sum, over triples
+$i<j<\ell$, of the number of triangles using one vertex in each of
+$A_i,A_j,A_\ell$.
+
+If $k=1$ or $k=2$, there are no triples of distinct partite classes.  Hence
+there are no triangles in $G$.  The factor $\binom{k}{3}$ is zero in these
+two cases.  Thus the right side of the formal Lean statement is zero by its
+leading factor, and the asserted inequality is the trivial inequality
+$0\le 0$; this case analysis does not use the displayed quotient by
+$\binom{k}{2}$.  We may therefore assume $k\ge 3$ for the rest of the proof.
+
+For a fixed triple $i<j<\ell$, consider the induced tripartite graph on
+$A_i\cup A_j\cup A_\ell$.  Its three pairwise edge counts are
+$m_{ij},m_{i\ell},m_{j\ell}$.  We prove directly that the number of triangles
+in this three-part subgraph is at most
+\[
+\sqrt{m_{ij}m_{i\ell}m_{j\ell}}.
+\]
+Write the three parts temporarily as $A,B,C$, and write their pairwise edge
+counts as $x=e(A,B)$, $y=e(A,C)$, and $z=e(B,C)$.  For $b\in B$, let $a_b$
+be the number of neighbors of $b$ in $A$, let $c_b$ be the number of
+neighbors of $b$ in $C$, and let $t_b$ be the number of triangles whose
+$B$-vertex is $b$.  Such a triangle is an $A$-$C$ edge with one endpoint in
+$N_A(b)$ and the other in $N_C(b)$, so $t_b\le a_bc_b$.  Also $t_b\le y$,
+because there are only $y$ total $A$-$C$ edges.  Thus
+$t_b^2\le a_bc_by$, and so $t_b\le \sqrt{a_bc_by}$.  Summing over $b$ and
+using Cauchy--Schwarz gives
+\[
+T=\sum_{b\in B}t_b
+\le \sqrt y\sum_{b\in B}\sqrt{a_bc_b}
+\le \sqrt y\sqrt{\sum_b a_b}\sqrt{\sum_b c_b}
+=\sqrt{xyz}.
+\]
+Here $\sum_b a_b=x$ and $\sum_b c_b=z$ by double-counting the $A$-$B$ and
+$B$-$C$ edges.  Restoring the notation for the fixed triple
+$i,j,\ell$ gives the displayed product estimate.
+
+Summing this product estimate over all triples of parts gives
+\[
+T(G)\le
+\sum_{1\le i<j<\ell\le k}\sqrt{m_{ij}m_{i\ell}m_{j\ell}}. \tag{2}
+\]
+
+\noderef{KPartiteWeightedTriangleInequality} applied to the nonnegative
+weights $w_{ij}=m_{ij}$ now gives
+\[
+\sum_{i<j<\ell}\sqrt{m_{ij}m_{i\ell}m_{j\ell}}
+\le
+\binom{k}{3}
+\left(\frac{m}{\binom{k}{2}}\right)^{3/2}.
+\]
+The total weight in that node is $m$ by (1).  Combining this estimate with
+(2) proves the asserted triangle bound.
+\end{proof}

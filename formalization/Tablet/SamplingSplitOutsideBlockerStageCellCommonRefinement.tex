@@ -1,0 +1,118 @@
+\begin{helper}
+Let \(\Omega_0\) be a finite family of paired supported source and target
+cells \(C^0_{\omega_0}\) and \(C^{\prime 0}_{\omega_0}\).  Assume both
+families are pairwise disjoint.  Let \(\Lambda\) be a finite list of secondary
+Boolean tests, with source tests \(Q_\lambda\) and target tests
+\(Q'_\lambda\).  Suppose that the source and target base cells are transported
+by a relation \(T_{\omega_0}\), that every secondary test is transported by
+the same relation, and that for every base index \(\omega_0\) and truth vector
+\(\tau\subseteq\Lambda\) the source and target Boolean subcells
+\[
+C^0_{\omega_0}\cap
+  \{\,\eta: \eta\in Q_\lambda \Longleftrightarrow \lambda\in\tau
+       \text{ for all }\lambda\in\Lambda\,\}
+\]
+and
+\[
+C^{\prime 0}_{\omega_0}\cap
+  \{\,\eta': \eta'\in Q'_\lambda \Longleftrightarrow \lambda\in\tau
+       \text{ for all }\lambda\in\Lambda\,\}
+\]
+have equal source and target measure, and suppose this common atom mass is
+represented by a nonnegative real weight.  Assume also that, for every
+\(\omega_0\), the source base-cell mass and the target base-cell mass already
+split over these finitely many Boolean truth-vector atoms:
+\[
+\nu(C^0_{\omega_0})
+=\sum_{\tau\subseteq\Lambda}
+  \nu\!\left(C^0_{\omega_0}\cap
+  \{\,\eta: \eta\in Q_\lambda \Longleftrightarrow \lambda\in\tau
+       \text{ for all }\lambda\,\}\right),
+\]
+\[
+\nu'(C^{\prime0}_{\omega_0})
+=\sum_{\tau\subseteq\Lambda}
+  \nu'\!\left(C^{\prime0}_{\omega_0}\cap
+  \{\,\eta': \eta'\in Q'_\lambda \Longleftrightarrow \lambda\in\tau
+       \text{ for all }\lambda\,\}\right).
+\]
+Then there is one finite refinement
+\(\Omega\), with a map \(b:\Omega\to\Omega_0\), a truth vector
+\(\tau_\omega\subseteq\Lambda\), source cells \(C_\omega\), target cells
+\(C'_\omega\), and nonnegative weights \(w_\omega\), such that
+\[
+C_\omega=C^0_{b(\omega)}\cap
+  \{\,\eta: \eta\in Q_\lambda \Longleftrightarrow \lambda\in\tau_\omega
+       \text{ for all }\lambda\,\},
+\]
+\[
+C'_\omega=C^{\prime 0}_{b(\omega)}\cap
+  \{\,\eta': \eta'\in Q'_\lambda \Longleftrightarrow \lambda\in\tau_\omega
+       \text{ for all }\lambda\,\}.
+\]
+The refined source cells and refined target cells are pairwise disjoint, they
+cover the corresponding base cells fiber-by-fiber over \(\Omega_0\), all
+secondary tests are constant on each refined source and target cell with
+truth vector \(\tau_\omega\), transported states have equivalent membership in
+\(C_\omega\) and \(C'_\omega\), and
+\[
+\operatorname{ofReal}(w_\omega)=\nu(C_\omega)=\nu'(C'_\omega).
+\]
+Moreover the base-cell masses split as the finite sums of the refined-cell
+masses over each fiber \(b^{-1}(\omega_0)\), on both the source and target
+sides.
+\end{helper}
+\begin{proof}
+Enumerate the finite set of truth vectors \(\mathcal P(\Lambda)\).  Take
+\(\Omega=\Omega_0\times\mathcal P(\Lambda)\), let \(b(\omega_0,\tau)=\omega_0\),
+and let the truth vector attached to \((\omega_0,\tau)\) be \(\tau\).  Define
+the source and target refined cells by the two displayed formulas in the
+statement.
+
+For a fixed base index \(\omega_0\), every state in \(C^0_{\omega_0}\) has a
+unique truth vector, namely the set of labels \(\lambda\) for which the state
+lies in \(Q_\lambda\).  Hence the refined source cells over \(\omega_0\) cover
+\(C^0_{\omega_0}\).  Two different truth vectors disagree on some label
+\(\lambda\), so their atoms are disjoint.  If two refined source cells have
+different base indices, they are disjoint by the assumed disjointness of the
+base cells.  This proves the source cover and pairwise disjointness; the
+target proof is identical with \(C^{\prime0}_{\omega_0}\) and \(Q'_\lambda\).
+
+The definitions make every secondary test constant on each refined cell:
+membership in \(Q_\lambda\), respectively \(Q'_\lambda\), is equivalent to
+\(\lambda\in\tau\).  If \(T_{\omega_0}(\eta,\eta')\) transports a source state
+to a target state, the assumed base-cell transport identifies membership in
+the paired base cells, and the assumed label transport identifies every
+Boolean label.  Therefore the full conjunction defining \(C_{(\omega_0,\tau)}\)
+is true for \(\eta\) exactly when the full conjunction defining
+\(C'_{(\omega_0,\tau)}\) is true for \(\eta'\).
+
+By the real atom-mass hypothesis for each Boolean atom, the two refined cells
+with the same \((\omega_0,\tau)\) have a common nonnegative real
+representative.  Choose \(w_\omega\) to be that representative.  This gives
+\(\operatorname{ofReal}(w_\omega)=\nu(C_\omega)=\nu'(C'_\omega)\).
+
+It remains only to verify that the final displayed sums are indexed in the
+same way as the assumed base-to-atom mass splittings.  For a fixed
+\(\omega_0\), the fiber \(b^{-1}(\omega_0)\) is precisely
+\(\{\omega_0\}\times\mathcal P(\Lambda)\).  Therefore
+\[
+\sum_{\omega\in\Omega}
+ {\bf 1}_{b(\omega)=\omega_0}\,\nu(C_\omega)
+=\sum_{\tau\subseteq\Lambda}
+  \nu(C_{(\omega_0,\tau)}),
+\]
+and by the definition of \(C_{(\omega_0,\tau)}\) this is exactly the source
+truth-vector sum assumed in the statement.  The source mass-splitting
+hypothesis identifies that sum with \(\nu(C^0_{\omega_0})\).  The identical
+argument on the target side, using the target mass-splitting hypothesis and
+the definition of \(C'_{(\omega_0,\tau)}\), gives
+\[
+\nu'(C^{\prime0}_{\omega_0})
+=\sum_{\omega\in\Omega}
+ {\bf 1}_{b(\omega)=\omega_0}\,\nu'(C'_\omega).
+\]
+Thus the refinement records only mass identities that were either supplied
+atom-by-atom or supplied by the explicit finite-additivity hypotheses for the
+two base cells.
+\end{proof}

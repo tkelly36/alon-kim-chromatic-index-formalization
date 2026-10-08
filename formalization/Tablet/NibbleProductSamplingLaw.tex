@@ -1,0 +1,57 @@
+\begin{lemma}
+Let $Q$ be a nibble completion datum with finite edge and color types,
+and let $0<\gamma\le\Delta$. Put $T=\{(a,v):v\in\operatorname{Fin}(n_a)\}$
+and $\nu=\operatorname{NibbleProductMeasure}_T(\gamma/\Delta)$.
+Then $\nu$ is a probability measure. For each color $a$ there is a mass
+function $\mu_a$ satisfying the random-independent-set sampling law for
+$Q_a,\Delta,\gamma$, with
+$\nu\{J_a=S\}=\operatorname{ofReal}(\mu_a(S))$ for every $S$.
+The events $\{J_a=S\}$ and $\{e\in I_a\}$ are measurable, and every
+$I_a(\omega)$ is independent in the line graph.
+For arbitrary Borel sets $F_a\subseteq(\mathbb R^2)^{\operatorname{Fin}(n_a)}$,
+\[
+\nu\{\forall a,\ (\omega(a,v))_v\in F_a\}
+=\prod_a\nu\{(\omega(a,v))_v\in F_a\}.
+\]
+For arbitrary Borel coordinate sets $s_t\subseteq\mathbb R^2$, moreover,
+$\nu\{\forall t,\omega(t)\in s_t\}=\prod_t\kappa_{\gamma/\Delta}(s_t)$,
+with $\kappa$ as in the product measure definition.
+\end{lemma}
+\begin{proof}
+Put $p=\gamma/\Delta$. The hypotheses imply $\Delta>0$ and $0<p\le1$.
+Each factor in \noderef{NibbleProductMeasure} has mass
+$(p+1-p)\operatorname{Leb}([0,1])=1$. The defining rectangle formula for
+a finite product measure proves the last assertion and total mass one.
+Regroup the factors by color. This gives the displayed color formula first
+for rectangles $F_a$ in the vertex coordinates. To extend it to arbitrary
+Borel $F_a$, fix all but one $F_a$: the sets for which the equality holds
+form a Dynkin system (both sides are finite measures), and contain the
+rectangle pi-system generating the finite product Borel sigma algebra.
+The pi-lambda theorem extends the equality in that argument. Repeating
+for each of the finitely many colors proves the assertion.
+
+For a fixed color, decode its activation set as the coordinates whose
+first component equals $1$, and retain the second components as priorities.
+This is measurable: each activation membership is a coordinate equality,
+and all priority projections are measurable. Its push-forward has activation
+atom mass $p^{|A|}(1-p)^{n_a-|A|}$ and joint lower-rectangle mass
+$p^{|A|}(1-p)^{n_a-|A|}\prod_v t_v$ for $0\le t_v\le1$, by the coordinate
+rectangle formula. By \noderef{SamplingRegularGraphSamplingLawExists},
+choose a sampling law $\mu_a$ on the regular graph $Q_a$.
+The underlying natural Borel measure supplied by
+\noderef{RandomIndependentSetSampling} has exactly these activation and
+lower-rectangle masses. Apply
+\noderef{SamplingActivationRectangleMeasureUniqueness} to identify it
+with the decoded color marginal; the atom masses are finite, being at most
+one. Its push-forward clause therefore gives the asserted mass of $J_a=S$.
+
+Every membership in \noderef{NibbleCompletedSelection} is a finite
+intersection of coordinate equalities, complements, and strict priority
+comparisons. All are Borel, so the finite selection fibers are measurable.
+The definition in \noderef{NibbleSelectedEdges} then gives measurability
+of original-edge selection. Two adjacent completed vertices cannot both
+be selected: their two strict comparisons would give simultaneously
+$q_u<q_v$ and $q_v<q_u$. Inducedness of the embeddings in
+\noderef{NibbleCompletionData} transfers this independence to original
+edges. This argument is pointwise, not merely almost sure.
+\end{proof}

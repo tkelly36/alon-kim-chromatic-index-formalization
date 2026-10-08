@@ -1,0 +1,89 @@
+\begin{lemma}
+Let $k,n\in\mathbb N$ with $k\ge2$, let $C>0$, and let
+$A=(a_{i,j})$ be a nonnegative $k\times n$ real table whose column sums are at
+most $C$.  Suppose there are distinct columns $j_1,j_2$ and a row $i^*$ such
+that
+\[
+\left|
+\sum_{i\ne i^*}(a_{i,j_1}+a_{i,j_2})
+-2\left(1-\frac1k\right)C
+\right|\ge \delta>0 .
+\]
+Then
+\[
+\sum_{j=1}^n\sum_{1\le i<i'\le k}a_{i,j}a_{i',j}
+\le
+\frac{k-1}{2k}nC^2-\frac{k\delta^2}{4(k-1)} .
+\]
+\end{lemma}
+\begin{proof}
+This is the ``moreover'' part of the table-pair lemma from the paper.  We give
+the argument since later 3-uniform 3-simple estimates use exactly this
+stability loss.
+
+For a selected column $j\in\{j_1,j_2\}$ put
+\[
+t_j=\sum_{i\ne i^*}a_{i,j}.
+\]
+The column-sum hypothesis gives $a_{i^*,j}\le C-t_j$.  By Cauchy--Schwarz,
+\[
+\sum_{i\ne i^*}a_{i,j}^2\ge \frac{t_j^2}{k-1}.
+\]
+Therefore
+\[
+\begin{aligned}
+\sum_{i<i'}a_{i,j}a_{i',j}
+&=a_{i^*,j}t_j+
+\frac12\left(t_j^2-\sum_{i\ne i^*}a_{i,j}^2\right)\\
+&\le (C-t_j)t_j+\frac{k-2}{2(k-1)}t_j^2\\
+&=\frac{k-1}{2k}C^2
+-\frac{k}{2(k-1)}
+\left(t_j-\left(1-\frac1k\right)C\right)^2 .
+\end{aligned}
+\]
+Now let $j\in[n]\setminus\{j_1,j_2\}$ be any unselected column, and put
+\[
+s_j=\sum_{i=1}^k a_{i,j}.
+\]
+Since the entries are nonnegative, $s_j\ge0$, and the column-sum hypothesis
+gives $s_j\le C$.  For any real numbers $x_1,\ldots,x_k$ with sum $s$, the
+finite identity
+\[
+\sum_{1\le i<i'\le k}x_ix_{i'}
+=\frac{k-1}{2k}s^2
+-\frac1{2k}\sum_{1\le i<i'\le k}(x_i-x_{i'})^2
+\]
+is obtained by expanding the right-hand side: the square-sum terms cancel to
+leave exactly the cross-products.  Applying this identity to the column
+$x_i=a_{i,j}$ and using that every square is nonnegative gives
+\[
+\sum_{i<i'}a_{i,j}a_{i',j}
+\le \frac{k-1}{2k}s_j^2 .
+\]
+Because $k\ge2$, the coefficient $(k-1)/(2k)$ is nonnegative.  Also
+$s_j\ge0$ and $s_j\le C$, so multiplying the inequality $s_j\le C$ by the
+nonnegative number $s_j$ gives $s_j^2\le Cs_j$.  Since the column-sum
+hypothesis also has $C>0$ and $s_j\le C$, multiplying $s_j\le C$ by the
+nonnegative number $C$ gives $Cs_j\le C^2$.  Therefore
+\[
+s_j^2\le C^2,
+\]
+and multiplying by the nonnegative coefficient $(k-1)/(2k)$ yields
+\[
+\sum_{i<i'}a_{i,j}a_{i',j}\le \frac{k-1}{2k}C^2 .
+\]
+Let
+\[
+x=t_{j_1}-\left(1-\frac1k\right)C,\qquad
+y=t_{j_2}-\left(1-\frac1k\right)C .
+\]
+The hypothesis says $|x+y|\ge\delta$, so
+$x^2+y^2\ge (x+y)^2/2\ge\delta^2/2$.  Summing the column bounds over all
+columns yields
+\[
+\sum_j\sum_{i<i'}a_{i,j}a_{i',j}
+\le \frac{k-1}{2k}nC^2
+-\frac{k}{2(k-1)}(x^2+y^2)
+\le \frac{k-1}{2k}nC^2-\frac{k\delta^2}{4(k-1)} .
+\]
+\end{proof}

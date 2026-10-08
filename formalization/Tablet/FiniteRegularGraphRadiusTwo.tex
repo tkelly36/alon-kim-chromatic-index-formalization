@@ -1,0 +1,20 @@
+\begin{lemma}
+Let $G$ be a finite simple graph in which every vertex has $\Delta$
+neighbors, where $\Delta\ge1$. Put
+$R(v)=\{w:w=v\text{ or }vw\in E(G)\text{ or there is }u
+\text{ with }vu,uw\in E(G)\}$.
+Then $|R(v)|\le1+\Delta^2\le2\Delta^2$, and
+$w\in R(v)$ if and only if $v\in R(w)$.
+\end{lemma}
+\begin{proof}
+Write $N(v)$ for the neighbors of $v$. The set $R(v)$ is contained in
+$\{v\}\cup N(v)\cup\bigcup_{u\in N(v)}(N(u)\setminus\{v\})$:
+a length-two walk ending away from $v$ belongs to the last union.
+For each $u\in N(v)$, symmetry of adjacency gives $v\in N(u)$, so
+$|N(u)\setminus\{v\}|=\Delta-1$. The finite union bound therefore gives
+$|R(v)|\le1+\Delta+\Delta(\Delta-1)=1+\Delta^2$.
+Since $\Delta\ge1$, this is at most $2\Delta^2$.
+Equality of endpoints is symmetric, an edge can be reversed, and a
+two-edge walk through $u$ can be reversed through the same $u$.
+These three cases prove the claimed membership equivalence.
+\end{proof}

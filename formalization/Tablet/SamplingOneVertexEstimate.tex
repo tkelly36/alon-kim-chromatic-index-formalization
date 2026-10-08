@@ -1,0 +1,60 @@
+\begin{lemma}
+In the activation--priority sampling procedure of
+\noderef{RandomIndependentSetSampling}, suppose that $G$ is $\Delta$-regular
+and $\Delta$ is sufficiently large.  For every parameter $\gamma$ and every
+vertex $v$,
+\[
+\Pr[v\in I]=
+\frac1\Delta\int_0^\gamma \left(1-\frac{x}{\Delta}\right)^\Delta\,dx
+\]
+and
+\[
+\left|\Pr[v\in I]-\frac{1-e^{-\gamma}}{\Delta}\right|
+\le \frac2{\Delta^2}.
+\]
+\end{lemma}
+\begin{proof}
+It suffices to take $\Delta\ge1$. Fix a vertex $v$; the assertion is
+vacuous when there is no vertex. The sampling definition
+\noderef{RandomIndependentSetSampling} gives $\gamma>0$, and
+\noderef{RandomIndependentSetSamplingGammaLeDelta} gives $\gamma\le\Delta$.
+Put $p=\gamma/\Delta$ and
+$b_A=p^{|A|}(1-p)^{|V|-|A|}$, which is nonnegative since $0<p\le1$.
+
+Let $C_A=\{(A',\pi):A'=A\}$ and let $U_A$ be its subset on which every
+activated priority lies in $[0,1]$. The sampling definition gives
+$\nu(C_A)=\operatorname{ofReal}(b_A)<\infty$ and
+$\nu(U_A)=\nu(C_A)$. Let $D_A$ be the event that every activated neighbor
+of $v$ in $A$ has smaller priority than $v$. It is measurable: it is a
+finite intersection of strict inequalities between coordinate projections.
+Intersecting the equal-finite-mass inclusion $U_A\subseteq C_A$ with
+$D_A$ preserves equality of measures. Explicitly, split both sets into
+their intersections with $D_A$ and its complement by finite additivity;
+the complementary part of $U_A$ is contained in that of $C_A$, and
+cancellation of the finite complementary mass gives the reverse
+inequality to monotonicity. Therefore, for $v\in A$, the supported
+integral clause of the sampling definition yields
+\[
+ \nu(C_A\cap D_A)=\operatorname{ofReal}(b_A)
+ \operatorname{ofReal}\left(\int_0^1
+ a^{|\{u\in A:u\sim v\}|}\,da\right).
+\]
+The integral is nonnegative, since its integrand is nonnegative on $[0,1]$.
+
+By \noderef{SamplingOneVertexPushForwardEvent} and the singleton
+specialization of \noderef{SamplingFiniteSetActivationPartition},
+the extended nonnegative mass of the survival event equals the sum of
+these expressions over $A$ containing $v$. All summands are nonnegative,
+so $\operatorname{ofReal}$ commutes with this finite sum and is injective
+on both real nonnegative sides. Thus the real survival probability is
+\[
+ \sum_{A:v\in A} b_A\int_0^1a^{|\{u\in A:u\sim v\}|}\,da.
+\]
+By \noderef{SamplingOneVertexActivationIntegralSum}, regularity identifies
+this with $p\int_0^1(1-p(1-a))^\Delta\,da$.
+By \noderef{SamplingOneVertexChangeVariables}, since $\Delta>0$, this is
+$\Delta^{-1}\int_0^\gamma(1-x/\Delta)^\Delta\,dx$.
+Finally \noderef{SamplingOneVertexAnalyticEstimate}, with
+$\Delta>0$ and $0\le\gamma\le\Delta$, gives precisely the stated
+absolute-error bound.
+\end{proof}

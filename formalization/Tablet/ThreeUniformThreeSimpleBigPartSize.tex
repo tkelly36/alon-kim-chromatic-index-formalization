@@ -1,0 +1,117 @@
+\begin{lemma}
+In a $3$-uniform $3$-simple local extremal setup at scale $D$, with
+$\mathcal F$, $f$, $X_s$, and $X_b$ as in
+\noderef{ThreeUniformThreeSimpleLocalSetup}, if
+$P(f)=(1+\delta)D^2-9D$ with $0\le\delta\le0.031$, then the high-degree part
+satisfies
+\[
+|X_b|=6.
+\]
+\end{lemma}
+\begin{proof}
+The hypotheses of the lemma give
+\[
+P(f)=(1+\delta)D^2-9D,\qquad 0\le\delta\le0.031.
+\]
+The local setup \noderef{ThreeUniformThreeSimpleLocalSetup} records the exact
+pair-count identity
+\[
+P(f)=3D^2-6D+3-w(X)+Y
+\]
+and the nonnegativity $Y\ge0$.  Substituting the displayed hypothesis for
+$P(f)$ and solving for $w(X)$ gives
+\[
+w(X)=3D^2-6D+3+Y-P(f)
+     =(2-\delta)D^2+3D+3+Y .
+\]
+Since $D$ is in the sufficiently large range of the local setup, $D$ is
+positive, and therefore $3D+3+Y\ge0$.  Hence
+\[
+w(X)\ge (2-\delta)D^2. \tag{1}
+\]
+
+The same setup states that $X_b=X\setminus X_s$, that $X_s$ is the maximal
+initial segment of the vertices of lowest total degree into $f$ subject to
+\[
+\sum_{v\in f}\sum_{x\in X_s}\deg_{\mathcal F}(v,x)\le D/2.
+\]
+It also records the row and column conventions for the table
+$a_{v,x}=\deg_{\mathcal F}(v,x)$: every column sum is at most $D$, each row
+sum is $2(D-1)$, and hence
+\[
+\sum_{v\in f}\sum_{x\in X}\deg_{\mathcal F}(v,x)=6(D-1).
+\]
+These are precisely the $k=3$ saturated edge table properties stated in
+\noderef{ThreeUniformSaturatedEdgeStructure}, incorporated into the local
+setup.  Therefore the total degree into $X_b$ is
+\[
+\sum_{v\in f}\sum_{x\in X_b}\deg_{\mathcal F}(v,x)
+=6(D-1)-\sum_{v\in f}\sum_{x\in X_s}\deg_{\mathcal F}(v,x)
+\ge 6(D-1)-D/2.
+\]
+For sufficiently large $D$ this last quantity is greater than $5D$.  If
+$|X_b|\le5$, the column bound $D$ would make the same total at most $5D$.
+Thus $|X_b|\ge6$.
+
+Suppose, for contradiction, that $|X_b|\ge7$.  Choose $x'\in X_b$ minimizing
+\[
+m=\sum_{v\in f}\deg_{\mathcal F}(v,x').
+\]
+Since $D^2\ge0$ and $\delta\le0.031$, the present pair-count equality gives
+$P(f)=(1+\delta)D^2-9D\le1.031D^2-9D$.
+By \noderef{ThreeUniformThreeSimpleSmallXs}, applied with this cutoff,
+the present equality $P(f)=(1+\delta)D^2-9D$, and $\delta\ge0$,
+\[
+\sum_{v\in f}\sum_{x\in X_s}\deg_{\mathcal F}(v,x)
+\le \frac85\delta D\le0.0496D,
+\]
+where the second inequality is $\delta\le0.031$.  The maximality condition on
+$X_s$ in \noderef{ThreeUniformThreeSimpleLocalSetup} now gives the lower
+bound on any vertex of $X_b$: if some $x\in X_b$ had total degree into $f$
+less than
+\[
+D/2-\sum_{v\in f}\sum_{y\in X_s}\deg_{\mathcal F}(v,y),
+\]
+then adding $x$ to the initial low-degree segment would still keep the total
+at most $D/2$, contradicting maximality.  Hence, in particular,
+\[
+m\ge D/2-\sum_{v\in f}\sum_{y\in X_s}\deg_{\mathcal F}(v,y)
+\ge D/2-0.0496D>0.45D. \tag{2}
+\]
+Since $x'$ is the minimum among at least seven vertices of $X_b$ and the
+total over $X_b$ is at most the total over all of $X$, namely $6(D-1)$, we
+also have
+\[
+m\le \frac{6(D-1)}{|X_b|}\le \frac67D.
+\tag{3}
+\]
+
+Apply \noderef{TablePairFillingBound} to the table on $X\setminus\{x'\}$ with
+three rows, column bound $D$, and total-sum bound $6(D-1)-m$.  By (2) the
+parameter $m$ is positive, and by (3), in the sufficiently large range,
+$6(D-1)-m=5D+(D-6-m)$ has quotient $q=5$ and a nonnegative remainder
+$D-6-m\le D-m<D$.  The bound therefore gives
+\[
+w(X\setminus\{x'\})\le
+ \frac13\bigl(5D^2+(D-6-m)^2\bigr)
+\le \frac13\bigl(5D^2+(D-m)^2\bigr)
+=2D^2-\frac23mD+\frac13m^2 .
+\]
+Applying the same bound to the single column $x'$ with total sum and column
+bound both equal to $m$ gives $w(x')\le m^2/3$.  Since the local setup defines
+$w(S)$ as the sum of the column contributions over $S$, the two disjoint
+parts $X\setminus\{x'\}$ and $\{x'\}$ add to $X$, so
+\[
+w(X)=w(X\setminus\{x'\})+w(x')
+\le2D^2-\frac23m(D-m).
+\]
+The interval (2)--(3) implies $D-m\ge D/7$, and therefore
+\[
+w(X)\le 2D^2-\frac23(0.45D)(D/7)
+\le(2-0.04)D^2.
+\]
+This contradicts (1), because $\delta\le0.031<0.04$ gives
+$(2-\delta)D^2>(2-0.04)D^2$ for the positive $D$ in the local setup.
+Therefore $|X_b|\le6$, and together with $|X_b|\ge6$ this proves
+$|X_b|=6$.
+\end{proof}

@@ -1,0 +1,112 @@
+\begin{lemma}
+For every positive integer $k$ there is $D_0$ such that the following holds
+for all $D\ge D_0$.  Let $\mathcal F\in H(k,k,D)$, and let
+$f\in E(\mathcal F)$ maximize $b_{L(\mathcal H),kD}(e)$ over all
+$\mathcal H\in H(k,k,D)$ whose vertex and edge types lie in the same
+ambient universe levels as those of $\mathcal F$, and all
+$e\in E(\mathcal H)$.  Then
+\[
+P_{L(\mathcal F)}(f)\ge \frac{k-1}{2}D^2-k^2D .
+\]
+\end{lemma}
+\begin{proof}
+Choose $D_0$ large enough that $D\ge D_0$ implies $D\ge 1$ and that
+\noderef{KUniformKSimpleExtremalSaturation} applies.  Fix $D\ge D_0$.
+We first dispose of the case $k=1$.  By \noderef{IndependentPairCount},
+$P_{L(\mathcal F)}(f)$ is the cardinality of a set of independent
+two-subsets of the neighborhood of $f$ in the line graph.  Hence
+$P_{L(\mathcal F)}(f)\ge 0$.  Since $D\ge 1$, also $D\ge0$, and when
+$k=1$ the required right hand side is
+\[
+\frac{k-1}{2}D^2-k^2D=-D\le 0 .
+\]
+Thus $P_{L(\mathcal F)}(f)\ge0\ge -D$, proving the claim for $k=1$.
+
+It remains to treat $k\ge2$.
+Let $f=\{v_1,\ldots,v_k\}$ and let $X=X(f,\mathcal F)$ be the set of
+vertices outside $f$ that occur in an edge meeting $f$.  Let $G$ be the
+subgraph of \noderef{LineGraphOfHypergraph} induced on
+$N_{L(\mathcal F)}(f)$.  By
+\noderef{KUniformKSimpleExtremalSaturation}, every vertex $v_i$ of $f$ has
+degree $D$, and $f$ has exactly $k(D-1)$ line-graph neighbors.  Hence the
+total number of unordered pairs in $N_{L(\mathcal F)}(f)$ is
+\[
+\binom{kD-k}{2}.
+\]
+By \noderef{IndependentPairCount}, $P_{L(\mathcal F)}(f)$ is the number of
+nonedges among these pairs.  Therefore
+\[
+P_{L(\mathcal F)}(f)=\binom{kD-k}{2}-|E(G)|. \tag{1}
+\]
+
+We next bound $|E(G)|$.  For each $i$, let
+$C_i$ be the set of edges other than $f$ that contain $v_i$.  The saturation
+node says that the $C_i$ are disjoint and each has size $D-1$: disjointness
+follows because the total incidence count from the $k$ vertices of $f$ is
+already the number of distinct neighbors, so no neighbor can contain two
+vertices of $f$; then the maximum-degree bound forces each class to have
+exactly $D-1$ members.  Inside each $C_i$ all pairs are adjacent in the line
+graph, contributing
+\[
+k\binom{D-1}{2}. \tag{2}
+\]
+
+For cross-edges between $C_i$ and $C_{i'}$, put
+$a_{i,x}=\deg_{\mathcal F}(v_i,x)$ for $x\in X$.  A cross pair
+$(e_1,e_2)\in C_i\times C_{i'}$ can be adjacent only by sharing a vertex of
+$X$, because $e_1$ contains $v_i$ but not $v_{i'}$ and $e_2$ contains
+$v_{i'}$ but not $v_i$.  Summing
+$a_{i,x}a_{i',x}$ over $x\in X$ counts such a cross pair once for each
+outside common vertex.  Thus it is an upper bound for the number of
+line-graph edges between $C_i$ and $C_{i'}$.  Summing over $i<i'$ gives
+\[
+|E(G)|\le
+k\binom{D-1}{2}
++
+\sum_{x\in X}\sum_{1\le i<i'\le k}a_{i,x}a_{i',x}. \tag{3}
+\]
+
+The table $A=(a_{i,x})$ satisfies the hypotheses of
+\noderef{TablePairFillingBound} with $C=D$ and $T=k(k-1)D$.  Indeed, each
+entry is a nonnegative degree count by \noderef{HypergraphDegree}.  The
+already established assumptions for this remaining case give the two
+numerical side conditions in that node: $k\ge2$ by the case split,
+$C=D>0$ because $D\ge1$, and
+\[
+T=k(k-1)D>0
+\]
+because each of the three integer factors $k$, $k-1$, and $D$ is positive.
+For a
+fixed outside vertex $x$, the column sum
+$\sum_i a_{i,x}$ counts edges containing $x$ and one vertex of $f$; by the
+disjointness just proved, no such edge is counted twice, so this column sum
+is at most the degree of $x$, and hence at most $D$ by
+\noderef{MaxDegreeAtMost}.  For a fixed row $i$, the sum
+$\sum_x a_{i,x}$ counts outside incidences in the $D-1$ edges of
+$C_i$.  Each such edge is $k$-uniform by \noderef{UniformHypergraph} and
+contains $v_i$ plus exactly $k-1$ vertices outside $f$, so the row sum is
+$(k-1)(D-1)$.  Therefore the whole table sum is
+$k(k-1)(D-1)\le k(k-1)D$.
+
+Applying \noderef{TablePairFillingBound} with this $C$ and $T$ gives
+\[
+\sum_{x\in X}\sum_{i<i'}a_{i,x}a_{i',x}
+\le
+\frac{k-1}{2k}\,k(k-1)D^2
+=\frac{(k-1)^2}{2}D^2. \tag{4}
+\]
+Combining (1), (3), and (4), we obtain
+\[
+\begin{aligned}
+P_{L(\mathcal F)}(f)
+&\ge
+\binom{kD-k}{2}
+-k\binom{D-1}{2}
+-\frac{(k-1)^2}{2}D^2\\
+&=
+\frac{k-1}{2}D^2-(k^2-k)D+\frac{k^2-k}{2}\\
+&\ge \frac{k-1}{2}D^2-k^2D,
+\end{aligned}
+\]
+which is the asserted lower bound.
+\end{proof}

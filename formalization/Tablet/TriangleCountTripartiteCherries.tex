@@ -1,0 +1,28 @@
+\begin{lemma}
+A tripartite graph $G$ has at most
+\[
+\frac{1}{12}\sum_{v\in V(G)}\deg_G(v)^2
+\]
+triangles.
+\end{lemma}
+\begin{proof}
+Let the three vertex classes be $A_1,A_2,A_3$, and let $T_v$ be the number of
+triangles containing a fixed vertex $v$.  Every triangle has exactly three
+vertices, so
+\[
+3T=\sum_{v\in V(G)}T_v .
+\]
+If $v\in A_i$, then every triangle through $v$ chooses one neighbor of $v$ in
+each of the other two classes.  Thus, writing those neighbor counts as
+$p$ and $q$, we have $T_v\le pq$.  Since $p+q=\deg_G(v)$ and
+$pq\le ((p+q)/2)^2$, this gives
+\[
+T_v\le \left(\frac{\deg_G(v)}2\right)^2 .
+\]
+Summing over $v$ and dividing by $3$ gives
+\[
+T\le \frac13\sum_{v\in V(G)}\frac{\deg_G(v)^2}{4}
+=\frac1{12}\sum_{v\in V(G)}\deg_G(v)^2,
+\]
+as claimed.
+\end{proof}

@@ -1,0 +1,112 @@
+\begin{helper}
+Fix an actual paired mixed surface
+\(\widehat S_j(\omega),\widehat C_\omega,\lambda,M_j(\omega)\) from
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\), and fix
+the marginal-preserving coupling data
+\(\mathcal C\) from
+\(\noderef{SamplingSplitOutsideBlockerMarginalPreservingCouplingData}\) on
+the same atom family \(C_\omega,C'_\omega,w(\omega)\).  Assume that the
+surface's paired measure and paired cells are exactly the paired measure and
+paired cells of \(\mathcal C\).  Assume also that \(\phi\) is injective, that
+the actual list \(z_0,\ldots,z_{n-1}\) covers every source outside blocker
+adjacent to \(X\), that the source law \(\nu\) satisfies the Bernoulli
+activation atom formula and priority lower-rectangle law with a parameter
+\(p\in[0,1]\), and that the source endpoint event
+\[
+  E_X=\{(A,\pi): I_G(A,\pi)\cap X\ne\emptyset\}
+\]
+is measurable.  Then for every atom \(\omega\),
+\[
+  \operatorname{ofReal}(w(\omega)M_0(\omega))
+  =
+  \nu(E_X\cap C_\omega).
+\]
+\end{helper}
+\begin{proof}
+Fix \(\omega\).  The measured-stage field of
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\), applied
+with \(j=0\), gives
+\[
+  \operatorname{ofReal}(w(\omega)M_0(\omega))
+  =
+  \lambda(\widehat S_0(\omega)\cap\widehat C_\omega).
+\]
+We first compare \(\widehat S_0(\omega)\), inside the paired cell, with the
+first-coordinate cylinder over the displayed source local/blocker endpoint
+event.  Let \(D_X\) be the event that there is \(x\in X\) such that \(x\) is
+active, \(x\) beats every active neighbor lying in \(X\cup\{r\}\), and every
+listed blocker \(z_i\) with \(x\in B_i\) fails the opposite strict test
+\[
+  \neg(z_i\in A,\ \pi(x)<\pi(z_i),\ 0\le \pi(z_i)\le1).
+\]
+This is only the displayed endpoint event; it is not yet identified with the
+true endpoint survival event.
+
+Let \(\zeta=((A,\pi),(A',\pi'))\in\widehat C_\omega\).  Expanding the
+mixed-stage definition in
+\(\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}\) at
+\(j=0\), membership in \(\widehat S_0(\omega)\) means that there is \(x\in X\)
+with \(x\in A\) and \(\phi(x)\in A'\), the source and target embedded-neighbor
+priority tests hold for vertices in \(X\cup\{r\}\), and every retained outside
+blocker \(z_i\) with \(x\in B_i\) satisfies the displayed negated source
+blocker test.  There are no private target blocker tests at \(j=0\).
+
+The additional target embedded requirements are redundant on
+\(\widehat C_\omega\).  The surface records \(X\cup\{r\}\subseteq S\), where
+\(S\) is the source common coordinate set, and on \(\widehat C_\omega\) it
+synchronizes common activation traces and priorities.  Since \(\phi\) is
+injective, \(x\in A\) and the source embedded comparisons are equivalent on
+the paired cell to \(\phi(x)\in A'\) and the corresponding target embedded
+comparisons.  Therefore, on \(\widehat C_\omega\),
+\[
+  \zeta\in\widehat S_0(\omega)
+  \quad\Longleftrightarrow\quad
+  \zeta_1\in D_X .
+\]
+Consequently
+\[
+  \widehat S_0(\omega)\cap\widehat C_\omega
+  =
+  \{\zeta:\zeta_1\in D_X\}\cap\widehat C_\omega .
+\]
+
+The event \(D_X\) is measurable by
+\(\noderef{SamplingSplitOutsideBlockerSourceDisplayedEndpointMeasurable}\):
+it is a finite union, over \(x\in X\), of finite intersections of activation
+cylinder conditions, strict priority inequalities between named source
+coordinates, and closed unit-interval conditions on named source coordinates.
+Thus the displayed event is measurable before any marginal law is used.
+
+The surface and \(\mathcal C\) have the same paired measure and paired cells.
+Applying the source restricted marginal law from
+\(\noderef{SamplingSplitOutsideBlockerMarginalPreservingCouplingData}\) to
+this measurable displayed event \(D_X\) gives
+\[
+  \lambda(\{\zeta:\zeta_1\in D_X\}\cap\widehat C_\omega)
+  =
+  \nu(D_X\cap C_\omega).
+\]
+
+It remains to replace \(D_X\) by the true endpoint event \(E_X\) in measure
+on the same cell.  Apply
+\(\noderef{SamplingSplitOutsideBlockerEndpointBoundaryCellReduction}\) to the
+source graph, with candidate type \(\{x:V:x\in X\}\), candidate set the full
+finite subtype, embedding \(x\mapsto x\), local coordinate set
+\(X\cup\{r\}\), blocker \(b_i(x)=z_i\), and blocker predicate
+\(H_i(x)\) equal to \(x\in B_i\).  The local-self condition follows from
+\(x\in X\).  If \(H_i(x)\), then the candidate-set field of the paired
+surface gives \(x z_i\in E(G)\), so the listed blocker is a genuine neighbor.
+For neighbor coverage, let \(y\) be adjacent to a candidate \(x\).  If
+\(y\in X\cup\{r\}\), it is local.  Otherwise the outside-blocker coverage
+hypothesis gives an index \(i\) with \(z_i=y\), and the surface's
+candidate-set identity gives \(x\in B_i\).  Thus the hypotheses of the
+boundary-reduction node are exactly the source activation atom law, the source
+priority rectangle law, and the listed-cover facts assumed here.  It yields
+\[
+  \nu(E_X\cap C_\omega)=\nu(D_X\cap C_\omega).
+\]
+Combining this mass equality with the measured-stage identity and the
+restricted source marginal identity proves the claimed source endpoint mass
+identity for \(\omega\).  Since \(\omega\) was arbitrary, the result holds for
+every atom.
+\end{proof}

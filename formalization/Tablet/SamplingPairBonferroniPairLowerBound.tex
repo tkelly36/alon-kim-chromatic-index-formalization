@@ -1,0 +1,94 @@
+\begin{helper}
+Fix parameters $\alpha,L,\gamma_0$ with $0<\alpha\le1$, $0<1-\alpha$,
+$0\le L$, and $0\le\gamma_0$.  Suppose
+\[
+e^{-\gamma_0}\left(1+\frac1\alpha\right)\le\alpha
+\]
+and
+\[
+\frac53+2\alpha\le
+2(1-\alpha)^2e^{-\alpha L}
+\int_0^L\bigl(e^{-x}-e^{-L}\bigr)\,dx .
+\]
+Let $\Delta$ and $\gamma$ satisfy $\Delta>0$, $L\le\gamma$,
+$\gamma_0\le\gamma\le\Delta$, $L<\Delta$, $\gamma_0<\Delta$, and
+\[
+\frac{\gamma_0^2}{\Delta-\gamma_0}\le-\log(1-\alpha),
+\qquad
+\frac{L^2}{\Delta-L}\le-\log(1-\alpha).
+\]
+Let $G$ be a finite $\Delta$-regular graph, let $I$ be sampled by
+\noderef{RandomIndependentSetSampling}, let $X\subseteq N_G(r)$, and assume
+that no two distinct vertices of $X$ have a common neighbor outside
+$N_G[r]$.  Let $\mathcal J_2$ be the independent two-element subsets of
+$X$.  For $P\in\mathcal J_2$, put
+\[
+C(P)=\{w:\text{$w$ is adjacent to every vertex of $P$}\},
+\qquad
+\lambda_P=\frac{\Delta-|C(P)|}{\Delta}.
+\]
+Then
+\[
+\mathbb E\binom{|I\cap X|}{2}
+\ge
+\frac{|\mathcal J_2|}{\Delta^2}
++\frac1{3\Delta^2}\sum_{P\in\mathcal J_2}
+\lambda_P\left(\frac{2}{\lambda_P(1+\lambda_P)}-1\right)
+-3\alpha .
+\]
+\end{helper}
+\begin{proof}
+The exact pair identity \noderef{SamplingPairExposureEstimate} writes
+$\mathbb E\binom{|I\cap X|}{2}$ as a sum over $P\in\mathcal J_2$ of the
+finite pair kernel
+\[
+\frac{2}{\Delta^2}\int_0^\gamma\int_x^\gamma
+\left(1-\frac{x}{\Delta}\right)^{\Delta-|C(P)|}
+\left(1-\frac{y}{\Delta}\right)^\Delta\,dy\,dx .
+\]
+For $P=\{u,v\}$ the clean-neighborhood hypothesis implies
+$|C(P)|\le\Delta-1$: every common neighbor other than $r$ lies in
+$N_G(r)$ and is not $u$ or $v$.  Hence
+$0<\lambda_P\le1$.
+
+If $\alpha\le\lambda_P$, then
+\noderef{SamplingPairLowOverlapExponentialWindowMargin} supplies the
+required exponential margin on the window $[0,\gamma_0]$, and
+\noderef{SamplingPairLowOverlapWindowLower} converts it, using the
+finite-product large-$\Delta$ condition, into
+\[
+\frac{2}{\Delta^2}\int_0^\gamma\int_x^\gamma\cdots\,dy\,dx
+\ge
+\frac{2/(1+\lambda_P)-6\alpha}{\Delta^2}.
+\]
+If $\lambda_P<\alpha$, then
+\noderef{SamplingPairHighOverlapExponentialWindowMargin} gives the
+high-overlap window margin from the stated one-dimensional numerical
+bound, and \noderef{SamplingPairHighOverlapFiniteProductWindowLower}
+converts it into
+\[
+\frac{2}{\Delta^2}\int_0^L\int_x^L\cdots\,dy\,dx
+\ge
+\frac{5/3+2\alpha}{\Delta^2}.
+\]
+The integrand is nonnegative on the whole sampling chamber, so the full
+$[0,\gamma]$ integral is at least this window integral.
+
+The elementary split estimate \noderef{SamplingPairKernelSplitLowerBound}
+combines the two cases and gives, for every $P\in\mathcal J_2$,
+\[
+\Pr[P\subseteq I]\ge
+\frac{1+\frac13\lambda_P
+\left(\frac{2}{\lambda_P(1+\lambda_P)}-1\right)}{\Delta^2}
+-\frac{6\alpha}{\Delta^2}.
+\]
+Summing over $P\in\mathcal J_2$ gives the desired main term and a total
+loss of
+\[
+\frac{6\alpha}{\Delta^2}|\mathcal J_2|.
+\]
+Finally \noderef{SamplingIndependentPairsHalfDegreeSquare} gives
+$|\mathcal J_2|\le\Delta^2/2$, because $X\subseteq N_G(r)$ and $G$ is
+$\Delta$-regular at $r$.  Thus the summed loss is at most $3\alpha$, which
+is exactly the claimed error term.
+\end{proof}

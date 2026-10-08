@@ -1,0 +1,52 @@
+\begin{definition}
+A \emph{$3$-uniform $3$-simple local extremal setup at scale $D$} consists
+of a finite multihypergraph $\mathcal F\in H(3,3,D)$, an edge
+$f\in E(\mathcal F)$, and the following local data from the proof of Lemma
+\ref{lem: 3,3 a parameter}.  The integer $D$ is in the sufficiently large
+range.  The pair $(\mathcal F,f)$ maximizes
+$b_{L(\mathcal H),3D}(e)$ among all finite $\mathcal H\in H(3,3,D)$ and
+edges $e$.  The edge $f$ is saturated: every vertex of $f$ has degree $D$,
+and $f$ intersects exactly $3(D-1)$ other edges.
+
+Let $X=X(f,\mathcal F)$ be the set of vertices outside $f$ lying in an edge
+that meets $f$.  Let $G$ be the subgraph of $L(\mathcal F)$ induced on
+$N_{L(\mathcal F)}(f)$, and let $\overline G$ be its complement.  Let
+$P(f)$ and $T(f)$ be respectively the independent-pair and independent-triple
+counts in this neighborhood, equivalently the edge and triangle counts of
+$\overline G$.  Let
+\[
+w(S)=\sum_{x\in S}\sum_{v<v'\in f}
+\deg_{\mathcal F}(v,x)\deg_{\mathcal F}(v',x)
+\]
+for $S\subseteq X$, and let $Y=Y_{\mathcal F}(f)$ be the nonnegative
+overlap-correction term in \noderef{SaturatedLineGraphEdgeCount}.  Thus
+\[
+P(f)=3D^2-6D+3-w(X)+Y,\qquad Y\ge0.
+\]
+
+The setup also includes the low-degree initial segment $X_s\subseteq X$,
+chosen maximal among the vertices of lowest total degree into $f$ subject to
+\[
+\sum_{v\in f}\sum_{x\in X_s}\deg_{\mathcal F}(v,x)\le D/2,
+\]
+and $X_b=X\setminus X_s$.  The row and column conventions are those of the
+table with rows $v\in f$, columns $x\in X$, and entries
+$a_{v,x}=\deg_{\mathcal F}(v,x)$: column sums are at most $D$, each row sum is
+$2(D-1)$, and hence the total table sum over $X$ is $6(D-1)$.  The vertices
+of $\overline G$ are partitioned as $V_1\cup V_2$, where $V_1$ consists of
+neighboring edges meeting $X_s$, and $V_2$ is the complement.  Every
+$g\in V_2$ meets $f$ in exactly one vertex and meets $X_b$ in exactly two
+vertices:
+\[
+|g\cap f|=1,\qquad |g\cap X_b|=2.
+\]
+The triangle count is decomposed as $T(f)=T_1+T_2$, where $T_1$ counts
+triangles using a vertex of $V_1$ and $T_2$ counts the remaining triangles.
+For
+$g\in V_2$, the setup records the local cross-degree sum
+\[
+\sigma(g)=
+\sum_{x\in g\setminus f}\sum_{v\in f\setminus g}
+\deg_{\mathcal F}(v,x).
+\]
+\end{definition}

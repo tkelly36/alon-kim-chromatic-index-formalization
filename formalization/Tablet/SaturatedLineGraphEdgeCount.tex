@@ -1,0 +1,118 @@
+\begin{lemma}
+Let $\mathcal H$ be a $3$-uniform hypergraph of maximum degree at most $D$,
+let $e\in E(\mathcal H)$ intersect exactly $3(D-1)$ other edges, and let
+$G$ be the subgraph of the line graph $L(\mathcal H)$ induced on
+$N_{L(\mathcal H)}(e)$.  Put
+\[
+X=X(e,\mathcal H)=
+\left(\bigcup\{h\in E(\mathcal H):h\cap e\ne\emptyset\}\right)\setminus e
+\]
+and
+\[
+w_{\mathcal H,e}(X)=
+\sum_{x\in X}\sum_{v<v'\in e}
+\deg_{\mathcal H}(v,x)\deg_{\mathcal H}(v',x).
+\]
+After fixing an arbitrary order on the three vertices of $e$, define
+\[
+Y_{\mathcal H}(e)=
+\sum_{v<v'\in e}
+\sum_{\substack{e_1\ne e,\ v\in e_1\\ e_2\ne e,\ v'\in e_2}}
+\max\{0, |e_1\cap e_2|-1\}.
+\]
+Then $Y_{\mathcal H}(e)\ge 0$ and
+\[
+|E(G)|=3\binom{D-1}{2}+w_{\mathcal H,e}(X)-Y_{\mathcal H}(e).
+\]
+\end{lemma}
+\begin{proof}
+The incidence equality argument below is formalized, without any simplicity
+assumption, by \noderef{SaturatedNeighborClassPartition}.
+By \noderef{UniformHypergraph}, the edge $e$ has exactly three vertices; fix
+an ordering $e=\{v_1,v_2,v_3\}$.  By \noderef{HypergraphDegree} and
+\noderef{MaxDegreeAtMost}, the assertion that $\mathcal H$ has maximum
+degree at most $D$ means that each $v_i$ is contained in at most $D$ edge
+indices of $\mathcal H$, hence in at most $D-1$ edge indices other than
+$e$.  The hypothesis says that the number of edges other than $e$ meeting
+$e$ is exactly $3(D-1)$.
+
+We first record the consequence that every edge $h\ne e$ meets $e$ in at
+most one vertex.  If some $h\ne e$ contained two vertices of $e$, then the
+sum over $i=1,2,3$ of the numbers of edges other than $e$ containing $v_i$
+would still be at most $3(D-1)$, but $h$ would be counted at least twice.
+Therefore the number of distinct edges meeting $e$ would be at most
+$3(D-1)-1$, contradicting the assumed value $3(D-1)$.  Thus no neighboring
+edge belongs to two of the three classes
+\[
+C_i=\{h\in E(\mathcal H):h\ne e,\ v_i\in h\}.
+\]
+Since the union of the disjoint classes $C_1,C_2,C_3$ has size $3(D-1)$
+and each class has size at most $D-1$, each $C_i$ has exactly $D-1$ edges.
+
+By \noderef{LineGraphOfHypergraph}, two vertices of the line graph
+$L(\mathcal H)$ are adjacent exactly when the corresponding hyperedges are
+distinct and intersect.  Therefore the induced graph $G$ on
+$N_{L(\mathcal H)}(e)$ has vertex set $C_1\cup C_2\cup C_3$.  Within each
+$C_i$, every two distinct hyperedges both contain $v_i$, so they are
+adjacent in $L(\mathcal H)$ and hence in $G$.  These three disjoint cliques
+contribute
+\[
+3\binom{D-1}{2}
+\]
+edges to $G$.
+
+It remains to count the edges of $G$ between different classes.  Fix
+$i<j$.  For $e_1\in C_i$ and $e_2\in C_j$, the common vertices
+$e_1\cap e_2$ cannot contain $v_i$ or $v_j$, because $e_2$ does not contain
+$v_i$ and $e_1$ does not contain $v_j$ by the preceding paragraph.  Hence
+$e_1$ and $e_2$ are adjacent in $G$ exactly when they share at least one
+vertex of $X$.
+
+In the formal expression for $w$, the sum is over two-element subsets of
+$e$. The bijection sending an increasing pair $(v,v')$ to $\{v,v'\}$,
+and the associated product-sum identity, are supplied by
+\noderef{FiniteUnorderedPairProductSum}. Thus this expression is exactly
+the sum over the pairs of classes used here.
+
+For a fixed vertex $x\in X$, the number of ordered choices
+$(e_1,e_2)\in C_i\times C_j$ with $x\in e_1\cap e_2$ is
+$\deg_{\mathcal H}(v_i,x)\deg_{\mathcal H}(v_j,x)$, where
+$\deg_{\mathcal H}(v,x)$ denotes the number of edge indices of
+$\mathcal H$ containing both $v$ and $x$.  Indeed, the first factor chooses
+the edge in $C_i$ containing $x$, and the second factor chooses the edge in
+$C_j$ containing $x$.  Summing over all $x\in X$ therefore counts a fixed
+pair $(e_1,e_2)\in C_i\times C_j$ once for each common outside vertex
+$x\in e_1\cap e_2\cap X$.  As observed above, common vertices of such a
+cross-class pair cannot be $v_i$ or $v_j$, and the only vertices of $e$ in
+$e_1\cup e_2$ are $v_i$ and $v_j$; hence every common vertex of
+$e_1$ and $e_2$ lies in $X$.  Thus the sum over $x\in X$ counts the pair
+exactly $|e_1\cap e_2|$ times.
+
+The true line-graph edge should be counted once when this intersection is
+nonempty and zero times otherwise.  Therefore one subtracts, for this
+pair, precisely the excess
+\[
+|e_1\cap e_2|-\mathbf 1[e_1\cap e_2\ne\emptyset]
+=\max\{0,|e_1\cap e_2|-1\}.
+\]
+Consequently the number of cross-edges between $C_i$ and $C_j$ is
+\[
+\sum_{x\in X}\deg_{\mathcal H}(v_i,x)\deg_{\mathcal H}(v_j,x)
+-
+\sum_{\substack{e_1\in C_i\\ e_2\in C_j}}
+\max\{0,|e_1\cap e_2|-1\}.
+\]
+This double count and the integer excess correction are also stated together
+in \noderef{FiniteBipartiteIntersectionEdgeCount}, applied with the indexed
+edge sets $C_i,C_j$ and the outside vertex set $X$.
+
+Summing this identity over the three pairs $i<j$ gives the total number of
+cross-edges as $w_{\mathcal H,e}(X)-Y_{\mathcal H}(e)$.  Adding the
+within-clique contribution gives
+\[
+|E(G)|=3\binom{D-1}{2}+w_{\mathcal H,e}(X)-Y_{\mathcal H}(e).
+\]
+Finally, every summand in the definition of $Y_{\mathcal H}(e)$ is a maximum
+of $0$ and another integer, so each summand is nonnegative and therefore
+$Y_{\mathcal H}(e)\ge0$.
+\end{proof}

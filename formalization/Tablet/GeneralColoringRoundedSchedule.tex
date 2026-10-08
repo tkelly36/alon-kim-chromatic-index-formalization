@@ -1,0 +1,98 @@
+\begin{lemma}
+Let $0<\varepsilon\le1$ and let $k$ be a positive integer. There exists
+a natural $A$ such that, for every natural $\gamma_0$, one can choose a
+positive natural $\gamma\ge\gamma_0$ with the following property.
+For every natural $D_{\rm nib}$ there exists a natural $D_0$, independent
+of $\theta$, such that for every real $D\ge D_0$ and $0<\theta<1$
+there are $s\in\mathbb N$ and natural sequences $N_i,K_i$ satisfying,
+with $\ell_i=\lceil kN_i/\gamma\rceil$ and
+$\rho=1-(1-\varepsilon/6)/\gamma$,
+\[
+D\le N_0,\qquad \ell_0\le K_0,
+\]
+and for every $i<s$,
+\[
+D_{\rm nib}\le N_i,\quad \varepsilon D/3\le N_i,\quad
+K_i\le AN_i,\quad K_i\le K_{i+1},\quad
+\rho N_i\le N_{i+1},\quad
+(1-\theta-\varepsilon/6)\ell_i+K_{i+1}-K_i\ge\ell_{i+1}.
+\]
+Finally $K_s+kN_s+1\le(\theta+\varepsilon)kD$.
+\end{lemma}
+\begin{proof}
+Set $A=\lceil6(1+\varepsilon)k/\varepsilon\rceil$. Choose a positive
+natural $\gamma\ge\gamma_0$ with $1/\gamma\le\varepsilon/12$.
+Then $0<\rho<1$. Given $D_{\rm nib}$, choose a natural $D_0$ so large
+that every $D\ge D_0$ satisfies
+\[
+D\ge1,\quad D\ge60/\varepsilon,\quad
+T:=\varepsilon D/3\ge D_{\rm nib},\quad (1-\rho)T\ge2,
+\quad \frac{k\varepsilon^2D}{36\gamma}\ge
+\frac{3k}{2}+3+\frac{k}{\gamma}.
+\tag{1}
+\]
+Each condition is a lower bound on $D$ by a fixed real constant,
+so the Archimedean property supplies this natural threshold; none
+depends on $\theta$.
+Put $B=\lceil D\rceil$, $N_0=B$. While $N_i\ge T$, set
+$N_{i+1}=\lceil\rho N_i\rceil$. At such a step
+$N_{i+1}<\rho N_i+1\le N_i-1<N_i$ by (1).
+Thus there is a first index $s$ with $N_s<T$, since otherwise a natural
+number would strictly decrease indefinitely. Also $B\ge D>T$, so $s>0$.
+For $i\le s$ put
+\[
+K_i=\left\lceil(\theta+\varepsilon/2)k(B-N_i)+kB/\gamma\right\rceil.
+\]
+Extend both sequences constantly after $s$. Their defining ceiling
+arguments are nonnegative, $N_i\le B$, $D\le B<D+1\le2D$,
+and $K_0=\ell_0$. Monotonicity of the ceiling gives $K_i\le K_{i+1}$.
+The degree and threshold inequalities in the statement follow immediately.
+
+Here is the list-increment calculation, including its sign issue. Write
+$c=1-\theta-\varepsilon/6>-\varepsilon/6$. If $c\ge0$, then
+$c\ell_i\ge ckN_i/\gamma$. If $c<0$, use
+$\ell_i\le kN_i/\gamma+1$ to obtain
+$c\ell_i\ge ckN_i/\gamma-\varepsilon/6$.
+The ceiling-difference bound and
+$N_i-N_{i+1}\ge(1-\rho)N_i-1$ therefore give
+\[
+\begin{aligned}
+c\ell_i+K_{i+1}-K_i
+&\ge \frac{kN_i}{\gamma}
+ [1+\varepsilon/2-(\varepsilon/6)(1+\theta+\varepsilon/2)]
+ -(\theta+\varepsilon/2)k-1-\varepsilon/6\\
+&\ge (1+\varepsilon/12)kN_i/\gamma
+ -(\theta+\varepsilon/2)k-1-\varepsilon/6.
+\end{aligned}
+\]
+In the last line $1+\theta+\varepsilon/2\le5/2$ was used.
+Meanwhile $\ell_{i+1}\le k\rho N_i/\gamma+k/\gamma+1$.
+Subtracting this upper bound from the preceding lower bound leaves at least
+\[
+\frac{k\varepsilon N_i}{12\gamma}-\frac{3k}{2}-2
+-\frac{\varepsilon}{6}-\frac{k}{\gamma}\ge0,
+\]
+by $N_i\ge T$ and (1). This proves the list inequality even when $c<0$.
+For $i<s$ we also have
+\[
+K_i\le(\theta+\varepsilon/2)kB+kB/\gamma+1
+\le(1+7\varepsilon/12)kB+1
+\le(1+\varepsilon)kB\le2(1+\varepsilon)kD\le AN_i.
+\]
+The third inequality follows from
+$(5\varepsilon/12)kB\ge25$; the last uses $N_i\ge T$.
+Finally, using $N_s<T$, $1/\gamma\le\varepsilon/12$, and
+$0\le B-D<1$, we get
+\[
+\begin{aligned}
+K_s+kN_s+1
+&\le(\theta+\varepsilon/2)kB+kB/\gamma+2+k\varepsilon D/3\\
+&\le(\theta+11\varepsilon/12)kD
+ +(\theta+7\varepsilon/12)k(B-D)+2\\
+&\le(\theta+11\varepsilon/12)kD+19k/12+2\\
+&\le(\theta+\varepsilon)kD.
+\end{aligned}
+\]
+Indeed $\varepsilon kD/12\ge5k\ge19k/12+2$ since $k\ge1$.
+This includes the cost of rounding the initial real degree to $B$.
+\end{proof}

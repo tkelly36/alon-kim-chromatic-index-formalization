@@ -1,0 +1,80 @@
+\begin{helper}
+Fix \(0<\alpha\le1\), and let \(\gamma_0\ge0\).  Suppose that the
+exponential tail of this window satisfies
+\[
+e^{-\gamma_0}\left(1+\frac1\alpha\right)\le \alpha .
+\]
+Then, uniformly for every \(\lambda\in[\alpha,1]\),
+\[
+2\int_0^{\gamma_0}\int_x^{\gamma_0}
+(1-\alpha)e^{-\lambda x}(1-\alpha)e^{-y}\,dy\,dx
+\ge
+\frac{2}{1+\lambda}-6\alpha .
+\]
+\end{helper}
+\begin{proof}
+Fix \(\lambda\in[\alpha,1]\).  Since \(0<\alpha\le\lambda\), we have
+\(\lambda>0\) and \(1+\lambda>0\).  First compute the one-dimensional
+exponential primitive: for every \(c>0\),
+\[
+\int_a^b e^{-cy}\,dy=\frac{e^{-ca}-e^{-cb}}{c}.
+\]
+This is the fundamental theorem of calculus applied to
+\(-e^{-ct}/c\), whose derivative is \(e^{-ct}\).
+
+For each fixed \(x\), applying this formula with \(c=1\) gives
+\[
+\int_x^{\gamma_0}
+(1-\alpha)e^{-\lambda x}(1-\alpha)e^{-y}\,dy
+=
+(1-\alpha)^2e^{-\lambda x}\bigl(e^{-x}-e^{-\gamma_0}\bigr).
+\]
+Therefore the left-hand side is
+\[
+2(1-\alpha)^2 J,
+\quad
+J:=\int_0^{\gamma_0}
+e^{-\lambda x}\bigl(e^{-x}-e^{-\gamma_0}\bigr)\,dx .
+\]
+Using the same primitive with \(c=1+\lambda\) and \(c=\lambda\),
+\[
+J=
+\frac{1-e^{-(1+\lambda)\gamma_0}}{1+\lambda}
+-e^{-\gamma_0}\frac{1-e^{-\lambda\gamma_0}}{\lambda}.
+\]
+
+We now bound the two omitted tails uniformly in \(\lambda\).  Since
+\(\gamma_0\ge0\) and \(\lambda>0\),
+\[
+\frac{e^{-(1+\lambda)\gamma_0}}{1+\lambda}\le e^{-\gamma_0}.
+\]
+Also \(1-e^{-\lambda\gamma_0}\le1\) and \(\lambda\ge\alpha>0\), so
+\[
+e^{-\gamma_0}\frac{1-e^{-\lambda\gamma_0}}{\lambda}
+\le e^{-\gamma_0}\frac1\alpha .
+\]
+The assumed tail condition gives
+\[
+J\ge
+\frac1{1+\lambda}
+-e^{-\gamma_0}\left(1+\frac1\alpha\right)
+\ge
+\frac1{1+\lambda}-\alpha .
+\]
+
+It remains only to absorb the factor \((1-\alpha)^2\).  Put
+\(s=1/(1+\lambda)\).  From \(\lambda>0\), \(0\le s\le1\), and from
+\(0\le\alpha\le1\).  Expanding,
+\[
+2(1-\alpha)^2(s-\alpha)-(2s-6\alpha)
+=\alpha\bigl(4-4s+2\alpha s+4\alpha-2\alpha^2\bigr)\ge0.
+\]
+Hence
+\[
+2(1-\alpha)^2\left(\frac1{1+\lambda}-\alpha\right)
+\ge
+\frac2{1+\lambda}-6\alpha .
+\]
+Combining this inequality with the lower bound on \(J\) proves the claimed
+uniform margin.
+\end{proof}

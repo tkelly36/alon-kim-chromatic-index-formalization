@@ -1,0 +1,20 @@
+\begin{lemma}
+If $H$ has finite edge-index set, is $k$-uniform, and has maximum degree
+at most $D$, then for any retained lists $M$ there exists a nibble
+completion datum for $H,M,\Delta=kD$.
+\end{lemma}
+\begin{proof}
+By \noderef{UniformHypergraphLineDegreeBound} the line graph has degree
+at most $kD$. For each color $a$, restrict it to the finite subtype
+$\{e:a\in M(e)\}$. Its neighbor set injects into the original neighbor
+set, so its degrees are also at most $kD$. Apply
+\noderef{FiniteSimpleRegularCompletion} to this graph, obtaining a finite
+$kD$-regular graph and an injective induced embedding. Choose a bijection
+from the completion vertex type to $\operatorname{Fin}(n_a)$, where $n_a$
+is its cardinality, and transport adjacency and the embedding along it.
+Bijections preserve neighbor cardinalities and adjacency, so the transported
+graph is regular and the embedding is induced and injective. Choice over
+the colors supplies these objects simultaneously. They are exactly the
+fields of \noderef{NibbleCompletionData}; the construction also applies
+to an empty color class.
+\end{proof}

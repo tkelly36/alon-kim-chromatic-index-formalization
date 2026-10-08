@@ -1,0 +1,27 @@
+\begin{lemma}
+Let $H$ be a finite indexed $k$-uniform hypergraph of maximum degree at
+most $D$, and suppose that an edge index $e$ has exactly $k(D-1)$ distinct
+neighbors. For $v\in e$ put $C_v=\{g\ne e:v\in H(g)\}$.
+Then $|C_v|=D-1$ for every $v\in e$, these classes are pairwise disjoint,
+and their union is precisely the neighbor set of $e$. Moreover,
+$|H(g)\cap H(e)|\leq1$ for every $g\ne e$.
+\end{lemma}
+\begin{proof}
+By \noderef{MaxDegreeAtMost}, removing the incident index $e$ leaves
+$|C_v|\leq D-1$ at each $v\in e$. By \noderef{UniformHypergraph},
+$|H(e)|=k$. Let $N$ be the neighbor set. Counting pairs $(v,g)$ with
+$v\in H(e)\cap H(g)$ and $g\ne e$ gives
+\[
+k(D-1)=|N|\leq\sum_{g\in N}|H(g)\cap H(e)|
+=\sum_{v\in H(e)}|C_v|\leq k(D-1).
+\]
+Each term in the first sum is at least one, so equality forces each to
+equal one. Similarly, each term in the last sum is at most $D-1$, so
+equality forces each to equal $D-1$. An index outside $N\cup\{e\}$
+has empty intersection with $H(e)$, proving the asserted bound for all
+$g\ne e$. If an index lay in two classes with distinct labels, its
+intersection with $H(e)$ would have at least two vertices, a contradiction.
+Finally, membership in a class is exactly the existence of a vertex in
+$H(g)\cap H(e)$ for an index $g\ne e$, proving the union identity.
+All counts are of indices, so this argument allows parallel hyperedges.
+\end{proof}

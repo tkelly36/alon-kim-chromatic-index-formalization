@@ -1,0 +1,51 @@
+\begin{helper}
+Let $\mathcal F$ be a finite multi-hypergraph, let $f$ and $g$ be distinct
+edges, and suppose that two distinct vertices $u$ and $v$ both lie in
+$f\cap g$.  In the split-edge hypergraph
+$\operatorname{SplitEdge}_k(\mathcal F,g,v)$ of
+\noderef{KUniformSplitEdgeHypergraph}, formed by replacing $g$ with
+$(g\setminus\{v\})\cup\{x_1\}$ and adding the fresh edge through $v$, the
+number of independent pairs in the line-graph neighborhood of the old-edge
+copy $\operatorname{inl}(f)$ is at most
+\[
+  P_{L(\mathcal F)}(f)+
+  \bigl|N_{L(\mathcal F)}(f)\setminus\{g\}\bigr|.
+\]
+\end{helper}
+\begin{proof}
+By \noderef{IndependentPairCount}, an independent pair around an edge is a
+two-element subset of its line-graph neighborhood whose two members are not
+adjacent to each other.  By \noderef{LineGraphOfHypergraph}, line-graph
+adjacency is precisely nonempty intersection of the corresponding hyperedges,
+with distinct labels.  By \noderef{KUniformSplitEdgeHypergraph}, every old edge
+other than $g$ is copied unchanged, the old label $g$ is replaced by
+$(g\setminus\{v\})\cup\{x_1\}$, and one new edge $\{v,x_1,\ldots,x_{k-1}\}$ is
+added.  Since $u\in f\cap g$ and $u\ne v$, the modified old copy of $g$ still
+meets the old copy of $f$.
+
+Partition the split independent pairs around $\operatorname{inl}(f)$ into
+pairs not using the new edge and pairs using the new edge.  Among the first
+class, send a pair of old-edge copies to the corresponding pair of old labels.
+If that old pair was already independent in $L(\mathcal F)$, it is counted by
+$P_{L(\mathcal F)}(f)$.  Otherwise its old adjacency must have been destroyed
+by deleting $v$ from $g$: intersections among two old labels different from
+$g$ are unchanged by the split, and intersections of $f$ with any old neighbor
+are preserved, while $g$ can lose only the vertex $v$.  Thus every exceptional
+first-class pair has the form $\{\operatorname{inl}(g),\operatorname{inl}(h)\}$
+with $h\in N_{L(\mathcal F)}(f)\setminus\{g\}$ and $v\in h$.
+
+For a second-class pair, the pair has the form
+$\{\text{new},\operatorname{inl}(h)\}$.  The label $h$ is an old neighbor of
+$f$, and $h\ne g$, because the new edge meets the modified old copy of $g$ at
+$x_1$.  The pair is independent exactly when the new edge does not meet the
+old copy of $h$, which for $h\ne g$ means $v\notin h$.  Hence these pairs
+inject into the complementary subset of
+$N_{L(\mathcal F)}(f)\setminus\{g\}$ consisting of neighbors not containing
+$v$.
+
+The ordinary old independent pairs, the exceptional pairs charged to neighbors
+containing $v$, and the new-edge pairs charged to neighbors not containing
+$v$ together exhaust the split independent-pair count.  The last two charge
+sets are disjoint subsets of $N_{L(\mathcal F)}(f)\setminus\{g\}$, so adding
+the three bounds gives the claimed inequality.
+\end{proof}

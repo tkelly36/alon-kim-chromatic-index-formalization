@@ -1,0 +1,35 @@
+\begin{helper}
+Let $I$ be a finite nonempty linearly ordered index set, and let
+$(u_a)_{a\in I}$ be a real family.  Then
+\[
+\sum_{\substack{a<b\\a,b\in I}}u_a u_b
+\le
+\frac{|I|-1}{2|I|}\left(\sum_{a\in I}u_a\right)^2.
+\]
+\end{helper}
+\begin{proof}
+Put $S=\sum_{a\in I}u_a$ and $Q=\sum_{a\in I}u_a^2$.  Expanding $S^2$
+over ordered pairs gives
+\[
+S^2=\sum_{a,b\in I}u_a u_b.
+\]
+The diagonal ordered pairs contribute $Q$.  The off-diagonal ordered pairs
+split into the two strict orders $a<b$ and $b<a$, and the swap
+$(a,b)\mapsto (b,a)$ is a bijection between those two parts.  Therefore
+\[
+S^2=Q+2\sum_{a<b}u_a u_b. \tag{1}
+\]
+By the finite Cauchy--Schwarz inequality,
+\[
+S^2\le |I|\,Q,
+\]
+so, since $|I|>0$, we have $Q\ge S^2/|I|$.  Substituting this lower bound
+for $Q$ in (1) yields
+\[
+2\sum_{a<b}u_a u_b
+=S^2-Q
+\le S^2-\frac{S^2}{|I|}
+=\frac{|I|-1}{|I|}S^2.
+\]
+Dividing by $2$ gives the claimed inequality.
+\end{proof}

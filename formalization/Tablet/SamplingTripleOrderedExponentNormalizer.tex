@@ -1,0 +1,56 @@
+\begin{helper}
+Let $G$ be a finite graph, let $A$ be an activation set, and fix an ordered
+triple of vertices $(a,b,c)$.  Put $Q=\{a,b,c\}$.  Partition the vertices of
+$A\setminus Q$ according to their nonempty adjacency pattern to the ordered
+triple, and write
+\[
+n_a,n_b,n_c,n_{ab},n_{ac},n_{bc},n_{abc}
+\]
+for the seven corresponding cardinalities.  Then the exponents which occur in
+the ordered chamber with priority order $a,b,c$ satisfy
+\[
+n_a+n_{ab}+n_{ac}+n_{abc}
+=|\{w\in A\setminus Q:w\sim a\}|,
+\]
+\[
+n_b+n_{bc}
+=|\{w\in A\setminus Q:w\not\sim a,\ w\sim b\}|,
+\]
+and
+\[
+n_c
+=|\{w\in A\setminus Q:w\not\sim a,\ w\not\sim b,\ w\sim c\}|.
+\]
+\end{helper}
+\begin{proof}
+The statement is a disjoint finite-set bookkeeping identity.  For the first
+identity, consider the set
+\[
+S_a=\{w\in A\setminus Q:w\sim a\}.
+\]
+Splitting $S_a$ according to whether $w\sim b$ and then, inside each part,
+according to whether $w\sim c$, gives four disjoint classes:
+\[
+\{a\text{-only}\},\quad \{a,b\text{ only}\},\quad
+\{a,c\text{ only}\},\quad \{a,b,c\}.
+\]
+Their cardinalities are respectively
+$n_a,n_{ab},n_{ac},n_{abc}$, so
+\[
+|S_a|=n_a+n_{ab}+n_{ac}+n_{abc}.
+\]
+
+For the second identity, consider
+\[
+S_b=\{w\in A\setminus Q:w\not\sim a,\ w\sim b\}.
+\]
+Splitting $S_b$ according to whether $w\sim c$ gives the two disjoint classes
+$\{b\text{-only}\}$ and $\{b,c\text{ only}\}$, with cardinalities
+$n_b$ and $n_{bc}$.  Hence $|S_b|=n_b+n_{bc}$.
+
+The third identity is exactly the definition of the $c$-only class:
+\[
+\{w\in A\setminus Q:w\not\sim a,\ w\not\sim b,\ w\sim c\}.
+\]
+Thus its cardinality is $n_c$.
+\end{proof}

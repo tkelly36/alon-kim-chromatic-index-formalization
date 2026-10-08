@@ -1,0 +1,23 @@
+\begin{definition}
+For a fixed actual split-outside-blocker cut \(k<n\), define the source and
+target first-witness residual pieces as follows.  The source residual witness
+event for \(x\in X\) is the event that \(x\) is a valid cut-\(k\) source
+complete-stage witness, including activation, all embedded-neighbor priority
+exclusions inside \(X\cup\{r\}\), and every retained common blocker test
+\(i\ge k\), and that the state is not in the global source current-boundary
+event at \(k\).  The target residual witness event for \(x\in X\) is the
+transported cut-\((k+1)\) target complete-stage witness event, including
+activation of \(\phi(x)\), all transported embedded-neighbor priority
+exclusions, every private blocker test \(i<k+1\), and exclusion from the
+global target current-boundary event at \(k\).
+
+After fixing a finite linear order on \(X\), the first-witness source piece
+for \(x\) consists of states in the source residual witness event for \(x\)
+and in no source residual witness event for any earlier \(y<x\).  The
+first-witness target piece for \(x\) is defined by the identical first-witness
+rule applied to the transported target residual witness events.  Thus the
+definition records the exact source and target finite pieces that a later
+candidate-union handoff must measure: the residual complement is global, not
+candidate-local, and the noncurrent blocker predicates are part of the
+defined events.
+\end{definition}

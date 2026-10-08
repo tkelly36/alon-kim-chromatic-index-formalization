@@ -1,0 +1,172 @@
+\begin{helper}
+Let \(V\) be finite and let \(\nu\) be a measure on activation--priority
+pairs \((A,\pi)\in \mathcal P(V)\times \mathbb R^V\).  Fix \(0\le p\le1\),
+distinct vertices \(u,v\in V\), and disjoint finite sets
+\(U,T\subseteq V\setminus\{u,v\}\).  Assume the activation atom law
+\[
+\nu(A=A_0)=p^{|A_0|}(1-p)^{|V|-|A_0|}
+\]
+for every \(A_0\subseteq V\).  Assume also that, on every activation atom,
+the activated priorities are supported in the unit cube, and that every lower
+rectangle satisfies
+\[
+\nu(A=A_0,\ 0\le \pi(q)\le t_q\text{ for all }q\in V)
+=\nu(A=A_0)\prod_{q\in V}t_q
+\]
+whenever \(0\le t_q\le1\) for all \(q\).
+
+Then the ordered two-coordinate chamber
+\[
+\begin{aligned}
+E_{u,v}(U,T)=\{(A,\pi):\;&u,v\in A,\ \pi(v)\le \pi(u),\
+\pi(q)\in[0,1]\text{ for every }q\in A,\\
+& z\in U\cap A\Rightarrow \pi(z)<\pi(u),\
+z\in T\cap A\Rightarrow \pi(z)<\pi(v)\}
+\end{aligned}
+\]
+has mass
+\[
+\nu(E_{u,v}(U,T))
+=\operatorname{ofReal}\!\left(
+\int_0^1\int_0^a
+p^2\bigl((1-p)+pa\bigr)^{|U|}
+\bigl((1-p)+pb\bigr)^{|T|}\,db\,da\right).
+\]
+Moreover the diagonal chamber
+\[
+\{u,v\in A,\ \pi(q)\in[0,1]\text{ for }q\in A,\ \pi(u)=\pi(v)\}
+\]
+has \(\nu\)-measure \(0\), and for every \(z\in U\cup T\) the boundary event
+\[
+\{u,v,z\in A,\ \pi(q)\in[0,1]\text{ for }q\in A,\ 
+\pi(z)=\pi(u)\text{ or }\pi(z)=\pi(v)\}
+\]
+has \(\nu\)-measure \(0\).
+\end{helper}
+\begin{proof}
+Write \(S=U\cup T\) and \(C=S\cup\{u,v\}\).  The assumptions
+\(u,v\notin S\), \(u\ne v\), and \(U\cap T=\emptyset\) imply that the four
+sets \(U,T,\{u\},\{v\}\) are pairwise disjoint.  We first record the exact
+finite product consequence of the hypotheses on a fixed activation atom.
+
+Fix \(A_0\subseteq V\), and let \(\alpha(A_0)=
+p^{|A_0|}(1-p)^{|V|-|A_0|}\).  By the activation atom law,
+\(\nu\{A=A_0\}=\operatorname{ofReal}(\alpha(A_0))\).  Since \(0\le p\le1\),
+\(\alpha(A_0)\ge0\).  Apply the lower-rectangle hypothesis with the constant
+threshold \(1\).  It gives
+\[
+\nu\{A=A_0,\ 0\le \pi(q)\le1\hbox{ for all }q\in V\}
+=\nu\{A=A_0\}.
+\]
+Thus the part of the atom outside the full cube \([0,1]^V\) has
+\(\nu\)-measure \(0\).  On the cube, the same lower-rectangle hypothesis says
+that the atom-restricted measure agrees on every anchored rectangle
+\(\prod_q[0,t_q]\), \(0\le t_q\le1\), with
+\(\operatorname{ofReal}(\alpha(A_0))\) times finite product Lebesgue measure.
+The anchored rectangles are closed under finite intersections and generate
+the Borel sigma-algebra of \([0,1]^V\).  Both finite measures have the same
+total mass \(\operatorname{ofReal}(\alpha(A_0))\).  The finite
+pi-lambda uniqueness theorem therefore gives, for every Borel set
+\(B\subseteq[0,1]^V\),
+\[
+\nu\{A=A_0,\ \pi\in B\}
+=\operatorname{ofReal}(\alpha(A_0)\lambda_V(B)),
+\tag{1}
+\]
+where \(\lambda_V\) is product Lebesgue measure on the cube.  In particular,
+the fixed half-open coordinate cells used in this uniqueness step have the
+same masses as in \noderef{SamplingFiniteCoordinateMarginalCellLaw}, and that
+node is the registered finite-cell form of the lower-rectangle calculation
+from \noderef{SamplingFinitePriorityCutProductFormula}.
+
+Now partition the ordered chamber by the activation pattern on \(S\) and by
+the arbitrary activation choices outside \(C\).  For \(B_U\subseteq U\),
+\(B_T\subseteq T\), and \(R\subseteq V\setminus C\), put
+\[
+A_{B_U,B_T,R}=\{u,v\}\cup B_U\cup B_T\cup R .
+\]
+The corresponding chamber piece is
+\[
+\begin{aligned}
+F(B_U,B_T,R)=\{A=A_{B_U,B_T,R},\;&0\le\pi(q)\le1\hbox{ for all }q,\\
+&\pi(v)\le\pi(u),\
+z\in B_U\Rightarrow \pi(z)<\pi(u),\
+z\in B_T\Rightarrow \pi(z)<\pi(v)\}.
+\end{aligned}
+\]
+The pieces \(F(B_U,B_T,R)\) are pairwise disjoint, and their finite union
+differs from \(E_{u,v}(U,T)\) only by atomwise cube complements of measure
+zero.  Hence the measure of \(E_{u,v}(U,T)\) is the finite sum of the measures
+of these pieces.
+
+For a fixed triple \((B_U,B_T,R)\), formula (1) reduces the piece mass to the
+Lebesgue volume in the priority coordinates.  Set \(a=\pi(u)\) and
+\(b=\pi(v)\).  By Tonelli's theorem for the finite product cube,
+\[
+\lambda_V(F(B_U,B_T,R)\hbox{ inside the atom})
+=\int_0^1\int_0^a a^{|B_U|}b^{|B_T|}\,db\,da .
+\]
+Indeed, after \(a,b\) are fixed with \(0\le b\le a\le1\), each coordinate in
+\(B_U\) may range independently over an interval of length \(a\), each
+coordinate in \(B_T\) over an interval of length \(b\), and every remaining
+coordinate has interval length \(1\).  Therefore
+\[
+\nu(F(B_U,B_T,R))
+=\operatorname{ofReal}\!\left(
+\alpha(A_{B_U,B_T,R})
+\int_0^1\int_0^a a^{|B_U|}b^{|B_T|}\,db\,da\right).
+\tag{2}
+\]
+
+Summing (2) first over \(R\subseteq V\setminus C\) removes the outside
+coordinates:
+\[
+\sum_R p^{|R|}(1-p)^{|V\setminus C|-|R|}
+=(p+(1-p))^{|V\setminus C|}=1 .
+\]
+Thus the remaining real density is
+\[
+p^2
+\sum_{B_U\subseteq U}\sum_{B_T\subseteq T}
+p^{|B_U|+|B_T|}(1-p)^{|S|-|B_U|-|B_T|}
+\int_0^1\int_0^a a^{|B_U|}b^{|B_T|}\,db\,da .
+\]
+All sums are finite and the integrands are nonnegative, so finite additivity
+and Tonelli allow us to interchange the finite sums with the two integrals.
+The \(U\)-sum factors as
+\[
+\sum_{B_U\subseteq U}p^{|B_U|}(1-p)^{|U|-|B_U|}a^{|B_U|}
+=((1-p)+pa)^{|U|},
+\]
+and the \(T\)-sum similarly gives \(((1-p)+pb)^{|T|}\).  Hence
+\[
+\nu(E_{u,v}(U,T))
+=\operatorname{ofReal}\!\left(
+\int_0^1\int_0^a
+p^2((1-p)+pa)^{|U|}((1-p)+pb)^{|T|}\,db\,da\right),
+\]
+which is the first claimed identity.
+
+It remains to prove the two nullity claims.  Fix an activation atom \(A_0\).
+Formula (1) gives atomwise product Lebesgue measure on the cube.  For
+distinct coordinates \(r,s\in V\), the hyperplane
+\(\{\pi(r)=\pi(s)\}\cap[0,1]^V\) has product Lebesgue measure \(0\): by
+Fubini, its section over any fixed value of all coordinates except \(r\) is
+the singleton \(\{\pi(s)\}\), which has one-dimensional Lebesgue measure
+\(0\).  Therefore (1) gives
+\[
+\nu\{A=A_0,\ 0\le\pi(q)\le1\hbox{ for all }q,\ \pi(r)=\pi(s)\}=0 .
+\tag{3}
+\]
+There are only finitely many activation atoms.  Summing (3) over all atoms
+with \(u,v\in A_0\) gives measure \(0\) for the displayed diagonal event
+\(\pi(u)=\pi(v)\); the event in the statement requires only activated
+coordinates to lie in the cube, and replacing that by the full cube changes
+nothing by the atomwise full-cube support proved above.  Likewise, if
+\(z\in U\cup T\), then \(z\ne u,v\).  Summing (3) with
+\((r,s)=(z,u)\) over atoms containing \(u,v,z\) gives zero measure to
+\(\pi(z)=\pi(u)\), and summing (3) with \((r,s)=(z,v)\) gives zero measure to
+\(\pi(z)=\pi(v)\), on the same activation and cube support.  The boundary
+event in the statement is contained in the union of these two null events, so
+it also has \(\nu\)-measure \(0\).  This proves both remaining conclusions.
+\end{proof}

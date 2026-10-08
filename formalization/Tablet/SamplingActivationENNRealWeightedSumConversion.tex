@@ -1,0 +1,36 @@
+\begin{helper}
+Let $\nu$ be a measure on activation-priority pairs, let $Q$ be a fixed
+finite set of vertices, and suppose that the activation atom of every
+$A\subseteq V$ has measure
+\[
+\nu\{\omega:\omega_1=A\}=\operatorname{ofReal}(\operatorname{atom}(A)).
+\]
+Assume $\operatorname{atom}(A)\ge 0$ for every $A$ and that $F(A)\ge 0$ whenever
+$Q\subseteq A$.  Then
+\[
+\sum_A {\bf 1}_{Q\subseteq A}\,
+\nu\{\omega:\omega_1=A\}\operatorname{ofReal}(F(A))
+=
+\operatorname{ofReal}\left(
+\sum_A {\bf 1}_{Q\subseteq A}\,\operatorname{atom}(A)F(A)\right).
+\]
+\end{helper}
+\begin{proof}
+The sum is finite, since the vertex set is finite and the activation sets are
+finite subsets of it.  For each activation set $A$ with $Q\subseteq A$, replace
+the measure of the atom $\{\omega:\omega_1=A\}$ by
+$\operatorname{ofReal}(\operatorname{atom}(A))$ using the assumed atom law.
+For activation sets not containing $Q$, both summands are zero by the displayed
+indicator.
+
+For a retained activation set, $\operatorname{atom}(A)\ge 0$, so
+$\operatorname{ofReal}(\operatorname{atom}(A)F(A))$ equals
+$\operatorname{ofReal}(\operatorname{atom}(A))\operatorname{ofReal}(F(A))$.
+Moreover, on the retained terms $F(A)\ge 0$, and hence
+$\operatorname{atom}(A)F(A)\ge 0$.  On discarded terms the real summand is
+zero.  Therefore every real summand inside the final finite sum is
+nonnegative, and the standard finite-sum rule for $\operatorname{ofReal}$ over
+nonnegative summands converts the finite sum of extended nonnegative real
+terms into the single $\operatorname{ofReal}$ of the corresponding real finite
+sum.
+\end{proof}

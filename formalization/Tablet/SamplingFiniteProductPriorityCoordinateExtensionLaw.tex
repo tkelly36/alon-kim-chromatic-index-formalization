@@ -1,0 +1,66 @@
+\begin{helper}
+Let \(V\) be finite, let \(G\) be a graph on \(V\), and suppose
+\(\gamma>0\) and \(\gamma\le\Delta\).  For the Bernoulli activation and
+uniform-priority law constructed in
+\(\noderef{SamplingFiniteProductPriorityLawExists}\), write
+\[
+  p=\gamma/\Delta .
+\]
+Then the same sampling law has the following finite-coordinate cylinder
+extension property.  For any two disjoint finite coordinate sets \(C,D\),
+activation atoms \(A_0\subseteq C\) and \(A_D\subseteq D\), lower-cut sets
+\(L\subseteq C\), \(K\subseteq D\), upper-cut set \(U\subseteq C\), and
+thresholds \(t_v\in[0,1]\) on the used coordinates, provided the lower and
+upper cut sets are disjoint in the indicated sense, there are nonnegative
+real masses \(w_{\rm base}\) and \(w_{\rm ext}\) such that
+\[
+\operatorname{ofReal}(w_{\rm base})
+ = \nu\{(A,\pi):A\cap C=A_0,\ \pi_v\le t_v\ (v\in L),\
+        t_v<\pi_v\ (v\in U)\},
+\]
+\[
+\operatorname{ofReal}(w_{\rm ext})
+ = \nu\{(A,\pi):A\cap(C\cup D)=A_0\cup A_D,\
+        \pi_v\le t_v\ (v\in L\cup K),\
+        t_v<\pi_v\ (v\in U)\},
+\]
+and
+\[
+  w_{\rm ext}
+  =
+  w_{\rm base}\,
+  p^{|A_D|}(1-p)^{|D|-|A_D|}
+  \prod_{v\in V}\begin{cases}t_v,&v\in K,\\1,&v\notin K.\end{cases}
+\]
+The law also retains its total mass, activation-atom formula, and full
+priority lower-rectangle formula.
+\end{helper}
+\begin{proof}
+Apply \(\noderef{SamplingFiniteProductPriorityLawExists}\) to
+\(G,\Delta,\gamma\).  Its statement gives a probability measure \(\nu\) on
+activation-priority samples with total mass \(1\), the Bernoulli activation
+atom formula with parameter \(p=\gamma/\Delta\), and the full priority
+lower-rectangle formula.
+
+The inequalities \(\gamma>0\) and \(\gamma\le\Delta\) imply
+\(0\le p\le 1\): nonnegativity follows because both numerator and denominator
+are nonnegative, and the upper bound follows by dividing the inequality
+\(\gamma\le\Delta\) by the positive real \(\Delta\).  Therefore all
+hypotheses of \(\noderef{SamplingFiniteCoordinateCellExtensionMass}\) are
+satisfied for the chosen measure \(\nu\), the parameter \(p\), the disjoint
+coordinate sets \(C,D\), the activation atoms \(A_0,A_D\), the lower and
+upper cut sets \(L,K,U\), and the threshold function \(t\).  That node states
+exactly the existence of nonnegative representatives \(w_{\rm base}\) and
+\(w_{\rm ext}\) for the displayed base and extended finite-coordinate cells,
+with
+\[
+  w_{\rm ext}
+  =
+  w_{\rm base}\,
+  p^{|A_D|}(1-p)^{|D|-|A_D|}
+  \prod_{v\in V}\begin{cases}t_v,&v\in K,\\1,&v\notin K.\end{cases}.
+\]
+Substituting \(p=\gamma/\Delta\) gives the asserted formula, while the total
+mass and the two law clauses are the clauses already supplied by
+\(\noderef{SamplingFiniteProductPriorityLawExists}\).
+\end{proof}

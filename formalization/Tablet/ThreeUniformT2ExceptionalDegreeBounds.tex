@@ -1,0 +1,72 @@
+\begin{lemma}
+Let $S$ be a $3$-uniform $3$-simple local extremal setup at scale $D$
+for the indexed hypergraph $\mathcal F$ and edge index $f$.
+Let $N$ be the set of edge indices other than $f$ meeting $f$, and define
+\[
+q(g)=|\{h\in N:g\cap h=\varnothing\}|,\qquad
+y(g)=|\{h\in N:h\cap f\ne g\cap f,\ |g\cap h\cap X_b|=2\}|.
+\]
+Here intersections are of the vertex sets belonging to the indicated indices.
+For every $g\in V_2$,
+\[
+0\le q(g)\le2D,\quad q(g)\le2D-\sigma(g)+y(g),\quad y(g)\ge0,
+\qquad \sum_{g\in V_2}y(g)\le2Y.
+\]
+\end{lemma}
+\begin{proof}
+The uniformity, maximum degree, saturation, and set partitions used below
+are the data of \noderef{ThreeUniformThreeSimpleLocalSetup}.
+Apply \noderef{SaturatedNeighborClassPartition}: the three classes
+$C_v=\{h\ne f:v\in h\}$ for $v\in f$ partition $N$, each has size $D-1$,
+and every member of $N$ meets $f$ exactly once.
+Fix $g\in V_2$. Write $g\cap f=\{u\}$ and
+$g\setminus f=g\cap X_b=\{x_1,x_2\}$, where $x_1\ne x_2$;
+the edge-shape clause and uniformity justify these equalities.
+A disjoint edge lies in one of the two classes $C_v$ with $v\ne u$.
+For each of those classes put $A_{v,j}=\{h\in C_v:x_j\in h\}$.
+Its size is $\deg_{\mathcal F}(v,x_j)$: such an edge cannot be $f$
+because $x_j\notin f$. The unavailable indices in $C_v$ are precisely
+$A_{v,1}\cup A_{v,2}$, since $u\notin h$ for $h\in C_v$.
+Inclusion-exclusion in each class therefore gives
+\[
+q(g)=2(D-1)-\sigma(g)+\sum_{v\ne u}|A_{v,1}\cap A_{v,2}|
+=2(D-1)-\sigma(g)+y(g).
+\]
+The last equality follows because the classes are disjoint and the
+intersection condition is exactly that both outside vertices of $g$
+are in $h$. This proves the asserted degree bound. Counting all indices
+in those two classes also gives $q(g)\le2(D-1)\le2D$.
+Nonnegativity of $q$ and $y$ follows from their being cardinalities.
+
+We must identify the setup's scalar $Y$ with an actual overlap sum before
+using it. Fix arbitrary orders on the finite vertex and edge index types.
+Let $Y_0$ be the integer excess sum over cross-class pairs in
+\noderef{SaturatedLineGraphEdgeCount}. That theorem gives
+\[
+|E(G)|=3\binom{D-1}{2}+w(X)-Y_0.
+\]
+The outside set in that theorem is $X$: an edge containing an outside
+vertex cannot equal $f$, so its defining condition agrees with the
+setup's condition. The weight formulas for $X_s,X_b$, their disjoint
+union $X$, and $W=WX_s+WX_b$ identify $w(X)=W$.
+Every two-element subset of $N$ either intersects or is disjoint, but
+not both. The definition of $P$ as the independent-pair count in
+\noderef{ThreeUniformThreeSimpleLocalSetup}, using
+\noderef{IndependentPairCount} and \noderef{LineGraphOfHypergraph}, thus gives
+$P+|E(G)|=\binom{3(D-1)}2$.
+Subtracting the preceding edge-count identity and expanding the binomial
+coefficients (here $D\ge100$) gives
+$P=3D^2-6D+3-W+Y_0$.
+Comparison with the setup's pair identity proves $Y=Y_0$ as real numbers.
+
+Each ordered pair $(g,h)$ counted in $\sum_{g\in V_2}y(g)$ consists of
+indices in distinct classes sharing two vertices of $X_b$.
+Order its two class labels increasingly and send it to the corresponding
+term of $Y_0$. That term is
+$\max(0,|g\cap h|-1)\ge1$. A fixed cross-class pair has at most two
+preimages under this map, its two orientations; the restriction
+$g\in V_2$ can only remove orientations. Summing these integer charges
+gives $\sum_{g\in V_2}y(g)\le2Y_0=2Y$, as required. All the choices and
+counts concern edge indices, so equal vertex sets at different indices
+are never identified.
+\end{proof}

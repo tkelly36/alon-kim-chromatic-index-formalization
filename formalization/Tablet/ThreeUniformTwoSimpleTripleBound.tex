@@ -1,0 +1,121 @@
+\begin{lemma}
+Let $D\in\mathbb N$, let $\mathcal F$ be a finite $3$-uniform,
+$2$-simple multihypergraph of maximum degree at most $D$, and let
+$f=\{v_1,v_2,v_3\}$ be an edge, with the displayed vertices enumerating
+all of $f$. Assume that each $v_i$ has degree $D$, that $f$ has exactly
+$3(D-1)$ neighboring edge indices, and that every neighbor meets $f$ in
+exactly one vertex. Put
+\[
+X=\{y\notin f:\text{some neighbor of }f\text{ contains }y\},
+\qquad a_i(y)=\deg_{\mathcal F}(v_i,y),
+\]
+where codegree counts edge indices containing both vertices. Assume
+$\sum_i a_i(y)\le D$ for $y\in X$ and
+$\sum_{y\in X}a_i(y)=2(D-1)$ for each $i$. Define
+\[
+X_s=\{y\in X:\sum_i a_i(y)<D^{2/3}\},\qquad X_b=X\setminus X_s.
+\]
+Choose three slots $x_1,x_2,x_3\in V\sqcup\{\bot\}$, where $\bot$
+is a dummy symbol, not a vertex. Every real slot lies in $X_b$, and no
+real vertex occurs twice. If any slot is dummy, every member of $X_b$
+occurs in a real slot. Set $b_{ij}=a_i(y)$ when $x_j=y\in V$, and
+$b_{ij}=0$ when $x_j=\bot$. Require
+\[
+\sum_i b_{i1}\ge\sum_i b_{i2}\ge\sum_i b_{i3},\qquad
+\sum_i a_i(y)\le\sum_i b_{i3}
+\quad(y\in X_b\text{ not occurring in any slot}).
+\]
+Thus the slots select the three largest real columns, padding with zero
+dummy columns if fewer than three exist. If $T(f)$ counts independent
+triples in the line-graph neighborhood of $f$, then
+\[
+T(f)\le\sum_{\sigma\in S_3}\prod_{i=1}^3 b_{i,\sigma(i)}
+       +3D^3+6D^2-D^2\sum_{i=1}^3\sum_{j=1}^3 b_{ij}.
+\]
+\end{lemma}
+\begin{proof}
+By \noderef{HypergraphClass} and \noderef{UniformHypergraph}, $f$ has
+three vertices. Since its displayed enumeration covers $f$, the three
+entries are distinct. By \noderef{HypergraphDegree}, each $v_i$ has
+degree at least one because it belongs to $f$. Hence $D\ge1$, and
+natural-number subtraction $D-1$ agrees with ordinary subtraction.
+By \noderef{LineGraphOfHypergraph} and \noderef{IndependentTripleCount},
+$T(f)$ counts three-element sets of neighboring edge indices whose
+hyperedges are pairwise disjoint.
+
+Let $A$ be the set of real vertices occurring in the slots. Then
+$A\subseteq X_b\subseteq X$, $|A|\le3$, and each vertex of $A$ has
+exactly one slot. Dummy slots add no vertices and have zero entries.
+Each neighbor $g$ has exactly one vertex in $f$ by hypothesis, and
+exactly two distinct vertices outside $f$ by $3$-uniformity. Both
+outside vertices belong to $X$ by definition. Partition the neighbors
+into $V_1,V_2,V_3$ according as they contain zero, two, or one vertices
+of $A$, respectively. Thus a member of $V_1$ has both outside vertices
+in $X\setminus A$, while a member of $V_3$ has one in $A$ and one in
+$X\setminus A$.
+
+Apply \noderef{ThreeUniformTwoSimpleNeighborPartition} to this $A$
+and the full neighbor set. It gives the partition, incidence, and
+nine-edge estimates below. To identify its incidence sum with the
+slot sum, write $S=\sum_i\sum_j b_{ij}$. An edge counted by $a_i(y)$ for a
+real slot $y$ contains $v_i$ and $y\notin f$, so it is not $f$ and is
+a neighbor of $f$. Its unique root vertex in $f$ determines $i$.
+Conversely every incidence of a neighbor with $A$ is counted exactly
+once, since real slots are distinct. Consequently
+\[
+|V_1|+|V_2|+|V_3|=3(D-1),\qquad S=2|V_2|+|V_3|,
+\qquad |V_1|=3(D-1)+|V_2|-S.
+\]
+There are at most three unordered pairs from $A$ and three choices of
+root vertex. For a fixed pair and root there is at most one edge index
+containing these three vertices: two distinct indices would intersect
+in at least three vertices, contrary to $2$-simplicity, as defined in
+\noderef{TSimpleHypergraph} and supplied by \noderef{HypergraphClass}.
+Every member of $V_2$ is determined by its pair and root. Therefore
+$|V_2|\le9$ and
+\[
+|V_1|\le3D+6-S.
+\]
+
+For the first counting case apply
+\noderef{ThreeUniformIndependentTriplesThroughEdgeBound}.
+Explicitly, fix $g\in V_1$ with root $v_i$. In an independent triple containing
+$g$, the other two edges must have the other two roots in $f$: neither
+can have root $v_i$, and their roots cannot agree, since the edges are
+pairwise disjoint. Order these other root indices as $j<k$. The triple
+is determined by its edge rooted at $v_j$ and its edge rooted at $v_k$.
+There are at most $D$ choices for each, because the full set of edge
+indices containing that root has cardinality $D$ by
+\noderef{HypergraphDegree} and the degree hypothesis. Hence at most
+$D^2$ triples contain this fixed $g$. Summing over $g\in V_1$ bounds
+the number of triples meeting $V_1$ by $D^2|V_1|$; any multiple counting
+only increases this bound.
+
+No independent triple avoiding $V_1$ can contain $h\in V_2$. Indeed,
+$h$ uses two vertices of $A$. Each other edge, being outside $V_1$ and
+disjoint from $h$, must use a vertex of $A\setminus h$. This set has
+size at most one. If it is empty there is no such edge; otherwise both
+other edges contain its single vertex and cannot be disjoint. Thus
+every triple not yet counted lies entirely in $V_3$.
+
+The second counting case is supplied by
+\noderef{ThreeUniformSelectedTriplePermutationBound}, applied to the
+family of triples avoiding $V_1$: every edge of each such triple has
+a vertex in $A$, hence a real slot vertex. To spell out the permutation
+count here, for such a triple, the roots are distinct, so its edges are uniquely
+labelled by $v_1,v_2,v_3$. Their vertices in $A$ are also distinct.
+If $|A|<3$, there is no such triple, and every product in the
+permutation sum is zero because it includes a dummy-column entry.
+If $|A|=3$, the real slots are distinct and the assignment of a slot
+to each root is a unique permutation $\sigma$. For fixed $\sigma$,
+the triple maps injectively to its three root-labelled edge indices,
+which belong to sets of cardinalities $b_{i,\sigma(i)}$. There are
+therefore at most $\prod_i b_{i,\sigma(i)}$ such triples. Summing gives
+\[
+T(f)\le\sum_{\sigma\in S_3}\prod_i b_{i,\sigma(i)}+D^2|V_1|.
+\]
+Multiply $|V_1|\le3D+6-S$ by $D^2\ge0$ and substitute to obtain the
+claimed bound. The ordering and top-three conditions locate the
+columns used later in the paper; this counting argument works for any
+three distinct real columns with the stated zero padding.
+\end{proof}

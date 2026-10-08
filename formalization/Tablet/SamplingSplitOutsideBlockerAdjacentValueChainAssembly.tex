@@ -1,0 +1,74 @@
+\begin{helper}
+Fix a finite index set \(\Omega\), a finite chain length \(n\), a cell-weight
+function \(w:\Omega\to\mathbb R\), endpoint representatives
+\(S_\omega,T_\omega\) indexed by \(\omega\in\Omega\), and adjacent
+representatives \(L_{k,\omega},R_{k,\omega}\) indexed by \(k<n\) and
+\(\omega\in\Omega\).  Assume all these representatives are nonnegative on the
+indices where they are used.  Assume also the zero-weight convention
+\[
+  w(\omega)=0\Rightarrow
+  S_\omega=T_\omega=L_{k,\omega}=R_{k,\omega}=0
+\]
+for every adjacent index \(k<n\) to which the displayed adjacent
+representatives apply.  Assume the one-step
+inequalities
+\[
+  L_{k,\omega}\le R_{k,\omega}\qquad(k<n),
+\]
+the initial handoff \(S_\omega\le R_{0,\omega}\) when \(0<n\), the interior
+handoffs
+\[
+  R_{k,\omega}\le L_{k+1,\omega}\qquad(k+1<n),
+\]
+the terminal handoff \(R_{n-1,\omega}\le T_\omega\) when \(0<n\), and in the
+degenerate case \(n=0\) the endpoint identity \(S_\omega=T_\omega\).
+Then there is one global family \(P(j,\omega)\) with
+\[
+P(j,\omega)\ge0,\qquad w(\omega)=0\Rightarrow P(j,\omega)=0,
+\]
+\[
+P(0,\omega)=S_\omega,\qquad P(n,\omega)=T_\omega,
+\]
+and
+\[
+P(k,\omega)\le P(k+1,\omega)\qquad(k<n).
+\]
+\end{helper}
+\begin{proof}
+Define \(P(0,\omega)=S_\omega\).  For \(0<j<n\), define
+\(P(j,\omega)=R_{j-1,\omega}\).  For \(j\ge n\), define
+\(P(j,\omega)=T_\omega\).  This is a single global family, chosen before any
+adjacent comparison is checked.
+
+Nonnegativity follows immediately from the corresponding nonnegativity of the
+source endpoint, target endpoint, and target adjacent representatives.  If
+\(w(\omega)=0\), the same case distinction and the zero-weight convention for
+the representative selected in that case give \(P(j,\omega)=0\).  The endpoint
+identities are immediate: \(P(0,\omega)=S_\omega\) by definition, and if
+\(n=0\) the assumed endpoint identity gives \(P(n,\omega)=T_\omega\), while if
+\(0<n\) the clause \(j\ge n\) gives \(P(n,\omega)=T_\omega\).
+
+It remains to check monotonicity.  If \(n=0\), there is no \(k<n\).  If
+\(k=0<n\) and \(1<n\), the first comparison is
+\[
+S_\omega=P(0,\omega)\le R_{0,\omega}=P(1,\omega),
+\]
+using the initial handoff.  If \(k=0\) and \(n=1\), then
+\[
+P(0,\omega)=S_\omega\le R_{0,\omega}\le T_\omega=P(1,\omega),
+\]
+using the initial and terminal handoffs.  For \(0<k\) and \(k+1<n\), the
+definitions give
+\[
+P(k,\omega)=R_{k-1,\omega}\le L_{k,\omega}\le R_{k,\omega}=P(k+1,\omega),
+\]
+where the first inequality is the interior handoff and the second is the
+one-step inequality.  Finally, if \(0<k<n\) and \(k+1=n\), then
+\[
+P(k,\omega)=R_{k-1,\omega}\le L_{k,\omega}\le R_{k,\omega}\le T_\omega
+  =P(n,\omega),
+\]
+using the interior handoff when \(k>0\), the one-step inequality at \(k\),
+and the terminal handoff.  These cases exhaust all \(k<n\), so \(P\) is a
+monotone global chain.
+\end{proof}

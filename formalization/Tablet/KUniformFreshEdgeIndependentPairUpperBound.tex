@@ -1,0 +1,43 @@
+\begin{helper}
+Let $\mathcal F$ be a finite multi-hypergraph, let $f$ be an edge, and let
+$v$ be a vertex.  In the fresh-edge hypergraph
+$\operatorname{FreshEdge}_k(\mathcal F,v)$ of
+\noderef{KUniformFreshEdgeHypergraph}, the number of independent pairs in the
+line-graph neighborhood of the old-edge copy $\operatorname{inl}(f)$ is at most
+the number of independent pairs in the line-graph neighborhood of $f$ in
+$\mathcal F$ plus the number of old line-graph neighbors of $f$.
+\end{helper}
+\begin{proof}
+By \noderef{IndependentPairCount}, such a pair is a two-element subset of the
+line-graph neighborhood whose two members are not adjacent to each other.  By
+\noderef{LineGraphOfHypergraph}, line-graph adjacency is exactly nonempty
+intersection of the underlying hyperedges, together with distinctness of edge
+labels.  By \noderef{KUniformFreshEdgeHypergraph}, every old edge is copied by
+the old-edge inclusion, and the only non-old edge label is the single fresh
+edge.
+
+Partition the independent pairs counted around $\operatorname{inl}(f)$ in the
+fresh-edge hypergraph into two classes.  The first class consists of pairs not
+containing the fresh edge.  Both members are then old-edge copies.  The
+fresh-edge construction preserves intersections among old-edge copies exactly,
+so this first class injects into the independent pairs counted around $f$ in
+the original line graph: send each pair of old copies to the corresponding pair
+of old labels.
+
+The second class consists of pairs containing the fresh edge.  Since the pair
+has exactly two members and there is only one fresh edge label, its other
+member is an old-edge copy.  Because the pair is counted in the neighborhood of
+$\operatorname{inl}(f)$, that old-edge copy is a line-graph neighbor of
+$\operatorname{inl}(f)$ in the fresh hypergraph.  Again old-edge intersections
+are preserved by \noderef{KUniformFreshEdgeHypergraph}, so the corresponding
+old label is a line-graph neighbor of $f$ in $L(\mathcal F)$.  Thus the second
+class injects into the old neighbor set of $f$.
+
+The two classes are disjoint and exhaust the fresh-hypergraph independent-pair
+count.  Adding the two injection bounds gives
+\[
+  P_{L(\operatorname{FreshEdge}_k(\mathcal F,v))}(\operatorname{inl}(f))
+  \le P_{L(\mathcal F)}(f)+\deg_{L(\mathcal F)}(f),
+\]
+which is the asserted count-level upper bound.
+\end{proof}

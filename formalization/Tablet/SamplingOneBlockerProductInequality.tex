@@ -1,0 +1,28 @@
+\begin{helper}
+Let \(C\) be a finite nonempty candidate set, let \(x_0\in C\), and let
+\(p\) be a real number with \(0\le p\le 1\).  Suppose every priority
+\(\pi(x)\), \(x\in C\), lies in \([0,1]\).  Then
+\[
+\prod_{x\in C} p(1-\pi(x)) \le p(1-\pi(x_0)).
+\]
+\end{helper}
+\begin{proof}
+For each \(x\in C\), the inequalities \(0\le p\) and \(\pi(x)\le 1\) give
+\[
+0\le p(1-\pi(x)).
+\]
+Also \(p\le 1\), \(1-\pi(x)\le 1\), and both factors are nonnegative, so
+\[
+p(1-\pi(x))\le 1.
+\]
+Since \(x_0\in C\), the singleton \(\{x_0\}\) is a subset of \(C\).  A product
+of nonnegative real factors all at most \(1\) can only decrease when more
+such factors are inserted.  Therefore
+\[
+\prod_{x\in C}p(1-\pi(x))
+\le
+\prod_{x\in \{x_0\}}p(1-\pi(x))
+=p(1-\pi(x_0)),
+\]
+as claimed.
+\end{proof}

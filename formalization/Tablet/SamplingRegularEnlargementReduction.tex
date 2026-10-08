@@ -1,0 +1,120 @@
+\begin{lemma}
+Let $G$ be a $\Delta$-regular graph, let $r\in V(G)$, and let
+$X\subseteq N_G(r)$.  In proving the sampling bound for $X$, one may replace
+$G$ by a $\Delta$-regular graph $G'$ with an embedded copy of
+$G[X\cup\{r\}]$ such that the embedded copy has the same adjacencies as
+$G[X\cup\{r\}]$, no two distinct vertices of $X$ have a common neighbor in
+$G'$ outside the closed neighborhood of $r$, and the activation--priority
+law on $G'$ gives
+\[
+\Pr_G[I\cap X\ne\emptyset]\le
+\Pr_{G'}[I'\cap X\ne\emptyset].
+\]
+In particular the local graph used to compute
+$b_{G[X\cup\{r\}],\Delta}(r)$ is preserved by the reduction.
+\end{lemma}
+\begin{proof}
+Write $L=X\cup\{r\}$ and first reserve an embedded copy of the induced graph
+$G[L]$.  This copy is never changed.  Thus the root is adjacent in the copy
+precisely to the vertices of $X$, the adjacencies and non-adjacencies inside
+$X$ are exactly those of $G$, and the induced rooted graph which enters
+$b_{G[X\cup\{r\}],\Delta}(r)$ is preserved.
+
+We next build a finite graph $H$ around this fixed copy.  For each incidence
+$(x,z)$ with $x\in X$, $z\in V(G)\setminus L$, and $xz\in E(G)$, add a fresh
+vertex $z_x$ adjacent only to the embedded copy of $x$.  Thus an outside
+vertex of $G$ adjacent to several vertices of $X$ is replaced by separate
+one-neighbor blockers, one for each of its incidences with $X$.  Since $G$ is
+$\Delta$-regular, the embedded vertex $x$ has
+\[
+\Delta-1-d_{G[X]}(x)
+\]
+neighbors outside $L$ in $G$, and after adding these incidence blockers it
+has degree
+$1+d_{G[X]}(x)+(\Delta-1-d_{G[X]}(x))=\Delta$ in $H$.  The vertex $r$ has
+degree $|X|$ in the fixed copy.  If $|X|<\Delta$, add
+$\Delta-|X|$ further fresh vertices adjacent only to $r$; if $|X|=\Delta$,
+add none.  These extra vertices are deliberately placed outside the embedded
+local graph, so the induced graph on $L$ remains $G[L]$, but $r$ now also has
+degree $\Delta$.
+
+Every vertex of $H$ has degree at most $\Delta$: the embedded vertices in
+$X\cup\{r\}$ already have degree $\Delta$, and every fresh outside vertex has
+degree $1$.  Complete the remaining degree deficits by a finite simple
+regular filler which is disjoint from the embedded local graph except at the
+vertices whose deficits are being filled.  Concretely, list one formal stub
+for each missing incident edge of a vertex of $H$.  If the number of stubs is
+odd, add one isolated fresh vertex; this can occur only when $\Delta$ is odd,
+and the isolated vertex contributes exactly $\Delta$ additional stubs, making
+the total number even.  Pair the stubs arbitrarily.  For each paired pair of
+stubs, add a fresh copy of the complete graph
+$K_{\Delta+1}$, delete one edge $ab$ of that copy, and join the two stubs to
+$a$ and $b$, respectively.  The two endpoints $a,b$ had degree $\Delta-1$
+after deleting $ab$ and regain degree $\Delta$ after the two new joining
+edges; all other vertices of the copy keep degree $\Delta$; and each old
+stub is filled by one new edge.  Even if the two stubs in a pair belong to
+the same old vertex, the two joining edges go to the distinct fresh vertices
+$a$ and $b$ of a previously unused block.  Hence no multiple edge is created
+and no new edge is inserted inside the embedded copy of $L$.  The resulting
+finite simple graph is $\Delta$-regular; call it $G'$.
+
+By construction, every vertex of $G'$ outside the closed neighborhood of the
+embedded root $r$ is adjacent to at most one embedded vertex of $X$.  Indeed,
+the only fresh vertices adjacent to $X$ are the incidence blockers $z_x$, and
+each such vertex is adjacent to exactly the one vertex $x$ of $X$; the filler
+blocks attach to those blockers and to the extra neighbors of $r$, but never
+to vertices of $X$ or to two vertices of $X$.  Therefore no two distinct
+vertices of $X$ have a common neighbor in $G'$ outside $N_{G'}[r]$.
+
+It remains to compare the sampling probabilities.  By
+\noderef{RandomIndependentSetSampling}, the random set is generated from
+independent activation variables with activation probability
+$p=\gamma/\Delta$ and independent uniform priorities, and a vertex survives
+exactly when it is activated and has larger priority than every activated
+neighbor.  Couple the activation and priority variables on the embedded copy
+of $L$ identically in $G$ and $G'$.  The extra neighbors of $r$ and all filler
+vertices not adjacent to $X$ may be sampled arbitrarily according to the
+product law, because they are not neighbors of vertices in $X$ and hence
+cannot affect the event $I\cap X\ne\emptyset$.
+
+Fix the variables on $L$ and expose all outside blockers except one original
+outside vertex $z$ of $G$ which is adjacent to a nonempty set
+$B\subseteq X$.  Let $C\subseteq B$ be the set of vertices of $B$ which,
+after the already exposed variables are taken into account, would survive
+provided they are not blocked by $z$ or by its replacements.  If some vertex
+of $X\setminus B$ already survives, then both graphs have the event
+$I\cap X\ne\emptyset$ regardless of $z$.  If $C=\emptyset$, then neither the
+single blocker nor its replacements can create a survivor in $B$.  Thus the
+only case to compare is $C\ne\emptyset$ and no vertex outside $B$ has already
+survived.
+
+In the original graph, $z$ kills all vertices of $C$ exactly when $z$ is
+activated and has priority larger than every priority $\pi(x)$ with
+$x\in C$.  Conditional on the priorities on $C$, this has probability
+$p(1-\max_{x\in C}\pi(x))$.  In the split graph, the independent replacement
+blockers $z_x$ kill all vertices of $C$ with probability
+\[
+\prod_{x\in C} p(1-\pi(x)).
+\]
+Since $0\le p\le 1$ and $0\le\pi(x)\le 1$, this product is at most
+$p(1-\max_{x\in C}\pi(x))$: choose $x_0$ with maximal priority, keep the
+factor $p(1-\pi(x_0))$, and bound every other factor by $1$.  Hence replacing
+one shared outside blocker by independent incidence blockers cannot decrease,
+after conditioning on all other variables, the probability that at least one
+vertex of $X$ survives.
+
+Apply this one-blocker comparison successively to every outside vertex of
+$G$ adjacent to at least one vertex of $X$ but lying outside $L$.  The
+successive replacements are finite, and the conditional inequality at each
+step is preserved after averaging over the variables already exposed.  At
+the end of the replacement process we obtain exactly the blocker interface
+used in the construction of $G'$.  Therefore the activation--priority law on
+$G'$ satisfies
+\[
+\Pr_G[I\cap X\ne\emptyset]\le
+\Pr_{G'}[I'\cap X\ne\emptyset].
+\]
+Together with the preserved induced copy of $G[X\cup\{r\}]$, this proves the
+claimed reduction and preserves the local parameter
+$b_{G[X\cup\{r\}],\Delta}(r)$.
+\end{proof}

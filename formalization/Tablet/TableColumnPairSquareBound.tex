@@ -1,0 +1,29 @@
+\begin{helper}
+Let $k\in\mathbb N$ with $k\ge2$, and let $x_1,\ldots,x_k$ be real
+numbers.  Then
+\[
+\sum_{1\le i<i'\le k}x_ix_{i'}
+\le {k-1\over 2k}\left(\sum_{i=1}^k x_i\right)^2 .
+\]
+\end{helper}
+\begin{proof}
+Put $s=\sum_i x_i$.  Expanding the square of the sum gives
+\[
+s^2=\sum_i x_i^2+2\sum_{i<i'}x_ix_{i'} .
+\]
+By Cauchy's inequality,
+\[
+s^2=\left(\sum_i x_i\cdot 1\right)^2
+\le \left(\sum_i x_i^2\right)\left(\sum_i 1^2\right)
+=k\sum_i x_i^2 .
+\]
+Let $P=\sum_{i<i'}x_ix_{i'}$ and $Q=\sum_i x_i^2$.  The first identity says
+$2P+Q=s^2$, and the Cauchy inequality says $s^2\le kQ$.  Hence
+\[
+2kP=k(2P)\le k(2P+Q)-s^2=(k-1)s^2 .
+\]
+Since $k\ge2$, the positive number $2k$ may be divided out, giving
+\[
+P\le {k-1\over 2k}s^2 .
+\]
+\end{proof}

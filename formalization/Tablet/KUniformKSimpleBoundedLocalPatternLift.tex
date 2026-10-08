@@ -1,0 +1,47 @@
+\begin{helper}
+Fix natural numbers $k$ and $D$, and let $(\mathcal P,p)$ be a bounded
+local pattern from \noderef{KUniformKSimpleBoundedLocalPattern}.  For any
+ambient universe levels, there is a hypergraph-edge pair
+$(\mathcal F,f)$ in those universe levels, still belonging to $H(k,k,D)$,
+such that
+\[
+b_{L(\mathcal P),kD}(p)=b_{L(\mathcal F),kD}(f).
+\]
+\end{helper}
+\begin{proof}
+The bounded pattern \noderef{KUniformKSimpleBoundedLocalPattern} is a
+finite labelled hypergraph on the fixed finite edge-label set
+$\{0,\ldots,1+k(D-1)-1\}$ and the fixed finite vertex-label set
+$\{0,\ldots,k+k^2(D-1)-1\}$, together with the distinguished edge label
+$p$.  To place this data in arbitrary ambient universe levels, replace each
+edge label and each vertex label by its canonical lifted copy in the desired
+universe.  This gives finite edge and vertex types in those universes, with
+decidable equality, and defines a hypergraph $\mathcal F$ by transporting
+the edge assignment of $\mathcal P$ along the two lift equivalences.  Let
+$f$ be the lifted copy of $p$.
+
+Because the construction is just relabeling by bijections, it preserves all
+incidence relations.  Therefore every edge of $\mathcal F$ has the same
+cardinality as the corresponding edge of $\mathcal P$, every intersection
+of two edges in $\mathcal F$ has the same cardinality as the corresponding
+intersection in $\mathcal P$, and every vertex degree in $\mathcal F$ is
+the same as the corresponding vertex degree in $\mathcal P$.  Since
+\noderef{KUniformKSimpleBoundedLocalPattern} includes the assertion that
+$\mathcal P\in H(k,k,D)$, the three components of
+\noderef{HypergraphClass}, interpreted through \noderef{UniformHypergraph},
+\noderef{TSimpleHypergraph}, \noderef{MaxDegreeAtMost}, and
+\noderef{HypergraphDegree}, transport to prove
+$\mathcal F\in H(k,k,D)$.
+
+The same relabeling gives an isomorphism between the line graphs
+$L(\mathcal P)$ and $L(\mathcal F)$ around the distinguished labels:
+by \noderef{LineGraphOfHypergraph}, adjacency is exactly nonempty
+intersection of the corresponding hyperedges, and nonempty intersection is
+preserved and reflected by the vertex-label bijection.  Hence the
+line-graph degree of $p$ equals that of $f$, the independent pairs in the
+neighborhood counted by \noderef{IndependentPairCount} correspond
+bijectively, and the independent triples counted by
+\noderef{IndependentTripleCount} correspond bijectively.  The formula
+\noderef{LocalBParameter} depends only on these three counts and the common
+parameter $kD$, so the two displayed local $b$-parameters are equal.
+\end{proof}

@@ -1,0 +1,112 @@
+\begin{lemma}
+Let $V,V',\Omega$ be finite, $G,G'$ simple graphs, $\phi:V\to V'$,
+$r\in V$, $X\subseteq V$, $z:\{0,\ldots,n-1\}\to V$, and
+$B_i\subseteq V$. Assume $z_i\notin X\cup\{r\}$ and let $\beta$ map
+outside incidences $(x,z)$, $x\in X$, $z\notin X\cup\{r\}$, $xz\in E(G)$,
+to $V'$. Fix cells $C_\omega,C'_\omega$, weights $w$, and a
+\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface} on these
+data. Write its common sets as $S,S'$, its measure as $\lambda$, its cells
+as $Q_\omega$, its stages as $H_j(\omega)$, and its normalized masses
+as $M_j(\omega)$. Suppose $0\le p\le1$ and this very $\lambda$ has a
+\noderef{SamplingSplitOutsideBlockerProductRealization} with parameters
+$p,\phi,S$. Assume $\beta$ injective and fresh from
+$\phi(X\cup\{r\})$ on every outside incidence, $z_i\notin S$, and
+$\beta(x,z_i)\notin S'$ for every applicable incidence. Assume $w\ge0$,
+both cell families measurable, and that equality of the common activation
+trace and priorities transports membership in $C_\omega$ to membership in
+$C'_\omega$. Finally assume the exact cell formula
+\[
+ Q_\omega=\{(\eta,\eta'): \eta\in C_\omega,\ \eta'\in C'_\omega,
+ A'\cap S'=\phi(A\cap S),\ \pi'(\phi v)=\pi(v)\ (v\in S)\}.
+\]
+Fix $k<n$ and $\omega$. Define $C_x$ by
+\noderef{SamplingSplitOutsideBlockerPairedCandidateEvent}, with private
+indices $i<k$ and retained indices $i>k$. Put
+\[
+ U=\{\zeta:\exists x\in X\setminus B_k,\ \zeta\in C_x\},\qquad
+ L=H_k(\omega)\setminus U,\quad R=H_{k+1}(\omega)\setminus U.
+\]
+There are nonnegative real numbers $u,l,r'$ such that
+\[
+ \operatorname{ofReal}(w(\omega)u)=\lambda(U\cap Q_\omega),\quad
+ \operatorname{ofReal}(w(\omega)l)=\lambda(L\cap Q_\omega),\quad
+ \operatorname{ofReal}(w(\omega)r')=\lambda(R\cap Q_\omega),
+\]
+and $M_k(\omega)=u+l$, $M_{k+1}(\omega)=u+r'$, and $l\le r'$.
+\end{lemma}
+\begin{proof}
+Use \noderef{SamplingSplitOutsideBlockerActualCurrentFiberIntegrals} with
+the given surface and the given product realization. Its assumptions are
+exactly among the present assumptions; it does not require $w\ge0$.
+Retain its current candidate type $A_k$, tagged current image $J$,
+complementary-context law $\tau$, current law $\kappa$, zero-section
+decoder $d$, survivor set $K(t)$, candidate priorities $q_x(t)$, and gate
+\[
+ Z=\{t:d(t)\in Q_\omega,\ d(t)\notin U\}.
+\]
+That theorem proves $Q_\omega$ measurable, gives $q_x(t)\in[0,1]$
+simultaneously for all $x\in A_k$ for almost every context, and identifies
+the two boundary masses exactly as
+\[
+ \lambda(L\cap Q_\omega)=\int 1_Z(t)\kappa(L_t)\,d\tau(t),\qquad
+ \lambda(R\cap Q_\omega)=\int 1_Z(t)\kappa(R_t)\,d\tau(t).
+\]
+Here $L_t$ is success by at least one candidate in $K(t)$ against the
+single common current blocker, and $R_t$ is success by at least one
+candidate in that same $K(t)$ against its own private current blocker,
+with precisely the displayed tests in the fiber-integral theorem.
+
+For every context in the full-measure priority-support set, apply
+\noderef{SamplingBernoulliUniformSurvivorFiberLaw} to $A=A_k$,
+the actual subset $K(t)$, and $q=q(t)$. Its hypotheses hold since
+$0\le p\le1$ and all priorities in $K(t)$ belong to $[0,1]$. Its final
+conclusion is $\kappa(L_t)\le\kappa(R_t)$. This includes empty $K(t)$
+and the endpoint parameters $p=0,1$. Multiplication by the same
+indicator $1_Z(t)$ preserves the inequality. Almost-everywhere
+monotonicity of the nonnegative integral therefore gives
+\[
+ \lambda(L\cap Q_\omega)\le\lambda(R\cap Q_\omega).
+\]
+The two integrals use one complementary-context law from the selected
+realization. No independent priority law for the exposed survivor
+subset, and no conditioning on exact continuous priorities, is needed.
+
+By \noderef{SamplingSplitOutsideBlockerActualAdjacentSharedContextProducer},
+$U$ and both boundaries are measurable and
+$H_k=U\mathbin{\dot\cup}L$, $H_{k+1}=U\mathbin{\dot\cup}R$.
+Indeed that theorem's explicitly displayed boundaries equal the
+differences defining $L,R$ here, by its disjointness conclusions.
+Intersecting with the measurable $Q_\omega$ preserves disjointness and
+gives
+\[
+ \lambda(H_k\cap Q_\omega)=\lambda(U\cap Q_\omega)+\lambda(L\cap Q_\omega),
+ \quad
+ \lambda(H_{k+1}\cap Q_\omega)=\lambda(U\cap Q_\omega)+\lambda(R\cap Q_\omega).
+\]
+Each of the three pieces is contained in $Q_\omega$, whose mass is
+$\operatorname{ofReal}(w(\omega))$ by
+\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}. Apply
+\noderef{SamplingFiniteMassSubcellNormalization} separately to these
+three inclusions. It gives nonnegative $u,l,r'$ with the three requested
+mass representations and with $u=l=r'=0$ whenever $w(\omega)=0$.
+In particular all these piece masses are finite.
+
+If $w(\omega)=0$, the carrier's zero-weight clause also gives
+$M_k(\omega)=M_{k+1}(\omega)=0$. Thus both sum identities and $l\le r'$
+hold. Otherwise nonnegativity of the weight implies $w(\omega)>0$.
+For $j=k$ and $j=k+1$, substitute the disjoint-sum identities and the
+three mass representations into the carrier's stage-mass identity.
+Using additivity of $\operatorname{ofReal}$ on nonnegative reals gives
+\[
+ \operatorname{ofReal}(w(\omega)M_k(\omega))
+   =\operatorname{ofReal}(w(\omega)(u+l)),\qquad
+ \operatorname{ofReal}(w(\omega)M_{k+1}(\omega))
+   =\operatorname{ofReal}(w(\omega)(u+r')).
+\]
+Every argument is nonnegative. Injectivity of $\operatorname{ofReal}$
+on this half-line and cancellation of the positive weight give the two
+required normalized sum identities. The boundary mass comparison gives
+$\operatorname{ofReal}(w(\omega)l)\le
+\operatorname{ofReal}(w(\omega)r')$. Order reflection on nonnegative
+reals, followed by division by $w(\omega)>0$, gives $l\le r'$.
+\end{proof}

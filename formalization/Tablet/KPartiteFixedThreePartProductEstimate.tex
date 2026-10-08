@@ -1,0 +1,64 @@
+\begin{helper}
+Let $G$ be a finite simple graph and let $A,B,C$ be finite sets of vertices.
+Let
+\[
+T=\#\{(a,b,c)\in A\times B\times C: ab,ac,bc\in E(G)\},
+\]
+and let
+\[
+x=\#\{(a,b)\in A\times B: ab\in E(G)\},\quad
+y=\#\{(a,c)\in A\times C: ac\in E(G)\},\quad
+z=\#\{(b,c)\in B\times C: bc\in E(G)\}.
+\]
+Then
+\[
+T\le \sqrt{xyz}.
+\]
+\end{helper}
+\begin{proof}
+For each $b\in B$, let $T_b$ be the set of triples counted by $T$ whose
+middle coordinate is $b$.  Since every counted triple has its middle
+coordinate in $B$, the sets $T_b$ partition the set counted by $T$, and hence
+\[
+T=\sum_{b\in B}|T_b|.
+\]
+Let $a_b$ be the number of edges from $A$ to $b$, and let $c_b$ be the number
+of edges from $b$ to $C$.  Projection of a triple $(a,b,c)\in T_b$ to
+$(a,b)$ and $(b,c)$ is injective into the product of these two edge sets, so
+\[
+|T_b|\le a_b c_b.
+\]
+Projection of the same triple to $(a,c)$ is injective into the set of
+$A$--$C$ edges, because $b$ is fixed inside $T_b$.  Therefore
+\[
+|T_b|\le y.
+\]
+Combining the two inequalities gives
+\[
+|T_b|^2\le a_b c_b y,
+\]
+and since $|T_b|\ge 0$, this implies
+\[
+|T_b|\le \sqrt{a_b c_b y}.
+\]
+Summing over $b\in B$,
+\[
+T\le \sum_{b\in B}\sqrt{a_b c_b y}
+=\sqrt y\sum_{b\in B}\sqrt{a_b}\sqrt{c_b}.
+\]
+By Cauchy--Schwarz for the finite sum over $B$,
+\[
+\sum_{b\in B}\sqrt{a_b}\sqrt{c_b}
+\le
+\sqrt{\sum_{b\in B}a_b}\sqrt{\sum_{b\in B}c_b}.
+\]
+Finally, double-counting the two endpoint projections gives
+\[
+\sum_{b\in B}a_b=x,\qquad \sum_{b\in B}c_b=z.
+\]
+Substituting these identities yields
+\[
+T\le \sqrt y\,\sqrt x\,\sqrt z=\sqrt{xyz},
+\]
+as required.
+\end{proof}

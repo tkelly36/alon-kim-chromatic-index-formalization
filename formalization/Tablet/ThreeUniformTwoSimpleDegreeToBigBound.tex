@@ -1,0 +1,59 @@
+\begin{lemma}
+Let $D$ be sufficiently large, let $\mathcal F$ be a $3$-uniform
+$2$-simple hypergraph of maximum degree at most $D$, and let
+$f\in E(\mathcal F)$ be an edge with $f=\{v_1,v_2,v_3\}$.  Assume that
+every vertex of $f$ has degree $D$, that $f$ intersects exactly $3(D-1)$
+other edges of $\mathcal F$, and that the following saturated-edge
+conclusions hold for $f$: every edge other than $f$ that meets $f$ meets it
+in exactly one vertex, for every $x\in X(f,\mathcal F)$ one has
+$\sum_{v\in f}\deg_{\mathcal F}(v,x)\le D$, and for every $v\in f$ one has
+$\sum_{x\in X(f,\mathcal F)}\deg_{\mathcal F}(v,x)=2(D-1)$.
+
+Let $X=X(f,\mathcal F)$, and define
+\[
+X_s=\left\{x\in X:\sum_{v\in f}\deg_{\mathcal F}(v,x)<D^{2/3}\right\},
+\qquad
+X_b=X\setminus X_s .
+\]
+For every $v\in f$,
+\[
+\sum_{x\in X_b}\deg_{\mathcal F}(v,x)\le D+18D^{2/3}.
+\]
+\end{lemma}
+\begin{proof}
+The hypotheses place the edge $f$ in the situation covered by
+\noderef{SaturatedEdgeStructure}; in particular, for every $u\in f$ we have
+\[
+\sum_{x\in X}\deg_{\mathcal F}(u,x)=2(D-1),
+\]
+and every $x\in X$ satisfies
+$\sum_{u\in f}\deg_{\mathcal F}(u,x)\le D$.  Since each vertex of $X_b$ has
+total degree into $f$ at least $D^{2/3}$, summing over $X_b$ gives
+\[
+|X_b|D^{2/3}
+\le \sum_{x\in X_b}\sum_{u\in f}\deg_{\mathcal F}(u,x)
+\le \sum_{x\in X}\sum_{u\in f}\deg_{\mathcal F}(u,x)
+=6(D-1).
+\]
+Thus $|X_b|\le 6D^{1/3}$.
+
+Fix $v\in f$.  Because $\mathcal F$ is $2$-simple, for any two distinct
+vertices $x,x'\in X_b$ there is at most one edge containing the triple
+$\{v,x,x'\}$: two such edges would share the two vertices $v$ and $x$ (and
+also $v$ and $x'$).  Hence the number of edges through $v$ that contain two
+vertices of $X_b$ is at most $\binom{|X_b|}{2}\le 18D^{2/3}$, for all
+sufficiently large $D$.
+
+There are exactly $D-1$ edges through $v$ other than $f$, because $v$ has
+degree $D$ and one of those edges is $f$.  At most $18D^{2/3}$ of them
+contain two vertices of $X_b$, so at least $D-1-18D^{2/3}$ of them contain a
+vertex of $X_s$.  Each neighboring edge through $v$ contains two vertices
+outside $f$, and \noderef{SaturatedEdgeStructure} gives the total outside
+incidence through $v$ as $2(D-1)$.  Therefore
+\[
+\sum_{x\in X_b}\deg_{\mathcal F}(v,x)
+=2(D-1)-\sum_{x\in X_s}\deg_{\mathcal F}(v,x)
+\le 2(D-1)-(D-1-18D^{2/3})
+\le D+18D^{2/3}.
+\]
+\end{proof}

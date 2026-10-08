@@ -1,0 +1,27 @@
+\begin{helper}
+Let $G$ be a finite graph, let $\nu$ be a measure on activation--priority
+pairs $(A,\pi)$, and let $\mu$ be a nonnegative real-valued mass function on
+finite vertex sets.  Write
+\[
+I(A,\pi)=\{u\in A:\pi(w)<\pi(u)\text{ for every }w\in A
+\text{ adjacent to }u\}.
+\]
+Assume that, for every finite vertex set $S$,
+\[
+\operatorname{ofReal}(\mu(S))=\nu\{(A,\pi):S=I(A,\pi)\}.
+\]
+Then, for every vertex $v$,
+\[
+\operatorname{ofReal}\!\left(\sum_S {\bf 1}_{v\in S}\mu(S)\right)
+=
+\nu\{(A,\pi):v\in I(A,\pi)\}.
+\]
+\end{helper}
+\begin{proof}
+Apply \noderef{SamplingFiniteSetPushForwardEvent} with $Q=\{v\}$.
+For every finite set $S$, the condition $\{v\}\subseteq S$ is equivalent
+to $v\in S$, and the same equivalence holds for the output set.
+The general identity includes the measurable, exhaustive disjoint
+output-fiber partition and the nonnegative finite-sum conversion, so this
+specialization gives the claimed equality.
+\end{proof}

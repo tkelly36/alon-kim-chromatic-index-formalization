@@ -1,0 +1,59 @@
+\begin{helper}
+Let \(V\) be finite, let \(\nu\) be a measure on
+\(\operatorname{Finset}(V)\times \mathbb R^V\), and fix an activation fiber
+\(A\).  Assume the fixed-fiber cube law and lower-rectangle law used in
+\noderef{RandomIndependentSetSampling}.  Let \(\gamma>0\), let
+\(a,b,c\in V\) be pairwise distinct, and let \(S_x,S_y,S_z\subseteq V\) be
+pairwise disjoint subsets, each disjoint from \(\{a,b,c\}\).  Assume in
+addition that the activation fiber has finite mass,
+\(\nu[\omega_1=A]<\infty\).  Then the measure of the fiber event with
+\(\pi(a)\le\pi(b)\le\pi(c)\), with all \(S_x\)-coordinates below
+\(\pi(a)\), all \(S_y\)-coordinates below \(\pi(b)\), and all
+\(S_z\)-coordinates below \(\pi(c)\), is at most
+\[
+\nu[\omega_1=A]\operatorname{ofReal}\left(
+\frac{1}{\gamma^3}
+\int_{0\le z\le y\le x\le\gamma}
+\left(1-\frac{x}{\gamma}\right)^{|S_x|}
+\left(1-\frac{y}{\gamma}\right)^{|S_y|}
+\left(1-\frac{z}{\gamma}\right)^{|S_z|}\,dx\,dy\,dz\right).
+\]
+\end{helper}
+\begin{proof}
+Restrict \(\nu\) to the fiber \(\omega_1=A\).  The cube hypothesis from
+\noderef{RandomIndependentSetSampling} says that, inside this fiber, the
+activated priority coordinates lie in \([0,1]\) up to a null set.  Since the
+fiber mass is finite, the restricted measure on this finite-dimensional cube
+is a finite measure.  The lower-rectangle hypothesis gives, for every
+\(t_v\in[0,1]\), the value
+\[
+\nu[\omega_1=A]\operatorname{ofReal}\Bigl(\prod_v t_v\Bigr)
+\]
+on the box \(0\le \pi(v)\le t_v\) for all \(v\).  Such lower boxes form a
+pi-system generating the Borel sigma-algebra of the finite product cube, so
+finite-measure uniqueness identifies the restricted priority law with
+\(\nu[\omega_1=A]\) times the product of one-dimensional uniform measures.
+
+Under this product law, make the affine change of variables
+\[
+x=\gamma(1-\pi(a)),\qquad y=\gamma(1-\pi(b)),\qquad
+z=\gamma(1-\pi(c)).
+\]
+Because \(\gamma>0\), the Jacobian contribution is \(\gamma^{-3}\), and
+\(\pi(a)\le\pi(b)\le\pi(c)\) becomes \(x\ge y\ge z\) with
+\(0\le z\le y\le x\le\gamma\).  The boundary hyperplanes have measure zero,
+so they do not affect the value of the integral.
+
+Fix a chamber point \((x,y,z)\).  For \(w\in S_x\) the constraint
+\(\pi(w)<\pi(a)=1-x/\gamma\) has one-dimensional uniform measure
+\(1-x/\gamma\); the corresponding factors for \(S_y\) and \(S_z\) are
+\(1-y/\gamma\) and \(1-z/\gamma\).  The three sets are pairwise disjoint and
+are disjoint from \(\{a,b,c\}\), so these outside-coordinate factors multiply
+without double-counting and do not interfere with the chamber coordinates.
+All remaining coordinates are unrestricted and contribute factor \(1\).
+Fubini's theorem for the finite product measure therefore gives exactly the
+displayed chamber integral, multiplied by the fiber mass.  Finally, replacing
+the original event by its intersection with the full priority cube can only
+decrease measure, and the cube complement in the fiber is null, so the claimed
+upper bound follows.
+\end{proof}

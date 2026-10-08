@@ -1,0 +1,64 @@
+\begin{helper}
+For fixed split-outside-blocker data \(G,r,X,\phi,\beta\), and a fixed finite
+outside-blocker list \(z_0,\ldots,z_{n-1}\) with
+\(z_i\notin X\cup\{r\}\), define the candidate sets by
+\[
+  B_i=\{x\in X:xz_i\in E(G)\},
+\]
+There is a genuine mixed-stage event surface on one paired source--target
+state space.  For every stage \(j\), let
+\[
+  R_j=\{i:i<j\},\qquad T_j=\{i:j\le i<n\}.
+\]
+The stage \(H_j(\omega)\) consists of paired states in which one candidate
+\(x\in X\) is active on the source side and its image \(\phi(x)\) is active
+on the target side, \(x\) beats all active embedded neighbors in
+\(X\cup\{r\}\) on the source side and \(\phi(x)\) beats the corresponding
+embedded active neighbors on the target side, every retained common blocker
+\(z_i\) with \(i\in T_j\) fails to kill \(x\), and every already-private
+blocker \(\beta(x,z_i)\) with \(i\in R_j\) fails to kill \(\phi(x)\).
+
+For a step \(k<n\), there is also a shared unchanged context
+\(U_k(\omega)\) on the same paired state space.  It contains the same
+single candidate \(x\in B_k\), candidate activation, and
+embedded-neighbor winning conditions, the
+already-private non-killing tests for exactly \(i<k\), and the retained
+common non-killing tests for exactly \(k<i<n\).  It omits only the current
+blocker \(i=k\).  The two current boundary events are then obtained from this
+same single-witness context by adding either the common current test for
+\(z_k\) or the private current test for \(\beta(x,z_k)\).
+\end{helper}
+\begin{proof}
+Define \(R_j\) and \(T_j\) inside the finite type of indices by
+\[
+  R_j=\{i:i<j\},\qquad T_j=\{i:j\le i\}.
+\]
+These definitions immediately give the two displayed membership
+equivalences.
+
+Define \(H_j(\omega)\) to be exactly the paired-state event displayed in the
+statement.  A state of \(H_j(\omega)\) contains a candidate \(x\in X\) such
+that the source component has \(x\) active, the target component has
+\(\phi(x)\) active, both components satisfy the embedded-neighbor priority
+comparisons, the source component satisfies all retained common blocker tests
+with indices in \(T_j\), and the target component satisfies all already
+private blocker tests with indices in \(R_j\).  Since this is the definition
+of \(H_j\), the asserted formula for \(H_j(\omega)\) follows directly.
+
+For \(k<n\), define \(U_k(\omega)\) by choosing one candidate
+\(x\in B_k\), by requiring the activation and embedded-neighbor conditions for
+that same \(x\), by imposing the private tests for all indices \(i<k\), and
+by imposing the common retained tests for all indices \(i>k\).  The equality
+\(B_i=\{x\in X:xz_i\in E(G)\}\) is exactly why the private terms
+\(\beta(x,z_i)\) are well-defined: \(x\in X\), the displayed adjacency gives
+\(xz_i\in E(G)\), and the outside-blocker hypothesis gives
+\(z_i\notin X\cup\{r\}\).  This definition uses the same paired state and the
+same candidate witness on both sides, so the noncurrent context is literally
+shared; it is not a comparison between a source-only cylinder and a
+target-only cylinder.  Finally define the source current boundary by adding,
+for that same \(x\), the non-killing test for the single common blocker
+\(z_k\), and define the target current boundary by adding, for that same
+\(x\), the non-killing test for the single private blocker
+\(\beta(x,z_k)\).  These are definitions, so the three displayed formulas for
+the shared context and the two current boundary events follow immediately.
+\end{proof}

@@ -1,0 +1,195 @@
+\begin{lemma}
+Let $V,V',\Omega$ be finite, $G,G'$ simple graphs, $\phi:V\to V'$,
+$r\in V$, $X\subseteq V$, and $z:\{0,\ldots,n-1\}\to V$ with
+$z_i\notin X\cup\{r\}$. Let $B_i\subseteq V$, and let $\beta$ map
+outside incidences $(x,z)$ with $x\in X$, $z\notin X\cup\{r\}$,
+and $xz\in E(G)$ to $V'$. Fix measurable cell families
+$C_\omega,C'_\omega$, real weights $w$, and a
+\noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface} on these
+data. Denote its common coordinate sets by $S,S'$, paired measure by
+$\lambda$, paired cells by $Q_\omega$, and stages by $H_j(\omega)$.
+Suppose $0\le p\le1$ and fix a
+\noderef{SamplingSplitOutsideBlockerProductRealization} for this very
+$\lambda$, with parameters $p,\phi,S$, tag type $T$, injections $s,t$,
+and decoder $D$. Assume $\beta$ injective and
+$\beta(a)\ne\phi(y)$ for every outside incidence $a$ and
+$y\in X\cup\{r\}$. Assume $z_i\notin S$ and
+$\beta(x,z_i)\notin S'$ for every applicable incidence. Suppose, for
+every $\omega$ and every pair $\eta=(A,\pi),\eta'=(A',\pi')$,
+\[
+ A'\cap S'=\phi(A\cap S),\quad \pi'(\phi v)=\pi(v)\ (v\in S)
+ \quad\Longrightarrow\quad
+ (\eta\in C_\omega\ \Longleftrightarrow\ \eta'\in C'_\omega),
+\]
+and suppose exactly
+\[
+ Q_\omega=\{(\eta,\eta'): \eta\in C_\omega,\ \eta'\in C'_\omega,
+ A'\cap S'=\phi(A\cap S),\ \pi'(\phi v)=\pi(v)\ (v\in S)\}.
+\]
+Fix $k<n$ and $\omega$. Put $A_k=\{x\in X:x\in B_k\}$, viewed as a
+finite type, and define $j:\{*\}\sqcup A_k\to T$ and its image $J$ by
+\[
+ j(*)=s(z_k),\qquad j(x)=t(\beta(x,z_k)),\qquad J=\operatorname{im}j.
+\]
+The incidence in this formula exists by the carrier's candidate-set
+identity. On $\mathbb R^2$ put
+\[
+ \rho=(p\delta_1+(1-p)\delta_0)\otimes
+       (\operatorname{Leb}|_{[0,1]}),\qquad
+ \tau=\rho^{T\setminus J},\quad \kappa=\rho^{\{*\}\sqcup A_k}.
+\]
+For a context $v\in(\mathbb R^2)^{T\setminus J}$, define
+$F_0(v)(i)=(0,0)$ on $J$ and $F_0(v)(i)=v(i)$ off $J$, and
+$d(v)=D(F_0(v))$. Let $E_x$ be the paired candidate event of
+\noderef{SamplingSplitOutsideBlockerPairedCandidateEvent}, with private
+indices $i<k$ and retained indices $i>k$, and set
+\[
+ U=\{\zeta:\exists x\in X\setminus B_k,\ \zeta\in E_x\},\quad
+ K(v)=\{x\in A_k:d(v)\in E_x\},\quad
+ q_x(v)=d(v)_{\mathrm{source,priority}}(x),
+\]
+\[
+ Z=\{v:d(v)\in Q_\omega,\ d(v)\notin U\}.
+\]
+For $f\in(\mathbb R^2)^{\{*\}\sqcup A_k}$ write $f_a=(b_a,t_a)$ and put
+\[
+ L_v=\{f:\exists x\in K(v),\ \neg(b_*=1\land q_x(v)<t_*\land t_*\in[0,1])\},
+\]
+\[
+ R_v=\{f:\exists x\in K(v),\ \neg(b_x=1\land q_x(v)<t_x\land t_x\in[0,1])\}.
+\]
+Then $Q_\omega$ is measurable, and for $\tau$-almost every $v$ all
+$q_x(v)$, $x\in A_k$, belong to $[0,1]$. Moreover the exact identities
+\[
+ \lambda((H_k(\omega)\setminus U)\cap Q_\omega)
+   =\int 1_Z(v)\kappa(L_v)\,d\tau(v),\qquad
+ \lambda((H_{k+1}(\omega)\setminus U)\cap Q_\omega)
+   =\int 1_Z(v)\kappa(R_v)\,d\tau(v)
+\]
+hold as nonnegative integrals. All spaces here have their natural Borel
+product sigma algebras, with finite activation sets discrete.
+\end{lemma}
+\begin{proof}
+The carrier \noderef{SamplingSplitOutsideBlockerPairedMixedMeasureSurface}
+gives injectivity of $z$, the identity
+$B_i=\{x\in X:xz_i\in E(G)\}$, the inclusion $X\cup\{r\}\subseteq S$,
+and $S'=\phi(S)$. The given
+\noderef{SamplingSplitOutsideBlockerProductRealization}
+gives injectivity of $s,t$ and
+\[
+ s(v)=t(v')\quad\Longleftrightarrow\quad v\in S\text{ and }\phi(v)=v'.
+\]
+These are fields of the two stated structure definitions, not additional
+assumptions about a newly chosen coupling.
+
+Apply \noderef{SamplingSplitOutsideBlockerCurrentTagSeparation} with
+$v=z_k$ and $b(x)=\beta(x,z_k)$ on $A_k$. This map $b$ is injective:
+injectivity of $\beta$ turns equality of its values into equality of
+incidences, whose first components are the candidate indices. Its
+private-coordinate exclusion is exactly the assumed exclusion from
+$S'$. Thus all hypotheses of that separation lemma hold. For clarity,
+its conclusions specialize as follows. First, $s(z_k)$ is distinct from every target tag: any equality would
+imply $z_k\in S$. Every $t(\beta(x,z_k))$ is distinct from every source
+tag: an equality would imply $\beta(x,z_k)\in\phi(S)=S'$.
+The private current tags are mutually distinct, since equality, by
+injectivity of $t$ and $\beta$, implies equality of their incidence
+arguments and hence of $x$. Therefore $j$ is injective and is a bijection
+onto $J$. No common tag $s(v)$ for $v\in S$ lies in $J$: it cannot equal
+the common current tag by injectivity of $s$ and $z_k\notin S$, nor a
+private tag by the preceding exclusion.
+
+Let $F(v,c)$ splice a context $v$ on $T\setminus J$ and a tuple $c$ on
+$J$, exactly as in \noderef{SamplingFiniteProductContextSlicing}.
+That theorem supplies measurability of the splice and its zero section,
+unit total masses for $\rho^T,\tau,\rho^J$, almost-everywhere unit-priority
+support for the context, and, for every measurable $E\subseteq(\mathbb R^2)^T$,
+\[
+ \rho^T(E)=\int \rho^J\{c:F(v,c)\in E\}\,d\tau(v).
+\]
+Its hypotheses are precisely finiteness of $T$ and $0\le p\le1$; the
+chosen finite set is the actual image $J$ above. This also covers an
+empty complementary coordinate set. Since $j$ is a bijection onto $J$,
+the coordinate permutation $P:(\mathbb R^2)^J\to
+(\mathbb R^2)^{\{*\}\sqcup A_k}$ given by $(Pc)_a=c_{j(a)}$
+is a measurable bijection with measurable inverse, and $P_*(\rho^J)=\kappa$.
+Indeed, the inverse image of a Borel rectangle $\prod_a E_a$ is the
+rectangle with the same factors indexed by $j(a)$; its measure is
+$\prod_a\rho(E_a)$. Rectangles form a generating intersection-closed
+family containing the whole space. Equality on them gives equality of
+these finite measures: the sets on which two finite measures agree form
+a Dynkin system when they agree on the whole space, and the
+pi-lambda theorem applies. The factors have mass one by the slicing
+theorem, so the argument includes $A_k=\varnothing$.
+
+The displayed formula for $Q_\omega$ proves its measurability.
+The first two tests are inverse images of the assumed measurable cells
+under projections. The activation trace equality is a test on finite
+discrete sets. Each priority equality is the inverse image of the closed
+diagonal of $\mathbb R^2$ under coordinate projections; only finitely
+many are imposed. The events $E_x$ and $U$ are measurable by
+\noderef{SamplingSplitOutsideBlockerActualAdjacentSharedContextProducer}.
+The same theorem gives measurable boundary events and the decompositions
+of $H_k$ and $H_{k+1}$ into $U$ and their disjoint boundaries. In particular
+both differences $H_k\setminus U$ and $H_{k+1}\setminus U$ are measurable.
+The realization makes $D$ measurable, hence $d$ is measurable, each
+$q_x$ is measurable, each membership test $x\in K(v)$ is measurable,
+and $Z$ is measurable.
+
+We check the dependence on current coordinates pointwise. Any two
+splices $F(v,c)$ and $F(v,0)$ agree on all common tags. Apply
+\noderef{SamplingSplitOutsideBlockerProductAtomContextInvariant}, with
+the given overlap equivalence, $S'=\phi(S)$, and transported membership
+for $C_\omega,C'_\omega$. Its second conclusion says that the decoded
+tuples have identical membership in the exact synchronized paired cell.
+Thus $D(F(v,c))\in Q_\omega$ if and only if $d(v)\in Q_\omega$.
+
+Only the source coordinate $z_k$ can change: every other source tag is
+outside $J$ by injectivity of $s$ and the private/source exclusion above.
+Only the target coordinates $\beta(x,z_k)$, $x\in A_k$, can change:
+the common current tag equals no target tag, and injectivity of $t$
+excludes all other target coordinates. Every applicable incidence
+$(x,z_k)$ with $x\in X$ has $x\in B_k$, so this is precisely the set
+of allowed target exceptions in
+\noderef{SamplingSplitOutsideBlockerPairedContextCurrentInvariant}.
+That theorem applies using the supplied freshness, injectivity of
+$\beta$, and the carrier's injectivity of $z$. It proves that membership
+in every $E_x$ is independent of $c$. In detail the local embedded tests
+are untouched by freshness; retained coordinates $z_i$ for $i>k$
+are not $z_k$ by injectivity of $z$; previous private coordinates
+$\beta(x,z_i)$ for $i<k$ differ from all current private coordinates
+by injectivity of $\beta$ and $z$. Consequently membership in $U$ and
+all the tests defining $K(v)$ is also independent of $c$.
+
+Every candidate $x\in X$ lies in $S$, so its source tag is outside $J$.
+The overlap equivalence gives $s(x)=t(\phi(x))$, hence both decoded
+candidate priorities are exactly $q_x(v)$ throughout the fiber.
+The almost-everywhere context support provided by slicing therefore
+implies $q_x(v)\in[0,1]$ for all $x\in A_k$ simultaneously. This uses
+only a finite family of context coordinates, with no conditioning on
+the values of the priorities.
+
+Write $f=Pc$. The decoded source activation at $z_k$ is equivalent to
+$b_*=1$, and its priority is $t_*$. The decoded target activation at
+$\beta(x,z_k)$ is equivalent to $b_x=1$, and its priority is $t_x$;
+these follow directly from
+\noderef{SamplingSplitOutsideBlockerProductDecode}. The boundary formulas
+in \noderef{SamplingSplitOutsideBlockerActualAdjacentSharedContextProducer}
+now give the following exact alternatives for every $v,c$.
+If $v\notin Z$, both atom-intersected boundary fibers are empty: either
+the atom test fails or $U$ holds. If $v\in Z$, their respective membership
+conditions are $f\in L_v$ and $f\in R_v$. For the target boundary its
+quantifier over proofs of the incidence is equivalent to the single
+test written here: the incidence exists for $x\in A_k$, and all proofs
+give the same element of the dependent incidence type. Thus no candidate
+outside $K(v)$ contributes, and empty $K(v)$ gives empty fibers.
+
+Apply the realization's identity $\lambda=D_*(\rho^T)$ to the two
+measurable atom-intersected boundaries, and then the slicing formula to
+their measurable decoder preimages. For each $v$, the preceding exact
+fiber alternatives and $P_*(\rho^J)=\kappa$ identify the two inner masses
+as $1_Z(v)\kappa(L_v)$ and $1_Z(v)\kappa(R_v)$. Substitution into the
+two nonnegative integrals proves both asserted equalities. Their
+integrands are measurable by the measurable-fiber-mass conclusion of
+slicing and these pointwise identities. No comparison of the two
+masses, and no normalization by the atom weight, was used.
+\end{proof}

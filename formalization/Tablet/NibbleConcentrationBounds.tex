@@ -1,0 +1,57 @@
+\begin{lemma}
+Let $Q$ be a completion datum with finite edge and color types, let
+$0<\gamma\le\Delta$, $\iota,t>0$, $m=|K|>0$, and let all retained lists
+have the same positive cardinality $\ell$. In the product experiment,
+for arbitrary real $d,b$,
+\[
+\mathbb EY_x\le d-t\ \Longrightarrow\
+\Pr[Y_x>d]\le e^{-2t^2/m},
+\]
+\[
+\mathbb E|\operatorname{Del}_e|\le(b+\iota/2)\ell
+\ \Longrightarrow\
+\Pr[|\operatorname{Del}_e|\ge(b+\iota)\ell]
+\le \exp\left(-\frac{\iota^2}{8+2\iota}\ell\right).
+\]
+\end{lemma}
+\begin{proof}
+By \noderef{NibbleProductSamplingLaw}, the experiment is a probability
+measure and every selected edge set is pointwise independent in the line
+graph. By \noderef{NibbleSelectedSetProductLaw}, the finite-valued
+selected-set maps are measurable and independent, with joint law equal
+to the product of their marginal laws. Thus the support predicate for
+these values can be taken to be independence in the line graph.
+
+Fix $x$. Take $f(I)=\operatorname{NibbleResidualDegree}(H,I,x)$, as
+defined in \noderef{NibbleResidualDegree}. For any two families of
+independent edge sets differing only at one color,
+\noderef{NibbleResidualDegreeBoundedDifference} gives
+$|f(I)-f(J)|\le1$. Apply \noderef{FiniteIndependentBoundedDifferences}
+to this function, the selected-set maps, and the support predicate just
+specified. It yields $\Pr[Y_x\ge\mathbb EY_x+t]\le e^{-2t^2/m}$.
+The mean hypothesis implies $\mathbb EY_x+t\le d$, so
+$\{Y_x>d\}\subseteq\{Y_x\ge\mathbb EY_x+t\}$, giving the first bound.
+
+Fix $e$. For each retained color $a$, put
+$R_a(S)\iff\exists f\in S$ adjacent to $e$ in the line graph.
+By \noderef{NibbleDeletedColors}, the number of successes of these
+predicates among $a\in M(e)$ is exactly $Z=|\operatorname{Del}_e|$.
+Apply \noderef{FiniteIndependentBernoulliCountTail} with this retained
+color set of size $\ell$ and increment $s=\iota\ell/2>0$. This gives
+\[
+\Pr[Z\ge\mathbb EZ+s]\le\exp(-s^2/(2\mathbb EZ+s))
+\le\exp(-s^2/(2\ell+s)).
+\]
+The helper includes the zero-mean case and supplies $\mathbb EZ\le\ell$;
+both denominators are positive, which justifies the second inequality.
+Our mean hypothesis gives
+$\mathbb EZ+s\le(b+\iota)\ell$, so the event in the statement is
+contained in this non-strict tail event. Finally, since $\ell>0$,
+\[
+\frac{(\iota\ell/2)^2}{2\ell+\iota\ell/2}
+=\frac{\iota^2\ell}{8+2\iota}.
+\]
+Both helper applications are to the original product measure: their
+finite push-forward proofs transport the integrals and event measures,
+so no change of experiment or unstated identification of means is needed.
+\end{proof}

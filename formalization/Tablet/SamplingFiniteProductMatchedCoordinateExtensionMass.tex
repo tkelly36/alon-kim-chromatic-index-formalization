@@ -1,0 +1,56 @@
+\begin{lemma}
+Let \(\nu\) and \(\nu'\) be two activation-priority product laws with the
+same activation parameter \(p\).  On the source side, let \(C\) be the
+already fixed coordinate set and let \(D\) be a disjoint finite extension
+set; prescribe a base activation pattern on \(C\), an extension activation
+pattern on \(D\), lower and upper priority cuts on \(C\), and lower cuts on
+\(D\).  Make the analogous choices \(C',D'\) for the target side.  Assume
+that the two base cells have the same normalized real mass, that the finite
+activation factors on \(D\) and \(D'\) are equal, and that the finite
+priority-cut products on the extension cuts are equal.
+
+Then the two one-sided extended cylinder masses are represented by
+nonnegative real numbers \(m^-\) and \(m^+\), and these real numbers are
+equal.  More precisely, each side is obtained by applying the finite
+coordinate-extension mass formula to its own measure, and the resulting
+source and target extension weights satisfy \(m^-=m^+\).
+\end{lemma}
+\begin{proof}
+Apply \(\noderef{SamplingFiniteCoordinateCellExtensionMass}\) first to the
+source law \(\nu\), using the source old coordinates \(C\), source extension
+coordinates \(D\), the source base and extension activation patterns, and the
+source lower and upper priority cuts.  Its hypotheses are exactly the
+one-sided product-law hypotheses: \(0\le p\le1\), \(C\cap D=\emptyset\), the
+base activation and priority cuts lie on \(C\), the extension activation and
+extension lower cuts lie on \(D\), the relevant cut sets are disjoint, all
+thresholds lie in \([0,1]\), and \(\nu\) satisfies the activation-atom and
+priority lower-rectangle laws.  The conclusion gives nonnegative real
+numbers \(b^-\) and \(m^-\) such that \(b^-\) is the mass of the source base
+cell, \(m^-\) is the mass of the source extended cylinder, and
+\[
+m^- =
+b^-\,p^{|A^-_D|}(1-p)^{|D^-|-|A^-_D|}
+  \prod_{v\in K^-} t^-_v .
+\]
+
+Apply the same node to the target law \(\nu'\) with \(C',D'\) and the target
+activation and priority data.  This yields nonnegative real numbers \(b^+\)
+and \(m^+\), identifies \(b^+\) with the target base-cell mass, identifies
+\(m^+\) with the target extended-cylinder mass, and gives
+\[
+m^+ =
+b^+\,p^{|A^+_{D'}|}(1-p)^{|D'|-|A^+_{D'}|}
+  \prod_{v'\in K^+} t^+_{v'} .
+\]
+
+The base-mass compatibility hypothesis applies to the two displayed
+base-mass identities just obtained, so \(b^-=b^+\).  After replacing \(b^+\)
+by \(b^-\), the remaining hypotheses say that the two activation factors are
+equal and that the two priority products are equal.  Therefore
+\(\noderef{SamplingFiniteProductMatchedCoordinateExtensionTransport}\)
+applies to the two extension formulas and gives \(m^-=m^+\).  The
+nonnegativity and the two measure-identification clauses are precisely the
+ones returned by the two one-sided applications of
+\(\noderef{SamplingFiniteCoordinateCellExtensionMass}\), so the asserted
+matched extension-mass package follows.
+\end{proof}

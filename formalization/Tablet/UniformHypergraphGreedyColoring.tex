@@ -1,0 +1,12 @@
+\begin{lemma}
+For positive natural numbers $k,n$, a finite $k$-uniform hypergraph of
+maximum degree at most $n$ admits a proper edge-coloring with $kn$ colors.
+\end{lemma}
+\begin{proof}
+By \noderef{UniformHypergraphLineDegreeBound}, every vertex of the line
+graph has degree at most $k(n-1)<kn$.
+Apply \noderef{FiniteGraphGreedyColoring} with $q=kn$.
+Adjacency in \noderef{LineGraphOfHypergraph} means distinct intersecting
+edges, so this coloring satisfies \noderef{ProperEdgeColoring} and hence
+\noderef{ChromaticIndexAtMost}.
+\end{proof}

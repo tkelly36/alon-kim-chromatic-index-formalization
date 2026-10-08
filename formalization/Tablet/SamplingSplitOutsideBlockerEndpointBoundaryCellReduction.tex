@@ -1,0 +1,121 @@
+\begin{helper}
+Let \(W\) be a finite graph with activation--priority law \(\nu\) satisfying
+the Bernoulli activation atom formula and the full priority lower-rectangle
+law with parameter \(p\in[0,1]\).  Let \(C\) be a finite candidate index set,
+with embedded candidate vertex \(e(x)\in W\) for each \(x\in C\).  Let
+\(Q\subseteq W\) be the fixed local-coordinate set, and let
+\(b_i(x)\) be the finitely many outside blocker coordinates attached to
+candidate \(x\) whenever \(H_i(x)\) holds.  Assume every neighbor of every
+embedded candidate is either in \(Q\) or is one of these listed blockers:
+\[
+  e(x)y\in E(W),\ x\in C
+  \quad\Longrightarrow\quad
+  y\in Q\ \hbox{or}\ \exists i\,(H_i(x)\hbox{ and }y=b_i(x)).
+\]
+Assume also \(e(x)\in Q\) for every \(x\in C\), and assume that each listed
+blocker which is present for a candidate is an actual neighbor:
+\[
+  H_i(x),\ x\in C \quad\Longrightarrow\quad e(x)b_i(x)\in E(W),
+\]
+Then, for every support cell \(D\), the true strict endpoint survival event
+for \(C\) has the same \(\nu\)-mass on \(D\) as the displayed
+support-relative event in which local neighbors in \(Q\) are tested by the
+strict inequalities \(\pi(y)<\pi(e(x))\), while each listed outside blocker
+is excluded by the negated opposite test
+\[
+  \neg\bigl(b_i(x)\in A,\ \pi(e(x))<\pi(b_i(x)),\
+  0\le \pi(b_i(x))\le1\bigr).
+\]
+That is, after intersection with \(D\),
+\[
+\{I_W(A,\pi)\cap e(C)\ne\emptyset\}
+\]
+and this displayed local/blocker event have equal measure.
+\end{helper}
+\begin{proof}
+We first record the finite coordinate set to which
+\(\noderef{SamplingSplitOutsideBlockerTargetEndpointEquivalence}\) will be
+applied.  Put
+\[
+  Q^*=Q\cup\{b_i(x):x\in C,\ H_i(x)\}.
+\]
+If \(x\in C\) and \(y\) is adjacent to \(e(x)\), the cover hypothesis gives
+either \(y\in Q\) or \(y=b_i(x)\) for some present blocker \(H_i(x)\).  Hence
+\(y\in Q^*\).  The cited endpoint-equivalence node therefore identifies the
+true endpoint event pointwise with the event that some \(x\in C\) is active
+and beats every active adjacent coordinate in \(Q^*\).
+
+We next compare this \(Q^*\)-local condition with the displayed condition for
+a fixed candidate \(x\).  Coordinates in \(Q\) contribute exactly the local
+tests appearing in the statement.  For a coordinate \(y\in Q^*\setminus Q\)
+which is active and adjacent to \(e(x)\), it may have entered \(Q^*\) as a
+listed blocker for some other candidate, but the cover hypothesis applied to
+the present candidate \(x\) and the same adjacent coordinate \(y\) gives
+\[
+  y\in Q\quad\hbox{or}\quad y=b_i(x)\hbox{ for some }i\hbox{ with }H_i(x).
+\]
+The first alternative is already handled by the local tests, and in the
+second alternative the new support condition says that this listed blocker is
+indeed a genuine neighbor of \(e(x)\).  Thus the only nonlocal strict endpoint
+tests that must be compared with the displayed event are precisely
+\[
+  b_i(x)\in A \quad\Longrightarrow\quad \pi(b_i(x))<\pi(e(x))
+  \qquad(H_i(x)).
+\]
+It remains only to compare this strict implication with the displayed negated
+opposite test.  This comparison is pointwise valid away from unit-support
+failures and ties, and those exceptional sets have zero \(\nu\)-mass as follows.
+
+The Bernoulli atom formula makes each activation atom finite, since
+\(\operatorname{ofReal}\) of a real number is finite.  Thus
+\noderef{SamplingPriorityPositiveUnitSupport}, applied with the given
+lower-rectangle law, gives a conull set \(U\) on which
+\(0<\pi(v)\le1\) for every \(v\in W\).  For each fixed activation
+atom \(A_0\), the events
+\[
+ \{A=A_0,\ \pi(q)\in[0,1]\text{ for all }q\in A_0\}
+ \quad\text{and}\quad \{A=A_0\}
+\]
+agree on \(U\), so they have equal measure.  This supplies the
+active-coordinate cube-mass hypothesis of
+\noderef{SamplingNonadjacentPairOrderedChamberDiagonalNull}.
+
+For \(x\in C\) and \(H_i(x)\), the adjacency hypothesis and
+irreflexivity give \(e(x)\ne b_i(x)\).  Apply that diagonal-null theorem
+to these two coordinates, with the given Bernoulli and rectangle laws and
+the cube-mass identity just established.  It says that
+\[
+ \{e(x),b_i(x)\in A,\ \pi(q)\in[0,1]\text{ for every }q\in A,
+       \ \pi(e(x))=\pi(b_i(x))\}
+\]
+is null.  Take the union of these finitely many null sets and \(U^c\).
+Outside this union, an active candidate and an active listed blocker have
+distinct priorities.  No assertion about ties involving inactive candidates
+is needed, since both survival events require an active candidate.
+An active listed blocker also satisfies
+\(0\le\pi(b_i(x))\le1\), and trichotomy of the two distinct real priorities
+gives exactly one of
+\[
+  \pi(b_i(x))<\pi(e(x)),\qquad
+  \pi(e(x))<\pi(b_i(x)).
+\]
+Consequently, for an active candidate, the displayed condition
+\[
+\neg\bigl(b_i(x)\in A,\ \pi(e(x))<\pi(b_i(x)),\
+0\le\pi(b_i(x))\le1\bigr)
+\]
+is equivalent, off the null exceptional set, to the strict endpoint implication
+\[
+  b_i(x)\in A \quad\Longrightarrow\quad \pi(b_i(x))<\pi(e(x)).
+\]
+
+Combining the pointwise endpoint equivalence on \(Q^*\) with this finite
+null-set conversion for the listed blockers shows that the symmetric difference
+between the true endpoint survival event and the displayed local/blocker event
+is contained in the union of the unit-support complement and finitely many
+active--active candidate--blocker tie sets just described.
+That union has \(\nu\)-measure \(0\).
+Intersecting both events with the arbitrary cell \(D\) can only shrink the
+symmetric difference, so the two intersections differ by a null set.  Their
+\(\nu\)-masses are therefore equal.
+\end{proof}
