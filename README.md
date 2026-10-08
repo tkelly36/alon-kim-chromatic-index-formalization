@@ -22,13 +22,17 @@ autoformalization harness for building verified Lean proof tablets.
 
 ## Status
 
-This snapshot contains 350 closed tablet nodes. The four target results are
-kernel-checked, with no verifier blockers or unverified local closures at the
-accepted checkpoint.
+This final snapshot contains 352 closed tablet nodes. The four target results
+are kernel-checked, with no verifier blockers or unverified local closures at
+the accepted checkpoint. A post-completion cleanup consolidated repeated
+measure-zero, incidence-counting, and saturation arguments into reusable
+lemmas without changing the four target statements.
 
 The exact source checkpoint is
-`9ce4cd73d6fdc0e3e26be8f9598652f15421f76a` (Trellis cycle 962), produced
+`4bea364b53d1d12b263d0e8ccfb34c6f1b71887c` (Trellis cycle 968), produced
 with Trellis revision `d842acb02530079811bf48584318e1709596495e`.
+The published snapshot passes the complete `lake build Tablet` check (3,882
+jobs).
 
 The project used no project-approved extra axioms:
 

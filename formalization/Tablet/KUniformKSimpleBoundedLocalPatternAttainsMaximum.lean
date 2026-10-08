@@ -1,4 +1,4 @@
-import Tablet.FiniteRealFunctionAttainsMaximum
+import Mathlib.Data.Fintype.Lattice
 import Tablet.KUniformKSimpleBoundedLocalPattern
 import Tablet.LineGraphOfHypergraph
 import Tablet.LocalBParameter
@@ -58,5 +58,4 @@ theorem KUniformKSimpleBoundedLocalPatternAttainsMaximum :
                 (Fin (1 + k * (D - 1))))).Adj)
         (k * D) P.1.2
   simpa [score] using
-    (FiniteRealFunctionAttainsMaximum
-      (ι := KUniformKSimpleBoundedLocalPattern k D) score)
+    (Finite.exists_max score)

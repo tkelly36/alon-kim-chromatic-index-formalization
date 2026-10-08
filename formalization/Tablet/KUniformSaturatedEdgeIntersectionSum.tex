@@ -1,0 +1,30 @@
+\begin{helper}
+Let \(k,D\in\mathbb N\), let \(H\) be a \(k\)-uniform multi-hypergraph
+with finite edge-label set \(E\), and let \(f\in E\).
+Suppose every vertex \(x\in H(f)\) has degree \(D\). Define
+\[
+N=\{e\in E:e\ne f\ \text{and}\ H(e)\cap H(f)\ne\varnothing\}.
+\]
+Then
+\[
+\sum_{e\in N}|H(f)\cap H(e)|=k(D-1),
+\]
+where subtraction is natural-number subtraction, truncated at zero.
+No finiteness assumption on the vertex type or positivity assumption on
+\(D\) is required.
+\end{helper}
+\begin{proof}
+Count pairs \((x,e)\) with \(x\in H(f)\), \(e\ne f\), and \(x\in H(e)\).
+For each fixed \(x\in H(f)\), the incident edge-label set has cardinality
+\(D\) by \noderef{HypergraphDegree} and the hypothesis. It contains \(f\).
+Removing \(f\) therefore leaves exactly \(D-1\) labels. There are \(k\)
+vertices in \(H(f)\) by \noderef{UniformHypergraph}, so the number of pairs
+is \(k(D-1)\). This argument also covers an empty \(H(f)\), when the sum
+is empty; whenever such an \(x\) exists, membership of \(f\) ensures
+\(D\geq1\).
+For every counted pair, \(x\) witnesses that \(H(e)\cap H(f)\) is
+nonempty, so its edge label lies in \(N\). Conversely, for each
+\(e\in N\), precisely the vertices of \(H(f)\cap H(e)\) form counted
+pairs with that label. Counting this same finite incidence set by its
+edge coordinate gives the displayed sum and proves the equality.
+\end{proof}

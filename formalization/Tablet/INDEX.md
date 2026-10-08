@@ -20,7 +20,6 @@
 | FiniteIndicatorCountExpectation | lemma | proof | closed | - | - | Preamble |
 | FiniteNonnegativeWeightCutoff | lemma | proof | closed | - | - | Preamble |
 | FiniteProbabilityMass | definition | definition | closed | - | - | Preamble |
-| FiniteRealFunctionAttainsMaximum | helper | proof | closed | - | - | Preamble |
 | FiniteRegularGraphRadiusTwo | lemma | proof | closed | - | - | Preamble |
 | FiniteSimpleRegularCompletion | lemma | proof | closed | - | - | FiniteEvenTypePairing |
 | FiniteSortedPaddedSlots | lemma | proof | closed | - | - | Preamble |
@@ -52,7 +51,7 @@
 | KPartiteTrianglePartTripleProductSumBound | helper | proof | closed | - | - | KPartiteFixedThreePartProductEstimate, Preamble |
 | KPartiteVertexTriangleDoubleCount | helper | proof | closed | - | - | Preamble |
 | KPartiteWeightedTriangleInequality | lemma | proof | closed | - | - | KPartiteFixedVertexCauchyEstimate, KPartiteFixedVertexReducedEstimate, KPartiteFixedVertexTotalEstimate, KPartiteIncidentTotalBounds, KPartiteIncidentWeightDoubleCount, KPartiteOrderedTriangleDoubleCount, KPartiteTriangleCoefficientIdentity, KPartiteVertexTriangleDoubleCount, Preamble |
-| KUniformDoubleIntersectionNeighborCountUpperBound | helper | proof | closed | - | - | HypergraphDegree, LineGraphOfHypergraph, UniformHypergraph |
+| KUniformDoubleIntersectionNeighborCountUpperBound | helper | proof | closed | - | - | HypergraphDegree, KUniformSaturatedEdgeIntersectionSum, LineGraphOfHypergraph, UniformHypergraph |
 | KUniformFreshEdgeHypergraph | definition | definition | closed | - | - | MultiHypergraph |
 | KUniformFreshEdgeIndependentPairUpperBound | helper | proof | closed | - | - | IndependentPairCount, KUniformFreshEdgeHypergraph, LineGraphOfHypergraph |
 | KUniformFreshEdgeIndependentTripleLowerBound | helper | proof | closed | - | - | IndependentTripleCount, KUniformFreshEdgeHypergraph, LineGraphOfHypergraph |
@@ -61,17 +60,18 @@
 | KUniformKSimpleBParameterEstimate | lemma | proof | closed | - | - | HypergraphClass, HypergraphDegree, IndependentPairCount, IndependentPairCountLeChooseNeighborCard, IndependentTripleCount, KPartiteTriangleCount, KUniformKSimpleBParameterRealEstimate, KUniformKSimpleExtremalSaturation, KUniformKSimpleLocalPatternExtremalReduction, KUniformKSimplePairLowerBound, KUniformNeighborOneIntersectionFromSaturation, LineGraphOfHypergraph, LocalBParameter, MaxDegreeAtMost, NeighborhoodComplementEdgeCountLeIndependentPairCount, NeighborhoodComplementTriangleCountEqualsIndependentTripleCount, SubhypergraphOf, TSimpleHypergraph, UniformHypergraph |
 | KUniformKSimpleBParameterRealEstimate | helper | proof | closed | - | - | KPartiteTriangleCoefficientIdentity, Preamble |
 | KUniformKSimpleBoundedLocalPattern | definition | definition | closed | - | - | HypergraphClass |
-| KUniformKSimpleBoundedLocalPatternAttainsMaximum | helper | proof | closed | - | - | FiniteRealFunctionAttainsMaximum, KUniformKSimpleBoundedLocalPattern, LineGraphOfHypergraph, LocalBParameter |
+| KUniformKSimpleBoundedLocalPatternAttainsMaximum | helper | proof | closed | - | - | KUniformKSimpleBoundedLocalPattern, LineGraphOfHypergraph, LocalBParameter |
 | KUniformKSimpleBoundedLocalPatternLift | helper | proof | closed | - | - | HypergraphClass, HypergraphDegree, IndependentPairCount, IndependentTripleCount, KUniformKSimpleBoundedLocalPattern, LineGraphOfHypergraph, LocalBParameter, LocalBParameterNeighborhoodEmbeddingTransport, MaxDegreeAtMost, TSimpleHypergraph, UniformHypergraph |
 | KUniformKSimpleChromaticIndexBound | theorem | proof | closed | - | - | ChromaticIndexAtMostReal, GeneralColoringTheorem, HypergraphClass, HypergraphDegree, KUniformKSimpleBParameterEstimate, LineGraphOfHypergraph, LocalBParameter, LocalBParameterRealFloorTransfer, MaxDegreeAtMost, ProperEdgeColoring, SubhypergraphInheritance, SubhypergraphOf, TSimpleHypergraph, UniformHypergraph |
 | KUniformKSimpleExtremalSaturation | lemma | proof | closed | - | - | HypergraphClass, HypergraphDegree, IndependentPairCount, IndependentTripleCount, KUniformDoubleIntersectionNeighborCountUpperBound, KUniformFreshEdgeIndependentPairUpperBound, KUniformFreshEdgeIndependentTripleLowerBound, KUniformFreshEdgeLineGraphNeighborCount, KUniformFreshEdgePreservesClass, KUniformSaturatedOneIntersectionNeighborCount, KUniformSplitEdgeHypergraph, KUniformSplitEdgeIndependentPairUpperBound, KUniformSplitEdgeIndependentTripleLowerBound, KUniformSplitEdgeLineGraphNeighborCount, KUniformSplitEdgePreservesClass, KUniformSplitEdgeUniformity, LineGraphOfHypergraph, LocalBParameter, LocalBParameterStrictIncrease, MaxDegreeAtMost, OneUniformNonemptyIntersectionCard, TSimpleHypergraph, UniformHypergraph |
-| KUniformKSimpleLocalPatternExtremalReduction | helper | proof | closed | - | - | FiniteRealFunctionAttainsMaximum, HypergraphClass, IndependentPairCount, IndependentTripleCount, KUniformKSimpleBoundedLocalPatternAttainsMaximum, KUniformKSimpleBoundedLocalPatternLift, KUniformKSimpleLocalPatternTransportToBounded, KUniformKSimpleLocalTruncationPreservesBParameter, LineGraphOfHypergraph, LocalBParameter, MaxDegreeAtMost, TSimpleHypergraph, UniformHypergraph |
+| KUniformKSimpleLocalPatternExtremalReduction | helper | proof | closed | - | - | HypergraphClass, IndependentPairCount, IndependentTripleCount, KUniformKSimpleBoundedLocalPatternAttainsMaximum, KUniformKSimpleBoundedLocalPatternLift, KUniformKSimpleLocalPatternTransportToBounded, KUniformKSimpleLocalTruncationPreservesBParameter, LineGraphOfHypergraph, LocalBParameter, MaxDegreeAtMost, TSimpleHypergraph, UniformHypergraph |
 | KUniformKSimpleLocalPatternTransportToBounded | helper | proof | closed | - | - | HypergraphClass, HypergraphDegree, IndependentPairCount, IndependentTripleCount, KUniformKSimpleBoundedLocalPattern, KUniformKSimpleLocalTruncationPreservesBParameter, LineGraphOfHypergraph, LocalBParameter, LocalBParameterNeighborhoodEmbeddingTransport, MaxDegreeAtMost, UniformHypergraph |
 | KUniformKSimpleLocalTruncationPreservesBParameter | helper | proof | closed | - | - | HypergraphClass, IndependentPairCount, IndependentTripleCount, LineGraphOfHypergraph, LocalBParameter, MaxDegreeAtMost, TSimpleHypergraph, UniformHypergraph |
 | KUniformKSimplePairLowerBound | lemma | proof | closed | - | - | FiniteBipartiteIncidenceTableRowBound, HypergraphClass, HypergraphDegree, IndependentPairComplementLowerBound, IndependentPairCount, KUniformKSimpleExtremalSaturation, KUniformNeighborClassWithinPairs, KUniformNeighborOneIntersectionFromSaturation, LineGraphOfHypergraph, LocalBParameter, MaxDegreeAtMost, TablePairFillingBound, UniformHypergraph |
 | KUniformNeighborClassWithinPairs | helper | proof | closed | - | - | HypergraphDegree, UniformHypergraph |
-| KUniformNeighborOneIntersectionFromSaturation | helper | proof | closed | - | - | HypergraphDegree, UniformHypergraph |
-| KUniformSaturatedOneIntersectionNeighborCount | helper | proof | closed | - | - | HypergraphDegree, UniformHypergraph |
+| KUniformNeighborOneIntersectionFromSaturation | helper | proof | closed | - | - | HypergraphDegree, KUniformSaturatedEdgeIntersectionSum, UniformHypergraph |
+| KUniformSaturatedEdgeIntersectionSum | helper | proof | closed | - | - | HypergraphDegree, UniformHypergraph |
+| KUniformSaturatedOneIntersectionNeighborCount | helper | proof | closed | - | - | HypergraphDegree, KUniformSaturatedEdgeIntersectionSum, UniformHypergraph |
 | KUniformSplitEdgeHypergraph | definition | definition | closed | - | - | MultiHypergraph |
 | KUniformSplitEdgeIndependentPairUpperBound | helper | proof | closed | - | - | IndependentPairCount, KUniformSplitEdgeHypergraph, LineGraphOfHypergraph |
 | KUniformSplitEdgeIndependentTripleLowerBound | helper | proof | closed | - | - | IndependentTripleCount, KUniformSplitEdgeHypergraph, LineGraphOfHypergraph |
@@ -169,8 +169,8 @@
 | SamplingNonadjacentPairChamberIntegral | lemma | proof | closed | - | - | SamplingActivationPriorityPushForwardSupport, SamplingNonadjacentPairSurvivalChamberLaw |
 | SamplingNonadjacentPairChamberIntegrandNonnegative | helper | proof | closed | - | - | Preamble |
 | SamplingNonadjacentPairNeighborClassProduct | helper | proof | closed | - | - | Preamble |
-| SamplingNonadjacentPairOrderedChamberBoundaryNull | helper | proof | closed | - | - | SamplingFinitePriorityOneCoordinateIntervalMass, SamplingFiniteProductLowerOrthantEqualityMeasurable, SamplingNonadjacentPairOrderedChamberMass |
-| SamplingNonadjacentPairOrderedChamberDiagonalNull | helper | proof | closed | - | - | SamplingFinitePriorityOneCoordinateIntervalMass, SamplingFiniteProductLowerOrthantEqualityMeasurable, SamplingNonadjacentPairOrderedChamberMass |
+| SamplingNonadjacentPairOrderedChamberBoundaryNull | helper | proof | closed | - | - | SamplingFinitePriorityOneCoordinateIntervalMass, SamplingNonadjacentPairOrderedChamberMass, SamplingPriorityProjectionVolumeNull |
+| SamplingNonadjacentPairOrderedChamberDiagonalNull | helper | proof | closed | - | - | SamplingFinitePriorityOneCoordinateIntervalMass, SamplingNonadjacentPairOrderedChamberMass, SamplingPriorityProjectionVolumeNull |
 | SamplingNonadjacentPairOrderedChamberMass | helper | proof | closed | - | - | SamplingBernoulliPrioritySubsetSum, SamplingFiniteCoordinateMarginalCellLaw, SamplingFinitePriorityOneCoordinateIntervalMass, SamplingFiniteProductLowerOrthantEqualityMeasurable, SamplingTwoCoordinateChamberFiberVolume, SamplingTwoCoordinateChamberVolume, SamplingTwoCoordinateComplementMeasurePreserving, SamplingTwoCoordinateFiberBoxVolume |
 | SamplingNonadjacentPairOrderedChamberProductLaw | helper | proof | closed | - | - | SamplingFiniteCoordinateMarginalCellLaw, SamplingFinitePriorityOneCoordinateIntervalMass, SamplingNonadjacentPairOrderedChamberBoundaryNull, SamplingNonadjacentPairOrderedChamberDiagonalNull, SamplingNonadjacentPairOrderedChamberMass |
 | SamplingNonadjacentPairOrderedPriorityAffineIntegral | helper | proof | closed | - | - | Preamble |
@@ -206,6 +206,7 @@
 | SamplingPairPushForwardEvent | helper | proof | closed | - | - | SamplingFiniteSetPushForwardEvent, SamplingPairOutputMembership |
 | SamplingPairTripleBonferroniCore | lemma | proof | closed | - | - | RandomIndependentSetSampling, RandomIndependentSetSamplingGammaLeDelta, SamplingCleanPairEllPositivity, SamplingFiniteProductPointwiseLower, SamplingIndependentPairsHalfDegreeSquare, SamplingPairBonferroniPairLowerBound, SamplingPairBonferroniParameterSelection, SamplingPairExposureEstimate, SamplingPairHighOverlapExponentialWindowMargin, SamplingPairHighOverlapFiniteProductWindowLower, SamplingPairHighOverlapWindowLower, SamplingPairKernelSplitLowerBound, SamplingPairLowOverlapExponentialWindowMargin, SamplingPairLowOverlapWindowLower, SamplingTripleCorrectionReindexing, SamplingTripleExposureEstimate |
 | SamplingPriorityPositiveUnitSupport | helper | proof | closed | - | - | Preamble |
+| SamplingPriorityProjectionVolumeNull | helper | proof | closed | - | - | SamplingFiniteProductLowerOrthantEqualityMeasurable |
 | SamplingRandomIndependentSetMatchedCoordinateExtensionLaw | lemma | proof | closed | - | - | RandomIndependentSetSampling, SamplingFiniteProductMatchedCoordinateExtensionMass |
 | SamplingRegularEnlargementReduction | lemma | proof | closed | - | - | FiniteSimpleRegularCompletion, RandomIndependentSetSampling, RandomIndependentSetSamplingGammaLeDelta, SamplingRegularGraphSamplingLawExists, SamplingSplitOutsideBlockerEventMonotonicity |
 | SamplingRegularGraphSamplingLawExists | lemma | proof | closed | - | - | SamplingNonadjacentPairChamberIntegral |
@@ -312,6 +313,7 @@
 | TableSquareSumFillingBound | helper | proof | closed | - | - | Preamble |
 | ThreeByNMatrixBound | lemma | proof | closed | - | - | Preamble, ThreeByThreeCenteredColumnBound |
 | ThreeByThreeCenteredColumnBound | lemma | proof | closed | - | - | Preamble |
+| ThreeUniformIncidencePairFillingBound | lemma | proof | closed | - | - | FiniteUnorderedPairProductSum, TablePairFillingBound, ThreeUniformThreeSimpleLocalSetup |
 | ThreeUniformIndependentTripleRootLabeling | lemma | proof | closed | - | - | LineGraphOfHypergraph |
 | ThreeUniformIndependentTriplesThroughEdgeBound | lemma | proof | closed | - | - | HypergraphDegree, ThreeUniformIndependentTripleRootLabeling |
 | ThreeUniformSaturatedEdgeStructure | lemma | proof | closed | - | - | HypergraphDegree, LineGraphOfHypergraph, MaxDegreeAtMost, UniformHypergraph |
@@ -321,7 +323,7 @@
 | ThreeUniformT2OrientedIncidenceBound | lemma | proof | closed | - | - | FiniteUnorderedPairProductSum, SaturatedNeighborClassPartition, ThreeUniformThreeSimpleLocalSetup |
 | ThreeUniformThreeSimpleBParameterEstimate | lemma | proof | closed | - | - | BoundedSquaresInterval, ExtremalBParameterSaturationThreeSimple, FiniteHypergraphClassRelabeling, HypergraphClass, HypergraphDegree, IndependentPairCount, IndependentTripleCount, KUniformKSimpleLocalPatternExtremalReduction, LineGraphOfHypergraph, LocalBParameter, MaxDegreeAtMost, SaturatedLineGraphEdgeCount, TSimpleHypergraph, ThreeUniformSaturatedEdgeStructure, ThreeUniformThreeSimpleBalancedBigDegree, ThreeUniformThreeSimpleBigPartSize, ThreeUniformThreeSimpleLocalSetup, ThreeUniformThreeSimpleNeighborhoodComplementBounds, ThreeUniformThreeSimplePairLowerBound, ThreeUniformThreeSimplePairUpperCutoff, ThreeUniformThreeSimpleSetupConstruction, ThreeUniformThreeSimpleSmallXs, ThreeUniformThreeSimpleT1IncidenceBound, ThreeUniformThreeSimpleT2TriangleBound, ThreeUniformThreeSimpleT2UniformEstimate, ThreeUniformTwoSimpleBParameterEstimate, UniformHypergraph |
 | ThreeUniformThreeSimpleBalancedBigDegree | lemma | proof | closed | - | - | FiniteUnorderedPairProductSum, TablePairStability, ThreeUniformThreeSimpleLocalSetup |
-| ThreeUniformThreeSimpleBigPartSize | lemma | proof | closed | - | - | FiniteUnorderedPairProductSum, TablePairFillingBound, ThreeUniformSaturatedEdgeStructure, ThreeUniformThreeSimpleLocalSetup, ThreeUniformThreeSimplePairLowerBound, ThreeUniformThreeSimplePairUpperCutoff, ThreeUniformThreeSimpleSmallXs |
+| ThreeUniformThreeSimpleBigPartSize | lemma | proof | closed | - | - | ThreeUniformIncidencePairFillingBound, ThreeUniformSaturatedEdgeStructure, ThreeUniformThreeSimpleLocalSetup, ThreeUniformThreeSimplePairLowerBound, ThreeUniformThreeSimplePairUpperCutoff, ThreeUniformThreeSimpleSmallXs |
 | ThreeUniformThreeSimpleChromaticIndexBound | theorem | proof | closed | - | - | ChromaticIndexAtMostReal, GeneralColoringTheorem, HypergraphClass, LocalBParameterRealFloorTransfer, RealDegreeFloorBound, SubhypergraphInheritance, ThreeUniformThreeSimpleBParameterEstimate |
 | ThreeUniformThreeSimpleCutoffScalarEstimate | helper | proof | closed | - | - | Preamble |
 | ThreeUniformThreeSimpleExtremalExample | lemma | proof | closed | - | - | HypergraphClass, HypergraphDegree, IndependentPairCount, IndependentTripleCount, LineGraphOfHypergraph, LocalBParameter, MaxDegreeAtMost, OrderThreeAffineIndependentPairs, OrderThreeAffineIndependentTriples, TSimpleHypergraph, UniformHypergraph |
@@ -330,7 +332,7 @@
 | ThreeUniformThreeSimplePairLowerBound | lemma | proof | closed | - | - | SaturatedLineGraphEdgeCount, TablePairBound, ThreeUniformSaturatedEdgeStructure, ThreeUniformThreeSimpleLocalSetup |
 | ThreeUniformThreeSimplePairUpperCutoff | lemma | proof | closed | - | - | ExtremalBParameterSaturationThreeSimple, FiniteHypergraphClassRelabeling, IndependentPairCount, IndependentTripleCount, LineGraphOfHypergraph, LocalBParameter, ThreeUniformThreeSimpleCutoffScalarEstimate, ThreeUniformThreeSimpleExtremalExample, ThreeUniformThreeSimpleLocalSetup, ThreeUniformThreeSimpleNeighborhoodComplementBounds, TriangleCountPartite |
 | ThreeUniformThreeSimpleSetupConstruction | lemma | proof | closed | - | - | FiniteHypergraphClassRelabeling, FiniteNonnegativeWeightCutoff, SaturatedLineGraphEdgeCount, ThreeUniformSaturatedEdgeStructure, ThreeUniformThreeSimpleLocalSetup |
-| ThreeUniformThreeSimpleSmallXs | lemma | proof | closed | - | - | FiniteUnorderedPairProductSum, TablePairFillingBound, ThreeUniformThreeSimpleLocalSetup |
+| ThreeUniformThreeSimpleSmallXs | lemma | proof | closed | - | - | ThreeUniformIncidencePairFillingBound, ThreeUniformThreeSimpleLocalSetup |
 | ThreeUniformThreeSimpleT1IncidenceBound | lemma | proof | closed | - | - | ThreeUniformSaturatedEdgeStructure, ThreeUniformThreeSimpleLocalSetup |
 | ThreeUniformThreeSimpleT2TriangleBound | lemma | proof | closed | - | - | T2DegreeSquareAssembly, ThreeUniformT2AmbientCherryBound, ThreeUniformT2ExceptionalDegreeBounds, ThreeUniformT2OrientedIncidenceBound, ThreeUniformThreeSimpleLocalSetup |
 | ThreeUniformThreeSimpleT2UniformEstimate | lemma | proof | closed | - | - | ThreeUniformThreeSimpleBalancedBigDegree, ThreeUniformThreeSimpleBigPartSize, ThreeUniformThreeSimplePairLowerBound, ThreeUniformThreeSimpleSmallXs, ThreeUniformThreeSimpleT2TriangleBound |
@@ -339,7 +341,7 @@
 | ThreeUniformTwoSimpleChromaticIndexBound | theorem | proof | closed | - | - | ChromaticIndexAtMostReal, GeneralColoringTheorem, HypergraphClass, LocalBParameterRealFloorTransfer, RealDegreeFloorBound, SubhypergraphInheritance, ThreeUniformTwoSimpleBParameterEstimate |
 | ThreeUniformTwoSimpleDegreeToBigBound | lemma | proof | closed | - | - | ExtremalBParameterSaturation, Preamble, SaturatedEdgeStructure |
 | ThreeUniformTwoSimpleEventualNumericalError | lemma | proof | closed | - | - | Preamble |
-| ThreeUniformTwoSimpleFiniteExtremalAttainment | lemma | proof | closed | - | - | FiniteRealFunctionAttainsMaximum, HypergraphClass, LineGraphOfHypergraph, LocalBParameter, ThreeUniformTwoSimpleBoundedRepresentative |
+| ThreeUniformTwoSimpleFiniteExtremalAttainment | lemma | proof | closed | - | - | HypergraphClass, LineGraphOfHypergraph, LocalBParameter, ThreeUniformTwoSimpleBoundedRepresentative |
 | ThreeUniformTwoSimpleFreshEdgePreservesClass | helper | proof | closed | - | - | KUniformFreshEdgePreservesClass |
 | ThreeUniformTwoSimpleMatrixRescaling | lemma | proof | closed | - | - | Preamble |
 | ThreeUniformTwoSimpleNeighborPartition | lemma | proof | closed | - | - | TSimpleHypergraph, UniformHypergraph |
@@ -353,4 +355,4 @@
 | UniformHypergraphGreedyColoring | lemma | proof | closed | - | - | ChromaticIndexAtMost, FiniteGraphGreedyColoring, UniformHypergraphLineDegreeBound |
 | UniformHypergraphLineDegreeBound | lemma | proof | closed | - | - | LineGraphOfHypergraph, MaxDegreeAtMost, UniformHypergraph |
 
-**Total:** 349 nodes | **Closed:** 349 | **Open:** 0
+**Total:** 351 nodes | **Closed:** 351 | **Open:** 0

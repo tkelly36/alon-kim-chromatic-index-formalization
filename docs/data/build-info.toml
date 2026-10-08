@@ -1,12 +1,12 @@
 # Trellis public tablet viewer build information
-generated_at = "2026-10-08T12:36:17.269088+00:00"
+generated_at = "2026-10-08T17:05:25.282842+00:00"
 
 [source]
-repo_path = "/tmp/alon-kim-public-viewer.CW0eMG/formalization"
+repo_path = "/tmp/alon-kim-public-final.uPvlaE/repo"
 github_base = "https://github.com/tkelly36/alon-kim-chromatic-index-formalization/blob/main/formalization"
 git_remote = "/home/tkelly36/math/alon-kim-chromatic-index"
 git_branch = ""
-git_commit = "9ce4cd73d6fdc0e3e26be8f9598652f15421f76a"
+git_commit = "4bea364b53d1d12b263d0e8ccfb34c6f1b71887c"
 git_dirty = false
 
 [trellis]

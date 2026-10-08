@@ -1,4 +1,5 @@
-import Tablet.FiniteRealFunctionAttainsMaximum
+import Mathlib.Data.Fintype.Lattice
+-- Finite.exists_max supplies the maximum principle used by bounded-pattern attainment.
 import Tablet.HypergraphClass
 import Tablet.IndependentPairCount
 import Tablet.IndependentTripleCount

@@ -1,0 +1,38 @@
+\begin{helper}
+Let \(V\) be finite, and let \(\nu\) be a measure on
+\(\mathcal P(V)\times\mathbb R^V\), equipped with the product of the discrete
+activation sigma-algebra and the Borel priority sigma-algebra.
+Suppose every activation atom \(F_A=\{(B,q):B=A\}\) has finite mass, and
+for every \(A\subseteq V\) and \(t:V\to[0,1]\),
+\[
+\nu\{(B,q):B=A,\ 0\le q(x)\le t(x)\text{ for all }x\in V\}
+=\nu(F_A)\operatorname{ofReal}\!\left(\prod_{x\in V}t(x)\right).
+\]
+If \(D\subseteq\mathbb R^V\) is Borel measurable and has Lebesgue volume
+zero, then \(\nu\{(B,q):q\in D\}=0\).
+\end{helper}
+\begin{proof}
+Write \(Q=[0,1]^V\) and \(C=\{(B,q):q\in Q\}\).
+Fix an activation atom \(F_A\). The priority projection is measurable,
+and \(D\cap Q\) is a measurable subset of \(Q\) with volume zero by
+monotonicity. Applying
+\noderef{SamplingFiniteProductLowerOrthantEqualityMeasurable}
+with event \(F_A\), priority projection, mass \(\nu(F_A)\), and set
+\(D\cap Q\), gives
+\[
+\nu(F_A\cap\{q\in D\}\cap C)=\nu(F_A)\operatorname{vol}(D\cap Q)=0.
+\]
+The extra intersection with \(C\) in that theorem does not change this set.
+
+The rectangle law at the constant threshold \(1\) gives
+\(\nu(F_A\cap C)=\nu(F_A)\). The set \(F_A\cap C\) is measurable and
+has finite mass. Subtracting its mass from the mass of \(F_A\) therefore
+gives \(\nu(F_A\setminus(F_A\cap C))=0\).
+Every point of \(F_A\cap\{q\in D\}\) either belongs to \(C\), in which
+case it lies in the first null set, or does not, in which case it lies in
+the second null set. Subadditivity and monotonicity show that
+\(\nu(F_A\cap\{q\in D\})=0\).
+Finally, the inverse image \(\{(B,q):q\in D\}\) is the union of these
+sets over the finitely many activation atoms \(A\subseteq V\).
+Finite subadditivity proves its nullity.
+\end{proof}

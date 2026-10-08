@@ -1,0 +1,35 @@
+\begin{lemma}
+Let $S$ be a local setup as in \noderef{ThreeUniformThreeSimpleLocalSetup}
+for a finite hypergraph $F$, an edge $f$, and a natural number $D$.
+For vertices $v,x$, put $d(v,x)=|\{g\in E(F):v,x\in F(g)\}|$.
+Let $Y$ be any finite set of vertices, let $C,T>0$, and let
+$q\in\mathbb N$ and $r\in\mathbb R$ satisfy
+$q=\lfloor T/C\rfloor$ and $r=T-qC$.
+Suppose $S.\mathrm{vertexDegreeIntoF}(x)\le C$ for every $x\in Y$ and
+$\sum_{x\in Y}S.\mathrm{vertexDegreeIntoF}(x)\le T$. Then
+\[
+\sum_{x\in Y}\ \sum_{\substack{p\subseteq F(f)\\|p|=2}}
+\prod_{v\in p}d(v,x)\le \frac13(qC^2+r^2).
+\]
+\end{lemma}
+\begin{proof}
+The uniformity field of the local setup gives $|F(f)|=3$.
+Choose bijections $i\mapsto v_i$ from $\{0,1,2\}$ to $F(f)$ and
+$j\mapsto x_j$ from $\{0,\ldots,|Y|-1\}$ to $Y$.
+Define the nonnegative table $a_{i,j}=d(v_i,x_j)$.
+By the incidence-sum identity in the local setup, each column satisfies
+\[
+\sum_{i=0}^2 a_{i,j}
+=\sum_{v\in F(f)}d(v,x_j)=S.\mathrm{vertexDegreeIntoF}(x_j)\le C.
+\]
+Reindexing by the second bijection and interchanging the finite sums gives
+$\sum_i\sum_j a_{i,j}=\sum_{x\in Y}S.\mathrm{vertexDegreeIntoF}(x)\le T$.
+The first bijection induces a bijection on two-element subsets. Therefore,
+for each $j$, the unordered-pair sum in the statement equals
+$\sum_{0\le i<k<3}a_{i,j}a_{k,j}$; this is precisely the finite pair-product
+conversion of \noderef{FiniteUnorderedPairProductSum}.
+Apply \noderef{TablePairFillingBound} to this table with three rows,
+$|Y|$ columns, and the stated $C,T,q,r$. Its coefficient is
+$(3-1)/(2\cdot3)=1/3$. Reindexing the column sum back to $Y$ proves the claim,
+including when $Y$ is empty.
+\end{proof}

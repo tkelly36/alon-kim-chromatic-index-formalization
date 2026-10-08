@@ -1,6 +1,6 @@
 {
   "description": "For each node, direct Mathlib.* imports appearing in the node's recursive Tablet.* import closure. Mathlib's own transitive imports are not expanded.",
-  "generated_at": "2026-10-08T12:36:10.306378+00:00",
+  "generated_at": "2026-10-08T17:05:25.124982+00:00",
   "kind": "tablet_recursive_mathlib_imports",
   "nodes": {
     "BernoulliChernoffRateLowerBound": [
@@ -102,11 +102,6 @@
       "Mathlib.Tactic"
     ],
     "FiniteProbabilityMass": [
-      "Mathlib.Combinatorics.SimpleGraph.Finite",
-      "Mathlib.Data.Real.Basic",
-      "Mathlib.Tactic"
-    ],
-    "FiniteRealFunctionAttainsMaximum": [
       "Mathlib.Combinatorics.SimpleGraph.Finite",
       "Mathlib.Data.Real.Basic",
       "Mathlib.Tactic"
@@ -447,6 +442,7 @@
       "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
       "Mathlib.Combinatorics.SimpleGraph.Finite",
       "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Fintype.Lattice",
       "Mathlib.Data.Nat.Choose.Cast",
       "Mathlib.Data.Real.Basic",
       "Mathlib.Tactic"
@@ -463,6 +459,7 @@
     ],
     "KUniformKSimpleBoundedLocalPatternAttainsMaximum": [
       "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Fintype.Lattice",
       "Mathlib.Data.Real.Basic",
       "Mathlib.Tactic"
     ],
@@ -489,6 +486,7 @@
       "Mathlib.Combinatorics.SimpleGraph.Finite",
       "Mathlib.Data.Finset.Max",
       "Mathlib.Data.Finset.Powerset",
+      "Mathlib.Data.Fintype.Lattice",
       "Mathlib.Data.Nat.Choose.Cast",
       "Mathlib.Data.Real.Basic",
       "Mathlib.Data.Set.Lattice",
@@ -524,6 +522,7 @@
     ],
     "KUniformKSimpleLocalPatternExtremalReduction": [
       "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Fintype.Lattice",
       "Mathlib.Data.Real.Basic",
       "Mathlib.Tactic"
     ],
@@ -554,6 +553,12 @@
       "Mathlib.Tactic"
     ],
     "KUniformNeighborOneIntersectionFromSaturation": [
+      "Mathlib.Combinatorics.Enumerative.DoubleCounting",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
+    "KUniformSaturatedEdgeIntersectionSum": [
       "Mathlib.Combinatorics.Enumerative.DoubleCounting",
       "Mathlib.Combinatorics.SimpleGraph.Finite",
       "Mathlib.Data.Real.Basic",
@@ -1625,6 +1630,14 @@
       "Mathlib.Data.Real.Basic",
       "Mathlib.Tactic"
     ],
+    "SamplingPriorityProjectionVolumeNull": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.MeasureTheory.Constructions.BorelSpace.Real",
+      "Mathlib.MeasureTheory.Measure.Lebesgue.Basic",
+      "Mathlib.MeasureTheory.Measure.Typeclasses.Finite",
+      "Mathlib.Tactic"
+    ],
     "SamplingRandomIndependentSetMatchedCoordinateExtensionLaw": [
       "Mathlib.Analysis.SpecialFunctions.Integrals.Basic",
       "Mathlib.Combinatorics.SimpleGraph.Finite",
@@ -2466,6 +2479,13 @@
       "Mathlib.LinearAlgebra.Matrix.Permanent",
       "Mathlib.Tactic"
     ],
+    "ThreeUniformIncidencePairFillingBound": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Algebra.Order.BigOperators.Ring.Finset",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Real.Basic",
+      "Mathlib.Tactic"
+    ],
     "ThreeUniformIndependentTripleRootLabeling": [
       "Mathlib.Combinatorics.SimpleGraph.Finite",
       "Mathlib.Data.Real.Basic",
@@ -2518,6 +2538,7 @@
       "Mathlib.Data.Finset.Option",
       "Mathlib.Data.Finset.Powerset",
       "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Fintype.Lattice",
       "Mathlib.Data.Real.Basic",
       "Mathlib.Data.ZMod.Basic",
       "Mathlib.LinearAlgebra.Matrix.Permanent",
@@ -2562,6 +2583,7 @@
       "Mathlib.Data.Finset.Option",
       "Mathlib.Data.Finset.Powerset",
       "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Fintype.Lattice",
       "Mathlib.Data.Nat.Choose.Cast",
       "Mathlib.Data.Real.Basic",
       "Mathlib.Data.Set.Lattice",
@@ -2675,6 +2697,7 @@
       "Mathlib.Data.Finset.Option",
       "Mathlib.Data.Finset.Powerset",
       "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Fintype.Lattice",
       "Mathlib.Data.Real.Basic",
       "Mathlib.LinearAlgebra.Matrix.Permanent",
       "Mathlib.Tactic"
@@ -2703,6 +2726,7 @@
       "Mathlib.Data.Finset.Option",
       "Mathlib.Data.Finset.Powerset",
       "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.Fintype.Lattice",
       "Mathlib.Data.Nat.Choose.Cast",
       "Mathlib.Data.Real.Basic",
       "Mathlib.Data.Set.Lattice",
@@ -2745,6 +2769,7 @@
     ],
     "ThreeUniformTwoSimpleFiniteExtremalAttainment": [
       "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Data.Fintype.Lattice",
       "Mathlib.Data.Real.Basic",
       "Mathlib.Tactic"
     ],
@@ -2825,5 +2850,5 @@
     ]
   },
   "schema_version": 1,
-  "source_repo": "/tmp/alon-kim-public-viewer.CW0eMG/formalization"
+  "source_repo": "/tmp/alon-kim-public-final.uPvlaE/repo"
 }

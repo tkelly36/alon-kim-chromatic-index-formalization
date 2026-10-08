@@ -27,82 +27,21 @@ Let \(u\ne v\), and let \(U,T\subseteq V\) with
 \]
 \end{helper}
 \begin{proof}
-Take \(z\in U\cup T\).  Since \(u\notin U\cup T\) and \(v\notin U\cup T\), we
-have \(z\ne u\) and \(z\ne v\).  We prove the required nullity by first
-working on each activation atom.
-
-Fix an activation atom \(A_0\), and put
-\[
-\alpha(A_0)=p^{|A_0|}(1-p)^{|V|-|A_0|}.
-\]
-The activation-atom hypothesis gives
-\(\nu\{A=A_0\}=\operatorname{ofReal}(\alpha(A_0))\), with
-\(\alpha(A_0)\ge0\) because \(0\le p\le1\).  Let
-\[
-Q=\{(A,\pi): A=A_0,\ 0\le \pi(q)\le1\hbox{ for every }q\in V\}.
-\]
-The lower-rectangle hypothesis with constant threshold \(1\) gives
-\[
-\nu(Q)=\nu\{A=A_0\}\operatorname{ofReal}\!\left(\prod_{q\in V}1\right)
-=\nu\{A=A_0\},
-\]
-so the part of the atom outside the full cube \(Q\) has \(\nu\)-measure
-\(0\).
-
-On \(Q\), the lower-rectangle hypothesis determines the atomwise priority
-law on all anchored rectangles.  More explicitly, for every threshold vector
-\(t:V\to[0,1]\), the measure of the anchored rectangle
-\(\prod_{q\in V}[0,t(q)]\) inside the atom is
-\[
-\operatorname{ofReal}(\alpha(A_0))\,
-\operatorname{ofReal}\!\left(\prod_{q\in V}t(q)\right).
-\]
-This is the same value assigned by
-\(\operatorname{ofReal}(\alpha(A_0))\) times finite product Lebesgue measure
-on \([0,1]^V\).  The anchored rectangles are a finite-intersection-stable
-generating class for the Borel sets of the finite cube, and both finite
-measures have total mass \(\operatorname{ofReal}(\alpha(A_0))\).  The
-finite-measure uniqueness theorem therefore identifies the atom-restricted
-priority law on the full cube with
-\(\operatorname{ofReal}(\alpha(A_0))\lambda_V\), where \(\lambda_V\) is
-finite product Lebesgue measure on \([0,1]^V\).
-
-If \(A_0\) does not contain all three of \(u,v,z\), then the atomwise part of
-the boundary event is empty.  Suppose now that \(u,v,z\in A_0\).  Because
-\(z\ne u\), the set
-\[
-D_u=\{\pi\in[0,1]^V:\pi(z)=\pi(u)\}
-\]
-is a coordinate hyperplane.  By Fubini over the \(z\)-coordinate, after all
-other coordinates have been fixed the section of \(D_u\) is the singleton
-\(\{\pi(u)\}\), which has one-dimensional Lebesgue measure \(0\).  This is
-the fixed-section zero-length interval consequence of
-\noderef{SamplingFinitePriorityOneCoordinateIntervalMass}; the node is not
-being used as a variable-coordinate hyperplane theorem, only as the
-one-dimensional interval calculation after the Fubini slice is fixed.  Hence
-\(\lambda_V(D_u)=0\), and the atomwise full-cube event with
-\(\pi(z)=\pi(u)\) has \(\nu\)-measure \(0\).
-
-The same argument applies to
-\[
-D_v=\{\pi\in[0,1]^V:\pi(z)=\pi(v)\},
-\]
-because \(z\ne v\).  Therefore the atomwise full-cube event with
-\(\pi(z)=\pi(v)\) also has \(\nu\)-measure \(0\).  The union of these two
-atomwise full-cube boundary pieces has measure \(0\) by finite
-subadditivity.
-
-Finally compare the full cube with the activated-coordinate cube appearing
-in the theorem.  The cube-support hypothesis gives
-\[
-\nu\{A=A_0,\ \pi(q)\in[0,1]\hbox{ for every }q\in A_0\}
-=\nu\{A=A_0\},
-\]
-so, inside the atom, the complement of the activated-coordinate cube has
-measure \(0\).  The atomwise boundary event from the statement is contained
-in the union of this zero-measure complement with the two full-cube
-hyperplane events just proved null.  Thus every activation atom contributes
-measure \(0\).  Since \(V\) is finite, there are finitely many activation
-atoms, and the whole boundary event for this fixed \(z\) is their finite
-union.  Finite subadditivity gives the claimed total measure \(0\).
+Fix \(z\in U\cup T\). The exclusions of \(u,v\) from \(U\cup T\)
+give \(z\ne u\) and \(z\ne v\).
+For distinct coordinates \(a,b\), the set
+\(H_{a,b}=\{q\in\mathbb R^V:q(a)=q(b)\}\) is the kernel of the
+nonzero linear functional \(q\mapsto q(a)-q(b)\).
+This functional is nonzero because it takes value \(1\) on the vector
+equal to \(1\) at \(a\) and \(0\) elsewhere. Thus \(H_{a,b}\) is a
+proper linear subspace, hence has Lebesgue volume zero; it is closed
+and therefore Borel measurable.
+Consequently \(D=H_{z,u}\cup H_{z,v}\) is measurable and has volume
+zero by finite subadditivity.
+Every activation atom has finite mass by its displayed
+\(\operatorname{ofReal}\) formula. The full rectangle law and
+\noderef{SamplingPriorityProjectionVolumeNull} imply
+\(\nu\{(A,q):q\in D\}=0\).
+The boundary event in the statement is a subset of this inverse image,
+so measure monotonicity proves the claim.
 \end{proof}

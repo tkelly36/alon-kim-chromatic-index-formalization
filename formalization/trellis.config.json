@@ -1,6 +1,6 @@
 {
   "_comment": "Public default Trellis config (codex provider). setup_repo.sh uses this template by default and rewrites repo_path, paper_tex_path, main-result targets, tmux session, and chat metadata for your project. To use a different provider, change the 'provider' fields below to 'claude' or 'gemini' (gemini also requires GEMINI_OAUTH_CLIENT_ID / GEMINI_OAUTH_CLIENT_SECRET in the environment). Replace placeholder values marked with REPLACE_ME if you write a config by hand instead of running setup_repo.sh.",
-  "repo_path": "REPLACE_ME",
+  "repo_path": "/home/tkelly36/math/alon-kim-chromatic-index",
   "goal_file": "GOAL.md",
   "state_dir": ".trellis",
   "policy_path": "trellis.policy.json",
@@ -62,9 +62,9 @@
     "session_name": "alon-kim-chromatic-index",
     "dashboard_window_name": "dashboard",
     "kill_windows_after_capture": true,
-    "burst_user": "REPLACE_ME",
-    "burst_group": "REPLACE_ME",
-    "burst_home": "REPLACE_ME"
+    "burst_user": "tkelly36",
+    "burst_group": "tkelly36",
+    "burst_home": "/home/tkelly36/.cache/trellis-burst-home"
   },
   "sandbox": {
     "enabled": true,
@@ -129,7 +129,7 @@
     "phase_overrides": {}
   },
   "chat": {
-    "root_dir": "REPLACE_ME",
+    "root_dir": "/home/tkelly36/math/alon-kim-chromatic-index/.trellis/chats",
     "repo_name": "alon-kim-chromatic-index",
     "project_name": "Alon-Kim-Chromatic-Index Formalization",
     "public_base_url": ""

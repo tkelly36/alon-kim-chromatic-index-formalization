@@ -25,88 +25,16 @@ If \(u\ne v\), then
 \]
 \end{helper}
 \begin{proof}
-For an activation atom \(A_0\), write
-\[
-\alpha(A_0)=p^{|A_0|}(1-p)^{|V|-|A_0|}.
-\]
-The activation-atom hypothesis gives
-\(\nu\{A=A_0\}=\operatorname{ofReal}(\alpha(A_0))\), and \(0\le p\le1\)
-implies \(\alpha(A_0)\ge0\).  Let
-\[
-Q=\{(A,\pi): A=A_0,\ 0\le \pi(q)\le1\hbox{ for every }q\in V\}.
-\]
-Applying the lower-rectangle hypothesis with the constant threshold vector
-\(t(q)=1\) gives
-\[
-\nu(Q)=\nu\{A=A_0\}\operatorname{ofReal}\!\left(\prod_{q\in V}1\right)
-=\nu\{A=A_0\}.
-\]
-Thus the complement of \(Q\) inside the atom \(A=A_0\) has \(\nu\)-measure
-\(0\).
-
-Now restrict attention to this full cube.  For every threshold vector
-\(t:V\to[0,1]\), the lower-rectangle hypothesis says that the atom-restricted
-measure of the anchored rectangle
-\(\prod_{q\in V}[0,t(q)]\) is
-\[
-\operatorname{ofReal}(\alpha(A_0))\,
-\operatorname{ofReal}\!\left(\prod_{q\in V}t(q)\right).
-\]
-Equivalently, on every anchored rectangle in \([0,1]^V\), the push-forward of
-\(\nu\) from the atom to the priority coordinates agrees with the finite
-measure
-\[
-\operatorname{ofReal}(\alpha(A_0))\cdot\lambda_V,
-\]
-where \(\lambda_V\) is product Lebesgue measure on the finite cube
-\([0,1]^V\).  The anchored rectangles are closed under finite intersections
-and generate the Borel sigma-algebra of the cube.  Both finite measures have
-the same total mass, namely \(\operatorname{ofReal}(\alpha(A_0))\), by the
-constant-threshold-\(1\) calculation above.  Hence the finite-measure
-uniqueness theorem identifies the atom-restricted priority law on all Borel
-subsets of the full cube with
-\(\operatorname{ofReal}(\alpha(A_0))\lambda_V\).
-
-Assume first that \(u,v\in A_0\).  Since \(u\ne v\), the diagonal
-\[
-D=\{\pi\in[0,1]^V:\pi(u)=\pi(v)\}
-\]
-is a coordinate hyperplane in the finite product cube.  By Fubini over the
-\(u\)-coordinate, after fixing all coordinates except \(u\), the section of
-\(D\) is the singleton \(\{\pi(v)\}\).  A singleton has one-dimensional
-Lebesgue measure \(0\); this is the fixed-coordinate zero-length section that
-one obtains from the interval-mass calculation of
-\noderef{SamplingFinitePriorityOneCoordinateIntervalMass} after passing to
-the one-dimensional section.  Therefore \(\lambda_V(D)=0\), and the
-atomwise diagonal part
-\[
-\{A=A_0,\ 0\le\pi(q)\le1\hbox{ for every }q\in V,\ \pi(u)=\pi(v)\}
-\]
-has \(\nu\)-measure
-\(\operatorname{ofReal}(\alpha(A_0))\lambda_V(D)=0\).  If \(u\notin A_0\) or
-\(v\notin A_0\), then the atomwise part of the displayed event is empty,
-because the displayed event requires \(u,v\in A\).
-
-It remains only to pass from the full-cube atomwise statement to the event in
-the theorem, which asks for cube bounds only on activated coordinates.  On
-the atom \(A=A_0\), the constant-threshold-\(1\) lower-rectangle calculation
-above says
-\[
-\nu\{A=A_0,\ 0\le \pi(q)\le1\hbox{ for every }q\in V\}
-=\nu\{A=A_0\}.
-\]
-Thus, inside this atom, the complement of the full cube
-\[
-\{0\le \pi(q)\le1\hbox{ for every }q\in V\}
-\]
-has measure \(0\).  Now take a point in the atomwise part of the theorem's
-diagonal event.  If this point lies in the full cube, then it lies in the
-full-cube diagonal part already proved null.  If it does not lie in the full
-cube, then it lies in the zero-measure complement just identified.  Therefore
-the atomwise part of the theorem's diagonal event is contained in the union of
-the full-cube diagonal part and the complement of the full cube inside the
-atom.  Both pieces have \(\nu\)-measure \(0\), so every activation atom
-contributes measure \(0\).  There are finitely many atoms because \(V\) is
-finite, and the displayed diagonal event is the finite union of these atomwise
-parts.  Finite subadditivity gives total \(\nu\)-measure \(0\).
+The set \(D=\{q\in\mathbb R^V:q(u)=q(v)\}\) is the kernel of the
+linear functional \(q\mapsto q(u)-q(v)\).
+Since \(u\ne v\), this functional takes value \(1\) on the vector equal
+to \(1\) at \(u\) and \(0\) elsewhere, so its kernel is a proper linear
+subspace. Proper linear subspaces have Lebesgue volume zero.
+The kernel is closed, hence Borel measurable.
+Each activation atom has finite mass by its displayed
+\(\operatorname{ofReal}\) formula. Applying
+\noderef{SamplingPriorityProjectionVolumeNull} to \(D\) and the full
+lower-rectangle law gives \(\nu\{(A,q):q\in D\}=0\).
+The event in the statement is contained in this inverse image, so
+monotonicity gives the required zero measure.
 \end{proof}

@@ -22,7 +22,6 @@
 | FiniteIndicatorCountExpectation | proof | - | closed |
 | FiniteNonnegativeWeightCutoff | proof | - | closed |
 | FiniteProbabilityMass | definition | - | closed |
-| FiniteRealFunctionAttainsMaximum | proof | - | closed |
 | FiniteRegularGraphRadiusTwo | proof | - | closed |
 | FiniteSimpleRegularCompletion | proof | - | closed |
 | FiniteSortedPaddedSlots | proof | - | closed |
@@ -73,6 +72,7 @@
 | KUniformKSimplePairLowerBound | proof | - | closed |
 | KUniformNeighborClassWithinPairs | proof | - | closed |
 | KUniformNeighborOneIntersectionFromSaturation | proof | - | closed |
+| KUniformSaturatedEdgeIntersectionSum | proof | - | closed |
 | KUniformSaturatedOneIntersectionNeighborCount | proof | - | closed |
 | KUniformSplitEdgeHypergraph | definition | - | closed |
 | KUniformSplitEdgeIndependentPairUpperBound | proof | - | closed |
@@ -207,6 +207,7 @@
 | SamplingPairPushForwardEvent | proof | - | closed |
 | SamplingPairTripleBonferroniCore | proof | - | closed |
 | SamplingPriorityPositiveUnitSupport | proof | - | closed |
+| SamplingPriorityProjectionVolumeNull | proof | - | closed |
 | SamplingRandomIndependentSetMatchedCoordinateExtensionLaw | proof | - | closed |
 | SamplingRegularEnlargementReduction | proof | - | closed |
 | SamplingRegularGraphSamplingLawExists | proof | - | closed |
@@ -313,6 +314,7 @@
 | TableSquareSumFillingBound | proof | - | closed |
 | ThreeByNMatrixBound | proof | - | closed |
 | ThreeByThreeCenteredColumnBound | proof | - | closed |
+| ThreeUniformIncidencePairFillingBound | proof | - | closed |
 | ThreeUniformIndependentTripleRootLabeling | proof | - | closed |
 | ThreeUniformIndependentTriplesThroughEdgeBound | proof | - | closed |
 | ThreeUniformSaturatedEdgeStructure | proof | - | closed |
@@ -354,4 +356,4 @@
 | UniformHypergraphGreedyColoring | proof | - | closed |
 | UniformHypergraphLineDegreeBound | proof | - | closed |
 
-**Summary:** 349/349 closed
+**Summary:** 351/351 closed

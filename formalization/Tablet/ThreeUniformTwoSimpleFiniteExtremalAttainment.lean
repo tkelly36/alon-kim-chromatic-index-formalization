@@ -1,4 +1,4 @@
-import Tablet.FiniteRealFunctionAttainsMaximum
+import Mathlib.Data.Fintype.Lattice
 import Tablet.HypergraphClass
 import Tablet.LineGraphOfHypergraph
 import Tablet.LocalBParameter
@@ -42,7 +42,7 @@ theorem ThreeUniformTwoSimpleFiniteExtremalAttainment (D : ℕ) (hD : 0 < D) :
       simpa [HypergraphDegree] using hD
   letI : Nonempty P := ⟨⟨⟨1, by omega⟩, ⟨3, by omega⟩,
     ⟨⟨fun _ => Finset.univ, 0⟩, hsingle⟩⟩⟩
-  obtain ⟨p, hp⟩ := FiniteRealFunctionAttainsMaximum score
+  obtain ⟨p, hp⟩ := Finite.exists_max score
   refine ⟨Fin p.2.1.val, Fin p.1.val, inferInstance, inferInstance,
     inferInstance, inferInstance, {edge := p.2.2.val.1}, p.2.2.val.2,
     p.2.2.property, ?_⟩
